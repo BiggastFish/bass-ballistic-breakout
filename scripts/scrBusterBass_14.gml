@@ -44,6 +44,7 @@ if (!global.lockBuster)
         {
             i.sprite_index = sprBassBullet;
             i.dir = 0;
+            i.contactDamage = 1 + (.5 * dashJumped);
         
             if (image_xscale < 0)
             {

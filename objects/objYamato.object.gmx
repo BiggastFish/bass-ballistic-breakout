@@ -134,12 +134,6 @@ if (global.keyShootPressed[playerID] &amp;&amp; !playerIsLocked(PL_LOCK_SHOOT)
         i.ys = i.y - y;
         i.xst = i.image_xscale;
     }
-    if (!ground)
-    {
-        canMinJump = false;
-        yspeed = -3 * gravDir;
-        dashJumped = 0;
-    }
 }
 
 //////////////

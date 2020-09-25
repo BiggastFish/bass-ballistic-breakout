@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-bulletLimitCost = 0;
+bulletLimitCost = 1;
 
 contactDamage = 4;
 
@@ -98,22 +98,20 @@ if (!global.frozen)
             <kind>1</kind>
             <string>/// Fire weapon
 if (global.keyShootPressed[playerID] &amp;&amp; !playerIsLocked(PL_LOCK_SHOOT) &amp;&amp;
-!instance_exists(objSeedBomb))
+!instance_exists(objSeedBomb) &amp;&amp; global.ammo[playerID, global.weapon[playerID]] &gt; 0)
 {
     for (z = -2; z &lt;= 2; z++)
     {
         if (z != 0)
         {
-            i = fireWeapon(5, -11, objSeedBomb, 4, 0, 1, 0);
+            i = fireWeapon(5, -11, objSeedBomb, 4, 4 * (z = -2), 1, 0);
             isShoot = 3;
             if (i)
             {
-                i.yspeed = -3 - !(z % 2 = 0) * image_yscale;
-                i.xspeed = (1.25 + (.25 * (z % 2 = 0))) * z;
+                i.yspeed = -5 + (2 * (z % 2 = 0)) * image_yscale;
+                i.xspeed = (1 + (.5 * (z % 2 = 0))) * z;
                 i.image_xscale = sign(z);
             }
-            global.ammo[playerID, global.weapon[playerID]] = max(0,
-                    global.ammo[playerID, global.weapon[playerID]] - 4);
         }
     }
 }

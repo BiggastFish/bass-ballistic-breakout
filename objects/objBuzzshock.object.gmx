@@ -34,14 +34,13 @@ contactDamage = 4;
 hitInvun = 4;
 facePlayerOnSpawn = 0;
 ground = false;
-attackTimer = 0;
 bzztTimer = 0;
 shotsDone = 0;
 blastImg = 0;
 xVal = 0;
 middlePoint = 0;
 phase = 0;
-introType = 2;
+introType = 0;
 respawnRange = -1;
 despawnRange = -1;
 dieToPits = 0;
@@ -57,6 +56,7 @@ musicTrackNumber = 17;
 enemyDamageValue(objBusterShot, 1);
 enemyDamageValue(objBusterShotHalfCharged, 1);
 enemyDamageValue(objBusterShotCharged, 3);
+enemyDamageValue(objYamato, 3);
 
 enemyDamageValue(objSuperArmBlockProjectile, 1);
 enemyDamageValue(objSuperArmDebris, 1);
@@ -104,40 +104,62 @@ if (!global.frozen)
         startIntro = false;
         isIntro = true;
         drawBoss = true;
-        visible = true;
     }
     else if (isIntro)
     {
-        isIntro = false;
-        playSFX(sfxMechaDragon);
-        grav = gravStart;
-        blockCollision = blockCollisionStart;
+        bzztTimer++;
+        if (bzztTimer = 30)
+        {
+            y = view_yview - 96;
+            yspeed = 4;
+            grav = -(yspeed * yspeed) / (2 * abs(y - ystart));
+            y+= 3;
+            r = instance_create(x, y, objBuzzshockWings);
+            r.depth = depth + 10;
+            r.parent = id;
+            l = instance_create(x, y, objBuzzshockWings);
+            l.depth = depth - 10;
+            l.offset = 2;
+            l.parent = id;
+            visible = 1;
+        }
+        if (y &gt;= ystart &amp;&amp; bzztTimer &gt;= 45)
+        {
+            if (bzztTimer &lt; 600) bzztTimer = 600;
+            y = ystart;
+            yspeed = 0;
+            grav = 0;
+            blockCollision = 0;
+        }
+        if (bzztTimer = 630)
+        {
+            bzztTimer = 0;
+            isIntro = false;
+            playSFX(sfxMechaDragon);
+        }
     }
 }
 if (entityCanStep())
 {
-    if (instance_exists(target)) 
-        tx = target.x;
-    if (!instance_exists(objBuzzshockWings))
-    {
-        r = instance_create(x, y, objBuzzshockWings);
-        r.depth = depth + 10;
-        r.parent = id;
-        l = instance_create(x, y, objBuzzshockWings);
-        l.depth = depth - 10;
-        l.offset = 2;
-        l.parent = id;
-    }
-    if (floor(blastImg) &gt; 0) 
-        blastImg-= 1/3;
-    else 
-        blastImg = 0;
     if (isFight)
     {
         bzztTimer++;
+        if (instance_exists(target)) 
+            tx = target.x;
+        if (!instance_exists(objBuzzshockWings))
+        {
+            
+        }
+        if (phase &lt; 4)
+        {
+            if (floor(blastImg) &gt; 0) 
+                blastImg-= 1/3;
+            else 
+                blastImg = 0;
+        }
         switch (phase)
         {
-            case 0:
+            case 0: // plug stream
                 if (bzztTimer = 30)
                 {
                     image_index = 1;
@@ -175,7 +197,7 @@ if (entityCanStep())
                     phase = 1;
                 }
                 break;
-            case 1:
+            case 1: // wiggle up and parabola
                 if (bzztTimer = 30)
                 {
                     middlePoint = x;
@@ -184,8 +206,6 @@ if (entityCanStep())
                 }
                 if (bzztTimer &gt; 30 &amp;&amp; !shotsDone)
                 {
-                    //xVal-= 3;
-                    //x = middlePoint + round(cos(degtorad(xVal)) * 32);
                     if (y &gt; view_yview + 16)
                     {
                         xVal-= (3 * image_xscale);
@@ -263,7 +283,7 @@ if (entityCanStep())
                     y = view_yview - 96;
                 }
                 break;
-            case 2:
+            case 2: // whoosh
                 if (bzztTimer = 30)
                 {
                     yspeed = 4;
@@ -279,7 +299,7 @@ if (entityCanStep())
                     bzztTimer = 0;
                 }
                 break;
-            case 3:
+            case 3: // spark and lightning
                 if (bzztTimer = 30 || bzztTimer = 150 || bzztTimer = 270)
                 {
                     playSFX(sfxDoor);
@@ -302,7 +322,7 @@ if (entityCanStep())
                 if (bzztTimer = 60 || bzztTimer = 180 || bzztTimer = 300)
                 {
                     playSFX(sfxAirShooter);
-                    s = instance_create(x + (68 * image_xscale), y - 28,
+                    s = instance_create(x + (68 * image_xscale), y - 18,
                     objBuzzshockSpark);
                     s.dir = -image_xscale;
                 }
@@ -312,6 +332,70 @@ if (entityCanStep())
                     phase = 0;
                 } 
                 break;
+            case 4: //moving to center of room
+                x = xVal + round(cos(degtorad(irandom(360))) * 4);
+                y = middlePoint + round(sin(degtorad(irandom(360))) * 4);
+                visible = choose(0, 0, 1);
+                if (bzztTimer % 4 = 0)
+                {
+                    playSFX(sfxExplosion);
+                    instance_create(x + (54 * image_xscale) + 
+                    irandom_range(-16, 16), y + 41 + irandom_range(-16,16),
+                    objExplosion);
+                }
+                if (bzztTimer = 30)
+                {
+                    var xscaleOff;
+                    if (image_xscale &gt; 0)
+                        xscaleOff = -48;
+                    else
+                        xscaleOff = 48;
+                    blastImg = abs(xVal - (view_xview + 128 + xscaleOff)) / 60;
+                    if (xVal &gt; view_xview + 128 + xscaleOff)
+                        blastImg = -blastImg;
+                    shotsDone = abs(middlePoint - (view_yview + 48)) / 60;
+                    if (middlePoint &gt; view_yview + 48)
+                        shotsDone = -shotsDone;
+                }
+                if (bzztTimer &gt;= 30)
+                {
+                    xVal+= blastImg;
+                    middlePoint+= shotsDone;
+                }
+                if (bzztTimer = 120)
+                {
+                    blastImg = 0;
+                    shotsDone = 0;
+                }
+                if (bzztTimer = 180)
+                {
+                    with (objBuzzshockWings) instance_destroy();
+                    for (i = -2; i &lt;= 2; i++)
+                    {
+                        if (i != 0)
+                        {
+                            m = instance_create(x, y, objEnemyBullet);
+                            m.image_xscale = image_xscale;
+                            if (i % 2 = 0)
+                            {
+                                m.sprite_index = sprBuzzshockWings;
+                                m.image_index = 2 + i;
+                                m.xspeed = 2 * i;
+                            }
+                            else
+                            {
+                                m.sprite_index = sprBuzzshock;
+                                m.image_index = 4 - (2 * (i &gt; 0));
+                                m.xspeed = (2 * image_xscale) * i;
+                            }
+                            m.yspeed = -3;
+                            m.grav = .2;
+                            m.contactDamage = 0;
+                        }
+                    }
+                    playSFX(sfxExplosion2);
+                    event_user(EV_DEATH);
+                }
         }
     }
 }
@@ -362,12 +446,38 @@ x + 108 * image_xscale, y + 76, other.id, false, false))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (objBuzzshockWings)
+            <string>if (phase &lt; 4)
 {
-    instance_create(x, y, objExplosion);
-    instance_destroy();
+    stopMusic();
+    with (prtEnemyProjectile)
+    {
+        instance_create(x, y, objExplosion);
+        instance_destroy();
+    }
+    with (objRingRing)
+    {
+        instance_create(x, y, objExplosion);
+        instance_destroy();
+    }
+    with (objBuzzshockSpark)
+    {
+        instance_create(x, y, objExplosion);
+        instance_destroy();
+    }
+    bzztTimer = 0;
+    grav = 0;
+    blastImg = 0;
+    shotsDone = 0;
+    yspeed = 0;
+    xspeed = 0;
+    xVal = x ;
+    middlePoint = y;
+    canHit = 0;
+    canDamage = 0;
+    phase = 4;
 }
-event_inherited();
+else
+    event_inherited();
 </string>
           </argument>
         </arguments>
@@ -401,8 +511,9 @@ else
     draw_sprite_ext(sprite_index, 4, x, y, image_xscale, 1, 0, 
         make_color_rgb(248, 112, 176), 1);
 }
-if (blastImg)
+if (blastImg &amp;&amp; phase &lt; 4)
     draw_sprite(sprExplosion, 5 - blastImg, x + 78 * image_xscale, y + 44);
+
 </string>
           </argument>
         </arguments>

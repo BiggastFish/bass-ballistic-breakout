@@ -39,6 +39,14 @@ if (init)
             skullHeight = 0 ;*/ 
             teleportTimer = 0;
             break;
+        case 12: // break in through window
+            landy = y;
+            y = view_yview + view_hview + 32;
+            dieToPit = false;
+            global.lockTransition = true;
+            teleportTimer = 0;
+            blockCollision = 0;
+            break;
         default:
             landy = y;
             y = view_yview - 32;
@@ -342,5 +350,68 @@ else
                 }
             }
             break;
+        case 12:
+            if (teleportTimer = 0)
+            {
+                introFakeGrav = .25;
+                introFakeYspeed = -sqrt(abs(2*.25*abs(y - (landy - 64))));
+                
+                teleportTimer = 1;
+            }
+            else
+            {
+                // apply simulated gravity + yspeed. regular gravity has to stay locked for some reason
+                y += introFakeYspeed;
+                introFakeYspeed += introFakeGrav;
+                if (teleportTimer = 1 && introFakeYspeed > 0)
+                {
+                    playSFX(sfxCentaurFlash);
+                    for (i = -3; i < 4; i++)
+                    {
+                        f = instance_create(view_xview + 128 + (24 * i), 
+                        view_yview + 112 + irandom_range(-32, 32), objEnemyBullet);
+                        f.sprite_index = sprChillBlockShards;
+                        f.image_index = irandom(2);
+                        f.contactDamage = 0;
+                        f.grav = .25;
+                        f.yspeed = -3;
+                        f.xspeed = random_range(-1, 1);
+                    }
+                    tile_layer_hide(-30);
+                    tile_layer_show(1100000);
+                    teleportTimer = 2;
+                }
+            }
+
+            // set sprites
+            canSpriteChange = 1;
+            ground = false;
+            playerHandleSprites("Normal");
+            canSpriteChange = 0;
+            
+            if (introFakeYspeed > 0 && round(y) >= landy)
+            {
+                y = landy; // reset position
+                introFakeGrav = 0;
+                yspeed = introFakeYspeed;
+                
+                blockCollision = true;
+                checkGround();
+
+                playSFX(sfxLand);
+                introFakeYspeed = 0;
+                
+                // cancel animation + release player
+                teleporting = false;
+                teleportTimer = 0;
+                teleportLock = lockPoolRelease(teleportLock);
+                
+                canHit = true;
+                iFrames = 0;
+                dieToPit = true;
+                
+                global.lockTransition = false;
+                exit;
+            }
     }
 }

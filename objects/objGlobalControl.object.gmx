@@ -1476,10 +1476,10 @@ depth = depthstart;
                         mySecondaryColor = global.nesPalette[min(54, (healthBarSecondaryColor[1] + (healthBarColorSkip * (currentExtraHealthBar))))];
                     }
                 }
-                draw_sprite_ext(sprDot, 0, (bx+23) + ((i - (currentExtraHealthBar * healthpointsStart)) * 112/healthpointsStart) 
-                - 112/healthpointsStart, byx + 10, 112/healthpointsStart, 1, 0, myPrimaryColor, 1);
-                draw_sprite_ext(sprDot, 0, (bx+24) + ((i - (currentExtraHealthBar * healthpointsStart)) * 112/healthpointsStart) 
-                - 112/healthpointsStart, byx + 11, 112/healthpointsStart, 1, 0, mySecondaryColor, 1);
+                draw_sprite_ext(sprDot, 0, (bx+4) + ((i - (currentExtraHealthBar * healthpointsStart)) * 138/healthpointsStart) 
+                - 138/healthpointsStart, byx + 3, 138/healthpointsStart, 12, 0, myPrimaryColor, 1);
+                draw_sprite_ext(sprDot, 0, (bx+4) + ((i - (currentExtraHealthBar * healthpointsStart)) * 138/healthpointsStart) 
+                - 138/healthpointsStart, byx + 5, 138/healthpointsStart, 3, 0, mySecondaryColor, 1);
                 
             }
             healthIndex += 1;

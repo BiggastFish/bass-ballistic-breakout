@@ -129,7 +129,7 @@ if (entityCanStep())
         {
             img = 0;
             stopped = 0;
-            playSFX(sfxBlockDevilLaser);
+            if (insideView()) playSFX(sfxBlockDevilLaser);
         }
     }
     image_index+= 1/6;

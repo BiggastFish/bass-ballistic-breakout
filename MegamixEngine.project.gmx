@@ -1389,6 +1389,7 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\bgNESPalette</background>
     <backgrounds name="QuadrantSize">
       <background>background\bgQuadMM1_6</background>
       <background>background\bgQuadMM9_10</background>
@@ -1425,7 +1426,11 @@
         <background>background\tstPharohManStars3</background>
       </backgrounds>
     </backgrounds>
-    <background>background\bgNESPalette</background>
+    <backgrounds name="Bass Ballistic Breakout">
+      <backgrounds name="Static Shock">
+        <background>background\tstStaticShock</background>
+      </backgrounds>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -2355,7 +2360,7 @@
     <room>rooms\lvlCopyThisRoom</room>
     <room>rooms\lvlCutMan</room>
     <room>rooms\lvlPharaohMan</room>
-    <room>rooms\lvlPhysicsTest</room>
+    <room>rooms\lvlStaticShock</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmOptions</room>

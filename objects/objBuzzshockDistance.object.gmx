@@ -8,7 +8,7 @@
   <parentName>prtAlwaysActive</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="2">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -27,13 +27,14 @@
             <kind>1</kind>
             <string>if (place_meeting(x, y, objMegaman))
 {
-    f = instance_create(view_xview + 32, view_yview + 112, objEnemyBullet);
-    f.sprite_index = sprBuzzshockTiny;
-    f.contactDamage = 0;
-    f.xspeed = 6;
     playSFX(sfxTornadoBlow);
     playSFX(sfxGutsQuake);
     screenShake(60, 4, 4);
+    f = instance_create(view_xview + 32, view_yview + 112, objEnemyBullet);
+    f.sprite_index = sprBuzzshockTiny;
+    f.depth = 1300000;
+    f.contactDamage = 0;
+    f.xspeed = 6;
     instance_destroy();
 }
 </string>
