@@ -163,11 +163,12 @@ viewPlayer = 1;
 
 //Jump Counter
 jumpCounter = 0;
-jumpCounterMax = 1; //If you want multiple jumps then increase this
+jumpCounterMax = 2; //If you want multiple jumps then increase this
 
 //Dash things
 dashSlide = false; // Dash enabled?
 dashJumped = false;
+ladderJumped = false;
 multiJumpDashCancel = true; //controls whether dash momentum is removed after multiple jumps.
 
 //Contact Damage Multiplier

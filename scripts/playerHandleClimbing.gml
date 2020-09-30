@@ -8,7 +8,7 @@ if (!playerIsLocked(PL_LOCK_CLIMB))
 {
     if (((instance_exists(ladder) && gravDir == -yDir)
         || (instance_exists(ladderDown) && gravDir == yDir && ground))
-        && !climbing)
+        && !climbing && (!ladderJumped || yspeed >= 0 && ladderJumped))
     {
         // begin climbing:
         xspeed = 0;
@@ -21,8 +21,8 @@ if (!playerIsLocked(PL_LOCK_CLIMB))
             slideTimer = 0;
             shiftObject(0, -gravDir, 1);
         }
-        
-        climbing = true;
+        ladderJumped = 0;
+        climbing = 1;
         
         if (instance_exists(ladder))
         {
@@ -91,7 +91,7 @@ if (!playerIsLocked(PL_LOCK_CLIMB))
         }
         
         // Releasing the ladder
-        var jump = global.keyJumpPressed[playerID] && yDir != -gravDir && !playerIsLocked(PL_LOCK_CLIMB);
+        var jump = global.keyJumpPressed[playerID] && !playerIsLocked(PL_LOCK_CLIMB);
         if ((ground && yDir == gravDir) || !place_meeting(bbox_left, y, objLadder) || !place_meeting(bbox_right, y, objLadder) || jump)
         {
             var climbedUp=false;
@@ -107,6 +107,17 @@ if (!playerIsLocked(PL_LOCK_CLIMB))
     
             climbing = false;
             yspeed = 0;
+            ladderJumped = 1;
+            if (jump && !global.keyDown[playerID])
+            {
+                if global.keySlide[playerID]
+                {
+                    playSFX(sfxDash);
+                    dashJumped = true;
+                }
+                jumpCounter--;
+                playerJump();
+            }
             isSlide = false;
             climbLock = lockPoolRelease(climbLock);
             shootStandStillLock = lockPoolRelease(shootStandStillLock);

@@ -203,7 +203,7 @@ else
           <argument>
             <kind>1</kind>
             <string>f = instance_create(x, y, objSingleLoopEffect);
-f.sprite_index = sprShine;
+f.sprite_index = sprBassBulletBreak;
 f.image_speed = .5;
 </string>
           </argument>

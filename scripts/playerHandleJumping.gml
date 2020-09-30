@@ -11,7 +11,7 @@ if (!playerIsLocked(PL_LOCK_JUMP))
     {
         if (ground || jumpCounter < jumpCounterMax)
         {
-                playerJump();
+            playerJump();
         }
     }
     else if (!global.keyJump[playerID]) // Minjumping (lowering jump when the jump button is released)

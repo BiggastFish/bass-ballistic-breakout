@@ -122,9 +122,13 @@ if (place_free(x, y))
             ground = false;
             if object_index == (objMegaman)
             {
-                if jumpCounter == 0
+                if jumpCounter = 0
                 {
                     jumpCounter += 1;
+                    if isSlide
+                    {
+                        dashJumped = 1;
+                    }
                 }
             }
         }

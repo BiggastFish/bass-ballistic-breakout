@@ -6,7 +6,7 @@ if (canDamage)
 if (checkSolid(0, 0))
 {
     f = instance_create(x, y, objSingleLoopEffect);
-    f.sprite_index = sprShine;
+    f.sprite_index = sprBassBulletBreak;
     f.image_speed = .5;
     instance_destroy();
 }

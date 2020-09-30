@@ -108,7 +108,7 @@ if (global.keyShootPressed[playerID] &amp;&amp; !playerIsLocked(PL_LOCK_SHOOT) &
             isShoot = 3;
             if (i)
             {
-                i.yspeed = -5 + (2 * (z % 2 = 0)) * image_yscale;
+                i.yspeed = -6 + (2 * (z % 2 = 0)) * image_yscale;
                 i.xspeed = (1 + (.5 * (z % 2 = 0))) * z;
                 i.image_xscale = sign(z);
             }

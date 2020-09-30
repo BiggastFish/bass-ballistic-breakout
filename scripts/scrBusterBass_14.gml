@@ -1,7 +1,7 @@
 var bulletLimit = 4;
 var weaponCost = 0;
 var action = 1; // 0 - no frame; 1 - shoot; 2 - throw; 3 - upwards aim; 4 - upwards diagonal aim; 5 - downwards diagonal aim;
-var xOffset = 16;
+var xOffset = 26;
 var yOffset = 0;
 var willStop = 1; // If this is 1, the player will halt on shooting ala Metal Blade.
 
@@ -15,14 +15,14 @@ if yDir == -1 && xDir == 0
 else if yDir == -1 && xDir != 0
 { 
     action = 4;
-    xOffset = 13;
-    yOffset = -6;
+    xOffset = 20;
+    yOffset = -10;
 }
 else if yDir 
 {
     action = 5;
-    xOffset = 14;
-    yOffset = 6;
+    xOffset = 20;
+    yOffset = 10;
 }
 if (!global.lockBuster)
 {
@@ -44,7 +44,7 @@ if (!global.lockBuster)
         {
             i.sprite_index = sprBassBullet;
             i.dir = 0;
-            i.contactDamage = 1 + (.5 * dashJumped);
+            i.contactDamage = 1 + (dashJumped);
         
             if (image_xscale < 0)
             {

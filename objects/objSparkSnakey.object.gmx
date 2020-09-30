@@ -85,9 +85,9 @@ if (entityCanStep())
         }
     }
     attackTimer++;
-    if (attackTimer = 40) image_index = 1;
-    if (attackTimer = 50) image_index = 0;
-    if (attackTimer = 60) 
+    if (attackTimer = 60) image_index = 1;
+    if (attackTimer = 70) image_index = 0;
+    if (attackTimer = 80) 
     {
         playSFX(sfxElectricShot);
         image_index = 2;
@@ -102,7 +102,7 @@ if (entityCanStep())
                 aimAtTarget(3);
                 
     }
-    if (attackTimer = 70)
+    if (attackTimer = 90)
     {
         image_index = 0;
         attackTimer = 0;

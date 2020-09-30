@@ -85,16 +85,18 @@ if (entityCanStep())
         correctDirection(point_direction(bboxGetXCenter(), bboxGetYCenter(), megax, megay), 2);
     }
 }
-else
+else 
 {
-    image_speed = 0;
+    if (iceTimer &gt; 0)
+    {
+        image_speed = 0;
+        speed = 0;
+    }
     if (dead)
     {
         megax = -1;
         megay = -1;
     }
-    
-    speed = 0;
 }
 </string>
           </argument>

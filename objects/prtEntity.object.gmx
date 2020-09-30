@@ -90,6 +90,7 @@ ground = true;
 
 // should the movement scripts block this object's movement at walls? If false, this object will be able to phase through walls.
 blockCollision = true;
+checkForTopSolid = true;
 dieToSpikes = false;
 sinkin = 1;
 xcoll = 0;

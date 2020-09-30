@@ -83,7 +83,7 @@ if (global.playerHealth[playerID] <= 0)
             global.respawnTimer[playerID] = global.respawnTime * max(1,
                 instance_exists(prtBoss) * global.respawnTimeBoss);
         }
-        
+
         instance_destroy();
         global.frozen = false;
     }

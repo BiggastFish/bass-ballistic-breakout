@@ -9,7 +9,15 @@ if (!playerIsLocked(PL_LOCK_PHYSICS))
     playLandSound += 1;
     
     checkGround();
-    
+
+    if ladderJumped
+    {
+        if ground
+        {
+            ladderJumped = 0;
+        }
+    }
+
     playerHandleMovement();
     
     if (instance_exists(statusObject))

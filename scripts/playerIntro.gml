@@ -372,7 +372,7 @@ else
                         view_yview + 112 + irandom_range(-32, 32), objEnemyBullet);
                         f.sprite_index = sprChillBlockShards;
                         f.image_index = irandom(2);
-                        f.contactDamage = 0;
+                        f.canDamage = 0;
                         f.grav = .25;
                         f.yspeed = -3;
                         f.xspeed = random_range(-1, 1);

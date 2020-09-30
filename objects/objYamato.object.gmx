@@ -70,7 +70,8 @@ if (!instance_exists(parent))
 }
 else if (!judgmentCut)
 {   
-    image_xscale = parent.image_xscale;
+    if (!parent.climbing)
+        image_xscale = parent.image_xscale;
     if (parent.isSlide)
     {
         x = parent.x + (32 * image_xscale);

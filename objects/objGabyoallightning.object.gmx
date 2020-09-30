@@ -37,8 +37,8 @@ imageSpd = image_speed;
 stopped = false;
 alarmStop = -1;
 
+init = 1;
 moveSpd = 1;
-
 sparkXscale = choose(-1, 1);
 startDir = choose(-1, 1);
 dir = startDir;
@@ -68,7 +68,13 @@ laserBottom = x;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>if (init)
+{
+    dir = startDir;
+    init = 0;
+}
+
+event_inherited();
 
 if (entityCanStep()) 
 {
@@ -137,12 +143,19 @@ if (entityCanStep())
         xspeed = 0;
         
 } 
-else if (dead)
+else 
 {
-    dir = startDir;
-    alarmStop = 0;
-    stopped = 0;
-    img = 0;
+    if (iceTimer &gt; 0)
+    {
+        if (img &gt; 0) img-= .25;
+    }
+    if (dead)
+    {
+        dir = startDir;
+        alarmStop = 0;
+        stopped = 0;
+        img = 0;
+    }
 }
 </string>
           </argument>
@@ -170,7 +183,24 @@ else if (dead)
 stopped = true;
 if (img &gt; 2) img = 2;
 playSFX(sfxEnemyHit);
-healthpoints = 256;
+if (other.object_index != objYamato) healthpoints = 256;
+else
+{
+    event_user(EV_DEATH);
+    var _i;
+    _i = instance_create(x, y, objSlashEffect);
+    _i.sprite_index = sprite_index;
+    _i.image_index = image_index;
+    _i.image_xscale = image_xscale;
+    _i.image_yscale = image_yscale;
+    _i.half = 'top';
+    _i = instance_create(x, y, objSlashEffect);
+    _i.sprite_index = sprite_index;
+    _i.image_index = image_index;
+    _i.image_xscale = image_xscale;
+    _i.image_yscale = image_yscale;
+    _i.half = 'bottom';
+}
 </string>
           </argument>
         </arguments>

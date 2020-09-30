@@ -1359,32 +1359,48 @@
     <sprites name="Bass Ballistic Breakout">
       <sprite>sprites\sprBossHealthHud</sprite>
       <sprite>sprites\sprBassJumpPoof</sprite>
-      <sprites name="Static Shock">
-        <sprite>sprites\sprShockingSnakey</sprite>
-        <sprite>sprites\sprChargingChester</sprite>
-        <sprite>sprites\sprrGabyoallectro</sprite>
-        <sprite>sprites\sprRingRing</sprite>
-        <sprite>sprites\sprTossMachine</sprite>
-        <sprites name="Projectiles">
-          <sprite>sprites\sprChargingChesterSpark</sprite>
-          <sprite>sprites\sprGabyoallightningLightning</sprite>
-          <sprite>sprites\sprTosserRock</sprite>
-        </sprites>
-        <sprites name="Boss">
-          <sprite>sprites\sprBuzzshock</sprite>
-          <sprite>sprites\sprBuzzshockTiny</sprite>
-          <sprite>sprites\sprBuzzshockWings</sprite>
-          <sprite>sprites\sprElecnSpark</sprite>
-          <sprite>sprites\sprBuzzshockSpark</sprite>
-        </sprites>
-      </sprites>
       <sprites name="Weapons">
         <sprite>sprites\sprBassBullet</sprite>
+        <sprite>sprites\sprBassBulletBreak</sprite>
         <sprite>sprites\sprSeedBomb</sprite>
         <sprite>sprites\sprWeaponIconsSeedBomb</sprite>
+        <sprite>sprites\sprCoinSpread</sprite>
+        <sprite>sprites\sprWeaponIconsCoinSpread</sprite>
+        <sprite>sprites\sprGlowingSpiral</sprite>
+        <sprite>sprites\sprWeaponIconsGlowingSpiral</sprite>
         <sprite>sprites\sprYamato</sprite>
         <sprite>sprites\sprJudgmentCut</sprite>
         <sprite>sprites\sprWeaponIconsYamato</sprite>
+        <sprite>sprites\sprOilSlideRight</sprite>
+        <sprite>sprites\sprOilSlideLeft</sprite>
+        <sprite>sprites\sprOilSlide</sprite>
+        <sprite>sprites\sprWeaponIconsOilSlide</sprite>
+      </sprites>
+      <sprites name="Stages">
+        <sprites name="Static Shock">
+          <sprite>sprites\sprShockingSnakey</sprite>
+          <sprite>sprites\sprChargingChester</sprite>
+          <sprite>sprites\sprrGabyoallectro</sprite>
+          <sprite>sprites\sprRingRing</sprite>
+          <sprite>sprites\sprTossMachine</sprite>
+          <sprites name="Projectiles">
+            <sprite>sprites\sprChargingChesterSpark</sprite>
+            <sprite>sprites\sprGabyoallightningLightning</sprite>
+            <sprite>sprites\sprTosserRock</sprite>
+          </sprites>
+          <sprites name="Boss">
+            <sprite>sprites\sprBuzzshock</sprite>
+            <sprite>sprites\sprBuzzshockTiny</sprite>
+            <sprite>sprites\sprBuzzshockWings</sprite>
+            <sprite>sprites\sprElecnSpark</sprite>
+            <sprite>sprites\sprBuzzshockSpark</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Money Machine">
+          <sprite>sprites\sprGoldonBatton</sprite>
+          <sprite>sprites\sprGoldonBattonDebris</sprite>
+          <sprite>sprites\sprHellcart</sprite>
+        </sprites>
       </sprites>
     </sprites>
   </sprites>
@@ -2247,6 +2263,9 @@
           <object>objects\objBusterShotHalfChargedProto</object>
           <object>objects\objBusterShotChargedProto</object>
           <object>objects\objSeedBomb</object>
+          <object>objects\objCoinSpread</object>
+          <object>objects\objGlowingSpiral</object>
+          <object>objects\objOilSlide</object>
           <object>objects\objYamato</object>
           <object>objects\objSuperArm</object>
           <object>objects\objMetalBlade</object>
@@ -2336,8 +2355,8 @@
       <object>objects\objTracker</object>
       <object>objects\objTrailEffect</object>
       <object>objects\objStopScrollingMaker</object>
-      <object>objects\objBuzzshockDistance</object>
       <objects name="Static Shock">
+        <object>objects\objBuzzshockDistance</object>
         <object>objects\objSparkSnakey</object>
         <object>objects\objChargingChester</object>
         <object>objects\objGabyoallightning</object>
@@ -2353,6 +2372,10 @@
           <object>objects\objBuzzshockSpark</object>
         </objects>
       </objects>
+      <objects name="Money Machine">
+        <object>objects\objGoldonBatton</object>
+        <object>objects\objHellcart</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -2361,6 +2384,7 @@
     <room>rooms\lvlCutMan</room>
     <room>rooms\lvlPharaohMan</room>
     <room>rooms\lvlStaticShock</room>
+    <room>rooms\lvlMoneyMachine</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmOptions</room>
