@@ -48,28 +48,19 @@ tx = x;
 
 
 // Music
-music = "Mega_Man_2.nsf";
-musicType = "VGM";
-musicTrackNumber = 17;
+music = "HoTDBoss.ogg";
+musicType = "OGG";
+musicTrackNumber = 0;
+musicVolume = 0.8;
+musicLoop = true;
+musicLoopSecondsStart = 6.665;
+musicLoopSecondsEnd = 70.655;
 
 // Damage Tables
 enemyDamageValue(objBusterShotHalfCharged, 1);
 enemyDamageValue(objBusterShotCharged, 3);
 enemyDamageValue(objYamato, 3);
-
-enemyDamageValue(objSuperArmBlockProjectile, 1);
-enemyDamageValue(objSuperArmDebris, 1);
-enemyDamageValue(objMetalBlade, 0);
-enemyDamageValue(objTopSpin, 0);
-enemyDamageValue(objSparkShock, 2);
-enemyDamageValue(objSearchSnake, 0);
-enemyDamageValue(objPharaohShot, 2);
-enemyDamageValue(objHornetChaser, 2);
-enemyDamageValue(objJewelSatellite, 4);
-enemyDamageValue(objGrabBuster, 1);
-enemyDamageValue(objTenguBlade, 2);
-enemyDamageValue(objTenguDash, 0);
-enemyDamageValue(objTenguDisk, 2);
+enemyDamageValue(objKnuckleSandwich, 10);
 </string>
           </argument>
         </arguments>
@@ -321,9 +312,11 @@ if (entityCanStep())
                 if (bzztTimer = 60 || bzztTimer = 180 || bzztTimer = 300)
                 {
                     playSFX(sfxAirShooter);
-                    s = instance_create(x + (68 * image_xscale), y - 18,
+                    s = instance_create(x + (68 * image_xscale), y + 15,
                     objBuzzshockSpark);
+                    s.depth = depth + 5;
                     s.dir = -image_xscale;
+                    s.yMov = y - 18;
                 }
                 if (bzztTimer &gt;= 300 &amp;&amp; !instance_exists(objBuzzshockSpark))
                 {

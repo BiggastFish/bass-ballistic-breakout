@@ -28,6 +28,7 @@
             <string>event_inherited();
 
 bulletLimitCost = 1;
+despawnRange = -1;
 
 contactDamage = 4;
 
@@ -38,6 +39,8 @@ blockCollision = 1;
 grav = .25;
 
 playSFX(sfxCannonShoot);
+if (checkSolid(0, 0))
+    event_user(0);
 </string>
           </argument>
         </arguments>
@@ -66,13 +69,9 @@ if (!global.frozen)
 {
     image_index+= .4;
     if (ycoll != 0 || xcoll != 0)
-    {
-        playSFX(sfxBalladeCrackerExplosion);
-        e = instance_create(x, y, objHarmfulExplosion);
-        e.damagePlayer = 0;
-        e.damageEnemies = 1;
+        event_user(0);
+    if (bbox_top &gt; view_yview + 224)
         instance_destroy();
-    }
 }
 </string>
           </argument>
@@ -104,7 +103,7 @@ if (global.keyShootPressed[playerID] &amp;&amp; !playerIsLocked(PL_LOCK_SHOOT) &
     {
         if (z != 0)
         {
-            i = fireWeapon(5, -11, objSeedBomb, 4, 4 * (z = -2), 1, 0);
+            i = fireWeapon(5, -11, objSeedBomb, 8, 2 * (z == -2), 1, 0);
             isShoot = 3;
             if (i)
             {
@@ -161,7 +160,7 @@ specialDamageValue("grounded", 3);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>weaponSetup("SEED BOMB", make_color_rgb(48, 216, 48), make_color_rgb(109, 248, 140), sprWeaponIconsSeedBomb);
+            <string>weaponSetup("SEED BOMB", make_color_rgb(48, 216, 48), make_color_rgb(184, 248, 24), sprWeaponIconsSeedBomb);
 </string>
           </argument>
         </arguments>
@@ -184,10 +183,55 @@ specialDamageValue("grounded", 3);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>event_user(0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="17">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_user(0);
+playSFX(sfxReflect);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>playSFX(sfxBalladeCrackerExplosion);
-e = instance_create(x, y, objHarmfulExplosion);
-e.damagePlayer = 0;
-e.damageEnemies = 1;
+instance_create(x, y, objWeaponExplosion);
 instance_destroy();
 </string>
           </argument>

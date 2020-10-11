@@ -33,10 +33,6 @@ contactDamage = 2;
 
 penetrate = 0;
 pierces = 0;
-indicator = 0;
-xcollCheck = 0;
-ycollCheck = 0;
-dirCorrection = -1;
 
 blockCollision = 1;
 checkForTopSolid = 0;
@@ -50,6 +46,11 @@ db = 0;
 _velX = 0;
 _velY = 0;
 _prevCollision = true;
+if (checkSolid(0, 0))
+{
+    instance_create(x, y, objExplosion);
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -155,12 +156,11 @@ if (!global.frozen)
     {
         if (z != 0)
         {
-            i = fireWeapon(16, 0, objCoinSpread, 6, 4 * (z = -3), 1, 0);
+            i = fireWeapon(16, 0, objCoinSpread, 6, 3 * (z = -3), 1, 0);
             if (i)
             {
                 i.angle = 0 + (180 * (image_xscale &lt; 0)) + (z * 15);
                 i.dir = image_xscale;
-                i.indicator = z;
             }
         }
     }
@@ -211,7 +211,7 @@ specialDamageValue("grounded", 3);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>weaponSetup("COIN SPREAD", make_color_rgb(216, 40, 0), make_color_rgb(252, 152, 56), sprWeaponIconsCoinSpread);
+            <string>weaponSetup("COIN SPREAD", make_color_rgb(132, 0, 207), make_color_rgb(140, 255, 247), sprWeaponIconsCoinSpread);
 </string>
           </argument>
         </arguments>

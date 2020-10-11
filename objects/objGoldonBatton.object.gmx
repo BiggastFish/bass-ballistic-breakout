@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-healthpointsStart = 4;
+healthpointsStart = 3;
 healthpoints = healthpointsStart;
 contactDamage = 3;
 

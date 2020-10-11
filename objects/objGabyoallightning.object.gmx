@@ -107,7 +107,7 @@ if (entityCanStep())
         with (objMegaman)
             if (collision_rectangle(other.x - 8, other.laserTop, other.x + 8,
             other.laserBottom, id, 0, 0))
-                if !iFrames &amp;&amp; canHit
+                if iFrames = 0 &amp;&amp; canHit
                     playerGetHit(other.contactDamage);
     }
     
@@ -183,24 +183,8 @@ else
 stopped = true;
 if (img &gt; 2) img = 2;
 playSFX(sfxEnemyHit);
-if (other.object_index != objYamato) healthpoints = 256;
-else
-{
-    event_user(EV_DEATH);
-    var _i;
-    _i = instance_create(x, y, objSlashEffect);
-    _i.sprite_index = sprite_index;
-    _i.image_index = image_index;
-    _i.image_xscale = image_xscale;
-    _i.image_yscale = image_yscale;
-    _i.half = 'top';
-    _i = instance_create(x, y, objSlashEffect);
-    _i.sprite_index = sprite_index;
-    _i.image_index = image_index;
-    _i.image_xscale = image_xscale;
-    _i.image_yscale = image_yscale;
-    _i.half = 'bottom';
-}
+if (other.object_index != objYamato &amp;&amp; other.object_index != objKnuckleSandwich) 
+healthpoints = 256;
 </string>
           </argument>
         </arguments>

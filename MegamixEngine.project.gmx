@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="168" name="datafiles">
+  <datafiles number="169" name="datafiles">
     <datafile>
       <name>CleanMem.dll</name>
       <exists>-1</exists>
@@ -55,7 +55,7 @@
       </ConfigOptions>
       <filename>GMFMODSimple.dll</filename>
     </datafile>
-    <datafiles number="168" name="Music">
+    <datafiles number="169" name="Music">
       <datafile>
         <name>Mega_Man_1.nsf</name>
         <exists>-1</exists>
@@ -361,6 +361,23 @@
           </Config>
         </ConfigOptions>
         <filename>WilyIntro.ogg</filename>
+      </datafile>
+      <datafile>
+        <name>HoTDBoss.ogg</name>
+        <exists>-1</exists>
+        <size>3560549</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>HoTDBoss.ogg</filename>
       </datafile>
     </datafiles>
   </datafiles>
@@ -1375,6 +1392,13 @@
         <sprite>sprites\sprOilSlideLeft</sprite>
         <sprite>sprites\sprOilSlide</sprite>
         <sprite>sprites\sprWeaponIconsOilSlide</sprite>
+        <sprite>sprites\sprKnuckleSandwichDelay</sprite>
+        <sprite>sprites\sprWeaponIconsKnuckleSandwich</sprite>
+        <sprite>sprites\sprHungryBat</sprite>
+        <sprite>sprites\sprWeaponIconsHungryBat</sprite>
+        <sprite>sprites\sprSpringBlast</sprite>
+        <sprite>sprites\sprSpringBlastArrow</sprite>
+        <sprite>sprites\sprWeaponIconsSpringBlast</sprite>
       </sprites>
       <sprites name="Stages">
         <sprites name="Static Shock">
@@ -1393,13 +1417,25 @@
             <sprite>sprites\sprBuzzshockTiny</sprite>
             <sprite>sprites\sprBuzzshockWings</sprite>
             <sprite>sprites\sprElecnSpark</sprite>
-            <sprite>sprites\sprBuzzshockSpark</sprite>
+            <sprite>sprites\sprBuzzshockDrone</sprite>
           </sprites>
         </sprites>
         <sprites name="Money Machine">
           <sprite>sprites\sprGoldonBatton</sprite>
           <sprite>sprites\sprGoldonBattonDebris</sprite>
           <sprite>sprites\sprHellcart</sprite>
+          <sprite>sprites\sprDiglett</sprite>
+          <sprite>sprites\sprShiningWall</sprite>
+          <sprites name="Boss">
+            <sprite>sprites\sprGoldMan</sprite>
+            <sprite>sprites\sprGoldem</sprite>
+            <sprites name="Projectiles">
+              <sprite>sprites\sprGoldemWave</sprite>
+              <sprite>sprites\sprGoldManCoin</sprite>
+              <sprite>sprites\sprGoldManCoinSpread</sprite>
+              <sprite>sprites\sprGoldManDrop</sprite>
+            </sprites>
+          </sprites>
         </sprites>
       </sprites>
     </sprites>
@@ -2266,30 +2302,20 @@
           <object>objects\objCoinSpread</object>
           <object>objects\objGlowingSpiral</object>
           <object>objects\objOilSlide</object>
+          <object>objects\objKnuckleSandwich</object>
+          <object>objects\objHungryBat</object>
+          <object>objects\objSpringBlast</object>
           <object>objects\objYamato</object>
-          <object>objects\objSuperArm</object>
-          <object>objects\objMetalBlade</object>
-          <object>objects\objTopSpin</object>
-          <object>objects\objSparkShock</object>
-          <object>objects\objPharaohShot</object>
-          <object>objects\objSearchSnake</object>
-          <object>objects\objFlashStopper</object>
-          <object>objects\objHornetChaser</object>
-          <object>objects\objJewelSatellite</object>
-          <object>objects\objTenguBlade</object>
-          <object>objects\objGrabBuster</object>
           <object>objects\objRushCoil</object>
           <object>objects\objRushJet</object>
           <objects name="Misc.">
             <object>objects\objNormalBusterShot</object>
             <object>objects\objJudgmentCut</object>
             <object>objects\objProtoShield</object>
-            <object>objects\objSuperArmBlockProjectile</object>
-            <object>objects\objSuperArmDebris</object>
             <object>objects\objSparkShockParalyze</object>
-            <object>objects\objTenguDash</object>
-            <object>objects\objTenguDisk</object>
-            <object>objects\objGrabBusterPickup</object>
+            <object>objects\objBusterDelay</object>
+            <object>objects\objKnuckleSandwichDelay</object>
+            <object>objects\objSpringBlastArrow</object>
             <object>objects\objWeaponExplosion</object>
             <object>objects\objRushTeleport</object>
             <object>objects\objRushTeleportBlock</object>
@@ -2374,7 +2400,28 @@
       </objects>
       <objects name="Money Machine">
         <object>objects\objGoldonBatton</object>
+        <object>objects\objArcannon</object>
         <object>objects\objHellcart</object>
+        <objects name="Gimmicks">
+          <object>objects\objTreasureSpawner</object>
+          <object>objects\objTreasureUp</object>
+          <object>objects\objTreasureRight</object>
+          <object>objects\objTreasureDown</object>
+          <object>objects\objTreasureLeft</object>
+          <object>objects\objTreasureDelete</object>
+          <object>objects\objFloatingTreasure</object>
+          <object>objects\objShiningWall</object>
+        </objects>
+        <objects name="Boss">
+          <object>objects\objGoldMan</object>
+          <object>objects\objGoldem</object>
+          <objects name="Projectiles">
+            <object>objects\objGoldemWave</object>
+            <object>objects\objGoldManCoinSpread</object>
+            <object>objects\objGoldManDrop</object>
+            <object>objects\objGoldManSpark</object>
+          </objects>
+        </objects>
       </objects>
     </objects>
   </objects>

@@ -295,8 +295,10 @@ if (global.ammo[playerID, global.weapon[playerID]] &gt; 0)
         {
             exit;
         }
-        if (healthpoints - global.damage &lt;= 0)
+        if (healthpoints - global.damage &lt;= 0 || object_index = objGabyoallightning)
         {
+            if (object_index = objGabyoallightning)
+                event_user(EV_DEATH);
             var _i;
             _i = instance_create(x, y, objSlashEffect);
             _i.sprite_index = sprite_index;

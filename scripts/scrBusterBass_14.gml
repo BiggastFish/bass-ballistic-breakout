@@ -1,7 +1,7 @@
 var bulletLimit = 4;
 var weaponCost = 0;
 var action = 1; // 0 - no frame; 1 - shoot; 2 - throw; 3 - upwards aim; 4 - upwards diagonal aim; 5 - downwards diagonal aim;
-var xOffset = 26;
+var xOffset = 25;
 var yOffset = 0;
 var willStop = 1; // If this is 1, the player will halt on shooting ala Metal Blade.
 
@@ -10,25 +10,36 @@ if yDir == -1 && xDir == 0
 {
     action = 3;
     xOffset = 5;
-    yOffset = -11;
+    yOffset = -16;
 }
 else if yDir == -1 && xDir != 0
 { 
     action = 4;
     xOffset = 20;
-    yOffset = -10;
+    yOffset = -12;
+    if (climbing)
+    {
+        xOffset = 17;
+        yOffset = -11;
+    }
 }
 else if yDir 
 {
     action = 5;
     xOffset = 20;
-    yOffset = 10;
+    yOffset = 12;
+    if (climbing)
+    {
+        xOffset = 17;
+        yOffset = 11;
+    }
 }
 if (!global.lockBuster)
 {
     if (global.keyShoot[playerID] && !playerIsLocked(PL_LOCK_SHOOT))
     {
-        if shootTimer < 8
+        if shootTimer < 8 && (instance_exists(objBusterShot) 
+        || instance_exists(objBusterDelay))
         {
             shootTimer++
             exit;

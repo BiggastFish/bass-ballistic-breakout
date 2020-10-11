@@ -131,15 +131,6 @@ if (entityCanStep()){
                 entityIceFreeze(180, false, false, 1);
             }
         }
-        with (prtEnemyProjectile)
-        {
-            if (collision_rectangle(other.xs, view_yview, other.xs + 16*(other.size - 1), view_yview + view_hview,
-            self, false, false))
-            {
-                instance_create(x, y, objExplosion);
-                instance_destroy();
-            }
-        }
     }
     else
     {
@@ -174,6 +165,7 @@ if (entityCanStep()){
     i = fireWeapon(0, 0, objOilSlide, 1, 4, 2, 1);
     if (i)
     {
+        playSFX(sfxRushingWater);
         i.dir = image_xscale;
         i.timer = (i.size*view_wview/16/i.spd)*-1;
     }

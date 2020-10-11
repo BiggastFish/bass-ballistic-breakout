@@ -51,8 +51,8 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objDefaultSpawn" x="384" y="400" name="inst_D3E2D883" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="240" y="416" name="inst_D8C02700" locked="0" code="" scaleX="24" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objDefaultSpawn" x="304" y="624" name="inst_D3E2D883" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="240" y="416" name="inst_D8C02700" locked="0" code="" scaleX="30" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="608" y="320" name="inst_47CC8A5D" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="720" y="320" name="inst_06D8EE3A" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="512" y="320" name="inst_3684F8FB" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
@@ -60,8 +60,24 @@
     <instance objName="objGoldonBatton" x="544" y="352" name="inst_ACBD68CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHellcart" x="768" y="320" name="inst_B6CA50A6" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="240" y="192" name="inst_FCA78015" locked="0" code="" scaleX="3" scaleY="14" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="400" y="416" name="inst_A6822AA3" locked="0" code="yDir = -1;&#xA;treasureSpd = 1.5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureLeft" x="400" y="336" name="inst_1F0530B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureDelete" x="320" y="416" name="inst_3D7AED8B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objShiningWall" x="624" y="336" name="inst_3BF0B6D4" locked="0" code="" scaleX="2" scaleY="5" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureDown" x="320" y="336" name="inst_47B60A5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="256" y="560" name="inst_F991D758" locked="0" code="" scaleX="1" scaleY="21" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="496" y="560" name="inst_CE6913EE" locked="0" code="" scaleX="1" scaleY="21" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="272" y="864" name="inst_882651B5" locked="0" code="" scaleX="14" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objStopScrollingHorizontal" x="256" y="448" name="inst_4E35D94D" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objStopScrollingHorizontal" x="512" y="448" name="inst_F2D42C4A" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objDownScrolling" x="256" y="672" name="inst_B0FF7FCF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGoldMan" x="448" y="752" name="inst_DB55A6A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
-  <tiles/>
+  <tiles>
+    <tile bgName="bgBasic" x="400" y="416" w="16" h="16" xo="64" yo="48" id="11311317" name="inst_872BA0D0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgBasic" x="400" y="432" w="16" h="16" xo="64" yo="64" id="11311318" name="inst_4926B75C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgBasic" x="320" y="416" w="16" h="32" xo="64" yo="48" id="11311321" name="inst_C4ED9080" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+  </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>
   <PhysicsWorldLeft>0</PhysicsWorldLeft>
