@@ -1437,6 +1437,14 @@
             </sprites>
           </sprites>
         </sprites>
+        <sprites name="Whispering Woods">
+          <sprites name="Boss">
+            <sprite>sprites\sprPerfuma</sprite>
+            <sprite>sprites\sprPerfumaVine</sprite>
+            <sprite>sprites\sprPerfumaThorn</sprite>
+            <sprite>sprites\sprPerfumaSpike</sprite>
+          </sprites>
+        </sprites>
       </sprites>
     </sprites>
   </sprites>
@@ -1481,6 +1489,12 @@
     <backgrounds name="Bass Ballistic Breakout">
       <backgrounds name="Static Shock">
         <background>background\tstStaticShock</background>
+      </backgrounds>
+      <backgrounds name="Whispering Woods">
+        <background>background\bgPerfumaFrontTrees</background>
+        <background>background\bgPerfumaGround</background>
+        <background>background\bgPerfumaGrass</background>
+        <background>background\bgPerfumaBackTrees</background>
       </backgrounds>
     </backgrounds>
   </backgrounds>
@@ -2423,6 +2437,16 @@
           </objects>
         </objects>
       </objects>
+      <objects name="Whispering Woods">
+        <objects name="Boss">
+          <object>objects\objPerfuma</object>
+          <object>objects\objPerfumaVine</object>
+          <objects name="Projectiles">
+            <object>objects\objPerfumaSeedBomb</object>
+            <object>objects\objPerfumaThorn</object>
+          </objects>
+        </objects>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -2432,6 +2456,7 @@
     <room>rooms\lvlPharaohMan</room>
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlMoneyMachine</room>
+    <room>rooms\lvlWhisperingWoods</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmOptions</room>

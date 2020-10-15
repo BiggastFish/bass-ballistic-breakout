@@ -38,6 +38,7 @@ pierces = 0;
 blockCollision = 1;
 grav = .25;
 
+rotTimer = 0;
 playSFX(sfxCannonShoot);
 if (checkSolid(0, 0))
     event_user(0);
@@ -67,7 +68,9 @@ if (checkSolid(0, 0))
 
 if (!global.frozen)
 {
-    image_index+= .4;
+    rotTimer++;
+    if (rotTimer % 3 = 0)
+        image_angle+= 90 * image_xscale;
     if (ycoll != 0 || xcoll != 0)
         event_user(0);
     if (bbox_top &gt; view_yview + 224)
