@@ -127,10 +127,6 @@ if (entityCanStep())
             tx = target.x;
             ty = target.y;
         }
-        var yeah = view_xview + 128;
-        if (healthpoints &lt;= healthpointsStart/2 &amp;&amp; phase &lt; 3)
-        {
-        }
         with (objParallax)
         {
             if (myBG == bgPerfumaGround)
@@ -436,52 +432,26 @@ if (entityCanStep())
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+with (objPerfumaVine)
+{
+    instance_create(x, y, objExplosion);
+    instance_destroy();
+}
 with (prtEnemyProjectile)
 {
     instance_create(x, y, objExplosion);
     instance_destroy();
 }
-for (i = -1; i &lt; 2; i+= 2)
-{
-    m = instance_create(x, y, objEnemyBullet);
-    m.image_xscale = image_xscale;
-    m.sprite_index = sprite_index;
-    if (i &gt; 0)
-        m.image_index = 6;
-    else
-        m.image_index = 5;
-    m.yspeed = -3;
-    m.xspeed = 2 * (i * image_xscale);
-    m.grav = .2;
-    m.contactDamage = 0;
-    m.reflectable = 0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_inherited();
-/*draw_text(view_xview + 32, view_yview + 48, y - view_yview);
-draw_text(view_xview + 32, view_yview + 64, xspeed);
-draw_text(view_xview + 32, view_yview + 80, spd);
+with (objParallax)
+    xspeed = 0;
+m = instance_create(x, y, objEnemyBullet);
+m.image_xscale = image_xscale;
+m.sprite_index = sprite_index;
+m.yspeed = -3;
+m.xspeed = 2 * image_xscale + ((-3 * (abs(scrollSpeed) &lt; 1.4)) * image_xscale);
+m.grav = .2;
+m.contactDamage = 0;
+m.reflectable = 0;
 </string>
           </argument>
         </arguments>

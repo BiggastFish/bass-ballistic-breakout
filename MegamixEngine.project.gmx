@@ -1374,6 +1374,7 @@
       <sprite>sprites\sprRushJetShopIcon</sprite>
     </sprites>
     <sprites name="Bass Ballistic Breakout">
+      <sprite>sprites\sprWhy</sprite>
       <sprite>sprites\sprBossHealthHud</sprite>
       <sprite>sprites\sprBassJumpPoof</sprite>
       <sprites name="Weapons">
@@ -1443,6 +1444,13 @@
             <sprite>sprites\sprPerfumaVine</sprite>
             <sprite>sprites\sprPerfumaThorn</sprite>
             <sprite>sprites\sprPerfumaSpike</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="St. Hunger">
+          <sprite>sprites\sprHotDogMan</sprite>
+          <sprite>sprites\sprHotDogManFireball</sprite>
+          <sprites name="Projectiles">
+            <sprite>sprites\sprHotDogManMissile</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -1641,6 +1649,7 @@
         <script>scripts\spawnFromRight.gml</script>
       </scripts>
       <script>scripts\calibrateDirection.gml</script>
+      <script>scripts\calibrateDirectionPoint.gml</script>
       <script>scripts\entityIceFreeze.gml</script>
       <script>scripts\entityHandleIced.gml</script>
       <script>scripts\entityPlatform.gml</script>
@@ -2447,6 +2456,15 @@
           </objects>
         </objects>
       </objects>
+      <objects name="St. Hunger">
+        <objects name="Boss">
+          <object>objects\objHotDogMan</object>
+          <objects name="Projectiles">
+            <object>objects\objHotDogManFireball</object>
+            <object>objects\objHotDogManMissile</object>
+          </objects>
+        </objects>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -2457,6 +2475,7 @@
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
+    <room>rooms\lvlStHunger</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmOptions</room>
