@@ -30,6 +30,7 @@
 contactDamage = 3;
 blockCollision = 1;
 
+explode = 0;
 bouncesLeft = 1;
 image_speed = .3;
 </string>
@@ -71,6 +72,12 @@ if (entityCanStep())
     }
     if (ground)
     {
+        if (explode)
+        {
+            playSFX(sfxExplosion);
+            instance_create(x, y, objHarmfulExplosion);
+            instance_destroy();
+        }
         playSFX(sfxBikkyLand);
         yspeed = ySpeedAim(y, view_yview + 128, grav);
     }

@@ -34,6 +34,7 @@ canDamage = 0;
 hitInvun = 90;
 phase = 0;
 parent = noone;
+isTargetable = 0;
 cooldownTimer = 0;
 canFight = 0;
 dieTimer = 0;

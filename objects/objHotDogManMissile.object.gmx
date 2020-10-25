@@ -85,7 +85,7 @@ if (entityCanStep())
     if (instance_exists(target))
     {
         // If it's changed directions more than 8 times, destroy it.
-        if (turnTimes &gt; 14)
+        if (turnTimes &gt; 9)
         {
             instance_create(x, y, objExplosion);
             instance_destroy();

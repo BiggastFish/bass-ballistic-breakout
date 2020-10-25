@@ -1451,7 +1451,13 @@
           <sprite>sprites\sprHotDogManFireball</sprite>
           <sprites name="Projectiles">
             <sprite>sprites\sprHotDogManMissile</sprite>
+            <sprite>sprites\sprHotDogManBouncingBall</sprite>
+            <sprite>sprites\sprHotDogManSlash</sprite>
           </sprites>
+        </sprites>
+        <sprites name="Demon Inside Me">
+          <sprite>sprites\sprHangedMan</sprite>
+          <sprite>sprites\sprCyorown</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -2461,9 +2467,16 @@
           <object>objects\objHotDogMan</object>
           <objects name="Projectiles">
             <object>objects\objHotDogManFireball</object>
+            <object>objects\objHotDogManBouncingBall</object>
             <object>objects\objHotDogManMissile</object>
+            <object>objects\objHotDogManSlash</object>
           </objects>
         </objects>
+      </objects>
+      <objects name="Demon Inside Me">
+        <object>objects\objHangedManIntro</object>
+        <object>objects\objHangedMan</object>
+        <object>objects\objHangedManBatSon</object>
       </objects>
     </objects>
   </objects>
@@ -2476,6 +2489,7 @@
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlStHunger</room>
+    <room>rooms\lvlDemonInsideMe</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmOptions</room>

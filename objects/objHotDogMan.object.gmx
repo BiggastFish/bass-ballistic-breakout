@@ -38,17 +38,8 @@ spd = 0;
 scrollSpeed = 0;
 phase = 0;
 introType = 0;
-dropsDone = 0;
-phaseArray[0] = 1;
-phaseArray[1] = 2;
-phaseArray[2] = 0;
-phaseArray[3] = 1;
-phaseArray[4] = 2;
-phaseArray[5] = 0;
-phaseArray[6] = 1;
-phaseArrayDir = 1;
-phasePick = 2 + irandom(2);
-lastStationaryPhase = choose(3, 4);
+iAmFine = 1;
+lastPhase = 0;
 tx = x;
 ty = y;
 
@@ -64,7 +55,7 @@ musicLoopSecondsEnd = 70.655;
 // Damage Tables
 enemyDamageValue(objBusterShotHalfCharged, 1);
 enemyDamageValue(objBusterShotCharged, 3);
-enemyDamageValue(objYamato, 3);
+enemyDamageValue(objYamato, 2);
 enemyDamageValue(objKnuckleSandwich, 10);
 </string>
           </argument>
@@ -129,7 +120,7 @@ if (entityCanStep())
                 {
                     stopSFX(sfxPopoHeliFire);
                     image_index = 8;
-                    for (i = 0; i &lt;= 1; i++)
+                    for (i = 0; i &lt;= 1 + (!iAmFine); i++)
                     {
                         f = instance_create(x + (12 * image_xscale), y - 3, 
                         objHotDogManFireball);
@@ -137,6 +128,14 @@ if (entityCanStep())
                         f.yspeed = ySpeedAim(y - 3, view_yview + 128, 
                         .25 - (.04 * (i = 1)));
                         f.xspeed = (3 - (.8 * (i = 1))) * image_xscale;
+                        if (i == 2)
+                        {
+                            f.explode = 1;
+                            f.yspeed = -8;
+                            f.xspeed = xSpeedAim(x + (12 * image_xscale), 
+                            y - 3, tx, ty, -8, .25);
+                            f.sprite_index = sprCannopellerBall;
+                        }
                     }
                 }
                 if (fryTimer == 80)
@@ -148,7 +147,7 @@ if (entityCanStep())
                 }
                 if (fryTimer &gt;= 120)
                 {
-                    if (yspeed &gt;= 0 &amp;&amp; (y &gt;= ty || ground) &amp;&amp; !fried)
+                    if (yspeed &gt;= 0 &amp;&amp; (y &gt;= ty - 12 || ground) &amp;&amp; !fried)
                     {
                         playSFX(sfxBreakDash);
                         image_index = 11;
@@ -170,8 +169,9 @@ if (entityCanStep())
                         image_xscale*= -1;
                         xspeed = 0;
                         fried = 0;
-                        fryTimer = 0;
-                        phase = 1;
+                        fryTimer = -5;
+                        lastPhase = 0;
+                        phase = 3;
                     }
                 }
                 break;
@@ -204,7 +204,7 @@ if (entityCanStep())
                         {
                             image_index = 10;
                             playSFX(sfxMissileLaunch);
-                            for (i = -1; i &lt; 2; i+= 2)
+                            for (i = -1; i &lt; 2; i+= 2 - (!iAmFine))
                             {
                                 h = instance_create(x - (14 * image_xscale), 
                                 y - 8, objHotDogManMissile);
@@ -213,11 +213,11 @@ if (entityCanStep())
                                 h.speed = 1.8;
                             }
                         }
-                        if (fryTimer &gt;= 135)
+                        if (fryTimer &gt;= 155)
                         {
                             grav = .2
                             calibrateDirection();
-                            if (y &gt;= ty || ground)
+                            if (y &gt;= ty - 12 || ground)
                             {
                                 playSFX(sfxBreakDash);
                                 image_index = 11;
@@ -243,14 +243,133 @@ if (entityCanStep())
                             image_xscale*= -1;
                             xspeed = 0;
                             fried = 0;
-                            fryTimer = 0;
-                            phase = 0;
+                            fryTimer = -15;
+                            lastPhase = 1;
+                            phase = 3;
                         }
                     }
                 }
                 break;
-            case 2:
-                image_index = 0;
+            case 2: // slappy
+                if (fryTimer == 10 || (!iAmFine &amp;&amp; fryTimer == 30))
+                    image_index = 9;
+                if (fryTimer == 40 || (!iAmFine &amp;&amp; fryTimer == 20))
+                {
+                    image_index = 10;
+                    playSFX(sfxCannonShoot);
+                    k = instance_create(x - (14 * image_xscale), y - 12, 
+                    objHotDogManBouncingBall);
+                    k.yspeed = -5;
+                }
+                if (fryTimer == 100)
+                {
+                    image_index = 1;
+                    xspeed = 1.4 * image_xscale;
+                }
+                if (fryTimer &gt;= 100)
+                {
+                    if (fried != 1 &amp;&amp; ground)
+                        image_index = 1 + (fryTimer/4) % 4;
+                    if (!fried)
+                    {
+                        if (abs(tx - x) &lt;= 54 &amp;&amp; ((tx &lt; x &amp;&amp; image_xscale &lt; 0) ||
+                        (tx &gt;= x &amp;&amp; image_xscale &gt; 0)) &amp;&amp; abs(ty - y) &lt;= 96)
+                        {
+                            fried = 1;
+                            fryTimer = 100;
+                            xspeed = 0;
+                            image_index = 5;
+                        }
+                        if (xcoll != 0)
+                        {
+                            image_index = 0;
+                            playSFX(sfxBikkyLand);
+                            xspeed = -.9 * image_xscale;
+                            yspeed = -1.2;
+                            fried = 2;
+                        }
+                    }
+                    if (fried == 1)
+                    {
+                        if (fryTimer == 130)
+                        {
+                            image_index = 6;
+                            playSFX(sfxSlashClaw);
+                            s = instance_create(x + (24 * image_xscale), y, 
+                            objHotDogManSlash);
+                            s.image_xscale = image_xscale;
+                            s.parent = id;
+                            spd = 3;
+                        }
+                        xspeed = spd * image_xscale;
+                        if (spd &gt; 0 &amp;&amp; fryTimer &gt; 130)
+                            spd-= .1;
+                        if (fryTimer == 170)
+                        {
+                            image_index = 1;
+                            xspeed = 1.4 * image_xscale;
+                            fried = 2;
+                        }
+                    }
+                    if (fried == 2)
+                    {
+                        if (xcoll != 0)
+                        {
+                            image_index = 0;
+                            playSFX(sfxBikkyLand);
+                            xspeed = -.9 * image_xscale;
+                            yspeed = -1.2;
+                        }
+                        if (ycoll &gt; 0)
+                        {
+                            image_xscale *= -1;
+                            image_index = 0;
+                            xspeed = 0;
+                            fried = 0;
+                            fryTimer = -15;
+                            lastPhase = 2;
+                            phase = 3;
+                        }
+                    }
+                }
+                break;
+            case 3: // chungus grandiose
+                if (iAmFine)
+                {
+                    if (healthpoints &lt;= healthpointsStart/2)
+                    {
+                        if (fryTimer == 15)
+                        {
+                            playSFX(sfxEnkerCharge);
+                            for (i = 0; i &lt; 360; i+= 45)
+                            {
+                                l = instance_create(x, y, 
+                                objTrailEffect);
+                                l.direction = i;
+                                l.speed = 3;
+                                l.sprite_index = sprExplosion;
+                                l.image_alpha = 1;
+                                l.image_speed = .6;
+                            }
+                            iAmFine = 0;
+                            fryTimer = 0;
+                            exit;
+                        }
+                    }
+                    else if (fryTimer &gt;= 0)
+                    {
+                        phase = lastPhase + 1 + (-3 * (lastPhase == 2));
+                        fryTimer = 0;
+                    }
+                }
+                else
+                {
+                    if (fryTimer &gt;= 0)
+                    {
+                        phase = lastPhase + 1 + (-3 * (lastPhase == 2));
+                        fryTimer = 0;
+                    }
+                }
                 break;
         }
     }

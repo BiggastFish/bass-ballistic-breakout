@@ -46,6 +46,7 @@ chase = 0;
 pickup = 0;
 
 alarmChase = 20;
+canChase = 1;
 
 playSFX(sfxHornetChaser);
 </string>
@@ -161,26 +162,31 @@ if (!global.frozen)
             }
         }
         
-        if (instance_exists(chaseObj)) // Round direction to target direction
+        if (instance_exists(chaseObj) &amp;&amp; canChase)
         {
-            /*correctDirection(round(point_direction(x, y,
-                spriteGetXCenterObject(chaseObj),
-                spriteGetYCenterObject(chaseObj))), 12);*/
-            mp_linear_step(spriteGetXCenterObject(chaseObj),
-            spriteGetYCenterObject(chaseObj), 2, 0);
+            with (chaseObj)
+            {
+                if (insideView())
+                {
+                    with (other)
+                    {
+                        mp_linear_step(spriteGetXCenterObject(chaseObj),
+                        spriteGetYCenterObject(chaseObj), 2, 0);
+                    }
+                }
+            }
         }
         else if (instance_exists(parent))
         {
-            /*correctDirection(round(point_direction(x, y,
-                spriteGetXCenterObject(parent),
-                spriteGetYCenterObject(parent))), 12);
-            if (place_meeting(x, y, parent))
-                instance_destroy();*/
             if (mp_linear_step(spriteGetXCenterObject(parent),
             spriteGetYCenterObject(parent), 2, 0))
                 instance_destroy();
         }
-        
+        else
+        {
+            yspeed = -4;
+            canDamage = 0;
+        }
         image_xscale = 1 - (2 * (direction &gt; 90 &amp;&amp; direction &lt;= 270));
     }
 }
@@ -210,7 +216,7 @@ if (!global.frozen)
 {
     if (!instance_exists(objHungryBat))
     {
-        i = fireWeapon(14, -3, objHungryBat, 1, 1.5, 2, 0);
+        i = fireWeapon(14, -3, objHungryBat, 1, 1, 2, 0);
         // set its starting angle.
         if (i)
         {
@@ -272,8 +278,11 @@ if (!global.frozen)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.ammo[playerID, global.weapon[playerID]] = max(0,
-global.ammo[playerID, global.weapon[playerID]] - .5);
+            <string>if (global.ammo[playerID, global.weapon[playerID]] &gt; 0)
+    global.ammo[playerID, global.weapon[playerID]] = max(0,
+    global.ammo[playerID, global.weapon[playerID]] - 1);
+else
+    canChase = 0;
 </string>
           </argument>
         </arguments>

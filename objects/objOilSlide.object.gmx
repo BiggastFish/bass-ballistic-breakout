@@ -51,6 +51,7 @@ dir = 0;
 spd = 6;
 
 timer = size*view_wview/16/spd * -1;
+bossDelay = 0;
 </string>
           </argument>
         </arguments>
@@ -111,6 +112,7 @@ if (entityCanStep()){
     
     xs = view_xview + round(timer*(spd * dir) / 16) * 16;
 
+    bossDelay-= (bossDelay &gt; 0);
     if (timer &lt; size*view_wview/16/spd)
     {
         timer++;
@@ -129,6 +131,21 @@ if (entityCanStep()){
                     entityEntityCollision();
                 }
                 entityIceFreeze(180, false, false, 1);
+            }
+        }
+        with (prtBoss)
+        {
+            if (collision_rectangle(other.xs, view_yview, other.xs + 16*(other.size - 1), view_yview + view_hview,
+            self, false, false) &amp;&amp; canHit &amp;&amp; !dead)
+            {
+                with (other)
+                {
+                    if (!bossDelay)
+                    {
+                        entityEntityCollision();
+                        bossDelay = 6;
+                    }
+                }
             }
         }
     }

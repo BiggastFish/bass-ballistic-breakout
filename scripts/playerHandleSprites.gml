@@ -286,6 +286,18 @@ switch (AnimID)
         spriteY = other.spry;
         spriteX = other.sprx;
         break;
+    case "ForceWalk":
+        spriteLoopStart = 0;
+        spriteLoopEnd = 3;
+        spriteIDX[0] = 3;
+        spriteIDX[1] = 4;
+        spriteIDX[2] = 5;
+        spriteIDX[3] = 6;
+        spriteLoopPoint = 0;
+        spriteLoopSpeed = 0.15;
+        spriteX = spriteIDX[floor(spriteLoopID)];
+        animate = 1;
+        break;
 }
 
 if (animate) // Animation

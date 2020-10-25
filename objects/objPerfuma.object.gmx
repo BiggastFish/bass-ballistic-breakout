@@ -67,7 +67,7 @@ musicLoopSecondsEnd = 70.655;
 // Damage Tables
 enemyDamageValue(objBusterShotHalfCharged, 1);
 enemyDamageValue(objBusterShotCharged, 3);
-enemyDamageValue(objYamato, 3);
+enemyDamageValue(objYamato, 2);
 enemyDamageValue(objKnuckleSandwich, 10);
 </string>
           </argument>
@@ -151,9 +151,11 @@ if (entityCanStep())
         {
             case 0: // vine boom sound effect
                 vineTimer+= (abs(scrollSpeed) &gt;= 1.4);
-                if (vineTimer == 30 || vineTimer == 90 || vineTimer == 150)
+                if (vineTimer == 30 || vineTimer == 110 || vineTimer == 190)
+                    image_index = 9;
+                if (vineTimer == 70 || vineTimer == 150 || vineTimer == 230)
                     image_index = 1;
-                if (vineTimer == 60 || vineTimer == 120 || vineTimer == 180)
+                if (vineTimer == 80 || vineTimer == 160 || vineTimer == 240)
                 {
                     image_index = 2;
                     playSFX(sfxTripleBlade);
@@ -161,9 +163,9 @@ if (entityCanStep())
                     objPerfumaThorn);
                     l.image_xscale = image_xscale;
                 }
-                if (vineTimer == 200)
+                if (vineTimer == 260)
                     image_index = 0;
-                if (vineTimer &gt;= 200 &amp;&amp; !instance_exists(objPerfumaThorn))
+                if (vineTimer &gt;= 260 &amp;&amp; !instance_exists(objPerfumaThorn))
                 {
                     vineTimer = 0;
                     phase = 5;

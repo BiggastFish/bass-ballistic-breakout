@@ -244,7 +244,8 @@ if (entityCanStep())
     event_inherited();
 else
     draw_sprite_part_ext(sprite_index, image_index, 0, 64 - imgTop, 64, imgTop, 
-    x - 32, y - 32 + (64 - imgTop), image_xscale, 1, c_white, 1);
+    x - 32 + (64 * (image_xscale &lt; 0)), y - 32 + (64 - imgTop), image_xscale, 
+    1, c_white, 1);
 </string>
           </argument>
         </arguments>
