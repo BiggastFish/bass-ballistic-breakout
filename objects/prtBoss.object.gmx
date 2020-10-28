@@ -118,7 +118,7 @@ useEndStageBehavior = true;
 lockTransitions = true;
 
 stopOnFlash = false;
-hitInvun = 45;
+hitInvun = 4;
 
 forceSpreadSettings = false;
 

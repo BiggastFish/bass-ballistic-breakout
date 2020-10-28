@@ -122,7 +122,7 @@ if (!global.frozen)
         {
             pickx = spriteGetXCenterObject(pickup) - pickup.x;
             picky = spriteGetYCenterObject(pickup) - pickup.y;
-            pickup.x = x - pickx + 8 * image_xscale;
+            pickup.x = x - pickx;
             pickup.xspeed = 0;
             pickup.y = y - picky + 6;
             pickup.yspeed = 0;
@@ -166,7 +166,7 @@ if (!global.frozen)
         {
             with (chaseObj)
             {
-                if (insideView())
+                if (insideView() &amp;&amp; !dead)
                 {
                     with (other)
                     {
@@ -174,12 +174,17 @@ if (!global.frozen)
                         spriteGetYCenterObject(chaseObj), 2, 0);
                     }
                 }
+                else
+                {
+                    with (other) canChase = 0;
+                }
             }
         }
         else if (instance_exists(parent))
         {
-            if (mp_linear_step(spriteGetXCenterObject(parent),
-            spriteGetYCenterObject(parent), 2, 0))
+            mp_linear_step(spriteGetXCenterObject(parent),
+            spriteGetYCenterObject(parent), 2, 0)
+            if (place_meeting(x, y, parent))
                 instance_destroy();
         }
         else

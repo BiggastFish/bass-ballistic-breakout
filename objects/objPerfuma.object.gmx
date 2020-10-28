@@ -31,7 +31,6 @@ healthpoints = healthpointsStart;
 blockCollision = 0;
 grav = 0;
 contactDamage = 4;
-hitInvun = 4;
 vine = noone;
 facePlayerOnSpawn = 1;
 vineTimer = 0;

@@ -30,20 +30,21 @@ healthpointsStart = 160;
 healthpoints = healthpointsStart;
 grav = 0;
 contactDamage = 4;
-hitInvun = 4;
-facePlayerOnSpawn = 1;
+dieToPits = 0;
 floatTimer = 0;
 angVal = 180;
-shotsLeft = choose(2, 3);
+shotsLeft = 2;
 midPointY = y;
 xSpd = 0;
 dir = choose(-1, 1);
 phase = 0;
 introType = 0;
-lastPhase = 0;
+lastPhase = choose(2, 3);
 tx = x;
 ty = y;
-makeBat = 1;
+ttx = x;
+tty = y;
+thesePhase = 2;
 batTimer = 0;
 batID = 0;
 for (i = 0; i &lt; 6; i++)
@@ -96,6 +97,9 @@ if (!global.frozen)
         startIntro = false;
         isIntro = true;
         drawBoss = true;
+        x+= 64;
+        image_xscale = -1;
+        with (objMegaman) image_xscale = 1;
     }
     else if (isIntro)
     {
@@ -127,88 +131,157 @@ if (entityCanStep())
 {
     if (isFight)
     {
+        var yeah = view_xview + 128;
         if (instance_exists(target))
         {
             tx = target.x;
             ty = target.y;
         }
-        var yeah = view_xview + 128;
         floatTimer++;
-        batTimer++;
-        if (makeBat)
+        if (!phase || (phase == 1 &amp;&amp; floatTimer &gt;= 140 &amp;&amp; floatTimer &lt; 185) ||
+        (phase == 2 &amp;&amp; grav == 0 &amp;&amp; floatTimer &gt;= 80 &amp;&amp; floatTimer &lt; 220) ||
+        phase == 4)
+            calibrateDirection();
+        if (healthpoints &lt;= healthpointsStart/3 &amp;&amp; phase &lt; 6)
         {
-            if (batTimer &gt;= 175 ||
-            !instance_exists(objHangedManBatSon))
+            phase = 6;
+            floatTimer = 0;
+            batTimer = 0;
+            shotsLeft = 0;
+            xspeed = 0;
+            yspeed = 0;
+            grav = 0;
+            with (prtEnemyProjectile)
             {
-                for (i = 0; i &lt; 6; i++)
-                {
-                    if (!instance_exists(batSon[i]))
-                    {
-                        with instance_create(x, y - 12, 
-                        objHangedManBatSon)
-                        {
-                            batID = other.i;
-                            ang = (360/6) * other.i;
-                            parent = other.id;
-                            depth = other.depth + 5;
-                            other.batSon[other.i] = id;
-                        }
-                    }
-                }
-                batTimer = 0;
-                batID = 0;
-                shotsLeft--;
+                instance_create(x, y, objExplosion);
+                instance_destroy();
             }
-            if (batTimer &gt;= 60 &amp;&amp; batTimer % 15 == 0 
-            &amp;&amp; batTimer &lt;= 135)
+            with (objHangedManBatSon)
             {
-                with (batSon[batID])
-                {
-                    stationary = 0;
-                    aimAtTarget(3.8);
-                    other.batSon[batID] = noone;
-                }
-                batID+= 1 + (-6 * (batID == 5));
+                instance_create(x, y, objExplosion);
+                instance_destroy();
             }
         }
-        if (phase &lt; 2)
-            calibrateDirection();
         switch (phase)
         {
-            case 0: // float around
-                
-                if ((x &lt;= (xstart - 64) - 160 &amp;&amp; dir &lt; 0) ||
-                (x &gt;= (xstart - 64) + 160 &amp;&amp; dir &gt; 0))
-                    dir*= -1;
-                if ((xSpd &lt; 1.8 &amp;&amp; dir &gt; 0) || (xSpd &gt; -1.8 &amp;&amp; dir &lt; 0))
-                    xSpd+= .03 * dir;
-                angVal+= 3;
-                y = midPointY + round(sin(degtorad(angVal)) * 12);
-                xspeed = xSpd;
+            case 0: // float around and DASH
+                batTimer++;
+                if (dir &lt; 2)
+                {
+                    angVal+= 3;
+                    y = midPointY + round(sin(degtorad(angVal)) * 12);
+                    xspeed = xSpd;
+                    if ((xSpd &lt; 1.8 &amp;&amp; dir &gt; 0) || (xSpd &gt; -1.8 &amp;&amp; dir &lt; 0))
+                        xSpd+= .03 * dir;
+                    if ((x &lt;= (xstart) - 160 &amp;&amp; dir &lt; 0) ||
+                    (x &gt;= (xstart) + 160 &amp;&amp; dir &gt; 0))
+                        dir*= -1;
+                }
+                if (batTimer == 200 || (batTimer &lt; 60 &amp;&amp;
+                !instance_exists(objHangedManBatSon))
+                || (batTimer &gt;= 270 &amp;&amp; dir == 4))
+                {
+                    for (i = 0; i &lt; 6; i++)
+                    {
+                        if (!instance_exists(batSon[i]))
+                        {
+                            with instance_create(x, y - 12, 
+                            objHangedManBatSon)
+                            {
+                                batID = other.i;
+                                ang = (360/6) * other.i;
+                                parent = other.id;
+                                depth = other.depth + 5;
+                                other.batSon[other.i] = id;
+                            }
+                        }
+                    }
+                    if (batTimer &gt;= 270 &amp;&amp; dir == 4)
+                    {
+                        batTimer = 0;
+                        batID = 0;
+                        shotsLeft--;
+                        dir = choose(1, -1);
+                        angVal = 180;
+                        xSpd = 0;
+                    }
+                }
+                if (batTimer == 220)
+                {
+                    dir = 2;
+                    xspeed = 0;
+                    image_index = 3;
+                }
+                if (batTimer == 240)
+                {
+                    image_index = 1;
+                    playSFX(sfxCannonShoot);
+                    aimAtPointXY(3.8, x, y, tx, ty);
+                    ttx = tx;
+                    tty = ty;
+                }
+                if ((((xspeed &gt; 0 &amp;&amp; x &gt;= ttx) || (xspeed &lt; 0 &amp;&amp; x &lt;= ttx) ||
+                (yspeed &gt; 0 &amp;&amp; y &gt;= tty) || (yspeed &lt; 0 &amp;&amp; y &lt;= tty)) &amp;&amp;
+                dir == 2 &amp;&amp; batTimer &gt;= 240))
+                {
+                    xspeed = 0;
+                    yspeed = 0;
+                    floatTimer = 0;
+                    dir = 3;
+                }
+                if (floatTimer &gt;= 15 &amp;&amp; dir == 3)
+                {
+                    grav = -.2 * sign(y - ystart);
+                    if (y &lt;= ystart &amp;&amp; yspeed &lt; 0 ||
+                    y &gt;= ystart &amp;&amp; yspeed &gt; 0)
+                    {
+                        image_index = 0;
+                        y = ystart;
+                        grav = 0;
+                        yspeed = 0;
+                        batTimer = 250;
+                        dir = 4;
+                    }
+                }
+                if (batTimer &gt;= 60 &amp;&amp; batTimer % 15 == 0 
+                &amp;&amp; batTimer &lt;= 135)
+                {
+                    with (batSon[batID])
+                    {
+                        playSFX(sfxBalladeShoot);
+                        depth = other.depth - 5;
+                        stationary = 0;
+                        aimAtTarget(4.2);
+                        other.batSon[batID] = noone;
+                    }
+                    batID+= 1 + (-6 * (batID == 5));
+                }
                 if (shotsLeft &lt;= 0 &amp;&amp; batTimer &gt;= 45)
                 {
-                    shotsLeft = choose(2, 3);
+                    shotsLeft = -1;
                     floatTimer = 0;
                     batTimer = 0;
+                    xSpd = 0;
                     xspeed = 0;
                     phase = 1;
                 }
                 break;
             case 1: // bat gang :)
-                makeBat = 0;
                 if (floatTimer == 3)
-                    image_index = 1;
+                {
+                    playSFX(sfxMechaDragon);
+                    image_index = 3;
+                }
                 if (floatTimer &gt;= 48 &amp;&amp; floatTimer % 6 == 0
                 &amp;&amp; floatTimer &lt;= 108)
                 {
                     image_index = 2;
+                    playSFX(sfxBalladeShoot);
                     for (i = -1; i &lt; 2; i+= 2)
                     {
                         with instance_create(yeah + (64 * i),
                         view_yview, objHangedManBatSon)
                         {
-                            stationary = 0;
-                            despawnRange = 4;
                             if (instance_exists(target))
                                 aimAtTarget(3.8);
                             else
@@ -217,10 +290,419 @@ if (entityCanStep())
                         }
                     }
                 }
+                if (floatTimer == 150)
+                {
+                    image_index = 3;
+                    playSFX(sfxMechaDragon);
+                    with (objHangedManBatSon)
+                        stationary = 2;
+                }
+                if (floatTimer == 185)
+                {
+                    image_index = 1;
+                    playSFX(sfxCannonShoot);
+                    aimAtPointXY(3.8, x, y, tx, ty);
+                    ttx = tx;
+                    tty = ty;
+                }
+                if (floatTimer &gt;= 185)
+                {
+                    if (((xspeed &gt; 0 &amp;&amp; x &gt;= ttx) || (xspeed &lt; 0 &amp;&amp; x &lt;= ttx) ||
+                    (yspeed &gt; 0 &amp;&amp; y &gt;= tty) || (yspeed &lt; 0 &amp;&amp; y &lt;= tty) &amp;&amp;
+                    shotsLeft == -1))
+                    {
+                        xspeed = 0;
+                        yspeed = 0;
+                        shotsLeft = 0;
+                        floatTimer = 200;
+                        playSFX(sfxWaterShield2);
+                        for (i = 0; i &lt; 8; i++)
+                        {
+                            r = instance_create(x, y - 12,
+                            objHangedManBatSon)
+                            r.depth = depth + 5;
+                            r.direction = 22.5 + (45 * i);
+                            r.speed = 3.8;
+                            r.despawnRange = 4;
+                        }
+                    }
+                    if (floatTimer == 230 &amp;&amp; shotsLeft == 0)
+                    {
+                        playSFX(sfxFan);
+                        grav = -.2;
+                    }
+                    if (bbox_bottom &lt;= view_yview - 12)
+                    {
+                        grav = 0;
+                        yspeed = 0;
+                        canHit = 0;
+                        phase = 5;
+                    }
+                }
+                break;
+            case 2: // epic drop
+                if (floatTimer == 20)
+                {
+                    canHit = 1;
+                    playSFX(sfxCompactor);
+                    y = view_yview - 24;
+                    shotsLeft = ySpeedAim(y, view_yview + 128, -.18);
+                    screenShake(10, 2, 2);
+                }
+                if (floatTimer == 60)
+                {
+                    playSFX(sfxAirShooter);
+                    image_index = 0;
+                    dir = choose(-1, 1);
+                    image_xscale = dir;
+                    x = tx + (-80 * dir);
+                    k = instance_create(x, y + 24, objHangedManBlock);
+                    k.parent = id;
+                    k.depth = depth - 5;
+                    grav = -.18;
+                    yspeed = shotsLeft;
+                    xspeed = xSpeedAim(x, y, tx, view_yview + 144, 
+                    yspeed, -.18);
+                    shotsLeft = 0;
+                }
+                if (floatTimer &gt; 60)
+                {
+                    if (yspeed &lt; 0 &amp;&amp; y &lt; view_yview + 56 
+                    &amp;&amp; grav != 0)
+                    {
+                        grav = 0;
+                        yspeed = 0;
+                        xspeed = 0;
+                        floatTimer = 80;
+                    }
+                    if (grav == 0)
+                    {
+                        if (floatTimer == 100 || floatTimer == 210)
+                            image_index = 3;
+                        if (floatTimer == 130)
+                        {
+                            playSFX(sfxCannonShoot);
+                            image_index = 1;
+                            with (objHangedManBlock)
+                            {
+                                followParent = 0;
+                                grav = .2;
+                                yspeed = -2;
+                                xspeed = xSpeedAim(x, y, other.tx, other.ty,
+                                -2, .2);
+                            }
+                        }
+                        if (floatTimer == 240)
+                        {
+                            image_index = 1;
+                            playSFX(sfxSola0Shoot);
+                            aimAtPoint(4.2, tx, ty);
+                        }
+                        if (floatTimer &gt;= 240 &amp;&amp; floatTimer % 10 == 0
+                        &amp;&amp; floatTimer &lt;= 260)
+                        {
+                            a = instance_create(x, y - 12, 
+                            objHangedManBatSon)
+                            a.aimed = 1;
+                            a.timer = 30;
+                            a.depth = depth + 5;
+                        }
+                        if ((bbox_top &gt;= view_yview + 248 &amp;&amp; yspeed &gt; 0) ||
+                        (bbox_bottom &lt;= view_yview - 24 &amp;&amp; yspeed &lt; 0) ||
+                        (bbox_left &gt;= (xstart) + 280 &amp;&amp; xspeed &gt; 0) ||
+                        (bbox_right &lt;= (xstart) - 280 &amp;&amp; xspeed &lt; 0))
+                        {
+                            xspeed = 0;
+                            yspeed = 0;
+                            canHit = 0;
+                        }
+                        if (!canHit &amp;&amp; !instance_exists(objHangedManBatSon))
+                        {
+                            lastPhase = 2;
+                            phase = 5;
+                        }
+                    }
+                }
+                break;
+            case 3: // wicked moves!!
+                if (floatTimer == 30)
+                {
+                    canHit = 1;
+                    shotsLeft = -1;
+                    image_index = 0;
+                    if (tx &lt; xstart)
+                        dir = 1;
+                    else
+                        dir = -1;
+                    image_xscale = dir;
+                    x = tx;
+                    y = view_yview - 24;
+                    yspeed = 9;
+                    grav = -(yspeed * yspeed) / (2 * abs(y - (view_yview + 164)));
+                }
+                if (floatTimer &gt; 30)
+                {
+                    if (yspeed &lt;= 0 &amp;&amp; shotsLeft == -1)
+                    {
+                        grav = 0;
+                        yspeed = 0;
+                        shotsLeft = 0;
+                        floatTimer = 35;
+                    }
+                    if (shotsLeft == 0) 
+                    {
+                        if (floatTimer == 40)
+                        {
+                            playSFX(sfxFan);
+                            xspeed = 2 * dir;
+                        }
+                        if (floatTimer &gt; 40 &amp;&amp; abs(xspeed) &lt; 4)
+                            xspeed+= .1 * dir;
+                        if ((xspeed &gt; 0 &amp;&amp; x &gt;= xstart + 144) || 
+                        (xspeed &lt; 0 &amp;&amp; x &lt;= xstart - 144))
+                        {
+                            shotsLeft = 1;
+                            xspeed = 0;
+                            midPointY = y - 36;
+                            batID = x;
+                            angVal = 90;
+                        }
+                    }
+                    if (shotsLeft == 1)
+                    {
+                        angVal+= 4 * -dir;
+                        x = batID + round(cos(degtorad(angVal)) * 56);
+                        y = midPointY + round(sin(degtorad(angVal)) * 36);
+                        if (angVal &lt; 0 || angVal &gt; 180)
+                            image_xscale = -dir;
+                        if (angVal &lt;= -90 || angVal &gt;= 270)
+                        {
+                            shotsLeft = 2;
+                            floatTimer = 90;
+                        }
+                    }
+                    if (shotsLeft == 2)
+                    {
+                        if (floatTimer == 120)
+                            image_index = 3;
+                        if (floatTimer == 150)
+                        {
+                            aimAtPoint(3.8, tx, ty);
+                            image_index = 1;
+                            for (i = 0; i &lt; 4; i++)
+                            {
+                                a = instance_create(x, y - 12, 
+                                objHangedManBatSon)
+                                a.aimed = 1;
+                                a.timer = 15 + (i * 15);
+                                a.depth = depth + 5;
+                            }
+                        }
+                        if (floatTimer &gt; 150)
+                        {
+                            if ((bbox_top &gt;= view_yview + 248 &amp;&amp; yspeed &gt; 0) ||
+                            (bbox_bottom &lt;= view_yview - 24 &amp;&amp; yspeed &lt; 0) ||
+                            (bbox_left &gt;= (xstart) + 280 &amp;&amp; xspeed &gt; 0) ||
+                            (bbox_right &lt;= (xstart) - 280 &amp;&amp; xspeed &lt; 0))
+                            {
+                                xspeed = 0;
+                                yspeed = 0;
+                            }
+                            if (!instance_exists(objHangedManBatSon) &amp;&amp;
+                            xspeed == 0 &amp;&amp; yspeed == 0)
+                            {
+                                lastPhase = 3;
+                                phase = 5;
+                            }
+                        }
+                    }
+                }
+                break;
+            case 4: // restart bruv
+                canHit = 1;
+                if (floatTimer == 5)
+                {
+                    image_index = 0;
+                    y = view_yview - 24;
+                    x = yeah + choose(64, -64);
+                    dir = choose(1, -1);
+                    yspeed = 7;
+                    grav = -(yspeed * yspeed) / (2 * abs(y - ystart));
+                }
+                if (floatTimer &gt; 5)
+                {
+                    if (yspeed &lt;= 0 &amp;&amp; grav != 0)
+                    {
+                        yspeed = 0;
+                        grav = 0;
+                        y = ystart;
+                        floatTimer = 60;
+                    }
+                    if (floatTimer == 70)
+                    {
+                        for (i = 0; i &lt; 6; i++)
+                        {
+                            with instance_create(x, y - 12, 
+                            objHangedManBatSon)
+                            {
+                                batID = other.i;
+                                ang = (360/6) * other.i;
+                                parent = other.id;
+                                depth = other.depth + 5;
+                                other.batSon[other.i] = id;
+                            }
+                        }
+                    }
+                    if (floatTimer == 90 &amp;&amp; grav == 0)
+                    {
+                        floatTimer = 0;
+                        batTimer = 0;
+                        shotsLeft = 2;
+                        angVal = 180;
+                        xSpd = 0;
+                        batID = 0;
+                        midPointY = y;
+                        phase = 0;
+                    }
+                }
+                break;
+            case 5: // phase 2 and 3 decision :flushed:
+                floatTimer = 0;
+                if (thesePhase)
+                {
+                    if (lastPhase == 2)
+                        phase = 3
+                    else
+                        phase = 2;
+                    thesePhase--;
+                }
+                else
+                {
+                    lastPhase = choose(2, 3);
+                    thesePhase = 2;
+                    phase = 4;
+                }
+                break;
+            case 6: // Malaysian Mode
+                if (floatTimer == 15)
+                {
+                    playSFX(sfxEnkerCharge);
+                    for (i = 0; i &lt; 360; i+= 45)
+                    {
+                        l = instance_create(x, y, 
+                        objTrailEffect);
+                        l.direction = i;
+                        l.speed = 3;
+                        l.sprite_index = sprExplosion;
+                        l.image_alpha = 1;
+                        l.image_speed = .6;
+                    }
+                }
+                if (floatTimer == 30)
+                    yspeed = -7;
+                if (bbox_bottom &lt;= view_yview -24)
+                {
+                    yspeed = 0;
+                    batTimer++;
+                    if (batTimer == 20)
+                    {
+                        y = view_yview + 232;
+                        x = xstart;
+                        image_index = 4;
+                        floatTimer = 0;
+                        batTimer = 0;
+                        phase = 7;
+                    }
+                }
+                break;
+            case 7: // funny dio meme or something
+                canDamage = (image_index != 4);
+                canHit = (image_index != 4);
+                batTimer+= (batTimer &gt; 0);
+                if (floatTimer == 5)
+                {
+                    yspeed = -5;
+                    image_index = 4;
+                }
+                if (yspeed &lt; 0 &amp;&amp; image_index == 4 &amp;&amp;
+                bbox_bottom &lt;= view_yview)
+                {
+                    batTimer = 1;
+                    image_index = 1;
+                    y = view_yview - 54;
+                }
+                if (batTimer &gt;= 15)
+                {
+                    if (batTimer == 15)
+                    {
+                        yspeed = 4;
+                        batSon[0] = instance_create(x, y + 24,
+                        objHangedManPole);
+                        batSon[0].parent = id;
+                    }
+                    if (instance_exists(batSon[0]))
+                    {
+                        if (batTimer &gt;= 60 &amp;&amp; batTimer &lt;= 80 &amp;&amp;
+                        batTimer % 10 == 0)
+                        {
+                            for (i = -1; i &lt; 2; i+= 2)
+                            {
+                                with instance_create(yeah + (64 * i),
+                                view_yview, objHangedManBatSon)
+                                {
+                                    if (instance_exists(target))
+                                        aimAtTarget(3.8);
+                                    else
+                                        aimAtPoint(3.8, yeah,
+                                        view_yview + 112);
+                                }
+                            }
+                        }
+                        if (batTimer &gt;= 120)
+                            batTimer = 20
+                        if (yspeed &lt; 3.5)
+                            yspeed+= .5;
+                    }
+                    else
+                    {
+                        if (batTimer &gt;= 50)
+                            if (yspeed &gt; -4)
+                                yspeed-= .5;
+                        if (bbox_bottom &lt;= view_yview)
+                        {
+                            image_index = 4;
+                            y = view_yview + 232;
+                        }
+                    }
+                }
                 break;
         }
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="21">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (phase = 6)
+    other.guardCancel = 3;
 </string>
           </argument>
         </arguments>
@@ -287,7 +769,8 @@ for (i = -1; i &lt; 2; i+= 2)
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-//draw_text(view_xview + 32, view_yview + 48, batTimer);
+if (image_index = 4)
+    draw_sprite(sprHangedManPole, 3, x, y + 8);
 </string>
           </argument>
         </arguments>

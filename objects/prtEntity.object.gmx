@@ -687,10 +687,10 @@ playSFX(sfxEnemyHit);
     if ((ceil(iFrames / 2) mod 4) || !iFrames)
     {
         var iceBlinkTime = 42;
-        if ((ceil(iFrames / 2) mod 2) || (iceTimer &gt; 0 &amp;&amp; (iceTimer &gt; iceBlinkTime || (iceTimer &lt;= iceBlinkTime &amp;&amp; iceTimer mod 4 == 0))))
+        if ((ceil(iFrames / 2) mod 2)/*|| (iceTimer &gt; 0 &amp;&amp; (iceTimer &gt; iceBlinkTime || (iceTimer &lt;= iceBlinkTime &amp;&amp; iceTimer mod 4 == 0)))*/)
         {
             var flashcol = c_white;
-            if (iceTimer &gt; 0 &amp;&amp; (iceTimer &gt; iceBlinkTime || (iceTimer &lt;= iceBlinkTime &amp;&amp; iceTimer mod 4 == 0)))
+            /*if (iceTimer &gt; 0 &amp;&amp; (iceTimer &gt; iceBlinkTime || (iceTimer &lt;= iceBlinkTime &amp;&amp; iceTimer mod 4 == 0)))
             {
                 switch (iceGraphicStyle)
                 {
@@ -701,18 +701,18 @@ playSFX(sfxEnemyHit);
                         flashcol = make_color_rgb(0, 120, 255);
                         break;
                 }
-            }
+            }*/
             
             d3d_set_fog(true, flashcol, 0, 0);
             drawSelf();
             d3d_set_fog(false, 0, 0, 0);
             
-            if (iceTimer &gt; 0 &amp;&amp; (iceTimer &gt; iceBlinkTime || (iceTimer &lt;= iceBlinkTime &amp;&amp; iceTimer mod 4 == 0)))
+            /*if (iceTimer &gt; 0 &amp;&amp; (iceTimer &gt; iceBlinkTime || (iceTimer &lt;= iceBlinkTime &amp;&amp; iceTimer mod 4 == 0)))
             {
                 draw_set_blend_mode(bm_add);
                 drawSelf();
                 draw_set_blend_mode(bm_normal);
-            }
+            }*/
         }
         else
         {

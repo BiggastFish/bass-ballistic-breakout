@@ -31,7 +31,6 @@ healthpoints = healthpointsStart;
 blockCollision = 0;
 grav = 0;
 contactDamage = 4;
-hitInvun = 4;
 son = noone;
 facePlayerOnSpawn = 1;
 dropTimer = 0;

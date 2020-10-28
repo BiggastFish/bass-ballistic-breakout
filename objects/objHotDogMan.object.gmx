@@ -30,7 +30,6 @@ healthpointsStart = 160;
 healthpoints = healthpointsStart;
 grav = .2;
 contactDamage = 4;
-hitInvun = 4;
 facePlayerOnSpawn = 1;
 fried = 0;
 fryTimer = 0;

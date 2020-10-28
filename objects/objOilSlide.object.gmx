@@ -121,14 +121,20 @@ if (entityCanStep()){
             //insideView()
             if (collision_rectangle(other.xs, view_yview, other.xs + 16*(other.size - 1), view_yview + view_hview,
             self, false, false) &amp;&amp; global.factionStance[other.faction, faction] &amp;&amp; canHit &amp;&amp; canIce &amp;&amp; !dead 
-            &amp;&amp; !iFrames &amp;&amp; iceTimer &lt;= 120)
+            &amp;&amp; !iFrames)
             {
-                i = instance_create(bboxGetXCenter(), bboxGetYCenter(), objSparkShockParalyze);
-                i.plzTarget = id;
-                i.depth = depth + 5;
-                with (other)
+                if (!iceTimer)
                 {
-                    entityEntityCollision();
+                    i = instance_create(bboxGetXCenter(), bboxGetYCenter(), objOilSlideSplash);
+                    i.plzTarget = id;
+                    i.depth = depth - 1;
+                }
+                if (iceTimer &lt;= 175)
+                {
+                    with (other)
+                    {
+                        entityEntityCollision();
+                    }
                 }
                 entityIceFreeze(180, false, false, 1);
             }

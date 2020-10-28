@@ -86,7 +86,7 @@ if (!global.frozen &amp;&amp; instance_exists(objMegaman))
             {
                 xspeed = 0;
                 other.introLock = playerFreeMovement(other.introLock);
-                instance_create(view_xview + (view_wview/2) + 64, 
+                instance_create(view_xview + (view_wview/2), 
                 view_yview + 56, objHangedMan);
                 with (other) instance_destroy();
             }

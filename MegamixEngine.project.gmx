@@ -1392,6 +1392,7 @@
         <sprite>sprites\sprOilSlideRight</sprite>
         <sprite>sprites\sprOilSlideLeft</sprite>
         <sprite>sprites\sprOilSlide</sprite>
+        <sprite>sprites\sprOilSlideSplash</sprite>
         <sprite>sprites\sprWeaponIconsOilSlide</sprite>
         <sprite>sprites\sprKnuckleSandwichDelay</sprite>
         <sprite>sprites\sprWeaponIconsKnuckleSandwich</sprite>
@@ -1457,7 +1458,18 @@
         </sprites>
         <sprites name="Demon Inside Me">
           <sprite>sprites\sprHangedMan</sprite>
-          <sprite>sprites\sprCyorown</sprite>
+          <sprites name="Projectiles">
+            <sprite>sprites\sprHangedManBatSon</sprite>
+            <sprite>sprites\sprHangedManBlock</sprite>
+            <sprite>sprites\sprHangedManPole</sprite>
+            <sprite>sprites\sprHangedManBlockDebris</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Highway to Hell">
+          <sprite>sprites\sprOilMan</sprite>
+          <sprite>sprites\sprOilManSplash</sprite>
+          <sprite>sprites\sprOilManParticle</sprite>
+          <sprite>sprites\sprOilManShot</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -1724,6 +1736,7 @@
         <script>scripts\aimAtTarget.gml</script>
         <script>scripts\aimAtObject.gml</script>
         <script>scripts\aimAtPoint.gml</script>
+        <script>scripts\aimAtPointXY.gml</script>
         <script>scripts\rotationMovement.gml</script>
         <script>scripts\correctDirection.gml</script>
         <script>scripts\roundTo.gml</script>
@@ -2341,7 +2354,7 @@
             <object>objects\objNormalBusterShot</object>
             <object>objects\objJudgmentCut</object>
             <object>objects\objProtoShield</object>
-            <object>objects\objSparkShockParalyze</object>
+            <object>objects\objOilSlideSplash</object>
             <object>objects\objBusterDelay</object>
             <object>objects\objKnuckleSandwichDelay</object>
             <object>objects\objSpringBlastArrow</object>
@@ -2476,7 +2489,19 @@
       <objects name="Demon Inside Me">
         <object>objects\objHangedManIntro</object>
         <object>objects\objHangedMan</object>
-        <object>objects\objHangedManBatSon</object>
+        <objects name="Projectiles">
+          <object>objects\objHangedManBatSon</object>
+          <object>objects\objHangedManBlock</object>
+          <object>objects\objHangedManPole</object>
+        </objects>
+      </objects>
+      <objects name="Highway to Hell">
+        <object>objects\objOilMan</object>
+        <objects name="Projectiles">
+          <object>objects\objOilManParticle</object>
+          <object>objects\objOilManOilShot</object>
+          <object>objects\objOilManPuddle</object>
+        </objects>
       </objects>
     </objects>
   </objects>
@@ -2490,6 +2515,7 @@
     <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlStHunger</room>
     <room>rooms\lvlDemonInsideMe</room>
+    <room>rooms\lvlHighwayToHell</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmOptions</room>
