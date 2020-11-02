@@ -59,13 +59,13 @@ if (entityCanStep())
 {
     if (ycoll != 0 || xcoll != 0)
         playSFX(sfxBallBounce);
-    if (ycoll &gt; 0)
+    if (ycoll &gt; 0 || xcoll != 0)
     {
         bounces++;
         xspeed = 0;
         yspeed = -5;
     }
-    if (ycoll &lt; 0 || xcoll != 0)
+    if (ycoll &lt; 0)
     {
         bounces++;
         if (instance_exists(target))

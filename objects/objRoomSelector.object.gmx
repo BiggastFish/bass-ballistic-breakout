@@ -61,6 +61,9 @@ ds_list_add(roomnames, "@Load External...");
 ds_list_add(roomlist, -2);
 ds_list_add(roomnames, "@Play Recording...");
 
+ds_list_add(roomlist, -5);
+ds_list_add(roomnames, "@Stage Select");
+
 // Get lvl-rooms
 for (i = 0; i &lt;= lr; i += 1)
 {
@@ -292,6 +295,10 @@ if (!selected)
             global.livesRemaining = global.defaultLives;
             
             playSFX(sfxMenuMove);
+        }
+        else if (myRoom == -5)
+        {
+            global.nextRoom = rmStageSelect;
         }
         else if (myRoom == 0)
         {

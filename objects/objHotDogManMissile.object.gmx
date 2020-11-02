@@ -35,10 +35,9 @@ contactDamage = 3;
 
 blockCollision = 0;
 grav = 0;
-
+itemDrop = -1;
 despawnRange = 0;
 
-// Enemy specific code
 phase = 1;
 waitTimer = 0;
 rotateChange = 2;

@@ -38,11 +38,15 @@ if (!global.lockBuster)
 {
     if (global.keyShoot[playerID] && !playerIsLocked(PL_LOCK_SHOOT))
     {
-        if shootTimer < 8 && (instance_exists(objBusterShot) 
-        || instance_exists(objBusterDelay))
+        if shootTimer < 8
         {
-            shootTimer++
-            exit;
+            if shootTimer < 1
+                shootTimer = 1;
+            else
+            {
+                shootTimer++
+                exit;
+            }
         }
         i = fireWeapon(xOffset, yOffset, objBusterShot, bulletLimit, weaponCost, action, willStop);
         isShoot = action;

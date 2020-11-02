@@ -26,20 +26,20 @@
           <argument>
             <kind>1</kind>
             <string>// drawing constants
-optionXOrigin = 48;
-optionYOrigin = 40;
+optionXOrigin = 16;
+optionYOrigin = 113;
 
-optionXDist = 80;
-optionYDist = 64;
+optionXDist = 64;
+optionYDist = 51;
 
 stageTextXOffset = -32;
 stageTextYOffset = 24;
 
 // control variables
-cursorX = 1;
+cursorX = 0;
 cursorY = 1;
 
-lockControls = false;
+lockControls = true;
 
 // drawing variables
 cursorImgIndex = 0;
@@ -49,7 +49,7 @@ staticImgIndex = 0;
 staticImgSpd = 0.5;
 
 // cutscene variables
-phase = 0;
+phase = -1;
 subPhase = 0;
 
 timer = 0;
@@ -68,6 +68,10 @@ bossIntroNameX = 0; /* text is centered but is drawn from left to right, so we n
                            position of the text when centered. This is automatically figured out */
 bossXScale = 1;
 
+sprXsc = 1;
+sprYsc = 1;
+sprAlp = 0;
+bassImg = 0;
 
 bossIntroBorderRadius = 0;
 
@@ -81,7 +85,7 @@ for (var i = 0; i &lt; 3; i++)
         stageRoom[i, j] = noone;
         stageIcon[i, j] = 10;
         stageName[i, j] = "";
-        stageLock[i, j] = true;
+        stageLock[i, j] = false;
         stageBeaten[i, j] = false;
         
         // for stage select intros
@@ -97,24 +101,96 @@ for (var i = 0; i &lt; 3; i++)
 }
 
 // define stages
-stageRoom[0, 1] = "lvlPharaohMan";
-stageIcon[0, 1] = 5;
-stageLock[0, 1] = false;
-stageName[0, 1] = "PHARAOH#    MAN";
-stageBeaten[0, 1] = indexOf(global.elementsCollected, "pharaoh") &gt;= 0;
-stageBossJumpSprite[0, 1] = sprPharaohJump;
-stageBossJumpIndex[0, 1] = 0;
-stageBossIntroSprite[0, 1] = sprPharaohPose;
-stageBossIntroSpeed[0, 1] = 3 / 60;
+stageRoom[0, 0] = "lvlMoneyMachine"
+stageIcon[0, 0] = 1;
+stageName[0, 0] = "GOLD MAN#MONEY MACHINE#WEAPON: COIN SPREAD";
+stageBeaten[0, 0] = indexOf(global.elementsCollected, "gold") &gt;= 0;
+stageBossJumpSprite[0, 0] = sprGoldMan;
+stageBossJumpIndex[0, 0] = 4;
+stageBossIntroSprite[0, 0] = sprGutsIdle;
+stageBossIntroSpeed[0, 0] = 0.1;
+parY[0, 0] = 1;
+
+stageRoom[1, 0] = "lvlWhisperingWoods"
+stageIcon[1, 0] = 2;
+stageName[1, 0] = "PERFUMA#WHISPERING WOODS#WEAPON: SEED BOMB";
+stageBeaten[1, 0] = indexOf(global.elementsCollected, "seed") &gt;= 0;
+stageBossJumpSprite[1, 0] = sprPerfuma;
+stageBossJumpIndex[1, 0] = 0;
+stageBossIntroSprite[1, 0] = sprFlashIntro;
+stageBossIntroSpeed[1, 0] = 10 / 60;
+parY[1, 0] = 2;
+
+stageRoom[2, 0] = "lvlStHunger";
+stageIcon[2, 0] = 3;
+stageName[2, 0] = "HOT DOG MAN#ST. HUNGER#WEAPON: KNUCKLE#SANDWICH";
+stageBeaten[2, 0] = indexOf(global.elementsCollected, "sandwich") &gt;= 0;
+stageBossJumpSprite[2, 0] = sprHotDogMan;
+stageBossJumpIndex[2, 0] = 0;
+stageBossIntroSprite[2, 0] = sprHotDogMan;
+stageBossIntroSpeed[2, 0] = 16 / 60;
+parY[2, 0] = 3;
+
+stageRoom[3, 0] = "lvlDemonInsideMe";
+stageIcon[3, 0] = 4;
+stageName[3, 0] = "HANGED MAN#DEMON INSIDE ME#WEAPON: HUNGRY BATS";
+stageBeaten[3, 0] = indexOf(global.elementsCollected, "hanged") &gt;= 0;
+stageBossJumpSprite[3, 0] = sprHangedMan;
+stageBossJumpIndex[3, 0] = 0;
+stageBossIntroSprite[3, 0] = sprHangedMan;
+stageBossIntroSpeed[3, 0] = 3 / 60;
+parY[3, 0] = 4;
+
+stageRoom[1, 1] = "lvlHighwayToHell";
+stageIcon[1, 1] = 5;
+stageName[1, 1] = "OIL MAN#HIGHWAY TO HELL#WEAPON: OIL SLIDE";
+stageBeaten[1, 1] = indexOf(global.elementsCollected, "oil") &gt;= 0;
+stageBossJumpSprite[1, 1] = sprOilMan;
+stageBossJumpIndex[1, 1] = 0;
+stageBossIntroSprite[1, 1] = sprOilMan;
+stageBossIntroSpeed[1, 1] = 0.3;
+parY[1, 1] = 5;
+
+stageRoom[2, 1] = "lvlJumpKing";
+stageIcon[2, 1] = 6;
+stageName[2, 1] = "JUMP MAN#JUMP KING#WEAPON: SPRING BLAST";
+stageBeaten[2, 1] = indexOf(global.elementsCollected, "jump") &gt;= 0;
+stageBossJumpSprite[2, 1] = sprJumpMan;
+stageBossJumpIndex[2, 1] = 0;
+stageBossIntroSprite[2, 1] = sprJumpMan;
+stageBossIntroSpeed[2, 1] = 10 / 60;
+parY[2, 1] = 6;
+
+stageRoom[3, 1] = "lvlBuryTheLight";
+stageIcon[3, 1] = 7;
+stageName[3, 1] = "TAKANUVA#BURY THE LIGHT#WEAPON: SPIRALING#LIGHT";
+stageBeaten[3, 1] = indexOf(global.elementsCollected, "light") &gt;= 0;
+stageBossJumpSprite[3, 1] = sprTakanuva;
+stageBossJumpIndex[3, 1] = 11;
+stageBossIntroSprite[3, 1] = sprTakanuva;
+stageBossIntroSpeed[3, 1] = 0.11;
+parY[3, 1] = 7;
+
+// Set center stage after grabbing all other indexes
+stageRoom[0, 1] = "rmCastleIntro";
+stageLock[0, 1] = !(stageBeaten[0, 0] &amp;&amp; stageBeaten[1, 0] &amp;&amp; stageBeaten[2, 0]
+&amp;&amp; stageBeaten[3, 0] &amp;&amp; stageBeaten[1, 1] &amp;&amp; stageBeaten[2, 1]
+&amp;&amp; stageBeaten[3, 1]);
+stageIcon[0, 1] = 11 - stageLock[1, 1];
+parY[0, 1] = 8;
 
 // menu selections
-stageRoom[0, 3] = "rmTitleScreen";
-stageLock[0, 3] = false;
-stageName[0, 3] = "MENU";
+stageRoom[0, 2] = "rmShop";
+stageLock[0, 2] = false;
+stageName[0, 2] = "SHOP";
 
-stageRoom[1, 3] = "rmShop";
-stageLock[1, 3] = false;
-stageName[1, 3] = "SHOP";
+stageRoom[1, 2] = "rmTitleScreen";
+stageLock[1, 2] = false;
+stageName[1, 2] = "MENU";
+
+stageRoom[2, 2] = "rmOptions";
+stageLock[2, 2] = false;
+stageName[2, 2] = "OPTIONS";
 
 // convenience feature
 global.livesRemaining = max(global.defaultLives, global.livesRemaining);
@@ -178,6 +254,25 @@ if (instance_exists(bossObject))
 {
     // controls
     default:
+    case -1:
+        with (objParallax)
+        {
+            if (myBG == bgStageSelectNew)
+            {
+                if (offsetX &gt; -264)
+                    offsetX-= 8;
+                else
+                {
+                    offsetX = -264;
+                    with (other) 
+                    {
+                        lockControls = 0;
+                        phase = 0;
+                    }
+                }
+            }
+        }
+        break;
     case 0:
         if (!lockControls)
         {
@@ -185,6 +280,19 @@ if (instance_exists(bossObject))
             var ydir = 0;
             var pause = 0;
             
+            if (sprAlp &gt; 0)
+            {
+                sprAlp-= .2;
+                sprXsc-= .2;
+                sprYsc+= .1;
+            }
+            else
+            {
+                sprAlp = 0;
+                sprXsc = 1;
+                sprYsc = 1;
+            }
+
             for (var i = 0; i &lt; global.playerCount; i += 1)
             {
                 xdir += (global.keyRightPressed[i] - global.keyLeftPressed[i]);
@@ -192,22 +300,71 @@ if (instance_exists(bossObject))
                 pause += global.keyPausePressed[i];
             }
             
+            // Decide directions
+            if ((xdir &lt; 0 &amp;&amp; (cursorX == 0)) || (xdir &gt; 0 &amp;&amp; ((cursorY &lt;= 1 &amp;&amp; 
+            cursorX == 3) || cursorY == 2 &amp;&amp; cursorX == 2)))
+                xdir = 0;
+
+            if ((ydir &gt; 0 &amp;&amp; cursorY == 2) || (ydir &lt; 0 &amp;&amp; cursorY == 0))
+                ydir = 0;
+                
+            if (ydir &gt; 0 &amp;&amp; cursorX == 3 &amp;&amp; cursorY == 1)
+                cursorX--;
+
             // Move x and y-axis
             cursorY += ydir;
             cursorX += xdir;
-            
-            cursorY -= (array_length_2d(stageRoom, 0) * sign(cursorY)) * (cursorY &lt; 0 || cursorY &gt;= array_length_2d(stageRoom, 0));
-            
-            cursorX -= (cursorY == 3 &amp;&amp; cursorX == 2);
-            cursorX -= ((array_height_2d(stageRoom) - (cursorY == 3)) * sign(cursorX)) * (cursorX &lt; 0 || cursorX &gt;= (array_height_2d(stageRoom) - (cursorY == 3)));
-            
+
             // upon changing position
             if (xdir != 0 || ydir != 0)
             {
                 playSFX(sfxMenuMove);
                 cursorImgIndex = 0; // make sure cursor appears in new location as soon as you change, or else it'll feel laggy
+                sprXsc = 2;
+                sprYsc = .5;
+                sprAlp = 1;
             }
             
+            // toggle visibility for parallax
+            with (objParallax)
+            {
+                if (y &gt;= 16)
+                {
+                    if (other.cursorY &lt; 2)
+                    {
+                        var height = other.parY[other.cursorX, other.cursorY] * 16;
+                        if (y &gt;=  height &amp;&amp; y &lt; height + 16)
+                            visible = 1;
+                        else
+                            visible = 0;
+                    }
+                    else
+                        visible = 0;
+                }
+            }
+            
+            // have Bass face cursor
+            if (cursorY == 0)
+            {
+                bassImg = 1;
+                if (cursorX &gt; 0)
+                    bassImg = 2;
+            }
+            
+            if (cursorY == 1)
+            {
+                bassImg = 0;
+                if (cursorX &gt; 0)
+                    bassImg = 3;
+            }
+            
+            if (cursorY == 2)
+            {
+                bassImg = 5;
+                if (cursorX &gt; 0)
+                    bassImg = 4;
+            }
+
             // selecting stage
             if (pause)
             {
@@ -215,7 +372,8 @@ if (instance_exists(bossObject))
                 {
                     phase = 1;
                     lockControls = true;
-                    
+                    bassImg = 0;
+
                     stopMusic();
                     playSFX(sfxMenuSelect);
                 }
@@ -518,49 +676,63 @@ staticImgIndex = (staticImgIndex + staticImgSpd) mod 3;
             <kind>1</kind>
             <string>draw_set_halign(fa_left);
 draw_set_valign(fa_top);
-
-if (!background_visible[1])
+ 
+if (phase &gt; -1)
 {
-    // draw selections
-    for (var i = 0; i &lt; array_height_2d(stageRoom); i++)
+    if (!background_visible[1])
     {
-        for (var j = 0; j &lt; array_length_2d(stageRoom, i); j++)
+        // draw selections
+        for (var i = 0; i &lt; array_height_2d(stageRoom); i++)
         {
-            var xs = view_xview[0] + optionXOrigin + (optionXDist * (i + (j &gt;= 3) * 0.5));
-            var ys = view_yview[0] + optionYOrigin + (optionYDist * j);
-            
-            if (j &lt; 3) // draw mugshot
+            for (var j = 0; j &lt; array_length_2d(stageRoom, i); j++)
             {
-                if (stageIcon[i, j] != noone)
+                var xs = view_xview[0] + optionXOrigin + (optionXDist * i);
+                var ys = view_yview[0] + optionYOrigin + (optionYDist * j);
+    
+                if (j &lt; 2) // draw mugshot
                 {
-                    var img = stageIcon[i, j];
-                    if (stageBeaten[i, j])
+                    if (stageIcon[i, j] != noone)
                     {
-                        img = floor(12 + staticImgIndex);
+                        var img = stageIcon[i, j];
+                        if (stageBeaten[i, j])
+                        {
+                            img = floor(12 + staticImgIndex);
+                        }
+                        draw_sprite(sprMugshots, img, xs, ys);
+                        if (i == 0 &amp;&amp; j == 1)
+                        draw_sprite(sprMugshots, 8 + bassImg, xs, ys);
                     }
-                    draw_sprite(sprMugshots, img, xs - sprite_get_width(sprMugshots) / 2, ys - sprite_get_height(sprMugshots) / 2);
+                    
+                    if ((cursorX == i &amp;&amp; cursorY == j) &amp;&amp; stageName[i, j] != "") // names and sprites
+                    {
+                        draw_text(84, 24, stageName[i, j]);
+                        draw_sprite_ext(stageBossJumpSprite[i, j], stageBossJumpIndex[i, j],
+                        64, 54, sprXsc, sprYsc, 0, c_white, 1);
+                        draw_sprite_ext(stageBossJumpSprite[i, j], stageBossJumpIndex[i, j],
+                        64, 54, sprXsc, sprYsc, 0, make_color_rgb(248, 248, 248), sprAlp);
+                    }
+                    if (cursorX == i &amp;&amp; cursorY == j)
+                    {
+                        draw_sprite(sprStageSelectCursor, cursorImgIndex, xs, ys);
+                    }
+                }
+                else // draw option
+                {
+                    if (stageName[i, j] != "")
+                    {
+                        draw_text(xs + 24, ys, stageName[i, j]);
+                    }
+                    if (cursorX == i &amp;&amp; cursorY == j)
+                    {
+                        draw_sprite(sprArrow, 1, xs + 16, ys + 4);
+                    }
                 }
                 
-                if (stageName[i, j] != "") // draw name
-                {
-                    draw_text(xs + stageTextXOffset, ys + stageTextYOffset, stageName[i, j]);
-                }
-            }
-            else if (stageName[i, j] != "") // draw option
-            {
-                draw_text(xs - 16, ys - 16, stageName[i, j]);
-            }
-            
-            if (cursorX == i &amp;&amp; cursorY == j) // draw cursor
-            {
-                draw_sprite(sprStageSelectCursor, cursorImgIndex, xs, ys);
             }
         }
+        
+        draw_set_halign(fa_middle);
     }
-    
-    draw_set_halign(fa_middle);
-    
-    draw_text(view_xview + 128, view_yview + 4, "PRESS START");
 }
 
 // flash

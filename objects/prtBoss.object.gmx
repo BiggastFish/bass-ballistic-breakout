@@ -125,7 +125,7 @@ forceSpreadSettings = false;
 // Generic stuff
 facePlayerOnSpawn = true;
 
-healthpoints = 28;
+healthpoints = 160;
 _init = 1;
 
 drawBoss = false; // Should we be visible? (Can't use the 'visible' variable as this prevents the Draw event from executing)

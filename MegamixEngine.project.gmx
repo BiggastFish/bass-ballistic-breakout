@@ -1425,6 +1425,8 @@
         <sprites name="Money Machine">
           <sprite>sprites\sprGoldonBatton</sprite>
           <sprite>sprites\sprGoldonBattonDebris</sprite>
+          <sprite>sprites\sprSplashWomanWaterPlatfomSpawner</sprite>
+          <sprite>sprites\sprSplashWomanWaterPlatform</sprite>
           <sprite>sprites\sprHellcart</sprite>
           <sprite>sprites\sprDiglett</sprite>
           <sprite>sprites\sprShiningWall</sprite>
@@ -1466,11 +1468,28 @@
           </sprites>
         </sprites>
         <sprites name="Highway to Hell">
+          <sprite>sprites\sprOilManDOS</sprite>
           <sprite>sprites\sprOilMan</sprite>
+          <sprite>sprites\sprOilManOilSlicer</sprite>
           <sprite>sprites\sprOilManSplash</sprite>
           <sprite>sprites\sprOilManParticle</sprite>
           <sprite>sprites\sprOilManShot</sprite>
         </sprites>
+        <sprites name="Jump King">
+          <sprite>sprites\sprJumpMan</sprite>
+        </sprites>
+        <sprites name="Bury The Light">
+          <sprite>sprites\sprTakanuva</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Stage Select">
+        <sprite>sprites\sprMoneyMachineBG</sprite>
+        <sprite>sprites\sprWhisperingWoodsBG</sprite>
+        <sprite>sprites\sprJumpKingBG</sprite>
+        <sprite>sprites\sprStHungerBG</sprite>
+        <sprite>sprites\sprDemonInsideMeBG</sprite>
+        <sprite>sprites\sprBuryTheLight</sprite>
+        <sprite>sprites\sprHighwayToHellBG</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -1521,6 +1540,10 @@
         <background>background\bgPerfumaGround</background>
         <background>background\bgPerfumaGrass</background>
         <background>background\bgPerfumaBackTrees</background>
+      </backgrounds>
+      <backgrounds name="Stage Select">
+        <background>background\bgStageSelectNew</background>
+        <background>background\bgStageSelectBackground</background>
       </backgrounds>
     </backgrounds>
   </backgrounds>
@@ -2355,7 +2378,6 @@
             <object>objects\objJudgmentCut</object>
             <object>objects\objProtoShield</object>
             <object>objects\objOilSlideSplash</object>
-            <object>objects\objBusterDelay</object>
             <object>objects\objKnuckleSandwichDelay</object>
             <object>objects\objSpringBlastArrow</object>
             <object>objects\objWeaponExplosion</object>
@@ -2422,6 +2444,7 @@
     <objects name="Bass Ballistic Breakout">
       <object>objects\objTracker</object>
       <object>objects\objTrailEffect</object>
+      <object>objects\objBackgroundFilter</object>
       <object>objects\objStopScrollingMaker</object>
       <objects name="Static Shock">
         <object>objects\objBuzzshockDistance</object>
@@ -2453,6 +2476,8 @@
           <object>objects\objTreasureDelete</object>
           <object>objects\objFloatingTreasure</object>
           <object>objects\objShiningWall</object>
+          <object>objects\objSplashWomanPlatformSpawner</object>
+          <object>objects\objSplashWomanPlatform</object>
         </objects>
         <objects name="Boss">
           <object>objects\objGoldMan</object>
@@ -2487,35 +2512,46 @@
         </objects>
       </objects>
       <objects name="Demon Inside Me">
-        <object>objects\objHangedManIntro</object>
-        <object>objects\objHangedMan</object>
-        <objects name="Projectiles">
-          <object>objects\objHangedManBatSon</object>
-          <object>objects\objHangedManBlock</object>
-          <object>objects\objHangedManPole</object>
+        <objects name="Boss">
+          <object>objects\objHangedManIntro</object>
+          <object>objects\objHangedMan</object>
+          <objects name="Projectiles">
+            <object>objects\objHangedManBatSon</object>
+            <object>objects\objHangedManBlock</object>
+            <object>objects\objHangedManPole</object>
+          </objects>
         </objects>
       </objects>
       <objects name="Highway to Hell">
-        <object>objects\objOilMan</object>
-        <objects name="Projectiles">
-          <object>objects\objOilManParticle</object>
-          <object>objects\objOilManOilShot</object>
-          <object>objects\objOilManPuddle</object>
+        <objects name="Boss">
+          <object>objects\objOilMan</object>
+          <objects name="Projectiles">
+            <object>objects\objOilManParticle</object>
+            <object>objects\objOilManOilShot</object>
+            <object>objects\objOilManPuddle</object>
+            <object>objects\objOilManOilSlicer</object>
+          </objects>
         </objects>
+      </objects>
+      <objects name="Jump King">
+        <object>objects\objJumpMan</object>
+      </objects>
+      <objects name="Bury The Light">
+        <object>objects\objTakanuva</object>
       </objects>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmInit</room>
     <room>rooms\lvlCopyThisRoom</room>
-    <room>rooms\lvlCutMan</room>
-    <room>rooms\lvlPharaohMan</room>
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlStHunger</room>
     <room>rooms\lvlDemonInsideMe</room>
-    <room>rooms\lvlHighwayToHell</room>
+    <room>rooms\rmHighwayToHell</room>
+    <room>rooms\rmJumpKing</room>
+    <room>rooms\rmBuryTheLight</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmOptions</room>

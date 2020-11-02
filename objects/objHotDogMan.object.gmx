@@ -401,20 +401,19 @@ with (prtEnemyProjectile)
     instance_create(x, y, objExplosion);
     instance_destroy();
 }
-for (i = -1; i &lt; 2; i+= 2)
+with (objHotDogManMissile)
 {
-    m = instance_create(x, y, objEnemyBullet);
-    m.image_xscale = image_xscale;
-    m.sprite_index = sprite_index;
-    if (i &gt; 0)
-        m.image_index = 6;
-    else
-        m.image_index = 5;
-    m.yspeed = -3;
-    m.xspeed = 2 * (i * image_xscale);
-    m.grav = .2;
-    m.contactDamage = 0;
-    m.reflectable = 0;
+    instance_create(x, y, objExplosion);
+    instance_destroy();
+}
+for (var i = 0; i &lt; 12; i += 1) // create oil splash
+{
+    var inst = instance_create((x - 3) + irandom(6), y, objOilManParticle);
+    var onst = instance_create((x - 3) + irandom(6), y, objOilManParticle);
+    var anst = instance_create((x - 3) + irandom(6), y, objOilManParticle);
+    inst.sprite_index = sprHotDogFire;
+    onst.sprite_index = sprHotDogFire;
+    anst.sprite_index = sprHotDogFire;
 }
 </string>
           </argument>

@@ -27,9 +27,9 @@
             <kind>1</kind>
             <string>event_inherited();
 
-healthpointsStart = 2;
+healthpointsStart = 1;
 healthpoints = healthpointsStart;
-contactDamage = 2;
+contactDamage = 3;
 
 despawnRange = -1;
 blockCollision = 0;
@@ -53,7 +53,6 @@ dist = 0;
 batID = 0;
 
 setTargetStep();
-enemyDamageValue(objOilSlide, 3);
 </string>
           </argument>
         </arguments>

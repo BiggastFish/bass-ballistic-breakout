@@ -202,8 +202,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>f = instance_create(x, y, objBusterDelay);
-f.image_speed = .375;
+            <string>f = instance_create(x, y, objSingleLoopEffect)
+f.sprite_index = sprBassBulletBreak;
+f.image_speed = .4;
 </string>
           </argument>
         </arguments>
@@ -227,9 +228,9 @@ f.image_speed = .375;
           <argument>
             <kind>1</kind>
             <string>playSFX(sfxReflect);
-f = instance_create(x, y, objBusterDelay);
+f = instance_create(x, y, objSingleLoopEffect)
 f.sprite_index = sprShine;
-f.image_speed = .375;
+f.image_speed = .4;
 instance_destroy();
 </string>
           </argument>

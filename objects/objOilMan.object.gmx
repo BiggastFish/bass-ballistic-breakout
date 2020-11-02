@@ -53,20 +53,23 @@ storeSpeed = 0;
 hasFired = false;
 shotsFired = 0;
 grav = 0.25;
-
-// Health Bar
-healthBarPrimaryColor[1] = 12;
-healthBarSecondaryColor[1] = 40;
+tx = x;
+ty = y;
 
 // Music
-music = "Mega_Man_1.nsf";
-musicType = "VGM";
-musicTrackNumber = 8;
+music = "HoTDBoss.ogg";
+musicType = "OGG";
+musicTrackNumber = 0;
+musicVolume = 0.8;
+musicLoop = true;
+musicLoopSecondsStart = 6.665;
+musicLoopSecondsEnd = 70.655;
 
-// Damage Table
-enemyDamageValue(objBusterShot, 1);
+// Damage Tables
 enemyDamageValue(objBusterShotHalfCharged, 1);
 enemyDamageValue(objBusterShotCharged, 3);
+enemyDamageValue(objYamato, 2);
+enemyDamageValue(objKnuckleSandwich, 10);
 </string>
           </argument>
         </arguments>
@@ -171,9 +174,14 @@ if (entityCanStep())
 {
     if (isFight == true)
     {
-        image_speed = 0;
+        var yeah = view_xview + 128;
         if (ground)
             attackTimer += 1;
+        if (instance_exists(target))
+        {
+            tx = target.x;
+            ty = target.y;
+        }
         if (jumpToWall)
         {
             jumpToWall = false;
@@ -195,15 +203,14 @@ if (entityCanStep())
             }
         }
         
-        // setup jump animation
-        if (yspeed &lt; 0 &amp;&amp; !oilSlider)
-            image_index = 5;
-        else if (yspeed &gt;= 0 &amp;&amp; yspeed &lt; 3 &amp;&amp; !onWall &amp;&amp; !ground &amp;&amp; !oilSlider)
-            image_index = 6;
-        else if (!ground &amp;&amp; !onWall &amp;&amp; !oilSlider)
+        if (phase == 2)
         {
-            image_index = 7;
-            attackTimer = 0;
+            if (yspeed &lt; 0 &amp;&amp; !oilSlider)
+                image_index = 5;
+            else if (yspeed &gt;= 0 &amp;&amp; yspeed &lt; 3 &amp;&amp; !onWall &amp;&amp; !ground &amp;&amp; !oilSlider)
+                image_index = 6;
+            else if (!ground &amp;&amp; !onWall &amp;&amp; !oilSlider)
+                image_index = 7;
         }
         switch (phase)
         {
@@ -222,61 +229,106 @@ if (entityCanStep())
                 {
                     attackTimer = 0;
                     oldAttack = attackRandomiser;
-                    phase = attackRandomiser;
+                    phase = 1;
                 }
                 break;
-            case 1: // jump across room
-            // animation setup 
+            case 1: // Nice Shot! (Nice Shot!)
                 if (ground)
                 {
-                    image_index = 0;
                     xspeed = 0;
-                }
-                if (shotsFired == 0) // on first jump, jump towards mega man
-                {
-                    shotsFired = 1;
-                    yspeed = jumpY;
-                    if (instance_exists(target))
-                        xspeed = xSpeedAim(x, y, target.x, target.y, yspeed, grav);
-                    else
-                        xspeed = 4 * image_xscale;
-                    findWall = 0;
-                }
-                if (shotsFired == 1 &amp;&amp; attackTimer == 10) // on second jump, jump towards wall
-                {
-                    yspeed = jumpY;
-                    findWall = 0;
-                    jumpToWall = true;
-                    shotsFired = 2;
-                }
-                if (ground &amp;&amp; shotsFired == 2 &amp;&amp; yspeed &gt;= 0) // change phase!
-                {
-                    shotsFired = 0;
-                    attackTimer = 0;
-                    phase = 6;
-                }
-                break;
-            case 2: // walk across arena and jump when near mega man 
-                if (ground &amp;&amp; shotsFired == 0)
-                {
-                    xspeed = 2 * image_xscale;
-                    image_index = 1 + ((attackTimer / 6) mod 4);
-                    if (instance_exists(target))
+                    if (shotsFired == 5)
                     {
-                        if (abs(x - target.x) &lt; 32)
-                        {
-                            findWall = 0;
-                            yspeed = jumpY;
-                            jumpToWall = true;
-                            shotsFired = 1;
-                        }
+                        shotsFired = 0;
+                        grav = 0.25;
+                        attackTimer = 0;
+                        phase = 2;
+                    }
+                    else if (attackTimer &gt;= 10)
+                    {
+                        image_index = 11;
+                        oilSlider = 1;
+                        grav = .25 + (.08 * shotsFired);
+                        yspeed = -sqrt(abs(2*grav*112));
+                        if (instance_exists(target))
+                            xspeed = xSpeedAim(x, y, tx, ty, yspeed, grav);
+                        else
+                            xspeed = 4 * image_xscale;
+                        shotsFired++;
                     }
                 }
-                if (ground &amp;&amp; shotsFired == 1 &amp;&amp; yspeed &gt;= 0) // change phase!
+                if (!ground)
+                    calibrateDirection();
+                if (oilSlider &amp;&amp; yspeed &gt;= 0 &amp;&amp; !ground)
                 {
-                    shotsFired = 0;
+                    oilSlider = 0;
+                    image_index = 10;
+
+                    l = instance_create(x + 8 * image_xscale, y - 2, objOilManOilShot);
+                    l.depth = depth - 5 - shotsFired;
+                    playSFX(sfxEnemyShootClassic);
+                }
+                break;
+            case 2: // Oil Slicer
+                if (ground &amp;&amp; shotsFired == 0)
+                {
+                    if (attackTimer &lt; 20)
+                    {
+                        image_index = 0;
+                        calibrateDirectionPoint(yeah);
+                    }
+                    else
+                    {
+                        grav = .18
+                        yspeed = -sqrt(abs(2*.18*64));
+                        xspeed = xSpeedAim(x, y, yeah + (80 * image_xscale),
+                        y, yspeed, .18);
+                        shotsFired = 1;
+                    }
+                }
+                if (shotsFired == 1 &amp;&amp; ycoll &gt; 0)
+                {
+                    yspeed = -sqrt(abs(2*.18*64));
+                    xspeed = 0;
+                    calibrateDirectionPoint(yeah);
+                    shotsFired = 2;
+                }
+                if (shotsFired == 2 &amp;&amp; yspeed &gt;= 0)
+                {
+                    grav = 0;
+                    yspeed = 0;
+                    shotsFired = 3;
                     attackTimer = 0;
-                    phase = 6;
+                    oilSlider = 1;
+                }
+                if (shotsFired == 3)
+                {
+                    attackTimer++;
+                    if (attackTimer &lt; 20 || attackTimer == 80)
+                        image_index = 11; 
+                    if (attackTimer == 20 || attackTimer == 110)
+                    {
+                        image_index = 26;
+                        playSFX(sfxSola0Shoot);
+                    }
+                    if (attackTimer == 40 || attackTimer == 130)
+                    {
+                        image_index = 10;
+                        playSFX(sfxTenguBlade);
+                        instance_create(x + 12 * image_xscale, y + 2, objExplosion);
+                        m = instance_create(x + 4 * image_xscale, y + 10, 
+                        objOilManOilSlicer);
+                        m.image_xscale = image_xscale;
+                    }
+                    if (attackTimer == 180)
+                    {
+                        grav = .25;
+                        oilSlider = 0;
+                    }
+                    if (ground)
+                    {
+                        shotsFired = 4;
+                        attackTimer = 0;
+                    }
                 }
                 break;
             case 3: // oil slider start 
@@ -441,7 +493,7 @@ if (entityCanStep())
             <string>event_inherited();
 
 // guard if on oil slider
-if (image_index &gt;= 16)
+if (image_index &gt;= 16 &amp;&amp; image_index &lt; 26)
 {
     other.guardCancel = 1;
 }
@@ -476,6 +528,31 @@ with (objOilManPuddle)
     instance_create(x, y, objExplosion);
 instance_destroy();
 event_inherited();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+/*draw_text(view_xview + 32, view_yview + 48, shotsFired);
+draw_text(view_xview + 32, view_yview + 64, grav);
 </string>
           </argument>
         </arguments>

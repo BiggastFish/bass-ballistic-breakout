@@ -62,7 +62,7 @@ if (!global.frozen)
         image_index += 0.25;
     with (instance_place(x, y, objMegaman))
     {
-        if (ground &amp;&amp; xspeed != 0)
+        if (ground &amp;&amp; abs(xspeed) &gt; stepSpeed &amp;&amp; iFrames == 0)
         {
             playerGetShocked(0, 35, true, 30); // fine-tune if necessary
             xspeed = 0;

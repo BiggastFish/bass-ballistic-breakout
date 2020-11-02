@@ -177,7 +177,7 @@ if (entityCanStep())
                     (x &gt;= (xstart) + 160 &amp;&amp; dir &gt; 0))
                         dir*= -1;
                 }
-                if (batTimer == 200 || (batTimer &lt; 60 &amp;&amp;
+                if ((batTimer &lt; 60 &amp;&amp;
                 !instance_exists(objHangedManBatSon))
                 || (batTimer &gt;= 270 &amp;&amp; dir == 4))
                 {
@@ -206,8 +206,10 @@ if (entityCanStep())
                         xSpd = 0;
                     }
                 }
-                if (batTimer == 220)
+                if (batTimer &gt;= 60 &amp;&amp; batTimer &lt;= 220 
+                &amp;&amp; !instance_exists(objHangedManBatSon) || batTimer == 220)
                 {
+                    batTimer = 220;
                     dir = 2;
                     xspeed = 0;
                     image_index = 3;
@@ -645,9 +647,10 @@ if (entityCanStep())
                         if (batTimer &gt;= 60 &amp;&amp; batTimer &lt;= 80 &amp;&amp;
                         batTimer % 10 == 0)
                         {
+                            playSFX(sfxBalladeShoot);
                             for (i = -1; i &lt; 2; i+= 2)
                             {
-                                with instance_create(yeah + (64 * i),
+                                with instance_create(yeah + (80 * i),
                                 view_yview, objHangedManBatSon)
                                 {
                                     if (instance_exists(target))
@@ -731,21 +734,18 @@ with (prtEnemyProjectile)
     instance_create(x, y, objExplosion);
     instance_destroy();
 }
-for (i = -1; i &lt; 2; i+= 2)
+with (objHangedManBatSon)
 {
-    m = instance_create(x, y, objEnemyBullet);
-    m.image_xscale = image_xscale;
-    m.sprite_index = sprite_index;
-    if (i &gt; 0)
-        m.image_index = 6;
-    else
-        m.image_index = 5;
-    m.yspeed = -3;
-    m.xspeed = 2 * (i * image_xscale);
-    m.grav = .2;
-    m.contactDamage = 0;
-    m.reflectable = 0;
+    instance_create(x, y, objExplosion);
+    instance_destroy();
 }
+m = instance_create(x, y, objEnemyBullet);
+m.image_xscale = image_xscale;
+m.sprite_index = sprite_index;
+m.image_index = image_index;
+m.yspeed = -5;
+m.contactDamage = 0;
+m.reflectable = 0;
 </string>
           </argument>
         </arguments>
