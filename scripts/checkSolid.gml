@@ -50,18 +50,15 @@ if (dieToSpikes)
 } 
 
 // jumpthrough objects
-if (checkForTopSolid)
+with (objTopSolid)
 {
-    with (objTopSolid)
+    if (isSolid)
     {
-        if (isSolid)
+        if (!place_meeting(x, y + cgrav, myid))
         {
-            if (!place_meeting(x, y + cgrav, myid))
+            if (place_meeting(x - _xs, y - cgrav * abs(_ys), myid))
             {
-                if (place_meeting(x - _xs, y - cgrav * abs(_ys), myid))
-                {
-                    solid = 1;
-                }
+                solid = 1;
             }
         }
     }

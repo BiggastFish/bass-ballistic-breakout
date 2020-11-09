@@ -64,7 +64,7 @@ with (objParallax)
     <instance objName="objStageSelect" x="0" y="0" name="inst_9EB33EBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="32" y="0" name="inst_83001A72" locked="0" code="myBG = bgStageSelectNew;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="48" y="0" name="inst_50E0C71B" locked="0" code="myBG = bgStageSelectBackground;&#xA;xspeed = -.5;&#xA;yspeed = -.5;&#xA;depth+= 100;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBackgroundFilter" x="16" y="0" name="inst_1B468ACB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBackgroundFilter" x="16" y="0" name="inst_1B468ACB" locked="0" code="useManOp = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="16" y="32" name="inst_0CCDF945" locked="0" code="myBG = sprWhisperingWoodsBG;&#xA;xspeed = -(2/2.5);&#xA;img = 3;&#xA;depth+= 79;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="64" y="32" name="inst_4993DE3B" locked="0" code="myBG = sprWhisperingWoodsBG;&#xA;xspeed = -2;&#xA;depth+= 76;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="48" y="32" name="inst_42412D84" locked="0" code="myBG = sprWhisperingWoodsBG;&#xA;xspeed = -2/1.5;&#xA;img = 1;&#xA;depth+= 77;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -77,6 +77,7 @@ global.shakeFactorX = 0;
 global.shakeFactorY = 0;
 
 global.flashTimer = 0;
+global.bgVisibility = 100;
 
 // Camera variables for users
 global.prevXView = view_xview;

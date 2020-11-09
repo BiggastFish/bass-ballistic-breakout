@@ -35,13 +35,12 @@ penetrate = 0;
 pierces = 0;
 
 blockCollision = 1;
-checkForTopSolid = 0;
 calibrated = 0;
 angle = 0;
 dir = 0;
 _dir = dir;
 _groundDir = 0;
-sp = 3;
+sp = 4;
 db = 0;
 _velX = 0;
 _velY = 0;
@@ -114,7 +113,7 @@ if (!global.frozen)
             _velY = 0;
             _prevCollision = true;
         }
-        
+            
         if (!snapToGround(sp))
         {
             event_user(EV_DEATH); // die if something goes wrong
@@ -212,6 +211,34 @@ specialDamageValue("grounded", 3);
           <argument>
             <kind>1</kind>
             <string>weaponSetup("COIN SPREAD", make_color_rgb(132, 0, 207), make_color_rgb(140, 255, 247), sprWeaponIconsCoinSpread);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="17">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>playSFX(sfxReflect);
+f = instance_create(x, y, objSingleLoopEffect)
+f.sprite_index = sprShine;
+f.image_speed = .4;
+instance_destroy();
+
 </string>
           </argument>
         </arguments>

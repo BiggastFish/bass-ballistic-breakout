@@ -369,11 +369,9 @@ else
                     for (i = -3; i < 4; i++)
                     {
                         f = instance_create(view_xview + 128 + (24 * i), 
-                        view_yview + 112 + irandom_range(-32, 32), objEnemyBullet);
+                        view_yview + 112 + irandom_range(-32, 32), objGravEffect);
                         f.sprite_index = sprChillBlockShards;
                         f.image_index = irandom(2);
-                        f.canDamage = 0;
-                        f.grav = .25;
                         f.yspeed = -3;
                         f.xspeed = random_range(-1, 1);
                     }

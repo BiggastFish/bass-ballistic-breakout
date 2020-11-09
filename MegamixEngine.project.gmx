@@ -1423,13 +1423,15 @@
           </sprites>
         </sprites>
         <sprites name="Money Machine">
+          <sprite>sprites\sprAstroZombieg</sprite>
           <sprite>sprites\sprGoldonBatton</sprite>
           <sprite>sprites\sprGoldonBattonDebris</sprite>
-          <sprite>sprites\sprSplashWomanWaterPlatfomSpawner</sprite>
-          <sprite>sprites\sprSplashWomanWaterPlatform</sprite>
           <sprite>sprites\sprHellcart</sprite>
-          <sprite>sprites\sprDiglett</sprite>
-          <sprite>sprites\sprShiningWall</sprite>
+          <sprite>sprites\sprGorudokuro</sprite>
+          <sprite>sprites\sprGorudokuroGold</sprite>
+          <sprite>sprites\sprSlotCoinSwitch</sprite>
+          <sprite>sprites\sprSlotCoinSpawner</sprite>
+          <sprite>sprites\sprSlotCoin</sprite>
           <sprites name="Boss">
             <sprite>sprites\sprGoldMan</sprite>
             <sprite>sprites\sprGoldem</sprite>
@@ -1468,6 +1470,7 @@
           </sprites>
         </sprites>
         <sprites name="Highway to Hell">
+          <sprite>sprites\sprDiglett</sprite>
           <sprite>sprites\sprOilManDOS</sprite>
           <sprite>sprites\sprOilMan</sprite>
           <sprite>sprites\sprOilManOilSlicer</sprite>
@@ -2432,6 +2435,7 @@
       </objects>
       <objects name="Effects">
         <object>objects\objSingleLoopEffect</object>
+        <object>objects\objGravEffect</object>
         <object>objects\objExplosion</object>
         <object>objects\objSlideDust</object>
         <object>objects\objSplash</object>
@@ -2464,8 +2468,9 @@
         </objects>
       </objects>
       <objects name="Money Machine">
+        <object>objects\objAstroZombieg</object>
         <object>objects\objGoldonBatton</object>
-        <object>objects\objArcannon</object>
+        <object>objects\objGorudokuro</object>
         <object>objects\objHellcart</object>
         <objects name="Gimmicks">
           <object>objects\objTreasureSpawner</object>
@@ -2475,9 +2480,9 @@
           <object>objects\objTreasureLeft</object>
           <object>objects\objTreasureDelete</object>
           <object>objects\objFloatingTreasure</object>
-          <object>objects\objShiningWall</object>
-          <object>objects\objSplashWomanPlatformSpawner</object>
-          <object>objects\objSplashWomanPlatform</object>
+          <object>objects\objSlotCoinSwitch</object>
+          <object>objects\objSlotCoinSpawner</object>
+          <object>objects\objSlotCoin</object>
         </objects>
         <objects name="Boss">
           <object>objects\objGoldMan</object>
@@ -2546,9 +2551,10 @@
     <room>rooms\lvlCopyThisRoom</room>
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlMoneyMachine</room>
-    <room>rooms\lvlWhisperingWoods</room>
-    <room>rooms\lvlStHunger</room>
-    <room>rooms\lvlDemonInsideMe</room>
+    <room>rooms\rmWhisperingWoods</room>
+    <room>rooms\rmStHunger</room>
+    <room>rooms\rmNightmareComeToLife</room>
+    <room>rooms\rmBGVisibilityTest</room>
     <room>rooms\rmHighwayToHell</room>
     <room>rooms\rmJumpKing</room>
     <room>rooms\rmBuryTheLight</room>
