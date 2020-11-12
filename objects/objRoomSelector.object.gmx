@@ -28,7 +28,7 @@
             <string>image_speed = 0;
 
 option = 1; // cursor position in the room list
-endx = 8; // how many rooms fit on the screen at once
+endx = 10; // how many rooms fit on the screen at once
 selected = 0;
 shift = 0; // position in the list to start drawing to the screen from
 timer = 0;
@@ -88,7 +88,7 @@ for (i = 0; i &lt;= lr; i += 1)
 }
 
 // Fill in the blanks
-while (ds_list_size(roomlist) &lt; 8)
+while (ds_list_size(roomlist) &lt; 10)
 {
     ds_list_add(roomlist, 0);
     ds_list_add(roomnames, '-Slot Empty-');
@@ -383,7 +383,7 @@ if (timer mod 44 &lt; 40)
 }
 
 draw_sprite_ext(sprStageSelectLight, image_index, 128,
-    44 + (option - 1 - shift) * 16, 1, 1, image_angle, col, image_alpha);
+    40 + (option - 1 - shift) * 16, 1, 1, image_angle, col, image_alpha);
 
 if (shift &gt; 0)
 {
@@ -392,7 +392,7 @@ if (shift &gt; 0)
 }
 if (endx + shift &lt; ds_list_size(roomlist))
 {
-    draw_sprite_ext(sprStageSelectArrow, image_index, 128, 48 + 5 + endx * 16,
+    draw_sprite_ext(sprStageSelectArrow, image_index, 128, 40 + 5 + endx * 16,
         1, -1, image_angle, image_blend, image_alpha);
 }
 
@@ -440,7 +440,7 @@ for (i = 0; i &lt; endx; i += 1)
             text += "Disabled";
         }
     }
-    draw_text(128, 48 + i * 16, text);
+    draw_text(128, 44 + i * 16, text);
 }
 
 // colored text overlays

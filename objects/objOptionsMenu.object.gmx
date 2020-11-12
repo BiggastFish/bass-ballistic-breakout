@@ -46,7 +46,7 @@ option = 0;
 selected = 0;
 buffer = 0;
 
-visibleOptions = 9;
+visibleOptions = 10;
 optionOffset = 0;
 
 verticalQuickScrollTimer = 25;
@@ -817,7 +817,7 @@ if(key != -1 &amp;&amp; !press)
 
 // center display on non-standard resolutions
 drawXPosition = view_xview[0] + view_wview[0] / 2 - 128;
-drawYPosition = view_yview[0] + view_hview[0] / 2 - 112;
+drawYPosition = view_yview[0] + view_hview[0] / 2 - 120;
 
 // draw menu bg
 draw_sprite(sprite_index, 0, drawXPosition, drawYPosition);
@@ -855,11 +855,11 @@ else if (showArrow)
 
 if (optionOffset == array_length_1d(optionText) - visibleOptions)
 {
-    draw_text(drawXPosition + 128, drawYPosition + 182, "- OPTIONS -");
+    draw_text(drawXPosition + 128, drawYPosition + 198, "- OPTIONS -");
 }
 else if (showArrow)
 {
-    draw_sprite(sprArrow, 3, drawXPosition + 128, drawYPosition + 182);
+    draw_sprite(sprArrow, 3, drawXPosition + 128, drawYPosition + 198);
 }
 
 // draw options

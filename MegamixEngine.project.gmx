@@ -1427,6 +1427,7 @@
           <sprite>sprites\sprGoldonBatton</sprite>
           <sprite>sprites\sprGoldonBattonDebris</sprite>
           <sprite>sprites\sprHellcart</sprite>
+          <sprite>sprites\sprHellcartSpawner</sprite>
           <sprite>sprites\sprGorudokuro</sprite>
           <sprite>sprites\sprGorudokuroGold</sprite>
           <sprite>sprites\sprSlotCoinSwitch</sprite>
@@ -1450,6 +1451,7 @@
             <sprite>sprites\sprPerfumaThorn</sprite>
             <sprite>sprites\sprPerfumaSpike</sprite>
           </sprites>
+          <sprite>sprites\sprWhippersnapper</sprite>
         </sprites>
         <sprites name="St. Hunger">
           <sprite>sprites\sprHotDogMan</sprite>
@@ -1537,6 +1539,7 @@
     <backgrounds name="Bass Ballistic Breakout">
       <backgrounds name="Static Shock">
         <background>background\tstStaticShock</background>
+        <background>background\tstStaticShockReal</background>
       </backgrounds>
       <backgrounds name="Whispering Woods">
         <background>background\bgPerfumaFrontTrees</background>
@@ -1613,6 +1616,7 @@
     </scripts>
     <scripts name="Drawing">
       <script>scripts\drawSelf.gml</script>
+      <script>scripts\drawSelfEntity.gml</script>
       <script>scripts\drawSpriteTiled.gml</script>
       <script>scripts\drawCostume.gml</script>
       <script>scripts\drawPlayer.gml</script>
@@ -2302,10 +2306,10 @@
       </objects>
     </objects>
     <objects name="Sections">
-      <object>objects\objStopScrollingHorizontal</object>
-      <object>objects\objRightScrolling</object>
-      <object>objects\objLeftScrolling</object>
-      <object>objects\objHorizontalScrolling</object>
+      <object>objects\objStopScrollingNES</object>
+      <object>objects\objRightScrollingNES</object>
+      <object>objects\objLeftScrollingNES</object>
+      <object>objects\objHorizontalScrollingNES</object>
       <object>objects\objVerticalScrolling</object>
       <object>objects\objSectionFreeVerticalScrolling</object>
       <object>objects\objSoftBorderHor</object>
@@ -2316,10 +2320,10 @@
         <object>objects\objDownScrolling</object>
       </objects>
       <objects name="AltCameras">
-        <object>objects\objStopScrollingNES</object>
-        <object>objects\objLeftScrollingNES</object>
-        <object>objects\objRightScrollingNES</object>
-        <object>objects\objHorizontalScrollingNES</object>
+        <object>objects\objStopScrollingHorizontal</object>
+        <object>objects\objRightScrolling</object>
+        <object>objects\objLeftScrolling</object>
+        <object>objects\objHorizontalScrolling</object>
         <object>objects\objVerticalScrolling400px</object>
         <objects name="One-Way Vertical">
           <object>objects\objUpScrolling400px</object>
@@ -2471,6 +2475,7 @@
         <object>objects\objAstroZombieg</object>
         <object>objects\objGoldonBatton</object>
         <object>objects\objGorudokuro</object>
+        <object>objects\objHellcartSpawner</object>
         <object>objects\objHellcart</object>
         <objects name="Gimmicks">
           <object>objects\objTreasureSpawner</object>
@@ -2551,8 +2556,8 @@
     <room>rooms\lvlCopyThisRoom</room>
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlMoneyMachine</room>
-    <room>rooms\rmWhisperingWoods</room>
-    <room>rooms\rmStHunger</room>
+    <room>rooms\lvlWhisperingWoods</room>
+    <room>rooms\lvlStHunger</room>
     <room>rooms\rmNightmareComeToLife</room>
     <room>rooms\rmBGVisibilityTest</room>
     <room>rooms\rmHighwayToHell</room>

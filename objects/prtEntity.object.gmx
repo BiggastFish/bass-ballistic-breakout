@@ -100,6 +100,7 @@ epIsOnPlat = 0;
 
 itemDrop = 0; //This object will be spawned once the entity dies
 
+hurtAlpha = 1;
 stopOnFlash = true;
 iceTimer = 0; // is iced (frozen cold), and how much remaining time to spend iced
 canIce = true; //@cc is it possible to ice this object (usually doesn't matter if canHit is false)
@@ -375,6 +376,10 @@ else if (!global.frozen) // Basically everything prtEntity should usually be doi
     {
         iFrames -= 1;
     }
+    else
+    {
+        hurtAlpha = 1;
+    }
     hitTimer++;
     
     setTargetStep(); // Targeting other entities (megaman, other players in co-op, etc)
@@ -606,6 +611,7 @@ else
             <string>/// EV_HURT: getting hit successfully
 
 iFrames = 4;
+hurtAlpha = 0.7;
 
 playSFX(sfxEnemyHit);
 </string>
@@ -703,9 +709,9 @@ playSFX(sfxEnemyHit);
                 }
             }*/
             
-            d3d_set_fog(true, flashcol, 0, 0);
+            /*d3d_set_fog(true, flashcol, 0, 0);
             drawSelf();
-            d3d_set_fog(false, 0, 0, 0);
+            d3d_set_fog(false, 0, 0, 0);*/
             
             /*if (iceTimer &gt; 0 &amp;&amp; (iceTimer &gt; iceBlinkTime || (iceTimer &lt;= iceBlinkTime &amp;&amp; iceTimer mod 4 == 0)))
             {
@@ -724,7 +730,8 @@ playSFX(sfxEnemyHit);
                 d3d_set_fog(false, 0, 0, 0);
             }
             
-            drawSelf();
+            //drawSelf();
+            drawSelfEntity();
         }
     }
 }

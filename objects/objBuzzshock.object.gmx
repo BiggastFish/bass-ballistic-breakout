@@ -500,8 +500,7 @@ else
 {
     draw_sprite_ext(sprite_index, 2 + image_index, round(x), round(y), image_xscale, 1, 
     0, c_white, 1);
-    draw_sprite_ext(sprite_index, 4, x, y, image_xscale, 1, 0, 
-        make_color_rgb(248, 112, 176), 1);
+    draw_sprite_ext(sprite_index, 4, x, y, image_xscale, 1, 0, c_white, 0.7);
 }
 if (blastImg &amp;&amp; phase &lt; 4)
     draw_sprite(sprExplosion, 5 - blastImg, x + 78 * image_xscale, y + 44);

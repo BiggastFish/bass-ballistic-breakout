@@ -1409,7 +1409,7 @@ depth = depthstart;
         {
             var dxx = dx + ((healthIndex - 1) * 8); // Multibosses
             var bx = view_xview + 56;
-            var by = view_yview + 192;
+            var by = view_yview + 208;
             var byx = by - ((healthIndex - 1) * 16) - 8; // Multibosses
             
             // Initial black bg for healthbar

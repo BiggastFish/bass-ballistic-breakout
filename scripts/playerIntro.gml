@@ -350,11 +350,11 @@ else
                 }
             }
             break;
-        case 12:
+        case 12: // break through glass
             if (teleportTimer = 0)
             {
                 introFakeGrav = .25;
-                introFakeYspeed = -sqrt(abs(2*.25*abs(y - (landy - 64))));
+                introFakeYspeed = -sqrt(abs(2*.25*abs(y - (landy - 80))));
                 
                 teleportTimer = 1;
             }

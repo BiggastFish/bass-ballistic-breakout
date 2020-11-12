@@ -80,18 +80,18 @@ with (objMegaman)
 // set these here. makes everyone's lives easier.
 
 etankPositionX = 148;
-etankPositionY = 10;
+etankPositionY = 18;
 wtankPositionX = 178;
-wtankPositionY = 10;
+wtankPositionY = 18;
 mtankPositionX = 210;
-mtankPositionY = 10;
+mtankPositionY = 18;
 
 optionsPositionX = 136;
-optionsPositionY = 208;
+optionsPositionY = 216;
 checkPositionX = 158;
-checkPositionY = 208;
+checkPositionY = 216;
 exitPositionX = 204;
-exitPositionY = 208;
+exitPositionY = 216;
 
 arrowTimer = 20;
 
@@ -638,7 +638,7 @@ with (objMegaman)
             <kind>1</kind>
             <string>// center in screen on nonstandard resolutions
 x = view_xview + (view_wview[0] - 256) / 2;
-y = view_yview + (view_hview[0] - 224) / 2;
+y = view_yview + (view_hview[0] - 240) / 2;
 
 // Menu
 if (phase != 0)
@@ -685,7 +685,7 @@ if (phase != 0)
     var wSep = 18; // Seperation between icons
     var yOff = -round((offsetTimer mod 1) * wSep);
     
-    var surface = surface_create(112, (visibleWeapons + 1) * wSep);
+    var surface = surface_create(112, (visibleWeapons + 9) * wSep);
     surface_set_target(surface);
     draw_clear_alpha(c_white, 0);
     
@@ -739,7 +739,7 @@ if (phase != 0)
     }
     
     surface_reset_target();
-    draw_surface(surface, x + 22, y + 14);
+    draw_surface(surface, x + 22, y + 22);
     surface_free(surface);
     
     arrowTimer++;
@@ -753,16 +753,16 @@ if (phase != 0)
     }
     else
     {
-        draw_text(x + 78, y + 4, "- WEAPONS -");
+        draw_text(x + 78, y + 12, "- WEAPONS -");
     }
     
     if (weaponOffset &lt; weaponVisibleN - visibleWeapons - 1)
     {
-        draw_sprite_ext(sprArrow, 3, x + 74, y + 215, 1, 1, 0, c_white, arrowTimer mod 40 &lt; 20); // Down
+        draw_sprite_ext(sprArrow, 3, x + 74, y + 223, 1, 1, 0, c_white, arrowTimer mod 40 &lt; 20); // Down
     }
     else
     {
-        draw_text(x + 78, y + 212, "- WEAPONS -");
+        draw_text(x + 78, y + 220, "- WEAPONS -");
     }
     
     // mega man
@@ -770,13 +770,13 @@ if (phase != 0)
     {
         if (playerID == other.playerID)
         {
-            drawPlayer(playerID, costumeID, 0, 0, other.x + 172, other.y + 62, -1, 1);
+            drawPlayer(playerID, costumeID, 0, 0, other.x + 172, other.y + 70, -1, 1);
         }
     }
     
     // health
-    draw_sprite_ext(sprPauseMenuBarPrimary, global.playerHealth[playerID], x + 144, y + 81, 1, 1, 0, col[0, 2], 1);
-    draw_sprite_ext(sprPauseMenuBarSecondary, global.playerHealth[playerID], x + 144, y + 81, 1, 1, 0, col[1, 2], 1);
+    draw_sprite_ext(sprPauseMenuBarPrimary, global.playerHealth[playerID], x + 144, y + 89, 1, 1, 0, col[0, 2], 1);
+    draw_sprite_ext(sprPauseMenuBarSecondary, global.playerHealth[playerID], x + 144, y + 89, 1, 1, 0, col[1, 2], 1);
     
     // E-Tank
     draw_sprite_ext(sprETank, 2, x + etankPositionX, y + etankPositionY, 1, 1, 0, col[0, option == weaponVisibleN + 1], 1);
@@ -797,27 +797,27 @@ if (phase != 0)
     draw_text(x + mtankPositionX + 8, y + mtankPositionY + 18, zeroPad(global.mTanks, 2));
     
     // Bolts
-    draw_sprite_ext(sprBoltBig, 0, x + 210, y + 54, 1, 1, 0, c_white, 1);
-    draw_sprite_ext(sprBoltBig, 1, x + 210, y + 54, 1, 1, 0, col[0, 1], 1);
-    draw_sprite_ext(sprBoltBig, 2, x + 210, y + 54, 1, 1, 0, col[1, 1], 1);
+    draw_sprite_ext(sprBoltBig, 0, x + 210, y + 62, 1, 1, 0, c_white, 1);
+    draw_sprite_ext(sprBoltBig, 1, x + 210, y + 62, 1, 1, 0, col[0, 1], 1);
+    draw_sprite_ext(sprBoltBig, 2, x + 210, y + 62, 1, 1, 0, col[1, 1], 1);
     
-    draw_text(x + 210 + 8, y + 54 + 18, zeroPad(global.bolts, 4));
+    draw_text(x + 210 + 8, y + 54 + 26, zeroPad(global.bolts, 4));
     
     // Energy Elements
-    draw_sprite_ext(sprEnergyElement, 0, x + 148, y + 92, 1, 1, 0, c_white, 1);
+    draw_sprite_ext(sprEnergyElement, 0, x + 148, y + 100, 1, 1, 0, c_white, 1);
     
-    draw_text(x + 148 + 8, y + 92 + 18, zeroPad(global.energyElements, 3));
+    draw_text(x + 148 + 8, y + 92 + 26, zeroPad(global.energyElements, 3));
     
     // Side Collectible
-    draw_sprite_ext(sprKey, 0, x + 178, y + 92, 1, 1, 0, c_white, 1);
+    draw_sprite_ext(sprKey, 0, x + 178, y + 100, 1, 1, 0, c_white, 1);
     
-    draw_text(x + 178 + 8, y + 92 + 18, zeroPad(0, 3));
+    draw_text(x + 178 + 8, y + 92 + 26, zeroPad(0, 3));
 
     with (objMegaman)
     {
         if (playerID == other.playerID)
         {
-            drawPlayer(playerID, costumeID, 16, 12, other.x + 216, other.y + 92, 1, 1);
+            drawPlayer(playerID, costumeID, 16, 12, other.x + 216, other.y + 100, 1, 1);
         }
     }
     
@@ -828,12 +828,12 @@ if (phase != 0)
         livesText = "--";
     }
     
-    draw_text(x + 216, y + 92 + 18, livesText);
+    draw_text(x + 216, y + 92 + 26, livesText);
     
     // energy saver
     if (global.energySaver)
     {
-        draw_sprite(sprEnergySaver, 0, x + 180, y + 160);
+        draw_sprite(sprEnergySaver, 0, x + 180, y + 168);
     }
     
     // colored text overlays

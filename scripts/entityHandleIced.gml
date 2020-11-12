@@ -26,6 +26,7 @@ if (iceTimer > 0)
         xspeed = 0;
         yspeed = 0;
         grav = 0;
+        speed = 0;
         blockCollision = false;
     }
     
@@ -38,6 +39,7 @@ if (iceTimer > 0)
     {
         yspeed = yspeedPreIce;
         xspeed = xspeedPreIce;
+        speed = speedPreIce;
         grav = gravPreIce;
         blockCollision = blockCollisionPreIce;
         image_speed = imageSpeedPreIce;

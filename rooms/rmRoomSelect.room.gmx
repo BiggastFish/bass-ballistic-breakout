@@ -2,7 +2,7 @@
 <room>
   <caption></caption>
   <width>256</width>
-  <height>224</height>
+  <height>240</height>
   <vsnap>16</vsnap>
   <hsnap>16</hsnap>
   <isometric>0</isometric>
@@ -65,9 +65,9 @@
     <tile bgName="bgRoomSelector" x="48" y="128" w="48" h="16" xo="96" yo="0" id="11226280" name="inst_638E8C44" depth="1000001" locked="0" colour="4294967295" scaleX="-1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="48" y="64" w="48" h="16" xo="96" yo="0" id="11226281" name="inst_C9824F80" depth="1000001" locked="0" colour="4294967295" scaleX="-1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="48" y="16" w="48" h="16" xo="96" yo="0" id="11226282" name="inst_E4024FD7" depth="1000001" locked="0" colour="4294967295" scaleX="-1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="48" y="192" w="48" h="32" xo="96" yo="16" id="11226284" name="inst_0C4B69C3" depth="1000001" locked="0" colour="4294967295" scaleX="-1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="48" y="0" w="48" h="16" xo="96" yo="48" id="11226285" name="inst_5E716008" depth="1000001" locked="0" colour="4294967295" scaleX="-1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="48" y="176" w="64" h="16" xo="96" yo="0" id="11226407" name="inst_0098BFF6" depth="1000001" locked="0" colour="4294967295" scaleX="-1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="48" y="0" w="48" h="16" xo="96" yo="48" id="11311759" name="inst_DE6CB526" depth="1000001" locked="0" colour="4294967295" scaleX="-1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="48" y="192" w="48" h="48" xo="96" yo="16" id="11311760" name="inst_1744AFBC" depth="1000001" locked="0" colour="4294967295" scaleX="-1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="208" y="32" w="48" h="32" xo="48" yo="0" id="11226224" name="inst_65DA4B37" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="208" y="144" w="48" h="32" xo="48" yo="0" id="11226225" name="inst_32A30ED0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="-8" y="32" w="48" h="32" xo="48" yo="0" id="11226227" name="inst_5F51E579" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -79,16 +79,16 @@
     <tile bgName="bgRoomSelector" x="208" y="64" w="48" h="16" xo="96" yo="0" id="11226234" name="inst_9C3B6AB2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="208" y="128" w="48" h="16" xo="96" yo="0" id="11226235" name="inst_AA99C51D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="208" y="176" w="48" h="16" xo="96" yo="0" id="11226236" name="inst_46FCB640" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="48" y="192" w="16" h="32" xo="0" yo="0" id="11226237" name="inst_AC310110" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="192" y="192" w="16" h="32" xo="32" yo="0" id="11226238" name="inst_CE42EAD1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="64" y="192" w="16" h="32" xo="16" yo="0" id="11226240" name="inst_43AE2121" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="80" y="192" w="16" h="32" xo="16" yo="0" id="11226241" name="inst_04DAE768" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="96" y="192" w="16" h="32" xo="16" yo="0" id="11226242" name="inst_41BF7F01" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="112" y="192" w="16" h="32" xo="16" yo="0" id="11226243" name="inst_0F12A6E3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="128" y="192" w="16" h="32" xo="16" yo="0" id="11226244" name="inst_2408658C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="144" y="192" w="16" h="32" xo="16" yo="0" id="11226245" name="inst_62152C9B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="160" y="192" w="16" h="32" xo="16" yo="0" id="11226246" name="inst_2AE74C56" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="176" y="192" w="16" h="32" xo="16" yo="0" id="11226248" name="inst_C7AF92BD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="48" y="208" w="16" h="32" xo="0" yo="0" id="11226237" name="inst_AC310110" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="192" y="208" w="16" h="32" xo="32" yo="0" id="11226238" name="inst_CE42EAD1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="64" y="208" w="16" h="32" xo="16" yo="0" id="11226240" name="inst_43AE2121" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="80" y="208" w="16" h="32" xo="16" yo="0" id="11226241" name="inst_04DAE768" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="96" y="208" w="16" h="32" xo="16" yo="0" id="11226242" name="inst_41BF7F01" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="112" y="208" w="16" h="32" xo="16" yo="0" id="11226243" name="inst_0F12A6E3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="128" y="208" w="16" h="32" xo="16" yo="0" id="11226244" name="inst_2408658C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="144" y="208" w="16" h="32" xo="16" yo="0" id="11226245" name="inst_62152C9B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="160" y="208" w="16" h="32" xo="16" yo="0" id="11226246" name="inst_2AE74C56" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="176" y="208" w="16" h="32" xo="16" yo="0" id="11226248" name="inst_C7AF92BD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="176" y="0" w="32" h="32" xo="48" yo="32" id="11226250" name="inst_7D71F4A1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="80" y="0" w="16" h="32" xo="32" yo="32" id="11226258" name="inst_817ED0E6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="96" y="0" w="16" h="32" xo="32" yo="32" id="11226259" name="inst_9F1C1E07" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -96,7 +96,6 @@
     <tile bgName="bgRoomSelector" x="128" y="0" w="16" h="32" xo="32" yo="32" id="11226261" name="inst_56E5369C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="144" y="0" w="16" h="32" xo="32" yo="32" id="11226262" name="inst_F16A7BF6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="160" y="0" w="16" h="32" xo="32" yo="32" id="11226263" name="inst_751BF65B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="48" y="80" w="48" h="48" xo="96" yo="16" id="11226264" name="inst_4C02C67A" depth="1000000" locked="0" colour="4294967295" scaleX="-1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="48" y="0" w="32" h="32" xo="0" yo="32" id="11226271" name="inst_FA72E9BB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="48" y="32" w="16" h="16" xo="80" yo="48" id="11226408" name="inst_2182C9C5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="64" y="32" w="16" h="16" xo="80" yo="48" id="11226409" name="inst_CE9C27CC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -137,7 +136,6 @@
     <tile bgName="bgRoomSelector" x="96" y="80" w="16" h="16" xo="80" yo="48" id="11226444" name="inst_1BD2DFC2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="80" y="80" w="16" h="16" xo="80" yo="48" id="11226445" name="inst_4E6D2ADE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="64" y="80" w="16" h="16" xo="80" yo="48" id="11226446" name="inst_9333BE00" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgRoomSelector" x="48" y="80" w="16" h="16" xo="80" yo="48" id="11226447" name="inst_FA666CBC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="48" y="96" w="16" h="16" xo="80" yo="48" id="11226448" name="inst_130BFF15" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="64" y="96" w="16" h="16" xo="80" yo="48" id="11226449" name="inst_008DEF13" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="80" y="96" w="16" h="16" xo="80" yo="48" id="11226450" name="inst_9F1FCA45" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -198,6 +196,20 @@
     <tile bgName="bgRoomSelector" x="112" y="144" w="16" h="16" xo="80" yo="48" id="11226505" name="inst_E94DC1D1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="128" y="144" w="16" h="16" xo="80" yo="48" id="11226506" name="inst_A385EF75" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgRoomSelector" x="144" y="144" w="16" h="16" xo="80" yo="48" id="11226507" name="inst_9356C881" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="208" y="224" w="16" h="16" xo="96" yo="48" id="11311739" name="inst_BA11DB57" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="224" y="224" w="32" h="16" xo="112" yo="48" id="11311740" name="inst_6E700A18" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="48" y="192" w="16" h="16" xo="80" yo="48" id="11311741" name="inst_9E7A2E0F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="64" y="192" w="16" h="16" xo="80" yo="48" id="11311742" name="inst_B8CBC705" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="80" y="192" w="16" h="16" xo="80" yo="48" id="11311743" name="inst_71E9A939" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="96" y="192" w="16" h="16" xo="80" yo="48" id="11311744" name="inst_1CEB9A65" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="112" y="192" w="16" h="16" xo="80" yo="48" id="11311745" name="inst_67114B98" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="128" y="192" w="16" h="16" xo="80" yo="48" id="11311746" name="inst_D72D2CDD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="144" y="192" w="16" h="16" xo="80" yo="48" id="11311747" name="inst_8EE6B7ED" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="160" y="192" w="16" h="16" xo="80" yo="48" id="11311748" name="inst_D06F5757" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="176" y="192" w="16" h="16" xo="80" yo="48" id="11311749" name="inst_822458BA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="192" y="192" w="16" h="16" xo="80" yo="48" id="11311750" name="inst_7B24ED95" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="48" y="80" w="48" h="48" xo="96" yo="16" id="11311757" name="inst_8B9F3107" depth="1000000" locked="0" colour="4294967295" scaleX="-1" scaleY="1"/>
+    <tile bgName="bgRoomSelector" x="48" y="80" w="16" h="16" xo="80" yo="48" id="11311758" name="inst_4A1F218D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

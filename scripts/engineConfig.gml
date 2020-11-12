@@ -8,7 +8,7 @@ global.gameSpeed = 60;
 
 // game's internal display resolution.
 global.screenWidth = 256;
-global.screenHeight = 224;
+global.screenHeight = 240;
 
 // colour palette
 paletteSetup();

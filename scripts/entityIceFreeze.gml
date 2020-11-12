@@ -32,6 +32,7 @@ if (iceTimer == 0)
 {
     yspeedPreIce = yspeed;
     xspeedPreIce = xspeed;
+    speedPreIce = speed;
     gravPreIce = grav;
     solidPreIce = isSolid;
     blockCollisionPreIce = blockCollision;

@@ -79,7 +79,7 @@ if (entityCanStep())
         p.xDir = xDir;
         p.yDir = yDir;
         p.spd = treasureSpd;
-        p.depth = 1000030;
+        p.depth = 1000010;
         if (shinies &gt;= shiniesMax)
         {
             timer = 0;

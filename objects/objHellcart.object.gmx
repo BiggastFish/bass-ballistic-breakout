@@ -31,9 +31,10 @@ healthpointsStart = 6;
 healthpoints = healthpointsStart;
 contactDamage = 3;
 
+despawnRange = -1;
+
 img = 0;
 crashed = 0;
-bump = 0;
 spd = 2;
 </string>
           </argument>
@@ -64,6 +65,10 @@ if (entityCanStep())
     if (!crashed)
     {
         xspeed = spd * image_xscale;
+        if (ycoll &gt; 0 &amp;&amp; insideView())
+        {
+            playSFX(sfxBikkyLand);
+        }
         if (ground) 
         {
             img++
@@ -72,15 +77,9 @@ if (entityCanStep())
             {
                 yspeed = -4;
             }
-            if (bump)
-            {
-                playSFX(sfxBikkyLand);
-                bump = 0;
-            }
         }
         else
         {
-            bump = 1;
             image_index = 2;
         }
         if (xcoll != 0)
@@ -93,12 +92,16 @@ if (entityCanStep())
             crashed = 1;
         }
     }
+    if (bbox_right &lt;= global.sectionLeft || bbox_left &gt;= global.sectionRight ||
+    bbox_top &gt;= global.sectionBottom || bbox_bottom &lt;= global.sectionTop)
+    {
+        instance_destroy();
+    }
 }
 else if (dead)
 {
     crashed = 0;
     blockCollision = 1;
-    bump = 0;
 }
 </string>
           </argument>
