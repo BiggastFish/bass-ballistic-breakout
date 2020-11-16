@@ -38,6 +38,7 @@ grav = 0;
 
 jumpDir = 0;
 animTimer = 0;
+dropDown = 0;
 chillin = 1;
 init = 1;
 dieToSpikes = true;
@@ -77,9 +78,10 @@ if (entityCanStep())
     {
         if (instance_exists(target))
         {
-            var tx = target.x, dd = target.x - x;
+            var tx = target.x, ty = target.y, dd = target.x - x;
             if ((abs(dd) &lt;= 104 &amp;&amp; abs(dd) &gt;= 32) &amp;&amp; 
-            ((tx &lt; x &amp;&amp; jumpDir &lt; 0) || (tx &gt; x &amp;&amp; jumpDir &gt; 0)))
+            ((tx &lt; x &amp;&amp; jumpDir &lt; 0) || (tx &gt; x &amp;&amp; jumpDir &gt; 0)) &amp;&amp; 
+            (!dropDown || (dropDown &amp;&amp; ty &lt;= y)))
             {
                 playSFX(sfxSplash);
                 y+= 16;

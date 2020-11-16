@@ -162,21 +162,17 @@ if (!global.frozen)
             }
         }
         
-        if (instance_exists(chaseObj) &amp;&amp; canChase)
+        if (instance_exists(chaseObj) &amp;&amp; !chaseObj.dead &amp;&amp; canChase)
         {
             with (chaseObj)
             {
-                if (insideView() &amp;&amp; !dead)
+                if (insideView())
                 {
                     with (other)
                     {
                         mp_linear_step(spriteGetXCenterObject(chaseObj),
                         spriteGetYCenterObject(chaseObj), 2, 0);
                     }
-                }
-                else
-                {
-                    with (other) canChase = 0;
                 }
             }
         }

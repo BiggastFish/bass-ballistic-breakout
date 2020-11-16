@@ -84,16 +84,22 @@ if (entityCanStep())
         }
         if (xcoll != 0)
         {
-            playSFX(sfxPowerStomp);
-            image_index = 3;
-            blockCollision = 0;
-            yspeed = -3;
-            xspeed = spd * -image_xscale;
-            crashed = 1;
+            if (insideView())
+            {
+                playSFX(sfxPowerStomp);
+                image_index = 3;
+                blockCollision = 0;
+                yspeed = -3;
+                xspeed = spd * -image_xscale;
+                crashed = 1;
+            }
+            else
+                instance_destroy();
         }
     }
-    if (bbox_right &lt;= global.sectionLeft || bbox_left &gt;= global.sectionRight ||
-    bbox_top &gt;= global.sectionBottom || bbox_bottom &lt;= global.sectionTop)
+    if ((bbox_right &lt;= global.sectionLeft || bbox_left &gt;= global.sectionRight ||
+    bbox_top &gt;= global.sectionBottom || bbox_bottom &lt;= global.sectionTop) ||
+    (crashed &amp;&amp; bbox_top &gt;= view_yview + 240))
     {
         instance_destroy();
     }

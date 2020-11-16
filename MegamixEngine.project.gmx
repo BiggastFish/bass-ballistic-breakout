@@ -1377,6 +1377,7 @@
       <sprite>sprites\sprWhy</sprite>
       <sprite>sprites\sprBossHealthHud</sprite>
       <sprite>sprites\sprBassJumpPoof</sprite>
+      <sprite>sprites\sprAntiEddie</sprite>
       <sprites name="Weapons">
         <sprite>sprites\sprBassBullet</sprite>
         <sprite>sprites\sprBassBulletBreak</sprite>
@@ -1425,6 +1426,10 @@
         <sprites name="Money Machine">
           <sprite>sprites\sprAstroZombieg</sprite>
           <sprite>sprites\sprGoldonBatton</sprite>
+          <sprite>sprites\sprGoldragon</sprite>
+          <sprite>sprites\sprGoldragonOrb</sprite>
+          <sprite>sprites\sprGoldragonOrbSplit</sprite>
+          <sprite>sprites\sprFloatingTreasure</sprite>
           <sprite>sprites\sprGoldonBattonDebris</sprite>
           <sprite>sprites\sprHellcart</sprite>
           <sprite>sprites\sprHellcartSpawner</sprite>
@@ -1489,6 +1494,7 @@
       </sprites>
       <sprites name="Stage Select">
         <sprite>sprites\sprMoneyMachineBG</sprite>
+        <sprite>sprites\sprBassStageSelectBust</sprite>
         <sprite>sprites\sprWhisperingWoodsBG</sprite>
         <sprite>sprites\sprJumpKingBG</sprite>
         <sprite>sprites\sprStHungerBG</sprite>
@@ -1942,6 +1948,7 @@
       <object>objects\objDestroyField</object>
       <object>objects\objCheckpoint</object>
       <object>objects\objCheckpointTouch</object>
+      <object>objects\objCheckpointAntiEddie</object>
       <object>objects\objNPC</object>
       <object>objects\objNPCMobile</object>
       <object>objects\objSign</object>
@@ -2491,6 +2498,7 @@
         </objects>
         <objects name="Boss">
           <object>objects\objGoldMan</object>
+          <object>objects\objGoldragon</object>
           <object>objects\objGoldem</object>
           <objects name="Projectiles">
             <object>objects\objGoldemWave</object>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>// drawing constants
 optionXOrigin = 16;
-optionYOrigin = 113;
+optionYOrigin = 129;
 
 optionXDist = 64;
 optionYDist = 51;
@@ -314,6 +314,8 @@ if (instance_exists(bossObject))
             // Move x and y-axis
             cursorY += ydir;
             cursorX += xdir;
+            if (cursorX &gt; 2 &amp;&amp; cursorY == 2)
+                cursorX = 2;
 
             // upon changing position
             if (xdir != 0 || ydir != 0)

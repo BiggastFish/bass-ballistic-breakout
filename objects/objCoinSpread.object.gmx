@@ -31,8 +31,8 @@ bulletLimitCost = 1;
 
 contactDamage = 2;
 
+pierces = 1;
 penetrate = 0;
-pierces = 0;
 
 blockCollision = 1;
 calibrated = 0;

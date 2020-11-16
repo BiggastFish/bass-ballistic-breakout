@@ -67,6 +67,7 @@ if (entityCanStep())
             image_index = (timmer / 8) mod 2;
             if (timmer &gt;= 90)
             {
+                playSFX(sfxDoor);
                 image_index = 1;
                 timmer = 0;
                 phase++;
@@ -88,11 +89,12 @@ if (entityCanStep())
                 {
                     sprite_index = sprGorudokuroGold;
                     xspeed = 5.5 * other.image_xscale;
-                    yspeed = choose(-.5, 0, .5);
+                    yspeed = choose(-.15, 0, .15);
                 }
             }
             if (timmer &gt;= 60)
             {
+                playSFX(sfxDoor);
                 timmer = 0;
                 phase++;
             }

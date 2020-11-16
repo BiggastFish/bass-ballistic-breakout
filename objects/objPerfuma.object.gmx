@@ -158,7 +158,7 @@ if (entityCanStep())
                 {
                     image_index = 2;
                     playSFX(sfxTripleBlade);
-                    l = instance_create(x + (48 * image_xscale), view_yview + 192,
+                    l = instance_create(x + (48 * image_xscale), view_yview + 208,
                     objPerfumaThorn);
                     l.image_xscale = image_xscale;
                 }
@@ -271,7 +271,7 @@ if (entityCanStep())
                             s.grav = .2;
                             s.yspeed = -5;
                             s.xspeed = xSpeedAim(x + (12 * image_xscale), y - 4, 
-                            x + ((32 + (64 * p)) * image_xscale), view_yview + 192, -4, .2);
+                            x + ((32 + (64 * p)) * image_xscale), view_yview + 208, -4, .2);
                         }
                     }
                     else
@@ -283,7 +283,7 @@ if (entityCanStep())
                             s.grav = .2;
                             s.yspeed = -5;
                             s.xspeed = xSpeedAim(x + (12 * image_xscale), y - 4, 
-                            x + ((8 + (64 * p)) * image_xscale), view_yview + 192, -4, .2);
+                            x + ((8 + (56 * p)) * image_xscale), view_yview + 208, -4, .2);
                         }
                     }
                     
@@ -373,7 +373,7 @@ if (entityCanStep())
                                 image_index = 5;
                                 spd = -2;
                             }
-                            if (y &lt; view_yview + 156)
+                            if (y &lt; view_yview + 172)
                                 y++;
                             if (spd &lt; 4)
                                 spd+= 8/60;
