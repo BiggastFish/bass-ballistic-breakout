@@ -34,6 +34,7 @@ contactDamage = 2;
 pierces = 1;
 penetrate = 0;
 
+checkForTopSolid = false;
 blockCollision = 1;
 calibrated = 0;
 angle = 0;

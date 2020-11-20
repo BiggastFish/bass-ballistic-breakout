@@ -75,7 +75,7 @@ if (entityCanStep())
     {
         timer-= timerDelay;
         shinies++;
-        p = instance_create(x + 8, y + 8, objFloatingTreasure);
+        p = instance_create(x , y, objFloatingTreasure);
         p.xDir = xDir;
         p.yDir = yDir;
         p.spd = treasureSpd;

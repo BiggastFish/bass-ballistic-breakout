@@ -58,16 +58,19 @@ if (dieToSpikes) // entities with this variable set to "true" die when coming in
 }
 
 // topsolids are only solid if they are beneath us
-with (objTopSolid)
+if (checkForTopSolid)
 {
-    solid=0;
-    if (isSolid == 1)
+    with (objTopSolid)
     {
-        if (!place_meeting(x, y + cgrav, myid))
+        solid=0;
+        if (isSolid == 1)
         {
-            if (place_meeting(x, y - cgrav * slp, myid))
+            if (!place_meeting(x, y + cgrav, myid))
             {
-                solid = 1;
+                if (place_meeting(x, y - cgrav * slp, myid))
+                {
+                    solid = 1;
+                }
             }
         }
     }

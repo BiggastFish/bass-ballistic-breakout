@@ -110,7 +110,7 @@ if (!global.frozen)
     else if (isIntro)
     {
         visible = 1;
-        son = instance_create(view_xview + 208, view_yview + 160, objGoldem);
+        son = instance_create(view_xview + 208, view_yview + 176, objGoldem);
         son.parent = id;
         isIntro = false;
     }
@@ -174,7 +174,7 @@ if (entityCanStep())
                 break;
             case 1: // drop shit on bass
                 if (dropTimer &lt; 40)
-                    if (mp_linear_step(targetSpot, view_yview + 96, 4, 0))
+                    if (mp_linear_step(targetSpot, view_yview + 112, 4, 0))
                         dropTimer++;
                 if (dropTimer &gt; 40)
                     dropTimer++;
@@ -220,7 +220,7 @@ if (entityCanStep())
                 if (son != noone &amp;&amp; instance_exists(son))
                 {
                     if (son.fightTimer &lt; 60)
-                        if mp_linear_step(son.x, view_yview + 96, 3, 0)
+                        if mp_linear_step(son.x, view_yview + 112, 3, 0)
                             dropTimer++;
                     if (son.fightTimer &gt;= 100 &amp;&amp; son.fightTimer % 20 == 0 &amp;&amp; son.fightTimer &lt;= 160)
                     {

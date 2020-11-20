@@ -84,15 +84,18 @@ if (xspeed != 0)
     // make semisolids solid if they can be used as a slope
     if (slp != 0)
     {
-        with (objTopSolid)
+        if (checkForTopSolid)
         {
-            solid=0;
-            if (place_meeting(x - other.xspeed, y, myid))
+            with (objTopSolid)
             {
-                if (!place_meeting(x - other.xspeed, y + slp, myid)
-                    && !place_meeting(x, y, myid))
+                solid=0;
+                if (place_meeting(x - other.xspeed, y, myid))
                 {
-                    solid = 1;
+                    if (!place_meeting(x - other.xspeed, y + slp, myid)
+                        && !place_meeting(x, y, myid))
+                    {
+                        solid = 1;
+                    }
                 }
             }
         }
@@ -199,14 +202,17 @@ if (yspeed != 0)
     // jumpthrough objects beneath us are solid
     if (yspeed * cgrav > 0)
     {
-        with (objTopSolid)
+        if (checkForTopSolid)
         {
-            solid = 0;
-            if (isSolid)
+            with (objTopSolid)
             {
-                if (!place_meeting(x, y, myid))
+                solid = 0;
+                if (isSolid)
                 {
-                    solid = 1;
+                    if (!place_meeting(x, y, myid))
+                    {
+                        solid = 1;
+                    }
                 }
             }
         }

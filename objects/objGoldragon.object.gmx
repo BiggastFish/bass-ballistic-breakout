@@ -26,22 +26,23 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-healthpointsStart = 160;
+healthpointsStart = 60;
 healthpoints = healthpointsStart;
 blockCollision = 0;
 introType = 2;
 grav = 0;
 contactDamage = 4;
-son = noone;
-angVal = 270;
-midPointY = y + 12;
-midPointX = x;
 phase = 0;
-introType = 0;
+introType = 2;
 bruhTimer = 0;
+angVal = 0;
+shotsFired = 0;
 tx = x;
 ty = y;
 targetSpot = tx;
+dieToPits = false;
+_im = 0;
+seg[0] = noone;
 
 phaseArray[0] = 4;
 phaseArray[1] = 5;
@@ -60,13 +61,9 @@ lastPhase = 0;
 useEndStageBehavior = false;
 
 // Music
-music = "HoTDBoss.ogg";
-musicType = "OGG";
-musicTrackNumber = 0;
-musicVolume = 0.8;
-musicLoop = true;
-musicLoopSecondsStart = 6.665;
-musicLoopSecondsEnd = 70.655;
+music = "Mega_Man_4.nsf";
+musicType = "VGM";
+musicTrackNumber = 17;
 
 // Damage Tables
 enemyDamageValue(objBusterShotHalfCharged, 1);
@@ -112,20 +109,25 @@ if (entityCanStep())
         switch (phase)
         {
             case 0: // jump!!!
-                if (bruhTimer == 5)
+                animationLoop(0, 1, 0.2);
+                if (bruhTimer == 15)
                 {
                     x = tx;
-                    for (m = -1; m &lt; 2; m+= 2)
+                    with (objGoldragonSegment)
                     {
-                        k = instance_create(x + (4 * m), view_yview + 208, objSlideDust)
-                        k.image_xscale = m;
+                        x = other.tx;
+                        y = other.y;
+                        grav = 0;
                     }
+                    k = instance_create(x, view_yview + 200, objExplosion);
+                    playSFX(sfxCompactor);
                 }
-                if (bruhTimer == 30)
+                if (bruhTimer == 45)
                 {
                     calibrateDirection();
                     targetSpot = tx;
-                    if (x &lt; view_xview + 40)
+                    playSFX(sfxEnemyBoost);
+                    if (x &lt; view_xview + 64)
                     {
                         image_xscale = 1;
                         if (tx &lt;= x)
@@ -133,7 +135,7 @@ if (entityCanStep())
                             targetSpot = x + 32;
                         }
                     }
-                    if (x &gt; view_xview + view_wview - 40)
+                    else if (x &gt; view_xview + view_wview - 64)
                     {
                         image_xscale = -1;
                         if (tx &gt;= x)
@@ -141,269 +143,155 @@ if (entityCanStep())
                             targetSpot = x - 32;
                         }
                     }
-                    grav = .2;
-                    yspeed = -5;
-                    storedYSpd = yspeed;
-                    xspeed = xSpeedAim(x, targetSpot, y, ty, -4, .2);
+                    var yeet;
                     
-                }
-                if (bruhTimer == 31)
-                {
-                    storedXSpd = xspeed;
+                    grav = .12;
+                    yspeed = -6;
+                    storedYSpd = yspeed;
+                    yeet = xSpeedAim(x, y, targetSpot, view_yview + 224, -4, .12);
+                    xspeed = yeet;
+                    storedXSpd = yeet;
                     with (objGoldragonSegment)
                     {
-                        x = tx;
-                        moveTimer = 24 * num;
-                        storedYSpd = other.storedYSpd
-                        storedXSpd = storedXSpd;
+                        bruhTimer = 6 * num;
+                        storedXSpd = other.xspeed;
+                        storedYSpd = -6;
                     }
+                }
+                
+                if (yspeed &gt; 0 &amp;&amp; bbox_top &gt;= view_yview + 224)
+                {
+                    xspeed = 0;
+                    yspeed = 0;
+                    grav = 0;
                 }
                 break;
-            case 1: // drop shit on bass
-                if (dropTimer &lt; 40)
-                    if (mp_linear_step(targetSpot, view_yview + 96, 4, 0))
-                        dropTimer++;
-                if (dropTimer &gt; 40)
-                    dropTimer++;
-                if (dropTimer == 40)
+            case 1: // shoot the
+                if (bruhTimer == 30)
                 {
-                    dropTimer++
-                    playSFX(sfxCannonShoot);
-                    instance_create(x, y + 24, objGoldManDrop);
-                    dropsDone++;
-                }
-                if (dropTimer &gt;= 80)
-                {
+                    x = tx;
+                    targetSpot = tx;
                     image_index = 0;
-                    if (dropTimer == 80)
+                    k = instance_create(x, view_yview + 208, objExplosion);
+                    playSFX(sfxCompactor);
+                }
+                if (bruhTimer &gt;= 55)
+                {
+                    angVal+= 3;
+                    x = targetSpot + round(cos(degtorad(angVal)) * 8);
+                }
+                if (bruhTimer &gt;= 55 &amp;&amp; bruhTimer &lt; 600)
+                {
+                    if (bruhTimer == 55)
                     {
-                        if (x &gt; yeah)
-                            midPointX = yeah - 64;
-                        else
-                            midPointX = yeah + 64;
-                        xspeed = (abs(midPointX - x))/45;
-                        if (x &gt; midPointX)
-                            xspeed = -xspeed;
-                        yspeed = -abs((abs(ystart - y))/45);
-                    }
-                    if (y &lt;= ystart)
-                    {
-                        x = midPointX;
                         y = ystart;
-                        xspeed = 0;
-                        yspeed = 0;
-                        dropTimer = 0;
-                        flyTimer = 0;
-                        phase = 0;
-                    }
-                }
-                else
-                {
-                    image_index = 4;
-                    calibrateDirection();
-                }
-                break;
-            case 2: // shoot coins from hat
-                if (son != noone &amp;&amp; instance_exists(son))
-                {
-                    if (son.fightTimer &lt; 60)
-                        if mp_linear_step(son.x, view_yview + 96, 3, 0)
-                            dropTimer++;
-                    if (son.fightTimer &gt;= 100 &amp;&amp; son.fightTimer % 20 == 0 &amp;&amp; son.fightTimer &lt;= 160)
-                    {
-                        playSFX(sfxBolt);
-                        b = instance_create(x, y - 32, objNewShotmanBullet);
-                        b.contactDamage = 3;
-                        b.stopAtSolid = 1;
-                        b.grav = .2;
-                        b.yspeed = -3;
-                        b.xspeed = xSpeedAim(x, y - 32, tx, view_yview + 192,
-                        -3, .2)
-                        b.sprite_index = sprGoldManCoin;
-                    }
-                    if (son.fightTimer == 180)
-                    {
-                        if (son.x &gt; yeah)
-                            midPointX = yeah + 64;
-                        else
-                            midPointX = yeah - 64;
-                    }
-                    if (son.fightTimer &gt;= 200)
-                    {
-                        if (mp_linear_step(midPointX, ystart,
-                        3, 0))
+                        calibrateDirection();
+                        angVal = 0;
+                        with (objGoldragonSegment)
                         {
-                            x = midPointX;
-                            y = ystart;
-                            dropTimer = 0;
-                            flyTimer = 0;
-                            phase = 0;
-                            angVal = 270;
-                            dropsDone = choose(0, 1);
-                            with (son) punches = other.dropsDone;
+                            dang = (15 * num) - 15;
                         }
                     }
-                }
-                break;
-            case 3: // he breaks down :(
-                if (mp_linear_step(midPointX, ystart, 3, 0))
-                    with (son)
-                        dieTimer++;
-                if (!instance_exists(objGoldem))
-                {
-                    dropTimer++
-                    if (dropTimer &gt;= 45)
-                    {
-                        midPointY+= 32;
-                        midPointX = x;
-                        phase = 7;
-                    }
-                }
-                break;
-            case 4: // spin!
-                if (flyTimer == 15)
-                    dropsDone = choose(-1, 1);
-                if (flyTimer &gt;= 30 &amp;&amp; flyTimer &lt; 150)
-                {
-                    angVal+= 3 * dropsDone;
-                    x = midPointX + round(cos(degtorad(angVal)) * 96);
-                    y = midPointY + round(sin(degtorad(angVal)) * 46);
-                }
-                if ((angVal - 315) % 45 == 0 &amp;&amp; angVal != 270 + (180 * dropsDone) 
-                &amp;&amp; flyTimer &gt; 30 &amp;&amp; flyTimer &lt; 140)
-                {
-                    playSFX(sfxEnemyShoot);
-                    instance_create(x, y + 24, objGoldManSpark);
-                    instance_create(x, y + 24, objExplosion);
-                }
-                if (flyTimer &gt;= 180)
-                {
-                    image_index = 0;
-                    if (instance_number(objGoldManSpark) &lt; 2)
-                    {
-                        lastPhase = 3;
-                        phase = 7;
-                    }
-                }
-                else
-                    image_index = (flyTimer / 3) % 4;
-                break;
-            case 5: // bruh coins
-                if (dropTimer &lt;= 45)
-                {
-                    if (mp_linear_step(yeah + (96 * dropsDone),
-                    ystart, 3, 0))
-                        dropTimer++;
-                }
-                else if (dropTimer &lt;= 115)
-                {
-                    image_xscale = dropsDone;
-                    if (mp_linear_step(yeah + (96 * -dropsDone),
-                    ystart, 3, 0))
-                        dropTimer++;
-                }
-                else
-                {
-                    if (mp_linear_step(yeah, ystart, 3, 0))
-                        if (instance_number(prtEnemyProjectile) &lt; 2)
-                        {
-                            lastPhase = 4;
-                            phase = 7;
-                        }
-                }
-                if (x &gt;= yeah - 48 &amp;&amp; x &lt;= yeah + 48)
-                {
-                    image_xscale = -1;
-                    image_index = 0;
-                }
-                else
-                {
-                    image_index = 4;
-                    if (x &lt; yeah - 48)
-                        image_xscale = 1;
+                    if (y &gt; view_yview + 128)
+                        y-=3;
                     else
-                        image_xscale = -1;
+                        bruhTimer = 600;
+
                 }
-                if (dropTimer == 35 || dropTimer == 105)
+                if (bruhTimer &gt;= 600)
                 {
-                    playSFX(sfxCannonShoot);
-                    s = instance_create(x, y + 24, objGoldManDrop);
-                    s.grav = 0;
-                    s.move = 1;
-                    for (i = -1; i &lt; 2; i+=2)
+                    calibrateDirection();
+                    if (bruhTimer == 645)
+                        image_index = 1;
+                    if (bruhTimer == 670)
                     {
-                        l = instance_create(x, y + 24, objGoldManCoinSpread);
-                        l.angle = point_direction(x, y + 24, 
-                        yeah + (112 * i), y + 48);
-                        l.sp = 4;
-                        l.dir = i;
+                        playSFX(sfxEnemyShoot);
+                        o = instance_create(x, y + 4, objGoldragonOrb);
+                        o.xspeed = (tx - x)/30;
+                        o.yspeed = (ty - (y + 4))/30;
+                        o.image_xscale = image_xscale;
                     }
-                }
-                if (dropTimer == 15 || dropTimer == 85)
-                    instance_create(x, y + 24, objExplosion);
-                break;
-            case 6: // 8 :)
-                calibrateDirection();
-                image_index = 4;
-                if (flyTimer == 10)
-                {
-                    dropTimer = 270;
-                    dropsDone = choose(-1, 1);
-                }
-                if (flyTimer &gt;= 15 &amp;&amp; flyTimer &lt; 255)
-                {
-                    angVal+= 1.5 * dropsDone;
-                    dropTimer+= 3 * dropsDone;
-                    x = midPointX + round(cos(degtorad(dropTimer)) * 96);
-                    y = midPointY + round(sin(degtorad(angVal)) * 46);
-                }
-                if ((angVal - 315) % 90 == 0 &amp;&amp; angVal != 270 + (360 * dropsDone)
-                &amp;&amp; flyTimer &gt; 15 &amp;&amp; flyTimer &lt; 240)
-                {
-                    playSFX(sfxBolt);
-                    b = instance_create(x, y - 32, objNewShotmanBullet);
-                    b.contactDamage = 3;
-                    b.stopAtSolid = 1;
-                    b.grav = .2;
-                    b.yspeed = -4;
-                    b.xspeed = xSpeedAim(x, y - 32, tx, ty,
-                    -4, .2)
-                    b.sprite_index = sprGoldManCoin;
-                }
-                if (flyTimer &gt;= 255)
-                {
-                    image_index = 0;
-                    if (flyTimer &gt;= 275)
+                    if (bruhTimer == 685)
+                        image_index = 0;
+                    if (bruhTimer &gt;= 700)
                     {
-                        lastPhase = 5;
-                        phase = 7;
+                        if (bbox_top &lt;= view_yview + 224)
+                            y+= 3;
+                        else
+                        {
+                            phase = 2;
+                            bruhTimer = -15;
+                        }
                     }
                 }
                 break;
-            case 7: //actual phase decision
-                if (phaseLeft &lt; 0) 
+            case 2: // snake!! the video game
+                animationLoop(0, 1, 0.2);
+                if (bruhTimer == 25)
                 {
-                    phaseLeft = 2;
-                    phaseArrayDir = irandom(1);
-                    phasePick = 3 + irandom(2);
-                    if (phasePick == lastPhase)
-                        phasePick++;
+                    var side = choose(-1 ,1);
+                    image_xscale = -side;
+                    x = yeah + (128 * side);
+                    y = ystart - 32;
+                    k = instance_create(yeah + (96 * side), 
+                    ystart - 32, objExplosion);
+                    playSFX(sfxCompactor);
                 }
-                if (phaseArrayDir &gt; 0)
-                    phase = phaseArray[phasePick - phaseLeft];
-                else
-                    phase = phaseArray[phasePick + phaseLeft];
-                phaseLeft--;
-                dropsDone = 0;
-                dropTimer = 0;
-                flyTimer = 0;
-                angVal = 270;
-                if (phase = 5)
+                if (bruhTimer == 55)
                 {
-                    dropsDone = choose(-1, 1);
-                    image_index = 4;
-                    image_xscale = -dropsDone;
+                    xspeed = 3 * image_xscale;
+                    with (objGoldragonSegment)
+                    {
+                        x = other.x;
+                        y = other.y;
+                        bruhTimer = 6 * num;
+                        storedXSpd = other.xspeed;
+                        storedYSpd = 0;
+                        grav = 0;
+                    }
                 }
+                if (shotsFired == 0 &amp;&amp; ((x &gt;= view_xview + 208 &amp;&amp; image_xscale &gt; 0)
+                || (x &lt;= view_xview + 32 &amp;&amp; image_xscale &lt; 0)))
+                {
+                    shotsFired = 1;
+                    xspeed = 0;
+                    yspeed = -3;
+                    with (objGoldragonSegment)
+                    {
+                        bruhTimer = 6 * num;
+                        storedXSpd = 0;
+                        storedYSpd = -3;
+                    }
+                }
+                if (shotsFired == 1 &amp;&amp; (y &lt;= view_yview + 32))
+                {
+                    shotsFired = 2;
+                    image_xscale *= -1;
+                    xspeed = 3 * image_xscale;
+                    yspeed = 0;
+                    with (objGoldragonSegment)
+                    {
+                        bruhTimer = 6 * num;
+                        storedXSpd = other.xspeed;
+                        storedYSpd = 0;
+                    }
+                    
+                }
+                if (shotsFired == 2 &amp;&amp; ((tx &lt;= x &amp;&amp; image_xscale &gt; 0) ||
+                (tx &gt;= x &amp;&amp; image_xscale &lt; 0)))
+                {
+                    shotsFired = 3;
+                    xspeed = 0;
+                    yspeed = 3;
+                    with (objGoldragonSegment)
+                    {
+                        bruhTimer2 = 6 * num;
+                        storedXSpd2 = 0;
+                        storedYSpd2 = 3;
+                    }
+                }
+                if (yspeed &gt; 0 &amp;&amp; bbox_top &gt;= view_yview + 224)
+                    yspeed = 0;
                 break;
         }
     }
@@ -413,7 +301,7 @@ if (entityCanStep())
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="21">
+    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -430,8 +318,18 @@ if (entityCanStep())
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (phase = 3)
-    other.guardCancel = 3;
+            <string>if (!instance_exists(objGoldragonSegment))
+{
+    for (var i = 1; i &lt;= 7; i++)
+    {
+        with (instance_create(x, y, objGoldragonSegment))
+        {
+            num = i;
+            depth = other.depth + i;
+            other.seg[i] = id;
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -455,51 +353,34 @@ if (entityCanStep())
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+
 with (prtEnemyProjectile)
 {
     instance_create(x, y, objExplosion);
     instance_destroy();
 }
-for (i = -1; i &lt; 2; i+= 2)
+
+with (objGoldragonSegment)
 {
-    m = instance_create(x, y, objEnemyBullet);
+    m = instance_create(x, y, objGravEffect);
     m.image_xscale = image_xscale;
+    m.image_angle = image_angle;
     m.sprite_index = sprite_index;
-    if (i &gt; 0)
-        m.image_index = 6;
-    else
-        m.image_index = 5;
+    m.image_index = image_index;
     m.yspeed = -3;
-    m.xspeed = 2 * (i * image_xscale);
+    m.xspeed = irandom_range(-2, 2);
     m.grav = .2;
-    m.contactDamage = 0;
-    m.reflectable = 0;
+    instance_destroy();
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_inherited();
-/*draw_text(view_xview + 32, view_yview + 48, dropTimer);
-draw_text(view_xview + 32, view_yview + 64, dropsDone);
+
+stopMusic();
+m = instance_create(x, y, objGravEffect);
+m.image_xscale = image_xscale;
+m.sprite_index = sprite_index;
+m.image_index = image_index;
+m.yspeed = -3;
+m.xspeed = irandom_range(-2, 2);
+m.grav = .2;
 </string>
           </argument>
         </arguments>

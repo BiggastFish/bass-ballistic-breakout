@@ -32,7 +32,7 @@
 /// stretch the object in the editor to cover the area you want to trigger the checkpoint
 
 //@cc (the X position in pixels Mega Man should spawn at when using the checkpoint)
-xx = x + 1;
+xx = x;
 
 //@cc (the Y position in pixels Mega Man should spawn at when using the checkpoint)
 yy = y;
@@ -43,6 +43,7 @@ respawnAnimation = 0;
 //@cc play the animation sequence while ready's being displayed
 showDuringReady = false;
 
+yspeed = 0;
 touch = 0;
 _im = 0;
 
@@ -87,12 +88,7 @@ if (global.checkpointY == yy &amp;&amp; global.checkpointX == xx)
                 touch = 1;
                 _im = 0;
                 image_index = 2;
-                yspeed = -2;
-                if (!global.livesEnabled)
-                {
-                    e = instance_create(objMegaman.x, objMegaman.y, objLife);
-                    e.visible = 0;
-                }
+                yspeed = -3;
             }
         }
         else if (touch == 1)
@@ -128,17 +124,15 @@ if (global.checkpointY == yy &amp;&amp; global.checkpointX == xx)
             }
         }
     }
-    else
+}
+if (instance_exists(objSectionSwitcher))
+{
+    visible = 0;
+    if (global.checkpointX == xx &amp;&amp; global.checkpointY == yy)
     {
-        visible = 0;
-        if (global.checkpointY == yy &amp;&amp; global.checkpointX == xx)
-        {
-            instance_destroy();
-        }
-
+        instance_destroy();
     }
 }
-
 </string>
           </argument>
         </arguments>

@@ -47,6 +47,26 @@ if (init)
             teleportTimer = 0;
             blockCollision = 0;
             break;
+        case 13: // fall in, but with coins!
+            landy = y;
+            y = view_yview - 32;
+            blockCollision = 0;
+            teleportTimer = 0;
+            global.lockTransition = true;
+            playSFX(sfxBolt);
+            for (i = -2; i <= 2; i++)
+            {
+                if (i != 0)
+                {
+                    f = instance_create(view_xview + 128 + (24 * i), 
+                    view_yview, objGravEffect);
+                    f.sprite_index = sprGorudokuroGold;
+                    f.image_index = irandom(2);
+                    f.yspeed = 2;
+                    f.xspeed = i * .8;
+                }
+            }
+            break;
         default:
             landy = y;
             y = view_yview - 32;
@@ -411,5 +431,41 @@ else
                 global.lockTransition = false;
                 exit;
             }
+            break;
+        case 13: // fall in without teleporting animation
+        // don't use teleport sprites, instead do this! 
+            canSpriteChange = 1;
+            ground = false;
+            playerHandleSprites("Normal");
+            canSpriteChange = 0;
+            
+            // start animation if mm has reached the destination
+            if (round(y) >= landy)
+            {
+                if (teleportTimer == 0)
+                {
+                    playSFX(sfxLand);
+                    y = landy;
+                }
+                else
+                {
+                    teleporting = false;
+                    teleportTimer = 0;
+                    teleportLock = lockPoolRelease(teleportLock);
+                    
+                    canHit = true;
+                    blockCollision = true;
+                    iFrames = 0;
+                    ground = true;
+                    global.lockTransition = false;
+                    exit;
+                }
+                teleportTimer += 1;
+            }
+            else
+            {
+                y += 8;
+            }
+            break;
     }
 }

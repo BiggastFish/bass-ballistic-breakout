@@ -2482,6 +2482,9 @@
         <object>objects\objAstroZombieg</object>
         <object>objects\objGoldonBatton</object>
         <object>objects\objGorudokuro</object>
+        <object>objects\objGoldragon</object>
+        <object>objects\objGoldragonSegment</object>
+        <object>objects\objGoldragonOrb</object>
         <object>objects\objHellcartSpawner</object>
         <object>objects\objHellcart</object>
         <objects name="Gimmicks">
@@ -2498,7 +2501,6 @@
         </objects>
         <objects name="Boss">
           <object>objects\objGoldMan</object>
-          <object>objects\objGoldragon</object>
           <object>objects\objGoldem</object>
           <objects name="Projectiles">
             <object>objects\objGoldemWave</object>
@@ -2564,8 +2566,8 @@
     <room>rooms\lvlCopyThisRoom</room>
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlMoneyMachine</room>
-    <room>rooms\lvlWhisperingWoods</room>
-    <room>rooms\lvlStHunger</room>
+    <room>rooms\rmWhisperingWoods</room>
+    <room>rooms\rmStHunger</room>
     <room>rooms\rmNightmareComeToLife</room>
     <room>rooms\rmBGVisibilityTest</room>
     <room>rooms\rmHighwayToHell</room>
