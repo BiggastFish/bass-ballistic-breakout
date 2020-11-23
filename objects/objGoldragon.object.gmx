@@ -265,6 +265,7 @@ if (entityCanStep())
                 }
                 if (shotsFired == 1 &amp;&amp; (y &lt;= view_yview + 32))
                 {
+                    bruhTimer = 75;
                     shotsFired = 2;
                     image_xscale *= -1;
                     xspeed = 3 * image_xscale;
@@ -275,10 +276,9 @@ if (entityCanStep())
                         storedXSpd = other.xspeed;
                         storedYSpd = 0;
                     }
-                    
                 }
-                if (shotsFired == 2 &amp;&amp; ((tx &lt;= x &amp;&amp; image_xscale &gt; 0) ||
-                (tx &gt;= x &amp;&amp; image_xscale &lt; 0)))
+                if (bruhTimer &gt;= 80 &amp;&amp; shotsFired == 2 &amp;&amp; 
+                ((tx &lt;= x &amp;&amp; image_xscale &gt; 0) || (tx &gt;= x &amp;&amp; image_xscale &lt; 0)))
                 {
                     shotsFired = 3;
                     xspeed = 0;

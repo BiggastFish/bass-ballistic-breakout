@@ -288,8 +288,8 @@ if (mode == 0)
                     visible ^= true;
                 with (objBossDoor)
                     visible ^= true;
-                with (objFallingTower)
-                    visible ^= true;
+                /*with (objFallingTower)
+                    visible ^= true;*/
                 break;
             
             // PRESS 2

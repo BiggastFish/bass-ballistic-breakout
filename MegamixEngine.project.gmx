@@ -1403,7 +1403,7 @@
         <sprite>sprites\sprSpringBlastArrow</sprite>
         <sprite>sprites\sprWeaponIconsSpringBlast</sprite>
       </sprites>
-      <sprites name="Stages">
+      <sprites name="Levels">
         <sprites name="Static Shock">
           <sprite>sprites\sprShockingSnakey</sprite>
           <sprite>sprites\sprChargingChester</sprite>
@@ -1450,13 +1450,21 @@
           </sprites>
         </sprites>
         <sprites name="Whispering Woods">
+          <sprite>sprites\sprWhippersnapper</sprite>
+          <sprite>sprites\sprPengSpawner</sprite>
+          <sprite>sprites\sprPeng</sprite>
+          <sprite>sprites\sprHoneybomb</sprite>
+          <sprite>sprites\sprLumberjane</sprite>
+          <sprite>sprites\sprLumberjaneAxe</sprite>
+          <sprite>sprites\sprFlowerSpring</sprite>
+          <sprite>sprites\sprFirefry</sprite>
+          <sprite>sprites\sprFirefryTrail</sprite>
           <sprites name="Boss">
             <sprite>sprites\sprPerfuma</sprite>
             <sprite>sprites\sprPerfumaVine</sprite>
             <sprite>sprites\sprPerfumaThorn</sprite>
             <sprite>sprites\sprPerfumaSpike</sprite>
           </sprites>
-          <sprite>sprites\sprWhippersnapper</sprite>
         </sprites>
         <sprites name="St. Hunger">
           <sprite>sprites\sprHotDogMan</sprite>
@@ -1994,6 +2002,7 @@
         <object>objects\objBigEye</object>
         <object>objects\objBlader</object>
         <object>objects\objFlea</object>
+        <object>objects\objLumberjaneAxe</object>
         <object>objects\objFlyingShell</object>
         <object>objects\objFlyingShellSpawner</object>
         <object>objects\objKillerBullet</object>
@@ -2045,6 +2054,7 @@
         <object>objects\objWallBlaster</object>
         <objects name="Projectiles">
           <object>objects\obj100WattonBomb</object>
+          <object>objects\objFirefryTrail</object>
           <object>objects\obj100WattonVoid</object>
           <object>objects\objDompanFireworkSpark</object>
           <object>objects\objTakentoPropeller</object>
@@ -2511,6 +2521,12 @@
         </objects>
       </objects>
       <objects name="Whispering Woods">
+        <object>objects\objHoneyBomb</object>
+        <object>objects\objTorpedove</object>
+        <object>objects\objTorpedoveSpawner</object>
+        <object>objects\objLumberjane</object>
+        <object>objects\objFlowerSpring</object>
+        <object>objects\objFirefry</object>
         <objects name="Boss">
           <object>objects\objPerfuma</object>
           <object>objects\objPerfumaVine</object>
@@ -2566,7 +2582,7 @@
     <room>rooms\lvlCopyThisRoom</room>
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlMoneyMachine</room>
-    <room>rooms\rmWhisperingWoods</room>
+    <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\rmStHunger</room>
     <room>rooms\rmNightmareComeToLife</room>
     <room>rooms\rmBGVisibilityTest</room>
