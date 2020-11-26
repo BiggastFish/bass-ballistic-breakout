@@ -21,6 +21,8 @@ if (object_index == objMegaman)
 }
 cgrav += (cgrav == 0);
 
+var slp = ceil(abs(xspeed) + 1 + (object_index == objMegaman));
+
 with (objSolid)
 {
     solid = (isSolid == 1);
@@ -75,7 +77,7 @@ with (prtEntity)
         {
             if (alwaysCheckSolids || object_index == objBossDoor || object_index == objBossDoorVertical || !place_meeting(x, y + cgrav, myid))
             {
-                if (isSolid != 2 || place_meeting(x - _xs, y - cgrav * abs(_ys), myid))
+                if (isSolid != 2 || place_meeting(x, y - cgrav*slp, myid))
                 {
                     if (!fnsolid)
                     {

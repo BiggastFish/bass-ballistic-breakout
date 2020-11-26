@@ -6,13 +6,13 @@ var yOffset = 0;
 var willStop = 1; // If this is 1, the player will halt on shooting ala Metal Blade.
 
 //setting the actual action here
-if yDir == -1 && xDir == 0
+if (yDir == -1 && xDir == 0)
 {
     action = 3;
     xOffset = 5;
     yOffset = -16;
 }
-else if yDir == -1 && xDir != 0
+else if (yDir == -1 && xDir != 0)
 { 
     action = 4;
     xOffset = 20;
@@ -23,7 +23,7 @@ else if yDir == -1 && xDir != 0
         yOffset = -11;
     }
 }
-else if yDir 
+else if (yDir)
 {
     action = 5;
     xOffset = 20;
@@ -36,7 +36,51 @@ else if yDir
 }
 if (!global.lockBuster)
 {
-    if (global.keyShoot[playerID] && !playerIsLocked(PL_LOCK_SHOOT))
+    if (global.autoFire)
+    {
+        if (global.keyShootPressed[playerID])
+            fireHeld = !fireHeld;
+        if (xDir != 0 || yDir != 0)
+            busterDir = action;
+        switch (busterDir)
+        {
+            case 1:
+                xDir = image_xscale;
+                yDir = 0;
+                break;
+            case 3:
+                xDir = 0;
+                yDir = -1;
+                xOffset = 5;
+                yOffset = -16;
+                break;
+            case 4:
+                xDir = image_xscale;
+                yDir = -1;
+                xOffset = 20;
+                yOffset = -12;
+                if (climbing)
+                {
+                    xOffset = 17;
+                    yOffset = -11;
+                }
+                break;
+            case 5:
+                xDir = image_xscale;
+                yDir = 1;
+                xOffset = 20;
+                yOffset = 12;
+                if (climbing)
+                {
+                    xOffset = 17;
+                    yOffset = 11;
+                }
+                break;
+        }
+    }
+    if (((global.keyShoot[playerID] && !global.autoFire) 
+    || (fireHeld))
+    && !playerIsLocked(PL_LOCK_SHOOT))
     {
         if shootTimer < 8
         {
@@ -49,7 +93,10 @@ if (!global.lockBuster)
             }
         }
         i = fireWeapon(xOffset, yOffset, objBusterShot, bulletLimit, weaponCost, action, willStop);
-        isShoot = action;
+        if (global.autoFire)
+            isShoot = busterDir;
+        else
+            isShoot = action;
         xspeed = 0;
         if shootTimer >= 14 //making sure it doesn't release the lock until it stops being held
         {
@@ -60,12 +107,12 @@ if (!global.lockBuster)
             i.sprite_index = sprBassBullet;
             i.dir = 0;
             i.contactDamage = 1 + (dashJumped);
-        
+
             if (image_xscale < 0)
             {
                 i.dir += 180;
             }
-        
+
             if (yDir != 0)
             {
                 i.dir -= (yDir * 90) * image_xscale;

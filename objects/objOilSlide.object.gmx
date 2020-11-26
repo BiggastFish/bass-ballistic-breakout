@@ -216,7 +216,7 @@ if (entityCanStep()){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>weaponSetup("OIL SLIDE", make_color_rgb(104, 68, 252), make_color_rgb(152, 120, 248), sprWeaponIconsOilSlide);
+            <string>weaponSetup("OIL SLIDE", make_color_rgb(80, 48, 0), make_color_rgb(248, 184, 0), sprWeaponIconsOilSlide);
 </string>
           </argument>
         </arguments>

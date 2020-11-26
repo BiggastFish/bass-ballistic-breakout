@@ -79,6 +79,7 @@ optionText[14] = 'PICKUP EFFECT';
 optionText[15] = 'ESC KEY BEHAVIOR';
 optionText[16] = 'COLORED TEXT OVERLAYS';
 optionText[17] = 'BG VISIBILITY';
+optionText[18] = 'TOGGLE AUTOFIRE';
 </string>
           </argument>
         </arguments>
@@ -384,6 +385,14 @@ if (phase == 2 &amp;&amp; !selected)
                     playSFX(sfxMenuMove);
                 }
                 break;
+            // Toggle Autofire
+            case 18:
+                pre = global.autoFire;
+                global.autoFire = min(max(0, global.autoFire + dir), 1);
+                if (global.autoFire != pre)
+                {
+                    playSFX(sfxMenuMove);
+                }
         }
     }
     
@@ -1036,6 +1045,19 @@ for (var j = 0; j &lt; visibleOptions; j++)
         // BG Visibility
         case 17:
             opt += string(global.bgVisibility) + '%';
+            
+            break;
+            
+        // Toggle Autofire
+        case 18:
+            if (global.autoFire)
+            {
+                opt += 'ON';
+            }
+            else
+            {
+                opt += 'OFF';
+            }
             
             break;
     }

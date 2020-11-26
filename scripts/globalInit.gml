@@ -39,7 +39,7 @@ global.keyWeaponSwitchRightPressed[4] = 0;
 // width and height of quads (screens).
 // alternatively set per-room by using bgQuadXXXX backgrounds
 global.quadWidth = 256;
-global.quadHeight = 240;
+global.quadHeight = 248;
 
 // borders for game area outside of display area -- screenHeight must equal quadHeight + quadMarginTop + quadMarginBottom
 // (Note that these values are also set automatically given a grid room background)

@@ -101,6 +101,8 @@ climbShootXscale = 1;
 
 isShoot = false;
 shootTimer = 0;
+fireHeld = false;
+busterDir = 1;
 
 isSlide = false;
 slideTimer = 0;

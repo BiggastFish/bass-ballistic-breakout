@@ -2,6 +2,7 @@
 // resets all options-specific variables to their default value
 
 global.healthEffect = 0;
+global.autoFire = 0;
 global.musicvolume = 80;
 global.soundvolume = 100;
 global.damagePopup = 0;

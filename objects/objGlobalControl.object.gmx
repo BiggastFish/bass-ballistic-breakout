@@ -54,6 +54,7 @@ increaseTimer = 0;
 increaseWeapon = 0;
 depthstart = depth;
 depthAlter = 0;
+hpAlph = 1;
 
 // save icon
 saveTimer = -1;
@@ -176,11 +177,11 @@ if (!instance_exists(objSectionSwitcher) &amp;&amp; global.inGame)
 }
 
 // Flicker
-depthAlter = !depthAlter;
+/*depthAlter = !depthAlter;
 if (depthAlter)
 {
     depth = 10;
-}
+}*/
 
 for (i = 0; i &lt;= 1; i += 1)
 {
@@ -1305,12 +1306,44 @@ depth = depthstart;
     var dy = view_yview + 17;
     
     draw_enable_alphablend(false);
-    
+    draw_enable_alphablend(true);
+
+    var ent;
+    ent = -1;
+    with (prtEntity)
+    {
+        if ((faction == 1 || faction == 3) &amp;&amp; object_is_ancestor(object_index, prtEntity) &amp;&amp;
+        !object_is_ancestor(object_index, prtEnemyProjectile) &amp;&amp; !dead)
+        {
+            with (other)
+            {
+                if collision_rectangle(dx-8,dy,dx+8,dy+74,other,false,true)
+                {
+                    ent = other.id;
+                }
+            }
+        }
+    }
+    if (ent != -1 &amp;&amp; instance_exists(ent))
+    {
+        if (hpAlph &gt; 0.4)
+        {
+            hpAlph -= 0.6/20;
+        }
+    }
+    else
+    {
+        if (hpAlph &lt; 1)
+        {
+            hpAlph += 0.6/20;
+        }
+    }
+
     /// Draw HUD
     for (z = 0; z &lt; global.playerCount; z += 1)
     {
         draw_sprite_ext(sprHealthbarBackground, 0, dx, dy, 1, 1, image_angle,
-            c_black, image_alpha);
+            c_black, hpAlph);
         
         // Respawn indicators
         if (global.respawnTimer[z] &gt;= 0)
@@ -1347,10 +1380,10 @@ depth = depthstart;
             {
                 draw_sprite_ext(sprHealthbarPrimary, 0, dx + 1,
                     dy + (sprite_get_height(sprHealthbarBackground) - i * 2),
-                    1, 1, 0, pcol, 1);
+                    1, 1, 0, pcol, hpAlph);
                 draw_sprite_ext(sprHealthbarSecondary, 0, dx + 1,
                     dy + (sprite_get_height(sprHealthbarBackground) - i * 2),
-                    1, 1, 0, scol, 1);
+                    1, 1, 0, scol, hpAlph);
             }
             
             var display = true;
@@ -1376,24 +1409,24 @@ depth = depthstart;
             if (display)
             {
                 draw_sprite_ext(sprHealthbarBackground, 0, dx - 8, dy, 1, 1,
-                    image_angle, global.outlineCol[z], image_alpha);
+                    image_angle, global.outlineCol[z], 1);
                 for (i = 1; i &lt;= c; i += 1)
                 {
                     draw_sprite_ext(sprHealthbarPrimary, 0, dx - 8 + 1, dy
                         + (sprite_get_height(sprHealthbarBackground) - i * 2),
-                        1, 1, 0, global.primaryCol[z], 1);
+                        1, 1, 0, global.primaryCol[z], hpAlph);
                     draw_sprite_ext(sprHealthbarSecondary, 0, dx - 8 + 1, dy
                         + (sprite_get_height(sprHealthbarBackground) - i * 2),
-                        1, 1, 0, global.secondaryCol[z], 1);
+                        1, 1, 0, global.secondaryCol[z], hpAlph);
                 }
                 if (global.infiniteEnergy[global.weapon[z]])
                 {
                     draw_sprite_ext(sprInfinityMarkVertical, 0, dx - 8, dy + 28, 1,
-                        1, 0, c_white, 1);
+                        1, 0, c_white, hpAlph);
                     draw_sprite_ext(sprInfinityMarkVerticalPrimary, 0, dx - 8,
-                        dy + 28, 1, 1, 0, global.primaryCol[z], 1);
+                        dy + 28, 1, 1, 0, global.primaryCol[z], hpAlph);
                     draw_sprite_ext(sprInfinityMarkVerticalSecondary, 0, dx - 8,
-                        dy + 28, 1, 1, 0, global.secondaryCol[z], 1);
+                        dy + 28, 1, 1, 0, global.secondaryCol[z], hpAlph);
                 }
             }
         }
@@ -1490,9 +1523,7 @@ depth = depthstart;
             bossFade = max(bossFade, introFade);
         }
     }
-    
-    draw_enable_alphablend(true);
-    
+
     if (bossFade &gt; 0)
     {
         draw_sprite_ext(sprDot, 0, view_xview, view_yview, view_wview, view_hview, 0, c_black, bossFade);

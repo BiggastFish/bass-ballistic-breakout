@@ -1459,6 +1459,7 @@
           <sprite>sprites\sprFlowerSpring</sprite>
           <sprite>sprites\sprFirefry</sprite>
           <sprite>sprites\sprFirefryTrail</sprite>
+          <sprite>sprites\sprRevoltingSuzy</sprite>
           <sprites name="Boss">
             <sprite>sprites\sprPerfuma</sprite>
             <sprite>sprites\sprPerfumaVine</sprite>
@@ -1500,15 +1501,23 @@
           <sprite>sprites\sprTakanuva</sprite>
         </sprites>
       </sprites>
-      <sprites name="Stage Select">
-        <sprite>sprites\sprMoneyMachineBG</sprite>
-        <sprite>sprites\sprBassStageSelectBust</sprite>
-        <sprite>sprites\sprWhisperingWoodsBG</sprite>
-        <sprite>sprites\sprJumpKingBG</sprite>
-        <sprite>sprites\sprStHungerBG</sprite>
-        <sprite>sprites\sprDemonInsideMeBG</sprite>
-        <sprite>sprites\sprBuryTheLight</sprite>
-        <sprite>sprites\sprHighwayToHellBG</sprite>
+      <sprites name="Menus">
+        <sprites name="Stage Select">
+          <sprite>sprites\sprMoneyMachineBG</sprite>
+          <sprite>sprites\sprBassStageSelectBust</sprite>
+          <sprite>sprites\sprSomeonesBust</sprite>
+          <sprite>sprites\sprWhisperingWoodsBG</sprite>
+          <sprite>sprites\sprJumpKingBG</sprite>
+          <sprite>sprites\sprStHungerBG</sprite>
+          <sprite>sprites\sprDemonInsideMeBG</sprite>
+          <sprite>sprites\sprBuryTheLight</sprite>
+          <sprite>sprites\sprHighwayToHellBG</sprite>
+        </sprites>
+        <sprites name="Pause">
+          <sprite>sprites\sprPauseMenu</sprite>
+          <sprite>sprites\sprOptionsIcon</sprite>
+          <sprite>sprites\sprExitIcon</sprite>
+        </sprites>
       </sprites>
     </sprites>
   </sprites>
@@ -1850,6 +1859,7 @@
       <script>scripts\clearDrawState.gml</script>
       <script>scripts\drawSpriteCropped.gml</script>
       <script>scripts\makeStruct.gml</script>
+      <script>scripts\placeHolderAccessibility.gml</script>
     </scripts>
     <scripts name="Misc.">
       <scripts name="Saving">
@@ -2391,8 +2401,8 @@
           <object>objects\objCoinSpread</object>
           <object>objects\objGlowingSpiral</object>
           <object>objects\objOilSlide</object>
-          <object>objects\objKnuckleSandwich</object>
           <object>objects\objHungryBat</object>
+          <object>objects\objKnuckleSandwich</object>
           <object>objects\objSpringBlast</object>
           <object>objects\objYamato</object>
           <object>objects\objRushCoil</object>
@@ -2436,6 +2446,7 @@
         <object>objects\objTitleScreen</object>
         <object>objects\objRoomSelector</object>
         <object>objects\objDebugMenu</object>
+        <object>objects\objPauseMenuOld</object>
         <object>objects\objPauseMenu</object>
         <object>objects\objOptionsMenu</object>
         <object>objects\objColoredTextOverlaysMenu</object>
@@ -2527,6 +2538,7 @@
         <object>objects\objLumberjane</object>
         <object>objects\objFlowerSpring</object>
         <object>objects\objFirefry</object>
+        <object>objects\objRevoltingSuzy</object>
         <objects name="Boss">
           <object>objects\objPerfuma</object>
           <object>objects\objPerfumaVine</object>
@@ -2580,6 +2592,7 @@
   <rooms name="rooms">
     <room>rooms\rmInit</room>
     <room>rooms\lvlCopyThisRoom</room>
+    <room>rooms\lvlTankRoom</room>
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>

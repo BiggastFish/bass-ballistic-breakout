@@ -13,6 +13,7 @@ global.mmColor               = sl(global.mmColor,      "mmcol");
 global.chargeBar             = sl(global.chargeBar,    "cbar");
 global.showFPS               = sl(global.showFPS,      "fps");
 global.healthEffect          = sl(global.healthEffect, "healthfx");
+global.autoFire              = sl(global.autoFire, "autoFire");
 global.playerCount           = sl(global.playerCount,  "player-count");
 global.healthEffect          = sl(global.healthEffect,   "healthfx");
 global.playerCount           = sl(global.playerCount,    "player-count");
@@ -22,7 +23,7 @@ global.jumpSound             = sl(global.jumpSound, "jump-sound");
 global.teleportSound         = sl(global.teleportSound, "teleport-sound");
 global.vsync                 = sl(global.vsync,          "vsync");
 global.showControllerOverlay = sl(global.showControllerOverlay, "controlleroverlay");
-global.escapeBehavior         = sl(global.escapeBehavior, "escapebehavior");
+global.escapeBehavior        = sl(global.escapeBehavior, "escapebehavior");
 
 // controls
 for (var i = 0; i < 4; i += 1)

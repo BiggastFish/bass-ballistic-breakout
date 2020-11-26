@@ -41,7 +41,7 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="256" hview="224" xport="0" yport="0" wport="256" hport="224" hborder="9999" vborder="9999" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="256" hview="240" xport="0" yport="0" wport="256" hport="240" hborder="9999" vborder="9999" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -63,7 +63,7 @@
     <instance objName="objStopScrollingNES" x="512" y="240" name="inst_580D9157" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDefaultSpawn" x="384" y="912" name="inst_FA38AFEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="256" y="720" name="inst_33B25DB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="224" y="928" name="inst_E4CA5B2A" locked="0" code="" scaleX="66" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="224" y="928" name="inst_E4CA5B2A" locked="0" code="" scaleX="82" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objTorpedoveSpawner" x="544" y="768" name="inst_2650451B" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHoneyBomb" x="624" y="864" name="inst_DE47CFC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="480" y="896" name="inst_B900D8C3" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
@@ -71,12 +71,20 @@
     <instance objName="objRightScrollingNES" x="768" y="720" name="inst_1A957E42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="848" y="848" name="inst_E516FAB9" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1008" y="688" name="inst_22E5811E" locked="0" code="" scaleX="2" scaleY="12" colour="4294967295" rotation="0"/>
-    <instance objName="objStopScrollingNES" x="1280" y="720" name="inst_F7C5A2C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStopScrollingNES" x="1536" y="720" name="inst_F7C5A2C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLumberjane" x="864" y="832" name="inst_26C50476" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFlowerSpring" x="816" y="880" name="inst_AE6DC87E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRightScrollingNES" x="1024" y="720" name="inst_758B7870" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="1264" y="688" name="inst_3236F5F4" locked="0" code="" scaleX="1" scaleY="15" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="1264" y="688" name="inst_3236F5F4" locked="0" code="" scaleX="2" scaleY="12" colour="4294967295" rotation="0"/>
     <instance objName="objFirefry" x="1216" y="832" name="inst_FA5E680D" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRightScrollingNES" x="1280" y="720" name="inst_C5A777FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="1520" y="688" name="inst_D7FF8D8E" locked="0" code="" scaleX="1" scaleY="15" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="1344" y="848" name="inst_D954010B" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="1376" y="768" name="inst_04052421" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRevoltingSuzy" x="1376" y="784" name="inst_EB7D76CB" locked="0" code="dir = &quot;v&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRevoltingSuzy" x="1424" y="832" name="inst_A69D4FC7" locked="0" code="dir = &quot;v&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRevoltingSuzy" x="1296" y="736" name="inst_F763FFB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRevoltingSuzy" x="1504" y="864" name="inst_A72B2237" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

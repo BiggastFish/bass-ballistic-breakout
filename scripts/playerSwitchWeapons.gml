@@ -53,6 +53,8 @@ if (global.weapon[playerID] != oldWeapon)
     quickWeaponScrollTimer = 8 + (10 * (quickWeaponScrollTimer < 0));
     
     chargeTimer = 0;
+    fireHeld = 0;
+    busterDir = 1;
     
     // For the dashing effect of Tengu Blade to not activate mid-slide.
     notDashing = false;

@@ -69,36 +69,24 @@ if (!global.frozen)
     {
         image_index = 0;
         canHit = 1;
-        isSolid = 0;
     }
     
-    with (prtEntity)
+    with (objMegaman)
     {
-        if (!dead)
+        if (blockCollision &amp;&amp; grav!=0 &amp;&amp; yspeed &gt;= 0)
         {
-            if (blockCollision &amp;&amp; grav!=0)
+            with (other)
             {
-                if (ground || ycoll &gt; 0)
+                if (image_index == 1 &amp;&amp; place_meeting(x, y, other.id) &amp;&amp;
+                other.bbox_bottom &gt;= bbox_top - 1 &amp;&amp; other.bbox_bottom &lt;= bbox_top + 5)
                 {
+                    image_index = 1 + (1 / 3);
+                    playSFX(sfxSpring);
                     with (other)
                     {
-                        if (collision_rectangle(bbox_left, bbox_top - 1, bbox_right, bbox_top, other.id, false, false))
-                        {
-                            image_index = 1 + (1 / 3);
-                            if (insideView())
-                            {
-                                playSFX(sfxSpring);
-                            }
-                            with (other)
-                            {
-                                if (object_index == objMegaman)
-                                {
-                                    canMinJump = false;
-                                    climbing = 0;
-                                    yspeed = -7.5 * image_yscale;
-                                }
-                            }
-                        }
+                        canMinJump = false;
+                        climbing = 0;
+                        yspeed = -7.5 * image_yscale;
                     }
                 }
             }
@@ -130,9 +118,8 @@ if (!global.frozen)
             <string>if (image_index == 0)
 {
     image_index = 1;
-    isSolid = 2;
     playSFX(sfxEnemyHit);
-    healthpoitns = 1337;
+    healthpoints = 1337;
     canHit = 0;
 }
 </string>
