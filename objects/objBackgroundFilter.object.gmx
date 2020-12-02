@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1000015</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>prtAlwaysActive</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">

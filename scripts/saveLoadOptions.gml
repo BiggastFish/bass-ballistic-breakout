@@ -6,6 +6,7 @@ slBegin(argument0, "options.sav")
 
 // option flags
 global.screensize            = sl(global.screensize,   "screensize");
+global.resolution            = sl(global.resolution,   "resolution");
 global.musicvolume           = sl(global.musicvolume,  "mvol");
 global.soundvolume           = sl(global.soundvolume,  "svol");
 global.damagePopup           = sl(global.damagePopup,  "dpop");

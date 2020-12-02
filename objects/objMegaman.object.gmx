@@ -92,6 +92,8 @@ shockLock = false;
 ground = true;
 xDir = 0;
 yDir = 0;
+xOff = 0;
+yOff = 0;
 
 prevXScale = image_xscale;
 isStep = false;
@@ -103,6 +105,8 @@ isShoot = false;
 shootTimer = 0;
 fireHeld = false;
 busterDir = 1;
+trebleBoostCoolDown = 0;
+trebleBoosted = 0;
 
 isSlide = false;
 slideTimer = 0;

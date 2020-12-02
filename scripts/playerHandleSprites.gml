@@ -286,6 +286,18 @@ switch (AnimID)
         spriteY = other.spry;
         spriteX = other.sprx;
         break;
+    case "TrebleBoost":
+        spriteY = 10;
+        spriteX = other.imgx + (isShoot * 2);
+        break;
+    case "RisingKick":
+        spriteY = 10;
+        spriteX = other.imgx;
+        break;
+    case "CrescentKick":
+        spriteY = 10;
+        spriteX = 9 + other.imgx;
+        break;
     case "ForceWalk":
         spriteLoopStart = 0;
         spriteLoopEnd = 3;

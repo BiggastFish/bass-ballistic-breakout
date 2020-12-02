@@ -256,7 +256,7 @@ if (!global.frozen)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>weaponSetup("HUNGRY BAT", make_color_rgb(152, 120, 248), make_color_rgb(248, 120, 248), sprWeaponIconsHungryBat);
+            <string>weaponSetup("HUNGRY BAT", make_color_rgb(104, 68, 252), make_color_rgb(248, 120, 248), sprWeaponIconsHungryBat);
 </string>
           </argument>
         </arguments>

@@ -65,6 +65,7 @@ if (!global.frozen)
         {
             other.x = bboxGetXCenter();
             other.y = bboxGetYCenter();
+            other.image_alpha = image_alpha * hurtAlpha;
         }
         if (plzTarget.iceTimer &gt; 30)
             image_index+= .2 * (image_index &lt; 1);

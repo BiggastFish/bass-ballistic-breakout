@@ -10,6 +10,11 @@ if (!playerIsLocked(PL_LOCK_PHYSICS))
     
     checkGround();
 
+    if trebleBoostCoolDown
+    {
+        trebleBoostCoolDown--;
+    }
+
     if ladderJumped
     {
         if ground

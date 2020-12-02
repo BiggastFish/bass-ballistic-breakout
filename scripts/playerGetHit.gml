@@ -65,12 +65,22 @@ if (!isHit)
         }
         
         // lock controls during knockback:
-        hitLock = lockPoolLock(localPlayerLock[PL_LOCK_MOVE],
-            localPlayerLock[PL_LOCK_JUMP],
-            localPlayerLock[PL_LOCK_CLIMB],
-            localPlayerLock[PL_LOCK_SLIDE],
-            localPlayerLock[PL_LOCK_SHOOT],
-            localPlayerLock[PL_LOCK_TURN]);
+        if (trebleBoosted)
+        {
+            hitLock = lockPoolLock(localPlayerLock[PL_LOCK_MOVE],
+                localPlayerLock[PL_LOCK_JUMP],
+                localPlayerLock[PL_LOCK_CLIMB],
+                localPlayerLock[PL_LOCK_SLIDE]);
+        }
+        else
+        {
+            hitLock = lockPoolLock(localPlayerLock[PL_LOCK_MOVE],
+                localPlayerLock[PL_LOCK_JUMP],
+                localPlayerLock[PL_LOCK_CLIMB],
+                localPlayerLock[PL_LOCK_SLIDE],
+                localPlayerLock[PL_LOCK_SHOOT],
+                localPlayerLock[PL_LOCK_TURN]);
+        }
         
         // Create sweat effects
         if (global.playerHealth[playerID] > 0 && dmg > 0)

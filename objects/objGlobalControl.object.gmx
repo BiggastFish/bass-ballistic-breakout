@@ -926,6 +926,8 @@ global.nextRoom = 0;
 
 view_wview[0] = min(global.screenWidth, room_width);
 view_hview[0] = min(global.screenHeight, room_height);
+view_wport[0] = view_wview[0];
+view_hport[0] = view_hview[0];
 
 room_speed = global.gameSpeed;
 
@@ -1164,10 +1166,17 @@ if (global.inGame)
 }
 
 // if the new room's view size is different, adjust the screen size accordingly
-if (surface_get_width(application_surface) != view_wview[0] * global.screensize
-    || surface_get_height(application_surface) != view_hview[0] * global.screensize)
+if (surface_get_width(application_surface) != min(global.screenWidth * global.screenscale, room_width)
+|| surface_get_height(application_surface) != min(global.screenHeight * global.screenscale, room_height))
 {
-    setScreenSize(global.screensize, false);
+    if !window_get_fullscreen()
+    {
+        setScreenSize(global.screensize, false);
+    }
+    else
+    {
+        setScreenSize(9999, false);
+    }
 }
 
 // next room should not launch a new level
@@ -1389,7 +1398,7 @@ depth = depthstart;
             var display = true;
             
             // Weapons
-            if (global.weapon[z] != 0) // Weapon energy
+            if (global.weapon[z] != 0 &amp;&amp; global.weapon[z] != 10) // Weapon energy
             {
                 c = round(global.ammo[z, global.weapon[z]]);
             }

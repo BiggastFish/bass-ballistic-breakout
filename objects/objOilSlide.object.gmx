@@ -123,12 +123,6 @@ if (entityCanStep()){
             self, false, false) &amp;&amp; global.factionStance[other.faction, faction] &amp;&amp; canHit &amp;&amp; canIce &amp;&amp; !dead 
             &amp;&amp; insideView() &amp;&amp; !iFrames)
             {
-                if (!iceTimer)
-                {
-                    i = instance_create(bboxGetXCenter(), bboxGetYCenter(), objOilSlideSplash);
-                    i.plzTarget = id;
-                    i.depth = depth - 1;
-                }
                 if (iceTimer &lt;= 175)
                 {
                     with (other)
@@ -136,7 +130,16 @@ if (entityCanStep()){
                         entityEntityCollision();
                     }
                 }
-                entityIceFreeze(180, false, false, 1);
+                if (canOil)
+                {
+                    if (!iceTimer)
+                    {
+                        i = instance_create(bboxGetXCenter(), bboxGetYCenter(), objOilSlideSplash);
+                        i.plzTarget = id;
+                        i.depth = depth - 1;
+                    }
+                    entityIceFreeze(180, false, false, 1);
+                }  
             }
         }
         with (prtBoss)

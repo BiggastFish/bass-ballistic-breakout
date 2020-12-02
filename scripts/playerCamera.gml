@@ -88,8 +88,11 @@ var bound_left = max(global.sectionLeft, global.borderLockLeft),
 view_xview = clamp(view_xview, bound_left, bound_right);
 view_yview = clamp(view_yview, bound_top, bound_bottom);
 
-view_xview = round(view_xview);
-view_yview = round(view_yview);
+//view_xview = round(view_xview);
+//view_yview = round(view_yview);
+
+view_xview = floor((view_xview * global.screenscale) + .5) / global.screenscale;
+view_yview = floor((view_yview * global.screenscale) + .5) / global.screenscale;
 
 // cached
 global.cachedXView = view_xview[0];

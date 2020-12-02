@@ -208,7 +208,7 @@ if (!global.frozen)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>weaponSetup("RUSH COIL", -2, -2, sprWeaponIconsRushCoil);
+            <string>//weaponSetup("RUSH COIL", -2, -2, sprWeaponIconsRushCoil);
 </string>
           </argument>
         </arguments>

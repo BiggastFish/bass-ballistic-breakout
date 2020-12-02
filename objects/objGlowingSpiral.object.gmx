@@ -29,7 +29,7 @@
 
 bulletLimitCost = 1;
 
-contactDamage = 1;
+contactDamage = .5;
 
 pierces = 3;
 penetrates = 2;
@@ -88,7 +88,10 @@ if (!global.frozen || instance_exists(objSectionSwitcher))
             expandCount++;
             if (expandCount &gt;= 2)
             {
-                instance_create(x, y, objExplosion);
+                if (visible)
+                {
+                    instance_create(x, y, objExplosion);
+                }
                 instance_destroy();
             }
         }
@@ -107,7 +110,10 @@ if (!global.frozen || instance_exists(objSectionSwitcher))
                 {
                     with (objGlowingSpiral)
                     {
-                        instance_create(x, y, objExplosion);
+                        if (visible)
+                        {
+                            instance_create(x, y, objExplosion);
+                        }
                         instance_destroy();
                     }
                 }
@@ -121,7 +127,10 @@ if (!global.frozen || instance_exists(objSectionSwitcher))
     }
     else
     {
-        instance_create(x, y, objExplosion);
+        if (visible)
+        {
+            instance_create(x, y, objExplosion);
+        }
         instance_destroy();
     }
 }
@@ -190,15 +199,16 @@ if (!global.frozen || instance_exists(objSectionSwitcher))
 !instance_exists(objGlowingSpiral) &amp;&amp; 
 global.ammo[playerID, global.weapon[playerID]] &gt; 0)
 {
-    for (g = 0; g &lt;= 4; g++)
+    for (g = 0; g &lt; 10; g++)
     {
-        i = fireWeapon(0, 0, objGlowingSpiral, 5, 1 * (g = -1), 0, 0);
+        i = fireWeapon(0, 0, objGlowingSpiral, 10, 1 * (g = -1), 0, 0);
         if (i)
         {
             playSFX(sfxWaterShield2);
             i.depth = depth - 5;
+            i.visible = (g mod 2 == 0);
             i.dir = image_xscale;
-            i.angle = 0 + (72 * g);
+            i.angle = 0 + (36 * g);
             i.count = g;
         }
     }

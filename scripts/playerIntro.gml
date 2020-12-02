@@ -395,8 +395,9 @@ else
                         f.yspeed = -3;
                         f.xspeed = random_range(-1, 1);
                     }
+                    screenFlash(3);
                     tile_layer_hide(-30);
-                    tile_layer_show(1100000);
+                    tile_layer_show(1000020);
                     teleportTimer = 2;
                 }
             }

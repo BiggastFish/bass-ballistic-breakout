@@ -33,6 +33,7 @@ contactDamage = 0;
 bubbleTimer = -1;
 grav = 0;
 blockCollision = 0;
+canOil = 0;
 
 respawnRange = 0;
 </string>

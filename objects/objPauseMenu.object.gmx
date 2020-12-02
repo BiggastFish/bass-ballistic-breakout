@@ -299,7 +299,7 @@ switch (phase)
         // Confirming exit
         if (exitConfirm &amp;&amp; !global.nextRoom)
         {
-            if (option == weaponVisibleN + 6)
+            if (option == weaponVisibleN + 5)
             {
                 if (global.keyJumpPressed[playerID]
                     || global.keyPausePressed[playerID])
@@ -701,32 +701,80 @@ if (phase != 0)
     
     // draw itself
     draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_white, 1);
-    if (option != 0 &amp;&amp; option &lt; weaponVisibleN)
+    if (option != 0 &amp;&amp; option &lt; (weaponVisibleN - 1))
     {
-        /*var primaryColShade, secondaryColShade, gemColor;
+        var primCol, primaryColShade, secCol, secondaryColShade, gemColor;
         switch (option)
         {
             case 1:
+                primCol = col[0, 1];
                 primaryColShade = make_color_rgb(0, 120, 0);
+                secCol = col[1, 1];
                 secondaryColShade = make_color_rgb(172, 124, 0);
                 gemColor = make_color_rgb(0, 120, 248);
                 break;
             case 2:
-                primaryColShade = make_color_rgb(0, 0, 188);
+                primCol = make_color_rgb(152, 120, 248);
+                primaryColShade = col[0, 1];
+                secCol = col[1, 1];
                 secondaryColShade = make_color_rgb(0, 136, 136);
                 gemColor = make_color_rgb(228, 0, 88);
                 break;
             case 3:
+                primCol = col[0, 1];
                 primaryColShade = make_color_rgb(203, 73, 8);
+                secCol = col[1, 1];
                 secondaryColShade = make_color_rgb(172, 124, 0);
                 gemColor = make_color_rgb(0, 184, 0);
                 break;
+            case 4:
+                primCol = make_color_rgb(172, 124, 0);
+                primaryColShade = col[0, 1];
+                secCol = col[1, 1];
+                secondaryColShade = make_color_rgb(228, 92, 16);
+                gemColor = make_color_rgb(0, 168, 68);
+                break;
+            case 5:
+                primCol = col[0, 1];
+                primaryColShade = make_color_rgb(168, 0, 32);
+                secCol = col[1, 1];
+                secondaryColShade = make_color_rgb(228, 92, 16);
+                gemColor = make_color_rgb(0, 88, 248);
+                break;
+            case 6:
+                primCol = col[0, 1];
+                primaryColShade = make_color_rgb(0, 0, 188);
+                secCol = col[1, 1];
+                secondaryColShade = make_color_rgb(228, 0, 88);
+                gemColor = make_color_rgb(124, 124, 124);
+                break;
+            case 7:
+                primCol = col[0, 1];
+                primaryColShade = make_color_rgb(0, 88, 0);
+                secCol = col[1, 1];
+                secondaryColShade = make_color_rgb(0, 136, 136);
+                gemColor = make_color_rgb(130, 0, 243);
+                break;
+            case 8:
+                primCol = col[0, 1];
+                primaryColShade = make_color_rgb(0, 88, 248);
+                secCol = col[1, 1];
+                secondaryColShade = make_color_rgb(104, 68, 252);
+                gemColor = make_color_rgb(228, 0, 88);
+                break;
+            case 9:
+                primCol = col[0, 1];
+                primaryColShade = make_color_rgb(56, 48, 48);
+                secCol = make_color_rgb(152, 120, 248);
+                secondaryColShade = col[1, 1];
+                gemColor = make_color_rgb(0, 120, 248);
+                break;
         }
-        draw_sprite_ext(sprite_index, 1, x, y, 1, 1, 0, col[0, 1], 1);
+        draw_sprite_ext(sprite_index, 1, x, y, 1, 1, 0, primCol, 1);
         draw_sprite_ext(sprite_index, 2, x, y, 1, 1, 0, primaryColShade, 1);
-        draw_sprite_ext(sprite_index, 3, x, y, 1, 1, 0, col[1, 1], 1);
+        draw_sprite_ext(sprite_index, 3, x, y, 1, 1, 0, secCol, 1);
         draw_sprite_ext(sprite_index, 4, x, y, 1, 1, 0, secondaryColShade, 1);
-        draw_sprite_ext(sprite_index, 5, x, y, 1, 1, 0, gemColor, 1);*/
+        draw_sprite_ext(sprite_index, 5, x, y, 1, 1, 0, gemColor, 1);
     }
     
     // Options
@@ -761,8 +809,8 @@ if (phase != 0)
             // Drawing ammo bars
             ammo = ceil(global.playerHealth[playerID] * (i == 0) + global.ammo[playerID, w] * (i != 0));
             
-            draw_sprite_ext(sprPauseMenuBarPrimary, ammo, xOff + 18, yOff + 8, 1, 1, 0, col[0, cl * (1 + (i == 0))], 1);
-            draw_sprite_ext(sprPauseMenuBarSecondary, ammo, xOff + 18, yOff + 8, 1, 1, 0, col[1, cl * (1 + (i == 0))], 1);
+            draw_sprite_ext(sprPauseMenuBarPrimary, ammo, xOff + 18, yOff + 8, 1, 1, 0, col[0, cl * (1 + (i == 0 || i == 10))], 1);
+            draw_sprite_ext(sprPauseMenuBarSecondary, ammo, xOff + 18, yOff + 8, 1, 1, 0, col[1, cl * (1 + (i == 0 || i == 10))], 1);
             
             // Draw infinite energy mark over relevant bars
             if (global.infiniteEnergy[w])

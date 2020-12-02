@@ -709,6 +709,7 @@
     </sounds>
     <sounds name="Bass Ballistic Breakout">
       <sound>sound\sfxDash</sound>
+      <sound>sound\sfxBassBloop</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -1402,6 +1403,14 @@
         <sprite>sprites\sprSpringBlast</sprite>
         <sprite>sprites\sprSpringBlastArrow</sprite>
         <sprite>sprites\sprWeaponIconsSpringBlast</sprite>
+        <sprite>sprites\sprTrebleTeleport</sprite>
+        <sprite>sprites\sprTreble</sprite>
+        <sprite>sprites\sprWeaponIconsTrebleBoost</sprite>
+        <sprite>sprites\sprForteBusterSweat</sprite>
+        <sprite>sprites\sprForteBusterShot</sprite>
+        <sprite>sprites\sprForteBusterShotHalfCharged</sprite>
+        <sprite>sprites\sprForteBusterShotCharged</sprite>
+        <sprite>sprites\sprWeaponIconsForteBuster</sprite>
       </sprites>
       <sprites name="Levels">
         <sprites name="Static Shock">
@@ -1505,7 +1514,6 @@
         <sprites name="Stage Select">
           <sprite>sprites\sprMoneyMachineBG</sprite>
           <sprite>sprites\sprBassStageSelectBust</sprite>
-          <sprite>sprites\sprSomeonesBust</sprite>
           <sprite>sprites\sprWhisperingWoodsBG</sprite>
           <sprite>sprites\sprJumpKingBG</sprite>
           <sprite>sprites\sprStHungerBG</sprite>
@@ -1515,6 +1523,7 @@
         </sprites>
         <sprites name="Pause">
           <sprite>sprites\sprPauseMenu</sprite>
+          <sprite>sprites\sprSomeonesBust</sprite>
           <sprite>sprites\sprOptionsIcon</sprite>
           <sprite>sprites\sprExitIcon</sprite>
         </sprites>
@@ -2401,19 +2410,24 @@
           <object>objects\objCoinSpread</object>
           <object>objects\objGlowingSpiral</object>
           <object>objects\objOilSlide</object>
-          <object>objects\objHungryBat</object>
           <object>objects\objKnuckleSandwich</object>
+          <object>objects\objHungryBat</object>
           <object>objects\objSpringBlast</object>
           <object>objects\objYamato</object>
+          <object>objects\objTrebleBoost</object>
+          <object>objects\objForteBuster</object>
           <object>objects\objRushCoil</object>
           <object>objects\objRushJet</object>
           <objects name="Misc.">
             <object>objects\objNormalBusterShot</object>
-            <object>objects\objJudgmentCut</object>
-            <object>objects\objProtoShield</object>
+            <object>objects\objForteBusterShotCharged</object>
             <object>objects\objOilSlideSplash</object>
             <object>objects\objKnuckleSandwichDelay</object>
             <object>objects\objSpringBlastArrow</object>
+            <object>objects\objJudgmentCut</object>
+            <object>objects\objRisingKick</object>
+            <object>objects\objCrescentKick</object>
+            <object>objects\objProtoShield</object>
             <object>objects\objWeaponExplosion</object>
             <object>objects\objRushTeleport</object>
             <object>objects\objRushTeleportBlock</object>
@@ -2596,8 +2610,8 @@
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
+    <room>rooms\lvlLivingNightmare</room>
     <room>rooms\rmStHunger</room>
-    <room>rooms\rmNightmareComeToLife</room>
     <room>rooms\rmBGVisibilityTest</room>
     <room>rooms\rmHighwayToHell</room>
     <room>rooms\rmJumpKing</room>

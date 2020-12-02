@@ -167,6 +167,8 @@ if (global.enableSlide && !playerIsLocked(PL_LOCK_SLIDE))
 
 if (!isSlide)
 {
+    if (slideLock)
+        slideLock = lockPoolRelease(slideLock);
     slideChargeLock = lockPoolRelease(slideChargeLock);
 }
 

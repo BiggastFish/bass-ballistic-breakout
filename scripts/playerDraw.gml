@@ -1,4 +1,7 @@
 /// playerDraw()
+var _x = floor(((x + xOff) * global.screenscale) + .5) / global.screenscale;
+var _y = floor(((y + yOff) * global.screenscale) + .5) / global.screenscale;
+
 var restoreMusic = 0;
 // Don't draw if the game is fading in
 if (teleporting || showReady)
@@ -83,7 +86,7 @@ else
         else // Draws the player
         {
             drawPlayer(playerID, costumeID, spriteX, spriteY,
-                round(x), round(y), image_xscale, image_yscale);
+                _x, _y, image_xscale, image_yscale);
         }
     }
     
@@ -99,11 +102,13 @@ else
         col[0] = make_color_rgb(255, 228, 164);
         col[3] = c_white;
         
+        var icx = _x - 8 + iconx;
+        var icy = _y - (30 * image_yscale);
+        
         for (i = 0; i <= 3; i += 1)
         {
             draw_sprite_ext(global.weaponIcon[global.weapon[playerID]],
-                i, round(x) - 8 + iconx,
-                round(y) - 30 * image_yscale, 1, image_yscale, 0,
+                i, icx, icy, 1, image_yscale, 0,
                 col[i], image_alpha);
         }
     }

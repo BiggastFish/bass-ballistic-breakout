@@ -124,7 +124,7 @@ if (!global.frozen)
 var initChargeTime = 20;
 
 // Shooting buster shots if not charged.
-if (global.keyShootPressed[playerID] &amp;&amp; !playerIsLocked(PL_LOCK_SHOOT) 
+if (global.keyShootPressed[playerID] &amp;&amp; !playerIsLocked(PL_LOCK_SHOOT)
 &amp;&amp; !instance_exists(objYamato)
 &amp;&amp; global.ammo[playerID, global.weapon[playerID]] &gt; 0)
 {

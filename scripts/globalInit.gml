@@ -39,7 +39,7 @@ global.keyWeaponSwitchRightPressed[4] = 0;
 // width and height of quads (screens).
 // alternatively set per-room by using bgQuadXXXX backgrounds
 global.quadWidth = 256;
-global.quadHeight = 248;
+global.quadHeight = 240;
 
 // borders for game area outside of display area -- screenHeight must equal quadHeight + quadMarginTop + quadMarginBottom
 // (Note that these values are also set automatically given a grid room background)
@@ -71,6 +71,12 @@ draw_set_font(global.font);
 // the default screen scaling.
 global.screensize = max(1, floor(min(display_get_width() / global.screenWidth,
     (display_get_height() - 32) / global.screenHeight)));
+
+global.prevscreensize = global.screensize;
+    
+global.resolution = 1;
+
+global.screenscale = max(1, global.screensize * global.resolution);
 
 global.shakeTimer = 0;
 global.shakeFactorX = 0;

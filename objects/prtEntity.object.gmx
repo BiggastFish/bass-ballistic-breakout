@@ -104,6 +104,7 @@ hurtAlpha = 1;
 stopOnFlash = true;
 iceTimer = 0; // is iced (frozen cold), and how much remaining time to spend iced
 canIce = true; //@cc is it possible to ice this object (usually doesn't matter if canHit is false)
+canOil = true;
 
 invincible = false; // set this to true to make this enemy invincible no matter what
 sparkleTimer = 0;
