@@ -52,6 +52,7 @@ increaseHealth = false;
 increaseAmmo = false;
 increaseTimer = 0;
 increaseWeapon = 0;
+boltTimer = 0;
 depthstart = depth;
 depthAlter = 0;
 hpAlph = 1;
@@ -746,6 +747,12 @@ for (i = 0; i &lt;= global.totalWeapons; i += 1)
     }
 }
 
+// Bolt shake
+if (boltTimer &gt; 0)
+{
+    boltTimer--;
+}
+
 if (increaseHealth || increaseAmmo) // Increase Health and/or Ammo
 {
     if (global.healthEffect) // Instant
@@ -1326,7 +1333,7 @@ depth = depthstart;
         {
             with (other)
             {
-                if collision_rectangle(dx-8,dy,dx+8,dy+74,other,false,true)
+                if collision_rectangle(dx - 1, dy, dx + 72,dy + 34, other, false, true)
                 {
                     ent = other.id;
                 }
@@ -1351,7 +1358,25 @@ depth = depthstart;
     /// Draw HUD
     for (z = 0; z &lt; global.playerCount; z += 1)
     {
-        draw_sprite_ext(sprHealthbarBackground, 0, dx, dy, 1, 1, image_angle,
+        draw_sprite_ext(sprBassHelmet, 0, dx - 1, dy - 1, 1, 1, 0,
+        c_white, hpAlph)
+
+        if (global.livesEnabled)
+        {
+            draw_text(view_xview + 34, view_yview + 22, "x");
+            draw_text(view_xview + 42, view_yview + 22, global.livesRemaining);
+        }
+
+        // Bolts
+        draw_sprite_ext(sprBoltSmall, 0, view_xview + 192, 
+            view_yview + 14 + (2 * (boltTimer &gt; 0)), 1, 1,
+            0, c_white, image_alpha);
+        draw_text(view_xview + 204, 
+            view_yview + 32 + (2 * (boltTimer &gt; 0)), "x");
+        draw_text(view_xview + 212, view_yview + 32 + (2 * (boltTimer &gt; 0)), 
+            zeroPad(global.bolts, 4));
+
+        draw_sprite_ext(sprHealthbarBackground, 0, dx + 16, dy + 6, 1, 1, 0,
             c_black, hpAlph);
         
         // Respawn indicators
@@ -1387,12 +1412,10 @@ depth = depthstart;
             
             for (i = 1; i &lt;= ceil(global.playerHealth[z]); i += 1)
             {
-                draw_sprite_ext(sprHealthbarPrimary, 0, dx + 1,
-                    dy + (sprite_get_height(sprHealthbarBackground) - i * 2),
-                    1, 1, 0, pcol, hpAlph);
-                draw_sprite_ext(sprHealthbarSecondary, 0, dx + 1,
-                    dy + (sprite_get_height(sprHealthbarBackground) - i * 2),
-                    1, 1, 0, scol, hpAlph);
+                draw_sprite_ext(sprHealthbarPrimary, 0, dx + 15 + (i * 2),
+                    dy + 7, 1, 1, 0, pcol, hpAlph);
+                draw_sprite_ext(sprHealthbarSecondary, 0, dx + 15 + ( i * 2), 
+                    dy + 7, 1, 1, 0, scol, hpAlph);
             }
             
             var display = true;
@@ -1417,16 +1440,24 @@ depth = depthstart;
             
             if (display)
             {
-                draw_sprite_ext(sprHealthbarBackground, 0, dx - 8, dy, 1, 1,
-                    image_angle, global.outlineCol[z], 1);
+                draw_sprite_ext(sprHealthbarBackground, 0, dx + 16, dy + 26, 1, 1, 0,
+                    global.outlineCol[z], hpAlph)
+
                 for (i = 1; i &lt;= c; i += 1)
                 {
-                    draw_sprite_ext(sprHealthbarPrimary, 0, dx - 8 + 1, dy
-                        + (sprite_get_height(sprHealthbarBackground) - i * 2),
-                        1, 1, 0, global.primaryCol[z], hpAlph);
-                    draw_sprite_ext(sprHealthbarSecondary, 0, dx - 8 + 1, dy
-                        + (sprite_get_height(sprHealthbarBackground) - i * 2),
-                        1, 1, 0, global.secondaryCol[z], hpAlph);
+                    col[0] = c_black;
+                    col[1] = global.primaryCol[z];
+                    col[2] = global.secondaryCol[z];
+                    col[3] = c_white;
+                    for (m = 0; m &lt;= 3; m += 1)
+                    {
+                        draw_sprite_ext(global.weaponIcon[global.weapon[z]],
+                            m, dx, dy + 18, 1, 1, 0, col[m], hpAlph);
+                    }
+                    draw_sprite_ext(sprHealthbarPrimary, 0, dx + 15 + (i * 2),
+                        dy + 27, 1, 1, 0, global.primaryCol[z], hpAlph);
+                    draw_sprite_ext(sprHealthbarSecondary, 0, dx + 15 + (i * 2),
+                        dy + 27, 1, 1, 0, global.secondaryCol[z], hpAlph);
                 }
                 if (global.infiniteEnergy[global.weapon[z]])
                 {

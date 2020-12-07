@@ -57,6 +57,11 @@ hlth = 10;
 global.bolts = min(9999, global.bolts + hlth);
 
 playSFX(sfxBolt);
+
+with (objGlobalControl)
+{
+    boltTimer = 4;
+}
 </string>
           </argument>
         </arguments>

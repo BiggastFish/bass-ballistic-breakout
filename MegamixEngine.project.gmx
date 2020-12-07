@@ -1375,7 +1375,8 @@
       <sprite>sprites\sprRushJetShopIcon</sprite>
     </sprites>
     <sprites name="Bass Ballistic Breakout">
-      <sprite>sprites\sprWhy</sprite>
+      <sprite>sprites\sprBassHelmet</sprite>
+      <sprite>sprites\sprReady</sprite>
       <sprite>sprites\sprBossHealthHud</sprite>
       <sprite>sprites\sprBassJumpPoof</sprite>
       <sprite>sprites\sprAntiEddie</sprite>
@@ -1555,6 +1556,8 @@
       <background>background\tstPharoahman</background>
       <background>background\tstPharohManFlame</background>
       <background>background\tstPharohManStars</background>
+      <background>background\tstCossack1</background>
+      <background>background\tstCossack4</background>
       <background>background\tstMM10Lab</background>
       <backgrounds name="Animation Frames">
         <background>background\tstTeleporter1</background>
