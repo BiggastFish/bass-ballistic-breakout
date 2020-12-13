@@ -34,12 +34,12 @@ if (!global.lockBuster)
     if (global.keyShootPressed[playerID] &amp;&amp; !playerIsLocked(PL_LOCK_SHOOT) 
     &amp;&amp; chargeTimer == 0)
     {
-        i = fireWeapon(25, 0, objNormalBusterShot, 3, 0, 1, 0);
+        i = fireWeapon(28, 0, objNormalBusterShot, 3, 0, 1, 0);
         if (i)
         {
             i.sprite_index = sprForteBusterShot;
             i.image_xscale = image_xscale;
-            i.xspeed = image_xscale * 5; // zoom
+            i.xspeed = image_xscale * 5.5; // zoom
         }
     }
     
@@ -158,13 +158,11 @@ if (!global.lockBuster)
                 
                 if (chargeTimer &lt; chargeTime) // Half charge
                 {
-                    i = fireWeapon(21, 0, objBusterShotHalfCharged, 3, 0, 1, 0);
+                    i = fireWeapon(21, 0, objForteBusterShotHalfCharged, 3, 0, 1, 0);
                     if (i)
                     {
-                        i.sprite_index = sprForteBusterShotHalfCharged;
-                        i.image_speed = .5;
                         i.image_xscale = image_xscale;
-                        i.xspeed = image_xscale * 5;
+                        i.xspeed = image_xscale * 5.5;
                     }
                 }
                 if ((chargeTimer &gt;= chargeTime + chargeTimeExtra) &amp;&amp; !climbing &amp;&amp; 
@@ -190,8 +188,6 @@ if (!global.lockBuster)
                     i = fireWeapon(29, 0, objForteBusterShotCharged, 3, 0, 1, 0);
                     if (i)
                     {
-                        i.sprite_index = sprForteBusterShotCharged;
-                        i.image_speed = .5;
                         i.image_xscale = image_xscale;
                         i.xspeed = image_xscale * 5.5;
                     }
@@ -228,7 +224,7 @@ if (!global.lockBuster)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>weaponSetup("FORTE BUSTER", -1, -1, sprWeaponIconsForteBuster);
+            <string>weaponSetup("FORTE BUSTER", make_color_rgb(112, 112, 112), make_color_rgb(248, 152, 56), sprWeaponIconsForteBuster);
 </string>
           </argument>
         </arguments>

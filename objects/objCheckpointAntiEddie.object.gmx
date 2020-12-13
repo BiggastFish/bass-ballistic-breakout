@@ -46,11 +46,7 @@ showDuringReady = false;
 yspeed = 0;
 touch = 0;
 _im = 0;
-
-if (global.checkpointY == yy &amp;&amp; global.checkpointX == xx)
-{
-    instance_destroy();
-}
+init = 1;
 </string>
           </argument>
         </arguments>
@@ -73,7 +69,17 @@ if (global.checkpointY == yy &amp;&amp; global.checkpointX == xx)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !global.frozen
+            <string>if (instance_exists(objSectionSwitcher) || init)
+{
+    visible = 0;
+    init = 0;
+    if (global.checkpointX == xx &amp;&amp; global.checkpointY == yy)
+    {
+        instance_destroy();
+    }
+}
+
+if (!global.frozen)
 {
     if (insideSection(x, y))
     {
@@ -123,14 +129,6 @@ if (global.checkpointY == yy &amp;&amp; global.checkpointX == xx)
                 image_index = 6;
             }
         }
-    }
-}
-if (instance_exists(objSectionSwitcher))
-{
-    visible = 0;
-    if (global.checkpointX == xx &amp;&amp; global.checkpointY == yy)
-    {
-        instance_destroy();
     }
 }
 </string>

@@ -35,6 +35,7 @@ category = "cluster, floating";
 
 grav = 0;
 blockCollision = 0;
+affectHud = 0;
 despawnRange = -1;
 itemDrop = -1;
 xDir = 0;

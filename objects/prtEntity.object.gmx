@@ -100,6 +100,7 @@ epIsOnPlat = 0;
 
 itemDrop = 0; //This object will be spawned once the entity dies
 
+affectHud = 1;
 hurtAlpha = 1;
 stopOnFlash = true;
 iceTimer = 0; // is iced (frozen cold), and how much remaining time to spend iced

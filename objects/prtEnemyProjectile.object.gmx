@@ -32,6 +32,7 @@ respawn = false;
 despawnRange = 64;
 inWater = -1;
 canHit = false;
+affectHud = 0;
 
 // how the projectile interacts with shields.
 // 0: cannot be stopped.

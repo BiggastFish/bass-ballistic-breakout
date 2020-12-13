@@ -125,11 +125,13 @@ if (entityCanStep())
           <argument>
             <kind>1</kind>
             <string>if (instance_exists(parent))
+{
     with(parent)
     {
         if (bbox_top &gt; view_yview)
             yspeed = -2.5;
     }
+}
 </string>
           </argument>
         </arguments>
@@ -161,9 +163,9 @@ if (instance_exists(parent))
         instance_create(x, y, objHarmfulExplosion);
         batTimer = 20;
         yspeed = 0;
-        if (healthpoints &lt;= 20)
+        if (healthpoints &lt;= 15)
             event_user(EV_DEATH)
-        healthpoints-= 20;
+        healthpoints-= 15;
     }
 }
 instance_destroy();

@@ -37,9 +37,6 @@ with (parent)
     other.dir = image_xscale;
 }
 
-shiftVisible = 3;
-despawnRange = -1;
-
 canNeverLand = 0;
 
 mySpeed = 8;
@@ -186,6 +183,8 @@ if (!global.frozen)
 
     if (!phase) // teleporting in
     {
+        with (objRushTeleportBlock)
+            x = other.x;
         if (yspeed != 0 &amp;&amp; upordown == 'down')
         {       
             if (!canNeverLand)
@@ -237,6 +236,14 @@ if (!global.frozen)
         if (timer)
         {
             timer--;
+            if (timer mod 60 &gt; 36)
+            {
+                image_index = ((timer mod 6) &gt; 2) + 1;
+            }
+            else
+            {
+                image_index = 0;
+            }
             if (!timer)
             {
                 // Teleport away
@@ -245,6 +252,7 @@ if (!global.frozen)
                 sprite_index = sprTrebleTeleport;
             }
         }
+        
     }
     else if (phase == 2) // transformation
     {
@@ -278,7 +286,12 @@ if (!global.frozen)
             }
             else
             {
+                with (parent)
+                {
+                    yOff = 0;
+                }
                 instance_destroy();
+                exit;
             }
         }
         with (parent)
@@ -340,10 +353,14 @@ if (!global.frozen)
         {
             with (parent)
             {
+                isShoot = 0;
                 isSlide = 0;
                 dashJumped = 0;
+                climbing = 0;
                 xspeed = 0;
                 yspeed = 0;
+                spriteY = 10;
+                spriteX = 0;
                 trebleBoosted = 1;
                 other.shootLock = lockPoolLock(
                     localPlayerLock[PL_LOCK_SHOOT],
@@ -360,6 +377,8 @@ if (!global.frozen)
             phase = 2;
             yspeed = 0;
             timer = 0;
+            shiftVisible = 3;
+            despawnRange = -1;
         }
     }
     if (phase == 2 || phase == 3)
@@ -473,7 +492,7 @@ else if (global.switchingSections)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>weaponSetup("TREBLE BOOST", -2, -2, sprWeaponIconsTrebleBoost);
+            <string>weaponSetup("TREBLE BOOST", make_color_rgb(112, 112, 112), make_color_rgb(128, 0, 240), sprWeaponIconsTrebleBoost);
 </string>
           </argument>
         </arguments>

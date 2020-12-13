@@ -146,6 +146,8 @@ if (entityCanStep())
         }
         with (objHarmfulExplosion)
             shiftObject(other.scrollSpeed, 0, 0);
+        with (objTrebleBoost)
+            shiftObject(other.scrollSpeed, 0, 0);
         switch (phase)
         {
             case 0: // vine boom sound effect
@@ -391,7 +393,7 @@ if (entityCanStep())
                                 x = view_xview + 128 + (176 * image_xscale);
                                 image_xscale *= -1;
                                 image_index = 0;
-                                y-= 32;
+                                y-= 34;
                                 stationaryPhaseLeft--;
                             }
                         }

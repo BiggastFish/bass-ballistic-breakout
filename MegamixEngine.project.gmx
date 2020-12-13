@@ -1575,6 +1575,7 @@
       <backgrounds name="Static Shock">
         <background>background\tstStaticShock</background>
         <background>background\tstStaticShockReal</background>
+        <background>background\bgStaticShockBG</background>
       </backgrounds>
       <backgrounds name="Whispering Woods">
         <background>background\bgPerfumaFrontTrees</background>
@@ -2423,6 +2424,7 @@
           <object>objects\objRushJet</object>
           <objects name="Misc.">
             <object>objects\objNormalBusterShot</object>
+            <object>objects\objForteBusterShotHalfCharged</object>
             <object>objects\objForteBusterShotCharged</object>
             <object>objects\objOilSlideSplash</object>
             <object>objects\objKnuckleSandwichDelay</object>

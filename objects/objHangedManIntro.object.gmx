@@ -61,6 +61,10 @@ if (!global.frozen &amp;&amp; instance_exists(objMegaman))
     if (introTimer == -1 &amp;&amp; objMegaman.x &gt;= x &amp;&amp; insideView())
     {
         introTimer = 0;
+        with (objTrebleBoost)
+        {
+            instance_destroy();
+        }
         with (objMegaman)
         {
             other.introLock = playerLockMovement();

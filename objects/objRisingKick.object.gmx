@@ -162,6 +162,7 @@ if (!global.frozen)
                 localPlayerLock[PL_LOCK_SHOOT],
                 localPlayerLock[PL_LOCK_SLIDE],
                 localPlayerLock[PL_LOCK_TURN],
+                localPlayerLock[PL_LOCK_CLIMB],
                 localPlayerLock[PL_LOCK_GRAVITY]);
 
             xspeed=0;

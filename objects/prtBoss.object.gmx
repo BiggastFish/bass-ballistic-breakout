@@ -604,6 +604,10 @@ if (spawned)
     if (!isFight &amp;&amp; !quickSpawn)
     {
         visible = false;
+        with (objTrebleBoost)
+        {
+            instance_destroy();
+        }
     }
     else
     {

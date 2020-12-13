@@ -130,3 +130,11 @@ if (!playerIsLocked(PL_LOCK_CLIMB))
         }
     }
 }
+
+if (!climbing)
+{
+    if (climbLock)
+        climbLock = lockPoolRelease(climbLock);
+    //if (shootStandStillLock)
+        //shootStandStillLock = lockPoolRelease(shootStandStillLock);
+}

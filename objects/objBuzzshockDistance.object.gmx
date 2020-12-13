@@ -32,7 +32,7 @@
     screenShake(60, 4, 4);
     f = instance_create(view_xview + 32, view_yview + 112, objEnemyBullet);
     f.sprite_index = sprBuzzshockTiny;
-    f.depth = 1300000;
+    f.depth = 1000050;
     f.contactDamage = 0;
     f.xspeed = 6;
     instance_destroy();

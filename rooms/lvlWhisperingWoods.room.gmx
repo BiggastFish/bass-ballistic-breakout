@@ -2,7 +2,7 @@
 <room>
   <caption></caption>
   <width>4680</width>
-  <height>1720</height>
+  <height>1680</height>
   <vsnap>16</vsnap>
   <hsnap>16</hsnap>
   <isometric>0</isometric>
@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>with (objSolid) visible = 1;</code>
+  <code>//with (objSolid) visible = 1;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -52,17 +52,14 @@
   </views>
   <instances>
     <instance objName="objSolid" x="224" y="448" name="inst_29F709FB" locked="0" code="" scaleX="20" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="0" y="208" name="inst_BB4814FF" locked="0" code="" scaleX="16" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objPerfuma" x="464" y="432" name="inst_C3C42E0D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPerfuma" x="464" y="432" name="inst_C3C42E0D" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="256" y="176" name="inst_740D2050" locked="0" code="myBG = bgPerfumaFrontTrees;&#xA;areaLeft = 256;&#xA;areaRight = 256 * 2;&#xA;areaTop = 240;&#xA;areaBottom = 240 * 2;&#xA;depth = 1000010;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="256" y="192" name="inst_0C95AC05" locked="0" code="myBG = bgPerfumaGrass;&#xA;areaLeft = 256;&#xA;areaRight = 256 * 2;&#xA;areaTop = 240;&#xA;areaBottom = 240 * 2;&#xA;depth = 1000020;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="256" y="208" name="inst_A5DBBF2A" locked="0" code="myBG = bgPerfumaBackTrees;&#xA;areaLeft = 256;&#xA;areaRight = 256 * 2;&#xA;areaTop = 240;&#xA;areaBottom = 240 * 2;&#xA;depth = 1000030;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTeleporter" x="80" y="192" name="inst_400C8AB1" locked="0" code="X = 304;&#xA;Y = 432;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="256" y="160" name="inst_8CBAF913" locked="0" code="myBG = bgPerfumaGround;&#xA;areaLeft = 256;&#xA;areaRight = 256 * 2;&#xA;areaTop = 240;&#xA;areaBottom = 240 * 2;&#xA;depth = 1000000;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objStopScrollingNES" x="256" y="240" name="inst_D5D93AA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStopScrollingNES" x="256" y="720" name="inst_D5D93AA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="512" y="240" name="inst_580D9157" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDefaultSpawn" x="384" y="912" name="inst_FA38AFEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objStopScrollingNES" x="256" y="720" name="inst_33B25DB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDefaultSpawn" x="304" y="432" name="inst_FA38AFEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="224" y="928" name="inst_E4CA5B2A" locked="0" code="" scaleX="82" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objTorpedoveSpawner" x="544" y="768" name="inst_2650451B" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHoneyBomb" x="624" y="864" name="inst_DE47CFC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -85,6 +82,7 @@
     <instance objName="objRevoltingSuzy" x="1424" y="832" name="inst_A69D4FC7" locked="0" code="dir = &quot;v&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRevoltingSuzy" x="1296" y="736" name="inst_F763FFB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRevoltingSuzy" x="1504" y="864" name="inst_A72B2237" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStopScrollingNES" x="256" y="240" name="inst_A573F71B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

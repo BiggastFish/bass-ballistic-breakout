@@ -91,7 +91,7 @@ else
     }
     
     // Weapon icon
-    if (drawWeaponIcon)
+    /*if (drawWeaponIcon)
     {
         var icon, iconx;
         iconx = 0;
@@ -111,5 +111,5 @@ else
                 i, icx, icy, 1, image_yscale, 0,
                 col[i], image_alpha);
         }
-    }
+    }*/
 }

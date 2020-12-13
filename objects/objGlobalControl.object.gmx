@@ -56,6 +56,7 @@ boltTimer = 0;
 depthstart = depth;
 depthAlter = 0;
 hpAlph = 1;
+boltAlph = 1;
 
 // save icon
 saveTimer = -1;
@@ -1324,23 +1325,32 @@ depth = depthstart;
     draw_enable_alphablend(false);
     draw_enable_alphablend(true);
 
-    var ent;
-    ent = -1;
+    var helf, bolt;
+    helf = -1;
+    bolt = -1;
     with (prtEntity)
     {
-        if ((faction == 1 || faction == 3) &amp;&amp; object_is_ancestor(object_index, prtEntity) &amp;&amp;
-        !object_is_ancestor(object_index, prtEnemyProjectile) &amp;&amp; !dead)
+        if ((faction == 1 || faction == 3) &amp;&amp; object_is_ancestor(object_index, prtEntity) 
+        &amp;&amp; affectHud &amp;&amp; !dead &amp;&amp; visible)
         {
             with (other)
             {
-                if collision_rectangle(dx - 1, dy, dx + 72,dy + 34, other, false, true)
+                if collision_rectangle(dx - 1, dy, dx + 72, dy + 34, 
+                other, false, true)
                 {
-                    ent = other.id;
+                    helf = other.id;
+                }
+                if collision_rectangle(dx + 180, dy + 6, dx + 244, dy + 15, 
+                other, false, true)
+                {
+                    bolt = other.id;
                 }
             }
         }
     }
-    if (ent != -1 &amp;&amp; instance_exists(ent))
+
+    // hp alpha
+    if (helf != -1 &amp;&amp; instance_exists(helf))
     {
         if (hpAlph &gt; 0.4)
         {
@@ -1354,6 +1364,22 @@ depth = depthstart;
             hpAlph += 0.6/20;
         }
     }
+    
+    // bolt alpha
+    if (bolt != -1 &amp;&amp; instance_exists(bolt))
+    {
+        if (boltAlph &gt; 0.4)
+        {
+            boltAlph -= 0.6/20;
+        }
+    }
+    else
+    {
+        if (boltAlph &lt; 1)
+        {
+            boltAlph += 0.6/20;
+        }
+    }
 
     /// Draw HUD
     for (z = 0; z &lt; global.playerCount; z += 1)
@@ -1363,18 +1389,21 @@ depth = depthstart;
 
         if (global.livesEnabled)
         {
-            draw_text(view_xview + 34, view_yview + 22, "x");
-            draw_text(view_xview + 42, view_yview + 22, global.livesRemaining);
+            draw_text_colour(view_xview + 34, view_yview + 22, "x", c_white, c_white,
+                c_white, c_white, hpAlph);
+            draw_text_colour(view_xview + 42, view_yview + 22, global.livesRemaining,
+                c_white, c_white, c_white, c_white, hpAlph);
         }
 
         // Bolts
-        draw_sprite_ext(sprBoltSmall, 0, view_xview + 192, 
-            view_yview + 14 + (2 * (boltTimer &gt; 0)), 1, 1,
-            0, c_white, image_alpha);
-        draw_text(view_xview + 204, 
-            view_yview + 32 + (2 * (boltTimer &gt; 0)), "x");
-        draw_text(view_xview + 212, view_yview + 32 + (2 * (boltTimer &gt; 0)), 
-            zeroPad(global.bolts, 4));
+        draw_sprite_ext(sprBoltBig, 0, dx + 172, dy - 3 + (2 * (boltTimer &gt; 0)), 1, 
+            1, 0, c_white, boltAlph);
+        draw_text_colour(dx + 188, dy + 14 - (8 * instance_exists(objParallax))
+            + (2 * (boltTimer &gt; 0)), "x", 
+            c_white, c_white, c_white, c_white, boltAlph);
+        draw_text_colour(dx + 196, dy + 14 - (8 * instance_exists(objParallax))
+            + (2 * (boltTimer &gt; 0)), zeroPad(global.bolts, 4), 
+            c_white, c_white, c_white, c_white, boltAlph);
 
         draw_sprite_ext(sprHealthbarBackground, 0, dx + 16, dy + 6, 1, 1, 0,
             c_black, hpAlph);
@@ -1440,20 +1469,25 @@ depth = depthstart;
             
             if (display)
             {
-                draw_sprite_ext(sprHealthbarBackground, 0, dx + 16, dy + 26, 1, 1, 0,
-                    global.outlineCol[z], hpAlph)
-
-                for (i = 1; i &lt;= c; i += 1)
+                if (global.weapon[z] != 0)
                 {
+                    draw_sprite_ext(sprHealthbarBackground, 0, dx + 16, dy + 26, 1, 1, 0,
+                        global.outlineCol[z], hpAlph)
+
                     col[0] = c_black;
-                    col[1] = global.primaryCol[z];
-                    col[2] = global.secondaryCol[z];
+                    col[1] = global.weaponPrimaryColor[global.weapon[z]];
+                    col[2] = global.weaponSecondaryColor[global.weapon[z]];
                     col[3] = c_white;
+
                     for (m = 0; m &lt;= 3; m += 1)
                     {
                         draw_sprite_ext(global.weaponIcon[global.weapon[z]],
                             m, dx, dy + 18, 1, 1, 0, col[m], hpAlph);
                     }
+                }
+
+                for (i = 1; i &lt;= c; i += 1)
+                {
                     draw_sprite_ext(sprHealthbarPrimary, 0, dx + 15 + (i * 2),
                         dy + 27, 1, 1, 0, global.primaryCol[z], hpAlph);
                     draw_sprite_ext(sprHealthbarSecondary, 0, dx + 15 + (i * 2),
