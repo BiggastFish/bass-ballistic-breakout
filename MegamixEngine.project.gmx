@@ -1380,6 +1380,7 @@
       <sprite>sprites\sprBossHealthHud</sprite>
       <sprite>sprites\sprBassJumpPoof</sprite>
       <sprite>sprites\sprAntiEddie</sprite>
+      <sprite>sprites\sprLifeNew</sprite>
       <sprites name="Weapons">
         <sprite>sprites\sprBassBullet</sprite>
         <sprite>sprites\sprBassBulletBreak</sprite>
@@ -2611,7 +2612,7 @@
   <rooms name="rooms">
     <room>rooms\rmInit</room>
     <room>rooms\lvlCopyThisRoom</room>
-    <room>rooms\lvlTankRoom</room>
+    <room>rooms\lvlCollectiblesRoom</room>
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>

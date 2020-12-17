@@ -33,6 +33,39 @@ is1Up = true;
 respawnupondeath = 0;
 
 timer = 0;
+imgIndex = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+
+if (entityCanStep())
+{
+    imgIndex+= 1/4;
+    if (imgIndex &gt;= 7)
+    {
+        imgIndex = 0;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -82,15 +115,19 @@ event_inherited();
             <kind>1</kind>
             <string>if (!dead)
 {
+    /*
     if (!global.frozen)
     {
         timer++;
     }
+    */
     
     if ((flashTimer mod 4) &lt; 2)
     {
+        
         if (object_index == objLife)
         {
+            /*
             var _costume = 0;
             var _pid = floor((timer / 48) mod global.playerCount);
             with (objMegaman)
@@ -104,6 +141,18 @@ event_inherited();
             }
             
             drawPlayer(_pid, _costume, 16, 12, x + 8, y, image_xscale, image_yscale);
+            */
+            for (z = 0; z &lt; global.playerCount; z += 1)
+            {
+                draw_sprite_ext(sprLifeNew, imgIndex, x, y, image_xscale, image_yscale, 0, 
+                    c_white, image_alpha);
+                draw_sprite_ext(sprLifeNew, imgIndex + 8, x, y, image_xscale, image_yscale, 0, 
+                    global.primaryCol[z], image_alpha);
+                draw_sprite_ext(sprLifeNew, imgIndex + (8 * 2), x, y, image_xscale, image_yscale, 0, 
+                    global.secondaryCol[z], image_alpha);
+                draw_sprite_ext(sprLifeNew, imgIndex + (8 * 3), x, y, image_xscale, image_yscale, 0, 
+                    global.outlineCol[z], image_alpha);
+            }
         }
     }
 }

@@ -1389,9 +1389,9 @@ depth = depthstart;
 
         if (global.livesEnabled)
         {
-            draw_text_colour(view_xview + 34, view_yview + 22, "x", c_white, c_white,
+            draw_text_colour(view_xview + 34, view_yview + 22 - (8 * instance_exists(objParallax)), "x", c_white, c_white,
                 c_white, c_white, hpAlph);
-            draw_text_colour(view_xview + 42, view_yview + 22, global.livesRemaining,
+            draw_text_colour(view_xview + 42, view_yview + 22- (8 * instance_exists(objParallax)), global.livesRemaining,
                 c_white, c_white, c_white, c_white, hpAlph);
         }
 
