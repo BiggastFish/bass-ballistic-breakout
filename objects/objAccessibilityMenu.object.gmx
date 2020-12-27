@@ -402,16 +402,6 @@ if (phase == 2 &amp;&amp; !selected)
                 {
                     playSFX(sfxMenuMove);
                 }
-                break;
-            // Damage taken
-            case 20:
-                pre = global.damageTakenMultiplier;
-                global.damageTakenMultiplier = clamp(floor(global.damageTakenMultiplier + dir), 0.5, 2)
-                if (global.damageTakenMultiplier != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
         }
     }
     
@@ -1089,24 +1079,6 @@ for (var j = 0; j &lt; visibleOptions; j++)
             else
             {
                 opt += 'OFF';
-            }
-            
-            break;
-        
-        // Damage Taken Multiplier
-        // health effect
-        case 20:
-            switch (global.damageTakenMultiplier)
-            {
-                case 0.5:
-                    opt += 'HALF';
-                    break;
-                case 1:
-                    opt += 'NORMAL';
-                    break;
-                case 2:
-                    opt += 'DOUBLE';
-                    break;
             }
             
             break;

@@ -173,6 +173,8 @@ if (!global.frozen)
     {
         phase = 5;
         teleportTimer = 0;
+        image_index = 0;
+        sprite_index = sprTrebleTeleport;
     }
 
     if ((yspeed &gt; 0 &amp;&amp; y &gt; view_yview + view_hview)

@@ -60,8 +60,8 @@ imgIndex = 0;
 
 if (entityCanStep())
 {
-    imgIndex+= 1/4;
-    if (imgIndex &gt;= 7)
+    imgIndex+= 1/8;
+    if (imgIndex &gt;= 8)
     {
         imgIndex = 0;
     }
@@ -142,15 +142,16 @@ event_inherited();
             
             drawPlayer(_pid, _costume, 16, 12, x + 8, y, image_xscale, image_yscale);
             */
+            var img = floor(imgIndex);
             for (z = 0; z &lt; global.playerCount; z += 1)
             {
-                draw_sprite_ext(sprLifeNew, imgIndex, x, y, image_xscale, image_yscale, 0, 
+                draw_sprite_ext(sprLifeNew, img, x, y, image_xscale, image_yscale, 0, 
                     c_white, image_alpha);
-                draw_sprite_ext(sprLifeNew, imgIndex + 8, x, y, image_xscale, image_yscale, 0, 
+                draw_sprite_ext(sprLifeNew, img + 8, x, y, image_xscale, image_yscale, 0, 
                     global.primaryCol[z], image_alpha);
-                draw_sprite_ext(sprLifeNew, imgIndex + (8 * 2), x, y, image_xscale, image_yscale, 0, 
+                draw_sprite_ext(sprLifeNew, img + (8 * 2), x, y, image_xscale, image_yscale, 0, 
                     global.secondaryCol[z], image_alpha);
-                draw_sprite_ext(sprLifeNew, imgIndex + (8 * 3), x, y, image_xscale, image_yscale, 0, 
+                draw_sprite_ext(sprLifeNew, img + (8 * 3), x, y, image_xscale, image_yscale, 0, 
                     global.outlineCol[z], image_alpha);
             }
         }

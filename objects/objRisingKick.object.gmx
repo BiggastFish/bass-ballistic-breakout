@@ -45,7 +45,8 @@ playSFX(sfxBreakDash); // needs its own sfx later
 imgx = 0;
 imgTimer = 0;
 palTimer = 0;
-palCol = make_color_rgb(88, 248, 152);
+primCol = make_color_rgb(0, 168, 68);
+secCol = make_color_rgb(88, 248, 152);
 
 kickTimer = 35;
 horKickSpeed = 2.4;
@@ -132,25 +133,32 @@ if (!global.frozen)
     imgTimer++;
     if (imgTimer == 3)
     {
-        imgx = !imgx;
+        imgx++;
         imgTimer = 0;
+        if (imgx &gt;= 3)
+        {
+            imgx = 0
+        }
     }
     
     // Palette swap
     palTimer++
     if (palTimer == 6)
     {
-        if (palCol == make_color_rgb(88, 248, 152))
+        if (primCol == make_color_rgb(0, 168, 68))
         {
-            palCol = make_color_rgb(248, 152, 56);
+            primCol = make_color_rgb(112, 112, 112);
+            secCol = make_color_rgb(248, 152, 56);
         }
         else
         {
-            palCol = make_color_rgb(88, 248, 152);
+            primCol = make_color_rgb(0, 168, 68);
+            secCol = make_color_rgb(88, 248, 152);
         }
         palTimer = 0;
     }
-    global.secondaryCol[playerID] = palCol;
+    global.primaryCol[playerID] = primCol
+    global.secondaryCol[playerID] = secCol;
 
     with (parent) // Mega Man anim + movement forcing
     {

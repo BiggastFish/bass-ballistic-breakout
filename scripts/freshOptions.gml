@@ -5,6 +5,7 @@ global.healthEffect = 0;
 global.autoFire = 0;
 global.musicvolume = 80;
 global.soundvolume = 100;
+global.bgVisibility = 100;
 global.damagePopup = 0;
 global.mmColor = 0;
 global.chargeBar = 0;

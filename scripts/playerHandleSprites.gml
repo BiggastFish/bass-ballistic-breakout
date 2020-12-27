@@ -292,11 +292,11 @@ switch (AnimID)
         break;
     case "RisingKick":
         spriteY = 10;
-        spriteX = other.imgx;
+        spriteX = 13 + other.imgx;
         break;
     case "CrescentKick":
         spriteY = 10;
-        spriteX = 9 + other.imgx;
+        spriteX = 7 + other.imgx;
         break;
     case "ForceWalk":
         spriteLoopStart = 0;

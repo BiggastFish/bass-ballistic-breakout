@@ -158,8 +158,8 @@ if (!global.frozen)
     }
 
     // Destroy timer
-    imgx+= .25;
-    if (imgx &gt;= 7)
+    imgx+= 2/9;
+    if (imgx &gt;= 6)
     {
         visibleDelay = 0;
         instance_destroy();

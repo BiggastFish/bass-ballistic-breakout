@@ -1428,7 +1428,9 @@
           </sprites>
           <sprites name="Boss">
             <sprite>sprites\sprBuzzshock</sprite>
+            <sprite>sprites\sprBuzzshockReal</sprite>
             <sprite>sprites\sprBuzzshockTiny</sprite>
+            <sprite>sprites\sprBuzzshockDust</sprite>
             <sprite>sprites\sprBuzzshockWings</sprite>
             <sprite>sprites\sprElecnSpark</sprite>
             <sprite>sprites\sprBuzzshockDrone</sprite>
@@ -1467,10 +1469,11 @@
           <sprite>sprites\sprHoneybomb</sprite>
           <sprite>sprites\sprLumberjane</sprite>
           <sprite>sprites\sprLumberjaneAxe</sprite>
-          <sprite>sprites\sprFlowerSpring</sprite>
           <sprite>sprites\sprFirefry</sprite>
           <sprite>sprites\sprFirefryTrail</sprite>
           <sprite>sprites\sprRevoltingSuzy</sprite>
+          <sprite>sprites\sprFlowerSpring</sprite>
+          <sprite>sprites\sprSwitchingVines</sprite>
           <sprites name="Boss">
             <sprite>sprites\sprPerfuma</sprite>
             <sprite>sprites\sprPerfumaVine</sprite>
@@ -1525,6 +1528,7 @@
         </sprites>
         <sprites name="Pause">
           <sprite>sprites\sprPauseMenu</sprite>
+          <sprite>sprites\sprAccessibilityMenu</sprite>
           <sprite>sprites\sprSomeonesBust</sprite>
           <sprite>sprites\sprOptionsIcon</sprite>
           <sprite>sprites\sprExitIcon</sprite>
@@ -1571,6 +1575,7 @@
         <background>background\tstPharohManStars2</background>
         <background>background\tstPharohManStars3</background>
       </backgrounds>
+      <background>background\tstWindman</background>
     </backgrounds>
     <backgrounds name="Bass Ballistic Breakout">
       <backgrounds name="Static Shock">
@@ -2469,6 +2474,7 @@
         <object>objects\objPauseMenuOld</object>
         <object>objects\objPauseMenu</object>
         <object>objects\objOptionsMenu</object>
+        <object>objects\objAccessibilityMenu</object>
         <object>objects\objColoredTextOverlaysMenu</object>
         <object>objects\objNewFile</object>
         <object>objects\objFileSelector</object>
@@ -2515,6 +2521,7 @@
         </objects>
         <objects name="Boss">
           <object>objects\objBuzzshock</object>
+          <object>objects\objBuzzshockEV73</object>
           <object>objects\objBuzzshockWings</object>
           <object>objects\objBuzzshockSpark</object>
         </objects>
@@ -2556,9 +2563,10 @@
         <object>objects\objTorpedove</object>
         <object>objects\objTorpedoveSpawner</object>
         <object>objects\objLumberjane</object>
-        <object>objects\objFlowerSpring</object>
         <object>objects\objFirefry</object>
         <object>objects\objRevoltingSuzy</object>
+        <object>objects\objFlowerSpring</object>
+        <object>objects\objSwitchingVines</object>
         <objects name="Boss">
           <object>objects\objPerfuma</object>
           <object>objects\objPerfumaVine</object>
@@ -2606,6 +2614,9 @@
       </objects>
       <objects name="Bury The Light">
         <object>objects\objTakanuva</object>
+        <objects name="Projectiles">
+          <object>objects\objTakanuvaGlowingSpiral</object>
+        </objects>
       </objects>
     </objects>
   </objects>

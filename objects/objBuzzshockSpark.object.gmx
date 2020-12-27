@@ -132,7 +132,7 @@ if (entityCanStep())
         for (i = 0; i &lt;= 360; i+= 45)
         {
             e = instance_create(x, y, objTrailEffect);
-            e.sprite_index = sprite_index;
+            e.sprite_index = sprSparkShock;
             e.image_xscale = .5;
             e.image_yscale = .5;
             e.image_alpha = 1;

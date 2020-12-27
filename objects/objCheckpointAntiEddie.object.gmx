@@ -47,6 +47,7 @@ yspeed = 0;
 touch = 0;
 _im = 0;
 init = 1;
+spawnDir = 1;
 </string>
           </argument>
         </arguments>
@@ -71,12 +72,16 @@ init = 1;
             <kind>1</kind>
             <string>if (instance_exists(objSectionSwitcher) || init)
 {
-    visible = 0;
-    init = 0;
-    if (global.checkpointX == xx &amp;&amp; global.checkpointY == yy)
+    if (global.checkpointX == xx &amp;&amp; global.checkpointY == yy &amp;&amp; init)
     {
+        with (objMegaman)
+        {
+            image_xscale = other.spawnDir;
+        }
         instance_destroy();
     }
+    visible = 0;
+    init = 0;
 }
 
 if (!global.frozen)

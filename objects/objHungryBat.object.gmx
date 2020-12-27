@@ -47,6 +47,7 @@ pickup = 0;
 
 alarmChase = 20;
 canChase = 1;
+emergencyChase = 0;
 
 playSFX(sfxHornetChaser);
 </string>
@@ -161,7 +162,7 @@ if (!global.frozen)
                 }
             }
         }
-        
+
         if (instance_exists(chaseObj) &amp;&amp; !chaseObj.dead &amp;&amp; canChase)
         {
             with (chaseObj)
@@ -170,8 +171,17 @@ if (!global.frozen)
                 {
                     with (other)
                     {
-                        mp_linear_step(spriteGetXCenterObject(chaseObj),
-                        spriteGetYCenterObject(chaseObj), 2, 0);
+                        mp_linear_step(spriteGetXCenterObject(chaseObj) 
+                        + chaseObj.batx * chaseObj.image_xscale, 
+                        spriteGetYCenterObject(chaseObj) 
+                        + chaseObj.baty * chaseObj.image_yscale, 2, 0);
+                    }
+                }
+                else
+                {
+                    with (other)
+                    {
+                        canChase = 0;
                     }
                 }
             }
