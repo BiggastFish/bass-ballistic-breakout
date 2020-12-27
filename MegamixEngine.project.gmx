@@ -1418,7 +1418,7 @@
         <sprites name="Static Shock">
           <sprite>sprites\sprShockingSnakey</sprite>
           <sprite>sprites\sprChargingChester</sprite>
-          <sprite>sprites\sprrGabyoallectro</sprite>
+          <sprite>sprites\sprGabyoallectro</sprite>
           <sprite>sprites\sprRingRing</sprite>
           <sprite>sprites\sprTossMachine</sprite>
           <sprites name="Projectiles">

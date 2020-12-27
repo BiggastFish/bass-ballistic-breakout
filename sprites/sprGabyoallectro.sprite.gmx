@@ -20,7 +20,7 @@
   <width>16</width>
   <height>24</height>
   <frames>
-    <frame index="0">images\sprrGabyoallectro_0.png</frame>
-    <frame index="1">images\sprrGabyoallectro_1.png</frame>
+    <frame index="0">images\sprGabyoallectro_0.png</frame>
+    <frame index="1">images\sprGabyoallectro_1.png</frame>
   </frames>
 </sprite>
