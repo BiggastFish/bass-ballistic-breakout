@@ -1529,8 +1529,9 @@
         </sprites>
         <sprites name="Pause">
           <sprite>sprites\sprPauseMenu</sprite>
+          <sprite>sprites\sprAccessibilityArrows</sprite>
           <sprite>sprites\sprAccessibilityMenu</sprite>
-          <sprite>sprites\sprSomeonesBust</sprite>
+          <sprite>sprites\sprAccessibilityVisual</sprite>
           <sprite>sprites\sprOptionsIcon</sprite>
           <sprite>sprites\sprExitIcon</sprite>
         </sprites>

@@ -3,7 +3,7 @@
   <spriteName>sprAccessibilityMenu</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2002</depth>
+  <depth>-2003</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -38,9 +38,6 @@ if (!instance_number(object_index) &gt; 1)
 cursorImgIndex = 0;
 cursorImgSpd = 0.2;
 
-arrowBlinkTimer = 20;
-showArrow = true;
-
 phase = 0;
 option = 0;
 selected = 0;
@@ -59,14 +56,36 @@ press = 1;
 
 // Option text
 optionText[0] = 'CLOSE';
-optionText[1] = 'COLORED TEXT OVERLAYS';
-optionText[2] = 'BG VISIBILITY';
-optionText[3] = 'TOGGLE AUTOFIRE';
-optionText[4] = 'DAMAGE TAKEN';
-optionText[5] = 'DAMAGE DEALT';
-optionText[6] = 'QUICKSWITCH ICON';
-optionText[7] = 'SPIKE DAMAGE';
-optionText[8] = 'DASH';
+optionText[1] = 'BG VISIBILITY';
+optionText[2] = 'TOGGLE AUTOFIRE';
+optionText[3] = 'DAMAGE TAKEN';
+optionText[4] = 'DAMAGE DEALT';
+optionText[5] = 'QUICKSWITCH ICON';
+optionText[6] = 'SPIKE DAMAGE';
+optionText[7] = 'DASH';
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>persistent = 0;
 </string>
           </argument>
         </arguments>
@@ -140,20 +159,8 @@ switch (phase)
     
     // Fading out
     case 3:
-        if (room == rmOptions)
-        {
-            var ID;
-            if (global.nextRoom != rmTitleScreen)
-            {
-                saveLoadOptions(true);
-            }
-            global.nextRoom = rmTitleScreen;
-        }
-        else
-        {
-            global.nextRoom = -1;
-            phase++;
-        }
+        global.nextRoom = -1;
+        phase++;
         break;
     
     // End fading out
@@ -191,12 +198,6 @@ switch (phase)
           <argument>
             <kind>1</kind>
             <string>/// Most menu selections
-
-if (instance_exists(objColoredTextOverlaysMenu))
-{
-    exit;
-}
-
 if (phase == 2 &amp;&amp; !selected)
 {
     // var maxplayers = min(4+gamepad_get_device_count(),4);
@@ -207,172 +208,8 @@ if (phase == 2 &amp;&amp; !selected)
     {
         switch (option)
         {
-            // Screensize
-            case 3:
-                pre = global.screensize;
-                setScreenSize(global.screensize + dir);
-                if (global.screensize != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-    
-            // Resolution
-            case 4:
-                global.resolution = !global.resolution;
-                playSFX(sfxMenuMove);
-
-                setScreenSize(global.screensize + window_get_fullscreen());
-                break;
-
-            // V-Sync
-            case 5:
-                global.vsync = !global.vsync;
-                playSFX(sfxMenuMove);
-                break;
-            
-            // Music volume
-            case 6:
-                pre = global.musicvolume;
-                global.musicvolume = max(0, min(100, global.musicvolume + 10 * dir));
-                
-                // adjust current music volume to reflect change
-                switch (global.levelSongType)
-                {
-                    default:
-                    case "OGG":
-                        FMODInstanceSetVolume(global.songMemory, global.musicvolume * 0.01);
-                        break;
-                    case "VGM":
-                        if (instance_exists(objMusicControl))
-                        {
-                            audio_sound_gain(objMusicControl.sound_index, global.levelVolume * (global.musicvolume * 0.01), 0);
-                        }
-                        break;
-                }
-                if (global.musicvolume != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-            
-            // Sound volume
-            case 7:
-                pre = global.soundvolume;
-                global.soundvolume = max(0, min(100, global.soundvolume + 10 * dir));
-                if (global.soundvolume != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-            
-            // Players (co-op)
-            case 8:
-                pre = global.playerCount;
-                global.playerCount = max(1, min(4, global.playerCount + dir));
-                if (global.playerCount != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                if (global.playerCount &gt; pre)
-                {
-                    resetPlayerState(pre);
-                    
-                    // allow player to respawn:
-                    global.respawnTimer[pre] = 0;
-                }
-                
-                // delete removed players
-                with (objMegaman)
-                {
-                    if (playerID &gt;= global.playerCount)
-                    {
-                        instance_destroy();
-                    }
-                }
-                break;
-            
-            // FPS
-            case 9:
-                pre = global.showFPS;
-                global.showFPS = min(max(0, global.showFPS + dir), 1);
-                if (global.showFPS != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-            
-            // Controller Overlay
-            case 10:
-                pre = global.showControllerOverlay;
-                global.showControllerOverlay = min(max(0, global.showControllerOverlay + dir), 2);
-                if (global.showControllerOverlay != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-            
-            // Damage popup
-            case 11:
-                pre = global.damagePopup;
-                global.damagePopup = min(max(0, global.damagePopup + dir), 1);
-                if (global.damagePopup != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-            
-            // Charge Bar
-            case 12:
-                pre = global.chargeBar;
-                global.chargeBar = min(max(0, global.chargeBar + dir), 1);
-                if (global.chargeBar != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-            
-            // MM Color
-            case 13:
-                pre = global.mmColor;
-                global.mmColor = min(max(0, global.mmColor + dir), 1);
-                if (global.mmColor != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-            
-            // moving text effects
-            case 14:
-                pre = global.showMovingText;
-                global.showMovingText = min(max(0, global.showMovingText + dir), 1);
-                if (global.showMovingText != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-            
-            // Instant refills
-            case 15:
-                pre = global.healthEffect;
-                global.healthEffect = min(max(0, global.healthEffect + dir), 1);
-                if (global.healthEffect != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-            
-            // Escape key behavior
-            case 16:
-                pre = global.escapeBehavior;
-                global.escapeBehavior = min(max(0, global.escapeBehavior - dir), 2);
-                if (global.escapeBehavior != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-            // BG visiblity
-            case 18:
+            // BG Visibility
+            case 1:
                 pre = global.bgVisibility;
                 global.bgVisibility = max(0, min(100, global.bgVisibility + dir));
                 if (global.bgVisibility != pre)
@@ -380,24 +217,71 @@ if (phase == 2 &amp;&amp; !selected)
                     playSFX(sfxMenuMove);
                 }
                 break;
+
             // Toggle Autofire
-            case 19:
+            case 2:
                 pre = global.autoFire;
                 global.autoFire = min(max(0, global.autoFire + dir), 1);
                 if (global.autoFire != pre)
                 {
                     playSFX(sfxMenuMove);
                 }
+                break;
+
+            // Damage Taken
+            case 3:
+                pre = global.damageTakenMultiplier;
+                global.damageTakenMultiplier = clamp(floor(global.damageTakenMultiplier + dir), 0.5, 2);
+                if (global.damageTakenMultiplier != pre)
+                {
+                    playSFX(sfxMenuMove);
+                }
+                break;
+            
+            // Damage Dealt
+            case 4:
+                pre = global.damageDealtMultiplier;
+                global.damageDealtMultiplier = clamp(floor(global.damageDealtMultiplier + dir), 0.5, 2);
+                if (global.damageDealtMultiplier != pre)
+                {
+                    playSFX(sfxMenuMove);
+                }
+                break;
+            
+            // Quickswitch Icon
+            case 5:
+                pre = global.showQuickswitch;
+                global.showQuickswitch = min(max(0, global.showQuickswitch + dir), 1);
+                if (global.showQuickswitch != pre)
+                {
+                    playSFX(sfxMenuMove);
+                }
+                break;
+            
+            // Spike Behavior
+            case 6:
+                pre = global.spikeBehavior;
+                global.spikeBehavior = max(0, min(3, global.spikeBehavior + dir));
+                if (global.spikeBehavior != pre)
+                {
+                    playSFX(sfxMenuMove);
+                }
+                break;
+            
+            // Dash Behavior
+            case 7:
+                pre = global.dashBehavior;
+                global.dashBehavior = max(0, min(2, global.dashBehavior + dir));
+                if (global.dashBehavior != pre)
+                {
+                    playSFX(sfxMenuMove);
+                }
+                break;
         }
     }
     
     // pause controlled selections
-    var pausePressed = false;
-    for (var i = 0; i &lt; global.playerCount; i++)
-        if (global.keyPausePressed[i])
-            pausePressed = i + 1;
-    
-    if (pausePressed)
+    if (global.keyPausePressed[0])
     {
         switch (option)
         {
@@ -406,51 +290,6 @@ if (phase == 2 &amp;&amp; !selected)
                 selected = true;
                 phase++;
                 playSFX(sfxMenuSelect);
-                break;
-            
-            // set keyboard controls
-            case 1:
-                if (buffer)
-                {
-                    exit;
-                }
-                newControls = 1;
-                selected = 1;
-                current = 'LEFT';
-                keyID=0;
-                pID = pausePressed - 1;
-                for(var i=0;i&lt;40;i++)
-                    currentKeys[i]=-1;
-                break;
-            
-            // set gamepad controls
-            case 2:
-                if (buffer)
-                {
-                    exit;
-                }
-                if (!objGlobalControl.joystick_connected)
-                {
-                    objGlobalControl.joystick_connected = gamepad_get_device_count() &gt; 0;
-                }
-                if (!objGlobalControl.joystick_connected)
-                {
-                    playSFX(sfxError);
-                    exit;
-                }
-                newControls = 2;
-                keyID=0;
-                selected = 1;
-                current = 'JUMP';
-                pID = pausePressed - 1;
-                for(var i=0;i&lt;40;i++)
-                    currentKeys[i]=-1;
-                break;
-            
-            // colored text overlays
-            case 17:
-                playSFX(sfxPause);
-                instance_create(x, y, objColoredTextOverlaysMenu);
                 break;
         }
     }
@@ -530,275 +369,6 @@ if (phase == 2 &amp;&amp; !selected)
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Setup controls
-if (!newControls)
-{
-    exit;
-}
-
-// control configuration
-key = -1;
-
-// control configuration
-var skip = newControls &amp;&amp; (keyboard_key == vk_delete);
-
-if (newControls == 1)
-{
-    if (keyboard_check_pressed(vk_anykey))
-    {
-        // illegal keys
-        key = keyboard_key;
-        switch (key)
-        {
-            case vk_f1:
-            case vk_f2:
-            case vk_f3:
-            case vk_f4:
-            case vk_f5:
-            case vk_f6:
-            case vk_f7:
-            case vk_f8:
-            case vk_f9:
-            case vk_f10:
-            case vk_f11:
-            case vk_f12:
-            case vk_escape:
-            case vk_alt:
-            case vk_nokey:
-            case vk_printscreen:
-                exit;
-        }
-    }
-    else
-    {
-        // no keys pressed
-        press = 0;
-    }
-    
-    event_user(0);
-    
-    if (key != -1 &amp;&amp; !press)
-    {
-        if(skip)
-            key=-1;
-        currentKeys[keyID + pID*10]=key;
-        keyID++;
-        // assign key
-        press = 1;
-        switch (current)
-        {
-            case 'LEFT':
-                if(!skip)
-                    global.leftKey[pID] = key;
-                current = 'RIGHT';
-                break;
-            case 'RIGHT':
-                if(!skip)
-                    global.rightKey[pID] = key;
-                current = 'UP';
-                break;
-            case 'UP':
-                if(!skip)
-                    global.upKey[pID] = key;
-                current = 'DOWN';
-                break;
-            case 'DOWN':
-                if(!skip)
-                    global.downKey[pID] = key;
-                current = 'JUMP';
-                break;
-            case 'JUMP':
-                if(!skip)
-                    global.jumpKey[pID] = key;
-                current = 'SHOOT';
-                break;
-            case 'SHOOT':
-                if(!skip)
-                    global.shootKey[pID] = key;
-                current = 'SLIDE';
-                break;
-            case 'SLIDE':
-                if(!skip)
-                    global.slideKey[pID] = key;
-                current = 'PREV WPN';
-                break;
-            case 'PREV WPN':
-                if(!skip)
-                    global.weaponSwitchLeftKey[pID] = key;
-                current = 'NEXT WPN';
-                break;
-            case 'NEXT WPN':
-                if(!skip)
-                    global.weaponSwitchRightKey[pID] = key;
-                current = 'PAUSE';
-                break;
-            case 'PAUSE':
-                if(!skip)
-                    global.pauseKey[pID] = key;
-                current = 'LEFT';
-                pID += 1;
-                if (pID &gt;= global.playerCount)
-                {
-                    selected = 0;
-                    buffer = 1;
-                    alarm[0] = 10;
-                    newControls = 0;
-                }
-                
-                break;
-        }
-        
-        playSFX(sfxMenuMove);
-    }
-}
-
-// gamepad configuration
-if (newControls == 2)
-{
-    if (!objGlobalControl.joystick_connected)
-    {
-        newControls = 0;
-        selected = 0;
-        press = 1;
-        buffer = 1;
-        alarm[0] = 10;
-        exit;
-    }
-    if(!skip)
-    {
-        var i, b;
-        var jID = pID;
-        if (!gamepad_is_connected(jID))
-            jID += 4 - objGlobalControl.xinputDeviceCount;
-        b = gamepad_button_count(jID);
-        
-        for (i = 0; i &lt; b; i += 1)
-        {
-            if (gamepad_button_check(jID, i))
-            {
-                key = i;
-                break;
-            }
-        }
-    }
-    else
-    {
-        key=vk_delete;
-    }
-    if (key == -1)
-    {
-        press = 0;
-    }
-    else{
-        event_user(0);
-    }
-    if (key != -1 &amp;&amp; !press)
-    {
-        if(skip)
-            key=-1;
-        currentKeys[keyID + pID*10]=key;
-        keyID++;
-        press = 1;
-        switch (current)
-        {
-            case 'JUMP':
-                if(!skip)
-                    global.joystick_jumpKey[pID] = key;
-                current = 'SHOOT';
-                break;
-            case 'SHOOT':
-                if(!skip)
-                    global.joystick_shootKey[pID] = key;
-                current = 'SLIDE';
-                break;
-            case 'SLIDE':
-                if(!skip)
-                    global.joystick_slideKey[pID] = key;
-                current = 'PREV WPN';
-                break;
-            case 'PREV WPN':
-                if(!skip)
-                    global.joystick_weaponSwitchLeftKey[pID] = key;
-                current = 'NEXT WPN';
-                break;
-            case 'NEXT WPN':
-                if(!skip)
-                    global.joystick_weaponSwitchRightKey[pID] = key;
-                current = 'PAUSE';
-                break;
-            case 'PAUSE':
-                 if(!skip)
-                    global.joystick_pauseKey[pID] = key;
-                current = 'JUMP';
-                pID += 1;
-                if (pID &gt;= 1 &amp;&amp; gamepad_get_device_count() &gt; pID) // global.playerCount
-                {
-                    selected = 0;
-                    buffer = 1;
-                    alarm[0] = 10;
-                    newControls = 0;
-                }
-                break;
-        }
-        
-        playSFX(sfxMenuMove);
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Validate inputs
-
-if(key != -1 &amp;&amp; !press)
-{
-    for(var i=0;i&lt;10 &amp;&amp; currentKeys[i+pID*10]!=-1;i++)
-    {
-        if(currentKeys[i+pID*10]==key)
-        {
-            key=-1;
-            break;
-        }
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -834,15 +404,7 @@ if (cursorImgIndex &gt;= 5)
 }
 
 // draw cursor
-draw_sprite(sprOptionsCursor, cursorImgIndex, drawXPosition + 34, drawYPosition + 52 + (option) * 14 - (optionOffset) * 14);
-
-// animate arrows
-arrowBlinkTimer -= 1;
-if (arrowBlinkTimer == 0)
-{
-    arrowBlinkTimer = 20;
-    showArrow = !showArrow;
-}
+draw_sprite(sprOptionsCursor, cursorImgIndex, drawXPosition + 24, drawYPosition + 64 + (option) * 16 - (optionOffset) * 16);
 
 // draw arrows
 draw_set_halign(fa_middle);
@@ -850,23 +412,31 @@ draw_set_valign(fa_middle);
 
 draw_text(drawXPosition + 128, drawYPosition + 20, "GAME &amp; ACCESSIBILITY");
 
-
-if (showArrow &amp;&amp; optionOffset != 0)
+if (optionOffset == 0)
 {
-    draw_sprite(sprArrow, 2, drawXPosition + 128, drawYPosition + 56);
+    draw_sprite(sprAccessibilityArrows, 1, drawXPosition + 19, drawYPosition + 52);
+}
+else
+{
+    draw_sprite(sprAccessibilityArrows, 0, drawXPosition + 19, drawYPosition + 52);
 }
 
-if (showArrow &amp;&amp; optionOffset != array_length_1d(optionText) - visibleOptions)
+if (optionOffset == array_length_1d(optionText) - visibleOptions)
 {
-    draw_sprite(sprArrow, 3, drawXPosition + 128, drawYPosition + 198);
+    draw_sprite(sprAccessibilityArrows, 1, drawXPosition + 19, drawYPosition + 152);
 }
+else
+{
+    draw_sprite(sprAccessibilityArrows, 2, drawXPosition + 19, drawYPosition + 152);
+}
+
 
 // draw options
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 for (var j = 0; j &lt; visibleOptions; j++)
 {
-    draw_text_ext(drawXPosition + 48, drawYPosition + 56 + j * 16, optionText[optionOffset + j], 16, 256);
+    draw_text_ext(drawXPosition + 32, drawYPosition + 64 + j * 16, optionText[optionOffset + j], 16, 256);
 }
 
 // draw current option status'
@@ -876,13 +446,13 @@ for (var j = 0; j &lt; visibleOptions; j++)
     switch (optionOffset + j)
     {
         // BG Visibility
-        case 2:
+        case 1:
             opt += string(global.bgVisibility) + '%';
             
             break;
             
         // Toggle Autofire
-        case 3:
+        case 2:
             if (global.autoFire)
             {
                 opt += 'ON';
@@ -895,7 +465,7 @@ for (var j = 0; j &lt; visibleOptions; j++)
             break;
         
         // Damage Taken
-        case 4:
+        case 3:
             switch (global.damageTakenMultiplier)
             {
                 case 0.5:
@@ -912,7 +482,7 @@ for (var j = 0; j &lt; visibleOptions; j++)
             break;
 
         // Damage dealth
-        case 5:
+        case 4:
             switch (global.damageDealtMultiplier)
             {
                 case 0.5:
@@ -929,8 +499,8 @@ for (var j = 0; j &lt; visibleOptions; j++)
             break;
 
         // quickswitch icon
-        case 6:
-            if (global.showQuickswitch == 1)
+        case 5:
+            if (global.showQuickswitch)
             {
                 opt += 'ON';
             }
@@ -942,7 +512,7 @@ for (var j = 0; j &lt; visibleOptions; j++)
             break;
         
         // spike behavior
-        case 7:
+        case 6:
             switch (global.spikeBehavior)
             {
                 case 0:
@@ -962,7 +532,7 @@ for (var j = 0; j &lt; visibleOptions; j++)
             break;
 
         // dash behavior
-        case 8:
+        case 7:
             switch (global.dashBehavior)
             {
                 case 0:
@@ -984,7 +554,62 @@ for (var j = 0; j &lt; visibleOptions; j++)
 }
 
 draw_set_halign(fa_right);
-draw_text_ext(drawXPosition + 232, drawYPosition + 56, opt, 16, 256);
+draw_text_ext(drawXPosition + 232, drawYPosition + 64 , opt, 16, 256);
+
+dopt = '';
+if (option != 0)
+{
+    switch (option)
+    {
+        // BG Visibility
+        case 1:
+            draw_sprite_ext(sprAccessibilityVisual, 0, drawXPosition + 19, drawYPosition + 164,
+            1, 1, 0, c_white, global.bgVisibility / 100);
+            draw_sprite(sprAccessibilityVisual, 1, drawXPosition + 19, drawYPosition + 164);
+            dopt = 'VISIBILITY OF#BACKGROUND ELEMENTS#PRESENT IN STAGES##(CERTAIN BG ASPECTS#WILL STILL BE#VISIBLE REGARDLESS#OF SETTINGS)';
+            break;
+        
+        // Toggle Autofire
+        case 2:
+            draw_sprite(sprAccessibilityVisual, 2 + floor(global.autoFire), drawXPosition + 19, drawYPosition + 164)
+            dopt = 'ALLOWS CERTAIN#WEAPONS TO BE#ACTIVATED WITH#ON/OFF TOGGLES#RATHER THAN#HOLDING DOWN THE#FIRE BUTTON';
+            break;
+
+        // Damage Taken
+        case 3:
+            draw_sprite(sprAccessibilityVisual, 4 + floor(global.damageTakenMultiplier), drawXPosition + 19, drawYPosition + 164)
+            dopt = 'AMOUNT OF DAMAGE#ENEMIES AND#ENEMY PROJECTILES#DEAL TO THE#PLAYER';
+            break;
+
+        // Damage Dealt
+        case 4:
+            draw_sprite(sprAccessibilityVisual, 7 + floor(global.damageDealtMultiplier), drawXPosition + 19, drawYPosition + 164)
+            dopt = 'AMOUNT OF DAMAGE#ENEMIES TAKE#FROM PLAYER#PROJECTILES';
+            break;
+
+        // Quickswitch Icon
+        case 5:
+            draw_sprite(sprAccessibilityVisual, 10 + floor(global.showQuickswitch), drawXPosition + 19, drawYPosition + 164)
+            dopt = 'SETS THE WEAPON#ICON ABOVE THE#PLAYER TO BE#VISIBLE WHEN#QUICKSWITCHING#WEAPONS';
+            break;
+
+        // Spike Behavior
+        case 6:
+            draw_sprite(sprAccessibilityVisual, 12 + floor(global.spikeBehavior), drawXPosition + 19, drawYPosition + 164)
+            dopt = 'AMOUNT OF DAMAGE#SPIKES DEAL#TO THE PLAYER';
+            break;
+        
+        // Dash Input
+        case 7:
+            draw_sprite(sprAccessibilityVisual, 16 + floor(global.dashBehavior), drawXPosition + 19, drawYPosition + 164)
+            dopt = 'INPUTS REQUIRED#FOR ACTIVATING#A DASH';
+            break;
+    }
+    draw_set_halign(fa_left);
+    draw_text(drawXPosition + 83, drawYPosition + 164 , dopt);
+}
+
+
 
 // colored text overlays
 if (global.showColoredTextOverlays)
