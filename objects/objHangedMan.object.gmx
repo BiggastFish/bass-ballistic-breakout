@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-healthpointsStart = 120;
+healthpointsStart = 140;
 healthpoints = healthpointsStart;
 grav = 0;
 contactDamage = 4;

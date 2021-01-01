@@ -1513,6 +1513,7 @@
         </sprites>
         <sprites name="Bury The Light">
           <sprite>sprites\sprTakanuva</sprite>
+          <sprite>sprites\sprTakanuvaMaskShine</sprite>
         </sprites>
       </sprites>
       <sprites name="Menus">

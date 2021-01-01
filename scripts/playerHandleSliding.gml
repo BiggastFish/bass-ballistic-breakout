@@ -1,6 +1,28 @@
 /// playerHandleSliding();
 // Sliding
 
+if (dashTimer > 0)
+{
+    if (dashTimer == 20)
+    {
+        dashTimer = 0;
+    }
+    else
+    {
+        dashTimer--;
+    }
+}
+
+if ((global.keyLeftPressed[playerID] || global.keyRightPressed[playerID]) 
+&& xDir != 0 && global.dashBehavior && !isSlide && (ground || climbing))
+{
+    dashTimer+= 10;
+    if (dashTimer > 10 && dashTimer < 20)
+    {
+        dashTimer = 30;
+    }
+}
+
 if (global.enableSlide && !playerIsLocked(PL_LOCK_SLIDE))
 {
     var statusSliding = true;
@@ -9,7 +31,9 @@ if (global.enableSlide && !playerIsLocked(PL_LOCK_SLIDE))
         statusSliding = statusObject.statusCanSlide;
     }
     
-    var keyPressed = global.keySlidePressed[playerID] || (global.keyJumpPressed[playerID] && yDir == gravDir);
+    var keyPressed = (global.keySlidePressed[playerID] && global.dashBehavior != 1) 
+    || (global.dashBehavior && (global.keyLeftPressed[playerID] || global.keyRightPressed[playerID]) 
+    && xDir != 0 && dashTimer > 20);
     
     // begin new slide
     if (ground && !isSlide && statusSliding && keyPressed)
@@ -174,7 +198,7 @@ if (!isSlide)
 
 if ((isSlide || dashJumped) && !climbing && !isHit)
 {
-    if (global.roomTimer % 4 = 0)
+    if (global.roomTimer % 4 == 0)
     {
         a = instance_create(x, y, objTrailEffect);
         a.drawingPlayer = true;

@@ -70,6 +70,10 @@ if (dieToSpikes) // Handle dying to spikes
     // the solidity of spikes depends on whether or not
     // we are hitstunned.
     var spSolid = (canHit && iFrames != 0);
+    if (object_index == objMegaman && !global.spikeBehavior)
+    {
+        spSolid = false;
+    }
     with (objSpike)
     {
         solid = spSolid;
@@ -308,10 +312,21 @@ if (dieToSpikes)
         spSolid = instance_place(x, y, objSpike);
         if (spSolid)
         {
-            global.damage = spSolid.contactDamage;
+            var sM = 1;
+            if (object_index == objMegaman)
+            {
+                switch (global.spikeBehavior)
+                {
+                    case 0: case 1: sM = 1; break;
+                    case 2: sM = 0.5; break;
+                    case 3: sM = 0.25; break;
+                }
+            }
+
+            global.damage = spSolid.contactDamage * sM;
             healthpoints -= global.damage;
 
-            if (healthpoints <= 0)
+            if (healthpoints <= 0 || object_index != objMegaman)
             {
                 event_user(EV_DEATH);
             }
@@ -319,6 +334,10 @@ if (dieToSpikes)
             {
                 x = xprevious;
                 y = yprevious;
+                if (object_index == objMegaman)
+                {
+                    hurtFromSpike = true;
+                }
                 event_user(EV_HURT);
             }
         }

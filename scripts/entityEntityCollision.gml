@@ -121,7 +121,7 @@ if (global.damage != 0)
             }
         }
         
-        healthpoints -= global.damage;
+        healthpoints -= global.damage * global.damageDealtMultiplier;
         
         hitterID = other.id;
         event_user(EV_HURT);

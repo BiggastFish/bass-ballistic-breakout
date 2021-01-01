@@ -79,8 +79,7 @@ optionText[14] = 'MOVING TEXT';
 optionText[15] = 'PICKUP EFFECT';
 optionText[16] = 'ESC KEY BEHAVIOR';
 optionText[17] = 'COLORED TEXT OVERLAYS';
-optionText[18] = 'BG VISIBILITY';
-optionText[19] = 'TOGGLE AUTOFIRE';
+optionText[18] = 'GAME &amp; ACCESSIBILITY';
 </string>
           </argument>
         </arguments>
@@ -206,7 +205,7 @@ switch (phase)
             <kind>1</kind>
             <string>/// Most menu selections
 
-if (instance_exists(objColoredTextOverlaysMenu))
+if (instance_exists(objColoredTextOverlaysMenu) || instance_exists(objAccessibilityMenu))
 {
     exit;
 }
@@ -385,33 +384,6 @@ if (phase == 2 &amp;&amp; !selected)
                     playSFX(sfxMenuMove);
                 }
                 break;
-            // BG visiblity
-            case 18:
-                pre = global.bgVisibility;
-                global.bgVisibility = max(0, min(100, global.bgVisibility + dir));
-                if (global.bgVisibility != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-            // Toggle Autofire
-            case 19:
-                pre = global.autoFire;
-                global.autoFire = min(max(0, global.autoFire + dir), 1);
-                if (global.autoFire != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-            // Damage taken
-            case 20:
-                pre = global.damageTakenMultiplier;
-                global.damageTakenMultiplier = clamp(floor(global.damageTakenMultiplier + dir), 0.5, 2)
-                if (global.damageTakenMultiplier != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
         }
     }
     
@@ -475,6 +447,12 @@ if (phase == 2 &amp;&amp; !selected)
             case 17:
                 playSFX(sfxPause);
                 instance_create(x, y, objColoredTextOverlaysMenu);
+                break;
+
+            // accessibility menu
+            case 18:
+                playSFX(sfxPause);
+                instance_create(x, y, objAccessibilityMenu);
                 break;
         }
     }
@@ -1073,43 +1051,6 @@ for (var j = 0; j &lt; visibleOptions; j++)
             }
             
             break;
-
-        // BG Visibility
-        case 18:
-            opt += string(global.bgVisibility) + '%';
-            
-            break;
-            
-        // Toggle Autofire
-        case 19:
-            if (global.autoFire)
-            {
-                opt += 'ON';
-            }
-            else
-            {
-                opt += 'OFF';
-            }
-            
-            break;
-        
-        // Damage Taken Multiplier
-        // health effect
-        case 20:
-            switch (global.damageTakenMultiplier)
-            {
-                case 0.5:
-                    opt += 'HALF';
-                    break;
-                case 1:
-                    opt += 'NORMAL';
-                    break;
-                case 2:
-                    opt += 'DOUBLE';
-                    break;
-            }
-            
-            break;
     }
     
     // next line
@@ -1118,7 +1059,6 @@ for (var j = 0; j &lt; visibleOptions; j++)
 
 draw_set_halign(fa_right);
 draw_text_ext(drawXPosition + 224, drawYPosition + 52, opt, 14, 256);
-
 
 // draw configure controls popup
 if (newControls)

@@ -4,6 +4,10 @@ if (!playerIsLocked(PL_LOCK_TURN))
 {
     if (xDir != 0)
     {
+        if (image_xscale != sign(xDir))
+        {
+            dashTimer = 0;
+        }
         image_xscale = sign(xDir);
     }
 }

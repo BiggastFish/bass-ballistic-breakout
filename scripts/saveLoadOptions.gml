@@ -26,6 +26,11 @@ global.vsync                 = sl(global.vsync,          "vsync");
 global.showControllerOverlay = sl(global.showControllerOverlay, "controlleroverlay");
 global.escapeBehavior        = sl(global.escapeBehavior, "escapebehavior");
 global.bgVisibility          = sl(global.bgVisibility, "bgvisibility");
+global.damageTakenMultiplier = sl(global.damageTakenMultiplier, "damagetaken");
+global.damageDealtMultiplier = sl(global.damageDealtMultiplier, "damagedealt");
+global.showQuickswitch       = sl(global.showQuickswitch, "showquickswitch");
+global.spikeBehavior         = sl(global.spikeBehavior, "spikebehavior");
+global.dashBehavior          = sl(global.dashBehavior, "dashbehavior");
 
 // controls
 for (var i = 0; i < 4; i += 1)

@@ -31,6 +31,7 @@ healthpointsStart = 256; // placeholder
 healthpoints = healthpointsStart;
 contactDamage = 3;
 grav = .25 * image_yscale;
+affectHud = false;
 
 // Enemy specific code
 imageSpd = image_speed;

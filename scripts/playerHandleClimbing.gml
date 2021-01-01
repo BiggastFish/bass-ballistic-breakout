@@ -110,7 +110,7 @@ if (!playerIsLocked(PL_LOCK_CLIMB))
             ladderJumped = 1;
             if (jump && !global.keyDown[playerID])
             {
-                if global.keySlide[playerID]
+                if (global.keySlide[playerID] || dashTimer > 20)
                 {
                     playSFX(sfxDash);
                     dashJumped = true;

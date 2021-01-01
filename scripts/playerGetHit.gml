@@ -27,15 +27,27 @@ if (!isHit)
                 global.ammo[playerID, global.weapon[playerID]] = max(0, global.ammo[playerID, global.weapon[playerID]] - ((ndmg) / (global.energySaver + 1)));
             }
         }
-        
-        global.playerHealth[playerID] -= dmg;
-        
+
+        if (hurtFromSpike)
+        {
+            global.playerHealth[playerID] -= dmg;
+        }
+        else
+        {
+            global.playerHealth[playerID] -= dmg * global.damageTakenMultiplier;
+        }
+
         iFrames = -1;
         shootTimer = 0;
         
         if (global.playerHealth[playerID] > 0)
         {
             playSFX(sfxHit);
+        }
+        else
+        {
+            event_user(EV_DEATH);
+            exit;
         }
     }
     
@@ -58,10 +70,15 @@ if (!isHit)
         climbLock = lockPoolRelease(climbLock);
         
         // knockback speed:
-        if (!playerIsLocked(PL_LOCK_MOVE))
+        if (!playerIsLocked(PL_LOCK_MOVE) && !hurtFromSpike)
         {
             xspeed = image_xscale * -0.5;
             yspeed = (-1.5 * gravDir) * (yspeed * gravDir <= 0);
+        }
+        else if (hurtFromSpike)
+        {
+            xspeed = 0;
+            yspeed = 0;
         }
         
         // lock controls during knockback:
@@ -91,6 +108,11 @@ if (!isHit)
         }
     }
     
+    if (hurtFromSpike)
+    {
+        hurtFromSpike = false;
+    }
+
     // error-checking for recording
     recordInputFidelityMessage("Hit (" + string(playerID) + ")");
 }

@@ -229,12 +229,12 @@ tile_layer_hide(1000035);</code>
     <instance objName="objSolid" x="4960" y="928" name="inst_9EA4984B" locked="0" code="" scaleX="1" scaleY="11" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4976" y="1088" name="inst_116C9EAA" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSparkSnakey" x="5000" y="1072" name="inst_4079B65E" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="5104" y="1056" name="inst_D8F3F2F1" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="5088" y="1056" name="inst_D8F3F2F1" locked="0" code="" scaleX="3" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5136" y="1056" name="inst_5399077A" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5200" y="1120" name="inst_00BF30B2" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5136" y="1184" name="inst_1F9741AE" locked="0" code="" scaleX="30" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5328" y="704" name="inst_B8EBAD4C" locked="0" code="" scaleX="4" scaleY="27" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="4912" y="1168" name="inst_2DAD8AED" locked="0" code="" scaleX="12" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="4912" y="1168" name="inst_2DAD8AED" locked="0" code="" scaleX="11" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objChargingChester" x="5296" y="1168" name="inst_A9A358EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5552" y="1136" name="inst_94328278" locked="0" code="" scaleX="4" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSoftBorderHor" x="5120" y="1056" name="inst_3A27F157" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
@@ -246,7 +246,7 @@ tile_layer_hide(1000035);</code>
     <instance objName="objGabyoallightning" x="5584" y="1120" name="inst_C5F5455A" locked="0" code="startDir = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3808" y="1056" name="inst_2D253427" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSparkSnakey" x="5224" y="1152" name="inst_C1173466" locked="0" code="" scaleX="-1" scaleY="-1" colour="4294967295" rotation="0"/>
-    <instance objName="objChargingChester" x="5136" y="1040" name="inst_9145B8F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objChargingChester" x="5104" y="1040" name="inst_9145B8F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVerticalScrolling" x="5376" y="960" name="inst_F11D56E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingHorizontal" x="5376" y="704" name="inst_DAECB607" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5408" y="912" name="inst_AB5D1998" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
@@ -5377,16 +5377,11 @@ tile_layer_hide(1000035);</code>
     <tile bgName="tstStaticShockReal" x="5056" y="1104" w="16" h="16" xo="160" yo="80" id="11321567" name="inst_8D7C0449" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5056" y="1120" w="16" h="16" xo="160" yo="80" id="11321568" name="inst_BB76EFA1" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5072" y="1120" w="16" h="16" xo="160" yo="80" id="11321569" name="inst_42B3CAC3" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5088" y="1120" w="16" h="16" xo="160" yo="80" id="11321570" name="inst_2FE73A88" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5088" y="1136" w="16" h="16" xo="160" yo="80" id="11321571" name="inst_B23E7FCA" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5088" y="1152" w="16" h="16" xo="160" yo="80" id="11321572" name="inst_51FF0A1E" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5056" y="1152" w="16" h="16" xo="160" yo="80" id="11321574" name="inst_B2F42802" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5072" y="1152" w="16" h="16" xo="160" yo="80" id="11321575" name="inst_E798A4A5" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5072" y="1136" w="16" h="16" xo="160" yo="80" id="11321576" name="inst_F84BDDD3" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5072" y="1104" w="16" h="16" xo="160" yo="80" id="11321577" name="inst_FC57E567" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5072" y="1088" w="16" h="16" xo="160" yo="80" id="11321578" name="inst_86F652DF" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5088" y="1088" w="16" h="16" xo="160" yo="80" id="11321579" name="inst_60B4B4C5" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5088" y="1104" w="16" h="16" xo="160" yo="80" id="11321580" name="inst_914D9000" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5184" y="1040" w="16" h="16" xo="64" yo="80" id="11321581" name="inst_9EC884A9" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5184" y="1024" w="16" h="16" xo="64" yo="80" id="11321582" name="inst_1DB4EEFD" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5184" y="976" w="16" h="16" xo="64" yo="80" id="11321587" name="inst_629511FA" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -5426,8 +5421,6 @@ tile_layer_hide(1000035);</code>
     <tile bgName="tstStaticShockReal" x="5040" y="1072" w="16" h="16" xo="160" yo="80" id="11321624" name="inst_AB200B1E" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5056" y="1072" w="16" h="16" xo="160" yo="80" id="11321625" name="inst_474706A5" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5072" y="1072" w="16" h="16" xo="160" yo="80" id="11321626" name="inst_31599144" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5088" y="1072" w="16" h="16" xo="160" yo="80" id="11321627" name="inst_E0A0E490" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5088" y="1056" w="16" h="16" xo="160" yo="80" id="11321628" name="inst_C2EFDA17" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5088" y="1040" w="16" h="16" xo="160" yo="80" id="11321629" name="inst_E63B03ED" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5088" y="1024" w="16" h="16" xo="160" yo="80" id="11321630" name="inst_D8405E52" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5104" y="1024" w="16" h="16" xo="160" yo="80" id="11321631" name="inst_8CFA8757" depth="1000030" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -7546,19 +7539,10 @@ tile_layer_hide(1000035);</code>
     <tile bgName="tstStaticShockReal" x="2992" y="928" w="16" h="16" xo="48" yo="16" id="11318414" name="inst_19B3FB69" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="2992" y="896" w="16" h="16" xo="48" yo="16" id="11318415" name="inst_25D525F3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="2992" y="864" w="16" h="16" xo="48" yo="16" id="11318416" name="inst_2CB88490" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5104" y="1168" w="16" h="16" xo="0" yo="32" id="11318422" name="inst_AE83FA34" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5120" y="1168" w="16" h="16" xo="32" yo="16" id="11318423" name="inst_D51245A9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5120" y="1184" w="16" h="16" xo="0" yo="16" id="11318424" name="inst_38767303" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5120" y="1200" w="16" h="16" xo="0" yo="16" id="11318425" name="inst_F881A2AA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5104" y="1152" w="16" h="16" xo="0" yo="16" id="11318426" name="inst_2A915B7D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5104" y="1136" w="16" h="16" xo="0" yo="16" id="11318427" name="inst_C4F519DF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5104" y="1120" w="16" h="16" xo="0" yo="16" id="11318428" name="inst_A2C1AF11" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5104" y="1104" w="16" h="16" xo="0" yo="16" id="11318429" name="inst_C90FD914" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5104" y="1088" w="16" h="16" xo="0" yo="16" id="11318430" name="inst_CB38EB9A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5104" y="1072" w="16" h="16" xo="0" yo="16" id="11318431" name="inst_BA235A85" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5120" y="1056" w="16" h="16" xo="0" yo="0" id="11318433" name="inst_C4F99712" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5120" y="1152" w="16" h="16" xo="16" yo="64" id="11318434" name="inst_045CD4F2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5120" y="1088" w="16" h="16" xo="0" yo="16" id="11318436" name="inst_6E967A8D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5120" y="1104" w="16" h="16" xo="0" yo="16" id="11318437" name="inst_DA8C6686" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5120" y="1120" w="16" h="16" xo="0" yo="16" id="11318438" name="inst_8344B225" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5120" y="1136" w="16" h="16" xo="0" yo="16" id="11318439" name="inst_06D54DDB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -7787,7 +7771,6 @@ tile_layer_hide(1000035);</code>
     <tile bgName="tstStaticShockReal" x="4336" y="944" w="16" h="16" xo="0" yo="16" id="11321031" name="inst_6D1AD34F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="4336" y="960" w="16" h="16" xo="0" yo="32" id="11321032" name="inst_01D130CD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="4352" y="960" w="16" h="16" xo="32" yo="16" id="11321033" name="inst_100FBD14" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5104" y="1184" w="16" h="32" xo="96" yo="32" id="11321034" name="inst_75FBC81C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="4528" y="1152" w="16" h="16" xo="32" yo="0" id="11321035" name="inst_70674B7A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="4464" y="1152" w="16" h="16" xo="16" yo="0" id="11321036" name="inst_590654AD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="4448" y="1152" w="16" h="16" xo="16" yo="0" id="11321037" name="inst_99EA46D9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -7860,9 +7843,6 @@ tile_layer_hide(1000035);</code>
     <tile bgName="tstStaticShockReal" x="4704" y="1104" w="16" h="16" xo="48" yo="16" id="11321113" name="inst_3E6DDF1F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="4720" y="1072" w="16" h="16" xo="80" yo="16" id="11321114" name="inst_6FD98A3E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="4768" y="1072" w="16" h="16" xo="80" yo="16" id="11321115" name="inst_6939A8EA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="6192" y="848" w="16" h="16" xo="0" yo="16" id="11321223" name="inst_2C5C8A54" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="6176" y="848" w="16" h="16" xo="48" yo="16" id="11321224" name="inst_2B973460" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="6208" y="848" w="16" h="16" xo="48" yo="16" id="11321225" name="inst_9FEA605F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="4352" y="1264" w="16" h="16" xo="48" yo="16" id="11321312" name="inst_3713D511" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="4352" y="1216" w="16" h="16" xo="48" yo="16" id="11321313" name="inst_4170C684" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="4352" y="1056" w="16" h="16" xo="0" yo="16" id="11321314" name="inst_45C75F60" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -8032,7 +8012,26 @@ tile_layer_hide(1000035);</code>
     <tile bgName="tstStaticShockReal" x="7408" y="704" w="16" h="16" xo="0" yo="16" id="11322469" name="inst_AAA74A73" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5120" y="1072" w="16" h="16" xo="0" yo="16" id="11322760" name="inst_0BA1C067" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="5136" y="1056" w="16" h="16" xo="16" yo="0" id="11322761" name="inst_66F0B38F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstStaticShockReal" x="5104" y="1056" w="16" h="16" xo="16" yo="48" id="11322762" name="inst_D4590895" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5104" y="1168" w="16" h="16" xo="16" yo="16" id="11322763" name="inst_5C5075AD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5104" y="1184" w="16" h="16" xo="0" yo="16" id="11322764" name="inst_0808BE60" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5104" y="1200" w="16" h="16" xo="0" yo="16" id="11322765" name="inst_C25861FC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5088" y="1056" w="16" h="16" xo="16" yo="16" id="11322766" name="inst_D9BF46FA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5104" y="1056" w="16" h="16" xo="32" yo="16" id="11322767" name="inst_E29EFBD2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5104" y="1136" w="16" h="16" xo="16" yo="64" id="11322768" name="inst_08BB97AF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5088" y="1152" w="16" h="16" xo="0" yo="32" id="11322769" name="inst_506A3FD0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5120" y="1152" w="16" h="16" xo="32" yo="32" id="11322770" name="inst_2F8D923D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5088" y="1120" w="16" h="16" xo="0" yo="16" id="11322771" name="inst_1A2AB225" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5088" y="1104" w="16" h="16" xo="0" yo="16" id="11322772" name="inst_6DE2DFF5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5088" y="1072" w="16" h="16" xo="0" yo="16" id="11322774" name="inst_2562D883" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5104" y="1072" w="16" h="16" xo="0" yo="16" id="11322775" name="inst_CE219263" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5104" y="1088" w="16" h="16" xo="0" yo="16" id="11322776" name="inst_E84AC3C0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5104" y="1120" w="16" h="16" xo="0" yo="16" id="11322778" name="inst_9EEFC0C8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5088" y="1136" w="16" h="16" xo="0" yo="16" id="11322779" name="inst_B1971ED6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5104" y="1152" w="16" h="16" xo="16" yo="32" id="11322780" name="inst_F06BE9D6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5104" y="1104" w="16" h="16" xo="48" yo="16" id="11322781" name="inst_D2AF127F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5088" y="1088" w="16" h="16" xo="48" yo="16" id="11322782" name="inst_A56227E7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="5120" y="1088" w="16" h="16" xo="48" yo="16" id="11322783" name="inst_9C1DBE9B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstStaticShockReal" x="6176" y="848" w="48" h="16" xo="0" yo="0" id="11322784" name="inst_4A77A22A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="320" y="704" w="16" h="16" xo="64" yo="32" id="11312684" name="inst_4A3DA95B" depth="900000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="416" y="704" w="16" h="16" xo="144" yo="32" id="11312685" name="inst_179E359B" depth="900000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstStaticShockReal" x="480" y="704" w="16" h="16" xo="80" yo="32" id="11312686" name="inst_C528E0C6" depth="900000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

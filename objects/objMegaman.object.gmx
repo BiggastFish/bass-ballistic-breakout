@@ -144,6 +144,7 @@ drawWeaponIcon = false; // Whether or not we should draw the weapon icon above o
 
 deathByPit = false; // Did we die by falling in a bottomless pit?
 dieToPit = true;
+hurtFromSpike = false;
 isSolid = 0;
 statusObject = noone;
 statusSliding = true;
@@ -172,6 +173,7 @@ jumpCounter = 0;
 jumpCounterMax = 2; //If you want multiple jumps then increase this
 
 //Dash things
+dashTimer = 0;
 dashSlide = false; // Dash enabled?
 dashJumped = false;
 ladderJumped = false;
