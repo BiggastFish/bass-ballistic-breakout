@@ -520,49 +520,38 @@ if (yDir != 0 || emergencyPass)
     {
         woption = option;
         
-        if (hotBarArrangeMode) // swap weapons:
+        do
         {
-            if (option + yDir &lt; weaponVisibleN &amp;&amp; option + min(yDir, 0) &gt;= 1)
-            {
+            /*if (emergencyPass)
+                option --;
+            else*/
                 option += yDir;
-                swap(global.weaponHotbar, weaponVisible[option], weaponVisible[option - yDir]);
-            }
-        }
-        else
-        {
-            do
-            {
-                if (emergencyPass)
-                    option --;
-                else
-                    option += yDir;
                 
-                // wtanks......
-                if (phase == 6)
-                {
-                    if (option == 4 &amp;&amp; yDir &lt; 0)
-                        option = weaponVisibleN - 1;
-                    else if (option == 5 &amp;&amp; yDir &gt; 0)
-                        option = 0;
-                    else if (option &gt;= weaponVisibleN)
-                        option = 6;
-                    else if (option &lt; 0)
-                        option = 5;
-                }
-                else
-                {
-                    if (option == 4 &amp;&amp; yDir &lt; 0)
-                        option = weaponVisibleN + 5;
-                    else if (option == 5 &amp;&amp; yDir &gt; 0)
-                        option = weaponVisibleN + 1;
-                    else if (option &gt;= weaponVisibleN)
-                        option = weaponVisibleN + 4;
-                    else if (option &lt; 0)
-                        option = weaponVisibleN + 1;
-                }
+            // wtanks......
+            if (phase == 6)
+            {
+                if (option == 4 &amp;&amp; yDir &lt; 0)
+                    option = weaponVisibleN - 1;
+                else if (option == 5 &amp;&amp; yDir &gt; 0)
+                    option = 0;
+                else if (option &gt;= weaponVisibleN)
+                    option = 6;
+                else if (option &lt; 0)
+                    option = 5;
             }
-                until (option &gt;= weaponVisibleN || !global.weaponLocked[global.weaponHotbar[weaponVisible[option]]]);
+            else
+            {
+                if (option == 4 &amp;&amp; yDir &lt; 0)
+                    option = weaponVisibleN + 5;
+                else if (option == 5 &amp;&amp; yDir &gt; 0)
+                    option = weaponVisibleN + 1;
+                else if (option &gt;= weaponVisibleN)
+                    option = weaponVisibleN + 4;
+                else if (option &lt; 0)
+                    option = weaponVisibleN + 1;
+            }
         }
+            until (option &gt;= weaponVisibleN || !global.weaponLocked[global.weaponHotbar[weaponVisible[option]]]);
     }
     // Tanks or buttons
     else
@@ -572,12 +561,36 @@ if (yDir != 0 || emergencyPass)
         else if (option &gt;= weaponVisibleN + 1 &amp;&amp; option &lt;= weaponVisibleN + 3)
         {
             if (yDir &lt; 0)
+            {
                 option = 4;
+                if (global.weaponLocked[option])
+                {
+                    do 
+                    {
+                        option--;
+                    }
+                        until (!global.weaponLocked[option])
+                }
+            }
             else
                 option = 0;
         }
         else if (option == weaponVisibleN + 5 &amp;&amp; yDir &gt; 0)
+        {
             option = 5;
+            if (global.weaponLocked[option])
+            {
+                do 
+                {
+                    option++;
+                }
+                until (!global.weaponLocked[global.weaponHotbar[weaponVisible[option]]] || option == weaponVisibleN + 1)
+                if (option == weaponVisibleN + 1)
+                {
+                    option = 0;
+                }
+            }
+        }
         else
             option += yDir;
     }
@@ -588,12 +601,13 @@ if (xDir != 0)
     if (option &lt; weaponVisibleN) // horizontal movements while on the weapon list
     {
         //option = weaponVisibleN + 2 - xDir;
-        if (option &lt; 5)
+
+        if (option &lt; 5 &amp;&amp; !global.weaponLocked[option + 6])
         {
             playSFX(sfxMenuMove);
             option += 6;
         }
-        else if (option &gt;= 6)
+        else if (option &gt;= 6 &amp;&amp; !global.weaponLocked[option + 0])
         {
             playSFX(sfxMenuMove);
             option -= 6;

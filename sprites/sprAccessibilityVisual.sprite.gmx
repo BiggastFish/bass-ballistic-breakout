@@ -10,7 +10,7 @@
   <bbox_left>1</bbox_left>
   <bbox_right>62</bbox_right>
   <bbox_top>1</bbox_top>
-  <bbox_bottom>63</bbox_bottom>
+  <bbox_bottom>61</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -39,5 +39,10 @@
     <frame index="16">images\sprAccessibilityVisual_16.png</frame>
     <frame index="17">images\sprAccessibilityVisual_17.png</frame>
     <frame index="18">images\sprAccessibilityVisual_18.png</frame>
+    <frame index="19">images\sprAccessibilityVisual_19.png</frame>
+    <frame index="20">images\sprAccessibilityVisual_20.png</frame>
+    <frame index="21">images\sprAccessibilityVisual_21.png</frame>
+    <frame index="22">images\sprAccessibilityVisual_22.png</frame>
+    <frame index="23">images\sprAccessibilityVisual_23.png</frame>
   </frames>
 </sprite>

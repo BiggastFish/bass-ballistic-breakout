@@ -1535,6 +1535,13 @@
           <sprite>sprites\sprOptionsIcon</sprite>
           <sprite>sprites\sprExitIcon</sprite>
         </sprites>
+        <sprites name="Weapon Get">
+          <sprite>sprites\sprBassSilhouettes</sprite>
+        </sprites>
+        <sprites name="Save Menu">
+          <sprite>sprites\sprSaveMenuBG</sprite>
+          <sprite>sprites\sprSaveMenuCursor</sprite>
+        </sprites>
       </sprites>
     </sprites>
   </sprites>
@@ -1591,9 +1598,12 @@
         <background>background\bgPerfumaGrass</background>
         <background>background\bgPerfumaBackTrees</background>
       </backgrounds>
-      <backgrounds name="Stage Select">
-        <background>background\bgStageSelectNew</background>
-        <background>background\bgStageSelectBackground</background>
+      <backgrounds name="Menus">
+        <backgrounds name="Stage Select">
+          <background>background\bgStageSelectNew</background>
+          <background>background\bgStageSelectBackground</background>
+        </backgrounds>
+        <background>background\bgAccessibilityBG</background>
       </backgrounds>
     </backgrounds>
   </backgrounds>
@@ -1612,6 +1622,7 @@
       <script>scripts\playerSwitchSections.gml</script>
       <script>scripts\playerSwitchWeapons.gml</script>
       <script>scripts\fireWeapon.gml</script>
+      <script>scripts\deleteWeaponObject.gml</script>
       <scripts name="Handle">
         <script>scripts\playerHandleClimbing.gml</script>
         <script>scripts\playerHandleDeath.gml</script>
@@ -2478,11 +2489,10 @@
         <object>objects\objOptionsMenu</object>
         <object>objects\objAccessibilityMenu</object>
         <object>objects\objColoredTextOverlaysMenu</object>
-        <object>objects\objNewFile</object>
         <object>objects\objFileSelector</object>
+        <object>objects\objNewFile</object>
         <object>objects\objCharacterSelector</object>
         <object>objects\objStageSelect</object>
-        <object>objects\objWeaponGet</object>
         <object>objects\objShopControl</object>
         <object>objects\objGameOver</object>
         <object>objects\objCredits</object>
@@ -2491,6 +2501,10 @@
           <object>objects\objWilyCastleDot</object>
           <object>objects\objWilyCastleStart</object>
           <object>objects\objWilyCastleArrow</object>
+        </objects>
+        <objects name="WeaponGet">
+          <object>objects\objWeaponGet</object>
+          <object>objects\objWeaponGetEffect</object>
         </objects>
       </objects>
       <objects name="Effects">
@@ -2630,7 +2644,7 @@
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlLivingNightmare</room>
-    <room>rooms\rmStHunger</room>
+    <room>rooms\lvlStHunger</room>
     <room>rooms\rmBGVisibilityTest</room>
     <room>rooms\rmHighwayToHell</room>
     <room>rooms\rmJumpKing</room>

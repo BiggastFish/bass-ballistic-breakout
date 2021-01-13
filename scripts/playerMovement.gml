@@ -44,8 +44,24 @@ else if (dieToPit)
         if ((gravDir >= 0 && !position_meeting(x, y - 8, objSectionArrowDown))
             || (gravDir < 0 && !place_meeting(x, y + 8, objSectionArrowUp)))
         {
-            global.playerHealth[playerID] = 0;
-            deathByPit = true;
+            if (!global.pitBehavior || 
+            global.pitBehavior == 1 && global.playerHealth[playerID] <= 14 ||
+            global.pitBehavior == 2 && global.playerHealth[playerID] <= 7)
+            {
+                global.playerHealth[playerID] = 0;
+                deathByPit = true;
+            }
+            else
+            {
+                deleteWeaponObject();
+                playSFX(sfxHit);
+                global.playerHealth[playerID]-= 7 + ((global.pitBehavior == 1) * 7);
+                canMinJump = false;
+                y-= 8 * gravDir;
+                yspeed = -8 * gravDir;
+                jumpCounter = 1;
+                iFrames = 30;
+            }
         }
     }
 }

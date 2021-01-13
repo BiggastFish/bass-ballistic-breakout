@@ -29,7 +29,11 @@
 
 // default values (change these in creation code)
 
-//@cc  my background, if not set the object will be destroyed
+
+//@cc does it move when a menu is open
+moveInMenu = false;
+
+//@cc my background, if not set the object will be destroyed
 myBG = -1;
 
 //@cc if all of these are 0, infer the values to be the size of the background
@@ -192,7 +196,7 @@ yshift = 0;
 }
 
 // time-based adjustments:
-if (!global.frozen || instance_exists(objSectionSwitcher))
+if (!global.frozen || instance_exists(objSectionSwitcher) || moveInMenu)
 {
     // Image cycling (sprites only)
     if (imgInterval &gt; 0 &amp;&amp; resourceType == 2)

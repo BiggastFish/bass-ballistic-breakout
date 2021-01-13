@@ -60,7 +60,7 @@
     <instance objName="objBossDoor" x="240" y="352" name="inst_C54FBD7A" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBossDoor" x="256" y="352" name="inst_48DA02E0" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objRightScrolling" x="256" y="224" name="inst_713EFA17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objHotDogMan" x="464" y="400" name="inst_CE5EC40C" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objHotDogMan" x="464" y="400" name="inst_CE5EC40C" locked="0" code="elementName = &quot;sandwich&quot;&#xA;elementCode = &quot;weaponReward(objKnuckleSandwich)&quot;;&#xA;" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

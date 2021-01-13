@@ -698,7 +698,7 @@ if (phase &gt; -1)
                         var img = stageIcon[i, j];
                         if (stageBeaten[i, j])
                         {
-                            img = floor(12 + staticImgIndex);
+                            img = floor(16 + staticImgIndex);
                         }
                         draw_sprite(sprMugshots, img, xs, ys);
                         if (i == 0 &amp;&amp; j == 1)

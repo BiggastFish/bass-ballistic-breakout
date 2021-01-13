@@ -226,7 +226,7 @@ if (entityCanStep())
         // update count of number of elements collected:
         global.energyElements = array_length_1d(global.elementsCollected) - numberOf(global.elementsCollected, "");
     }
-    
+
     // save the game file
     saveLoadGame(true);
 }

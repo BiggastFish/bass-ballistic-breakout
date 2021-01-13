@@ -3,7 +3,7 @@
   <spriteName>sprAccessibilityMenu</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2003</depth>
+  <depth>-2004</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -43,7 +43,7 @@ option = 0;
 selected = 0;
 buffer = 0;
 
-visibleOptions = 6;
+visibleOptions = 7;
 optionOffset = 0;
 
 verticalQuickScrollTimer = 25;
@@ -55,14 +55,16 @@ current = 'NONE';
 press = 1;
 
 // Option text
-optionText[0] = 'CLOSE';
-optionText[1] = 'BG VISIBILITY';
-optionText[2] = 'TOGGLE AUTOFIRE';
-optionText[3] = 'DAMAGE TAKEN';
-optionText[4] = 'DAMAGE DEALT';
-optionText[5] = 'QUICKSWITCH ICON';
-optionText[6] = 'SPIKE DAMAGE';
-optionText[7] = 'DASH';
+optionText[0] = 'BACK';
+optionText[1] = 'BG VISIBILITY:';
+optionText[2] = 'CHECKPOINT AMOUNT:';
+optionText[3] = 'DAMAGE TAKEN:';
+optionText[4] = 'DAMAGE DEALT:';
+optionText[5] = 'QUICKSWITCH ICON:';
+optionText[6] = 'SPIKE DAMAGE:';
+optionText[7] = 'PIT DAMAGE:';
+optionText[8] = 'DASH INPUT:';
+optionText[9] = 'RESET TO DEFAULTS';
 </string>
           </argument>
         </arguments>
@@ -142,6 +144,17 @@ switch (phase)
             objGlobalControl.showhealth = 0;
             visible = 1;
             phase++;
+            with instance_create(x, y, objParallax)
+            {
+                myBG = bgAccessibilityBG;
+                moveInMenu = true;
+                yspeed = -1;
+                areaLeft = view_xview;
+                areaRight = view_xview + view_wview;
+                areaTop = view_yview;
+                areaBottom = view_yview + view_hview;
+                depth = other.depth + 1;
+            }
         }
         break;
     
@@ -169,6 +182,13 @@ switch (phase)
         {
             global.nextRoom = 0;
             visible = 0;
+            with (objParallax)
+            {
+                if (depth == other.depth + 1)
+                {
+                    instance_destroy();
+                }
+            }
         }
         else if (objGlobalControl.fadeAlpha == 0 &amp;&amp; global.nextRoom == 0)
         {
@@ -218,11 +238,11 @@ if (phase == 2 &amp;&amp; !selected)
                 }
                 break;
 
-            // Toggle Autofire
+            // Checkpoint Amount
             case 2:
-                pre = global.autoFire;
-                global.autoFire = min(max(0, global.autoFire + dir), 1);
-                if (global.autoFire != pre)
+                pre = global.checkpointAmount;
+                global.checkpointAmount = max(0, min(3, global.checkpointAmount + dir));
+                if (global.checkpointAmount != pre)
                 {
                     playSFX(sfxMenuMove);
                 }
@@ -268,8 +288,18 @@ if (phase == 2 &amp;&amp; !selected)
                 }
                 break;
             
-            // Dash Behavior
+            // Pit Behavior
             case 7:
+                pre = global.pitBehavior;
+                global.pitBehavior = max(0, min(2, global.pitBehavior + dir));
+                if (global.pitBehavior != pre)
+                {
+                    playSFX(sfxMenuMove);
+                }
+                break;
+
+            // Dash Behavior
+            case 8:
                 pre = global.dashBehavior;
                 global.dashBehavior = max(0, min(2, global.dashBehavior + dir));
                 if (global.dashBehavior != pre)
@@ -290,6 +320,17 @@ if (phase == 2 &amp;&amp; !selected)
                 selected = true;
                 phase++;
                 playSFX(sfxMenuSelect);
+                break;
+            case 9:
+                global.bgVisibility = 100;
+                global.checkpointAmount = 3;
+                global.damageTakenMultiplier = 1; 
+                global.damageDealtMultiplier = 1;
+                global.showQuickswitch = 1;
+                global.spikeBehavior = 1;
+                global.pitBehavior = 0;
+                global.dashBehavior = 2;
+                playSFX(sfxBassBloop);
                 break;
         }
     }
@@ -404,7 +445,7 @@ if (cursorImgIndex &gt;= 5)
 }
 
 // draw cursor
-draw_sprite(sprOptionsCursor, cursorImgIndex, drawXPosition + 24, drawYPosition + 64 + (option) * 16 - (optionOffset) * 16);
+draw_sprite(sprOptionsCursor, cursorImgIndex, drawXPosition + 24, drawYPosition + 45 + (option) * 16 - (optionOffset) * 16);
 
 // draw arrows
 draw_set_halign(fa_middle);
@@ -412,31 +453,29 @@ draw_set_valign(fa_middle);
 
 draw_text(drawXPosition + 128, drawYPosition + 20, "GAME &amp; ACCESSIBILITY");
 
-if (optionOffset == 0)
+if (optionOffset != 0)
 {
-    draw_sprite(sprAccessibilityArrows, 1, drawXPosition + 19, drawYPosition + 52);
-}
-else
-{
-    draw_sprite(sprAccessibilityArrows, 0, drawXPosition + 19, drawYPosition + 52);
+    draw_sprite(sprAccessibilityArrows, 0, drawXPosition + 128, drawYPosition + 36);
 }
 
-if (optionOffset == array_length_1d(optionText) - visibleOptions)
+if (optionOffset != array_length_1d(optionText) - visibleOptions)
 {
-    draw_sprite(sprAccessibilityArrows, 1, drawXPosition + 19, drawYPosition + 152);
-}
-else
-{
-    draw_sprite(sprAccessibilityArrows, 2, drawXPosition + 19, drawYPosition + 152);
+    draw_sprite(sprAccessibilityArrows, 1, drawXPosition + 128, drawYPosition + 149);
 }
 
 
 // draw options
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
+
 for (var j = 0; j &lt; visibleOptions; j++)
 {
-    draw_text_ext(drawXPosition + 32, drawYPosition + 64 + j * 16, optionText[optionOffset + j], 16, 256);
+    var tc, oS; 
+        tc[0] = c_white; 
+        tc[1] = make_color_rgb(248, 152, 56);
+        oS = ((j == 0 &amp;&amp; optionOffset == 0) || (j == 6 &amp;&amp; optionOffset == 3));
+    draw_text_ext_colour(drawXPosition + 30, drawYPosition + 45 + j * 16, optionText[optionOffset + j], 16, 256,
+    tc[oS], tc[oS], tc[oS], tc[oS], 1);
 }
 
 // draw current option status'
@@ -451,15 +490,15 @@ for (var j = 0; j &lt; visibleOptions; j++)
             
             break;
             
-        // Toggle Autofire
+        // Checkpoint Amount
         case 2:
-            if (global.autoFire)
+            if (global.checkpointAmount)
             {
-                opt += 'ON';
+                opt += string(global.checkpointAmount);
             }
             else
             {
-                opt += 'OFF';
+                opt += 'NONE';
             }
             
             break;
@@ -531,8 +570,25 @@ for (var j = 0; j &lt; visibleOptions; j++)
             
             break;
 
-        // dash behavior
+        // pit behavior
         case 7:
+            switch (global.pitBehavior)
+            {
+                case 0:
+                    opt += 'NORMAL';
+                    break;
+                case 1:
+                    opt += 'HALF';
+                    break;
+                case 2:
+                    opt += 'QUARTER';
+                    break;
+            }
+            
+            break;
+
+        // dash behavior
+        case 8:
             switch (global.dashBehavior)
             {
                 case 0:
@@ -542,7 +598,7 @@ for (var j = 0; j &lt; visibleOptions; j++)
                     opt += 'DOUBLE TAP';
                     break;
                 case 2:
-                    opt += 'BUTTON/DOUBLE TAP';
+                    opt += 'BOTH';
                     break;
             }
             
@@ -553,8 +609,10 @@ for (var j = 0; j &lt; visibleOptions; j++)
     opt += '#';
 }
 
+var orange = make_color_rgb(248, 152, 56);
 draw_set_halign(fa_right);
-draw_text_ext(drawXPosition + 232, drawYPosition + 64 , opt, 16, 256);
+draw_text_ext_colour(drawXPosition + 232, drawYPosition + 45 , opt, 16, 256,
+    orange, orange, orange, orange, 1);
 
 dopt = '';
 if (option != 0)
@@ -563,50 +621,56 @@ if (option != 0)
     {
         // BG Visibility
         case 1:
-            draw_sprite_ext(sprAccessibilityVisual, 0, drawXPosition + 19, drawYPosition + 164,
+            draw_sprite_ext(sprAccessibilityVisual, 0, drawXPosition + 19, drawYPosition + 165,
             1, 1, 0, c_white, global.bgVisibility / 100);
-            draw_sprite(sprAccessibilityVisual, 1, drawXPosition + 19, drawYPosition + 164);
+            draw_sprite(sprAccessibilityVisual, 1, drawXPosition + 19, drawYPosition + 165);
             dopt = 'VISIBILITY OF#BACKGROUND ELEMENTS#PRESENT IN STAGES##(CERTAIN BG ASPECTS#WILL STILL BE#VISIBLE REGARDLESS#OF SETTINGS)';
             break;
         
         // Toggle Autofire
         case 2:
-            draw_sprite(sprAccessibilityVisual, 2 + floor(global.autoFire), drawXPosition + 19, drawYPosition + 164)
-            dopt = 'ALLOWS CERTAIN#WEAPONS TO BE#ACTIVATED WITH#ON/OFF TOGGLES#RATHER THAN#HOLDING DOWN THE#FIRE BUTTON';
+            draw_sprite(sprAccessibilityVisual, 2 + floor(global.checkpointAmount), drawXPosition + 19, drawYPosition + 165)
+            dopt = 'AMOUNT OF#CHECKPOINTS#AVAILABLE IN#A STAGE';
             break;
 
         // Damage Taken
         case 3:
-            draw_sprite(sprAccessibilityVisual, 4 + floor(global.damageTakenMultiplier), drawXPosition + 19, drawYPosition + 164)
+            draw_sprite(sprAccessibilityVisual, 6 + floor(global.damageTakenMultiplier), drawXPosition + 19, drawYPosition + 165)
             dopt = 'AMOUNT OF DAMAGE#ENEMIES AND#ENEMY PROJECTILES#DEAL TO THE#PLAYER';
             break;
 
         // Damage Dealt
         case 4:
-            draw_sprite(sprAccessibilityVisual, 7 + floor(global.damageDealtMultiplier), drawXPosition + 19, drawYPosition + 164)
+            draw_sprite(sprAccessibilityVisual, 9 + floor(global.damageDealtMultiplier), drawXPosition + 19, drawYPosition + 165)
             dopt = 'AMOUNT OF DAMAGE#ENEMIES TAKE#FROM PLAYER#PROJECTILES';
             break;
 
         // Quickswitch Icon
         case 5:
-            draw_sprite(sprAccessibilityVisual, 10 + floor(global.showQuickswitch), drawXPosition + 19, drawYPosition + 164)
+            draw_sprite(sprAccessibilityVisual, 12 + floor(global.showQuickswitch), drawXPosition + 19, drawYPosition + 165)
             dopt = 'SETS THE WEAPON#ICON ABOVE THE#PLAYER TO BE#VISIBLE WHEN#QUICKSWITCHING#WEAPONS';
             break;
 
         // Spike Behavior
         case 6:
-            draw_sprite(sprAccessibilityVisual, 12 + floor(global.spikeBehavior), drawXPosition + 19, drawYPosition + 164)
+            draw_sprite(sprAccessibilityVisual, 14 + floor(global.spikeBehavior), drawXPosition + 19, drawYPosition + 165)
             dopt = 'AMOUNT OF DAMAGE#SPIKES DEAL#TO THE PLAYER';
             break;
         
-        // Dash Input
+        // Pit Behavior
         case 7:
-            draw_sprite(sprAccessibilityVisual, 16 + floor(global.dashBehavior), drawXPosition + 19, drawYPosition + 164)
+            draw_sprite(sprAccessibilityVisual, 18 + floor(global.pitBehavior), drawXPosition + 19, drawYPosition + 165)
+            dopt = 'AMOUNT OF DAMAGE#PITS DEAL TO#THE PLAYER##(NON-LETHAL DAMAGE#BOUNCES UP THE#PLAYER FROM#THE PIT)';
+            break;
+
+        // Dash Input
+        case 8:
+            draw_sprite(sprAccessibilityVisual, 21 + floor(global.dashBehavior), drawXPosition + 19, drawYPosition + 165)
             dopt = 'INPUTS REQUIRED#FOR ACTIVATING#A DASH';
             break;
     }
     draw_set_halign(fa_left);
-    draw_text(drawXPosition + 83, drawYPosition + 164 , dopt);
+    draw_text(drawXPosition + 83, drawYPosition + 165 , dopt);
 }
 
 

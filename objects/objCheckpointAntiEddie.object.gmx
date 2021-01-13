@@ -43,6 +43,9 @@ respawnAnimation = 0;
 //@cc play the animation sequence while ready's being displayed
 showDuringReady = false;
 
+//@cc delete instance if the global checkpoint amount value is the same as this
+deleteValue = 0;
+
 yspeed = 0;
 touch = 0;
 _im = 0;
@@ -70,7 +73,14 @@ spawnDir = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(objSectionSwitcher) || init)
+            <string>if ((!global.checkpointAmount || deleteValue == global.checkpointAmount) &amp;&amp;
+!global.frozen)
+{
+    instance_destroy();
+    exit;
+}
+
+if (instance_exists(objSectionSwitcher) || init)
 {
     if (global.checkpointX == xx &amp;&amp; global.checkpointY == yy &amp;&amp; init)
     {

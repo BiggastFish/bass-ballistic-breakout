@@ -1386,6 +1386,13 @@ depth = depthstart;
     {
         draw_sprite_ext(sprBassHelmet, 0, dx - 1, dy - 1, 1, 1, 0,
         c_white, hpAlph)
+        if (global.weapon[z] != 0)
+        {
+            draw_sprite_ext(sprBassHelmet, 1, dx - 1, dy - 1, 1, 1, 0,
+            global.weaponPrimaryColor[global.weapon[z]], hpAlph)
+            draw_sprite_ext(sprBassHelmet, 2, dx - 1, dy - 1, 1, 1, 0,
+            global.weaponSecondaryColor[global.weapon[z]], hpAlph)
+        }
 
         if (global.livesEnabled)
         {
@@ -1398,6 +1405,13 @@ depth = depthstart;
         // Bolts
         draw_sprite_ext(sprBoltBig, 0, dx + 172, dy - 3 + (2 * (boltTimer &gt; 0)), 1, 
             1, 0, c_white, boltAlph);
+        if (global.weapon[z] != 0)
+        {
+            draw_sprite_ext(sprBoltBig, 1, dx + 172, dy - 3 + (2 * (boltTimer &gt; 0)), 1, 
+                1, 0, global.weaponPrimaryColor[global.weapon[z]], boltAlph);
+            draw_sprite_ext(sprBoltBig, 2, dx + 172, dy - 3 + (2 * (boltTimer &gt; 0)), 1, 
+                1, 0, global.weaponSecondaryColor[global.weapon[z]], boltAlph);
+        }
         draw_text_colour(dx + 188, dy + 14 - (8 * instance_exists(objParallax))
             + (2 * (boltTimer &gt; 0)), "x", 
             c_white, c_white, c_white, c_white, boltAlph);

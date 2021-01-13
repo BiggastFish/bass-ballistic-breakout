@@ -30,7 +30,9 @@ global.damageTakenMultiplier = sl(global.damageTakenMultiplier, "damagetaken");
 global.damageDealtMultiplier = sl(global.damageDealtMultiplier, "damagedealt");
 global.showQuickswitch       = sl(global.showQuickswitch, "showquickswitch");
 global.spikeBehavior         = sl(global.spikeBehavior, "spikebehavior");
+global.pitBehavior           = sl(global.pitBehavior, "pitbehavior");
 global.dashBehavior          = sl(global.dashBehavior, "dashbehavior");
+global.checkpointAmount      = sl(global.checkpointAmount, "checkpointamount");
 
 // controls
 for (var i = 0; i < 4; i += 1)

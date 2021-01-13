@@ -83,34 +83,54 @@ weaponObject = reward[currentReward];
 weapon = global.weaponID[? weaponObject];
 rewardText = "YOU GOT " + global.weaponName[weapon] + ".";
 
-if (finalFadeOut)
-{
-    // nothing
-}
-else if (fadeInTimer &gt; 0)
-{
-    fadeInTimer--;
-}
-else
+if (rewardTimer &lt; 750)
 {
     rewardTimer++;
-    if (rewardTimer &gt; 120)
+    var xx = 0, 
+        yy = 0, 
+        hspd = 0, 
+        vspd = 0,
+        imgUsed = 0;
+
+    switch (rewardTimer)
     {
-        flashTimer++;
-        spinSpeed = decreaseMagnitude(spinSpeed - 8 / 60, 0.01) + 8 / 60;
+        case 40:
+            xx = 164;
+            yy = -118;
+            vspd = 6;
+            break;
+        case 60:
+            xx = -80;
+            yy = 72;
+            hspd = 6;
+            imgUsed = 1;
+            break;
+        case 80:
+            xx = 42;
+            yy = 240;
+            vspd = -6;
+            imgUsed = 2;
+            break;
+        case 100:
+            xx = 256;
+            yy = 132;
+            hspd = -6;
+            imgUsed = 3;
+            break;
     }
-    else
+    
+    if (rewardTimer &gt;= 40 &amp;&amp; rewardTimer mod 20 == 0 &amp;&amp; rewardTimer &lt;= 100)
     {
-        spinSpeed = decreaseMagnitude(spinSpeed - 12 / 60, 0.01) + 12 / 60;
+        playSFX(sfxDash);
+        e = instance_create(xx, yy, objWeaponGetSilhouette);
+        e.vspeed = vspd;
+        e.hspeed = hspd;
+        e.image_index = imgUsed;
     }
-    if (flashTimer &gt; 68)
+
+    if (rewardTimer &gt; 720)
     {
-        flashTimer = 68;
-        textTimer++;
-        if (textTimer div textTick &gt; string_length(rewardText) + 2)
-        {
-            controlsLocked = false;
-        }
+        controlsLocked = false;
     }
 }
 
@@ -169,7 +189,7 @@ spinFrame += spinSpeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for (var i = 0; i &lt; global.playerCount; i++)
+            <string>/*for (var i = 0; i &lt; global.playerCount; i++)
 {
     var drawX = x + i * 24 - (global.playerCount - 1) * 12;
     var drawY = y - 16;
