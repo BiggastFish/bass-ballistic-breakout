@@ -79,6 +79,7 @@ behaviourType = 2;
 
 despawnRange = -1;
 respawnRange = -1;
+canHit = false;
 killOverride = false;
 blockCollisionStart = noone;
 gravStart = 0;
@@ -219,6 +220,10 @@ if (instance_exists(objMegaman) &amp;&amp; !global.frozen &amp;&amp; !isFight &a
     {
         if (insideSection(x, y))
         {
+            with (prtPlayerProjectile)
+            {
+                instance_destroy();
+            }
             // s the player and activates the boss (but won't make the boss move yet, it just performs its starting pose)
             // Also plays the boss music
             if (!(active))
@@ -572,6 +577,7 @@ if (entityCanStep())
     {
         lockPoolRelease(introLock);
         startFight = 0;
+        canHit = true;
         isFight = true;
     }
     

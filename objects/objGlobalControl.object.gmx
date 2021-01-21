@@ -1384,13 +1384,13 @@ depth = depthstart;
     /// Draw HUD
     for (z = 0; z &lt; global.playerCount; z += 1)
     {
-        draw_sprite_ext(sprBassHelmet, 0, dx - 1, dy - 1, 1, 1, 0,
+        draw_sprite_ext(sprLifeNew, 0, dx, dy - 3, 1, 1, 0,
         c_white, hpAlph)
         if (global.weapon[z] != 0)
         {
-            draw_sprite_ext(sprBassHelmet, 1, dx - 1, dy - 1, 1, 1, 0,
+            draw_sprite_ext(sprLifeNew, 8, dx, dy - 3, 1, 1, 0,
             global.weaponPrimaryColor[global.weapon[z]], hpAlph)
-            draw_sprite_ext(sprBassHelmet, 2, dx - 1, dy - 1, 1, 1, 0,
+            draw_sprite_ext(sprLifeNew, 16, dx, dy - 3, 1, 1, 0,
             global.weaponSecondaryColor[global.weapon[z]], hpAlph)
         }
 

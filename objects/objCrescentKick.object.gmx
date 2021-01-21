@@ -143,6 +143,7 @@ if (!global.frozen)
             yspeed = -3 * sign(grav);
             canMinJump = 0;
             ground = 0;
+            jumpCounter+= (jumpCounter &lt; 1);
         }
 
         xspeed = other.kickSpeed * other.image_xscale * !ground;
@@ -161,6 +162,7 @@ if (!global.frozen)
     imgx+= 2/9;
     if (imgx &gt;= 6)
     {
+        imgx = 6;
         visibleDelay = 0;
         instance_destroy();
     }

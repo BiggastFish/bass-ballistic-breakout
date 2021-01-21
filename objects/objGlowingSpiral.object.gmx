@@ -44,6 +44,7 @@ expandCount = 0;
 
 rotationSpeed = 360 / 60;
 
+shiftVisible = 3;
 despawnRange = -1;
 </string>
           </argument>
@@ -76,53 +77,59 @@ if (!global.frozen || instance_exists(objSectionSwitcher))
     {
         image_yscale = parent.image_yscale;
         
-        angle += rotationSpeed * dir;
-        distance+= (2 + (2 * (distance &gt; 64))) * canExpand;
-        
         x = parent.x + round(cos(degtorad(angle)) * distance);
         y = parent.y + round(sin(degtorad(angle)) * distance);
         
-        if (global.keyShootPressed[playerID])
+        angle += rotationSpeed * dir;
+        
+        if (!instance_exists(objSectionSwitcher))
         {
-            canExpand = !canExpand;
-            expandCount++;
-            if (expandCount &gt;= 2)
+            distance+= (2 + (2 * (distance &gt; 64))) * canExpand;
+            
+            if (global.keyShootPressed[playerID])
             {
-                if (visible)
+                canExpand = !canExpand;
+                expandCount++;
+                if (expandCount &gt;= 2)
                 {
-                    instance_create(x, y, objExplosion);
-                }
-                instance_destroy();
-            }
-        }
-
-        if (!count)
-        {
-            ammoTimer++;
-            if (ammoTimer % 60 = 0)
-            {
-                if (global.ammo[playerID, global.weapon[playerID]] &gt; 0)
-                {
-                    global.ammo[playerID, global.weapon[playerID]] = max(0,
-                    global.ammo[playerID, global.weapon[playerID]] - 1);
-                }
-                else
-                {
-                    with (objGlowingSpiral)
+                    if (visible)
                     {
-                        if (visible)
+                        instance_create(x, y, objExplosion);
+                    }
+                    instance_destroy();
+                }
+            }
+            
+    
+            if (!count)
+            {
+                ammoTimer++;
+                if (ammoTimer % 60 = 0)
+                {
+                    if (global.ammo[playerID, global.weapon[playerID]] &gt; 0)
+                    {
+                        global.ammo[playerID, global.weapon[playerID]] = max(0,
+                        global.ammo[playerID, global.weapon[playerID]] - 1);
+                    }
+                    else
+                    {
+                        with (objGlowingSpiral)
                         {
-                            instance_create(x, y, objExplosion);
+                            if (visible)
+                            {
+                                instance_create(x, y, objExplosion);
+                            }
+                            instance_destroy();
                         }
-                        instance_destroy();
                     }
                 }
             }
-        }
-        if (distance &gt; max(view_wview, view_hview))
-        {
-            instance_destroy();
-            exit;
+            
+            if (distance &gt; max(view_wview, view_hview))
+            {
+                instance_destroy();
+                exit;
+            }
         }
     }
     else

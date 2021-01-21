@@ -1513,6 +1513,7 @@
         </sprites>
         <sprites name="Bury The Light">
           <sprite>sprites\sprTakanuva</sprite>
+          <sprite>sprites\sprTakanuvaSlash</sprite>
           <sprite>sprites\sprTakanuvaMaskShine</sprite>
         </sprites>
       </sprites>
@@ -2632,6 +2633,7 @@
         <object>objects\objTakanuva</object>
         <objects name="Projectiles">
           <object>objects\objTakanuvaGlowingSpiral</object>
+          <object>objects\objTakanuvaShine</object>
         </objects>
       </objects>
     </objects>
@@ -2648,7 +2650,7 @@
     <room>rooms\rmBGVisibilityTest</room>
     <room>rooms\rmHighwayToHell</room>
     <room>rooms\rmJumpKing</room>
-    <room>rooms\rmBuryTheLight</room>
+    <room>rooms\lvlBuryTheLight</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmOptions</room>
