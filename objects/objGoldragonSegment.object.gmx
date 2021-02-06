@@ -102,7 +102,7 @@ if (entityCanStep())
     {
         if (yspeed &gt; 0)
         {
-            if (!hasFired &amp;&amp; num == 7)
+            if (!hasFired &amp;&amp; num == 7 &amp;&amp; objGoldragon.isFight)
             {
                 for (l = -1; l &lt;= 1; l+= 2)
                 {
@@ -144,12 +144,12 @@ if (entityCanStep())
                 xspeed = 0;
                 yspeed = 0;
                 grav = 0;
-                if (num == 7 &amp;&amp; hasFired == 1)
+                if (num == 7 &amp;&amp; (hasFired == 1 || !objGoldragon.isFight))
                 {
                     hasFired = 0;
                     with (objGoldragon)
                     {
-                        if (shotsFired &lt; 2)
+                        if (shotsFired &lt; 2 &amp;&amp; isFight)
                         {
                             shotsFired++;
                             bruhTimer = 42;

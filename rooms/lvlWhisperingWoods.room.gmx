@@ -55,11 +55,11 @@
     <instance objName="objPerfuma" x="464" y="432" name="inst_C3C42E0D" locked="0" code="elementName = &quot;seed&quot;;&#xA;elementCode = &quot;weaponReward(objSeedBomb);&quot;;&#xA;" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="256" y="176" name="inst_740D2050" locked="0" code="myBG = bgPerfumaFrontTrees;&#xA;areaLeft = 256;&#xA;areaRight = 256 * 2;&#xA;areaTop = 240;&#xA;areaBottom = 240 * 2;&#xA;depth = 1000010;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="256" y="192" name="inst_0C95AC05" locked="0" code="myBG = bgPerfumaGrass;&#xA;areaLeft = 256;&#xA;areaRight = 256 * 2;&#xA;areaTop = 240;&#xA;areaBottom = 240 * 2;&#xA;depth = 1000020;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="256" y="208" name="inst_A5DBBF2A" locked="0" code="myBG = bgPerfumaBackTrees;&#xA;areaLeft = 256;&#xA;areaRight = 256 * 2;&#xA;areaTop = 240;&#xA;areaBottom = 240 * 2;&#xA;depth = 1000030;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="256" y="160" name="inst_8CBAF913" locked="0" code="myBG = bgPerfumaGround;&#xA;areaLeft = 256;&#xA;areaRight = 256 * 2;&#xA;areaTop = 240;&#xA;areaBottom = 240 * 2;&#xA;depth = 1000000;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="256" y="208" name="inst_A5DBBF2A" locked="0" code="myBG = bgPerfumaBackTrees;&#xA;areaLeft = 256;&#xA;areaRight = 256 * 2;&#xA;areaTop = 240;&#xA;areaBottom = 240 * 2;&#xA;depth = 1000030;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="256" y="160" name="inst_8CBAF913" locked="0" code="myBG = bgPerfumaGround;&#xA;areaLeft = 256;&#xA;areaRight = 256 * 2;&#xA;areaTop = 240;&#xA;areaBottom = 240 * 2;&#xA;depth = 1000000;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="256" y="720" name="inst_D5D93AA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="512" y="240" name="inst_580D9157" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDefaultSpawn" x="304" y="432" name="inst_FA38AFEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDefaultSpawn" x="400" y="1392" name="inst_FA38AFEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="224" y="928" name="inst_E4CA5B2A" locked="0" code="" scaleX="97" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objTorpedoveSpawner" x="544" y="768" name="inst_2650451B" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHoneyBomb" x="624" y="864" name="inst_DE47CFC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -89,6 +89,13 @@
     <instance objName="objRightScrollingNES" x="768" y="720" name="inst_91BA9528" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1520" y="688" name="inst_37413B06" locked="0" code="" scaleX="2" scaleY="12" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1776" y="688" name="inst_5FDD00CD" locked="0" code="" scaleX="1" scaleY="17" colour="4294967295" rotation="0"/>
+    <instance objName="objFlowerSpring" x="704" y="896" name="inst_571008A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStopScrollingNES" x="256" y="1200" name="inst_D66B63CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStopScrollingNES" x="768" y="1200" name="inst_3F8A4312" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="256" y="1408" name="inst_87E0CC96" locked="0" code="" scaleX="34" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objTruckBoss" x="720" y="1376" name="inst_0FC873D0" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRightScrollingNES" x="512" y="1200" name="inst_49C82428" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="512" y="1168" name="inst_61BE358F" locked="0" code="myBG = bgPerfumaGround;&#xA;areaLeft = 512;&#xA;areaRight = 512 + 256;&#xA;areaTop = 1184;&#xA;areaBottom = 1184 + 400;&#xA;depth = 1000000;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

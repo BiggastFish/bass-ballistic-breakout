@@ -34,6 +34,7 @@ contactDamage = 2;
 pierces = 1;
 penetrate = 0;
 
+deleteTimer = 0;
 checkForTopSolid = false;
 blockCollision = 1;
 calibrated = 0;
@@ -102,6 +103,12 @@ if (!global.frozen)
     }
     else
     {
+        deleteTimer++;
+        if (deleteTimer &gt;= 240)
+        {
+            instance_create(x, y, objExplosion);
+            instance_destroy();
+        }
         if (!calibrated)
         {
             x = xstart;
@@ -144,19 +151,20 @@ if (!global.frozen)
           <argument>
             <kind>1</kind>
             <string>if (global.keyShootPressed[playerID] &amp;&amp; !playerIsLocked(PL_LOCK_SHOOT) 
-&amp;&amp; global.ammo[playerID, global.weapon[playerID]] &gt; 0)
+&amp;&amp; global.ammo[playerID, global.weapon[playerID]] &gt; 0 &amp;&amp; 
+instance_number(objCoinSpread) &lt;= 6)
 {
-    with (objCoinSpread)
+    /*with (objCoinSpread)
     {
         instance_create(x, y, objExplosion);
         instance_destroy();
-    }
+    }*/
     playSFX(sfxBolt);
     for (z = -3; z &lt;= 3; z++)
     {
         if (z != 0)
         {
-            i = fireWeapon(16, 0, objCoinSpread, 6, 3 * (z = -3), 1, 0);
+            i = fireWeapon(16, 0, objCoinSpread, 12, 2 * (z = -3), 1, 0);
             if (i)
             {
                 i.angle = 0 + (180 * (image_xscale &lt; 0)) + (z * 15);

@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="169" name="datafiles">
+  <datafiles number="170" name="datafiles">
     <datafile>
       <name>CleanMem.dll</name>
       <exists>-1</exists>
@@ -55,7 +55,7 @@
       </ConfigOptions>
       <filename>GMFMODSimple.dll</filename>
     </datafile>
-    <datafiles number="169" name="Music">
+    <datafiles number="170" name="Music">
       <datafile>
         <name>Mega_Man_1.nsf</name>
         <exists>-1</exists>
@@ -378,6 +378,23 @@
           </Config>
         </ConfigOptions>
         <filename>HoTDBoss.ogg</filename>
+      </datafile>
+      <datafile>
+        <name>MM8MiniBoss.ogg</name>
+        <exists>-1</exists>
+        <size>1960734</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>MM8MiniBoss.ogg</filename>
       </datafile>
     </datafiles>
   </datafiles>
@@ -1066,6 +1083,11 @@
         <sprite>sprites\sprMercuryBlob</sprite>
         <sprite>sprites\mskMercury</sprite>
       </sprites>
+      <sprites name="Quick">
+        <sprite>sprites\sprQuickManBoomerang</sprite>
+        <sprite>sprites\sprQuickManPose</sprite>
+        <sprite>sprites\sprQuickMan</sprite>
+      </sprites>
     </sprites>
     <sprites name="Gimmicks">
       <sprites name="General">
@@ -1474,6 +1496,10 @@
           <sprite>sprites\sprRevoltingSuzy</sprite>
           <sprite>sprites\sprFlowerSpring</sprite>
           <sprite>sprites\sprSwitchingVines</sprite>
+          <sprite>sprites\sprTruckBoss</sprite>
+          <sprite>sprites\sprTruckBossSpike</sprite>
+          <sprite>sprites\sprTruckBossFront</sprite>
+          <sprite>sprites\mskTruckBoss</sprite>
           <sprites name="Boss">
             <sprite>sprites\sprPerfuma</sprite>
             <sprite>sprites\sprPerfumaVine</sprite>
@@ -1514,6 +1540,7 @@
         <sprites name="Bury The Light">
           <sprite>sprites\sprTakanuva</sprite>
           <sprite>sprites\sprTakanuvaSlash</sprite>
+          <sprite>sprites\sprTakanuvaKolhii</sprite>
           <sprite>sprites\sprTakanuvaMaskShine</sprite>
         </sprites>
       </sprites>
@@ -1542,6 +1569,10 @@
         <sprites name="Save Menu">
           <sprite>sprites\sprSaveMenuBG</sprite>
           <sprite>sprites\sprSaveMenuCursor</sprite>
+        </sprites>
+        <sprites name="Title Screen">
+          <sprite>sprites\sprBassTitleSilhouette</sprite>
+          <sprite>sprites\sprTitleLogo</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -2182,6 +2213,7 @@
       <object>objects\objPlantMan</object>
       <object>objects\objChillMan</object>
       <object>objects\objMercury</object>
+      <object>objects\objQuickMan</object>
       <objects name="Projectiles">
         <object>objects\objCutBullet</object>
         <object>objects\objGutsBossBlock</object>
@@ -2202,6 +2234,7 @@
         <object>objects\objMercuryGrabBuster</object>
         <object>objects\objMercuryGrabBusterPickup</object>
         <object>objects\objMercurySmallBlob</object>
+        <object>objects\objQuickManBoomerang</object>
       </objects>
     </objects>
     <objects name="Gimmicks">
@@ -2483,6 +2516,7 @@
       <objects name="Menu">
         <object>objects\objDisclaimer</object>
         <object>objects\objTitleScreen</object>
+        <object>objects\objTitleScreenNew</object>
         <object>objects\objRoomSelector</object>
         <object>objects\objDebugMenu</object>
         <object>objects\objPauseMenuOld</object>
@@ -2584,6 +2618,9 @@
         <object>objects\objRevoltingSuzy</object>
         <object>objects\objFlowerSpring</object>
         <object>objects\objSwitchingVines</object>
+        <object>objects\objTruckBoss</object>
+        <object>objects\objTruckBossSpike</object>
+        <object>objects\objTruckBossFront</object>
         <objects name="Boss">
           <object>objects\objPerfuma</object>
           <object>objects\objPerfumaVine</object>
@@ -2633,7 +2670,9 @@
         <object>objects\objTakanuva</object>
         <objects name="Projectiles">
           <object>objects\objTakanuvaGlowingSpiral</object>
+          <object>objects\objTakanuvaKolhii</object>
           <object>objects\objTakanuvaShine</object>
+          <object>objects\objTakanuvaSlash</object>
         </objects>
       </objects>
     </objects>
@@ -2653,6 +2692,7 @@
     <room>rooms\lvlBuryTheLight</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
+      <room>rooms\rmTitleScreenNew</room>
       <room>rooms\rmOptions</room>
       <room>rooms\rmRoomSelect</room>
       <room>rooms\rmFileSelect</room>

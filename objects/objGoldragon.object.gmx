@@ -26,14 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+
 healthpointsStart = 60;
 healthpoints = healthpointsStart;
 blockCollision = 0;
-introType = 2;
 grav = 0;
 contactDamage = 4;
 phase = 0;
-introType = 2;
+introType = 0;
 bruhTimer = 0;
 angVal = 0;
 shotsFired = 0;
@@ -42,28 +42,17 @@ ty = y;
 targetSpot = tx;
 dieToPits = false;
 _im = 0;
-seg[0] = noone;
-
-phaseArray[0] = 4;
-phaseArray[1] = 5;
-phaseArray[2] = 6;
-phaseArray[3] = 4;
-phaseArray[4] = 5;
-phaseArray[5] = 6;
-phaseArray[6] = 4;
-phaseArray[7] = 5;
-phaseArray[8] = 6;
-phaseArrayDir = 1;
-phasePick = 3 + irandom(2);
-phaseLeft = 2;
-lastPhase = 0;
 
 useEndStageBehavior = false;
 
 // Music
-music = "Mega_Man_4.nsf";
-musicType = "VGM";
-musicTrackNumber = 17;
+music = "MM8MiniBoss.ogg";
+musicType = "OGG";
+musicTrackNumber = 0;
+musicVolume = 0.8;
+musicLoop = true;
+musicLoopSecondsStart = 6.600;
+musicLoopSecondsEnd = 44.978;
 
 // Damage Tables
 enemyDamageValue(objBusterShotHalfCharged, 1);
@@ -95,6 +84,95 @@ enemyDamageValue(objKnuckleSandwich, 10);
             <string>event_inherited();
 
 // Handle Intro
+if (!global.frozen)
+{
+    if (startIntro)
+    {
+        startIntro = false;
+        isIntro = true;
+        drawBoss = true;
+    }
+    else if (isIntro || (!isFight &amp;&amp; bruhTimer &gt;= 600))
+    {
+        visible = true;
+        if (instance_exists(target))
+            bruhTimer+= target.ground &amp;&amp; isIntro;
+        if (!phase)
+        {
+            animationLoop(0, 1, 0.2);
+            if (bruhTimer == 15)
+            {
+                image_xscale = 1;
+                x = view_xview;
+                y = view_yview + 128;
+                playSFX(sfxEnemyBoost);
+                
+                var yeet;
+                    
+                grav = .12;
+                yspeed = -3;
+                storedYSpd = yspeed;
+                yeet = xSpeedAim(x, y, xstart, ystart, -3, .12);
+                xspeed = yeet;
+                storedXSpd = yeet;
+                with (objGoldragonSegment)
+                {
+                    bruhTimer = 6 * num;
+                    storedXSpd = other.xspeed;
+                    storedYSpd = -3;
+                    x = view_xview;
+                    y = other.y;
+                    grav = 0;
+                }
+            }
+                
+            if (yspeed &gt; 0 &amp;&amp; bbox_top &gt;= view_yview + 224)
+            {
+                xspeed = 0;
+                yspeed = 0;
+                grav = 0;
+            }
+        }
+        if (phase == 1)
+        {
+            angVal+= 3;
+            x = xstart + round(cos(degtorad(angVal)) * 8);
+            if (bruhTimer &lt; 600)
+            {
+                if (bruhTimer == 1)
+                {
+                    y = ystart;
+                    image_xscale = -1;
+                    image_index = 0;
+                    angVal = 0;
+                    with (objGoldragonSegment)
+                    {
+                        dang = (15 * num) - 15;
+                    }
+                }
+                if (y &gt; view_yview + 128)
+                    y-=3;
+                else
+                    bruhTimer = 600;
+            }
+            if (bruhTimer &gt;= 600)
+            {
+                if (bruhTimer == 645)
+                {
+                    playSFX(sfxMechaDragon);
+                    screenShake(30, 0, 2);
+                    image_index = 1;
+                }
+                if (bruhTimer == 680)
+                {
+                    image_index = 0;
+                    bruhTimer = 600;
+                    isIntro = false;
+                }
+            }
+        }
+    }
+}
 if (entityCanStep())
 {
     if (isFight)

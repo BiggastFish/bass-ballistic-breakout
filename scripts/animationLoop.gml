@@ -1,4 +1,4 @@
-/// anim_loop(start, end, speed)
+/// animationLoop(start, end, speed)
 // ensure a local variable called _im exists
 
 var spd, _end, start;

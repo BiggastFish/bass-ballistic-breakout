@@ -29,7 +29,6 @@
 
 // default values (change these in creation code)
 
-
 //@cc does it move when a menu is open
 moveInMenu = false;
 

@@ -67,6 +67,9 @@ ds_list_add(roomnames, "@$Lives: ");
 ds_list_add(roomlist, -5);
 ds_list_add(roomnames, "@Stage Select");
 
+ds_list_add(roomlist, -6);
+ds_list_add(roomnames, "@New Main Menu");
+
 // Get lvl-rooms
 for (i = 0; i &lt;= lr; i += 1)
 {
@@ -302,6 +305,10 @@ if (!selected)
         else if (myRoom == -5)
         {
             global.nextRoom = rmStageSelect;
+        }
+        else if (myRoom == -6)
+        {
+            global.nextRoom = rmTitleScreenNew;
         }
         else if (myRoom == 0)
         {

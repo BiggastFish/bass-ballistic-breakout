@@ -25,10 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>silhouette = true;
+            <string>phase = 1;
+miniPhase = 0;
 isParent = true;
 parent = noone;
 
+dir = 0;
+dist = 198;
+rot = 0;
+grav = 0.25;
+xspeed = 0;
+yspeed = 0;
 imgTimer = 0;
 image_speed = 0;
 </string>
@@ -53,7 +60,60 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (silhouette)
+            <string>if (!phase)
+{
+    imgTimer++;
+    if (imgTimer mod 6 == 0 )
+    {
+        for (i = 1; i &lt;= 3; i++)
+        {
+            r = instance_create(x, y, objTrailEffect);
+            r.depth = depth + (1 + i);
+            r.sprite_index = sprTitleLogo;
+            r.image_index = image_index + 1;
+            r.image_alpha = 1 - (0.3 * i);
+            r.deathTimerMax = (5 + (55 * miniPhase == 2)) * i;
+        }
+    }
+    if (!miniPhase)
+    {
+        y+= yspeed;
+        x+= xspeed;
+        yspeed+= grav;
+        if (yspeed * sign(grav) &gt; 7)
+        {
+            yspeed = 7 * sign(grav);
+        }
+        
+        if (xspeed &gt; 0 &amp;&amp; x &gt;= 128 || xspeed &lt; 0 &amp;&amp; x &lt;= 128 || 
+        yspeed &gt; 0 &amp;&amp; !grav &amp;&amp; y &gt;= 123)
+        {
+            if (image_index &lt; 2)
+            {
+                instance_destroy();
+            }
+            else
+            {
+                xspeed = 0;
+            }
+        }
+    }
+    else if (miniPhase)
+    {
+        x = 128 + round(cos(degtorad(rot)) * dist);
+        y = 123 + round(sin(degtorad(rot)) * dist);
+        dist-= 3 + (3 * (miniPhase - 1));
+        if (miniPhase == 1)
+        {
+            rot+= (dir * 3);
+        }
+        if (!dist)
+        {
+            instance_destroy();
+        }
+    }
+}
+else if (phase == 1)
 {
     imgTimer++;
     if (imgTimer mod 3 == 0)
@@ -67,14 +127,15 @@ image_speed = 0;
         instance_destroy();
     }
 }
-else
+else if (phase == 2)
 {
     if (isParent)
     {
+        isParent = false;
         for (i = 0; i &lt;= 360; i+= 45)
         {
             e = instance_create(x, y, object_index);
-            e.silhouette = false;
+            e.phase = 2;
             e.parent = id;
             e.dir = i;
         }
