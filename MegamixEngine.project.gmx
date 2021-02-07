@@ -1636,6 +1636,7 @@
           <background>background\bgStageSelectBackground</background>
         </backgrounds>
         <background>background\bgAccessibilityBG</background>
+        <background>background\bgTitleSequenceBG</background>
       </backgrounds>
     </backgrounds>
   </backgrounds>

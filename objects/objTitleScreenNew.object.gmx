@@ -30,13 +30,15 @@ drawtext = 0;
 
 silh = 0;
 logo = 0;
-boxTop = 240;
+boxAlph = 1;
+boxAlph2 = 0;
 offset = 48;
 
 phase = 0;
 option = 0;
 options = 2;
 offset2 = 0;
+spd = 1/80;
 
 wait = 16;
 timer = 0;
@@ -72,7 +74,7 @@ freshSaveFile();
     event_user(0);
     event_user(1);
 }
-
+// me
 overallTimer++;
 timer++;
 switch (phase)
@@ -108,15 +110,15 @@ switch (phase)
             f.yspeed = -4;
             f.depth = depth + 2;
         }
-        if (timer &gt;= 45)
+        if (timer &gt; 45 &amp;&amp; timer mod 8 == 0)
         {
-            if (boxTop)
+            if (boxAlph)
             {
-                boxTop-= 8;
+                boxAlph-= 0.2;
             }
             else
             {
-                boxTop = 0;
+                boxAlph = 0;
                 timer = 0;
                 phase = 2;
             }
@@ -205,17 +207,18 @@ switch (phase)
     case 5:
         if (timer == 5)
         {
-            for (i = 1; i &lt;= 3; i++)
+            for (i = 0; i &lt;= 3; i++)
             {
                 r = instance_create(128 + round(cos(degtorad
-                (i * 120)) * 198), 123 + round(sin
-                (degtorad(i * 120)) * 198), 
+                (i * 90)) * 198), 123 + round(sin
+                (degtorad(i * 90)) * 198), 
                 objWeaponGetEffect);
-                r.rot = (i * 120);
+                r.rot = (i * 90);
                 r.dir = ((phase == 4) + ((phase == 5) * -1));
                 r.phase = 0;
                 r.miniPhase = 1;
                 r.sprite_index = sprTitleLogo;
+                r.image_index = 2 + (i * 2);
                 r.depth = depth - (10 + i);
             }
         }
@@ -252,12 +255,314 @@ switch (phase)
             }
         }
         break;
-    case 7:
+    case 7: // sideways shots
+        if (timer &gt;= 10 &amp;&amp; timer mod 10 == 0 &amp;&amp; timer &lt;= 70)
+        {
+            var xx, yy;
+            if (timer == 10)
+            {
+                xx = -74;
+                yy = 92;
+            }
+            if (timer == 20)
+            {
+                xx = 330;
+                yy = 252;
+            }
+            if (timer == 30)
+            {
+                xx = -74;
+                yy = 172;
+            }
+            if (timer == 40)
+            {
+                xx = -74;
+                yy = 132;
+            }
+            if (timer == 50)
+            {
+                xx = 330;
+                yy = 52;
+            }
+            if (timer == 60)
+            {
+                xx = 330;
+                yy = 212;
+            }
+            if (timer == 70)
+            {
+                xx = -74;
+                yy = 123;
+            }
+            b = instance_create(xx, yy, objWeaponGetEffect);
+            b.phase = 0;
+            b.grav = 0;
+            b.miniPhase = -1 - (timer == 70);
+            b.xspeed = -sign(xx) * 6;
+            b.sprite_index = sprTitleLogo;
+            b.image_index = 2;
+            b.depth = depth - 10;
+        }
+        if (timer == 120)
+        {
+            for (i = 0; i &lt; 2; i++)
+            {
+                b = instance_create(330, 123, objWeaponGetEffect);
+                b.phase = 0;
+                b.grav = 0;
+                b.miniPhase = -2;
+                b.xspeed = -6;
+                b.sprite_index = sprTitleLogo;
+                b.image_index = 4 + (i * 2);
+                b.depth = depth - (6 + i);
+            }
+        }
+        if (timer == 140)
+        {
+            c = instance_create(330, 123, objWeaponGetEffect);
+            c.phase = 0;
+            c.grav = 0;
+            c.miniPhase = -2;
+            c.xspeed = -6;
+            c.sprite_index = sprTitleLogo;
+            c.image_index = 8;
+            c.depth = depth - 8;
+        }
+        if (timer &gt; 140 &amp;&amp; timer &lt; 800)
+        {
+            var cont = true;
+            with (objWeaponGetEffect)
+            {
+                if (xspeed != 0) cont = false;
+            }
+            if (cont)
+            {
+                timer = 800;
+            }
+        }
+        if (timer == 805)
+        {
+            with (objWeaponGetEffect)
+            {
+                instance_destroy();
+            }
+            with (objTrailEffect)
+            {
+                instance_destroy();
+            }
+            for (i = 1; i &lt;= 3; i++)
+            {
+                r = instance_create(128, 123, objTrailEffect);
+                r.depth = depth - (1 + i);
+                r.sprite_index = sprTitleLogo;
+                r.image_index = 1;
+                r.image_alpha = 1 - (0.2 * i);
+                r.deathTimerMax = 5 * i;
+            }
+            timer = 0;
+            phase = 8;
+        }
+        break;
+    case 8: // literal title drop
+        if (timer == 10)
+        {
+            r = instance_create(128, -48, objWeaponGetEffect);
+            r.phase = 0;
+            r.grav = 0;
+            r.yspeed = 6;
+            r.miniPhase = -2;
+            r.sprite_index = sprTitleLogo;
+            r.image_index = 2;
+            r.depth = depth - 10;
+        }
+        if (timer == 50)
+        {
+            for (i = 0; i &lt; 2; i++)
+            {
+                s = instance_create(330, 123, objWeaponGetEffect);
+                s.phase = 0;
+                s.grav = 0;
+                s.miniPhase = -2;
+                s.xspeed = -6;
+                s.sprite_index = sprTitleLogo;
+                s.image_index = 4 + (i * 2);
+                s.depth = depth - (6 + i);
+            }
+        }
+        if (timer == 60)
+        {
+            b = instance_create(128, 288, objWeaponGetEffect);
+            b.phase = 0;
+            b.grav = 0;
+            b.yspeed = -6;
+            b.miniPhase = -2;
+            b.sprite_index = sprTitleLogo;
+            b.image_index = 8;
+            b.depth = depth - 10;
+        }
+        if (timer &gt; 60)
+        {
+            var cont = true;
+            with (objWeaponGetEffect)
+            {
+                if (xspeed != 0 || yspeed != 0) cont = false;
+            }
+            if (cont)
+            {
+                with (objWeaponGetEffect)
+                {
+                    instance_destroy();
+                }
+                with (objTrailEffect)
+                {
+                    instance_destroy();
+                }
+                for (i = 1; i &lt;= 3; i++)
+                {
+                    r = instance_create(128, 123, objTrailEffect);
+                    r.depth = depth - (1 + i);
+                    r.sprite_index = sprTitleLogo;
+                    r.image_index = 1;
+                    r.image_alpha = 1 - (0.2 * i);
+                    r.deathTimerMax = 5 * i;
+                }
+                timer = -1;
+                phase = 9;
+            }
+        }
+        break;
+    case 9: // flash teleporting
+        if (timer &gt;= 12 &amp;&amp; timer mod 12 == 0 &amp;&amp; timer &lt;= 72)
+        {
+            var xx, yy;
+            if (timer == 12)
+            {
+                xx = -56;
+                yy = -42;
+            }
+            if (timer == 24)
+            {
+                xx = 56;
+                yy = 42;
+            }
+            if (timer == 36)
+            {
+                xx = -56;
+                yy = 42;
+            }
+            if (timer == 48)
+            {
+                xx = 56;
+                yy = -42;
+            }
+            if (timer == 60)
+            {
+                xx = 0;
+                yy = 54;
+            }
+            if (timer == 72)
+            {
+                xx = 0;
+                yy = -54;
+            }
+            b = instance_create(128 + xx, 123 + yy, 
+            objWeaponGetEffect);
+            b.phase = 0;
+            b.grav = 0;
+            b.destroyTimer = 2;
+            b.miniPhase = 3;
+            b.sprite_index = sprTitleLogo;
+            b.depth = depth - 10;
+        }
+        if (timer == 84)
+        {
+            timer = -1;
+            phase = 10;
+            logo = 4;
+            offset2 = 4;
+        }
+        break;
+    case 10: // BIG
+        if (!timer)
+        {
+            with (objParallax)
+            {
+                instance_destroy();
+            }
+            b = instance_create(x, y, objParallax);
+            b.myBG = bgTitleSequenceBG;
+            b.yspeed = -6;
+            b.depth = depth + 4;
+        }
+        if (timer &gt;= 30)
+        {
+            if (spd &lt; 1/40)
+            {
+                spd+= 1/80;
+            }
+        }
+        if (timer &lt; 800)
+        {
+            if (logo &gt; 1)
+            {
+                logo-= spd;
+                offset2-= spd;
+            }
+            else
+            {
+                logo = 1;
+                offset2 = 1;
+                timer = 800;
+            }
+        }
+        if (timer &gt;= 800 &amp;&amp; timer &lt; 1200)
+        {
+            if (boxAlph &lt; 1)
+            {
+                boxAlph+= 1/30;
+            }
+            else
+            {
+                boxAlph = 1;
+                timer = 1200;
+                with (objParallax)
+                {
+                    instance_destroy();
+                }
+            }
+        }
+        if (timer &gt;= 1230)
+        {
+            if (boxAlph)
+            {
+                boxAlph-= 1/30;
+            }
+            else
+            {
+                boxAlph = 0;
+                timer = 0;
+                phase = 11;
+            }
+        }
+        break;
+    case 11: // move fully;
+        if (timer &gt;= 45)
+        {
+            if (offset &gt; 16)
+            {
+                offset--;
+            }
+            else
+            {
+                offset = 16;
+                drawtext = true;
+            }
+        }
         break;
 }
 if (canProceed)
 {
-    drawtext = 1;
+    //drawtext = 1;
     
     if (wait)
     {
@@ -320,7 +625,13 @@ if (canProceed)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprDot, 0, 0, 0, 256, boxTop, 0, c_black, 1);
+            <string>// background colour
+if (phase &lt; 2)
+{
+    draw_sprite_ext(sprDot, 0, 0, 0, 256, 240, 0, c_black, boxAlph);
+}
+
+// bass silhouette
 if (silh)
 {
     draw_sprite_part(sprBassTitleSilhouette, 0, 0, 0, 117, silh, 128 - 56, offset);
@@ -334,9 +645,11 @@ if (silh)
         }
     }
 }
-switch (phase - 1)
+
+// logo wack
+switch (phase)
 {
-    case 1:
+    case 2:
         if (timer &gt;= 45)
         {
             draw_sprite_part(sprTitleLogo, 0, 0, 0, 144, logo, 
@@ -351,21 +664,35 @@ switch (phase - 1)
             }
         }
         break;
+    case 10:
+    case 11:
+        draw_sprite_ext(sprTitleLogo, 0, 128, offset + 75, logo, offset2, 
+        0, c_white, 1);
+        break;
 }
 
-/*draw_text(x, y, floor(overallTimer / 60));
-draw_text(x, y + 16, phase);
+// foreground flash
+if (phase &gt;= 10)
+{
+    draw_sprite_ext(sprDot, 0, 0, 0, 256, 240, 0, c_white, boxAlph);
+}
 
-/*var oldCol = draw_get_color();
+//draw_text(x, y, floor(overallTimer / 60));
+
+/*
+var oldCol = draw_get_color();
 draw_set_color(c_white);
 
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
+*/
 
 if (drawtext)
 {
-    draw_text(96, 160, "GAME START##OPTIONS");
+    //draw_text(96, 160, "GAME START##OPTIONS");
+    draw_text(64, 192, "WHIP##NAE NAE##ALLEGEDLY SHOOT MY COUSIN IN THE STREET");
 }
+/*
 if (canProceed)
 {
     draw_sprite(sprOptionsCursor, 0, 96 - 12, 160 + option * 16);
