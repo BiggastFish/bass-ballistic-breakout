@@ -1543,6 +1543,10 @@
           <sprite>sprites\sprTakanuvaKolhii</sprite>
           <sprite>sprites\sprTakanuvaMaskShine</sprite>
         </sprites>
+        <sprites name="Tower Stage 2">
+          <sprite>sprites\sprCirno</sprite>
+          <sprite>sprites\sprCirnoIceBall</sprite>
+        </sprites>
       </sprites>
       <sprites name="Menus">
         <sprites name="Stage Select">
@@ -1573,6 +1577,10 @@
         <sprites name="Title Screen">
           <sprite>sprites\sprBassTitleSilhouette</sprite>
           <sprite>sprites\sprTitleLogo</sprite>
+        </sprites>
+        <sprites name="Intro Cutscene">
+          <sprite>sprites\sprIntroCutsceneBG</sprite>
+          <sprite>sprites\sprDisclaimer</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -2516,8 +2524,10 @@
       </objects>
       <objects name="Menu">
         <object>objects\objDisclaimer</object>
+        <object>objects\objDisclaimerNew</object>
         <object>objects\objTitleScreen</object>
         <object>objects\objTitleScreenNew</object>
+        <object>objects\objIntroCutscene</object>
         <object>objects\objRoomSelector</object>
         <object>objects\objDebugMenu</object>
         <object>objects\objPauseMenuOld</object>
@@ -2676,6 +2686,9 @@
           <object>objects\objTakanuvaSlash</object>
         </objects>
       </objects>
+      <objects name="Tower Stage 2">
+        <object>objects\objCirno</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -2694,6 +2707,7 @@
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>
+      <room>rooms\rmIntroCutscene</room>
       <room>rooms\rmOptions</room>
       <room>rooms\rmRoomSelect</room>
       <room>rooms\rmFileSelect</room>
@@ -2705,6 +2719,7 @@
     </rooms>
     <rooms name="Misc.">
       <room>rooms\rmDisclaimer</room>
+      <room>rooms\rmDisclaimerNew</room>
       <room>rooms\rmWeaponGet</room>
       <room>rooms\rmGameOver</room>
       <room>rooms\rmCredits</room>

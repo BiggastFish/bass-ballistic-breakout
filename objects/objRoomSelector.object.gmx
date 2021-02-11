@@ -65,10 +65,13 @@ ds_list_add(roomlist, -4);
 ds_list_add(roomnames, "@$Lives: ");
 
 ds_list_add(roomlist, -5);
-ds_list_add(roomnames, "@Stage Select");
+ds_list_add(roomnames, "@New Title Screen");
 
 ds_list_add(roomlist, -6);
-ds_list_add(roomnames, "@New Main Menu");
+ds_list_add(roomnames, "@New Disclaimer");
+
+ds_list_add(roomlist, -7);
+ds_list_add(roomnames, "@Stage Select");
 
 // Get lvl-rooms
 for (i = 0; i &lt;= lr; i += 1)
@@ -304,11 +307,15 @@ if (!selected)
         }
         else if (myRoom == -5)
         {
-            global.nextRoom = rmStageSelect;
+            global.nextRoom = rmTitleScreenNew;
         }
         else if (myRoom == -6)
         {
-            global.nextRoom = rmTitleScreenNew;
+            global.nextRoom = rmDisclaimerNew;
+        }
+        else if (myRoom == -7)
+        {
+            global.nextRoom = rmStageSelect;
         }
         else if (myRoom == 0)
         {
