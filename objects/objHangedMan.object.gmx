@@ -48,7 +48,9 @@ thesePhase = 2;
 batTimer = 0;
 batID = 0;
 for (i = 0; i &lt; 6; i++)
+{
     batSon[i] = noone;
+}
 
 // Music
 music = "HoTDBoss.ogg";

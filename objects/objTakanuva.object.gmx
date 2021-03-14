@@ -126,7 +126,9 @@ if (entityCanStep())
                 image_index = 0;
                 xspeed = 0;
                 if (lastAttack != 2)
+                {
                     calibrateDirection();
+                }
                 if (dashTimer &gt;= 10)
                 {
                     dashTimer = 0;
@@ -172,7 +174,7 @@ if (entityCanStep())
                 }
                 break;
             case 1: // kolhii smash
-                if (!stuffDone || stuffDone == 420)
+                if (!stuffDone)
                 {
                     if (dashTimer == 7)
                     {

@@ -75,7 +75,7 @@ if (global.enableSlide && !playerIsLocked(PL_LOCK_SLIDE))
     
     if (isSlide) // While sliding
     {
-        slideTimer += 1;
+        slideTimer++;
         
         // prevent charging while sliding
         if (chargeTimer == 0 && !slideChargeLock)
@@ -192,20 +192,30 @@ if (global.enableSlide && !playerIsLocked(PL_LOCK_SLIDE))
 if (!isSlide)
 {
     if (slideLock)
+    {
         slideLock = lockPoolRelease(slideLock);
+    }
     slideChargeLock = lockPoolRelease(slideChargeLock);
 }
 
 if ((isSlide || dashJumped) && !climbing && !isHit)
 {
-    if (global.roomTimer % 4 == 0)
+    trailTimer++;
+    if (trailTimer >= 3 && (trailTimer - 3) mod 5 == 0)
     {
         a = instance_create(x, y, objTrailEffect);
         a.drawingPlayer = true;
+        a.costume = global.playerSprite[costumeID];
+        a.color = global.secondaryCol[playerID];
         a.parent = self;
         a.spriteX = spriteX;
         a.spriteY = spriteY;
         a.image_xscale = image_xscale;
         a.image_yscale = image_yscale;
+        a.image_alpha = 0.9;
     }
+}
+else
+{
+    trailTimer = 0;
 }

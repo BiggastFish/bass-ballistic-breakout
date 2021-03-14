@@ -42,7 +42,6 @@ spd = 1/80;
 
 wait = 16;
 timer = 0;
-overallTimer = 0;
 
 // reset all game state
 engineConfig();
@@ -74,8 +73,7 @@ freshSaveFile();
     event_user(0);
     event_user(1);
 }
-// me
-overallTimer++;
+
 timer++;
 switch (phase)
 {
@@ -676,8 +674,6 @@ if (phase &gt;= 10)
 {
     draw_sprite_ext(sprDot, 0, 0, 0, 256, 240, 0, c_white, boxAlph);
 }
-
-//draw_text(x, y, floor(overallTimer / 60));
 
 /*
 var oldCol = draw_get_color();

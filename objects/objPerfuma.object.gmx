@@ -38,7 +38,7 @@ facePlayerOnSpawn = 1;
 vineTimer = 0;
 spd = 0;
 scrollSpeed = 0;
-phase = 5;
+phase = irandom(2);
 introType = 0;
 dropsDone = 0;
 stationaryPhaseLeft = 1;
@@ -53,6 +53,18 @@ phaseArray[6] = 1;
 phaseArrayDir = 1;
 phasePick = 2 + irandom(2);
 lastStationaryPhase = choose(3, 4);
+
+phasesDidMoving = 0;
+phaseEndMoving = false;
+phaseDoneMoving[0] = false;
+phaseDoneMoving[1] = false;
+phaseDoneMoving[2] = false;
+phasesDidMoving = 0;
+lastPhase = 0;
+phaseEndStationary = false;
+phaseDoneStationary[0] = false;
+phaseDoneStationary[1] = false;
+phasesDidStationary = 0;
 tx = x;
 ty = y;
 
@@ -121,7 +133,9 @@ if (entityCanStep())
         if (phase &lt; 3)
         {
             if (abs(scrollSpeed) &lt; 1.6)
+            {
                 scrollSpeed+= (1.6/60) * -image_xscale;
+            }
         }
         if (instance_exists(target))
         {
@@ -153,11 +167,18 @@ if (entityCanStep())
         switch (phase)
         {
             case 0: // vine boom sound effect
-                vineTimer+= (abs(scrollSpeed) &gt;= 1.4);
+                if (vineTimer == 20 || vineTimer == 100 || vineTimer == 180)
+                {
+                    image_index = 10;
+                }
                 if (vineTimer == 30 || vineTimer == 110 || vineTimer == 190)
+                {
                     image_index = 9;
+                }
                 if (vineTimer == 70 || vineTimer == 150 || vineTimer == 230)
+                {
                     image_index = 1;
+                }
                 if (vineTimer == 80 || vineTimer == 160 || vineTimer == 240)
                 {
                     image_index = 2;
@@ -167,15 +188,15 @@ if (entityCanStep())
                     l.image_xscale = image_xscale;
                 }
                 if (vineTimer == 260)
+                {
                     image_index = 0;
+                }
                 if (vineTimer &gt;= 260 &amp;&amp; !instance_exists(objPerfumaThorn))
                 {
-                    vineTimer = 0;
-                    phase = 5;
+                    phaseEndMoving = true;
                 }
                 break;
             case 1: //quad bomb
-                vineTimer+= (abs(scrollSpeed) &gt;= 1.4);
                 if (vineTimer == 30 || vineTimer == 80 || vineTimer == 130 || vineTimer == 150)
                     image_index = 1;
                 if (vineTimer == 40 || vineTimer == 90 || vineTimer == 140 || vineTimer == 160)
@@ -191,17 +212,19 @@ if (entityCanStep())
                     s.xspeed = xSpeedAim(x + (12 * image_xscale), y - 4, tx, ty, -4, .2);
                 }
                 if (vineTimer == 180)
+                {
                     image_index = 0;
+                }
                 if (vineTimer == 200)
                 {
-                    vineTimer = 0;
-                    phase = 5;
+                    phaseEndMoving = true;
                 }
                 break;
             case 2: //r/whoosh i did this joke like 3 times already
-                vineTimer+= (abs(scrollSpeed) &gt;= 1.4);
                 if (vineTimer == 15)
+                {
                     image_index = 4;
+                }
                 if (vineTimer == 60)
                 {
                     image_index = 7;
@@ -217,7 +240,9 @@ if (entityCanStep())
                     }
                 }
                 if (vineTimer == 230)
+                {
                     image_index = 0;
+                }
                 if (vineTimer &gt;= 60)
                 {
                     with (objEnemyBullet)
@@ -236,33 +261,35 @@ if (entityCanStep())
                             {
                                 other.image_index = 7;
                                 if (instance_exists(target))
+                                {
                                     aimAtTarget(3);
+                                }
                                 else
+                                {
                                     yspeed = -3;
+                                }
                             }
                         }
                     }
-                    if (!instance_exists(objEnemyBullet))
+                    if (vineTimer &gt;= 250)
                     {
-                        vineTimer = 0;
-                        phase = 5;
+                        phaseEndMoving = true;
                     }
                 }
                 break;
             case 3: // double whammy
-                vineTimer+= (scrollSpeed = 0);
-                if (vineTimer == 0)
+                if (vineTimer &lt; 15)
                 {
-                    image_index = 5;
-                    if (abs(scrollSpeed) &gt; 0.1)
-                        scrollSpeed-= (1.6/60) * -image_xscale;
-                    else
-                        scrollSpeed = 0;
+                    image_index = 0;
                 }
                 if (vineTimer == 15)
+                {
                     image_index = 8;
+                }
                 if (vineTimer == 55 || vineTimer == 110)
+                {
                     image_index = 1;
+                }
                 if (vineTimer == 65 || vineTimer == 120)
                 {
                     playSFX(sfxCannonShoot);
@@ -296,23 +323,18 @@ if (entityCanStep())
                     image_index = 0;
                 if (vineTimer == 205)
                 {
-                    vineTimer = 0;
-                    lastStationaryPhase = 3;
-                    phase = 6;
+                    phaseEndStationary = true;
                 }
                 break;
             case 4: // stream
-                vineTimer+= (scrollSpeed = 0);
-                if (vineTimer == 0)
+                if (vineTimer &lt; 15)
                 {
-                    image_index = 5;
-                    if (abs(scrollSpeed) &gt; 0.1)
-                        scrollSpeed-= (1.6/60) * -image_xscale;
-                    else
-                        scrollSpeed = 0;
+                    image_index = 0;
                 }
                 if (vineTimer == 15 || vineTimer == 95)
+                {
                     image_index = 7;
+                }
                 if (vineTimer % 5 == 0 &amp;&amp; ((vineTimer &gt;= 45 &amp;&amp; vineTimer &lt;= 80) || 
                 vineTimer &gt;= 125 &amp;&amp; vineTimer &lt;= 160))
                 {
@@ -329,48 +351,33 @@ if (entityCanStep())
                     image_index = 0;
                 if (vineTimer &gt;= 180 &amp;&amp; !instance_exists(objEnemyBullet))
                 {
-                    vineTimer = 0;
-                    lastStationaryPhase = 4;
-                    phase = 6;
+                    phaseEndStationary = true;
                 }
                 break;
-            case 5: // phase 0, 1 and 2 decision
-                vineTimer = 0;
-                if (movingPhaseLeft &lt; 0) 
+            case 5: // phase 3 and 4 decision
+                if (abs(scrollSpeed) &gt; 0.1)
                 {
-                    movingPhaseLeft = 2;
-                    phaseArrayDir = irandom(1);
-                    phasePick = 2 + irandom(2);
-                    phase = choose(3, 4);
-                    exit;
+                    image_index = 5;
+                    scrollSpeed-= (1.6/60) * -image_xscale;
                 }
-                else 
-                {
-                    if (phaseArrayDir &gt; 0)
-                        phase = phaseArray[phasePick - movingPhaseLeft];
-                    else
-                        phase = phaseArray[phasePick + movingPhaseLeft];
-                    movingPhaseLeft--;
-                }
-                break;
-            case 6: // phase 3 and 4 decision
-                if ((x &lt; view_xview + 48 &amp;&amp; image_xscale &gt; 0 ||
-                x &gt; view_xview + 208 &amp;&amp; image_xscale &lt; 0) &amp;&amp; vineTimer &lt; 15)
-                    x+= 2 * image_xscale;
                 else
-                    vineTimer++;
-                if (vineTimer &gt;= 15)
                 {
-                    if (stationaryPhaseLeft &lt; 0) 
+                    scrollSpeed = 0;
+                    if ((x &lt; view_xview + 48 &amp;&amp; image_xscale &gt; 0 ||
+                    x &gt; view_xview + 208 &amp;&amp; image_xscale &lt; 0) &amp;&amp; vineTimer &lt; 15)
                     {
-                        stationaryPhaseLeft = 1;
-                        phase = 5;
-                        vineTimer = 0;
-                        exit;
+                        x+= 2 * image_xscale;
                     }
                     else
                     {
-                        if (stationaryPhaseLeft == 1)
+                        vineTimer++;
+                    }
+                }
+                if (vineTimer &gt;= 15)
+                {
+                    if (phasesDidStationary &lt; 3)
+                    {
+                        if (phasesDidStationary == 1)
                         {
                             if (vineTimer == 15)
                             {
@@ -378,13 +385,21 @@ if (entityCanStep())
                                 spd = -2;
                             }
                             if (y &lt; view_yview + 172)
+                            {
                                 y++;
+                            }
                             if (spd &lt; 4)
+                            {
                                 spd+= 8/60;
-                            if (xspeed &gt; 0 &amp;&amp; image_xscale &lt; 0 || xspeed &lt; 0 &amp;&amp; image_xscale &gt; 0)
+                            }
+                            if ((xspeed &gt; 0 &amp;&amp; image_xscale &lt; 0) || (xspeed &lt; 0 &amp;&amp; image_xscale &gt; 0))
+                            {
                                 image_index = 5;
+                            }
                             else
+                            {
                                 image_index = 6;
+                            }
                             xspeed = spd * image_xscale;
                             if (bbox_right &lt;= view_xview - 32 &amp;&amp; image_xscale &lt; 0 
                             || bbox_left &gt;= view_xview + view_wview + 32 &amp;&amp; image_xscale &gt; 0)
@@ -396,21 +411,79 @@ if (entityCanStep())
                                 image_xscale *= -1;
                                 image_index = 0;
                                 y-= 34;
-                                stationaryPhaseLeft--;
+                                phasesDidStationary++;
                             }
                         }
-                        else if (stationaryPhaseLeft == 0)
+                        else
                         {
-                            if (lastStationaryPhase == 3)
-                                phase = 4;
-                            else
-                                phase = 3;
-                            stationaryPhaseLeft--;
+                            var choosePhase;
+                            do {choosePhase = irandom(1)}
+                            until (phaseDoneStationary[choosePhase] == false)
+
                             vineTimer = 0;
+                            phase = choosePhase + 3;
                         }
+                    }
+                    else
+                    {
+                        phaseEndStationary = true;
                     }
                 }
                 break;
+        }
+
+        if ((phase &lt; 3 &amp;&amp; (abs(scrollSpeed) &gt;= 1.4)) ||
+        (phase &gt;= 3 &amp;&amp; phase &lt; 5 &amp;&amp; scrollSpeed == 0))
+        {
+            vineTimer++;
+        }
+        if (phaseEndMoving)
+        {
+            lastPhase = phase;
+            phaseDoneMoving[phase] = true;
+            phasesDidMoving++;
+            if (phasesDidMoving &gt;= 3)
+            {
+                phasesDidMoving = 0;
+                for (l = 0; l &lt; 3; l++)
+                {
+                    phaseDoneMoving[l] = false;
+                }
+            }
+
+            vineTimer = 0;
+            if (phasesDidMoving == 0)
+            {
+                phase = 5;
+            }
+            else
+            {
+                var choosePhase;
+                do {choosePhase = irandom(2)}
+                until (phaseDoneMoving[choosePhase] == false
+                &amp;&amp; choosePhase != lastPhase)
+
+                phase = choosePhase;
+            }
+            phaseEndMoving = false;
+        }
+        if (phaseEndStationary)
+        {
+            if (phasesDidStationary &lt; 3)
+            {
+                phaseDoneStationary[phase - 3] = true;
+                phasesDidStationary++;
+                phase = 5;
+            }
+            else
+            {
+                phaseDoneStationary[0] = false;
+                phaseDoneStationary[1] = false;
+                phasesDidStationary = 0;
+                phase = irandom(2);
+            }
+            vineTimer = 0;
+            phaseEndStationary = false;
         }
     }
 }

@@ -59,7 +59,7 @@
     <instance objName="objParallax" x="256" y="160" name="inst_8CBAF913" locked="0" code="myBG = bgPerfumaGround;&#xA;areaLeft = 256;&#xA;areaRight = 256 * 2;&#xA;areaTop = 240;&#xA;areaBottom = 240 * 2;&#xA;depth = 1000000;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="256" y="720" name="inst_D5D93AA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="512" y="240" name="inst_580D9157" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDefaultSpawn" x="400" y="1392" name="inst_FA38AFEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDefaultSpawn" x="304" y="432" name="inst_FA38AFEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="224" y="928" name="inst_E4CA5B2A" locked="0" code="" scaleX="97" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objTorpedoveSpawner" x="544" y="768" name="inst_2650451B" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHoneyBomb" x="624" y="864" name="inst_DE47CFC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

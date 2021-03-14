@@ -30,18 +30,20 @@
 healthpointsStart = 160;
 healthpoints = healthpointsStart;
 blockCollision = 1;
-grav = 0.25;
+grav = 0;
 contactDamage = 4;
 
 vine = noone;
 facePlayerOnSpawn = 1;
-vineTimer = 0;
+cirnoTimer = 0;
+nice = 0;
+imgDex = 0;
+imgDir = 1;
 spd = 0;
 scrollSpeed = 0;
 phase = 0;
 introType = 0;
 stuffDone = 420;
-dashTimer = 0;
 attackCount = 0;
 movingPhaseLeft = 2;
 
@@ -122,19 +124,19 @@ if (entityCanStep())
             tx = target.x;
             ty = target.y;
         }
-        dashTimer++;
+        cirnoTimer++;
         switch (phase)
         {
             case 0: // ice ball
-                if (iceTimer == 20)
+                if (cirnoTimer == 20)
                 {
                     image_xscale*= -1;
                     image_index = 1;
                 }
-                if (iceTimer &gt;= 36 &amp;&amp; iceTimer mod 4 == 0)
+                if (cirnoTimer &gt;= 36 &amp;&amp; cirnoTimer mod 4 == 0 &amp;&amp; nice &lt; 3)
                 {
                     if (image_index &lt; 3)
-                        image_index+= 0.25;
+                        image_index++;
                     else
                     {
                         if (!instance_exists(target))
@@ -142,12 +144,30 @@ if (entityCanStep())
                             tx = yeah;
                             ty = view_yview + 120;
                         }
-                        for (i = 0; i &lt; 3; i++)
+                        for (i = 1; i &lt;= 5; i++)
                         {
-                            s = instance_create(tx, ty, objCirnoCircleSpike)
+                            s = instance_create(tx + round(cos(degtorad(((360/5) * i) + 18)) * 96),
+                            ty + round(sin(degtorad(((360/5) * i) + 18)) * 96), objCirnoCircleSpike)
                             s.tx = tx;
                             s.ty = ty;
+                            s.ang = ((360/5) * i) + 18;
+                            s.count = i;
+                            s.image_speed = -0.3;
+                            s.image_index = 3;
+                            s.depth = -100005;
                         }
+                        nice++;
+                        cirnoTimer = -80;
+                    }
+                }
+                if (nice == 3)
+                {
+                    if (cirnoTimer == 12)
+                    {
+                        cirnoTimer = 0;
+                        nice = 0;
+                        image_index = 0;
+                        phase = 1;
                     }
                 }
                 break;
@@ -221,12 +241,9 @@ m.reflectable = 0;
             <kind>1</kind>
             <string>event_inherited();
 /*
-draw_text(view_xview + 32, view_yview + 64, dashTimer);
-draw_text(view_xview + 32, view_yview + 80, ground);
-draw_text(view_xview + 32, view_yview + 96, phase);
-draw_text(view_xview + 32, view_yview + 112, stuffDone);
-draw_text(view_xview + 32, view_yview + 128, xspeed);
-*/
+draw_text(view_xview + 32, view_yview + 64, imgDex);
+draw_text(view_xview + 32, view_yview + 80, imgDir);
+
 </string>
           </argument>
         </arguments>

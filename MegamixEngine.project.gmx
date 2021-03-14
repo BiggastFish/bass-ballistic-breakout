@@ -1541,6 +1541,7 @@
           <sprite>sprites\sprTakanuva</sprite>
           <sprite>sprites\sprTakanuvaSlash</sprite>
           <sprite>sprites\sprTakanuvaKolhii</sprite>
+          <sprite>sprites\sprTakanuvaGlowingSpiral</sprite>
           <sprite>sprites\sprTakanuvaMaskShine</sprite>
         </sprites>
         <sprites name="Tower Stage 2">
@@ -1717,6 +1718,7 @@
       <script>scripts\drawCostume.gml</script>
       <script>scripts\drawPlayer.gml</script>
       <script>scripts\drawPlayerInk.gml</script>
+      <script>scripts\drawTrail.gml</script>
       <script>scripts\animationLoop.gml</script>
       <script>scripts\drawControllerOverlay.gml</script>
       <scripts name="Sprite_center">
@@ -2688,6 +2690,7 @@
       </objects>
       <objects name="Tower Stage 2">
         <object>objects\objCirno</object>
+        <object>objects\objCirnoCircleSpike</object>
       </objects>
     </objects>
   </objects>
@@ -2704,6 +2707,7 @@
     <room>rooms\rmHighwayToHell</room>
     <room>rooms\rmJumpKing</room>
     <room>rooms\lvlBuryTheLight</room>
+    <room>rooms\lvlTowerStage2</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>
