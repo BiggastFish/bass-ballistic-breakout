@@ -66,15 +66,15 @@ image_speed = 0;
     imgTimer++;
     if (imgTimer mod 6 == 0 &amp;&amp; miniPhase &lt; 3)
     {
-        for (i = 1; i &lt;= 3; i++)
-        {
-            r = instance_create(x, y, objTrailEffect);
-            r.depth = depth + (1 + i);
-            r.sprite_index = sprTitleLogo;
-            r.image_index = image_index + 1;
-            r.image_alpha = 1 - (0.3 * i);
-            r.deathTimerMax = (5 + (55 * miniPhase == 2)) * i;
-        }
+        r = instance_create(x, y, objTrailEffect);
+        r.depth = depth + 1;
+        r.sprite_index = sprTitleLogo;
+        r.image_index = image_index + 1;
+        r.image_alpha = 1;
+        r.fadeAway = true;
+        r.fadeInterval = 5 + (55 * miniPhase == 2);
+        r.fadeValue = 0.3;
+        r.deathTimerMax = 15 + (165 * miniPhase == 2);
     }
     if (!miniPhase)
     {
@@ -132,15 +132,15 @@ image_speed = 0;
         destroyTimer--;
         if (!destroyTimer)
         {
-            for (i = 1; i &lt;= 3; i++)
-            {
-                r = instance_create(x, y, objTrailEffect);
-                r.depth = depth + (1 + i);
-                r.sprite_index = sprTitleLogo;
-                r.image_index = 1;
-                r.image_alpha = 1 - (0.3 * i);
-                r.deathTimerMax = 3 * i;
-            }
+            r = instance_create(x, y, objTrailEffect);
+            r.depth = depth + 1;
+            r.sprite_index = sprTitleLogo;
+            r.image_index = 1;
+            r.image_alpha = 1;
+            r.fadeAway = true;
+            r.fadeInterval = 3;
+            r.fadeValue = 0.3;
+            r.deathTimerMax = 9;
             instance_destroy();
         }
     }

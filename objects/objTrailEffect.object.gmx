@@ -29,6 +29,9 @@
 
 deathTimer = 0;
 deathTimerMax = 10;
+fadeAway = false;
+fadeInterval = 3;
+fadeValue = 0.2;
 
 drawingPlayer = 0;
 parent = -1;
@@ -65,14 +68,13 @@ image_alpha = 0.4;
 if (!global.frozen)
 {
     deathTimer++;
-    if (drawingPlayer)
+    if (fadeAway)
     {
-        if (deathTimer mod 3 == 0)
+        if (deathTimer mod fadeInterval == 0)
         {
-            image_alpha-= 0.2;
+            image_alpha-= fadeValue;
         }
     }
-    
     if (deathTimer == deathTimerMax)
     {
         instance_destroy();

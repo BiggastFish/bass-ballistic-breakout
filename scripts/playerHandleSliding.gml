@@ -205,6 +205,7 @@ if ((isSlide || dashJumped) && !climbing && !isHit)
     {
         a = instance_create(x, y, objTrailEffect);
         a.drawingPlayer = true;
+        a.fadeAway = true;
         a.costume = global.playerSprite[costumeID];
         a.color = global.secondaryCol[playerID];
         a.parent = self;
@@ -212,7 +213,7 @@ if ((isSlide || dashJumped) && !climbing && !isHit)
         a.spriteY = spriteY;
         a.image_xscale = image_xscale;
         a.image_yscale = image_yscale;
-        a.image_alpha = 0.9;
+        a.image_alpha = 0.4;
     }
 }
 else

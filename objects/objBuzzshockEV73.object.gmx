@@ -154,13 +154,19 @@ if (entityCanStep())
     {
         bzztTimer++;
         if (instance_exists(target)) 
+        {
             tx = target.x;
+        }
         if (phase &lt; 4)
         {
-            if (floor(blastImg) &gt; 0) 
+            if (floor(blastImg) &gt; 0)
+            {
                 blastImg-= 1/3;
+            }
             else 
+            {
                 blastImg = 0;
+            }
         }
         switch (phase)
         {
@@ -177,20 +183,23 @@ if (entityCanStep())
                             objTrailEffect);
                             m.sprite_index = sprElecnSpark;
                             m.hspeed = i * 1;
-                            m.vspeed = -1 + (-1 * !(i % 2 = 0));
+                            m.vspeed = -1 + (-1 * !(i mod 2 == 0));
                             m.image_alpha = 1;
                             m.depth = depth - 20;
                         }
                     }
                 }
-                if (bzztTimer &gt;= 60 &amp;&amp; bzztTimer % 5 = 0 &amp;&amp; shotsDone &lt; 14)
+                if (bzztTimer &gt;= 60 &amp;&amp; bzztTimer mod 5 == 0 &amp;&amp; shotsDone &lt; 14)
                 {
                     playSFX(sfxElecnShoot);
-                    s = instance_create(x - (18 * image_xscale), y + 40, 
-                    objChargingChesterSpark);
-                    s.shotFrom = 1;
-                    s.yspeed = 3;
-                    s.dir = image_xscale;
+                    for (m = -1; m &lt;= 1; m+= 2)
+                    {
+                        s = instance_create(x - (18 * image_xscale), y + 40, 
+                        objChargingChesterSpark);
+                        s.shotFrom = true;
+                        s.yspeed = 3;
+                        s.dir = m;
+                    }
                     shotsDone++;
                 }
                 if (shotsDone = 14)
@@ -314,23 +323,30 @@ if (entityCanStep())
                 }
                 if ((bzztTimer - 50) mod 120 == 0
                 &amp;&amp; bzztTimer &lt;= 290)
+                {
                     hatchIndex = 0;
+                }
                 if ((bzztTimer &gt;= 40 &amp;&amp; bzztTimer &lt;= 50 || 
                 bzztTimer &gt;= 160 &amp;&amp; bzztTimer &lt;= 170 ||
                 bzztTimer &gt;= 280 &amp;&amp; bzztTimer &lt;= 290) &amp;&amp; 
-                bzztTimer % 5 = 0)
+                bzztTimer mod 5 = 0)
                 {
                     playSFX(sfxElecnShoot);
-                    s = instance_create(x - (18 * image_xscale), y + 40, 
-                    objChargingChesterSpark);
-                    s.shotFrom = 1;
-                    s.yspeed = 3;
-                    s.dir = image_xscale;
+                    for (m = -1; m &lt;= 1; m+= 2)
+                    {
+                        s = instance_create(x - (18 * image_xscale), y + 40, 
+                        objChargingChesterSpark);
+                        s.shotFrom = true;
+                        s.yspeed = 3;
+                        s.dir = m;
+                    }
                 }
                 if ((bzztTimer &gt;= 45) &amp;&amp; 
                 ((bzztTimer - 45) mod 120 == 0)
                 &amp;&amp; bzztTimer &lt;= 285)
+                {
                     bodyIndex = 2;
+                }
                 if ((bzztTimer &gt;= 60) &amp;&amp; ((bzztTimer - 60) mod 120 == 0)
                 &amp;&amp; bzztTimer &lt;= 300)
                 {
@@ -352,35 +368,39 @@ if (entityCanStep())
                 x = xVal + round(cos(degtorad(irandom(360))) * 4);
                 y = middlePoint + round(sin(degtorad(irandom(360))) * 4);
                 visible = choose(0, 0, 1);
-                if (bzztTimer % 4 = 0)
+                if (bzztTimer mod 4 == 0)
                 {
                     playSFX(sfxExplosion);
                     instance_create(x + irandom_range(-32, 32), 
                     y  + irandom_range(-32,32),
                     objExplosion);
                 }
-                if (bzztTimer = 30)
+                if (bzztTimer == 30)
                 {
                     blastImg = abs(xVal - (view_xview + 128)) / 60;
                     if (xVal &gt; view_xview + 128)
+                    {
                         blastImg = -blastImg;
+                    }
                     shotsDone = abs(middlePoint - (view_yview + 120)) / 60;
                     if (middlePoint &gt; view_yview + 120)
+                    {
                         shotsDone = -shotsDone;
+                    }
                 }
                 if (bzztTimer &gt;= 30)
                 {
                     xVal+= blastImg;
                     middlePoint+= shotsDone;
                 }
-                if (bzztTimer = 120)
+                if (bzztTimer == 120)
                 {
                     blastImg = 0;
                     shotsDone = 0;
                     xVal = view_xview + 128;
                     middlePoint = view_yview + 120;
                 }
-                if (bzztTimer = 180)
+                if (bzztTimer == 180)
                 {
                     x = view_xview + 128;
                     y = view_yview + 120;
@@ -560,7 +580,9 @@ image_xscale, 1, 0, c_white, 1);
 
 // explosion for rod
 if (blastImg &amp;&amp; phase &lt; 4)
+{
     draw_sprite(sprExplosion, 5 - blastImg, x + 2 * image_xscale, y - 40);
+}
 </string>
           </argument>
         </arguments>

@@ -184,32 +184,29 @@ if (entityCanStep())
                 grav = 0.25;
             }
         }
-        if (truckTimer &gt;= 60)
+        switch (lastAttack)
         {
-            switch (lastAttack)
-            {
-                case 0:
-                    if (truckTimer == 60)
+            case 0:
+                if (truckTimer == 60)
+                {
+                    for (i = 0; i &lt; 2; i++)
                     {
-                        for (i = 0; i &lt; 2; i++)
-                        {
-                            ouchie = instance_create(x + (4 * image_xscale), 
-                            y + 9, objTruckBossFront);
-                            ouchie.pop = i;
-                            ouchie.moveTimer = (i * 12) + 1;
-                            ouchie.spikeTimer = i * 20;
-                            ouchie.image_xscale = image_xscale;
-                            ouchie.depth = depth - (2 + i);
-                        }
+                        ouchie = instance_create(x + (4 * image_xscale), 
+                        y + 9, objTruckBossFront);
+                        ouchie.pop = i;
+                        ouchie.moveTimer = (i * 12) + 1;
+                        ouchie.spikeTimer = i * 20;
+                        ouchie.image_xscale = image_xscale;
+                        ouchie.depth = depth - (2 + i);
                     }
-                    if (truckTimer &gt; 80 &amp;&amp; !instance_exists(objTruckBossFront))
-                    {
-                        truckTimer = 0;
-                    }
-                    break;
+                }
+                if (truckTimer &gt; 80 &amp;&amp; !instance_exists(objTruckBossFront))
+                {
+                    truckTimer = 0;
+                }
+                break;
                 case 1:
                     break;
-            }
         }
     }
 }

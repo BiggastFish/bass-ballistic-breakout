@@ -1324,10 +1324,13 @@ depth = depthstart;
     
     draw_enable_alphablend(false);
     draw_enable_alphablend(true);
+    
+    draw_set_valign(fa_top);
+    draw_set_halign(fa_left);
 
     var helf, bolt;
     helf = -1;
-    bolt = -1;
+    bolt = -1; 
     with (prtEntity)
     {
         if ((faction == 1 || faction == 3) &amp;&amp; object_is_ancestor(object_index, prtEntity) 
@@ -1396,9 +1399,9 @@ depth = depthstart;
 
         if (global.livesEnabled)
         {
-            draw_text_colour(view_xview + 34, view_yview + 22 - (8 * instance_exists(objParallax)), "x", c_white, c_white,
+            draw_text_colour(view_xview + 34, view_yview + 12, "x", c_white, c_white,
                 c_white, c_white, hpAlph);
-            draw_text_colour(view_xview + 42, view_yview + 22- (8 * instance_exists(objParallax)), global.livesRemaining,
+            draw_text_colour(view_xview + 42, view_yview + 12, global.livesRemaining,
                 c_white, c_white, c_white, c_white, hpAlph);
         }
 
@@ -1412,12 +1415,10 @@ depth = depthstart;
             draw_sprite_ext(sprBoltBig, 2, dx + 172, dy - 3 + (2 * (boltTimer &gt; 0)), 1, 
                 1, 0, global.weaponSecondaryColor[global.weapon[z]], boltAlph);
         }
-        draw_text_colour(dx + 188, dy + 14 - (8 * instance_exists(objParallax))
-            + (2 * (boltTimer &gt; 0)), "x", 
+        draw_text_colour(dx + 188, dy + 6 + (2 * (boltTimer &gt; 0)), "x", 
             c_white, c_white, c_white, c_white, boltAlph);
-        draw_text_colour(dx + 196, dy + 14 - (8 * instance_exists(objParallax))
-            + (2 * (boltTimer &gt; 0)), zeroPad(global.bolts, 4), 
-            c_white, c_white, c_white, c_white, boltAlph);
+        draw_text_colour(dx + 196, dy + 6 + (2 * (boltTimer &gt; 0)), 
+            zeroPad(global.bolts, 4), c_white, c_white, c_white, c_white, boltAlph);
 
         draw_sprite_ext(sprHealthbarBackground, 0, dx + 16, dy + 6, 1, 1, 0,
             c_black, hpAlph);

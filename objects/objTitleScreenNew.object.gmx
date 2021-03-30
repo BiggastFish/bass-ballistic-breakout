@@ -143,15 +143,14 @@ switch (phase)
                     }
                     else
                     {
-                        for (i = 1; i &lt;= 3; i++)
-                        {
-                            r = instance_create(128, 119, objTrailEffect);
-                            r.depth = depth - (1 + i);
-                            r.sprite_index = sprTitleLogo;
-                            r.image_index = 1;
-                            r.image_alpha = 1 - (0.2 * i);
-                            r.deathTimerMax = 5 * i;
-                        }
+                        r = instance_create(128, 119, objTrailEffect);
+                        r.depth = depth - 1;
+                        r.sprite_index = sprTitleLogo;
+                        r.image_index = 1;
+                        r.image_alpha = 1;
+                        r.fadeAway = true;
+                        r.fadeInterval = 5;
+                        r.deathTimerMax = 15;
                         timer = 960;
                     }
                 }
@@ -166,15 +165,14 @@ switch (phase)
                     }
                     else
                     {
-                        for (i = 1; i &lt;= 3; i++)
-                        {
-                            r = instance_create(128, 123, objTrailEffect);
-                            r.depth = depth - (1 + i);
-                            r.sprite_index = sprTitleLogo;
-                            r.image_index = 1;
-                            r.image_alpha = 1 - (0.2 * i);
-                            r.deathTimerMax = 5 * i;
-                        }
+                        r = instance_create(128, 123, objTrailEffect);
+                        r.depth = depth - 1;
+                        r.sprite_index = sprTitleLogo;
+                        r.image_index = 1;
+                        r.image_alpha = 1;
+                        r.fadeAway = true;
+                        r.fadeInterval = 5;
+                        r.deathTimerMax = 15;
                         phase = 3;
                         timer = 0;
                         offset2 = 0;
@@ -348,15 +346,14 @@ switch (phase)
             {
                 instance_destroy();
             }
-            for (i = 1; i &lt;= 3; i++)
-            {
-                r = instance_create(128, 123, objTrailEffect);
-                r.depth = depth - (1 + i);
-                r.sprite_index = sprTitleLogo;
-                r.image_index = 1;
-                r.image_alpha = 1 - (0.2 * i);
-                r.deathTimerMax = 5 * i;
-            }
+            r = instance_create(128, 123, objTrailEffect);
+            r.depth = depth - 1;
+            r.sprite_index = sprTitleLogo;
+            r.image_index = 1;
+            r.image_alpha = 1;
+            r.fadeAway = true;
+            r.fadeInterval = 5;
+            r.deathTimerMax = 15;
             timer = 0;
             phase = 8;
         }
@@ -415,15 +412,14 @@ switch (phase)
                 {
                     instance_destroy();
                 }
-                for (i = 1; i &lt;= 3; i++)
-                {
-                    r = instance_create(128, 123, objTrailEffect);
-                    r.depth = depth - (1 + i);
-                    r.sprite_index = sprTitleLogo;
-                    r.image_index = 1;
-                    r.image_alpha = 1 - (0.2 * i);
-                    r.deathTimerMax = 5 * i;
-                }
+                r = instance_create(128, 123, objTrailEffect);
+                r.depth = depth - 1;
+                r.sprite_index = sprTitleLogo;
+                r.image_index = 1;
+                r.image_alpha = 1;
+                r.fadeAway = true;
+                r.fadeInterval = 5;
+                r.deathTimerMax = 15;
                 timer = -1;
                 phase = 9;
             }
@@ -675,18 +671,15 @@ if (phase &gt;= 10)
     draw_sprite_ext(sprDot, 0, 0, 0, 256, 240, 0, c_white, boxAlph);
 }
 
-/*
 var oldCol = draw_get_color();
 draw_set_color(c_white);
 
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
-*/
 
 if (drawtext)
 {
-    //draw_text(96, 160, "GAME START##OPTIONS");
-    draw_text(64, 192, "WHIP##NAE NAE##ALLEGEDLY SHOOT MY COUSIN IN THE STREET");
+    draw_text(64, 184, "WHIP##NAE NAE##ALLEGEDLY SHOOT MY COUSIN IN THE STREET");
 }
 /*
 if (canProceed)

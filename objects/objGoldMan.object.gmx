@@ -115,10 +115,13 @@ if (entityCanStep())
     if (isFight)
     {
         flyTimer++;
+        
+        var dir = 270;
         if (instance_exists(target))
         {
             tx = target.x;
             ty = target.y;
+            dir = point_direction(x, y + 24, tx, ty);
         }
         var yeah = view_xview + 128;
         if (healthpoints &lt;= healthpointsStart/2 &amp;&amp; phase &lt; 3)
@@ -161,6 +164,18 @@ if (entityCanStep())
                     x = midPointX + round(cos(degtorad(angVal)) * 12);
                     y = midPointY + round(sin(degtorad(angVal)) * 12);
                 }
+                if (dropTimer == 810)
+                {
+                    playSFX(sfxEnemyShoot)
+                    k = instance_create(x, y + 24, objExplosion)
+                    k.depth = depth - 1;
+                    for (bu = -1; b &lt;= 1; b+=2)
+                    {
+                        m = instance_create(x, y, objEnemyBullet);
+                        m.dir = dir;
+                        m.spd = 4;
+                    }
+                }
                 if (angVal &gt;= 990 &amp;&amp; dropTimer &gt;= 45
                 &amp;&amp; dropsDone &lt; 2)
                 {
@@ -187,7 +202,8 @@ if (entityCanStep())
                 {
                     dropTimer++
                     playSFX(sfxCannonShoot);
-                    instance_create(x, y + 24, objGoldManDrop);
+                    e = instance_create(x, y + 24, objGoldManDrop);
+                    e.depth = depth - 1;
                     dropsDone++;
                 }
                 if (dropTimer &gt;= 80)
@@ -196,12 +212,18 @@ if (entityCanStep())
                     if (dropTimer == 80)
                     {
                         if (x &gt; yeah)
+                        {
                             midPointX = yeah - 64;
+                        }
                         else
+                        {
                             midPointX = yeah + 64;
+                        }
                         xspeed = (abs(midPointX - x))/45;
                         if (x &gt; midPointX)
+                        {
                             xspeed = -xspeed;
+                        }
                         yspeed = -abs((abs(ystart - y))/45);
                     }
                     if (y &lt;= ystart)
@@ -317,7 +339,9 @@ if (entityCanStep())
                     }
                 }
                 else
-                    image_index = (flyTimer / 3) % 4;
+                {
+                    image_index = (flyTimer / 3) mod 4;
+                }
                 break;
             case 5: // bruh coins
                 if (dropTimer &lt;= 45)
