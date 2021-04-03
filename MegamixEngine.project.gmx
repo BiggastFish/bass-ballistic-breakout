@@ -1399,7 +1399,6 @@
     <sprites name="Bass Ballistic Breakout">
       <sprite>sprites\sprBassHelmet</sprite>
       <sprite>sprites\sprReady</sprite>
-      <sprite>sprites\sprBossHealthHud</sprite>
       <sprite>sprites\sprBassJumpPoof</sprite>
       <sprite>sprites\sprAntiEddie</sprite>
       <sprite>sprites\sprLifeNew</sprite>
@@ -1438,19 +1437,21 @@
       </sprites>
       <sprites name="Levels">
         <sprites name="Static Shock">
-          <sprite>sprites\sprShockingSnakey</sprite>
+          <sprite>sprites\sprSparkSnakey</sprite>
+          <sprite>sprites\sprSparkSnakeyShot</sprite>
+          <sprite>sprites\sprBossHealthHud</sprite>
           <sprite>sprites\sprChargingChester</sprite>
-          <sprite>sprites\sprGabyoallectro</sprite>
+          <sprite>sprites\sprChargingChesterSpark</sprite>
+          <sprite>sprites\sprGabyoallightning</sprite>
+          <sprite>sprites\sprGabyoallightningLightning</sprite>
+          <sprite>sprites\sprTheWizardRing</sprite>
           <sprite>sprites\sprRingRing</sprite>
           <sprite>sprites\sprTossMachine</sprite>
-          <sprites name="Projectiles">
-            <sprite>sprites\sprChargingChesterSpark</sprite>
-            <sprite>sprites\sprGabyoallightningLightning</sprite>
-            <sprite>sprites\sprTosserRock</sprite>
-          </sprites>
+          <sprite>sprites\sprTosserRock</sprite>
           <sprites name="Boss">
             <sprite>sprites\sprBuzzshock</sprite>
-            <sprite>sprites\sprBuzzshockReal</sprite>
+            <sprite>sprites\sprBuzzshockEV73</sprite>
+            <sprite>sprites\sprBuzzshockEV73Spark</sprite>
             <sprite>sprites\sprBuzzshockTiny</sprite>
             <sprite>sprites\sprBuzzshockDust</sprite>
             <sprite>sprites\sprBuzzshockWings</sprite>
@@ -1498,6 +1499,7 @@
           <sprite>sprites\sprSwitchingVines</sprite>
           <sprite>sprites\sprTruckBoss</sprite>
           <sprite>sprites\sprTruckBossSpike</sprite>
+          <sprite>sprites\sprTruckBossEnergy</sprite>
           <sprite>sprites\sprTruckBossFront</sprite>
           <sprite>sprites\mskTruckBoss</sprite>
           <sprites name="Boss">
@@ -1535,6 +1537,8 @@
           <sprite>sprites\sprOilManShot</sprite>
         </sprites>
         <sprites name="Jump King">
+          <sprite>sprites\sprTheWizard</sprite>
+          <sprite>sprites\sprTheWizardOrb</sprite>
           <sprite>sprites\sprJumpMan</sprite>
         </sprites>
         <sprites name="Bury The Light">
@@ -2576,13 +2580,11 @@
         <object>objects\objBuzzshockDistance</object>
         <object>objects\objSparkSnakey</object>
         <object>objects\objChargingChester</object>
+        <object>objects\objChargingChesterSpark</object>
         <object>objects\objGabyoallightning</object>
         <object>objects\objTossMachine</object>
+        <object>objects\objTosserRock</object>
         <object>objects\objRingRing</object>
-        <objects name="Projectiles">
-          <object>objects\objChargingChesterSpark</object>
-          <object>objects\objTosserRock</object>
-        </objects>
         <objects name="Boss">
           <object>objects\objBuzzshock</object>
           <object>objects\objBuzzshockEV73</object>

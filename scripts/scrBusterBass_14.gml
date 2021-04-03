@@ -39,9 +39,13 @@ if (!global.lockBuster)
     if (global.autoFire)
     {
         if (global.keyShootPressed[playerID])
+        {
             fireHeld = !fireHeld;
+        }
         if (xDir != 0 || yDir != 0)
+        {
             busterDir = action;
+        }
         switch (busterDir)
         {
             case 1:
@@ -85,7 +89,9 @@ if (!global.lockBuster)
         if shootTimer < 8
         {
             if shootTimer < 1
+            {
                 shootTimer = 1;
+            }
             else
             {
                 shootTimer++
@@ -94,10 +100,13 @@ if (!global.lockBuster)
         }
         i = fireWeapon(xOffset, yOffset, objBusterShot, bulletLimit, weaponCost, action, willStop);
         if (global.autoFire)
+        {
             isShoot = busterDir;
+        }
         else
+        {
             isShoot = action;
-        xspeed = 0;
+        }
         if shootTimer >= 14 //making sure it doesn't release the lock until it stops being held
         {
             shootTimer = 14;

@@ -20,9 +20,9 @@
   <width>26</width>
   <height>23</height>
   <frames>
-    <frame index="0">images\sprShockingSnakey_0.png</frame>
-    <frame index="1">images\sprShockingSnakey_1.png</frame>
-    <frame index="2">images\sprShockingSnakey_2.png</frame>
-    <frame index="3">images\sprShockingSnakey_3.png</frame>
+    <frame index="0">images\sprSparkSnakey_0.png</frame>
+    <frame index="1">images\sprSparkSnakey_1.png</frame>
+    <frame index="2">images\sprSparkSnakey_2.png</frame>
+    <frame index="3">images\sprSparkSnakey_3.png</frame>
   </frames>
 </sprite>

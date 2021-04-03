@@ -46,7 +46,6 @@ despawnRange = -1;
 dieToPits = 0;
 tx = x;
 
-
 // Music
 music = "HoTDBoss.ogg";
 musicType = "OGG";

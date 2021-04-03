@@ -209,6 +209,7 @@ if ((isSlide || dashJumped) && !climbing && !isHit)
         a.costume = global.playerSprite[costumeID];
         a.color = global.secondaryCol[playerID];
         a.parent = self;
+        a.deathTimerMax = 12;
         a.spriteX = spriteX;
         a.spriteY = spriteY;
         a.image_xscale = image_xscale;
