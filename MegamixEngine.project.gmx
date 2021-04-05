@@ -2634,8 +2634,9 @@
         <object>objects\objFlowerSpring</object>
         <object>objects\objSwitchingVines</object>
         <object>objects\objTruckBoss</object>
-        <object>objects\objTruckBossSpike</object>
+        <object>objects\objTruckBossEnergy</object>
         <object>objects\objTruckBossFront</object>
+        <object>objects\objTruckBossSpike</object>
         <objects name="Boss">
           <object>objects\objPerfuma</object>
           <object>objects\objPerfumaVine</object>
@@ -2679,6 +2680,7 @@
         </objects>
       </objects>
       <objects name="Jump King">
+        <object>objects\objTheWizard</object>
         <object>objects\objJumpMan</object>
       </objects>
       <objects name="Bury The Light">
