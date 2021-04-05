@@ -1444,7 +1444,6 @@
           <sprite>sprites\sprChargingChesterSpark</sprite>
           <sprite>sprites\sprGabyoallightning</sprite>
           <sprite>sprites\sprGabyoallightningLightning</sprite>
-          <sprite>sprites\sprTheWizardRing</sprite>
           <sprite>sprites\sprRingRing</sprite>
           <sprite>sprites\sprTossMachine</sprite>
           <sprite>sprites\sprTosserRock</sprite>
@@ -1538,7 +1537,10 @@
         </sprites>
         <sprites name="Jump King">
           <sprite>sprites\sprTheWizard</sprite>
+          <sprite>sprites\sprTheWizardFire</sprite>
+          <sprite>sprites\sprTheWizardLaser</sprite>
           <sprite>sprites\sprTheWizardOrb</sprite>
+          <sprite>sprites\sprTheWizardRing</sprite>
           <sprite>sprites\sprJumpMan</sprite>
         </sprites>
         <sprites name="Bury The Light">
@@ -2681,6 +2683,10 @@
       </objects>
       <objects name="Jump King">
         <object>objects\objTheWizard</object>
+        <object>objects\objTheWizardFire</object>
+        <object>objects\objTheWizardLaser</object>
+        <object>objects\objTheWizardOrb</object>
+        <object>objects\objTheWizardRing</object>
         <object>objects\objJumpMan</object>
       </objects>
       <objects name="Bury The Light">
@@ -2709,9 +2715,9 @@
     <room>rooms\lvlStHunger</room>
     <room>rooms\rmBGVisibilityTest</room>
     <room>rooms\rmHighwayToHell</room>
-    <room>rooms\rmJumpKing</room>
     <room>rooms\lvlBuryTheLight</room>
     <room>rooms\lvlTowerStage2</room>
+    <room>rooms\lvlJumpKing</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

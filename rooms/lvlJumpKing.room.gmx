@@ -51,15 +51,13 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objDefaultSpawn" x="208" y="400" name="inst_D3E2D883" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDefaultSpawn" x="304" y="400" name="inst_D3E2D883" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingHorizontal" x="512" y="224" name="inst_E65D4160" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="0" y="416" name="inst_BB4814FF" locked="0" code="" scaleX="48" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="240" y="176" name="inst_5FF176E1" locked="0" code="" scaleX="2" scaleY="11" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="240" y="176" name="inst_5FF176E1" locked="0" code="" scaleX="2" scaleY="14.9333333969116" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="496" y="176" name="inst_AE8DF0CB" locked="0" code="" scaleX="2" scaleY="14.9333333969116" colour="4294967295" rotation="0"/>
-    <instance objName="objBossDoor" x="240" y="352" name="inst_C54FBD7A" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objBossDoor" x="256" y="352" name="inst_48DA02E0" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objRightScrolling" x="256" y="224" name="inst_713EFA17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpMan" x="464" y="400" name="inst_CFB70941" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStopScrollingNES" x="256" y="224" name="inst_929EAAAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTheWizard" x="464" y="288" name="inst_6AEC6F5C" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

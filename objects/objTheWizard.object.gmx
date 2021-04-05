@@ -6,7 +6,7 @@
   <depth>30</depth>
   <persistent>0</persistent>
   <parentName>prtBoss</parentName>
-  <maskName>mskTruckBoss</maskName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -38,8 +38,9 @@ introType = 0;
 useEndStageBehavior = false;
 
 wizTimer = 0;
-tx = x;
-ty = y;
+shots = 0;
+lastX = x;
+lastY = y;
 
 // Music
 music = "MM8MiniBoss.ogg";
@@ -87,37 +88,65 @@ if (!global.frozen)
         isIntro = true;
         drawBoss = true;
         y = view_yview - 48;
-        visible = 1;
-        grav = 0.25;
-        blockCollision = 1;
+        visible = true;
+        sprite_index = sprExplosion;
+        image_speed = 1/3;
+        image_blend = make_color_rgb(104, 68, 252);
     }
     else if (isIntro)
     {
-        if (ycoll != 0)
+        wizTimer++;
+        if (y &lt; ystart)
         {
-            yspeed = ySpd;
-            ySpd+= 2;
-            playSFX(sfxCompactor);
+            y+= 3;
         }
-        if (ySpd &gt;= 0 &amp;&amp; ground)
+        if (wizTimer mod 3 == 0 &amp;&amp; sprite_index == sprExplosion)
         {
-            truckTimer++;
-            if (truckTimer == 15)
+            f = instance_create(x + irandom_range(-4, 4),
+            y - irandom(4), objSingleLoopEffect);
+            f.image_index = 2
+            f.image_speed = -1/4;
+            f.image_blend = make_color_rgb(104, 68, 252);
+            f.vspeed = 1.75;
+            f.depth = depth - 1;
+        }
+        with (objSingleLoopEffect)
+        {
+            if (sprite_index == sprFlashTwinkle)
             {
-                spike = instance_create(x + 11, view_yview - 18, objTruckBossSpike);
-                spike.parent = id;
-                spike.depth = depth - 14;
-            }
-            if (spike != noone &amp;&amp; spike.y &gt;= y)
-            {
-                spikeTimer++;
-                if (spikeTimer &gt;= 30)
+                if (vspeed &gt; -3)
                 {
-                    truckTimer = 0;
-                    spikeTimer = 0;
-                    isIntro = false;
+                    vspeed-= 0.8;
                 }
             }
+        }
+        if (wizTimer == 96)
+        {
+            playSFX(sfxBusterCharged);
+            sprite_index = sprTheWizard;
+            image_blend = c_white;
+            image_speed = 0;
+            with (objSingleLoopEffect)
+            {
+                if (sprite_index == sprFlashTwinkle)
+                {
+                    instance_destroy();
+                }
+            }
+            for (k = 0; k &lt; 8; k++)
+            {
+                h = instance_create(x, y, objSingleLoopEffect);
+                h.sprite_index = sprExplosion;
+                h.image_speed = 1/3;
+                h.image_blend = make_color_rgb(104, 68, 252);
+                h.speed = 3;
+                h.direction = (45 * k) + 22.5;
+            }
+        }
+        if (wizTimer == 120)
+        {
+            isIntro = false;
+            wizTimer = 0;
         }
     }
 }
@@ -125,13 +154,15 @@ if (entityCanStep())
 {
     if (isFight)
     {
-        var yeah = view_xview + 128;
+        var yeah = view_xview + 128, tx = x, ty = y, dir = 90;
         if (instance_exists(target))
         {
             tx = target.x;
             ty = target.y;
+            dir = point_direction(x, y - 12, tx, ty);
         }
 
+        wizTimer++;
         switch (phase)
         {
             case 0:
@@ -148,41 +179,89 @@ if (entityCanStep())
                     y = ystart;
                     image_xscale = -1;
                 }
-                if (wizTimer == 75)
+                if (wizTimer == 70)
                 {
                     playSFX(sfxHomingSniperLock);
                     p = instance_create(view_xview, ty, objTheWizardLaser);
-                    p.depth = depth + 1;
+                    p.depth = depth + 2;
+                }
+                if (wizTimer &gt;= 210 &amp;&amp; (wizTimer - 210) mod 16 == 0 &amp;&amp; shots &lt; 6)
+                {
+                    playSFX(sfxFireManFireStorm);
+                    r = instance_create(x, y, objTheWizardFire);
+                    r.direction = 50 + (80 * (shots mod 2 == 0));
+                    r.speed = 3;
+                    r.depth = depth + 1;
+                    shots++;
+                }
+                if (wizTimer &gt;= 315)
+                {
+                    wizTimer = 0;
+                    shots = 0;
+                    phase = 1;
+                }
+                break;
+            case 1:
+                calibrateDirectionPoint(yeah);
+                if (wizTimer == 15)
+                {
+                    var midRan = choose(-1, 1), xx, yy;
+                    do
+                    {
+                        if (x != yeah)
+                        {
+                            if (x &gt; yeah)
+                            {
+                                midRan = -1;
+                            }
+                            else
+                            {
+                                midRan = 1;
+                            }
+                        }
+                        xx = yeah + (midRan * (56 + (irandom(2) * 12)));
+                        yy = ystart + (irandom(2) * 16);
+                    }
+                    until ((yy != lastY) &amp;&amp; (abs(yeah - xx) != abs(yeah - lastX)))
+                    xspeed = (xx - x)/30;
+                    yspeed = (yy - y)/30;
+                    lastX = xx;
+                    lastY = yy;
+                }
+                if (wizTimer == 45)
+                {
+                    xspeed = 0;
+                    yspeed = 0;
+                    x = lastX;
+                    y = lastY;
+                }
+                if (wizTimer == 75)
+                {
+                    playSFX(sfxSharkLaser);
+                    head = instance_create(x, y - 12, objTheWizardOrb);
+                    head.dir = dir + 28;
+                    head.depth = depth - 3;
+                    tails = instance_create(x, y - 12, objTheWizardOrb);
+                    tails.dir = dir - 28;
+                    tails.depth = depth - 2;
+                    ring = instance_create(x, y - 12, objTheWizardRing);
+                    ring.parent = head;
+                    ring.otherParent = tails;
+                    ring.depth = depth - 1;
+                    shots++;
+                }
+                if (wizTimer == 140)
+                {
+                    wizTimer = 0;
+                    if (shots &gt;= 3)
+                    {
+                        shots = 0;
+                        phase = 0;
+                    }
                 }
                 break;
         }
     }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="21">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (other.y &gt; y - 14)
-{
-    other.guardCancel = 1;
 }
 </string>
           </argument>
@@ -208,19 +287,20 @@ if (entityCanStep())
             <kind>1</kind>
             <string>with (prtEnemyProjectile)
 {
-    if (object_index != objTheWizardLaser || object_index != objTheWizardRing)
+    if (object_index != objTheWizardLaser)
     {
         m = instance_create(x, y, objExplosion);
         m.depth = depth - 1;
     }
-    if (object_index == objTheWizardLaser)
+    else
     {
         r = instance_create(x, y, objTrailEffect);
+        r.sprite_index = sprite_index;
         r.image_xscale = image_xscale;
         r.image_alpha = 0.6;
         r.depth = depth + 1;
-        r.deathTimerMax = 6;
-        r.fadeInterval = 2;
+        r.deathTimerMax = 10;
+        r.fadeInterval = 3;
         r.fadeAway = true;
     }
     instance_destroy();
