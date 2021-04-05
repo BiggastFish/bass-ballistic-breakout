@@ -32,10 +32,9 @@ blockCollision = 0;
 despawnRange = -1;
 grav = 0;
 timer = 30;
-angle = 0;
-distance = 0;
-blowUp = 1
-image_speed = .5;
+dir = 0;
+blowUp = true;
+image_speed = 0.5;
 </string>
           </argument>
         </arguments>
@@ -63,9 +62,9 @@ image_speed = .5;
 // Handle Intro
 if (entityCanStep())
 {
+    timer--
     if (blowUp)
     {
-        timer--;
         if (timer &lt;= 0)
         {
             xspeed = 0;
@@ -73,26 +72,30 @@ if (entityCanStep())
         }
         if (timer == -30)
         {
-            for (k = 0; k &lt; 4; k++)
+            for (k = 0; k &lt; 8; k++)
             {
                 m = instance_create(x, y, objGoldragonOrb);
-                m.blowUp = 0;
-                m.angle = (360/4) * k;
+                m.blowUp = false;
+                m.dir = 45 * k;
                 m.sprite_index = sprGoldragonOrbSplit;
                 m.image_xscale = image_xscale;
             }
-            playSFX(sfxFan);
+            playSFX(sfxPharaohShotCharged);
             instance_destroy();
         }
     }
     else
     {
-        angle+= 3 * -image_xscale;
-        distance+= 3;
-        x = xstart + round(cos(degtorad(angle)) * distance);
-        y = ystart + round(sin(degtorad(angle)) * distance);
-        if (distance &gt;= 180 &amp;&amp; !insideView())
+        xspeed = cos(degtorad(dir)) * 2.4;
+        yspeed = -sin(degtorad(dir)) * 2.4;
+        if (timer &lt;= 0)
+        {
+            e = instance_create(x, y, objExplosion);
+            e.image_xscale = 0.75;
+            e.image_yscale = 0.75;
+            e.image_blend = make_color_rgb(140, 49, 99);
             instance_destroy();
+        }
     }
 }
 </string>

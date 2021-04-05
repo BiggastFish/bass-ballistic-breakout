@@ -96,7 +96,9 @@ if (!global.frozen)
     {
         visible = true;
         if (instance_exists(target))
+        {
             bruhTimer+= target.ground &amp;&amp; isIntro;
+        }
         if (!phase)
         {
             animationLoop(0, 1, 0.2);
@@ -109,10 +111,10 @@ if (!global.frozen)
                 
                 var yeet;
                     
-                grav = .12;
+                grav = 0.12;
                 yspeed = -3;
                 storedYSpd = yspeed;
-                yeet = xSpeedAim(x, y, xstart, ystart, -3, .12);
+                yeet = xSpeedAim(x, y, xstart, ystart, -3, 0.12);
                 xspeed = yeet;
                 storedXSpd = yeet;
                 with (objGoldragonSegment)
@@ -151,9 +153,13 @@ if (!global.frozen)
                     }
                 }
                 if (y &gt; view_yview + 128)
+                {
                     y-=3;
+                }
                 else
+                {
                     bruhTimer = 600;
+                }
             }
             if (bruhTimer &gt;= 600)
             {
@@ -223,7 +229,7 @@ if (entityCanStep())
                     }
                     var yeet;
                     
-                    grav = .12;
+                    grav = 0.12;
                     yspeed = -6;
                     storedYSpd = yspeed;
                     yeet = xSpeedAim(x, y, targetSpot, view_yview + 224, -4, .12);
@@ -271,16 +277,21 @@ if (entityCanStep())
                         }
                     }
                     if (y &gt; view_yview + 128)
+                    {
                         y-=3;
+                    }
                     else
+                    {
                         bruhTimer = 600;
-
+                    }
                 }
                 if (bruhTimer &gt;= 600)
                 {
                     calibrateDirection();
                     if (bruhTimer == 645)
+                    {
                         image_index = 1;
+                    }
                     if (bruhTimer == 670)
                     {
                         playSFX(sfxEnemyShoot);
@@ -290,11 +301,15 @@ if (entityCanStep())
                         o.image_xscale = image_xscale;
                     }
                     if (bruhTimer == 685)
+                    {
                         image_index = 0;
+                    }
                     if (bruhTimer &gt;= 700)
                     {
                         if (bbox_top &lt;= view_yview + 224)
+                        {
                             y+= 3;
+                        }
                         else
                         {
                             phase = 2;
@@ -328,7 +343,7 @@ if (entityCanStep())
                         grav = 0;
                     }
                 }
-                if (shotsFired == 0 &amp;&amp; ((x &gt;= view_xview + 208 &amp;&amp; image_xscale &gt; 0)
+                if (shotsFired == 0 &amp;&amp; ((x &gt;= view_xview + 224 &amp;&amp; image_xscale &gt; 0)
                 || (x &lt;= view_xview + 32 &amp;&amp; image_xscale &lt; 0)))
                 {
                     shotsFired = 1;
@@ -369,7 +384,9 @@ if (entityCanStep())
                     }
                 }
                 if (yspeed &gt; 0 &amp;&amp; bbox_top &gt;= view_yview + 224)
+                {
                     yspeed = 0;
+                }
                 break;
         }
     }

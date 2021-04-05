@@ -110,7 +110,7 @@ if (entityCanStep())
                     {
                         m = instance_create(x + round(cos(degtorad(dang)) * 10),
                         y + round(sin(degtorad(dang)) * 10), objEnemyBullet);
-                        m.grav = .12;
+                        m.grav = 0.12;
                         m.yspeed = -2;
                         m.xspeed = l * 1.25;
                         m.sprite_index = sprGrabBuster;
@@ -170,7 +170,7 @@ if (entityCanStep())
             bruhTimer--;
             if (bruhTimer == 0)
             {
-                grav = .12;
+                grav = 0.12;
                 yspeed = storedYSpd;
                 xspeed = storedXSpd;
             }
@@ -204,17 +204,21 @@ if (entityCanStep())
                 playSFX(sfxEnemyShootClassic);
                 instance_create(x + round(cos(degtorad(dang)) * 10),
                 y + round(sin(degtorad(dang)) * 10), objExplosion);
-                with (instance_create(x + round(cos(degtorad(dang)) * 10),
-                y + round(sin(degtorad(dang)) * 10), objEnemyBullet))
+                for (p = -1; p &lt;= 1; p++)
                 {
-                    sprite_index = sprGrabBuster;
-                    image_speed = .25;
+                    e = instance_create(x + round(cos(degtorad(dang)) * 10),
+                    y + round(sin(degtorad(dang)) * 10), objEnemyBullet);
+                    e.sprite_index = sprGrabBuster;
+                    e.image_speed = 0.25;
+                    e.spd = 3 + (-1 * (p != 0));
                     if (instance_exists(target))
-                        aimAtTarget(3);
+                    {
+                        var ang = point_direction(x, y, target.x, target.y);
+                        e.dir = ang + (20 * p);
+                    }
                     else
                     {
-                        xspeed = -other.xspeed;
-                        yspeed = -other.yspeed;
+                        e.dir = 270 + (20 * p);
                     }
                 }
             }

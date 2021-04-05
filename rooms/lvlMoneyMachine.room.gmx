@@ -411,7 +411,7 @@ with (objGenericStopper)
     <instance objName="objCheckpointAntiEddie" x="7072" y="432" name="inst_8E3B7BB5" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="6560" y="464" name="inst_AB8D953D" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossDoor" x="368" y="1824" name="inst_C8DAD965" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objDefaultSpawn" x="6960" y="448" name="inst_625C7398" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDefaultSpawn" x="3616" y="432" name="inst_A540B8AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgBasic" x="1792" y="1856" w="16" h="16" xo="32" yo="48" id="11311561" name="inst_905343E3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
