@@ -95,7 +95,7 @@
     <instance objName="objTruckBoss" x="720" y="1376" name="inst_0FC873D0" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRightScrollingNES" x="512" y="1200" name="inst_49C82428" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="512" y="1168" name="inst_61BE358F" locked="0" code="myBG = bgPerfumaGround;&#xA;areaLeft = 512;&#xA;areaRight = 512 + 256;&#xA;areaTop = 1184;&#xA;areaBottom = 1184 + 400;&#xA;depth = 1000000;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDefaultSpawn" x="544" y="1392" name="inst_4DBC3D9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDefaultSpawn" x="288" y="432" name="inst_A35D208C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

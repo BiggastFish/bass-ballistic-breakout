@@ -210,6 +210,7 @@ if ((isSlide || dashJumped) && !climbing && !isHit)
         a.color = global.secondaryCol[playerID];
         a.parent = self;
         a.deathTimerMax = 12;
+        a.fadeValue = 0.1;
         a.spriteX = spriteX;
         a.spriteY = spriteY;
         a.image_xscale = image_xscale;

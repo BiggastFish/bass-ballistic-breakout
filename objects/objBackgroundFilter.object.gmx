@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>useManOp = 1;
-opac = .3;
+opac = 0.3;
 </string>
           </argument>
         </arguments>
@@ -50,10 +50,14 @@ opac = .3;
           <argument>
             <kind>1</kind>
             <string>if (useManOp)
+{
     draw_sprite_ext(sprDot, 0, 0, 0, room_width, room_height, 0, c_black, 
     ((100 - global.bgVisibility)/100));
+}
 else
+{
     draw_sprite_ext(sprDot, 0, 0, 0, room_width, room_height, 0, c_black, opac);
+}
 </string>
           </argument>
         </arguments>

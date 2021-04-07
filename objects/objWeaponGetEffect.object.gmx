@@ -36,6 +36,7 @@ rot = 0;
 grav = 0.25;
 xspeed = 0;
 yspeed = 0;
+fadeInterval = 6;
 imgTimer = 0;
 destroyTimer = 9;
 image_speed = 0;
@@ -64,7 +65,7 @@ image_speed = 0;
             <string>if (!phase)
 {
     imgTimer++;
-    if (imgTimer mod 6 == 0 &amp;&amp; miniPhase &lt; 3)
+    if (imgTimer mod fadeInterval == 0 &amp;&amp; miniPhase &lt; 3)
     {
         r = instance_create(x, y, objTrailEffect);
         r.depth = depth + 1;
@@ -104,6 +105,15 @@ image_speed = 0;
             }
             if (image_index &lt; 2)
             {
+                r = instance_create(x, y, objTrailEffect);
+                r.depth = depth + 1;
+                r.sprite_index = sprTitleLogo;
+                r.image_index = image_index + 1;
+                r.image_alpha = 1;
+                r.fadeAway = true;
+                r.fadeInterval = 5;
+                r.fadeValue = 0.3;
+                r.deathTimerMax = 15;
                 instance_destroy();
             }
         }

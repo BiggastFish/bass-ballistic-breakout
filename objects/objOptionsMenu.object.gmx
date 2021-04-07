@@ -518,7 +518,7 @@ if (phase == 2 &amp;&amp; !selected)
         if (horizontalQuickScrollTimer &lt;= 0)
         {
             // slight pause between scrolls
-            horizontalQuickScrollTimer = 3;
+            horizontalQuickScrollTimer = 9;
         }
         
         horizontalQuickScrollTimer--;

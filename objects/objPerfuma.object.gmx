@@ -198,16 +198,22 @@ if (entityCanStep())
                 break;
             case 1: //quad bomb
                 if (vineTimer == 30 || vineTimer == 80 || vineTimer == 130 || vineTimer == 150)
+                {
                     image_index = 1;
+                }
                 if (vineTimer == 40 || vineTimer == 90 || vineTimer == 140 || vineTimer == 160)
                 {
                     if (vineTimer == 40 || vineTimer == 140)
+                    {
                         image_index = 3;
+                    }
                     else
+                    {
                         image_index = 4;
+                    }
                     playSFX(sfxCannonShoot);
                     s = instance_create(x + (12 * image_xscale), y - 4, objPerfumaSeedBomb);
-                    s.grav = .2;
+                    s.grav = 0.2;
                     s.yspeed = -4;
                     s.xspeed = xSpeedAim(x + (12 * image_xscale), y - 4, tx, ty, -4, .2);
                 }
@@ -286,11 +292,11 @@ if (entityCanStep())
                 {
                     image_index = 8;
                 }
-                if (vineTimer == 55 || vineTimer == 110)
+                if (vineTimer == 55 || vineTimer == 95)
                 {
                     image_index = 1;
                 }
-                if (vineTimer == 65 || vineTimer == 120)
+                if (vineTimer == 65 || vineTimer == 105)
                 {
                     playSFX(sfxCannonShoot);
                     if (vineTimer == 65)
@@ -299,7 +305,7 @@ if (entityCanStep())
                         for (p = 0; p &lt;= 2; p++)
                         {
                             s = instance_create(x + (12 * image_xscale), y - 4, objPerfumaSeedBomb);
-                            s.grav = .2;
+                            s.grav = 0.2;
                             s.yspeed = -5;
                             s.xspeed = xSpeedAim(x + (12 * image_xscale), y - 4, 
                             x + ((32 + (64 * p)) * image_xscale), view_yview + 208, -4, .2);
@@ -311,7 +317,7 @@ if (entityCanStep())
                         for (p = 0; p &lt;= 3; p++)
                         {
                             s = instance_create(x + (12 * image_xscale), y - 4, objPerfumaSeedBomb);
-                            s.grav = .2;
+                            s.grav = 0.2;
                             s.yspeed = -5;
                             s.xspeed = xSpeedAim(x + (12 * image_xscale), y - 4, 
                             x + ((8 + (56 * p)) * image_xscale), view_yview + 208, -4, .2);
@@ -319,9 +325,11 @@ if (entityCanStep())
                     }
                     
                 }
-                if (vineTimer == 180)
+                if (vineTimer == 165)
+                {
                     image_index = 0;
-                if (vineTimer == 205)
+                }
+                if (vineTimer == 190)
                 {
                     phaseEndStationary = true;
                 }
@@ -331,25 +339,27 @@ if (entityCanStep())
                 {
                     image_index = 0;
                 }
-                if (vineTimer == 15 || vineTimer == 95)
+                if (vineTimer == 15 || vineTimer == 80)
                 {
                     image_index = 7;
                 }
-                if (vineTimer % 5 == 0 &amp;&amp; ((vineTimer &gt;= 45 &amp;&amp; vineTimer &lt;= 80) || 
-                vineTimer &gt;= 125 &amp;&amp; vineTimer &lt;= 160))
+                if (vineTimer mod 5 == 0 &amp;&amp; ((vineTimer &gt;= 45 &amp;&amp; vineTimer &lt;= 80) || 
+                vineTimer &gt;= 110 &amp;&amp; vineTimer &lt;= 145))
                 {
                     image_index = 3;
                     playSFX(sfxEnemyShoot);
                     l = instance_create(x + (12 * image_xscale), y - 4, objEnemyBullet);
-                    l.grav = .25;
+                    l.grav = 0.25;
                     l.yspeed = -4;
                     l.xspeed = xSpeedAim(x + (12 * image_xscale), y - 4, tx, ty, -4, .25);
                     l.sprite_index = sprPerfumaSpike;
                     l.image_index = 1;
                 }
-                if (vineTimer == 180)
+                if (vineTimer == 165)
+                {
                     image_index = 0;
-                if (vineTimer &gt;= 180 &amp;&amp; !instance_exists(objEnemyBullet))
+                }
+                if (vineTimer &gt;= 165 &amp;&amp; !instance_exists(objEnemyBullet))
                 {
                     phaseEndStationary = true;
                 }

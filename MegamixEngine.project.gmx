@@ -2708,12 +2708,12 @@
     <room>rooms\rmInit</room>
     <room>rooms\lvlCopyThisRoom</room>
     <room>rooms\lvlCollectiblesRoom</room>
+    <room>rooms\lvlBGVisibilityTest</room>
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlLivingNightmare</room>
     <room>rooms\lvlStHunger</room>
-    <room>rooms\rmBGVisibilityTest</room>
     <room>rooms\rmHighwayToHell</room>
     <room>rooms\lvlBuryTheLight</room>
     <room>rooms\lvlTowerStage2</room>

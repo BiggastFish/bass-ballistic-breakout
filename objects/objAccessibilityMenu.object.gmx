@@ -231,7 +231,7 @@ if (phase == 2 &amp;&amp; !selected)
             // BG Visibility
             case 1:
                 pre = global.bgVisibility;
-                global.bgVisibility = max(0, min(100, global.bgVisibility + dir));
+                global.bgVisibility = max(0, min(100, global.bgVisibility + 10 * dir));
                 if (global.bgVisibility != pre)
                 {
                     playSFX(sfxMenuMove);
@@ -396,7 +396,7 @@ if (phase == 2 &amp;&amp; !selected)
         if (horizontalQuickScrollTimer &lt;= 0)
         {
             // slight pause between scrolls
-            horizontalQuickScrollTimer = 3;
+            horizontalQuickScrollTimer = 9;
         }
         
         horizontalQuickScrollTimer--;

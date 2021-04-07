@@ -80,10 +80,13 @@ breakDashLock = false;
 
 if (instance_exists(parent))
 {
-    with(parent)
+    with (parent)
     {
         if (other.breakDashLock)
+        {
             lockPoolRelease(other.breakDashLock);
+        }
+        xspeed = 0;
         hitTimer = 0;
         iFrames = 0;
         x-= 2 * image_xscale;
