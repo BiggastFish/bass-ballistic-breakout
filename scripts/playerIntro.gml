@@ -39,7 +39,7 @@ if (init)
             skullHeight = 0 ;*/ 
             teleportTimer = 0;
             break;
-        case 12: // break in through window
+        case 12: // break in through glass window
             landy = y;
             y = view_yview + view_hview + 32;
             dieToPit = false;
@@ -370,10 +370,10 @@ else
                 }
             }
             break;
-        case 12: // break through glass
+        case 12: // break through glass window
             if (teleportTimer = 0)
             {
-                introFakeGrav = .25;
+                introFakeGrav = 0.25;
                 introFakeYspeed = -sqrt(abs(2*.25*abs(y - (landy - 80))));
                 
                 teleportTimer = 1;
@@ -396,8 +396,13 @@ else
                         f.xspeed = random_range(-1, 1);
                     }
                     screenFlash(3);
+                    tile_layer_hide(-40);
                     tile_layer_hide(-30);
                     tile_layer_show(1000020);
+                    with (objBackgroundFilter)
+                    {
+                        depth = 1000015;
+                    }
                     teleportTimer = 2;
                 }
             }

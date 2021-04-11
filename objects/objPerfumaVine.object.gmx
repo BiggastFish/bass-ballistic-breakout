@@ -85,22 +85,28 @@ if (entityCanStep())
                 if (instance_place(x, y, meg) &amp;&amp; !cooldownTimer)
                 {
                     if (meg != noone &amp;&amp; (meg.iFrames == 0 || 
-                    (meg.iFrames == -1 &amp;&amp; (instance_exists(objRisingKick) ||
-                    instance_exists(objCrescentKick)))) &amp;&amp; canHit)
+                    (meg.iFrames == -1 &amp;&amp; 
+                    (instance_exists(objRisingKick) ||
+                    instance_exists(objCrescentKick) || 
+                    instance_exists(objKnuckleSandwich)))) 
+                    &amp;&amp; canHit)
                     {
                         with (objRisingKick)
                         {
-                        instance_destroy();
+                            instance_destroy();
                         }
                         with (objCrescentKick)
                         {
                             instance_destroy();
                         }
-                        with (meg)
-                            playerGetHit(other.contactDamage);
+                        with (objKnuckleSandwich)
+                        {
+                            instance_destroy();
+                        }
+                        entityEntityCollision();
                     }
                     cooldownTimer = 30;
-                    if (bounceMomentum &gt;= .6)
+                    if (bounceMomentum &gt;= 0.6)
                     {
                         meg.dashJumped = 0;
                         meg.isSlide = 0;

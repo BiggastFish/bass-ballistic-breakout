@@ -328,7 +328,7 @@ if (phase == 2 &amp;&amp; !selected)
             // Damage popup
             case 11:
                 pre = global.damagePopup;
-                global.damagePopup = min(max(0, global.damagePopup + dir), 1);
+                global.damagePopup = min(max(0, global.damagePopup + dir), 2);
                 if (global.damagePopup != pre)
                 {
                     playSFX(sfxMenuMove);
@@ -971,13 +971,17 @@ for (var j = 0; j &lt; visibleOptions; j++)
         
         // damage popup
         case 11:
+            if (!global.damagePopup)
+            {
+                opt += 'NONE';
+            }
             if (global.damagePopup == 1)
             {
-                opt += 'ON';
+                opt += 'JUMP';
             }
-            else
+            else if (global.damagePopup == 2)
             {
-                opt += 'OFF';
+                opt += 'FLOAT';
             }
             
             break;

@@ -162,8 +162,11 @@ if (entityCanStep())
         }
         with (objHarmfulExplosion)
             shiftObject(other.scrollSpeed, 0, 0);
+        with (objWeaponExplosion)
+            shiftObject(other.scrollSpeed, 0, 0);
         with (objTrebleBoost)
             shiftObject(other.scrollSpeed, 0, 0);
+        
         switch (phase)
         {
             case 0: // vine boom sound effect

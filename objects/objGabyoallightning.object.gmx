@@ -110,10 +110,19 @@ if (entityCanStep())
     if (img &gt; 1)
     {
         with (objMegaman)
+        {
             if (collision_rectangle(other.x - 8, other.laserTop, other.x + 8,
             other.laserBottom, id, 0, 0))
-                if iFrames = 0 &amp;&amp; canHit
-                    playerGetHit(other.contactDamage);
+            {
+                if (iFrames == 0 &amp;&amp; canHit)
+                {
+                    with (other)
+                    {
+                        entityEntityCollision();
+                    }
+                }
+            }
+        }
     }
 
     if (xcoll != 0) 

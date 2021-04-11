@@ -69,12 +69,18 @@ if (checkSolid(0, 0))
 if (!global.frozen)
 {
     rotTimer++;
-    if (rotTimer % 3 = 0)
+    if (rotTimer mod 3 == 0)
+    {
         image_angle+= 90 * image_xscale;
+    }
     if (ycoll != 0 || xcoll != 0)
+    {
         event_user(0);
+    }
     if (bbox_top &gt; view_yview + 224)
+    {
         instance_destroy();
+    }
 }
 </string>
           </argument>

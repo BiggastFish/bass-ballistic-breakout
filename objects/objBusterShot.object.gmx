@@ -204,7 +204,7 @@ else
             <kind>1</kind>
             <string>f = instance_create(x, y, objSingleLoopEffect)
 f.sprite_index = sprBassBulletBreak;
-f.image_speed = .4;
+f.image_speed = 0.5;
 </string>
           </argument>
         </arguments>

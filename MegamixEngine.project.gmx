@@ -1398,6 +1398,8 @@
     </sprites>
     <sprites name="Bass Ballistic Breakout">
       <sprite>sprites\sprBassHelmet</sprite>
+      <sprite>sprites\sprExplosionNew</sprite>
+      <sprite>sprites\sprDamagePopupFade</sprite>
       <sprite>sprites\sprReady</sprite>
       <sprite>sprites\sprBassJumpPoof</sprite>
       <sprite>sprites\sprAntiEddie</sprite>

@@ -152,7 +152,7 @@ if (!global.frozen)
         {
             xspeed = other.image_xscale * 5;
             sprite_index = sprBassBullet;
-            image_index = 2;
+            image_index = 5;
         }
     }
 }

@@ -113,6 +113,7 @@ if (!global.lockBuster)
         }
         if (i)
         {
+            i.image_index = action - (1 + (action > 1));
             i.sprite_index = sprBassBullet;
             i.dir = 0;
             i.contactDamage = 1 + (dashJumped);

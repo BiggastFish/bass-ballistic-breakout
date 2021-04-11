@@ -70,12 +70,15 @@ if (entityCanStep())
 {
     image_index+= .25;
     if (y &gt; yMov)
+    {
         y-= 1.5;
+    }
     else
     {
         if (!zapSFX)
         {
             playSFX(sfxBlockZap);
+            depth-= 5;
             zapSFX = 1;
             doTheZap = 1;
             xspeed = 1.25 * dir;

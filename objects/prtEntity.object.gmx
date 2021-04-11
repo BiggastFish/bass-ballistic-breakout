@@ -62,6 +62,10 @@ hitterID = 0; // the ID of the object that last hit this entity
 respawn = true;
 dead = false;
 
+// If this is true, the entity will stay defeated if killed by the player. It will only respawn if the player switches sections.
+stayDefeated = false;
+killedByPlayer = false;
+
 /* @cc 
     Governs behaviour during screen transitions.
     0: Not visible during transitions.
@@ -73,6 +77,8 @@ shiftVisible = 0;
 
 //@cc If set to true, depth modulating will be disabled for this object.
 noFlicker = false;
+
+floatPopup = noone;
 
 respawnRange = 4; //@cc distance beyond edge of view at which entity spawns if dead. Set to -1 to make infinite
 despawnRange = 4; //@cc distance beyond edge of view at which entity despawns if alive. set to -1 to make infinite
@@ -270,7 +276,8 @@ else if (!global.frozen)
             || (bbox_right + respawnRange &gt;= view_xview[0]
             &amp;&amp; bbox_left - respawnRange &lt;= view_xview[0] + view_wview[0]
             &amp;&amp; bbox_bottom + respawnRange &gt;= view_yview[0]
-            &amp;&amp; bbox_top - respawnRange &lt;= view_yview[0] + view_hview[0]))
+            &amp;&amp; bbox_top - respawnRange &lt;= view_yview[0] + view_hview[0])
+            &amp;&amp; !(stayDefeated &amp;&amp; killedByPlayer))
         {
             // check for water
             if (inWater != -1)
@@ -573,7 +580,10 @@ for (i = 0; i &lt; specialDamageValuesTotal; i++)
 
 dead = 1;
 
+killedByPlayer = true;
+
 var _ex = instance_create(bboxGetXCenter(), bboxGetYCenter(), objExplosion);
+    _ex.sprite_index = sprExplosionNew;
 
 if (itemDrop == objKey)
 {
