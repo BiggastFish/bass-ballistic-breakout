@@ -41,6 +41,8 @@ itemDrop = -1;
 xDir = 0;
 yDir = 0;
 spd = 0;
+
+enemyDamageValue(objGlowingSpiral, 1);
 </string>
           </argument>
         </arguments>

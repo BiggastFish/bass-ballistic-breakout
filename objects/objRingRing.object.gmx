@@ -43,6 +43,8 @@ image_speed = 0.15;
 
 megax = -1;
 megay = -1;
+
+enemyDamageValue(objGlowingSpiral, 1);
 </string>
           </argument>
         </arguments>

@@ -1467,6 +1467,7 @@
           <sprite>sprites\sprGoldragonOrb</sprite>
           <sprite>sprites\sprGoldragonOrbSplit</sprite>
           <sprite>sprites\sprFloatingTreasure</sprite>
+          <sprite>sprites\sprTreasureSpawner</sprite>
           <sprite>sprites\sprGoldonBattonDebris</sprite>
           <sprite>sprites\sprHellcart</sprite>
           <sprite>sprites\sprHellcartSpawner</sprite>
