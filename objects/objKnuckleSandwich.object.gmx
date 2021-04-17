@@ -34,7 +34,7 @@ contactDamage = 3;
 penetrate = 3; // obviously we don't want to destroy the control for the dash
 pierces = 2;
 killOverride = true;
-canDamage = 0;
+canDamage = false;
 
 visible = 0;
 
@@ -51,7 +51,7 @@ animFrame = 0;
 
 dashTimer = 35;
 dashSpeed = 2.5;
-visibleDelay = 1;
+hitSomething = false;
 
 breakDashLock = false;
 </string>
@@ -86,10 +86,18 @@ if (instance_exists(parent))
         {
             lockPoolRelease(other.breakDashLock);
         }
+        if (other.hitSomething)
+        {
+            canMinJump = false;
+            yspeed = gravDir * -4;
+            playSFX(sfxEnemyBoost);
+            f = instance_create(x + (12 * image_xscale), y, objKnuckleSandwichDelay);
+            f.depth = depth - 5;
+            f.image_xscale = sign(image_xscale);
+        }
         xspeed = 0;
         hitTimer = 0;
-        iFrames = 0;
-        x-= 2 * image_xscale;
+        iFrames = 20;
     }
 }
 </string>
@@ -126,7 +134,7 @@ else
 {
     image_xscale = parent.image_xscale * 1.2;
     
-    x = parent.x + (4 * image_xscale); // stay attached to MM
+    x = parent.x //+ (4 * image_xscale); // stay attached to MM
     y = parent.y;
 }
 
@@ -154,6 +162,24 @@ if (!global.frozen)
     
     with (parent) // Mega Man anim + movement forcing
     {
+        if (isHit)
+        {
+            with (other)
+            {
+                instance_destroy();
+                exit;
+            }
+        }
+        if (xcoll != 0)
+        {
+            with (other)
+            {
+                hitSomething = true;
+                instance_destroy();
+                exit;
+            }
+        }
+
         if (!other.breakDashLock)
         {
             other.breakDashLock = lockPoolLock(
@@ -163,38 +189,32 @@ if (!global.frozen)
                 localPlayerLock[PL_LOCK_SLIDE],
                 localPlayerLock[PL_LOCK_TURN],
                 localPlayerLock[PL_LOCK_GRAVITY]);
-            xspeed=0;
-            yspeed=0;
+            xspeed = 0;
+            yspeed = 0;
         }
 
         xspeed = other.dashSpeed * other.image_xscale;
         iFrames = -1;
     }
-    if (checkSolid(0,0))
-    {
-        playSFX(sfxEnemyBoost);
-        event_user(0);
-    }
+
     if(isLocked(global.playerLock[PL_LOCK_MOVE])&amp;&amp;
     isLocked(global.playerLock[PL_LOCK_TURN]))
     {
-        dashTimer=0;
+        dashTimer = 0;
         with(parent)
-            xspeed=0;
+            xspeed = 0;
     }
 
     // Destroy timer
     dashTimer -= 1;
-    if (dashTimer &lt;= 0)
+    if (dashTimer &lt;= 0 || hitSomething)
     {
-        visibleDelay = 0;
         xspeed = 0;
         instance_destroy();
     }
-
-    // Boolean so it properly bounces Mega Man when it hits
-    // an enemy upon spawning :P
-    canDamage = 1;
+    
+    // Boolean stuff
+    canDamage = true;
 }
 with (parent)
 {
@@ -314,7 +334,7 @@ specialDamageValue(objSpine, 3);
             {
                 exit;
             }
-            if (object_index = objGabyoallightning)
+            if (object_index == objGabyoallightning)
                 event_user(EV_DEATH);
             var _i;
             _i = instance_create(x, y, objSlashEffect);
@@ -328,8 +348,7 @@ specialDamageValue(objSpine, 3);
             _i.yspeed = -2;
         }
     }
-    playSFX(sfxEnemyBoost);
-    event_user(0);
+    hitSomething = true;
 }
 </string>
           </argument>
@@ -356,43 +375,7 @@ specialDamageValue(objSpine, 3);
             <string>if (instance_exists(parent))
 {
     playSFX(sfxReflect);
-    event_user(0);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (instance_exists(parent))
-{
-    f = instance_create(x + (12 * image_xscale), y, objKnuckleSandwichDelay);
-    f.depth = depth - 5;
-    f.image_xscale = sign(image_xscale);
-    f.visible = visibleDelay;
-    with (parent)
-    {
-        xspeed = 0;
-        canMinJump = 0;
-        yspeed = -4;
-    }
-    dashTimer = 0;
+    hitSomething = true;
 }
 </string>
           </argument>

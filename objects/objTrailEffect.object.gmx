@@ -104,7 +104,9 @@ if (!global.frozen)
             <kind>1</kind>
             <string>if (drawingPlayer)
 {
-    drawTrail(costume, spriteX, spriteY, x, y, image_xscale, image_yscale, color)
+    d3d_set_fog(true, color, 0, 0);
+    drawTrail(costume, spriteX, spriteY, x, y, image_xscale, image_yscale);
+    d3d_set_fog(false, 0, 0, 0);
 }
 else
 {

@@ -159,38 +159,41 @@ if (global.damage != 0)
             }
         }
         
-        if (global.damagePopup == 1) // Damagepopup
+        if (showPopup)
         {
-            p = instance_create(x, bbox_top + 4, objDamagePopup);
-            p.depth = depth - (1 + (0.5 * instance_number(objDamagePopup)));
-            if (image_yscale < 0)
+            if (global.damagePopup == 1) // Damagepopup
             {
-                p.yspeed = 0;
-            }
-        }
-        else if (global.damagePopup == 2)
-        {
-            var yy = bbox_bottom + 8;
-            if (image_yscale > 0)
-            {
-                yy = bbox_top - 16;
-            }
-            if (!instance_exists(floatPopup))
-            {
-                floatPopup = instance_create(x, yy, objDamagePopup);
-                floatPopup.xspeed = 0;
-                floatPopup.yspeed = 0;
-                floatPopup.grav = 0;
-                floatPopup.parent = id;
-                floatPopup.jump = false;
-                floatPopup.depth = depth - 1;
-            }
-            else
-            {
-                with (floatPopup)
+                p = instance_create(x, bbox_top + 4, objDamagePopup);
+                p.depth = depth - (1 + (0.5 * instance_number(objDamagePopup)));
+                if (image_yscale < 0)
                 {
-                    damage+= global.damage;
-                    timer = 0;
+                    p.yspeed = 0;
+                }
+            }
+            else if (global.damagePopup == 2)
+            {
+                var yy = bbox_bottom - 4;
+                if (image_yscale > 0)
+                {
+                    yy = bbox_top - 4;
+                }
+                if (!instance_exists(floatPopup))
+                {
+                    floatPopup = instance_create(x, yy, objDamagePopup);
+                    floatPopup.xspeed = 0;
+                    floatPopup.yspeed = 0;
+                    floatPopup.grav = 0;
+                    floatPopup.parent = id;
+                    floatPopup.jump = false;
+                    floatPopup.depth = depth - 1;
+                }
+                else
+                {
+                    with (floatPopup)
+                    {
+                        damage+= global.damage;
+                        timer = 0;
+                    }
                 }
             }
         }

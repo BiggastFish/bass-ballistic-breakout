@@ -86,6 +86,14 @@ if (!global.lockBuster)
     || (fireHeld))
     && !playerIsLocked(PL_LOCK_SHOOT))
     {
+        isShoot = action;
+        shootStandStillLock = lockPoolRelease(shootStandStillLock);
+        if (ground)
+        {
+            xspeed = 0;
+            shootStandStillLock = lockPoolLock(localPlayerLock[PL_LOCK_MOVE]);
+        }
+
         if shootTimer < 8
         {
             if shootTimer < 1

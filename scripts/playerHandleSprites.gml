@@ -59,7 +59,7 @@ switch (AnimID)
             animNameID = 3;
         }
         
-        if (animNameID == 0) // Stand
+        if (animNameID == 0 && !isShoot) // Stand
         {
             blinkTimer += 1;
             blinkImage = ((blinkTimer mod blinkTimerMax + blinkDuration + 1)

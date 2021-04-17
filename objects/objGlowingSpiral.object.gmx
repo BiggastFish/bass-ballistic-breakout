@@ -86,7 +86,7 @@ if (!global.frozen || instance_exists(objSectionSwitcher))
         {
             distance+= (2 + (2 * (distance &gt; 64))) * canExpand;
             
-            if (global.keyShootPressed[playerID])
+            if (global.keyShootPressed[playerID] || (canExpand &amp;&amp; distance &gt;= 96))
             {
                 canExpand = !canExpand;
                 expandCount++;
@@ -104,7 +104,7 @@ if (!global.frozen || instance_exists(objSectionSwitcher))
             if (!count)
             {
                 ammoTimer++;
-                if (ammoTimer % 60 = 0)
+                if (ammoTimer mod 60 == 0)
                 {
                     if (global.ammo[playerID, global.weapon[playerID]] &gt; 0)
                     {

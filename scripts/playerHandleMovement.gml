@@ -64,13 +64,13 @@ if (!playerIsLocked(PL_LOCK_MOVE))
     {
         if (!playerIsLocked(PL_LOCK_AERIAL))
         {
-            if (!dashJumped)
+            if (dashJumped)
             {
-                xspeed = walkSpeed * xDir;
+                xspeed = slideSpeed * xDir;
             }
             else
             {
-                xspeed = slideSpeed * xDir;
+                xspeed = walkSpeed * xDir;
             }
             stepTimer = stepFrames;
         }

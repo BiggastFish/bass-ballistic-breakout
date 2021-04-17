@@ -2718,9 +2718,9 @@
     <room>rooms\lvlLivingNightmare</room>
     <room>rooms\lvlStHunger</room>
     <room>rooms\rmHighwayToHell</room>
-    <room>rooms\lvlBuryTheLight</room>
     <room>rooms\lvlTowerStage2</room>
     <room>rooms\lvlJumpKing</room>
+    <room>rooms\lvlBuryTheLight</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

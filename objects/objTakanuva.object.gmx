@@ -68,7 +68,7 @@ musicLoopSecondsEnd = 70.655;
 enemyDamageValue(objBusterShotHalfCharged, 1);
 enemyDamageValue(objBusterShotCharged, 3);
 enemyDamageValue(objYamato, 2);
-enemyDamageValue(objKnuckleSandwich, 10);
+enemyDamageValue(objKnuckleSandwich, 14);
 </string>
           </argument>
         </arguments>
@@ -166,8 +166,16 @@ if (entityCanStep())
                             }
                             else
                             {
-                                image_index = 2;
-                                phase = 2;
+                                if (lastAttack == 2 || attackCount == 1)
+                                {
+                                    image_index = 1;
+                                    phase = 4;
+                                }
+                                else
+                                {
+                                    image_index = 2;
+                                    phase = 2;
+                                }
                             }
                         }
                     }
@@ -195,14 +203,11 @@ if (entityCanStep())
                     }
                     if (ycoll &gt; 0)
                     {
-                        playSFX(sfxHoohooRock);
-                        image_index = 1;
                         xspeed = 0;
-                        dashTimer = 0;
                         stuffDone = 1
                     }
                 }
-                if (stuffDone == 1)
+                else if (stuffDone == 1)
                 {
                     if (dashTimer == 3)
                     {
@@ -218,12 +223,22 @@ if (entityCanStep())
                         stuffDone = 2;
                     }
                 }
-                if (stuffDone == 2)
+                else if (stuffDone == 2)
                 {
-                    if (dashTimer == 36)
-                    {
-                        var bass = point_direction(spriteGetXCenter(), spriteGetYCenter(), 
+                    var bass = point_direction(spriteGetXCenter(), spriteGetYCenter(), 
                         tx, ty)
+                    if (dashTimer == 30)
+                    {
+                        playSFX(sfxSharkLaser);
+                        for (p = -1; p &lt;= 1; p++)
+                        {
+                            dorb = instance_create(x, y, objTakanuvaGlowingSpiral);
+                            dorb.accel = false;
+                            dorb.dir = bass + (21 * p);
+                        }
+                    }
+                    if (dashTimer == 74)
+                    { 
                         playSFX(sfxCannonShoot);
                         b = instance_create(x, y, objTakanuvaKolhii);
                         b.image_xscale = image_xscale;
@@ -231,24 +246,21 @@ if (entityCanStep())
                         b.yspeed = -sin(degtorad(bass)) * 6;
                         b.ty = ty;
                     }
-                    if (dashTimer &lt; 48)
+                    if (dashTimer &lt; 86)
                     {
                         image_index = 6 + (dashTimer div 4) mod 2;
                     }
-                    if (dashTimer == 48)
+                    if (dashTimer == 86)
                     {
                         image_index = 0;
                         grav = 0.25;
                     }
                     if (ycoll &gt; 0)
                     {
-                        playSFX(sfxHoohooRock);
-                        image_index = 1;
                         stuffDone = 3;
-                        dashTimer = 0;
                     }
                 }
-                if (stuffDone == 3 &amp;&amp; dashTimer == 3)
+                else if (stuffDone == 3 &amp;&amp; dashTimer &gt;= 3)
                 {
                     image_index = 0;
                     stuffDone = 0;
@@ -273,9 +285,9 @@ if (entityCanStep())
                         xspeed = 2.5 * image_xscale;
                     }
                 }
-                if (stuffDone == 1)
+                else if (stuffDone == 1)
                 {
-                    if (dashTimer % 6 == 0)
+                    if (dashTimer mod 6 == 0)
                     {
                         a = instance_create(x, y, objTrailEffect);
                         a.sprite_index = sprite_index;
@@ -290,7 +302,7 @@ if (entityCanStep())
                         stuffDone = 2;
                     }
                 }
-                if (stuffDone == 2)
+                else if (stuffDone == 2)
                 {
                     if (xspeed != 0)
                     {
@@ -303,7 +315,7 @@ if (entityCanStep())
                         dashTimer = 0;
                     }
                 }
-                if (stuffDone == 3)
+                else if (stuffDone == 3)
                 {
                     calibrateDirection();
                     if (dashTimer &gt;= 5)
@@ -332,6 +344,41 @@ if (entityCanStep())
                     attackCount++;
                 }
                 break;
+            case 4: // triple orb
+                if (dashTimer == 7)
+                {
+                    image_index = 2;
+                    calibrateDirection();
+                }
+                if (dashTimer = 14)
+                {
+                    image_index = 1;
+                    playSFX(sfxSharkLaser);
+                    for (l = 1; l &lt;= 3; l++)
+                    {
+                        orb = instance_create(x, y, objTakanuvaGlowingSpiral);
+                        orb.dir = (180 * (image_xscale &lt; 0)) + ((30 * l) * image_xscale);
+                        orb.count = l
+                        orb.depth = depth + 2;
+                    }
+                }
+                if (dashTimer == 28)
+                {
+                    image_index = 0;
+                }
+                if (dashTimer &gt; 28)
+                {
+                    calibrateDirection();
+                }
+                if (dashTimer &gt;= 108)
+                {
+                    phase = 0;
+                    stuffDone = 0;
+                    dashTimer = 0;
+                    lastAttack = 4;
+                    attackCount++;
+                }
+                break;
             case 5: // mask shine
                 if (!stuffDone)
                 {
@@ -343,15 +390,12 @@ if (entityCanStep())
                     }
                     if (ycoll &gt; 0)
                     {
-                        image_index = 1;
-                        playSFX(sfxHoohooRock);
                         xspeed = 0;
                         x = yeah;
-                        dashTimer = 0;
                         stuffDone = 1;
                     }
                 }
-                if (stuffDone == 1)
+                else if (stuffDone == 1)
                 {
                     if (dashTimer == 7)
                     {
@@ -363,14 +407,16 @@ if (entityCanStep())
                         image_index = 0;
                         var dope = 0, img = 0;
                         if (tx &lt;= x)
+                        {
                             dope = 2;
+                        }
                         img = irandom(2) + dope;
                         l = instance_create(x, y, objTakanuvaShine);
                         l.image_index = img;
                         l.parent = id;
                     }
                 }
-                if (stuffDone == 2)
+                else if (stuffDone == 2)
                 {
                     if (dashTimer == 20)
                     {
@@ -381,8 +427,94 @@ if (entityCanStep())
                     }
                 }
                 break;
+            case 6: // my bones!!!!! (Knuckle Sandwich reaction)
+                if (!stuffDone)
+                {
+                    if (ycoll &gt; 0)
+                    {
+                        playSFX(sfxSharkLaser);
+                        for (l = -2; l &lt;= 2; l++)
+                        {
+                            if (l != 0)
+                            {
+                                orb = instance_create(x, y, objTakanuvaGlowingSpiral);
+                                orb.count = 1;
+                                orb.dir = 90 + (45 * l);
+                                orb.spd = 4;
+                                orb.depth = depth + 2;
+                            }
+                        }
+                        image_index = 1;
+                        xspeed = 0;
+                        dashTimer = 0;
+                        stuffDone = 1;
+                    }
+                }
+                else
+                {
+                    if (dashTimer == 7)
+                    {
+                        image_index = 0;
+                    }
+                    if (dashTimer &gt; 7)
+                    {
+                        calibrateDirection();
+                    }
+                    if (dashTimer &gt;= 45)
+                    {
+                        stuffDone = 0;
+                        dashTimer = 0;
+                        phase = 0;
+                    }
+                }
+                break;
+        }
+        if (ycoll &gt; 0)
+        {
+            playSFX(sfxHoohooRock);
+            image_index = 1;
+            dashTimer = 0;
         }
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="21">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>playSFX(sfxEnemyHit);
+if (other.object_index == objKnuckleSandwich)
+{
+    with (prtEnemyProjectile)
+    {
+        instance_destroy();
+    }
+    image_xscale = -sign(other.image_xscale);
+    image_index = 2;
+    grav = 0.25;
+    yspeed = -3;
+    xspeed = sign(other.image_xscale) * 1.4;
+    stuffDone = 0;
+    dashTimer = 0;
+    lastAttack = phase;
+    phase = 6;
 }
 </string>
           </argument>
@@ -407,26 +539,26 @@ if (entityCanStep())
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-with (objPerfumaVine)
-{
-    instance_create(x, y, objExplosion);
-    instance_destroy();
-}
 with (prtEnemyProjectile)
 {
+    instance_destroy();
+}
+with (objTakanuvaKolhii)
+{
     instance_create(x, y, objExplosion);
     instance_destroy();
 }
-with (objParallax)
-    xspeed = 0;
-m = instance_create(x, y, objEnemyBullet);
+with (objTakanuvaGlowingSpiral)
+{
+    instance_create(x, y, objExplosion);
+    instance_destroy();
+}
+m = instance_create(x, y, objGravEffect);
 m.image_xscale = image_xscale;
 m.sprite_index = sprite_index;
 m.yspeed = -3;
 m.xspeed = 2 * image_xscale + ((-3 * (abs(scrollSpeed) &lt; 1.4)) * image_xscale);
-m.grav = .2;
-m.contactDamage = 0;
-m.reflectable = 0;
+m.grav = 0.2;
 </string>
           </argument>
         </arguments>

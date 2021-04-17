@@ -78,6 +78,8 @@ shiftVisible = 0;
 //@cc If set to true, depth modulating will be disabled for this object.
 noFlicker = false;
 
+// if false, damage popups for this object won't appear regardless of global.damagePopup's value
+showPopup = true;
 floatPopup = noone;
 
 respawnRange = 4; //@cc distance beyond edge of view at which entity spawns if dead. Set to -1 to make infinite

@@ -33,6 +33,7 @@ xspeed = (irandom_range(-100, 100) * 0.02) * 0.5;
 grav = 0.1;
 
 timer = 0;
+yOff = 0;
 jump = true;
 parent = noone;
 followParent = true;
@@ -76,11 +77,15 @@ str = "0";
             x = parent.x;
             if (parent.image_yscale &gt; 0)
             {
-                y = parent.bbox_top - 16;
+                y = parent.bbox_top - (4 + yOff);
             }
             else
             {
-                y = parent.bbox_bottom + 8;
+                y = parent.bbox_bottom - 4 + yOff;
+            }
+            if (yOff &lt; 12)
+            {
+                yOff+= 2;
             }
         }
     }
@@ -88,8 +93,8 @@ str = "0";
     {
         l = instance_create(x, y, objSingleLoopEffect);
         l.depth = depth;
-        l.image_speed = 3/5;
-        l.sprite_index = sprDamagePopupFade
+        l.image_speed = 5/7;
+        l.sprite_index = sprDamagePopupFade;
         instance_destroy();
     }
 }

@@ -31,7 +31,6 @@ contactDamage = 3;
 canHit = 0;
 grav = 0;
 
-respawn = 0;
 init = 1;
 ty = y;
 </string>

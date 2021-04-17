@@ -9,8 +9,7 @@ var costume = argument[0],
     _x = argument[3],
     _y = argument[4],
     _xscale = argument[5],
-    _yscale = argument[6],
-    _dCol = argument[7];
+    _yscale = argument[6];
 
 /*var SquareSize = 48;
 
@@ -34,4 +33,4 @@ var _wh = SquareSize - (off * 2);
 _x -= (_wh * 0.5 * _xscale);
 _y -= (((_wh * 0.5) - 4) * _yscale);
 
-draw_sprite_part_ext(costume, 4, _l, _t, _wh, _wh, _x, _y, _xscale, _yscale, _dCol, image_alpha);
+draw_sprite_part_ext(costume, 0, _l, _t, _wh, _wh, _x, _y, _xscale, _yscale, image_blend, image_alpha);
