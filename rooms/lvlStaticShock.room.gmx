@@ -14,7 +14,7 @@
 with (objBossDoor) isTile = 1;
 tile_layer_hide(1000020);
 tile_layer_hide(1000035);
-if (global.checkpointX &lt; 2448)
+if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
 {
     with (objBackgroundFilter)
     {
