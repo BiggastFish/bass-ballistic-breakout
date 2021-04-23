@@ -459,6 +459,8 @@ else if (global.switchingSections)
                     i.contactDamage = 2;
                     i.speed = 5;
                     i.sprite_index = sprBassBullet;
+                    i.image_index = (2 * (z != 0)) + (1 * 
+                    ((z == -1 &amp;&amp; image_xscale &gt; 0) || (z == 1 &amp;&amp; image_xscale &lt; 0)))
                     i.direction = 0;
             
                     if (image_xscale &lt; 0)

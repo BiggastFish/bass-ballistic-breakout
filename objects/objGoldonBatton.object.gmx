@@ -92,10 +92,10 @@ if (entityCanStep())
             }
             break;
         case 2:
-            if (actionTimer = 0 &amp;&amp; instance_exists(target))
+            if (actionTimer == 0 &amp;&amp; instance_exists(target))
             {
                 yspeed = 0;
-                move_towards_point(target.x, target.y + 8, 0.5);
+                move_towards_point(target.x, target.y + 8, 0.6);
             }
             break;
     }
@@ -153,11 +153,10 @@ else
     for (i = -1; i &lt; 2; i+= 2)
     {
         m = instance_create(x + (8 * i), y - 6, objEnemyBullet);
-        m.xspeed = .8 * i;
+        m.xspeed = 0.8 * i;
         m.yspeed = -3;
-        m.grav = .25;
-        m.image_xscale = i;
-        m.sprite_index = sprGoldonBattonDebris;
+        m.grav = 0.25;
+        m.sprite_index = sprGorudokuroGold;
     }
 }
 </string>

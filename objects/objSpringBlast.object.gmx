@@ -30,7 +30,7 @@
 contactDamage = 1;
 
 blockCollision = 1;
-grav = .25;
+grav = 0.25;
 
 explodeNow = 0;
 bouncesLeft = 1;
@@ -108,7 +108,7 @@ if (!global.frozen)
     if (explodeNow)
     {
         timer--;
-        image_index = 1 + ((timer / 4) % 2);
+        image_index = 1 + ((timer / 4) mod 2);
         if (!timer)
             event_user(0);
     }

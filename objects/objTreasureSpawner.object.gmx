@@ -38,9 +38,11 @@ despawnRange = -1;
 timerStart = 0;
 timer = timerStart;
 timerMax = 120;
+timerReset = 0;
 timerDelay = 7;
 shinies = 0;
 shiniesMax = 6;
+spawnDust = false;
 xDir = 0;
 yDir = 0;
 treasureSpd = 3;
@@ -71,6 +73,19 @@ treasureSpd = 3;
 if (entityCanStep())
 {
     timer++;
+    if (timer == timerMax - 20 &amp;&amp; !spawnDust)
+    {
+        r = instance_create(x + 8 + (12 * xDir), y + 8 + (12 * yDir),
+        objSingleLoopEffect);
+        r.image_angle = xDir * 90;
+        r.image_speed = 8/20;
+        if (yDir != 0)
+        {
+            r.image_yscale = yDir;
+        }
+        r.sprite_index = sprHoverSmoke;
+        spawnDust = true;
+    }
     if (timer &gt;= timerMax)
     {
         timer-= timerDelay;
@@ -82,8 +97,9 @@ if (entityCanStep())
         p.depth = 1000010;
         if (shinies &gt;= shiniesMax)
         {
-            timer = 0;
             shinies = 0;
+            spawnDust = false;
+            timer = timerReset;
         }
     }
 }

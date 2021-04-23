@@ -68,14 +68,20 @@ if (entityCanStep())
     if (manX != -1 &amp;&amp; manY != -1)
     {
         with (objSlotCoinSpawner)
+        {
             if (x == other.manX &amp;&amp; y == other.manY)
+            {
                 other.coinSp = id;
+            }
+        }
         manX = -1;
         manY = -1;
     }
     cooldownTimer-= (cooldownTimer &gt; 0);
-    if ((image_index &gt; .4 &amp;&amp; !cooldownTimer) || cooldownTimer &gt; 55)
-        image_index-= .2;
+    if ((image_index &gt; 0 &amp;&amp; !cooldownTimer) || cooldownTimer &gt; 55)
+    {
+        image_index-= 0.2;
+    }
 }
 else if (dead)
 {
@@ -106,7 +112,9 @@ else if (dead)
             <kind>1</kind>
             <string>healthpoints = 256;
 if (floor(image_index) &gt; 0)
+{
     other.guardCancel = 3;
+}
 else
 {
     image_index = 3;

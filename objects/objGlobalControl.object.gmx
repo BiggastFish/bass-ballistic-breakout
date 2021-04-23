@@ -1387,6 +1387,7 @@ depth = depthstart;
     /// Draw HUD
     for (z = 0; z &lt; global.playerCount; z += 1)
     {
+        draw_set_color(c_white);
         draw_sprite_ext(sprLifeNew, 0, dx, dy - 3, 1, 1, 0,
         c_white, hpAlph)
         if (global.weapon[z] != 0)
@@ -1465,7 +1466,8 @@ depth = depthstart;
             var display = true;
             
             // Weapons
-            if (global.weapon[z] != 0 &amp;&amp; global.weapon[z] != 10) // Weapon energy
+            if (global.weaponName[global.weapon[z]] != "BASS BUSTER" &amp;&amp; 
+            global.weaponName[global.weapon[z]] != "FORTE BUSTER") // Weapon energy
             {
                 c = round(global.ammo[z, global.weapon[z]]);
             }
@@ -1484,7 +1486,7 @@ depth = depthstart;
             
             if (display)
             {
-                if (global.weapon[z] != 0)
+                if (global.weaponName[global.weapon[z]] != "BASS BUSTER")
                 {
                     draw_sprite_ext(sprHealthbarBackground, 0, dx + 16, dy + 26, 1, 1, 0,
                         global.outlineCol[z], hpAlph)

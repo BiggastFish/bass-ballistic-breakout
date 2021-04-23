@@ -161,12 +161,12 @@ else
     default:
     case "Mega Man":
     {
-        weaponSetup("MEGA BUSTER", -1, -1, sprWeaponIconsBassBuster);
+        weaponSetup("MEGA BUSTER", -1, -1, sprWeaponIconsMegaBuster);
         break;
     }
     case "Proto Man":
     {
-        weaponSetup("PROTO BUSTER", -1, -1, sprWeaponIconsBassBuster);
+        weaponSetup("PROTO BUSTER", -1, -1, sprWeaponIconsMegaBuster);
         break;
     }
     case "Bass":
@@ -176,7 +176,7 @@ else
     }
     case "Roll":
     {
-        weaponSetup("ROLL BUSTER", -1, -1, sprWeaponIconsBassBuster);
+        weaponSetup("ROLL BUSTER", -1, -1, sprWeaponIconsMegaBuster);
         break;
     }
 }

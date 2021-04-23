@@ -72,7 +72,7 @@ despawnRange = -1;
 
 if (!global.frozen || instance_exists(objSectionSwitcher))
 {
-    image_index+= .4;
+    image_index+= 0.4;
     if (instance_exists(parent))
     {
         image_yscale = parent.image_yscale;
@@ -86,7 +86,7 @@ if (!global.frozen || instance_exists(objSectionSwitcher))
         {
             distance+= (2 + (2 * (distance &gt; 64))) * canExpand;
             
-            if (global.keyShootPressed[playerID] || (canExpand &amp;&amp; distance &gt;= 96))
+            if (global.keyShootPressed[playerID] || (canExpand &amp;&amp; distance &gt;= 80))
             {
                 canExpand = !canExpand;
                 expandCount++;
@@ -104,7 +104,7 @@ if (!global.frozen || instance_exists(objSectionSwitcher))
             if (!count)
             {
                 ammoTimer++;
-                if (ammoTimer mod 60 == 0)
+                if (ammoTimer mod 36 == 0)
                 {
                     if (global.ammo[playerID, global.weapon[playerID]] &gt; 0)
                     {
@@ -175,8 +175,6 @@ if (!global.frozen || instance_exists(objSectionSwitcher))
                 instance_create(bboxGetXCenter(), bboxGetYCenter(), objExplosion);
                 instance_destroy();
             }
-            global.ammo[playerID, global.weapon[playerID]] = max(0,
-            global.ammo[playerID, global.weapon[playerID]] - 0.1)
             break;
     }
 }

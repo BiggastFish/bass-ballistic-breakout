@@ -30,6 +30,8 @@
 healthpointsStart = 1;
 healthpoints = healthpointsStart;
 contactDamage = 2;
+respawn = false;
+showPopup = false;
 
 category = "cluster, floating";
 
@@ -75,8 +77,8 @@ if (entityCanStep())
         {
             with (other)
             {
-                if (xDir &gt; 0 &amp;&amp; x + 16 &gt;= other.bbox_right || 
-                xDir &lt; 0 &amp;&amp; x &lt;= other.bbox_left)
+                if ((xDir &gt; 0 &amp;&amp; x + 16 &gt;= other.bbox_right) || 
+                (xDir &lt; 0 &amp;&amp; x &lt;= other.bbox_left))
                 {
                     x = other.x;
                     y = other.y;
@@ -92,8 +94,8 @@ if (entityCanStep())
         {
             with (other)
             {
-                if (yDir &gt; 0 &amp;&amp; y + 16 &gt;= other.bbox_bottom || 
-                yDir &lt; 0 &amp;&amp; y &lt;= other.bbox_top)
+                if ((yDir &gt; 0 &amp;&amp; y + 16 &gt;= other.bbox_bottom) || 
+                (yDir &lt; 0 &amp;&amp; y &lt;= other.bbox_top))
                 {
                     x = other.x;
                     y = other.y;
@@ -109,8 +111,8 @@ if (entityCanStep())
         {
             with (other)
             {
-                if (xDir &gt; 0 &amp;&amp; x + 16 &gt;= other.bbox_right || 
-                xDir &lt; 0 &amp;&amp; x &lt;= other.bbox_left)
+                if ((xDir &gt; 0 &amp;&amp; x + 16 &gt;= other.bbox_right) || 
+                (xDir &lt; 0 &amp;&amp; x &lt;= other.bbox_left))
                 {
                     x = other.x;
                     y = other.y;
@@ -126,8 +128,8 @@ if (entityCanStep())
         {
             with (other)
             {
-                if (yDir &gt; 0 &amp;&amp; y + 16 &gt;= other.bbox_bottom ||
-                yDir &lt; 0 &amp;&amp; y &lt;= other.bbox_top)
+                if ((yDir &gt; 0 &amp;&amp; y + 16 &gt;= other.bbox_bottom) ||
+                (yDir &lt; 0 &amp;&amp; y &lt;= other.bbox_top))
                 {
                     x = other.x;
                     y = other.y;
@@ -151,6 +153,13 @@ if (entityCanStep())
             }
         }
     }
+
+    if ((yDir &gt; 0 &amp;&amp; y &gt;= global.sectionBottom) ||
+    (yDir &lt; 0 &amp;&amp; y + 16 &lt;= global.sectionTop) || 
+    (xDir &gt; 0 &amp;&amp; x &gt;= global.sectionRight) || 
+    (xDir &lt; 0 &amp;&amp; x + 16 &lt;= global.sectionLeft))
+        instance_destroy();
+
     xspeed = xDir * spd;
     yspeed = yDir * spd;
 }

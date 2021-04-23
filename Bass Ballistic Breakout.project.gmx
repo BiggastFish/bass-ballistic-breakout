@@ -1462,6 +1462,8 @@
         </sprites>
         <sprites name="Money Machine">
           <sprite>sprites\sprAstroZombieg</sprite>
+          <sprite>sprites\sprJumpShoot</sprite>
+          <sprite>sprites\sprJumpShootBlade</sprite>
           <sprite>sprites\sprGoldonBatton</sprite>
           <sprite>sprites\sprGoldragon</sprite>
           <sprite>sprites\sprGoldragonOrb</sprite>
@@ -2599,6 +2601,7 @@
       </objects>
       <objects name="Money Machine">
         <object>objects\objAstroZombieg</object>
+        <object>objects\objJumpShoot</object>
         <object>objects\objGoldonBatton</object>
         <object>objects\objGorudokuro</object>
         <object>objects\objGoldragon</object>
@@ -2721,6 +2724,7 @@
     <room>rooms\lvlTowerStage2</room>
     <room>rooms\lvlJumpKing</room>
     <room>rooms\lvlBuryTheLight</room>
+    <room>rooms\lvlMoneyMachineNew</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

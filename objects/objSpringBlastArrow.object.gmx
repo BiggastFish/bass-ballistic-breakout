@@ -59,7 +59,7 @@ trailTimer = 0;
 if (!global.frozen)
 {
     trailTimer++;
-    if (trailTimer % 4 = 0)
+    if (trailTimer mod 4 == 0)
     {
         a = instance_create(x, y, objTrailEffect);
         a.image_xscale = image_xscale;
