@@ -86,7 +86,7 @@
     <instance objName="objSolid" x="1312" y="688" name="inst_CAEAF814" locked="0" code="" scaleX="10" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1520" y="496" name="inst_FE5DDCD1" locked="0" code="" scaleX="1" scaleY="30" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1440" y="560" name="inst_77172D4B" locked="0" code="" scaleX="5" scaleY="1.06666672229767" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="1520" y="664" name="inst_B56036C0" locked="0" code="timerStart = 90;&#xA;timerReset = 75;&#xA;shiniesMax = 3;&#xA;xDir = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="1520" y="664" name="inst_B56036C0" locked="0" code="timerStart = 90;&#xA;timerReset = 60;&#xA;shiniesMax = 3;&#xA;xDir = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureSpawner" x="1520" y="536" name="inst_4993425F" locked="0" code="timerStart = 90;&#xA;timerReset = 35;&#xA;shiniesMax = 3;&#xA;xDir = -1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="1400" y="480" name="inst_AE3A343F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="1296" y="664" name="inst_C4880EF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -114,23 +114,24 @@
     <instance objName="objSolid" x="1520" y="1104" name="inst_BEA517CC" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1552" y="1120" name="inst_0335AA27" locked="0" code="" scaleX="5" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objJumpShoot" x="1472" y="1072" name="inst_4D857C6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="1384" y="720" name="inst_C367DEEE" locked="0" code="timerStart = 90;&#xA;timerReset = 75;&#xA;shiniesMax = 3;&#xA;yDir = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="1384" y="720" name="inst_C367DEEE" locked="0" code="timerStart = 90;&#xA;timerReset = 60;&#xA;shiniesMax = 3;&#xA;yDir = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="1416" y="960" name="inst_2E04125E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1488" y="1168" name="inst_6059E119" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1632" y="1168" name="inst_78DC0D56" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1712" y="1088" name="inst_81D2C392" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1760" y="1104" name="inst_FC08509F" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1888" y="1120" name="inst_F46F7700" locked="0" code="" scaleX="2" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="1536" y="960" name="inst_0E520141" locked="0" code="" scaleX="23" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="1416" y="1136" name="inst_2FAF5B62" locked="0" code="timerStart = 90;&#xA;timerReset = 75;&#xA;shiniesMax = 3;&#xA;yDir = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="1616" y="1144" name="inst_81CE4FCC" locked="0" code="timerStart = 90;&#xA;timerReset = 75;&#xA;shiniesMax = 3;&#xA;xDir = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="1888" y="1144" name="inst_00EF1992" locked="0" code="timerStart = 90;&#xA;timerReset = 75;&#xA;shiniesMax = 3;&#xA;xDir = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="1536" y="928" name="inst_0E520141" locked="0" code="" scaleX="23" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="1416" y="1136" name="inst_2FAF5B62" locked="0" code="timerStart = 90;&#xA;timerReset = 60;&#xA;shiniesMax = 3;&#xA;yDir = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="1616" y="1144" name="inst_81CE4FCC" locked="0" code="timerStart = 90;&#xA;timerReset = 60;&#xA;shiniesMax = 3;&#xA;xDir = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="1888" y="1144" name="inst_00EF1992" locked="0" code="timerStart = 90;&#xA;timerReset = 60;&#xA;shiniesMax = 3;&#xA;xDir = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureUp" x="1848" y="1144" name="inst_36A80E69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureUp" x="1656" y="1144" name="inst_70EEEACD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="1656" y="960" name="inst_033FA557" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="1848" y="960" name="inst_E0F5A952" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGoldonBatton" x="1808" y="1136" name="inst_970D1AF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1920" y="1168" name="inst_6FC6A60A" locked="0" code="" scaleX="8" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpShoot" x="2032" y="1072" name="inst_0AF03376" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgBasic" x="1296" y="656" w="16" h="16" xo="48" yo="32" id="11322878" name="inst_0B5609A2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -163,7 +163,8 @@ if (global.damage != 0)
         {
             if (global.damagePopup == 1) // Damagepopup
             {
-                p = instance_create(x, bbox_top + 4, objDamagePopup);
+                p = instance_create(x + (popupx * image_xscale),
+                bboxGetYCenter() - (4 * image_yscale), objDamagePopup);
                 p.depth = depth - (1 + (0.5 * instance_number(objDamagePopup)));
                 if (image_yscale < 0)
                 {
@@ -179,12 +180,14 @@ if (global.damage != 0)
                 }
                 if (!instance_exists(floatPopup))
                 {
-                    floatPopup = instance_create(x, yy, objDamagePopup);
+                    floatPopup = instance_create(x + (popupx * image_xscale), 
+                    yy + (popupy * image_yscale), objDamagePopup);
                     floatPopup.xspeed = 0;
                     floatPopup.yspeed = 0;
                     floatPopup.grav = 0;
                     floatPopup.parent = id;
                     floatPopup.jump = false;
+                    floatPopup.ysc = image_yscale;
                     floatPopup.depth = depth - 1;
                 }
                 else

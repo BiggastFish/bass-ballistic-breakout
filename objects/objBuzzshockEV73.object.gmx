@@ -36,6 +36,8 @@ hitInvun = 4;
 affectHud = 0;
 batx = 28;
 baty = 16;
+popupx = 28;
+popupy = 6;
 
 facePlayerOnSpawn = 0;
 ground = false;

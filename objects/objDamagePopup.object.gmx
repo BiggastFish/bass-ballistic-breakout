@@ -33,6 +33,9 @@ xspeed = (irandom_range(-100, 100) * 0.02) * 0.5;
 grav = 0.1;
 
 timer = 0;
+xx = x;
+yy = y;
+ysc = 1;
 yOff = 0;
 jump = true;
 parent = noone;
@@ -74,19 +77,23 @@ str = "0";
     {
         if (instance_exists(parent) &amp;&amp; !parent.dead)
         {
-            x = parent.x;
+            xx = parent.x + (parent.popupx * parent.image_xscale);
+            ysc = parent.image_yscale;
+            var parExtraY = parent.popupy * parent.image_yscale;
             if (parent.image_yscale &gt; 0)
             {
-                y = parent.bbox_top - (4 + yOff);
+                yy = parent.bbox_top - 4 + parExtraY;
             }
             else
             {
-                y = parent.bbox_bottom - 4 + yOff;
+                yy = parent.bbox_bottom - 4 + parExtraY;
             }
-            if (yOff &lt; 12)
-            {
-                yOff+= 2;
-            }
+        }
+        x = xx;
+        y = yy - (yOff * ysc);
+        if (yOff &lt; 12)
+        {
+            yOff+= 2;
         }
     }
     if (timer &gt;= 40)

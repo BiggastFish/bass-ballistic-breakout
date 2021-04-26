@@ -54,6 +54,10 @@
     <instance objName="objDefaultSpawn" x="128" y="160" name="inst_D3E2D883" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="0" y="176" name="inst_5A9CB10F" locked="0" code="" scaleX="16" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBackgroundFilter" x="0" y="0" name="inst_911C788A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="48" y="128" name="inst_E4FFBD2C" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="0" y="48" name="inst_6B0D2061" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="160" y="128" name="inst_05DF293A" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="208" y="48" name="inst_E84B6044" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tstPharoahman" x="48" y="80" w="48" h="16" xo="0" yo="112" id="11311377" name="inst_1AEC5396" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -223,6 +227,10 @@
     <tile bgName="tstPharoahman" x="208" y="208" w="48" h="32" xo="0" yo="0" id="11311558" name="inst_ADD545E8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstPharoahman" x="0" y="208" w="16" h="32" xo="32" yo="0" id="11311559" name="inst_67F0176A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstPharoahman" x="240" y="176" w="16" h="32" xo="0" yo="0" id="11311560" name="inst_CD2CE92F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstPharoahman" x="0" y="48" w="48" h="16" xo="48" yo="16" id="11322898" name="inst_93D9BC2B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstPharoahman" x="48" y="128" w="48" h="16" xo="48" yo="16" id="11322899" name="inst_677CE911" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstPharoahman" x="160" y="128" w="48" h="16" xo="48" yo="16" id="11322900" name="inst_5F0F0FBC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstPharoahman" x="208" y="48" w="48" h="16" xo="48" yo="16" id="11322901" name="inst_453FB401" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

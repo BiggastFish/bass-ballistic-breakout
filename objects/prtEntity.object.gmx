@@ -116,6 +116,8 @@ canIce = true; //@cc is it possible to ice this object (usually doesn't matter i
 canOil = true;
 batx = 0;
 baty = 0;
+popupx = 0;
+popupy = 0;
 
 invincible = false; // set this to true to make this enemy invincible no matter what
 sparkleTimer = 0;
