@@ -78,7 +78,7 @@ if (entityCanStep())
         manY = -1;
     }
     cooldownTimer-= (cooldownTimer &gt; 0);
-    if ((image_index &gt; 0 &amp;&amp; !cooldownTimer) || cooldownTimer &gt; 55)
+    if ((image_index &gt; 0.4 &amp;&amp; !cooldownTimer) || cooldownTimer &gt; 55)
     {
         image_index-= 0.2;
     }

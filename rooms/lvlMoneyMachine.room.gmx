@@ -410,10 +410,17 @@ with (objGenericStopper)
     <instance objName="objGoldMan" x="7104" y="576" name="inst_3CD02F61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCheckpointAntiEddie" x="7072" y="432" name="inst_8E3B7BB5" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="6560" y="464" name="inst_AB8D953D" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBossDoor" x="368" y="1824" name="inst_C8DAD965" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objDefaultSpawn" x="3616" y="432" name="inst_A540B8AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDefaultSpawn" x="384" y="1840" name="inst_8F0B519E" locked="0" code="respawnAnimation = 13;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
+    <tile bgName="bgBasic" x="6016" y="368" w="16" h="16" xo="48" yo="0" id="11322902" name="inst_DB63E81B" depth="1000015" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgBasic" x="6016" y="352" w="16" h="16" xo="48" yo="0" id="11322903" name="inst_686082ED" depth="1000015" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgBasic" x="6016" y="336" w="16" h="16" xo="48" yo="0" id="11322904" name="inst_1C736C48" depth="1000015" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgBasic" x="6016" y="320" w="16" h="16" xo="48" yo="0" id="11322905" name="inst_30350344" depth="1000015" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgBasic" x="6016" y="304" w="16" h="16" xo="48" yo="0" id="11322906" name="inst_8DF6FD55" depth="1000015" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgBasic" x="6016" y="288" w="16" h="16" xo="48" yo="0" id="11322907" name="inst_FE413FDF" depth="1000015" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgBasic" x="6016" y="272" w="16" h="16" xo="48" yo="0" id="11322908" name="inst_EE29CC01" depth="1000015" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgBasic" x="6016" y="256" w="16" h="16" xo="48" yo="0" id="11322910" name="inst_48D5CB60" depth="1000015" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="1792" y="1856" w="16" h="16" xo="32" yo="48" id="11311561" name="inst_905343E3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="2032" y="1856" w="16" h="16" xo="64" yo="32" id="11311563" name="inst_BB40EDD2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="2320" y="1424" w="16" h="16" xo="48" yo="0" id="11311630" name="inst_BBF0F3D1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -588,14 +595,6 @@ with (objGenericStopper)
     <tile bgName="bgBasic" x="5328" y="352" w="16" h="16" xo="48" yo="0" id="11312085" name="inst_E9D2511C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="5328" y="336" w="16" h="16" xo="48" yo="0" id="11312086" name="inst_251FAEA7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="5328" y="320" w="16" h="16" xo="48" yo="0" id="11312087" name="inst_0029D43E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgBasic" x="6016" y="368" w="16" h="16" xo="48" yo="0" id="11312088" name="inst_B34F9339" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgBasic" x="6016" y="352" w="16" h="16" xo="48" yo="0" id="11312089" name="inst_AF58C207" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgBasic" x="6016" y="336" w="16" h="16" xo="48" yo="0" id="11312090" name="inst_DC514721" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgBasic" x="6016" y="320" w="16" h="16" xo="48" yo="0" id="11312091" name="inst_3336F6FE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgBasic" x="6016" y="304" w="16" h="16" xo="48" yo="0" id="11312092" name="inst_4DD55739" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgBasic" x="6016" y="288" w="16" h="16" xo="48" yo="0" id="11312093" name="inst_BC1C52BB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgBasic" x="6016" y="272" w="16" h="16" xo="48" yo="0" id="11312094" name="inst_81C93D70" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgBasic" x="6016" y="256" w="16" h="16" xo="48" yo="0" id="11312095" name="inst_30F26EA0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="5760" y="416" w="16" h="16" xo="32" yo="48" id="11312096" name="inst_FD1B549A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="5968" y="288" w="16" h="16" xo="32" yo="48" id="11312097" name="inst_AC73E017" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="6144" y="400" w="16" h="16" xo="32" yo="48" id="11312098" name="inst_F9581BD4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -603,6 +602,8 @@ with (objGenericStopper)
     <tile bgName="bgBasic" x="6096" y="240" w="16" h="16" xo="64" yo="32" id="11312100" name="inst_14007BCC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="6240" y="240" w="16" h="16" xo="64" yo="32" id="11312101" name="inst_3534C9CA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="3344" y="720" w="16" h="16" xo="48" yo="0" id="11312108" name="inst_BAED13E6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgBasic" x="4112" y="384" w="16" h="16" xo="32" yo="48" id="11322912" name="inst_2D239D50" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgBasic" x="4208" y="256" w="16" h="16" xo="64" yo="80" id="11322913" name="inst_F402CD26" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="3584" y="240" w="16" h="16" xo="64" yo="32" id="11311931" name="inst_87EF9796" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="3584" y="256" w="16" h="16" xo="64" yo="32" id="11311932" name="inst_FA5420E6" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="3584" y="272" w="16" h="16" xo="64" yo="32" id="11311933" name="inst_267C6587" depth="15" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
