@@ -222,8 +222,11 @@ if (entityCanStep())
                 }
                 else
                     attackTimer = 0;
-                if (attackRandomiser == oldAttack)
-                    attackRandomiser = choose(1, 2, 3);
+                do {
+                attackRandomiser = choose(1, 2, 3)
+                } until 
+                attackRandomiser != oldAttack;
+
                 calibrateDirection();
                 if (attackTimer &gt;= 10)
                 {
@@ -232,103 +235,14 @@ if (entityCanStep())
                     phase = 1;
                 }
                 break;
-            case 1: // Nice Shot! (Nice Shot!)
-                if (ground)
+            case 1:
+                if (attackTimer == 12)
                 {
-                    xspeed = 0;
-                    if (shotsFired == 5)
-                    {
-                        shotsFired = 0;
-                        grav = 0.25;
-                        attackTimer = 0;
-                        phase = 2;
-                    }
-                    else if (attackTimer &gt;= 10)
-                    {
-                        image_index = 11;
-                        oilSlider = 1;
-                        grav = .25 + (.08 * shotsFired);
-                        yspeed = -sqrt(abs(2*grav*112));
-                        if (instance_exists(target))
-                            xspeed = xSpeedAim(x, y, tx, ty, yspeed, grav);
-                        else
-                            xspeed = 4 * image_xscale;
-                        shotsFired++;
-                    }
+                    image_index = 23;
                 }
-                if (!ground)
-                    calibrateDirection();
-                if (oilSlider &amp;&amp; yspeed &gt;= 0 &amp;&amp; !ground)
+                if (attackTimer == 24) // shoot oil spout
                 {
-                    oilSlider = 0;
-                    image_index = 10;
-
-                    l = instance_create(x + 8 * image_xscale, y - 2, objOilManOilShot);
-                    l.depth = depth - 5 - shotsFired;
-                    playSFX(sfxEnemyShootClassic);
-                }
-                break;
-            case 2: // Oil Slicer
-                if (ground &amp;&amp; shotsFired == 0)
-                {
-                    if (attackTimer &lt; 20)
-                    {
-                        image_index = 0;
-                        calibrateDirectionPoint(yeah);
-                    }
-                    else
-                    {
-                        grav = .18
-                        yspeed = -sqrt(abs(2*.18*64));
-                        xspeed = xSpeedAim(x, y, yeah + (80 * image_xscale),
-                        y, yspeed, .18);
-                        shotsFired = 1;
-                    }
-                }
-                if (shotsFired == 1 &amp;&amp; ycoll &gt; 0)
-                {
-                    yspeed = -sqrt(abs(2*.18*64));
-                    xspeed = 0;
-                    calibrateDirectionPoint(yeah);
-                    shotsFired = 2;
-                }
-                if (shotsFired == 2 &amp;&amp; yspeed &gt;= 0)
-                {
-                    grav = 0;
-                    yspeed = 0;
-                    shotsFired = 3;
-                    attackTimer = 0;
-                    oilSlider = 1;
-                }
-                if (shotsFired == 3)
-                {
-                    attackTimer++;
-                    if (attackTimer &lt; 20 || attackTimer == 80)
-                        image_index = 11; 
-                    if (attackTimer == 20 || attackTimer == 110)
-                    {
-                        image_index = 26;
-                        playSFX(sfxSola0Shoot);
-                    }
-                    if (attackTimer == 40 || attackTimer == 130)
-                    {
-                        image_index = 10;
-                        playSFX(sfxTenguBlade);
-                        instance_create(x + 12 * image_xscale, y + 2, objExplosion);
-                        m = instance_create(x + 4 * image_xscale, y + 10, 
-                        objOilManOilSlicer);
-                        m.image_xscale = image_xscale;
-                    }
-                    if (attackTimer == 180)
-                    {
-                        grav = .25;
-                        oilSlider = 0;
-                    }
-                    if (ground)
-                    {
-                        shotsFired = 4;
-                        attackTimer = 0;
-                    }
+                    image_index = 25;
                 }
                 break;
             case 3: // oil slider start 

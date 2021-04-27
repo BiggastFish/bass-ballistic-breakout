@@ -1173,6 +1173,10 @@
         <sprite>sprites\sprSuperArmBlock</sprite>
         <sprite>sprites\sprSuperCutter</sprite>
         <sprite>sprites\sprSuperCutterSpawner</sprite>
+        <sprite>sprites\sprWaterPillarH</sprite>
+        <sprite>sprites\sprWaterPillar</sprite>
+        <sprite>sprites\sprOilManPillar</sprite>
+        <sprite>sprites\sprWaterPump</sprite>
       </sprites>
       <sprites name="MM2">
         <sprite>sprites\sprCrashLift</sprite>
@@ -2328,6 +2332,7 @@
         <objects name="Don't Use">
           <object>objects\objSuperCutter</object>
         </objects>
+        <object>objects\objWaterJet</object>
       </objects>
       <objects name="MM2">
         <objects name="Crash Lifts">
