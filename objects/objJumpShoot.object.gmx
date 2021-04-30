@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-healthpointsStart = 4;
+healthpointsStart = 6;
 healthpoints = healthpointsStart;
 contactDamage = 3;
 stayDefeated = true;
@@ -77,7 +77,7 @@ if (entityCanStep())
         calibrateDirection();
         if (instance_exists(target))
         {
-            if (abs(tx - x) &lt;= 20)
+            if (abs(tx - x) &lt;= 42)
             {
                 playSFX(sfxShadowBlade);
                 canHit = true;
@@ -123,11 +123,11 @@ if (entityCanStep())
         {
             jumpTimer++
             calibrateDirection();
-            if (jumpTimer &gt;= 45)
+            if (jumpTimer &gt;= 35)
             {
                 playSFX(sfxShadowBlade);
                 yspeed = -6;
-                xspeed = arcCalcXspeed(-6, 0.25, x, y, tx, ty)
+                xspeed = /*arcCalcXspeed(-6, 0.25, x, y, tx, ty)*/ 0;
                 image_index = 1;
             }
         }
