@@ -52,7 +52,7 @@ if (dieToSpikes)
 } 
 
 // jumpthrough objects
-if (checkForTopSolid)
+if (checkForTopSolid && object_index != objBusterShot)
 {
     with (objTopSolid)
     {

@@ -64,6 +64,11 @@ dieToSpikes = true;
             <kind>1</kind>
             <string>event_inherited();
 
+if (xcoll != 0)
+{
+    xspeed = xcoll;
+}
+
 if (entityCanStep())
 {
     var tx = x + 4 * image_xscale, ty = y;
@@ -127,7 +132,6 @@ if (entityCanStep())
             {
                 playSFX(sfxShadowBlade);
                 yspeed = -6;
-                xspeed = /*arcCalcXspeed(-6, 0.25, x, y, tx, ty)*/ 0;
                 image_index = 1;
             }
         }
