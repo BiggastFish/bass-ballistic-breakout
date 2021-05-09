@@ -123,6 +123,7 @@ if (!global.lockBuster)
         {
             i.image_index = action - (1 + (action > 1));
             i.sprite_index = sprBassBullet;
+            i.checkForTopSolid = false // boolean, actually destroyed on top-solids when moving downwards; handled in Step
             i.dir = 0;
             i.contactDamage = 1 + (dashJumped);
 
