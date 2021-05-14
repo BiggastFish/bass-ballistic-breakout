@@ -241,7 +241,7 @@ with (objGenericStopper)
     <instance objName="objRightScrollingNES" x="3328" y="1200" name="inst_53402377" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHellcartSpawner" x="3104" y="1344" name="inst_D9E03B16" locked="0" code="timerStart = 112;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGoldonBatton" x="3264" y="1376" name="inst_24038346" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objHellcartSpawner" x="3584" y="1296" name="inst_7FA4DC89" locked="0" code="timerStart = 90;&#xA;timerMax = 90;&#xA;" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objHellcartSpawner" x="3584" y="1296" name="inst_7FA4DC89" locked="0" code="timerStart = 90;&#xA;timerMax = 90;" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGenericStopper" x="3568" y="1264" name="inst_6AB8B9BA" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="3536" y="1072" name="inst_04B65F82" locked="0" code="" scaleX="1" scaleY="12" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3568" y="352" name="inst_ED7D1669" locked="0" code="" scaleX="2" scaleY="57" colour="4294967295" rotation="0"/>

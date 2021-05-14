@@ -40,6 +40,8 @@ jumpTimer = 0;
 hasFired = false;
 chillin = true;
 dieToSpikes = true;
+
+minRange = 42; //change to change how big the range of activation is
 </string>
           </argument>
         </arguments>
@@ -82,7 +84,7 @@ if (entityCanStep())
         calibrateDirection();
         if (instance_exists(target))
         {
-            if (abs(tx - x) &lt;= 42)
+            if (abs(tx - x) &lt;= minRange)
             {
                 playSFX(sfxShadowBlade);
                 canHit = true;
