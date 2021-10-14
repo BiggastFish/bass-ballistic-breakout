@@ -279,7 +279,7 @@ if (!global.frozen)
         timer+= 4;
         yOff = sin(degtorad(timer)) * 2;
         ammoTimer++;
-        if (ammoTimer % 40 == 0)
+        if (ammoTimer mod 40 == 0)
         {
             if (global.ammo[playerID, global.weapon[playerID]] &gt; 0)
             {

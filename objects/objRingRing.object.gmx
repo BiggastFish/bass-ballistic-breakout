@@ -36,13 +36,12 @@ category = "cluster, floating";
 grav = 0;
 blockCollision = 0;
 
-facePlayerOnSpawn = true;
-
 // Enemy specific code
-image_speed = 0.15;
-
-megax = -1;
-megay = -1;
+zoomTimer = 20;
+goBonkers = false;
+slowSpd = 0.15;
+fastSpd = 0.3;
+imgSpd = slowSpd;
 
 enemyDamageValue(objGlowingSpiral, 1);
 </string>
@@ -71,41 +70,43 @@ enemyDamageValue(objGlowingSpiral, 1);
 
 if (entityCanStep())
 {
-    image_speed = 0.15;
-    megax = -1;
+    var xx = x, yy = y;
     if (instance_exists(target))
     {
-        megax = bboxGetXCenterObject(target);
-        megay = bboxGetYCenterObject(target);
+        xx = bboxGetXCenterObject(target);
+        yy = bboxGetYCenterObject(target);
     }
-    if (megax != -1)
+    if (!goBonkers)
     {
-        if (speed == 0)
+        zoomTimer++;
+        if (zoomTimer &gt;= 45)
         {
-            speed = 0.5;
+            imgSpd = fastSpd;
         }
-        correctDirection(point_direction(bboxGetXCenter(), bboxGetYCenter(), megax, megay), 2);
+        if (zoomTimer == 70)
+        {
+            zoomTimer = 0;
+            goBonkers = true;
+        }
     }
+    else
+    {
+        mp_linear_step(xx, yy, 1.25, 0);
+    }
+    image_index+= imgSpd;
 }
-else if (!global.frozen)
+else if (dead)
 {
-    if (iceTimer &gt; 0)
-    {
-        image_speed = 0;
-        speed = 0;
-    }
-    if (dead)
-    {
-        megax = -1;
-        megay = -1;
-    }
+    zoomTimer = 20;
+    imgSpd = slowSpd;
+    goBonkers = false;
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="25">
+    <event eventtype="7" enumb="18">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -122,23 +123,12 @@ else if (!global.frozen)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// spawn event
-event_inherited();
-
-if (spawned)
+            <string>goBonkers = false;
+imgSpd = slowSpd;
+with (object_index)
 {
-    image_index = 0;
-    if (instance_exists(target))
-    {
-        direction = 60;
-        if (image_xscale == -1)
-        {
-            direction += 60;
-        }
-        
-        megax = bboxGetXCenterObject(target);
-        megay = bboxGetYCenterObject(target);
-    }
+    goBonkers = false;
+    imgSpd = slowSpd;
 }
 </string>
           </argument>

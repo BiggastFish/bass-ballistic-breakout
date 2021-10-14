@@ -30,15 +30,19 @@
 healthpointsStart = 256; // placeholder
 healthpoints = healthpointsStart;
 contactDamage = 3;
-grav = .25 * image_yscale;
+grav = 0.25 * image_yscale;
 affectHud = false;
+undamageable = true;
+respawnRange = -1;
+despawnRange = -1;
 
 // Enemy specific code
 imageSpd = image_speed;
 stopped = false;
 alarmStop = -1;
 
-init = 1;
+init = true;
+playSound = true;
 moveSpd = 1;
 sparkXscale = choose(-1, 1);
 startDir = choose(-1, 1);
@@ -47,6 +51,8 @@ img = 0;
 length = 0;
 laserTop = x;
 laserBottom = x;
+
+killObj[1] = objKnuckleSandwich;
 </string>
           </argument>
         </arguments>
@@ -163,6 +169,11 @@ if (entityCanStep())
     {
         xspeed = 0;
     }
+    if (playSound)
+    {
+        playSound = false;
+        playSFX(sfxBlockDevilLaser)
+    }
 
 } 
 else 
@@ -177,6 +188,7 @@ else
         alarmStop = 0;
         stopped = 0;
         img = 0;
+        playSound = true;
     }
 }
 </string>
@@ -201,12 +213,10 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarmStop = 90;
+            <string>event_inherited();
+alarmStop = 90;
 stopped = true;
 if (img &gt; 2) img = 2;
-playSFX(sfxEnemyHit);
-if (other.object_index != objYamato &amp;&amp; other.object_index != objKnuckleSandwich) 
-healthpoints = 256;
 </string>
           </argument>
         </arguments>

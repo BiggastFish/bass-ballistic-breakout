@@ -104,7 +104,7 @@ if (!global.frozen || instance_exists(objSectionSwitcher))
             if (!count)
             {
                 ammoTimer++;
-                if (ammoTimer mod 36 == 0)
+                if (ammoTimer mod 36 == 0 &amp;&amp; ammoTimer &gt; 36)
                 {
                     if (global.ammo[playerID, global.weapon[playerID]] &gt; 0)
                     {
@@ -206,7 +206,7 @@ global.ammo[playerID, global.weapon[playerID]] &gt; 0)
 {
     for (g = 0; g &lt; 10; g++)
     {
-        i = fireWeapon(0, 0, objGlowingSpiral, 10, 1 * (g = -1), 0, 0);
+        i = fireWeapon(0, 0, objGlowingSpiral, 10, 2 * (g == 0), 0, 0);
         if (i)
         {
             playSFX(sfxWaterShield2);

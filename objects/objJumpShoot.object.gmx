@@ -41,7 +41,8 @@ hasFired = false;
 chillin = true;
 dieToSpikes = true;
 
-minRange = 42; //change to change how big the range of activation is
+minRange = 42; // range of activation
+jumpSpd = -6; // yspeed for stationary jumps
 </string>
           </argument>
         </arguments>
@@ -86,7 +87,7 @@ if (entityCanStep())
         {
             if (abs(tx - x) &lt;= minRange)
             {
-                playSFX(sfxShadowBlade);
+                playSFX(sfxEnemyBoost);
                 canHit = true;
                 canDamage = true;
                 grav = 0.25;
@@ -132,8 +133,8 @@ if (entityCanStep())
             calibrateDirection();
             if (jumpTimer &gt;= 35)
             {
-                playSFX(sfxShadowBlade);
-                yspeed = -6;
+                playSFX(sfxCannonShoot);
+                yspeed = jumpSpd;
                 image_index = 1;
             }
         }

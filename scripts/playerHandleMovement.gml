@@ -21,10 +21,7 @@ if (!playerIsLocked(PL_LOCK_MOVE))
         {
             if (stepTimer < stepFrames)
             {
-                if (xspeed == 0)
-                {
-                    xspeed = stepSpeed * image_xscale;
-                }
+                shiftObject((xspeed == 0 && stepTimer == 0) * xDir, 0, true);
                 stepTimer += 1;
             }
             else

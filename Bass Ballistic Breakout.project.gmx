@@ -1519,8 +1519,8 @@
         </sprites>
         <sprites name="St. Hunger">
           <sprite>sprites\sprHotDogMan</sprite>
-          <sprite>sprites\sprHotDogManFireball</sprite>
           <sprites name="Projectiles">
+            <sprite>sprites\sprHotDogManFirebar</sprite>
             <sprite>sprites\sprHotDogManMissile</sprite>
             <sprite>sprites\sprHotDogManBouncingBall</sprite>
             <sprite>sprites\sprHotDogManSlash</sprite>
@@ -2663,7 +2663,7 @@
         <objects name="Boss">
           <object>objects\objHotDogMan</object>
           <objects name="Projectiles">
-            <object>objects\objHotDogManFireball</object>
+            <object>objects\objHotDogManFirebar</object>
             <object>objects\objHotDogManBouncingBall</object>
             <object>objects\objHotDogManMissile</object>
             <object>objects\objHotDogManSlash</object>

@@ -72,7 +72,7 @@ if (entityCanStep())
         if (ground) 
         {
             img++
-            image_index = (img / 2) % 2;
+            image_index = (img / 2) mod 2;
             if (checkFall(16 * image_xscale))
             {
                 yspeed = -4;
@@ -87,6 +87,7 @@ if (entityCanStep())
             if (insideView())
             {
                 playSFX(sfxPowerStomp);
+                depth = 0;
                 image_index = 3;
                 blockCollision = 0;
                 yspeed = -3;

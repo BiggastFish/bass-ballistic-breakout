@@ -11,7 +11,7 @@
   <colour>32896</colour>
   <showcolour>-1</showcolour>
   <code>with (objSoftBorderHor) deactivationDistance = 4;
-with (objBossDoor) isTile = 1;
+with (objBossDoor) isTile = true;
 tile_layer_hide(1000020);
 tile_layer_hide(1000035);
 if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
@@ -68,7 +68,7 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objTossMachine" x="688" y="592" name="inst_BDD85B41" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="848" y="656" name="inst_EF092E1A" locked="0" code="" scaleX="10" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="752" y="688" name="inst_C54E8289" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="1008" y="352" name="inst_3984A901" locked="0" code="" scaleX="2" scaleY="23" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="1008" y="336" name="inst_3984A901" locked="0" code="" scaleX="2" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="752" y="672" name="inst_C61686B3" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTossMachine" x="944" y="640" name="inst_B913E521" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="960" y="448" name="inst_69C369A7" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
@@ -76,27 +76,27 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objSolid" x="752" y="208" name="inst_983738AE" locked="0" code="" scaleX="2" scaleY="15" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="752" y="448" name="inst_354DAC1C" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="784" y="400" name="inst_504DF4AD" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="944" y="336" name="inst_0B0FD36B" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="944" y="336" name="inst_0B0FD36B" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVerticalScrolling" x="768" y="480" name="inst_F3F28DCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="976" y="448" name="inst_EF30F7C1" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRingRing" x="992" y="384" name="inst_C6C1754E" locked="0" code="itemDrop = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingRing" x="992" y="384" name="inst_C6C1754E" locked="0" code="itemDrop = -1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRingRing" x="928" y="304" name="inst_326EB2B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGabyoallightning" x="1200" y="416" name="inst_9C2F64DC" locked="0" code="startDir = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGabyoallightning" x="1200" y="416" name="inst_9C2F64DC" locked="0" code="startDir = -1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1136" y="208" name="inst_DABFCE42" locked="0" code="" scaleX="9" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="1088" y="432" name="inst_4F945B18" locked="0" code="" scaleX="8" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="1264" y="272" name="inst_FF55EEC8" locked="0" code="" scaleX="1" scaleY="14" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="1216" y="336" name="inst_6F86165B" locked="0" code="" scaleX="3" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="1088" y="432" name="inst_4F945B18" locked="0" code="" scaleX="12" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="1264" y="272" name="inst_FF55EEC8" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="1216" y="336" name="inst_6F86165B" locked="0" code="" scaleX="3" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBoltSmall" x="1232" y="320" name="inst_F6533271" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBoltSmall" x="1248" y="320" name="inst_AE62A1EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1040" y="672" name="inst_F12F298F" locked="0" code="" scaleX="5" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1120" y="704" name="inst_BFFBC701" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1168" y="640" name="inst_6E6CE9E6" locked="0" code="" scaleX="6" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="objGabyoallightning" x="1200" y="624" name="inst_C0225B2F" locked="0" code="startDir = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGabyoallightning" x="1200" y="624" name="inst_C0225B2F" locked="0" code="startDir = -1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1120" y="688" name="inst_0506E086" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1264" y="688" name="inst_F3A247F4" locked="0" code="" scaleX="20" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1264" y="704" name="inst_F47067A3" locked="0" code="" scaleX="22" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1296" y="592" name="inst_D51FF29B" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRingRing" x="848" y="352" name="inst_43025B92" locked="0" code="itemDrop = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingRing" x="848" y="352" name="inst_43025B92" locked="0" code="itemDrop = -1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1360" y="560" name="inst_209A2DA2" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objTossMachine" x="1456" y="576" name="inst_77714AD5" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRingRing" x="1728" y="640" name="inst_9080FC65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -124,16 +124,16 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objSolid" x="1888" y="944" name="inst_100A4471" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2000" y="704" name="inst_27C89536" locked="0" code="" scaleX="6" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1888" y="928" name="inst_295E3C91" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGabyoallightning" x="1968" y="768" name="inst_9968C7D5" locked="0" code="startDir = -1;&#xA;" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
+    <instance objName="objGabyoallightning" x="1968" y="768" name="inst_9968C7D5" locked="0" code="startDir = -1;" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2096" y="720" name="inst_5468F226" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2112" y="816" name="inst_EE05041C" locked="0" code="" scaleX="25" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTossMachine" x="2240" y="800" name="inst_8A6DAADC" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2048" y="912" name="inst_C163CEB6" locked="0" code="" scaleX="5" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2128" y="928" name="inst_D3D340C9" locked="0" code="" scaleX="14" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2352" y="912" name="inst_B06D07DB" locked="0" code="" scaleX="8" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objGabyoallightning" x="2208" y="912" name="inst_AADB4814" locked="0" code="startDir = -1;&#xA;respawnRange = -1;&#xA;despawnRange = -1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGabyoallightning" x="2208" y="912" name="inst_AADB4814" locked="0" code="startDir = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2224" y="912" name="inst_646FA72D" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGabyoallightning" x="2336" y="912" name="inst_5E7191D4" locked="0" code="startDir = -1;&#xA;respawnRange = -1;&#xA;despawnRange = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGabyoallightning" x="2336" y="912" name="inst_5E7191D4" locked="0" code="startDir = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2544" y="672" name="inst_22289628" locked="0" code="" scaleX="2" scaleY="27" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2416" y="688" name="inst_05CBE413" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2288" y="976" name="inst_E9B21939" locked="0" code="" scaleX="2" scaleY="16" colour="4294967295" rotation="0"/>
@@ -155,8 +155,8 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objSolid" x="2688" y="688" name="inst_75659CA6" locked="0" code="" scaleX="7" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2736" y="864" name="inst_6F4C7558" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objVerticalScrolling" x="2560" y="960" name="inst_8CDA5959" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGabyoallightning" x="2768" y="800" name="inst_EE527976" locked="0" code="startDir = 1;&#xA;despawnRange = -1;&#xA;" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
-    <instance objName="objGabyoallightning" x="2704" y="880" name="inst_DDC3BED2" locked="0" code="startDir = 1;&#xA;despawnRange = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGabyoallightning" x="2768" y="800" name="inst_EE527976" locked="0" code="startDir = 1;&#xA;" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
+    <instance objName="objGabyoallightning" x="2704" y="880" name="inst_DDC3BED2" locked="0" code="startDir = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2912" y="896" name="inst_5209F3EC" locked="0" code="" scaleX="2" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2944" y="864" name="inst_D9DAA907" locked="0" code="" scaleX="2" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2976" y="832" name="inst_185A972B" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
@@ -164,7 +164,7 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objRingRing" x="3040" y="896" name="inst_A2EED4D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3088" y="848" name="inst_F6DE04A8" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3136" y="880" name="inst_F715966E" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRingRing" x="3200" y="912" name="inst_8B0B50DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRingRing" x="3120" y="928" name="inst_8B0B50DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3136" y="864" name="inst_824F78F3" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTossMachine" x="3248" y="864" name="inst_4370209A" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3296" y="848" name="inst_F6FDEE6E" locked="0" code="" scaleX="3" scaleY="22" colour="4294967295" rotation="0"/>
@@ -185,12 +185,12 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objSolid" x="3680" y="1104" name="inst_B91F5FC9" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3680" y="928" name="inst_CAF0750B" locked="0" code="" scaleX="1" scaleY="11" colour="4294967295" rotation="0"/>
     <instance objName="objSparkSnakey" x="3720" y="1088" name="inst_E658638A" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="3808" y="1072" name="inst_CA12FCA1" locked="0" code="" scaleX="6" scaleY="8" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="3840" y="1072" name="inst_CA12FCA1" locked="0" code="" scaleX="4" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objSparkSnakey" x="4008" y="1168" name="inst_D026AC72" locked="0" code="" scaleX="-1" scaleY="-1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="3904" y="1072" name="inst_137C9B39" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="3904" y="1072" name="inst_137C9B39" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4336" y="896" name="inst_4DEF4D42" locked="0" code="" scaleX="2" scaleY="26" colour="4294967295" rotation="0"/>
     <instance objName="objTossMachine" x="3824" y="1040" name="inst_A64208DE" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="4000" y="1088" name="inst_A32E071C" locked="0" code="" scaleX="1" scaleY="3.20000004768372" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="4000" y="1072" name="inst_A32E071C" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objChargingChester" x="4160" y="1056" name="inst_34154C56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4080" y="1136" name="inst_9FEA3824" locked="0" code="" scaleX="2" scaleY="19" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4112" y="1104" name="inst_999AF0D3" locked="0" code="" scaleX="2" scaleY="8" colour="4294967295" rotation="0"/>
@@ -203,12 +203,12 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objSparkSnakey" x="4312" y="1392" name="inst_97CA5B9D" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4304" y="1312" name="inst_C599D7DB" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4592" y="1216" name="inst_9655F4FB" locked="0" code="" scaleX="2" scaleY="14" colour="4294967295" rotation="0"/>
-    <instance objName="objGabyoallightning" x="4576" y="1232" name="inst_FA2E60A7" locked="0" code="startDir = -1;&#xA;" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
+    <instance objName="objGabyoallightning" x="4576" y="1232" name="inst_FA2E60A7" locked="0" code="startDir = -1;" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4432" y="1216" name="inst_5C543427" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4384" y="1152" name="inst_EB58BAFE" locked="0" code="" scaleX="20" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="4368" y="1152" name="inst_29870397" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="objVerticalScrolling" x="4352" y="1200" name="inst_57B8B8D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="4000" y="1136" name="inst_22F936DF" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="4016" y="1136" name="inst_22F936DF" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLifeEnergyBig" x="3520" y="1056" name="inst_F4D7BCD4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingMaker" x="1712" y="592" name="inst_AEC5420A" locked="0" code="X = 1536;&#xA;Y = 480;&#xA;YScale = 16;&#xA;deleteUp = 1;&#xA;deleteUpY = y - 16;&#xA;deleteDown = 1;&#xA;deleteDownY = bbox_bottom + 64;&#xA;" scaleX="4" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4560" y="1360" name="inst_6B45756D" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
@@ -217,27 +217,25 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objSolid" x="6800" y="880" name="inst_FEB04E74" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="6656" y="928" name="inst_75E610C2" locked="0" code="" scaleX="18" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="6656" y="944" name="inst_5AC0660A" locked="0" code="" scaleX="18" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGabyoallightning" x="6720" y="768" name="inst_F5A8FFC4" locked="0" code="startDir = -1;&#xA;despawnRange = -1;&#xA;respawnRange = -1;&#xA;" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="6688" y="704" name="inst_EC3A8817" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="6704" y="720" name="inst_CCDD735B" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="6752" y="704" name="inst_20B6A235" locked="0" code="" scaleX="3" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="6800" y="720" name="inst_9528770C" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objGabyoallightning" x="6832" y="864" name="inst_F57F1395" locked="0" code="startDir = -1;&#xA;despawnRange = -1;&#xA;respawnRange = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="6864" y="704" name="inst_B1AD3C8E" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="objGabyoallightning" x="6720" y="768" name="inst_F5A8FFC4" locked="0" code="startDir = -1;&#xA;" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="6688" y="752" name="inst_EC3A8817" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="6752" y="752" name="inst_20B6A235" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGabyoallightning" x="6832" y="864" name="inst_F57F1395" locked="0" code="startDir = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="6864" y="752" name="inst_B1AD3C8E" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="6944" y="848" name="inst_C175E068" locked="0" code="" scaleX="3" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="objBuzzshockDistance" x="4480" y="944" name="inst_1645DF98" locked="0" code="" scaleX="1" scaleY="12.8000001907349" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="6608" y="688" name="inst_1A65AEBC" locked="0" code="" scaleX="5" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="6608" y="688" name="inst_1A65AEBC" locked="0" code="" scaleX="18" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="6560" y="896" name="inst_364A4B7D" locked="0" code="" scaleX="6" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4704" y="1072" name="inst_87CBD17D" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4720" y="1072" name="inst_413415E3" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4800" y="1088" name="inst_440B7B18" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4768" y="1136" name="inst_94F2FB9B" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSparkSnakey" x="4776" y="1120" name="inst_55255F50" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="4960" y="928" name="inst_9EA4984B" locked="0" code="" scaleX="1" scaleY="11" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="4976" y="1088" name="inst_116C9EAA" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="4960" y="928" name="inst_9EA4984B" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="4912" y="1088" name="inst_116C9EAA" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSparkSnakey" x="5000" y="1072" name="inst_4079B65E" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="5072" y="1056" name="inst_D8F3F2F1" locked="0" code="" scaleX="4" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="5136" y="1056" name="inst_5399077A" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="5072" y="1072" name="inst_D8F3F2F1" locked="0" code="" scaleX="4" scaleY="9" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="5072" y="1056" name="inst_5399077A" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5200" y="1120" name="inst_00BF30B2" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5136" y="1184" name="inst_1F9741AE" locked="0" code="" scaleX="30" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5328" y="704" name="inst_B8EBAD4C" locked="0" code="" scaleX="4" scaleY="27" colour="4294967295" rotation="0"/>
@@ -251,7 +249,7 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objLadder" x="5392" y="912" name="inst_CD9138A9" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="objGabyoallightning" x="5472" y="1056" name="inst_91D2669F" locked="0" code="startDir = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGabyoallightning" x="5584" y="1120" name="inst_C5F5455A" locked="0" code="startDir = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="3808" y="1056" name="inst_2D253427" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="3808" y="1056" name="inst_2D253427" locked="0" code="" scaleX="2" scaleY="9" colour="4294967295" rotation="0"/>
     <instance objName="objSparkSnakey" x="5224" y="1152" name="inst_C1173466" locked="0" code="" scaleX="-1" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="objChargingChester" x="5088" y="1040" name="inst_9145B8F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVerticalScrolling" x="5376" y="960" name="inst_F11D56E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -265,10 +263,9 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objChargingChester" x="5792" y="896" name="inst_21AE70F0" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="objTossMachine" x="5872" y="800" name="inst_27401B8B" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRingRing" x="4848" y="1120" name="inst_A4219B58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRingRing" x="4896" y="1088" name="inst_4EC25E1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTossMachine" x="5424" y="816" name="inst_F0BDB874" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5392" y="832" name="inst_2C642CC1" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="4912" y="1072" name="inst_31234384" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="4912" y="1072" name="inst_31234384" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRingRing" x="6064" y="816" name="inst_3C844E09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5968" y="848" name="inst_D10DAA63" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="6064" y="880" name="inst_6A065BF8" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
@@ -289,9 +286,8 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objBossDoor" x="7408" y="864" name="inst_ACDEE568" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBossDoor" x="7424" y="864" name="inst_5AA465A6" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="7408" y="736" name="inst_0E88363B" locked="0" code="" scaleX="2" scaleY="8" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="7280" y="736" name="inst_C64CB440" locked="0" code="" scaleX="2" scaleY="8" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="7184" y="848" name="inst_C3D6F463" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="7312" y="848" name="inst_F403C668" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="7280" y="736" name="inst_C64CB440" locked="0" code="" scaleX="2" scaleY="7" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="7184" y="848" name="inst_C3D6F463" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRingRing" x="6912" y="848" name="inst_EE266F67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGabyoallightning" x="7392" y="752" name="inst_CD2D3BF2" locked="0" code="startDir = -1;&#xA;" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="objGabyoallightning" x="7200" y="752" name="inst_CF1F2967" locked="0" code="startDir = 1;" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
@@ -329,6 +325,7 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objSolid" x="6192" y="864" name="inst_D1B02B25" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="6080" y="896" name="inst_397043C7" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBuzzshockEV73" x="7600" y="864" name="inst_2A6936BD" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="1040" y="336" name="inst_E0960282" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tstStaticShockReal" x="656" y="672" w="16" h="16" xo="176" yo="96" id="11313369" name="inst_2091433E" depth="1000040" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

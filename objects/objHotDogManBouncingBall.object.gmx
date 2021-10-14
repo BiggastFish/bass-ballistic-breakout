@@ -30,7 +30,7 @@
 contactDamage = 3;
 blockCollision = 1;
 grav = 0;
-bounces = 0;
+bounces = 6;
 </string>
           </argument>
         </arguments>
@@ -61,19 +61,19 @@ if (entityCanStep())
         playSFX(sfxBallBounce);
     if (ycoll &gt; 0 || xcoll != 0)
     {
-        bounces++;
+        bounces--;
         xspeed = 0;
         yspeed = -5;
     }
     if (ycoll &lt; 0)
     {
-        bounces++;
+        bounces--;
         if (instance_exists(target))
             aimAtTarget(5);
         else
             yspeed = 5;
     }
-    if (bounces &gt;= 8)
+    if (bounces &lt;= 0)
     {
         instance_create(x, y, objExplosion);
         instance_destroy();

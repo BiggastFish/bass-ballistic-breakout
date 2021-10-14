@@ -203,11 +203,23 @@ if ((isSlide || dashJumped) && !climbing && !isHit)
     trailTimer++;
     if (trailTimer >= 3 && (trailTimer - 3) mod 5 == 0)
     {
+        var col = global.secondaryCol[playerID];
+        switch (global.weaponName[global.weapon[playerID]])
+        {
+            case "BASS BUSTER":
+                col = make_color_rgb(248, 152, 56);
+                break;
+            case "KNUCKLE SANDWICH":
+            case "HUNGRY BAT":
+            case "COIN SPREAD":
+                col = global.primaryCol[playerID];
+                break;
+        }
         a = instance_create(x, y, objTrailEffect);
         a.drawingPlayer = true;
         a.fadeAway = true;
         a.costume = global.playerSprite[costumeID];
-        a.color = global.secondaryCol[playerID];
+        a.color = col;
         a.parent = self;
         a.deathTimerMax = 12;
         a.fadeValue = 0.1;

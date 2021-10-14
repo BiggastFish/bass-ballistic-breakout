@@ -82,6 +82,10 @@ noFlicker = false;
 showPopup = true;
 floatPopup = noone;
 
+// if true, non-specific attacks won't hurt it, only causing 0 for damage popups
+undamageable = false;
+killObj[0] = objYamato;
+
 respawnRange = 4; //@cc distance beyond edge of view at which entity spawns if dead. Set to -1 to make infinite
 despawnRange = 4; //@cc distance beyond edge of view at which entity despawns if alive. set to -1 to make infinite
 
@@ -558,6 +562,19 @@ for (i = 0; i &lt; specialDamageValuesTotal; i++)
 
 // If you want to reflect the bullet no matter what (some weapons have unique reflecting
 // animations if they're piercing ones to allow this) set "other.guardCancel" to 4.
+
+if (undamageable)
+{
+    for (l = 0; l &lt; array_length_1d(killObj); l++)
+    {
+        if (other.object_index == killObj[l])
+        {
+            event_user(EV_DEATH);
+            exit;
+        }
+    }
+    healthpoints = 256;
+}
 </string>
           </argument>
         </arguments>

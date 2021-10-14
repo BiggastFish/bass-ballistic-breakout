@@ -76,7 +76,6 @@ One day, in the summer of 20XX...";
     global.nextRoom = rmTitleScreenNew;
 }
 
-actualTimer++;
 timer++;
 switch (phase)
 {

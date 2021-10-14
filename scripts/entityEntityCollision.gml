@@ -161,11 +161,24 @@ if (global.damage != 0)
         
         if (showPopup)
         {
+            var dealDamage = true;
+            if (undamageable)
+            {
+                dealDamage = false;
+                for (l = 0; l < array_length_1d(killObj); l++)
+                {
+                    if (other.object_index == killObj[l])
+                    {
+                        dealDamage = true;
+                    }
+                }
+            }
             if (global.damagePopup == 1) // Damagepopup
             {
                 p = instance_create(x + (popupx * image_xscale),
                 bboxGetYCenter() - (4 * image_yscale), objDamagePopup);
                 p.depth = depth - (1 + (0.5 * instance_number(objDamagePopup)));
+                p.damage = global.damage * dealDamage; // !undamageable
                 if (image_yscale < 0)
                 {
                     p.yspeed = 0;
@@ -182,6 +195,7 @@ if (global.damage != 0)
                 {
                     floatPopup = instance_create(x + (popupx * image_xscale), 
                     yy + (popupy * image_yscale), objDamagePopup);
+                    floatPopup.damage = global.damage * dealDamage; // !undamageable
                     floatPopup.xspeed = 0;
                     floatPopup.yspeed = 0;
                     floatPopup.grav = 0;
@@ -194,7 +208,7 @@ if (global.damage != 0)
                 {
                     with (floatPopup)
                     {
-                        damage+= global.damage;
+                        damage+= global.damage * dealDamage; // !other.undamageable
                         timer = 0;
                     }
                 }

@@ -9,18 +9,18 @@ var willStop = 1; // If this is 1, the player will halt on shooting ala Metal Bl
 if (yDir == -1 && xDir == 0)
 {
     action = 3;
-    xOffset = 5;
-    yOffset = -16;
+    xOffset = 5; // 5
+    yOffset = -17;
 }
 else if (yDir == -1 && xDir != 0)
 { 
     action = 4;
-    xOffset = 20;
-    yOffset = -12;
+    xOffset = 19;
+    yOffset = -13;
     if (climbing)
     {
-        xOffset = 17;
-        yOffset = -11;
+        xOffset = 16;
+        yOffset = -12;
     }
 }
 else if (yDir)

@@ -178,7 +178,7 @@ with (objGenericStopper)
     <instance objName="objAstroZombieg" x="2528" y="1984" name="inst_8AB3DC04" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVerticalScrolling" x="2304" y="1920" name="inst_742BAAF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSlotCoinSwitch" x="2464" y="1872" name="inst_C66A8F36" locked="0" code="manX = 2560;&#xA;manY = 1824;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSlotCoinSpawner" x="2560" y="1824" name="inst_DAE9E468" locked="0" code="spd = -2.5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSlotCoinSpawner" x="2560" y="1824" name="inst_DAE9E468" locked="0" code="spd = -2.5;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="2368" y="1648" name="inst_22183A1E" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2320" y="1648" name="inst_4058FF88" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2384" y="1648" name="inst_42F5DDED" locked="0" code="" scaleX="4" scaleY="3" colour="4294967295" rotation="0"/>

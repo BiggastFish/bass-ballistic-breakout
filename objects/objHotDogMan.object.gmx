@@ -28,7 +28,7 @@
             <string>event_inherited();
 healthpointsStart = 160;
 healthpoints = healthpointsStart;
-grav = .2;
+grav = 0.2;
 contactDamage = 4;
 facePlayerOnSpawn = 1;
 fried = 0;
@@ -92,7 +92,7 @@ if (!global.frozen)
     }
     else if (isIntro)
     {
-        visible = 1;
+        visible = true;
         isIntro = false;
     }
 }
@@ -119,37 +119,31 @@ if (entityCanStep())
                 {
                     stopSFX(sfxPopoHeliFire);
                     image_index = 8;
-                    for (i = 0; i &lt;= 1 + (!iAmFine); i++)
+                    for (l = -1; l &lt; 2; l+= 2)
                     {
-                        f = instance_create(x + (12 * image_xscale), y - 3, 
-                        objHotDogManFireball);
-                        f.grav = .25 - (.04 * (i = 1));
-                        f.yspeed = ySpeedAim(y - 3, view_yview + 128, 
-                        .25 - (.04 * (i = 1)));
-                        f.xspeed = (3 - (.8 * (i = 1))) * image_xscale;
-                        if (i == 2)
+                        for (i = 0; i &lt; 2 + (!iAmFine); i++)
                         {
-                            f.explode = 1;
-                            f.yspeed = -8;
-                            f.xspeed = xSpeedAim(x + (12 * image_xscale), 
-                            y - 3, tx, ty, -8, .25);
-                            f.sprite_index = sprCannopellerBall;
+                            f = instance_create(x, bbox_bottom + 1, 
+                            objHotDogManFirebar);
+                            f.goTimer = 30 * i;
+                            f.xSpd = 2.1 * l;
                         }
                     }
                 }
-                if (fryTimer == 80)
+                if (fryTimer == 90)
                     image_index = 0;
-                if (fryTimer == 120)
+                if (fryTimer == 210)
                 {
                     yspeed = -6;
-                    xspeed = .5 * image_xscale;
+                    xspeed = 0.5 * image_xscale;
                 }
-                if (fryTimer &gt;= 120)
+                if (fryTimer &gt;= 210)
                 {
                     if (yspeed &gt;= 0 &amp;&amp; (y &gt;= ty - 12 || ground) &amp;&amp; !fried)
                     {
                         playSFX(sfxBreakDash);
                         image_index = 11;
+                        contactDamage = 6;
                         grav = 0;
                         yspeed = 0;
                         fried = 1;
@@ -158,7 +152,8 @@ if (entityCanStep())
                     if (xcoll != 0)
                     {
                         playSFX(sfxEnemyBoost);
-                        grav = .2;
+                        contactDamage = 4;
+                        grav = 0.2;
                         xspeed = -sign(xcoll);
                         yspeed = -2;
                         image_index = 0;
@@ -177,15 +172,15 @@ if (entityCanStep())
             case 1: // hot dog missile
                 if (fryTimer == 10)
                     calibrateDirectionPoint(yeah);
-                if (fryTimer == 45)
+                if (fryTimer == 30)
                 {
                     var airT, xDis;
-                    yspeed = -sqrt(abs(2*.2*96));
-                    airT = abs(2*yspeed/.2);
+                    yspeed = -sqrt(abs(2 * 0.2 * 96));
+                    airT = abs(2*yspeed/0.2);
                     xDis = (x + ((yeah - x) * 2)) - x;
                     xspeed = xDis / airT;
                 }
-                if (fryTimer &gt; 45)
+                if (fryTimer &gt; 30)
                 {
                     if (yspeed &gt;= 0 &amp;&amp; !fried)
                     {
@@ -199,7 +194,7 @@ if (entityCanStep())
                     {
                         if (fryTimer == 60)
                             image_index = 9;
-                        if (fryTimer == 90)
+                        if (fryTimer == 75)
                         {
                             image_index = 10;
                             playSFX(sfxMissileLaunch);
@@ -212,14 +207,15 @@ if (entityCanStep())
                                 h.speed = 1.8;
                             }
                         }
-                        if (fryTimer &gt;= 155)
+                        if (fryTimer &gt;= 135)
                         {
-                            grav = .2
+                            grav = 0.2
                             calibrateDirection();
                             if (y &gt;= ty - 12 || ground)
                             {
                                 playSFX(sfxBreakDash);
                                 image_index = 11;
+                                contactDamage = 6;
                                 grav = 0;
                                 yspeed = 0;
                                 fried = 2;
@@ -232,7 +228,8 @@ if (entityCanStep())
                         if (xcoll != 0)
                         {
                             playSFX(sfxEnemyBoost);
-                            grav = .2;
+                            contactDamage = 4;
+                            grav = 0.2;
                             xspeed = -sign(xcoll);
                             yspeed = -2;
                             image_index = 0;
@@ -260,12 +257,12 @@ if (entityCanStep())
                     objHotDogManBouncingBall);
                     k.yspeed = -5;
                 }
-                if (fryTimer == 100)
+                if (fryTimer == 80)
                 {
                     image_index = 1;
                     xspeed = 1.4 * image_xscale;
                 }
-                if (fryTimer &gt;= 100)
+                if (fryTimer &gt;= 80)
                 {
                     if (fried != 1 &amp;&amp; ground)
                         image_index = 1 + (fryTimer/4) % 4;
@@ -275,7 +272,7 @@ if (entityCanStep())
                         (tx &gt;= x &amp;&amp; image_xscale &gt; 0)) &amp;&amp; abs(ty - y) &lt;= 96)
                         {
                             fried = 1;
-                            fryTimer = 100;
+                            fryTimer = 80;
                             xspeed = 0;
                             image_index = 5;
                         }
@@ -283,14 +280,14 @@ if (entityCanStep())
                         {
                             image_index = 0;
                             playSFX(sfxBikkyLand);
-                            xspeed = -.9 * image_xscale;
+                            xspeed = -0.9 * image_xscale;
                             yspeed = -1.2;
                             fried = 2;
                         }
                     }
                     if (fried == 1)
                     {
-                        if (fryTimer == 130)
+                        if (fryTimer == 110)
                         {
                             image_index = 6;
                             playSFX(sfxSlashClaw);
@@ -301,9 +298,9 @@ if (entityCanStep())
                             spd = 3;
                         }
                         xspeed = spd * image_xscale;
-                        if (spd &gt; 0 &amp;&amp; fryTimer &gt; 130)
-                            spd-= .1;
-                        if (fryTimer == 170)
+                        if (spd &gt; 0 &amp;&amp; fryTimer &gt; 110)
+                            spd-= 0.1;
+                        if (fryTimer == 150)
                         {
                             image_index = 1;
                             xspeed = 1.4 * image_xscale;
@@ -316,7 +313,7 @@ if (entityCanStep())
                         {
                             image_index = 0;
                             playSFX(sfxBikkyLand);
-                            xspeed = -.9 * image_xscale;
+                            xspeed = -0.9 * image_xscale;
                             yspeed = -1.2;
                         }
                         if (ycoll &gt; 0)
@@ -348,7 +345,7 @@ if (entityCanStep())
                                 l.speed = 3;
                                 l.sprite_index = sprExplosion;
                                 l.image_alpha = 1;
-                                l.image_speed = .6;
+                                l.image_speed = 0.6;
                             }
                             iAmFine = 0;
                             fryTimer = 0;

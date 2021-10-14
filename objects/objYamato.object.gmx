@@ -290,15 +290,24 @@ if (global.ammo[playerID, global.weapon[playerID]] &gt; 0)
 {
     with (other)
     {
+        var gottem = false;
+        if (undamageable)
+        {
+            for (l = 0; l &lt; array_length_1d(killObj); l++)
+            {
+                if (other.object_index == killObj[l])
+                {
+                    gottem = true;
+                }
+            }
+        }
         par = object_get_parent(object_index);
         if (par == prtMiniBoss || par == prtBoss || !canHit)
         {
             exit;
         }
-        if (healthpoints - global.damage &lt;= 0 || object_index = objGabyoallightning)
+        if (healthpoints - global.damage &lt;= 0 || gottem)
         {
-            if (object_index = objGabyoallightning)
-                event_user(EV_DEATH);
             var _i;
             _i = instance_create(x, y, objSlashEffect);
             _i.sprite_index = sprite_index;

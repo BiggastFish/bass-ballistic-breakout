@@ -69,6 +69,7 @@ if (entityCanStep())
     {
         timer = 0;
         p = instance_create(x, y, objHellcart);
+        p.depth = 1000010;
         p.image_xscale = image_xscale;
         p.respawn = 0;
     }
