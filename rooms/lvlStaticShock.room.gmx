@@ -68,7 +68,7 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objTossMachine" x="688" y="592" name="inst_BDD85B41" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="848" y="656" name="inst_EF092E1A" locked="0" code="" scaleX="10" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="752" y="688" name="inst_C54E8289" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="1008" y="336" name="inst_3984A901" locked="0" code="" scaleX="2" scaleY="24" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="1008" y="352" name="inst_3984A901" locked="0" code="" scaleX="2" scaleY="23" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="752" y="672" name="inst_C61686B3" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTossMachine" x="944" y="640" name="inst_B913E521" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="960" y="448" name="inst_69C369A7" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
@@ -76,7 +76,7 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objSolid" x="752" y="208" name="inst_983738AE" locked="0" code="" scaleX="2" scaleY="15" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="752" y="448" name="inst_354DAC1C" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="784" y="400" name="inst_504DF4AD" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="944" y="336" name="inst_0B0FD36B" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="944" y="336" name="inst_0B0FD36B" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVerticalScrolling" x="768" y="480" name="inst_F3F28DCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="976" y="448" name="inst_EF30F7C1" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRingRing" x="992" y="384" name="inst_C6C1754E" locked="0" code="itemDrop = -1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -325,7 +325,6 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objSolid" x="6192" y="864" name="inst_D1B02B25" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="6080" y="896" name="inst_397043C7" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBuzzshockEV73" x="7600" y="864" name="inst_2A6936BD" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="1040" y="336" name="inst_E0960282" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tstStaticShockReal" x="656" y="672" w="16" h="16" xo="176" yo="96" id="11313369" name="inst_2091433E" depth="1000040" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

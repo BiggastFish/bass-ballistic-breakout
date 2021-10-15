@@ -106,16 +106,16 @@ switch (phase)
         if (timer == 45)
         {
             b = instance_create(x, y, objParallax);
-            b.myBG = bgStarFieldBackground;
+            b.myBG = bgIntroStarsForeground;
             b.yspeed = -2;
             b.depth = depth + 4;
             m = instance_create(x, y, objParallax);
-            m.myBG = bgStarFieldMiddleground;
-            m.yspeed = -3;
+            m.myBG = bgIntroStarsMiddleground;
+            m.yspeed = -4;
             m.depth = depth + 4;
             f = instance_create(x, y, objParallax);
-            f.myBG = bgStarFieldForeground;
-            f.yspeed = -4;
+            f.myBG = bgIntroStarsBackground;
+            f.yspeed = -6;
             f.depth = depth + 2;
         }
         if (timer &gt; 45 &amp;&amp; timer mod 8 == 0)

@@ -23,5 +23,7 @@
     <frame index="0">images\sprGlowingSpiral_0.png</frame>
     <frame index="1">images\sprGlowingSpiral_1.png</frame>
     <frame index="2">images\sprGlowingSpiral_2.png</frame>
+    <frame index="3">images\sprGlowingSpiral_3.png</frame>
+    <frame index="4">images\sprGlowingSpiral_4.png</frame>
   </frames>
 </sprite>

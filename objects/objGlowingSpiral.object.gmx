@@ -46,6 +46,7 @@ rotationSpeed = 360 / 60;
 
 shiftVisible = 3;
 despawnRange = -1;
+_im = 0;
 </string>
           </argument>
         </arguments>
@@ -72,7 +73,6 @@ despawnRange = -1;
 
 if (!global.frozen || instance_exists(objSectionSwitcher))
 {
-    image_index+= 0.4;
     if (instance_exists(parent))
     {
         image_yscale = parent.image_yscale;
@@ -100,6 +100,10 @@ if (!global.frozen || instance_exists(objSectionSwitcher))
                 }
             }
             
+            if (canExpand)
+                animationLoop(0, 2, 0.4);
+            else
+                animationLoop(3, 4, 0.4);
     
             if (!count)
             {
@@ -206,7 +210,7 @@ global.ammo[playerID, global.weapon[playerID]] &gt; 0)
 {
     for (g = 0; g &lt; 10; g++)
     {
-        i = fireWeapon(0, 0, objGlowingSpiral, 10, 2 * (g == 0), 0, 0);
+        i = fireWeapon(0, 0, objGlowingSpiral, 10, 1 * (g == 0), 0, 0);
         if (i)
         {
             playSFX(sfxWaterShield2);
