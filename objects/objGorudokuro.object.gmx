@@ -65,7 +65,7 @@ if (entityCanStep())
     {
         case 0: // suck em up
             image_index = (timmer / 8) mod 2;
-            if (timmer &gt;= 90)
+            if (timmer &gt;= 20 &amp;&amp; instance_exists(target) &amp;&amp; abs(target.y - y) &lt;= 12)
             {
                 playSFX(sfxDoor);
                 image_index = 1;

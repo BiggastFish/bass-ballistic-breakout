@@ -66,7 +66,7 @@ if (entityCanStep())
         if (healthpoints &lt; healthpointsStart)
         {
             canHit = 0;
-            grav = .25;
+            grav = 0.25;
             yspeed = -3;
             playSFX(sfxCannonShoot);
         }
@@ -79,7 +79,7 @@ if (entityCanStep())
 }
 else if (dead)
 {
-    canHit = 1;
+    canHit = true;
     grav = 0;
 }
 </string>
@@ -104,7 +104,7 @@ else if (dead)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dead = 1;
+            <string>dead = true;
 
 var xx = x, yy = y, a = -60;
 do 

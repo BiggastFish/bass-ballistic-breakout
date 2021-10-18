@@ -1463,12 +1463,17 @@
           <sprite>sprites\sprAstroZombieg</sprite>
           <sprite>sprites\sprJumpShoot</sprite>
           <sprite>sprites\sprJumpShootBlade</sprite>
+          <sprite>sprites\sprLongGuyHorizontal</sprite>
+          <sprite>sprites\sprLongGuyVertical</sprite>
+          <sprite>sprites\sprLongGuyIcon</sprite>
           <sprite>sprites\sprGoldonBatton</sprite>
           <sprite>sprites\sprGoldragon</sprite>
           <sprite>sprites\sprMoneyCatcher</sprite>
           <sprite>sprites\sprMoneyCatcherPole</sprite>
           <sprite>sprites\sprMoneyCatcherClaw</sprite>
           <sprite>sprites\sprGoldragonOrb</sprite>
+          <sprite>sprites\sprMoneyCatcherOrb</sprite>
+          <sprite>sprites\sprMoneyCatcherWave</sprite>
           <sprite>sprites\sprGoldragonOrbSplit</sprite>
           <sprite>sprites\sprFloatingTreasure</sprite>
           <sprite>sprites\sprTreasureSpawner</sprite>
@@ -1505,7 +1510,6 @@
           <sprite>sprites\sprSwitchingVines</sprite>
           <sprite>sprites\sprTruckBoss</sprite>
           <sprite>sprites\sprTruckBossSpike</sprite>
-          <sprite>sprites\sprTruckBossEnergy</sprite>
           <sprite>sprites\sprTruckBossFront</sprite>
           <sprite>sprites\mskTruckBoss</sprite>
           <sprites name="Boss">
@@ -1550,10 +1554,12 @@
           <sprite>sprites\sprTheWizardRing</sprite>
           <sprite>sprites\sprJumpMan</sprite>
         </sprites>
-        <sprites name="Bury The Light">
+        <sprites name="Lost Light">
           <sprite>sprites\sprTakanuva</sprite>
           <sprite>sprites\sprTakanuvaSlash</sprite>
           <sprite>sprites\sprTakanuvaKolhii</sprite>
+          <sprite>sprites\sprSummonedSword</sprite>
+          <sprite>sprites\sprSummonedSwordSpawner</sprite>
           <sprite>sprites\sprTakanuvaGlowingSpiral</sprite>
           <sprite>sprites\sprTakanuvaMaskShine</sprite>
         </sprites>
@@ -2617,6 +2623,7 @@
       <objects name="Money Machine">
         <object>objects\objAstroZombieg</object>
         <object>objects\objJumpShoot</object>
+        <object>objects\objLongGuy</object>
         <object>objects\objGoldonBatton</object>
         <object>objects\objGorudokuro</object>
         <object>objects\objGoldragon</object>
@@ -2626,6 +2633,8 @@
         <object>objects\objHellcart</object>
         <object>objects\objMoneyCatcherClaw</object>
         <object>objects\objMoneyCatcher</object>
+        <object>objects\objMoneyCatcherOrb</object>
+        <object>objects\objMoneyCatcherWave</object>
         <objects name="Gimmicks">
           <object>objects\objTreasureSpawner</object>
           <object>objects\objTreasureUp</object>
@@ -2659,7 +2668,6 @@
         <object>objects\objFlowerSpring</object>
         <object>objects\objSwitchingVines</object>
         <object>objects\objTruckBoss</object>
-        <object>objects\objTruckBossEnergy</object>
         <object>objects\objTruckBossFront</object>
         <object>objects\objTruckBossSpike</object>
         <objects name="Boss">
@@ -2712,7 +2720,9 @@
         <object>objects\objTheWizardRing</object>
         <object>objects\objJumpMan</object>
       </objects>
-      <objects name="Bury The Light">
+      <objects name="Lost Light">
+        <object>objects\objSummonedSwordSpawner</object>
+        <object>objects\objSummonedSword</object>
         <object>objects\objTakanuva</object>
         <objects name="Projectiles">
           <object>objects\objTakanuvaGlowingSpiral</object>
@@ -2739,9 +2749,9 @@
     <room>rooms\rmHighwayToHell</room>
     <room>rooms\lvlTowerStage2</room>
     <room>rooms\lvlJumpKing</room>
-    <room>rooms\lvlBuryTheLight</room>
     <room>rooms\lvlMoneyMachineNew</room>
     <room>rooms\lvlMoneyMachine</room>
+    <room>rooms\lvlLostLight</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

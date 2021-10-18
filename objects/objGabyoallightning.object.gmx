@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-healthpointsStart = 256; // placeholder
+healthpointsStart = 256;
 healthpoints = healthpointsStart;
 contactDamage = 3;
 grav = 0.25 * image_yscale;

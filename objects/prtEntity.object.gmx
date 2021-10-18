@@ -78,8 +78,10 @@ shiftVisible = 0;
 //@cc If set to true, depth modulating will be disabled for this object.
 noFlicker = false;
 
-// if false, damage popups for this object won't appear regardless of global.damagePopup's value
+// showPopup: shows either following popup or spread popup depending on global.damagePopup's value
+// manualLoc: be able to set the popup spawnpoint manually rather than from parent
 showPopup = true;
+manualLoc = false;
 floatPopup = noone;
 
 // if true, non-specific attacks won't hurt it, only causing 0 for damage popups

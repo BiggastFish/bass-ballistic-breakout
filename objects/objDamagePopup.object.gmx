@@ -40,6 +40,7 @@ yOff = 0;
 jump = true;
 parent = noone;
 followParent = true;
+manualLoc = false;
 damage = global.damage;
 str = "0";
 </string>
@@ -77,20 +78,34 @@ str = "0";
     {
         if (instance_exists(parent) &amp;&amp; !parent.dead)
         {
-            xx = parent.x + (parent.popupx * parent.image_xscale);
-            ysc = parent.image_yscale;
-            var parExtraY = parent.popupy * parent.image_yscale;
-            if (parent.image_yscale &gt; 0)
+            if (followParent)
             {
-                yy = parent.bbox_top - 4 + parExtraY;
-            }
-            else
-            {
-                yy = parent.bbox_bottom - 4 + parExtraY;
+                if (!manualLoc)
+                {
+                    xx = parent.x + (parent.popupx * sign(parent.image_xscale));
+                    ysc = parent.image_yscale;
+                    var parExtraY = parent.popupy * sign(parent.image_yscale);
+                    if (parent.image_yscale &gt; 0)
+                    {
+                        yy = parent.bbox_top - 4 + parExtraY;
+                    }
+                    else
+                    {
+                        yy = parent.bbox_bottom - 4 + parExtraY;
+                    }
+                }
+                else
+                {
+                    xx = parent.popupx;
+                    yy = parent.popupy;
+                }
             }
         }
+        else
+            followParent = false;
+        
         x = xx;
-        y = yy - (yOff * ysc);
+        y = yy - (yOff * sign(ysc));
         if (yOff &lt; 12)
         {
             yOff+= 2;

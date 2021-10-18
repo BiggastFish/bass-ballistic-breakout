@@ -65,7 +65,7 @@ deleteLeftX = x;
 {
     if (place_meeting(x, y, objMegaman))
     {
-        if (borderID = noone)
+        if (borderID == noone)
         {
             borderID = instance_create(X, Y, borderObj);
             borderID.image_xscale = XScale;

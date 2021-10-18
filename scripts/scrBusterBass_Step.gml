@@ -1,3 +1,8 @@
+if (!instance_exists(parent))
+{
+    instance_destroy();
+    exit;
+}
 if (canDamage)
 {
     xspeed = cos(degtorad(dir)) * 5;

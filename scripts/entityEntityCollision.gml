@@ -175,8 +175,8 @@ if (global.damage != 0)
             }
             if (global.damagePopup == 1) // Damagepopup
             {
-                p = instance_create(x + (popupx * image_xscale),
-                bboxGetYCenter() - (4 * image_yscale), objDamagePopup);
+                p = instance_create(x + (popupx * sign(image_xscale)),
+                bboxGetYCenter() - (4 * sign(image_yscale)), objDamagePopup);
                 p.depth = depth - (1 + (0.5 * instance_number(objDamagePopup)));
                 p.damage = global.damage * dealDamage; // !undamageable
                 if (image_yscale < 0)
@@ -193,8 +193,16 @@ if (global.damage != 0)
                 }
                 if (!instance_exists(floatPopup))
                 {
-                    floatPopup = instance_create(x + (popupx * image_xscale), 
-                    yy + (popupy * image_yscale), objDamagePopup);
+                    if (!manualLoc)
+                    {
+                        floatPopup = instance_create(x + (popupx * sign(image_xscale)), 
+                        yy + (popupy * sign(image_yscale)), objDamagePopup);
+                    }
+                    else
+                    {
+                        floatPopup = instance_create(popupx, popupy, objDamagePopup);
+                        floatPopup.manualLoc = true;
+                    }
                     floatPopup.damage = global.damage * dealDamage; // !undamageable
                     floatPopup.xspeed = 0;
                     floatPopup.yspeed = 0;
@@ -208,8 +216,11 @@ if (global.damage != 0)
                 {
                     with (floatPopup)
                     {
-                        damage+= global.damage * dealDamage; // !other.undamageable
-                        timer = 0;
+                        if (followParent)
+                        {
+                            damage+= global.damage * dealDamage; // !other.undamageable
+                            timer = 0;
+                        }
                     }
                 }
             }

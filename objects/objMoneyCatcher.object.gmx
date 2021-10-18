@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-healthpointsStart = 108;
+healthpointsStart = 72;
 healthpoints = healthpointsStart;
 blockCollision = false;
 grav = 0;
@@ -97,7 +97,7 @@ if (!global.frozen)
         if (!instance_exists(claw))
         {
             claw = instance_create(x, y, objMoneyCatcherClaw);
-            claw.depth = depth - 5;
+            claw.depth = depth - 1;
             claw.parent = id;
         }
         daTimer++;
@@ -116,7 +116,10 @@ if (!global.frozen)
             }
         }
         if (daTimer == 210)
+        {
+            playSFX(sfxElectricShot);
             with (claw) image_index = 1;
+        }
         if (daTimer == 240)
         {
             daTimer = 0;
@@ -144,9 +147,10 @@ if (entityCanStep())
         switch (phase)
         {
             case 0: // leftin right
-                if (daTimer &gt;= 90)
+                if (daTimer &gt;= 50)
                 {
                     daTimer = 0;
+                    yspeed = -2;
                     grav = 0.25;
                     phase++;
                 }
@@ -160,26 +164,39 @@ if (entityCanStep())
                     {
                         image_index = 0;
                         follow = false;
-                        isSolid = 2;
                     }
                     playSFX(sfxMM9Quake);
                     screenShake(36, 0, 2);
+                    for (d = -4; d &lt;= 4; d++)
+                    {
+                        if (d != 0)
+                        {
+                            r = instance_create(x + (12 * sign(d)), 
+                            view_yview + view_hview - 32, 
+                            objMoneyCatcherWave);
+                            r.image_xscale = sign(d);
+                            r.xspeed = d;
+                        }
+                    }
                     phase++;
                 }
                 break;
             case 2: // go back up, do some shooties
                 if (daTimer == 36)   
                     yspeed = -1;
-                if (daTimer &gt; 48 &amp;&amp; daTimer mod 48 == 0)
+                if (daTimer &gt; 70 &amp;&amp; (daTimer - 70) mod 30 == 0 &amp;&amp; daTimer &lt;= 190)
                 {
                     playSFX(sfxPointanSelect);
-                    //l = instance_create(x, y + 12, objMoneyCatcherOrb);
-                    //l.type = daTimer mod 96 == 48;
+                    l = instance_create(x, y + 12, objMoneyCatcherOrb);
+                    l.depth = depth - 3;
                 }
                 if (y &lt;= ystart &amp;&amp; yspeed &lt; 0)
                 {
                     y = ystart;
                     yspeed = 0;
+                }
+                if (daTimer == 240)
+                {
                     with (claw) 
                     {
                         blockCollision = false;
@@ -193,12 +210,12 @@ if (entityCanStep())
                 }
                 if (check)
                 {
+                    playSFX(sfxElectricShot);
                     with (claw) 
                     {
                         image_index = 1;
                         blockCollision = true;
                         follow = true;
-                        isSolid = 0;
                     }
                     phase = 0;
                     daTimer = 0;

@@ -89,13 +89,15 @@
     <instance objName="objSolid" x="1520" y="688" name="inst_37413B06" locked="0" code="" scaleX="2" scaleY="12" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1776" y="688" name="inst_5FDD00CD" locked="0" code="" scaleX="1" scaleY="17" colour="4294967295" rotation="0"/>
     <instance objName="objFlowerSpring" x="704" y="896" name="inst_571008A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objStopScrollingNES" x="256" y="1200" name="inst_D66B63CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objStopScrollingNES" x="512" y="1200" name="inst_D66B63CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="768" y="1200" name="inst_3F8A4312" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="256" y="1408" name="inst_87E0CC96" locked="0" code="" scaleX="34" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objTruckBoss" x="720" y="1376" name="inst_0FC873D0" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRightScrollingNES" x="512" y="1200" name="inst_49C82428" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="512" y="1168" name="inst_61BE358F" locked="0" code="myBG = bgPerfumaGround;&#xA;areaLeft = 512;&#xA;areaRight = 512 + 256;&#xA;areaTop = 1184;&#xA;areaBottom = 1184 + 400;&#xA;depth = 1000000;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDefaultSpawn" x="624" y="912" name="inst_A35D208C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="512" y="1168" name="inst_BCFFF350" locked="0" code="" scaleX="1" scaleY="15" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="752" y="1168" name="inst_9E3A8DF4" locked="0" code="" scaleX="1" scaleY="15" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="576" y="1376" name="inst_D30C1E2B" locked="0" code="" scaleX="8" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objDamageSpike" x="528" y="1392" name="inst_1C127B78" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDamageSpike" x="704" y="1392" name="inst_3AB1D161" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
