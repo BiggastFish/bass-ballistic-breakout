@@ -67,10 +67,20 @@ if (!global.frozen)
             other.y = bboxGetYCenter();
             other.image_alpha = image_alpha * hurtAlpha;
         }
-        if (plzTarget.iceTimer &gt; 30)
-            image_index+= .2 * (image_index &lt; 1);
+        
+        if (sprite_get_width(plzTarget.sprite_index) &gt;= 24
+        || sprite_get_height(plzTarget.sprite_index) &gt;= 24)
+        {
+            if (plzTarget.iceTimer &gt; 30)
+                image_index-= 0.2 * (image_index &lt; 1);
+            else
+                image_index = (plzTarget.iceTimer / 3) mod 2; 
+        }
         else
-            image_index = (plzTarget.iceTimer / 3) % 2;
+        {
+              if (plzTarget.iceTimer &lt; 30)
+                visible = (plzTarget.iceTimer / 3) mod 2;
+        }
     }
     else
     {

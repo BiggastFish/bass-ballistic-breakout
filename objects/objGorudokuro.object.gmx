@@ -76,7 +76,7 @@ if (entityCanStep())
         case 1: // open enclosure
             if (timmer mod 3 == 0 &amp;&amp; image_index &lt; 5)
                 image_index++;
-            if (timmer == 45)
+            if (timmer == 50)
             {
                 timmer = 0;
                 phase++;
@@ -85,11 +85,18 @@ if (entityCanStep())
         case 2: //blargh!!!
             if (timmer mod 6 == 2 &amp;&amp; timmer &lt;= 45)
             {
+                var yspd = -0.35;
+                switch (timmer mod 8)
+                {
+                    case 0: case 2: yspd = -0.15; break;
+                    case 6: yspd = 0; break;
+                    case 4: yspd = 0.15; break;
+                }
                 with (instance_create(x + 14 * image_xscale, y, objEnemyBullet))
                 {
                     sprite_index = sprGorudokuroGold;
                     xspeed = 5.5 * other.image_xscale;
-                    yspeed = choose(-0.15, 0, 0.15);
+                    yspeed = yspd;
                 }
             }
             if (timmer &gt;= 60)
@@ -119,6 +126,36 @@ else if (dead)
     timmer = 0;
     phase = 0;
     image_index = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="19">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+if (phase == 0)
+{
+    playSFX(sfxDoor);
+    image_index = 1;
+    timmer = 0;
+    phase++;
 }
 </string>
           </argument>

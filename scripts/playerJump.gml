@@ -18,7 +18,12 @@ if (jumpCounter > 1 && multiJumpDashCancel == true)
     j = instance_create(x, y + (abs(y - bbox_bottom) - 2) * sign(image_yscale), 
     objSingleLoopEffect);
     j.sprite_index = sprBassJumpPoof;
-    j.image_speed = .5;
+    j.image_speed = 0.5;
     j.depth = depth + 2;
-    dashJumped = 0;
+    dashJumped = false;
+    with (objJumpBlockHandler)
+    {
+        playSFX(sfxSidewayElevatorButton);
+        active = !active;
+    }
 }

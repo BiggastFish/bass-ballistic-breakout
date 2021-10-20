@@ -1460,7 +1460,6 @@
           </sprites>
         </sprites>
         <sprites name="Money Machine">
-          <sprite>sprites\sprAstroZombieg</sprite>
           <sprite>sprites\sprJumpShoot</sprite>
           <sprite>sprites\sprJumpShootBlade</sprite>
           <sprite>sprites\sprLongGuyHorizontal</sprite>
@@ -1507,7 +1506,6 @@
           <sprite>sprites\sprFirefryTrail</sprite>
           <sprite>sprites\sprRevoltingSuzy</sprite>
           <sprite>sprites\sprFlowerSpring</sprite>
-          <sprite>sprites\sprSwitchingVines</sprite>
           <sprite>sprites\sprTruckBoss</sprite>
           <sprite>sprites\sprTruckBossSpike</sprite>
           <sprite>sprites\sprTruckBossFront</sprite>
@@ -1552,6 +1550,11 @@
           <sprite>sprites\sprTheWizardLaser</sprite>
           <sprite>sprites\sprTheWizardOrb</sprite>
           <sprite>sprites\sprTheWizardRing</sprite>
+          <sprite>sprites\sprJumpBlockHandler</sprite>
+          <sprite>sprites\sprJumpBlockR</sprite>
+          <sprite>sprites\sprJumpBlockB</sprite>
+          <sprite>sprites\sprJumpSpikeR</sprite>
+          <sprite>sprites\sprJumpSpikeB</sprite>
           <sprite>sprites\sprJumpMan</sprite>
         </sprites>
         <sprites name="Lost Light">
@@ -2621,7 +2624,6 @@
         </objects>
       </objects>
       <objects name="Money Machine">
-        <object>objects\objAstroZombieg</object>
         <object>objects\objJumpShoot</object>
         <object>objects\objLongGuy</object>
         <object>objects\objGoldonBatton</object>
@@ -2666,7 +2668,6 @@
         <object>objects\objFirefry</object>
         <object>objects\objRevoltingSuzy</object>
         <object>objects\objFlowerSpring</object>
-        <object>objects\objSwitchingVines</object>
         <object>objects\objTruckBoss</object>
         <object>objects\objTruckBossFront</object>
         <object>objects\objTruckBossSpike</object>
@@ -2718,6 +2719,11 @@
         <object>objects\objTheWizardLaser</object>
         <object>objects\objTheWizardOrb</object>
         <object>objects\objTheWizardRing</object>
+        <object>objects\objJumpBlockHandler</object>
+        <object>objects\objJumpBlockR</object>
+        <object>objects\objJumpBlockB</object>
+        <object>objects\objJumpSpikeR</object>
+        <object>objects\objJumpSpikeB</object>
         <object>objects\objJumpMan</object>
       </objects>
       <objects name="Lost Light">
@@ -2748,10 +2754,10 @@
     <room>rooms\lvlStHunger</room>
     <room>rooms\rmHighwayToHell</room>
     <room>rooms\lvlTowerStage2</room>
-    <room>rooms\lvlJumpKing</room>
+    <room>rooms\lvlLostLight</room>
     <room>rooms\lvlMoneyMachineNew</room>
     <room>rooms\lvlMoneyMachine</room>
-    <room>rooms\lvlLostLight</room>
+    <room>rooms\lvlJumpKing</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

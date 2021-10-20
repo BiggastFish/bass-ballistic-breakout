@@ -120,6 +120,7 @@ stopOnFlash = true;
 iceTimer = 0; // is iced (frozen cold), and how much remaining time to spend iced
 canIce = true; //@cc is it possible to ice this object (usually doesn't matter if canHit is false)
 canOil = true;
+oilOverride = false; // can it get oiled regardless of canIce or canHit values?
 batx = 0;
 baty = 0;
 popupx = 0;

@@ -80,10 +80,10 @@
     <instance objName="objRevoltingSuzy" x="1296" y="736" name="inst_F763FFB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRevoltingSuzy" x="1504" y="864" name="inst_A72B2237" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="256" y="240" name="inst_A573F71B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSwitchingVines" x="1616" y="864" name="inst_49290EAF" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objSwitchingVines" x="1712" y="848" name="inst_A16C61D9" locked="0" code="inverted = 1;&#xA;" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="objSwitchingVines" x="1600" y="800" name="inst_D8B2931F" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSwitchingVines" x="1664" y="768" name="inst_37C282E4" locked="0" code="inverted = 1;&#xA;" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpBlockR" x="1616" y="864" name="inst_49290EAF" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpBlockR" x="1712" y="848" name="inst_A16C61D9" locked="0" code="inverted = 1;&#xA;" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpBlockR" x="1600" y="800" name="inst_D8B2931F" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpBlockR" x="1664" y="768" name="inst_37C282E4" locked="0" code="inverted = 1;&#xA;" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHorizontalScrollingNES" x="1536" y="720" name="inst_4FF84CA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRightScrollingNES" x="768" y="720" name="inst_91BA9528" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1520" y="688" name="inst_37413B06" locked="0" code="" scaleX="2" scaleY="12" colour="4294967295" rotation="0"/>

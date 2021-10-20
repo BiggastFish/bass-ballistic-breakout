@@ -148,7 +148,7 @@ else if (dead)
 {
     other.guardCancel = 1;
 }
-else
+else if (other.object_index != objGlowingSpiral)
 {
     for (i = -1; i &lt; 2; i+= 2)
     {
