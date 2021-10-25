@@ -3,9 +3,9 @@
   <type>0</type>
   <xorig>39</xorig>
   <yorigin>17</yorigin>
-  <colkind>0</colkind>
+  <colkind>1</colkind>
   <coltolerance>0</coltolerance>
-  <sepmasks>-1</sepmasks>
+  <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>77</bbox_right>
@@ -21,6 +21,5 @@
   <height>41</height>
   <frames>
     <frame index="0">images\sprMoneyCatcherClaw_0.png</frame>
-    <frame index="1">images\sprMoneyCatcherClaw_1.png</frame>
   </frames>
 </sprite>

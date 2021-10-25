@@ -86,7 +86,7 @@ floatPopup = noone;
 
 // if true, non-specific attacks won't hurt it, only causing 0 for damage popups
 undamageable = false;
-killObj[0] = objYamato;
+killObj[0] = objExplosion;
 
 respawnRange = 4; //@cc distance beyond edge of view at which entity spawns if dead. Set to -1 to make infinite
 despawnRange = 4; //@cc distance beyond edge of view at which entity despawns if alive. set to -1 to make infinite
@@ -572,7 +572,7 @@ if (undamageable)
     {
         if (other.object_index == killObj[l])
         {
-            event_user(EV_DEATH);
+            if (object_index != objHivebomb) event_user(EV_DEATH);
             exit;
         }
     }

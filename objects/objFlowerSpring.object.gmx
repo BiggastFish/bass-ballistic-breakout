@@ -33,7 +33,8 @@ contactDamage = 0;
 bubbleTimer = -1;
 grav = 0;
 blockCollision = 0;
-canOil = 0;
+canOil = false;
+undamageable = true;
 
 respawnRange = 0;
 _im = 0;
@@ -73,7 +74,7 @@ if (!global.frozen)
         if (image_index &gt;= 15)
         {
             image_index = 0;
-            canHit = 1;
+            canHit = true;
         }
     }
     else if (image_index &gt; 4 &amp;&amp; image_index &lt; 7)
@@ -125,12 +126,11 @@ if (!global.frozen)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (image_index &lt; 2)
+            <string>event_inherited();
+if (image_index &lt; 2)
 {
     image_index = 2;
-    playSFX(sfxEnemyHit);
-    healthpoints = 1337;
-    canHit = 0;
+    canHit = false;
 }
 </string>
           </argument>

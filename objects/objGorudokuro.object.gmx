@@ -34,6 +34,9 @@ contactDamage = 4;
 // Enemy specific code
 timmer = 0;
 phase = 0;
+
+enemyDamageValue(objGlowingSpiral, 2);
+enemyDamageValue(objYamato, 2);
 </string>
           </argument>
         </arguments>
@@ -95,6 +98,7 @@ if (entityCanStep())
                 with (instance_create(x + 14 * image_xscale, y, objEnemyBullet))
                 {
                     sprite_index = sprGorudokuroGold;
+                    contactDamage = 3;
                     xspeed = 5.5 * other.image_xscale;
                     yspeed = yspd;
                 }

@@ -22,6 +22,5 @@
   <frames>
     <frame index="0">images\sprBassBulletBreak_0.png</frame>
     <frame index="1">images\sprBassBulletBreak_1.png</frame>
-    <frame index="2">images\sprBassBulletBreak_2.png</frame>
   </frames>
 </sprite>

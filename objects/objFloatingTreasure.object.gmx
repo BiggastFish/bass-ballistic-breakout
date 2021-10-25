@@ -29,8 +29,9 @@
 
 healthpointsStart = 1;
 healthpoints = healthpointsStart;
-contactDamage = 2;
+contactDamage = 3;
 respawn = false;
+popupx = 8;
 
 category = "cluster, floating";
 

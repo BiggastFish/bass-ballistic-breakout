@@ -90,6 +90,9 @@ else
 
 reAndDeactivateObjects(0, 1);
 
+with(objSolid)
+    event_user(1);
+
 activate = 1;
 endit=0;
 
@@ -461,6 +464,8 @@ if (instance_exists(triggerPlayer))
 // event_user(0);
 
 reAndDeactivateObjects(0, 1);
+with(objSolid)
+    event_user(0);
 
 if (plat)
 {

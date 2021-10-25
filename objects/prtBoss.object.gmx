@@ -72,6 +72,13 @@ event_inherited();
 {
     enemyDamageValue(global.weaponObject[i], 1);
 }*/
+// Damage Tables
+enemyDamageValue(objForteBusterShot, 2);
+enemyDamageValue(objForteBusterShotHalfCharged, 3);
+enemyDamageValue(objForteBusterShotCharged, 5);
+enemyDamageValue(objYamato, 3);
+enemyDamageValue(objKnuckleSandwich, 10);
+enemyDamageValue(objWeaponExplosion, 0.5);
 
 // used for some prtEntity control stuff
 boss = 1;

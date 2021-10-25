@@ -397,6 +397,8 @@ else if (global.switchingSections)
     with (parent)
     {
         playerHandleSprites("TrebleBoost");
+        xspeed = 0;
+        yspeed = 0;
     }
 }
 </string>
@@ -421,8 +423,15 @@ else if (global.switchingSections)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.keyShootPressed[playerID] &amp;&amp; !playerIsLocked(PL_LOCK_SHOOT))
+            <string>if (global.keyShootPressed[playerID])
 {
+    with (objMegaman)
+    {
+        if (teleporting || showReady)
+        {
+            exit;
+        }
+    }
     if (!instance_exists(objTrebleBoost)
     &amp;&amp; global.ammo[playerID, global.weapon[playerID]] &gt; 0)
     {
@@ -436,7 +445,7 @@ else if (global.switchingSections)
             }
         }
     }
-    else
+    else if (!playerIsLocked(PL_LOCK_SHOOT))
     {
         if (!trebleBoosted)
         {

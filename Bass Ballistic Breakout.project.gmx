@@ -1407,34 +1407,37 @@
         <sprite>sprites\sprBassBullet</sprite>
         <sprite>sprites\sprBassBulletBreak</sprite>
         <sprite>sprites\sprSeedBomb</sprite>
-        <sprite>sprites\sprWeaponIconsSeedBomb</sprite>
         <sprite>sprites\sprCoinSpread</sprite>
-        <sprite>sprites\sprWeaponIconsCoinSpread</sprite>
         <sprite>sprites\sprGlowingSpiral</sprite>
-        <sprite>sprites\sprWeaponIconsGlowingSpiral</sprite>
         <sprite>sprites\sprYamato</sprite>
         <sprite>sprites\sprJudgmentCut</sprite>
-        <sprite>sprites\sprWeaponIconsYamato</sprite>
         <sprite>sprites\sprOilSlideRight</sprite>
         <sprite>sprites\sprOilSlideLeft</sprite>
         <sprite>sprites\sprOilSlide</sprite>
         <sprite>sprites\sprOilSlideSplash</sprite>
-        <sprite>sprites\sprWeaponIconsOilSlide</sprite>
         <sprite>sprites\sprKnuckleSandwichDelay</sprite>
-        <sprite>sprites\sprWeaponIconsKnuckleSandwich</sprite>
         <sprite>sprites\sprHungryBat</sprite>
-        <sprite>sprites\sprWeaponIconsHungryBat</sprite>
         <sprite>sprites\sprSpringBlast</sprite>
         <sprite>sprites\sprSpringBlastArrow</sprite>
-        <sprite>sprites\sprWeaponIconsSpringBlast</sprite>
         <sprite>sprites\sprTrebleTeleport</sprite>
         <sprite>sprites\sprTreble</sprite>
-        <sprite>sprites\sprWeaponIconsTrebleBoost</sprite>
         <sprite>sprites\sprForteBusterSweat</sprite>
         <sprite>sprites\sprForteBusterShot</sprite>
         <sprite>sprites\sprForteBusterShotHalfCharged</sprite>
         <sprite>sprites\sprForteBusterShotCharged</sprite>
-        <sprite>sprites\sprWeaponIconsForteBuster</sprite>
+        <sprite>sprites\sprForteBulletBreak</sprite>
+        <sprites name="Weapon Icons">
+          <sprite>sprites\sprWeaponIconsSeedBomb</sprite>
+          <sprite>sprites\sprWeaponIconsCoinSpread</sprite>
+          <sprite>sprites\sprWeaponIconsGlowingSpiral</sprite>
+          <sprite>sprites\sprWeaponIconsKnuckleSandwich</sprite>
+          <sprite>sprites\sprWeaponIconsOilSlide</sprite>
+          <sprite>sprites\sprWeaponIconsHungryBat</sprite>
+          <sprite>sprites\sprWeaponIconsSpringBlast</sprite>
+          <sprite>sprites\sprWeaponIconsYamato</sprite>
+          <sprite>sprites\sprWeaponIconsTrebleBoost</sprite>
+          <sprite>sprites\sprWeaponIconsForteBuster</sprite>
+        </sprites>
       </sprites>
       <sprites name="Levels">
         <sprites name="Static Shock">
@@ -1462,6 +1465,7 @@
         <sprites name="Money Machine">
           <sprite>sprites\sprJumpShoot</sprite>
           <sprite>sprites\sprJumpShootBlade</sprite>
+          <sprite>sprites\sprLongLongGuy</sprite>
           <sprite>sprites\sprLongGuyHorizontal</sprite>
           <sprite>sprites\sprLongGuyVertical</sprite>
           <sprite>sprites\sprLongGuyIcon</sprite>
@@ -1499,7 +1503,8 @@
           <sprite>sprites\sprWhippersnapper</sprite>
           <sprite>sprites\sprPengSpawner</sprite>
           <sprite>sprites\sprPeng</sprite>
-          <sprite>sprites\sprHoneybomb</sprite>
+          <sprite>sprites\sprHivebomb</sprite>
+          <sprite>sprites\sprHivebombDebris</sprite>
           <sprite>sprites\sprLumberjane</sprite>
           <sprite>sprites\sprLumberjaneAxe</sprite>
           <sprite>sprites\sprFirefry</sprite>
@@ -2503,41 +2508,6 @@
         <object>objects\objMegamanSweat</object>
         <object>objects\objMegamanExplosion</object>
         <object>objects\objMegamanExit</object>
-        <objects name="Weapons">
-          <object>objects\objBusterShot</object>
-          <object>objects\objBusterShotHalfCharged</object>
-          <object>objects\objBusterShotCharged</object>
-          <object>objects\objBusterShotHalfChargedProto</object>
-          <object>objects\objBusterShotChargedProto</object>
-          <object>objects\objSeedBomb</object>
-          <object>objects\objCoinSpread</object>
-          <object>objects\objGlowingSpiral</object>
-          <object>objects\objOilSlide</object>
-          <object>objects\objKnuckleSandwich</object>
-          <object>objects\objHungryBat</object>
-          <object>objects\objSpringBlast</object>
-          <object>objects\objYamato</object>
-          <object>objects\objTrebleBoost</object>
-          <object>objects\objForteBuster</object>
-          <object>objects\objRushCoil</object>
-          <object>objects\objRushJet</object>
-          <objects name="Misc.">
-            <object>objects\objNormalBusterShot</object>
-            <object>objects\objForteBusterShotHalfCharged</object>
-            <object>objects\objForteBusterShotCharged</object>
-            <object>objects\objOilSlideSplash</object>
-            <object>objects\objKnuckleSandwichDelay</object>
-            <object>objects\objSpringBlastArrow</object>
-            <object>objects\objJudgmentCut</object>
-            <object>objects\objRisingKick</object>
-            <object>objects\objCrescentKick</object>
-            <object>objects\objProtoShield</object>
-            <object>objects\objWeaponExplosion</object>
-            <object>objects\objRushTeleport</object>
-            <object>objects\objRushTeleportBlock</object>
-            <object>objects\objSlashEffect</object>
-          </objects>
-        </objects>
       </objects>
       <objects name="Core">
         <objects name="Parents">
@@ -2607,6 +2577,42 @@
       <object>objects\objTrailEffect</object>
       <object>objects\objBackgroundFilter</object>
       <object>objects\objStopScrollingMaker</object>
+      <objects name="Weapons">
+        <object>objects\objBusterShot</object>
+        <object>objects\objBusterShotHalfCharged</object>
+        <object>objects\objBusterShotCharged</object>
+        <object>objects\objBusterShotHalfChargedProto</object>
+        <object>objects\objBusterShotChargedProto</object>
+        <object>objects\objSeedBomb</object>
+        <object>objects\objCoinSpread</object>
+        <object>objects\objGlowingSpiral</object>
+        <object>objects\objOilSlide</object>
+        <object>objects\objKnuckleSandwich</object>
+        <object>objects\objHungryBat</object>
+        <object>objects\objSpringBlast</object>
+        <object>objects\objYamato</object>
+        <object>objects\objTrebleBoost</object>
+        <object>objects\objForteBuster</object>
+        <object>objects\objRushCoil</object>
+        <object>objects\objRushJet</object>
+        <objects name="Misc.">
+          <object>objects\objNormalBusterShot</object>
+          <object>objects\objForteBusterShot</object>
+          <object>objects\objForteBusterShotHalfCharged</object>
+          <object>objects\objForteBusterShotCharged</object>
+          <object>objects\objOilSlideSplash</object>
+          <object>objects\objKnuckleSandwichDelay</object>
+          <object>objects\objSpringBlastArrow</object>
+          <object>objects\objJudgmentCut</object>
+          <object>objects\objRisingKick</object>
+          <object>objects\objCrescentKick</object>
+          <object>objects\objProtoShield</object>
+          <object>objects\objWeaponExplosion</object>
+          <object>objects\objRushTeleport</object>
+          <object>objects\objRushTeleportBlock</object>
+          <object>objects\objSlashEffect</object>
+        </objects>
+      </objects>
       <objects name="Static Shock">
         <object>objects\objBuzzshockDistance</object>
         <object>objects\objSparkSnakey</object>
@@ -2624,7 +2630,6 @@
         </objects>
       </objects>
       <objects name="Money Machine">
-        <object>objects\objJumpShoot</object>
         <object>objects\objLongGuy</object>
         <object>objects\objGoldonBatton</object>
         <object>objects\objGorudokuro</object>
@@ -2661,7 +2666,7 @@
         </objects>
       </objects>
       <objects name="Whispering Woods">
-        <object>objects\objHoneyBomb</object>
+        <object>objects\objHivebomb</object>
         <object>objects\objTorpedove</object>
         <object>objects\objTorpedoveSpawner</object>
         <object>objects\objLumberjane</object>
@@ -2749,15 +2754,14 @@
     <room>rooms\lvlCollectiblesRoom</room>
     <room>rooms\lvlBGVisibilityTest</room>
     <room>rooms\lvlStaticShock</room>
-    <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlLivingNightmare</room>
     <room>rooms\lvlStHunger</room>
     <room>rooms\rmHighwayToHell</room>
     <room>rooms\lvlTowerStage2</room>
     <room>rooms\lvlLostLight</room>
-    <room>rooms\lvlMoneyMachineNew</room>
-    <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlJumpKing</room>
+    <room>rooms\lvlMoneyMachine</room>
+    <room>rooms\lvlWhisperingWoods</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

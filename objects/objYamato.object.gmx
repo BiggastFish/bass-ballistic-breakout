@@ -297,7 +297,7 @@ if (global.ammo[playerID, global.weapon[playerID]] &gt; 0)
             {
                 if (other.object_index == killObj[l])
                 {
-                    gottem = true;
+                    if (object_index != objHivebomb) gottem = true;
                 }
             }
         }

@@ -3,7 +3,7 @@
   <spriteName>sprDestroyableNormal</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>5</depth>
   <persistent>0</persistent>
   <parentName>prtEntity</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,14 +27,17 @@
             <kind>1</kind>
             <string>event_inherited();
 
+healthpointsStart = 0.5;
+healthpoints = healthpointsStart;
 contactDamage = 0;
 bubbleTimer = -1;
+itemDrop = -1;
+showPopup = false;
+canOil = false;
 
 killOverride = false;
 
 isSolid = 1;
-faction = 5;
-fnsolid = 2;
 dieToSpikes = false;
 
 //@cc how to use

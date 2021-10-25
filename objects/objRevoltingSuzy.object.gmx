@@ -30,24 +30,27 @@
 healthpointsStart = 5;
 healthpoints = healthpointsStart;
 contactDamage = 4;
+popupx = 8;
 
 grav = 0;
 
 // Enemy specific code
-init = 1;
+init = true;
 spd = 0;
-bulletDir1 = 0;
-bulletDir2 = 0;
-bulletDir3 = 0;
+for (d = 0; d &lt; 3; d++)
+bulletDir[d] = 0;
 
 dir = "h";
 startDir = 1;
 
 beginStartDir = startDir;
 
+bounce = false;
+firsttime = false;
+moveStart = false;
+moving = moveStart;
+maxTimer = 45;
 moveTimer = 0;
-moving = false;
-firsttime = 1;
 </string>
           </argument>
         </arguments>
@@ -72,131 +75,137 @@ firsttime = 1;
             <kind>1</kind>
             <string>if (init)
 {
-    init = 0;
     beginStartDir = startDir;
+    init = false;
 }
 
 event_inherited();
 
 if (entityCanStep())
 {
+    if (firsttime)
+    {
+        if (dir == "h")
+        {
+            if (checkSolid(-4, 0, 1, 1))
+                startDir = 1;
+            else if (checkSolid(4, 0, 1, 1))
+                startDir = -1;
+        }
+        else
+        {
+            if (checkSolid(0, -4, 1, 1))
+                startDir = 1;
+            else if (checkSolid(0, 4, 1, 1))
+            startDir = -1;
+        }
+        firsttime = false;
+    }
+
     if (dir == "h")
     {
         xspeed = spd;
         if (startDir == 1)
         {
-            bulletDir1 = 90;
-            bulletDir2 = 180;
-            bulletDir3 = 270;
+            bulletDir[0] = 90;
+            bulletDir[1] = 180;
+            bulletDir[2] = 270;
         }
         else
         {
-            bulletDir1 = 90;
-            bulletDir2 = 360;
-            bulletDir3 = 270;
+            bulletDir[0] = 90;
+            bulletDir[1] = 360;
+            bulletDir[2] = 270;
         }
     }
     else
     {
         yspeed = spd;
-        if (startDir = 1)
+        if (startDir == 1)
         {
-            bulletDir1 = 90;
-            bulletDir2 = 180;
-            bulletDir3 = 360;
+            bulletDir[0] = 90;
+            bulletDir[1] = 180;
+            bulletDir[2] = 360;
         }
         else
         {
-            bulletDir1 = 360;
-            bulletDir2 = 180;
-            bulletDir3 = 270;
+            bulletDir[0] = 360;
+            bulletDir[1] = 180;
+            bulletDir[2] = 270;
         }
     }
-    if (moving)
-        spd = startDir * 3;
 
     if (!moving)
     {
         moveTimer += 1;
-        if (moveTimer == 8)
+        if (bounce)
         {
-            if (image_index &gt; 2)
-            {
-                image_index = 2; // Straighten after bouncing
-            }
-        }
-        if (moveTimer == 14)
-        {
-            if (image_index &gt; 1)
-            {
+            if (moveTimer == 8)
+                image_index = 2;
+            if (moveTimer == 14)
                 image_index = 1;
-            }
-        }
-        if (moveTimer == 20)
-        {
-            if (image_index &gt; 0)
+            if (moveTimer == 20)
             {
                 image_index = 0;
                 moveTimer = 0;
+                bounce = false;
             }
         }
-        if (moveTimer == 110)
+        else
         {
-            image_index = 1; // eye half-open
-        }
-        else if (moveTimer &gt;= 120)
-        {
-            image_index = 2;
-            moving = true;
-            if (firsttime)
+            if (moveTimer == maxTimer - 10)
+                image_index = 1;
+            else if (moveTimer &gt;= maxTimer)
             {
-                if (dir == "h")
+                image_index = 2;
+                moving = true;
+                /*if (firsttime)
                 {
-                    if (checkSolid(-4, 0, 1, 1))
+                    if (dir == "h")
                     {
-                        startDir = 1;
+                        if (checkSolid(-4, 0, 1, 1))
+                        {
+                            startDir = 1;
+                        }
+                        else if (checkSolid(4, 0, 1, 1))
+                        {
+                            startDir = -1;
+                        }
                     }
-                    else if (checkSolid(4, 0, 1, 1))
+                    else
                     {
-                        startDir = -1;
+                        if (checkSolid(0, -4, 1, 1))
+                        {
+                            startDir = 1;
+                        }
+                        else if (checkSolid(0, 4, 1, 1))
+                        {
+                            startDir = -1;
+                        }
                     }
                 }
-                else
-                {
-                    if (checkSolid(0, -4, 1, 1))
-                    {
-                        startDir = 1;
-                    }
-                    else if (checkSolid(0, 4, 1, 1))
-                    {
-                        startDir = -1;
-                    }
-                }
+                firsttime = false;*/
             }
-            firsttime = 0;
         }
     }
     else
     {
+        spd = startDir * 3;
         if (xcoll!= 0 || ycoll!= 0)
         {
             spd = 0;
-            moving = 0;
             moveTimer = 0;
+            moving = false;
+            bounce = true;
             image_index = 2 + (xcoll &lt; 0) + ((xcoll &gt; 0) * 2) 
             + ((ycoll &gt; 0) * 3) + ((ycoll &lt; 0) * 4);
             startDir = -startDir;
             playSFX(sfxEnemyShoot);
-            for (var i = 0; i &lt; 3; i ++)
+            for (i = 0; i &lt; 3; i ++)
             {
                 n = instance_create(x + 8, y + 8, objEnemyBullet);
                 n.spd = 3;
-                if (i == 0)
-                    n.dir = bulletDir1;
-                if (i == 1)
-                    n.dir = bulletDir2;
-                if (i == 2)
-                    n.dir = bulletDir3;
+                n.dir = bulletDir[i];
                 n.depth = depth + 1;
             }
         }
@@ -207,9 +216,10 @@ else if (dead)
     spd = 0;
     moveTimer = 0;
     startDir = beginStartDir;
-    moving = false;
-    image_index = 0;
-    firsttime = 1;
+    moving = moveStart;
+    bounce = false;
+    firsttime = true;
+    image_index = moveStart * 2;
 }
 </string>
           </argument>

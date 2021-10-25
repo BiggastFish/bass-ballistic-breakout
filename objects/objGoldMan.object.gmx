@@ -62,12 +62,6 @@ musicVolume = 0.8;
 musicLoop = true;
 musicLoopSecondsStart = 6.665;
 musicLoopSecondsEnd = 70.655;
-
-// Damage Tables
-enemyDamageValue(objBusterShotHalfCharged, 1);
-enemyDamageValue(objBusterShotCharged, 3);
-enemyDamageValue(objYamato, 3);
-enemyDamageValue(objKnuckleSandwich, 10);
 </string>
           </argument>
         </arguments>
@@ -154,27 +148,11 @@ if (entityCanStep())
                 {
                     dropTimer++;
                 }
-                /*if (dropTimer &lt; 15)
-                {
-                    dropTimer++
-                }*/
                 if ((dropTimer &gt;= 15 &amp;&amp; angVal &lt; 990) || dropsDone &gt; 1)
                 {
                     angVal+= 9;
                     x = midPointX + round(cos(degtorad(angVal)) * 12);
                     y = midPointY + round(sin(degtorad(angVal)) * 12);
-                }
-                if (dropTimer == 810)
-                {
-                    playSFX(sfxEnemyShoot)
-                    k = instance_create(x, y + 24, objExplosion)
-                    k.depth = depth - 1;
-                    for (bu = -1; b &lt;= 1; b+=2)
-                    {
-                        m = instance_create(x, y, objEnemyBullet);
-                        m.dir = dir;
-                        m.spd = 4;
-                    }
                 }
                 if (angVal &gt;= 990 &amp;&amp; dropTimer &gt;= 45
                 &amp;&amp; dropsDone &lt; 2)

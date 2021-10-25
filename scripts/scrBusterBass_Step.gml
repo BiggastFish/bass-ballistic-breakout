@@ -1,8 +1,3 @@
-if (!instance_exists(parent))
-{
-    instance_destroy();
-    exit;
-}
 if (canDamage)
 {
     xspeed = cos(degtorad(dir)) * 5;
@@ -21,10 +16,10 @@ with (objSolid)
 var inTop = instance_place(x, y, objTopSolid);
 var sol = instance_place(x, y, objSolid);
 if ((checkSolid(0, 0) && xspeed != 0) || 
-(xspeed == 0 && sol != noone 
+(xspeed == 0 && (sol != noone 
 && (rectangle_in_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom,
-sol.bbox_left, sol.bbox_top, sol.bbox_right, sol.bbox_bottom)) == 1)
-|| listTracker >= 2 ||
+sol.bbox_left, sol.bbox_top, sol.bbox_right, sol.bbox_bottom)) == 1
+|| listTracker >= 2)) ||
 (yspeed > 0 && inTop != noone && bbox_top < inTop.y + 8))
 {
     var xx = x, yy = y;

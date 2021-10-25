@@ -53,6 +53,7 @@ laserTop = x;
 laserBottom = x;
 
 killObj[1] = objKnuckleSandwich;
+killObj[2] = objYamato;
 </string>
           </argument>
         </arguments>

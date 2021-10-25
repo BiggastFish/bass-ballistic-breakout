@@ -27,11 +27,14 @@
             <kind>1</kind>
             <string>event_inherited();
 
+contactDamage = 3;
 despawnRange = -1;
 reflectable = 0;
+isTargetable = false;
 canHit = true;
 canOil = false;
 grav = 0;
+
 follow = true;
 parent = noone;
 </string>

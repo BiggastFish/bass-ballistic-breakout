@@ -142,8 +142,8 @@ if (!global.frozen)
         i = fireWeapon(16, 0, objSpringBlast, 12, 4, 2, 1);
         if (i)
         {
-            i.xspeed = 2 * image_xscale;
-            i.yspeed = -3 + (3 * (yDir &gt; 0));
+            i.xspeed = (2 - (yDir &lt; 0)) * image_xscale;
+            i.yspeed = -3 + (3 * yDir);
         }
     }
     else

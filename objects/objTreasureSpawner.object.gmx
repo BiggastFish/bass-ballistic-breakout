@@ -34,6 +34,7 @@ canHit = 0;
 canDamage = 0;
 blockCollision = 0;
 grav = 0;
+affectHud = false;
 
 respawnRange = -1;
 despawnRange = -1;
@@ -43,12 +44,14 @@ timer = timerStart;
 timerMax = 120;
 timerReset = 0;
 timerDelay = 7;
-shinies = 0;
-shiniesMax = 6;
-spawnDust = false;
 xDir = 0;
 yDir = 0;
 treasureSpd = 3;
+
+init = true;
+shinies = 0;
+shiniesMax = 6;
+spawnDust = false;
 </string>
           </argument>
         </arguments>
@@ -71,7 +74,13 @@ treasureSpd = 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>if (init)
+{
+    init = false;
+    timer = timerStart;
+}
+
+event_inherited();
 
 if (entityCanStep())
 {
@@ -98,7 +107,7 @@ if (entityCanStep())
         p.yDir = yDir;
         p.spd = treasureSpd;
         p.depth = 1000010;
-        if (shinies &gt;= shiniesMax)
+        if (shinies &gt;= shiniesMax &amp;&amp; shiniesMax != -1)
         {
             shinies = 0;
             spawnDust = false;

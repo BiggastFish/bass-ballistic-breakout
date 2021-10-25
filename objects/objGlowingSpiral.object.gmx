@@ -29,7 +29,7 @@
 
 bulletLimitCost = 1;
 
-contactDamage = .5;
+contactDamage = 0.5;
 
 pierces = 3;
 penetrates = 2;

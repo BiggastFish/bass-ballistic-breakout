@@ -31,11 +31,10 @@ healthpointsStart = 6;
 healthpoints = healthpointsStart;
 contactDamage = 3;
 
-despawnRange = -1;
+ramTimer = 20;
+ramming = 0;
 
-img = 0;
-crashed = 0;
-spd = 2;
+enemyDamageValue(objWeaponExplosion, 2);
 </string>
           </argument>
         </arguments>
@@ -62,53 +61,70 @@ spd = 2;
 
 if (entityCanStep())
 {
-    if (!crashed)
+    ramTimer+= (ramming != 1);
+    if (ramming == 0)
     {
-        xspeed = spd * image_xscale;
-        if (ycoll &gt; 0 &amp;&amp; insideView())
+        if (ramTimer == 50)
         {
-            playSFX(sfxBikkyLand);
+            playSFX(sfxRushCycle1);
+            r = instance_create(x - (28 * image_xscale), y + 12, objSlideDust);
+            r.image_xscale = image_xscale;
         }
-        if (ground) 
+        if (ramTimer == 80)
         {
-            img++
-            image_index = (img / 2) mod 2;
-            if (checkFall(16 * image_xscale))
-            {
-                yspeed = -4;
-            }
-        }
-        else
-        {
-            image_index = 2;
-        }
-        if (xcoll != 0)
-        {
-            if (insideView())
-            {
-                playSFX(sfxPowerStomp);
-                depth = 0;
-                image_index = 3;
-                blockCollision = 0;
-                yspeed = -3;
-                xspeed = spd * -image_xscale;
-                crashed = 1;
-            }
-            else
-                instance_destroy();
+            playSFX(sfxRushCycle2);
+            ramTimer = 0;
+            ramming = 1;
+            xspeed = 3 * image_xscale;
         }
     }
-    if ((bbox_right &lt;= global.sectionLeft || bbox_left &gt;= global.sectionRight ||
-    bbox_top &gt;= global.sectionBottom || bbox_bottom &lt;= global.sectionTop) ||
-    (crashed &amp;&amp; bbox_top &gt;= view_yview + 240))
+    else if (ramming == 1)
     {
-        instance_destroy();
+        if (xcoll != 0)
+            ramming = 2;
+    }
+    else if (ramming == 2)
+    {
+        if (ramTimer == 50)
+            xspeed = -1.5 * image_xscale;
+        if (xcoll != 0)
+        {
+            ramTimer = 0;
+            ramming = 0;
+        }
     }
 }
 else if (dead)
 {
-    crashed = 0;
-    blockCollision = 1;
+    ramTimer = 20;
+    ramming = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="21">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (collision_rectangle(x + 8 * image_xscale, y - 22,
+x + 27 * image_xscale, y + 18, other.id, false, false))
+{
+    other.guardCancel = 1;
 }
 </string>
           </argument>

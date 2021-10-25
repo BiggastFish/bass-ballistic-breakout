@@ -171,7 +171,7 @@ if (entityCanStep())
                     break;
                 case 3: // break apart :pensive:
                     image_index = 7 + (dieTimer / 5) mod 2;
-                    if (dieTimer % 10 == 0)
+                    if (dieTimer mod 10 == 0)
                     {
                         playSFX(sfxGutsQuake);
                         screenShake(10, 0, 2);

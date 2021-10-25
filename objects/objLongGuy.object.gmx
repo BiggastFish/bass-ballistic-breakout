@@ -25,11 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>// dir: "h" for horizontal, "v" for vertical
+// maxArmLength: how much, in half tiles, the arms in one side reach
+event_inherited();
 
 healthpointsStart = 256;
 healthpoints = healthpointsStart;
 contactDamage = 3;
+affectHud = false;
 undamageable = true;
 manualLoc = true;
 canOil = false;
@@ -49,10 +52,11 @@ blockCollision = 0;
 respawnRange = -1;
 despawnRange = -1;
 
-maxArmLength = 2;
+dir = "v";
+maxArmLength = 6;
 currArmLength = maxArmLength;
+finalOne = false;
 
-dir = "h";
 init = true;
 
 imgalarm = 0;
@@ -86,7 +90,10 @@ img = 0;
     {
         image_xscale = 2 + (2 * maxArmLength);
         x = xstart - 8 * currArmLength;
-        sprite_index = sprLongGuyHorizontal;
+        if (finalOne)
+            sprite_index = sprLongLongGuy;
+        else
+            sprite_index = sprLongGuyHorizontal;
     }
     else if (dir == "v")
     {
@@ -109,11 +116,11 @@ if (entityCanStep())
             if (timer &gt;= 10)
             {
                 if (dir == "h")
-                    image_xscale+= 2;
+                    image_xscale+= 2 + (2 * finalOne);
                 else if (dir == "v")
                     image_yscale+= 2;
                 timer = 0;
-                currArmLength++;
+                currArmLength+= 1 + finalOne;
             }
         }
     }
@@ -175,15 +182,16 @@ if (currArmLength &gt; 0)
 {
     if (dir == "h")
     {
-        image_xscale-= 2;
-        x+= 8;
+        image_xscale-= 2 + (2 * finalOne);
+        x+= 8 + (8 * finalOne);
+        image_xscale = max(image_xscale, 2);
     }
     else if (dir == "v")
     {
         image_yscale-= 2;
         y+= 8;
     }
-    currArmLength--;
+    currArmLength-= 1 + finalOne;
 }
 charged = false;
 timer = 0;

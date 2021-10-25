@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-healthpointsStart = 72;
+healthpointsStart = 56;
 healthpoints = healthpointsStart;
 blockCollision = false;
 grav = 0;
@@ -51,12 +51,6 @@ musicVolume = 0.8;
 musicLoop = true;
 musicLoopSecondsStart = 6.600;
 musicLoopSecondsEnd = 44.978;
-
-// Damage Tables
-enemyDamageValue(objBusterShotHalfCharged, 1);
-enemyDamageValue(objBusterShotCharged, 3);
-enemyDamageValue(objYamato, 3);
-enemyDamageValue(objKnuckleSandwich, 10);
 </string>
           </argument>
         </arguments>
@@ -81,7 +75,7 @@ enemyDamageValue(objKnuckleSandwich, 10);
             <kind>1</kind>
             <string>event_inherited();
 
-if (!global.frozen)
+if (entityCanStep())
 {
     if (startIntro)
     {
@@ -101,7 +95,7 @@ if (!global.frozen)
             claw.parent = id;
         }
         daTimer++;
-        if (daTimer == 15)
+        if (daTimer == 60)
             yspeed = 3;
         if (daTimer &gt;= 15)
         {
@@ -117,18 +111,11 @@ if (!global.frozen)
         }
         if (daTimer == 210)
         {
-            playSFX(sfxElectricShot);
-            with (claw) image_index = 1;
-        }
-        if (daTimer == 240)
-        {
             daTimer = 0;
             isIntro = false;
         }
     }
-}
-if (entityCanStep())
-{
+
     if (isFight)
     {
         var tx = x, ty = y;
@@ -160,11 +147,7 @@ if (entityCanStep())
                 {
                     grav = 0;
                     yspeed = 0;
-                    with (claw)
-                    {
-                        image_index = 0;
-                        follow = false;
-                    }
+                    with (claw) follow = false;
                     playSFX(sfxMM9Quake);
                     screenShake(36, 0, 2);
                     for (d = -4; d &lt;= 4; d++)
@@ -210,10 +193,8 @@ if (entityCanStep())
                 }
                 if (check)
                 {
-                    playSFX(sfxElectricShot);
                     with (claw) 
                     {
-                        image_index = 1;
                         blockCollision = true;
                         follow = true;
                     }
@@ -240,35 +221,6 @@ if (entityCanStep())
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="21">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*if (instance_exists(claw))
-{
-    if (collision_point(x, y, claw, true, false))
-    {
-        other.guardCancel = 1;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="7" enumb="20">
       <action>
         <libid>1</libid>
@@ -287,6 +239,11 @@ if (entityCanStep())
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+with (prtEnemyProjectile)
+{
+    instance_create(x, y, objExplosion);
+    instance_destroy();
+}
 stopMusic();
 </string>
           </argument>
@@ -343,7 +300,7 @@ if (length &gt; 0)
         for (l = -1; l &lt; 2; l+= 2)
         {
             draw_sprite_ext(sprMoneyCatcherPole, 0, x + (21 * l), view_yview - 4, 
-            1, length, 0, c_white, image_alpha);
+            1, length, 0, c_white, 1);
         }
     }
 }
@@ -358,7 +315,7 @@ if (instance_exists(claw))
             for (l = -1; l &lt; 2; l+= 2)
             {
                 draw_sprite_ext(sprMoneyCatcherPole, 0, x + (21 * l), bbox_bottom, 
-                1, clawLength, 0, c_white, image_alpha);
+                1, clawLength, 0, c_white, 1);
             }
         }
     }
