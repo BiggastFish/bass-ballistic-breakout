@@ -64,7 +64,7 @@ killObj[2] = objYamato;
 if (entityCanStep())
 {
     var i = instance_place(x, y, objMegaman);
-    if ((i != noone &amp;&amp; !i.teleporting &amp;&amp; !instance_place(x, y, objKnuckleSandwich)) 
+    if ((i != noone &amp;&amp; !i.teleporting &amp;&amp; grav != 0) 
     || ground)
     {
         event_user(EV_DEATH);
@@ -74,6 +74,7 @@ else if (dead)
 {
     canHit = true;
     grav = 0;
+    image_index = 0;
 }
 </string>
           </argument>
@@ -142,6 +143,7 @@ for (l = 0; l &lt; array_length_1d(killObj); l++)
         canHit = false;
         grav = 0.25;
         yspeed = -3;
+        image_index = 1;
         playSFX(sfxCannonShoot);
     }
     else

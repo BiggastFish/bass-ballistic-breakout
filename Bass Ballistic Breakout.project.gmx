@@ -1506,7 +1506,13 @@
           <sprite>sprites\sprHivebomb</sprite>
           <sprite>sprites\sprHivebombDebris</sprite>
           <sprite>sprites\sprLumberjane</sprite>
-          <sprite>sprites\sprLumberjaneAxe</sprite>
+          <sprite>sprites\sprMonkiOoAa</sprite>
+          <sprite>sprites\sprBanana</sprite>
+          <sprite>sprites\sprUmbrellone</sprite>
+          <sprite>sprites\mskUmbrellone</sprite>
+          <sprite>sprites\mskUmbrelloneSmall</sprite>
+          <sprite>sprites\sprHariHari</sprite>
+          <sprite>sprites\sprHariHariNeedles</sprite>
           <sprite>sprites\sprFirefry</sprite>
           <sprite>sprites\sprFirefryTrail</sprite>
           <sprite>sprites\sprRevoltingSuzy</sprite>
@@ -2668,11 +2674,11 @@
       <objects name="Whispering Woods">
         <object>objects\objHivebomb</object>
         <object>objects\objTorpedove</object>
+        <object>objects\objHariHari</object>
         <object>objects\objTorpedoveSpawner</object>
-        <object>objects\objLumberjane</object>
-        <object>objects\objFirefry</object>
+        <object>objects\objMonkiOoAa</object>
+        <object>objects\objUmbrellone</object>
         <object>objects\objRevoltingSuzy</object>
-        <object>objects\objFlowerSpring</object>
         <object>objects\objTruckBoss</object>
         <object>objects\objTruckBossFront</object>
         <object>objects\objTruckBossSpike</object>
@@ -2719,6 +2725,7 @@
         </objects>
       </objects>
       <objects name="Jump King">
+        <object>objects\objFlowerSpring</object>
         <object>objects\objTheWizard</object>
         <object>objects\objTheWizardFire</object>
         <object>objects\objTheWizardLaser</object>

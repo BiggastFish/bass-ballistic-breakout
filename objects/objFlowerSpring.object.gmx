@@ -84,7 +84,7 @@ if (!global.frozen)
     
     with (objMegaman)
     {
-        if (blockCollision &amp;&amp; grav!=0 &amp;&amp; yspeed &gt;= 0)
+        if (blockCollision &amp;&amp; grav !=0 &amp;&amp; yspeed &gt;= 0)
         {
             with (other)
             {
@@ -95,6 +95,7 @@ if (!global.frozen)
                     playSFX(sfxSpring);
                     with (other)
                     {
+                        if (jumpCounter == 2) jumpCounter = 1;
                         canMinJump = false;
                         climbing = 0;
                         yspeed = -7.5 * image_yscale;

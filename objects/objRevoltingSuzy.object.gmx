@@ -51,6 +51,8 @@ moveStart = false;
 moving = moveStart;
 maxTimer = 45;
 moveTimer = 0;
+
+enemyDamageValue(objKnuckleSandwich, 5);
 </string>
           </argument>
         </arguments>
