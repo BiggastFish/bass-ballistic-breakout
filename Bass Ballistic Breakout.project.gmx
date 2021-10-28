@@ -554,6 +554,7 @@
         <sound>sound\sfxSearchyLight</sound>
         <sound>sound\sfxSFDash</sound>
         <sound>sound\sfxSFFlame</sound>
+        <sound>sound\sfxSheepSpark</sound>
         <sound>sound\sfxSola0Shoot</sound>
         <sound>sound\sfxSolarBlazeLarge</sound>
         <sound>sound\sfxSolarBlazeSmall</sound>
@@ -1441,16 +1442,15 @@
       </sprites>
       <sprites name="Levels">
         <sprites name="Static Shock">
-          <sprite>sprites\sprSparkSnakey</sprite>
-          <sprite>sprites\sprSparkSnakeyShot</sprite>
-          <sprite>sprites\sprBossHealthHud</sprite>
-          <sprite>sprites\sprChargingChester</sprite>
-          <sprite>sprites\sprChargingChesterSpark</sprite>
+          <sprite>sprites\sprAnaconduit</sprite>
+          <sprite>sprites\sprAnaconduitShot</sprite>
+          <sprite>sprites\sprGesunder</sprite>
+          <sprite>sprites\sprGesunderSpark</sprite>
           <sprite>sprites\sprGabyoallightning</sprite>
           <sprite>sprites\sprGabyoallightningLightning</sprite>
-          <sprite>sprites\sprRingRing</sprite>
-          <sprite>sprites\sprTossMachine</sprite>
-          <sprite>sprites\sprTosserRock</sprite>
+          <sprite>sprites\sprMeanGoblin</sprite>
+          <sprite>sprites\sprChuckP</sprite>
+          <sprite>sprites\sprChuckPRock</sprite>
           <sprites name="Boss">
             <sprite>sprites\sprBuzzshock</sprite>
             <sprite>sprites\sprBuzzshockEV73</sprite>
@@ -1503,6 +1503,7 @@
           <sprite>sprites\sprWhippersnapper</sprite>
           <sprite>sprites\sprPengSpawner</sprite>
           <sprite>sprites\sprPeng</sprite>
+          <sprite>sprites\sprHeliBatonLeaf</sprite>
           <sprite>sprites\sprHivebomb</sprite>
           <sprite>sprites\sprHivebombDebris</sprite>
           <sprite>sprites\sprLumberjane</sprite>
@@ -1625,6 +1626,7 @@
         <sprite>sprites\sprBassJumpPoof</sprite>
         <sprite>sprites\sprAntiEddie</sprite>
         <sprite>sprites\sprLifeNew</sprite>
+        <sprite>sprites\sprBossHealthHud</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -2621,13 +2623,13 @@
       </objects>
       <objects name="Static Shock">
         <object>objects\objBuzzshockDistance</object>
-        <object>objects\objSparkSnakey</object>
-        <object>objects\objChargingChester</object>
-        <object>objects\objChargingChesterSpark</object>
+        <object>objects\objAnaconduit</object>
+        <object>objects\objGesunder</object>
+        <object>objects\objGesunderSpark</object>
         <object>objects\objGabyoallightning</object>
-        <object>objects\objTossMachine</object>
-        <object>objects\objTosserRock</object>
-        <object>objects\objRingRing</object>
+        <object>objects\objChuckP</object>
+        <object>objects\objChuckPRock</object>
+        <object>objects\objMeanGoblin</object>
         <objects name="Boss">
           <object>objects\objBuzzshock</object>
           <object>objects\objBuzzshockEV73</object>
@@ -2677,6 +2679,7 @@
         <object>objects\objHariHari</object>
         <object>objects\objTorpedoveSpawner</object>
         <object>objects\objMonkiOoAa</object>
+        <object>objects\objHeliButonLeaf</object>
         <object>objects\objUmbrellone</object>
         <object>objects\objRevoltingSuzy</object>
         <object>objects\objTruckBoss</object>

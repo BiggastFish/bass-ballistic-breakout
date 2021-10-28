@@ -18,11 +18,12 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>24</width>
-  <height>15</height>
+  <height>16</height>
   <frames>
-    <frame index="0">images\sprRingRing_0.png</frame>
-    <frame index="1">images\sprRingRing_1.png</frame>
-    <frame index="2">images\sprRingRing_2.png</frame>
-    <frame index="3">images\sprRingRing_3.png</frame>
+    <frame index="0">images\sprMeanGoblin_0.png</frame>
+    <frame index="1">images\sprMeanGoblin_1.png</frame>
+    <frame index="2">images\sprMeanGoblin_2.png</frame>
+    <frame index="3">images\sprMeanGoblin_3.png</frame>
+    <frame index="4">images\sprMeanGoblin_4.png</frame>
   </frames>
 </sprite>

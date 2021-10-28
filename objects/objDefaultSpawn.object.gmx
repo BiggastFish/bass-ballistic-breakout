@@ -35,6 +35,7 @@
 // 8 = Skull elevator
 // 12 = glass smash (intro stage)
 // 13 = coin plow (gold man stage)
+// 14 = leaf pass (perfuma stage)
 respawnAnimation = 0;
 
 //@cc play the animation sequence while ready's being displayed

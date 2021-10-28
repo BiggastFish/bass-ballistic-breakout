@@ -162,7 +162,7 @@ if (entityCanStep())
         {
             img = 0;
             stopped = 0;
-            if (insideView()) playSFX(sfxBlockDevilLaser);
+            playSound = true;
         }
     }
     image_index+= 1/6;
@@ -173,7 +173,7 @@ if (entityCanStep())
     if (playSound)
     {
         playSound = false;
-        playSFX(sfxBlockDevilLaser)
+        if (insideView()) playSFX(sfxBlockDevilLaser)
     }
 
 } 

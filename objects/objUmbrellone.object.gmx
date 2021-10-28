@@ -93,12 +93,12 @@ if (entityCanStep())
                 image_index = 0;
                 calibrateDirection();
             }
-            if (timer == 34)
+            if (timer == 26)
             {
                 image_index = 2;
                 calibrateDirection();
             }
-            if (timer == 40)
+            if (timer == 30)
             {
                 yspeed = -6;
                 xSpd = xSpeedAim(x, y, x + image_xscale * abs(tx - x), 
@@ -137,6 +137,7 @@ if (entityCanStep())
 else if (dead)
 {
     flying = false;
+    ground = true;
     mask_index = mskUmbrellone;
     image_index = 0;
     msk = mskUmbrellone;

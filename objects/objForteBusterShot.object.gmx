@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-contactDamage = 2;
+contactDamage = 1.5;
 
 playSFX(sfxBuster);
 </string>

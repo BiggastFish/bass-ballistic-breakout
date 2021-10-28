@@ -43,14 +43,10 @@ respawnAnimation = 0;
 //@cc play the animation sequence while ready's being displayed
 showDuringReady = false;
 
-//@cc delete instance if the global checkpoint amount value is the same as this
-deleteValue = 0;
-
 yspeed = 0;
 touch = 0;
 _im = 0;
-init = 1;
-spawnDir = 1;
+init = true;
 </string>
           </argument>
         </arguments>
@@ -73,35 +69,25 @@ spawnDir = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ((!global.checkpointAmount || deleteValue == global.checkpointAmount) &amp;&amp;
-!global.frozen)
-{
-    instance_destroy();
-    exit;
-}
-
-if (instance_exists(objSectionSwitcher) || init)
+            <string>if (instance_exists(objSectionSwitcher) || init)
 {
     if (global.checkpointX == xx &amp;&amp; global.checkpointY == yy &amp;&amp; init)
     {
-        with (objMegaman)
-        {
-            image_xscale = other.spawnDir;
-        }
+        with (objMegaman) image_xscale = other.image_xscale;
         instance_destroy();
     }
-    visible = 0;
-    init = 0;
+    visible = false;
+    init = false;
 }
 
 if (!global.frozen)
 {
     if (insideSection(x, y))
     {
-        visible = 1;
+        visible = true;
         if (!touch)
         {
-            animationLoop(0, 1, .05);
+            animationLoop(0, 1, 0.05);
             if (place_meeting(x, y, objMegaman))
             {
                 playSFX(sfxElementGrab);
@@ -130,7 +116,7 @@ if (!global.frozen)
         }
         else if (touch == 2)
         {
-            animationLoop(4, 5, .05);
+            animationLoop(4, 5, 0.05);
         }
     
         if (instance_exists(objMegaman))

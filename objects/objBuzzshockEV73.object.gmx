@@ -197,7 +197,7 @@ if (entityCanStep())
                     for (m = -1; m &lt;= 1; m+= 2)
                     {
                         s = instance_create(x - (18 * image_xscale), y + 40, 
-                        objChargingChesterSpark);
+                        objGesunderSpark);
                         s.sprite_index = sprBuzzshockEV73Spark;
                         s.shotFrom = true;
                         s.yspeed = 3;
@@ -214,7 +214,7 @@ if (entityCanStep())
                 }
                 break;
             case 1: // wiggle up and parabola
-                if (bzztTimer = 30)
+                if (bzztTimer == 30)
                 {
                     middlePoint = x;
                     xVal = 90;
@@ -239,13 +239,13 @@ if (entityCanStep())
                             bodyIndex = 2;
                         }
                     }
-                    if (bzztTimer &gt;= 60 &amp;&amp; bzztTimer % 30 = 0)
+                    if (bzztTimer &gt;= 60 &amp;&amp; bzztTimer mod 30 == 0)
                     {
                         playSFX(sfxElectricShot);
                         with instance_create(x + 2 * image_xscale, y - 40, 
                         objEnemyBullet)
                         {
-                            sprite_index = sprSparkSnakeyShot;
+                            sprite_index = sprAnaconduitShot;
                             image_speed = 0.4;
                             if (instance_exists(target)) aimAtTarget(2);
                             else yspeed = 2;
@@ -269,11 +269,11 @@ if (entityCanStep())
                     }
                     if (bzztTimer &gt;= 40 &amp;&amp; bzztTimer mod 40 == 0)
                     {
-                        if (instance_number(objRingRing) &lt; 3)
+                        if (instance_number(objMeanGoblin) &lt; 3)
                         {
                             playSFX(sfxBariIIIRegen);
                             r = instance_create(x + (10 * image_xscale), 
-                            y - 24, objRingRing);
+                            y - 24, objMeanGoblin);
                             r.respawn = 0;
                             r.itemDrop = -1;
                         }
@@ -337,13 +337,13 @@ if (entityCanStep())
                 if ((bzztTimer &gt;= 40 &amp;&amp; bzztTimer &lt;= 50 || 
                 bzztTimer &gt;= 160 &amp;&amp; bzztTimer &lt;= 170 ||
                 bzztTimer &gt;= 280 &amp;&amp; bzztTimer &lt;= 290) &amp;&amp; 
-                bzztTimer mod 5 = 0)
+                bzztTimer mod 5 == 0)
                 {
                     playSFX(sfxElecnShoot);
                     for (m = -1; m &lt;= 1; m+= 2)
                     {
                         s = instance_create(x - (18 * image_xscale), y + 40, 
-                        objChargingChesterSpark);
+                        objGesunderSpark);
                         s.sprite_index = sprBuzzshockEV73Spark;
                         s.shotFrom = true;
                         s.yspeed = 3;
@@ -486,7 +486,7 @@ x - 52 * image_xscale, y + 28, other.id, false, false))
         instance_create(x, y, objExplosion);
         instance_destroy();
     }
-    with (objRingRing)
+    with (objMeanGoblin)
     {
         instance_create(x, y, objExplosion);
         instance_destroy();

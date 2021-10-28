@@ -39,6 +39,7 @@ spd = 0;
 
 explodeOnContact = 0;
 dieOnHit = false;
+dieInSolid = false;
 explosionSFX = sfxMM9Explosion;
 alarmDie = -2;
 
@@ -75,7 +76,7 @@ if (entityCanStep())
 {
     if (imageSpeed != -1)
         image_speed = imageSpeed;
-    if (explodeOnContact)
+    if (dieInSolid)
     {
         x += xcoll;
         y += ycoll;
@@ -85,9 +86,12 @@ if (entityCanStep())
                 instance_destroy();
             else
                 dead = true;
-            var i = instance_create(x, y, objHarmfulExplosion);
-            i.contactDamage = contactDamage;
-            playSFX(explosionSFX);
+            if (explodeOnContact)
+            {
+                i = instance_create(x, y, objHarmfulExplosion);
+                i.contactDamage = contactDamage;
+                playSFX(explosionSFX);
+            }
         }
         x -= xcoll;
         y -= ycoll;

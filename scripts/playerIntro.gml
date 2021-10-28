@@ -63,9 +63,18 @@ if (init)
                     f.sprite_index = sprGorudokuroGold;
                     f.image_index = irandom(2);
                     f.yspeed = 2;
-                    f.xspeed = i * .8;
+                    f.xspeed = i * 0.8;
                 }
             }
+            break;
+        case 14: // come in from leaves
+            landy = y;
+            y-= 80;
+            blockCollision = 0;
+            teleportTimer = 0;
+            global.lockTransition = true;
+            playSFX(sfxHeliButonReveal);
+            for (i = 0; i < 4; i++) instance_create(x, y, objHeliButonLeaf);
             break;
         default:
             landy = y;
@@ -438,7 +447,8 @@ else
                 exit;
             }
             break;
-        case 13: // fall in without teleporting animation
+        case 13:
+        case 14: // fall in without teleporting animation
         // don't use teleport sprites, instead do this! 
             canSpriteChange = 1;
             ground = false;

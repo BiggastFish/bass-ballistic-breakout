@@ -30,6 +30,7 @@
 healthpointsStart = 5;
 healthpoints = healthpointsStart;
 contactDamage = 4;
+stayDefeated = true;
 popupx = 8;
 
 grav = 0;
@@ -202,13 +203,17 @@ if (entityCanStep())
             image_index = 2 + (xcoll &lt; 0) + ((xcoll &gt; 0) * 2) 
             + ((ycoll &gt; 0) * 3) + ((ycoll &lt; 0) * 4);
             startDir = -startDir;
-            playSFX(sfxEnemyShoot);
-            for (i = 0; i &lt; 3; i ++)
+            if (insideView()) 
             {
-                n = instance_create(x + 8, y + 8, objEnemyBullet);
-                n.spd = 3;
-                n.dir = bulletDir[i];
-                n.depth = depth + 1;
+                playSFX(sfxEnemyShoot);
+                for (i = 0; i &lt; 3; i ++)
+                {
+                    n = instance_create(x + 8, y + 8, objEnemyBullet);
+                    n.spd = 3;
+                    n.dir = bulletDir[i];
+                    n.dieInSolid = true;
+                    n.depth = depth + 1;
+                }
             }
         }
     }
