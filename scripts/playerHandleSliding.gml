@@ -85,7 +85,7 @@ if (global.enableSlide && !playerIsLocked(PL_LOCK_SLIDE))
         
         var canProceed = true;
         var isfree = true;
-        var jump = global.keyJumpPressed[playerID] && yDir != gravDir /*&& !playerIsLocked(PL_LOCK_JUMP )*/ ;
+        var jump = global.keyJumpPressed[playerID];
         
         if (image_xscale == -xDir || slideTimer >= slideFrames || jump)
         {

@@ -57,14 +57,13 @@ press = 1;
 // Option text
 optionText[0] = 'BACK';
 optionText[1] = 'BG VISIBILITY:';
-optionText[2] = 'CHECKPOINT AMOUNT:';
-optionText[3] = 'DAMAGE TAKEN:';
-optionText[4] = 'DAMAGE DEALT:';
-optionText[5] = 'QUICKSWITCH ICON:';
-optionText[6] = 'SPIKE DAMAGE:';
-optionText[7] = 'PIT DAMAGE:';
-optionText[8] = 'DASH INPUT:';
-optionText[9] = 'RESET TO DEFAULTS';
+optionText[2] = 'DAMAGE TAKEN:';
+optionText[3] = 'DAMAGE DEALT:';
+optionText[4] = 'QUICKSWITCH ICON:';
+optionText[5] = 'SPIKE DAMAGE:';
+optionText[6] = 'PIT DAMAGE:';
+optionText[7] = 'DASH INPUT:';
+optionText[8] = 'RESET TO DEFAULTS';
 </string>
           </argument>
         </arguments>
@@ -238,18 +237,8 @@ if (phase == 2 &amp;&amp; !selected)
                 }
                 break;
 
-            // Checkpoint Amount
-            case 2:
-                pre = global.checkpointAmount;
-                global.checkpointAmount = max(0, min(3, global.checkpointAmount + dir));
-                if (global.checkpointAmount != pre)
-                {
-                    playSFX(sfxMenuMove);
-                }
-                break;
-
             // Damage Taken
-            case 3:
+            case 2:
                 pre = global.damageTakenMultiplier;
                 global.damageTakenMultiplier = clamp(floor(global.damageTakenMultiplier + dir), 0.5, 2);
                 if (global.damageTakenMultiplier != pre)
@@ -259,7 +248,7 @@ if (phase == 2 &amp;&amp; !selected)
                 break;
             
             // Damage Dealt
-            case 4:
+            case 3:
                 pre = global.damageDealtMultiplier;
                 global.damageDealtMultiplier = clamp(floor(global.damageDealtMultiplier + dir), 0.5, 2);
                 if (global.damageDealtMultiplier != pre)
@@ -269,7 +258,7 @@ if (phase == 2 &amp;&amp; !selected)
                 break;
             
             // Quickswitch Icon
-            case 5:
+            case 4:
                 pre = global.showQuickswitch;
                 global.showQuickswitch = min(max(0, global.showQuickswitch + dir), 1);
                 if (global.showQuickswitch != pre)
@@ -279,7 +268,7 @@ if (phase == 2 &amp;&amp; !selected)
                 break;
             
             // Spike Behavior
-            case 6:
+            case 5:
                 pre = global.spikeBehavior;
                 global.spikeBehavior = max(0, min(3, global.spikeBehavior + dir));
                 if (global.spikeBehavior != pre)
@@ -289,7 +278,7 @@ if (phase == 2 &amp;&amp; !selected)
                 break;
             
             // Pit Behavior
-            case 7:
+            case 6:
                 pre = global.pitBehavior;
                 global.pitBehavior = max(0, min(2, global.pitBehavior + dir));
                 if (global.pitBehavior != pre)
@@ -299,7 +288,7 @@ if (phase == 2 &amp;&amp; !selected)
                 break;
 
             // Dash Behavior
-            case 8:
+            case 7:
                 pre = global.dashBehavior;
                 global.dashBehavior = max(0, min(2, global.dashBehavior + dir));
                 if (global.dashBehavior != pre)
@@ -321,9 +310,8 @@ if (phase == 2 &amp;&amp; !selected)
                 phase++;
                 playSFX(sfxMenuSelect);
                 break;
-            case 9:
+            case 8:
                 global.bgVisibility = 100;
-                global.checkpointAmount = 3;
                 global.damageTakenMultiplier = 1; 
                 global.damageDealtMultiplier = 1;
                 global.showQuickswitch = 1;
@@ -489,22 +477,9 @@ for (var j = 0; j &lt; visibleOptions; j++)
             opt += string(global.bgVisibility) + '%';
             
             break;
-            
-        // Checkpoint Amount
-        case 2:
-            if (global.checkpointAmount)
-            {
-                opt += string(global.checkpointAmount);
-            }
-            else
-            {
-                opt += 'NONE';
-            }
-            
-            break;
         
         // Damage Taken
-        case 3:
+        case 2:
             switch (global.damageTakenMultiplier)
             {
                 case 0.5:
@@ -521,7 +496,7 @@ for (var j = 0; j &lt; visibleOptions; j++)
             break;
 
         // Damage dealth
-        case 4:
+        case 3:
             switch (global.damageDealtMultiplier)
             {
                 case 0.5:
@@ -538,7 +513,7 @@ for (var j = 0; j &lt; visibleOptions; j++)
             break;
 
         // quickswitch icon
-        case 5:
+        case 4:
             if (global.showQuickswitch)
             {
                 opt += 'ON';
@@ -551,7 +526,7 @@ for (var j = 0; j &lt; visibleOptions; j++)
             break;
         
         // spike behavior
-        case 6:
+        case 5:
             switch (global.spikeBehavior)
             {
                 case 0:
@@ -571,7 +546,7 @@ for (var j = 0; j &lt; visibleOptions; j++)
             break;
 
         // pit behavior
-        case 7:
+        case 6:
             switch (global.pitBehavior)
             {
                 case 0:
@@ -588,7 +563,7 @@ for (var j = 0; j &lt; visibleOptions; j++)
             break;
 
         // dash behavior
-        case 8:
+        case 7:
             switch (global.dashBehavior)
             {
                 case 0:
@@ -626,46 +601,40 @@ if (option != 0)
             draw_sprite(sprAccessibilityVisual, 1, drawXPosition + 19, drawYPosition + 165);
             dopt = 'VISIBILITY OF#BACKGROUND ELEMENTS#PRESENT IN STAGES##(CERTAIN BG ASPECTS#WILL STILL BE#VISIBLE REGARDLESS#OF SETTINGS)';
             break;
-        
-        // Toggle Autofire
-        case 2:
-            draw_sprite(sprAccessibilityVisual, 2 + floor(global.checkpointAmount), drawXPosition + 19, drawYPosition + 165)
-            dopt = 'AMOUNT OF#CHECKPOINTS#AVAILABLE IN#A STAGE';
-            break;
 
         // Damage Taken
-        case 3:
-            draw_sprite(sprAccessibilityVisual, 6 + floor(global.damageTakenMultiplier), drawXPosition + 19, drawYPosition + 165)
+        case 2:
+            draw_sprite(sprAccessibilityVisual, 2 + floor(global.damageTakenMultiplier), drawXPosition + 19, drawYPosition + 165)
             dopt = 'AMOUNT OF DAMAGE#ENEMIES AND#ENEMY PROJECTILES#DEAL TO THE#PLAYER';
             break;
 
         // Damage Dealt
-        case 4:
-            draw_sprite(sprAccessibilityVisual, 9 + floor(global.damageDealtMultiplier), drawXPosition + 19, drawYPosition + 165)
+        case 3:
+            draw_sprite(sprAccessibilityVisual, 5 + floor(global.damageDealtMultiplier), drawXPosition + 19, drawYPosition + 165)
             dopt = 'AMOUNT OF DAMAGE#ENEMIES TAKE#FROM PLAYER#PROJECTILES';
             break;
 
         // Quickswitch Icon
-        case 5:
-            draw_sprite(sprAccessibilityVisual, 12 + floor(global.showQuickswitch), drawXPosition + 19, drawYPosition + 165)
+        case 4:
+            draw_sprite(sprAccessibilityVisual, 8 + floor(global.showQuickswitch), drawXPosition + 19, drawYPosition + 165)
             dopt = 'SETS THE WEAPON#ICON ABOVE THE#PLAYER TO BE#VISIBLE WHEN#QUICKSWITCHING#WEAPONS';
             break;
 
         // Spike Behavior
-        case 6:
-            draw_sprite(sprAccessibilityVisual, 14 + floor(global.spikeBehavior), drawXPosition + 19, drawYPosition + 165)
+        case 5:
+            draw_sprite(sprAccessibilityVisual, 10 + floor(global.spikeBehavior), drawXPosition + 19, drawYPosition + 165)
             dopt = 'AMOUNT OF DAMAGE#SPIKES DEAL#TO THE PLAYER';
             break;
         
         // Pit Behavior
-        case 7:
-            draw_sprite(sprAccessibilityVisual, 18 + floor(global.pitBehavior), drawXPosition + 19, drawYPosition + 165)
+        case 6:
+            draw_sprite(sprAccessibilityVisual, 14 + floor(global.pitBehavior), drawXPosition + 19, drawYPosition + 165)
             dopt = 'AMOUNT OF DAMAGE#PITS DEAL TO#THE PLAYER##(NON-LETHAL DAMAGE#BOUNCES UP THE#PLAYER FROM#THE PIT)';
             break;
 
         // Dash Input
-        case 8:
-            draw_sprite(sprAccessibilityVisual, 21 + floor(global.dashBehavior), drawXPosition + 19, drawYPosition + 165)
+        case 7:
+            draw_sprite(sprAccessibilityVisual, 17 + floor(global.dashBehavior), drawXPosition + 19, drawYPosition + 165)
             dopt = 'INPUTS REQUIRED#FOR ACTIVATING#A DASH';
             break;
     }

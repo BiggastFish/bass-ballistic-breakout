@@ -9,7 +9,6 @@ global.dashBehavior = 2;
 global.showQuickswitch = 1;
 global.damageTakenMultiplier = 1;
 global.damageDealtMultiplier = 1;
-global.checkpointAmount = 3;
 global.musicvolume = 80;
 global.soundvolume = 100;
 global.bgVisibility = 10;

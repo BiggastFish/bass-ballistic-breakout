@@ -72,9 +72,11 @@ if (init)
             y-= 80;
             blockCollision = 0;
             teleportTimer = 0;
+            introFakeGrav = 0.25;
+            introFakeYspeed = -2;
             global.lockTransition = true;
             playSFX(sfxHeliButonReveal);
-            for (i = 0; i < 4; i++) instance_create(x, y, objHeliButonLeaf);
+            for (i = 0; i < 8; i++) instance_create(x, y, objHeliButonLeaf);
             break;
         default:
             landy = y;
@@ -383,7 +385,7 @@ else
             if (teleportTimer = 0)
             {
                 introFakeGrav = 0.25;
-                introFakeYspeed = -sqrt(abs(2*.25*abs(y - (landy - 80))));
+                introFakeYspeed = -sqrt(abs(2* 0.25 * abs(y - (landy - 80))));
                 
                 teleportTimer = 1;
             }
@@ -462,6 +464,8 @@ else
                 {
                     playSFX(sfxLand);
                     y = landy;
+                    introFakeGrav = 0;
+                    introFakeYspeed = 0;
                 }
                 else
                 {
@@ -480,7 +484,8 @@ else
             }
             else
             {
-                y += 8;
+                y+= introFakeYspeed;
+                introFakeYspeed += introFakeGrav;
             }
             break;
     }

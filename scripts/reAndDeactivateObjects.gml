@@ -72,6 +72,7 @@ if (deac)
                             beenOutsideView = false;
                             spawned = false;
                             
+                            killedByPlayer = false;
                             event_user(EV_SPAWN); // despawn event
                             event_perform(ev_step, ev_step_normal);
                             

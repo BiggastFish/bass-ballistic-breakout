@@ -1502,12 +1502,13 @@
         <sprites name="Whispering Woods">
           <sprite>sprites\sprWhippersnapper</sprite>
           <sprite>sprites\sprPengSpawner</sprite>
-          <sprite>sprites\sprPeng</sprite>
+          <sprite>sprites\sprLaserBeak</sprite>
           <sprite>sprites\sprHeliBatonLeaf</sprite>
           <sprite>sprites\sprHivebomb</sprite>
           <sprite>sprites\sprHivebombDebris</sprite>
           <sprite>sprites\sprLumberjane</sprite>
           <sprite>sprites\sprMonkiOoAa</sprite>
+          <sprite>sprites\sprMonkiOoAaPreview</sprite>
           <sprite>sprites\sprBanana</sprite>
           <sprite>sprites\sprUmbrellone</sprite>
           <sprite>sprites\mskUmbrellone</sprite>
@@ -2675,9 +2676,8 @@
       </objects>
       <objects name="Whispering Woods">
         <object>objects\objHivebomb</object>
-        <object>objects\objTorpedove</object>
+        <object>objects\objLaserbeak</object>
         <object>objects\objHariHari</object>
-        <object>objects\objTorpedoveSpawner</object>
         <object>objects\objMonkiOoAa</object>
         <object>objects\objHeliButonLeaf</object>
         <object>objects\objUmbrellone</object>

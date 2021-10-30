@@ -29,7 +29,7 @@
 
 healthpointsStart = 8;
 healthpoints = healthpointsStart;
-contactDamage = 3;
+contactDamage = 5;
 
 flying = false;
 msk = mskUmbrellone;

@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 
-x = random_range(x - 20, x + 20);
-y = random_range(y + 20, y - 20);
+x = random_range(x - 24, x + 24);
+y = random_range(y + 24, y - 24);
 
 xspeed = random_range(-0.4, 0.4);
 yspeed = 0.8;
