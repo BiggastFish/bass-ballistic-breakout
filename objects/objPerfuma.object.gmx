@@ -106,8 +106,7 @@ enemyDamageValue(objKnuckleSandwich, 10);
             <kind>1</kind>
             <string>event_inherited();
 
-// Handle Intro
-if (!global.frozen)
+if (entityCanStep())
 {
     // Starting the intro animation
     if (startIntro)
@@ -124,10 +123,9 @@ if (!global.frozen)
         vine.image_xscale = image_xscale;
         vine.parent = id;
         isIntro = false;
+        with (objSolid) visible = false;
     }
-}
-if (entityCanStep())
-{
+
     if (isFight)
     {
         if (phase &lt; 3)

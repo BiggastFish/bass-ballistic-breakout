@@ -1503,6 +1503,7 @@
           <sprite>sprites\sprWhippersnapper</sprite>
           <sprite>sprites\sprPengSpawner</sprite>
           <sprite>sprites\sprLaserBeak</sprite>
+          <sprite>sprites\sprMegamindDrone</sprite>
           <sprite>sprites\sprHeliBatonLeaf</sprite>
           <sprite>sprites\sprHivebomb</sprite>
           <sprite>sprites\sprHivebombDebris</sprite>
@@ -1519,7 +1520,7 @@
           <sprite>sprites\sprFirefryTrail</sprite>
           <sprite>sprites\sprRevoltingSuzy</sprite>
           <sprite>sprites\sprFlowerSpring</sprite>
-          <sprite>sprites\sprTruckBoss</sprite>
+          <sprite>sprites\sprMegamind</sprite>
           <sprite>sprites\sprTruckBossSpike</sprite>
           <sprite>sprites\sprTruckBossFront</sprite>
           <sprite>sprites\mskTruckBoss</sprite>
@@ -2682,7 +2683,9 @@
         <object>objects\objHeliButonLeaf</object>
         <object>objects\objUmbrellone</object>
         <object>objects\objRevoltingSuzy</object>
-        <object>objects\objTruckBoss</object>
+        <object>objects\objMegamind</object>
+        <object>objects\objMegamindBlast</object>
+        <object>objects\objMegamindDrone</object>
         <object>objects\objTruckBossFront</object>
         <object>objects\objTruckBossSpike</object>
         <objects name="Boss">

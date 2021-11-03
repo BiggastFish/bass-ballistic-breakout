@@ -397,8 +397,8 @@ else if (global.switchingSections)
     with (parent)
     {
         playerHandleSprites("TrebleBoost");
-        xspeed = 0;
-        yspeed = 0;
+        xspeed = (2 * xDir);
+        yspeed = (2 * yDir);
     }
 }
 </string>

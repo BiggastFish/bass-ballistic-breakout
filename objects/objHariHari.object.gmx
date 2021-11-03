@@ -132,11 +132,13 @@ if (phase == 0)
     image_index = 1;
     for (l = 0; l &lt; 5; l++)
     {
-        a = instance_create(x, y - 16 + 1, objEnemyBullet);
+        a = instance_create(x, y - (15 * image_yscale), objEnemyBullet);
         a.sprite_index = sprHariHariNeedles;
         a.contactDamage = 3;
         a.image_index = l;
-        a.dir = 180 - (45 * l);
+        a.image_xscale = image_yscale;
+        a.image_yscale = image_yscale;
+        a.dir = (180 * (image_yscale &gt; 0)) - (45 * l);
         a.spd = 4;
     }
 }

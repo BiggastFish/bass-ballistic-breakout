@@ -53,6 +53,7 @@ moving = moveStart;
 maxTimer = 45;
 moveTimer = 0;
 
+enemyDamageValue(objCoinSpread, 4);
 enemyDamageValue(objKnuckleSandwich, 5);
 </string>
           </argument>

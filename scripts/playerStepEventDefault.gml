@@ -1,4 +1,7 @@
 //THE ACTUAL STEP EVENT
+xDir = -sign(global.keyLeft[playerID]) + sign(global.keyRight[playerID]);
+yDir = -sign(global.keyUp[playerID]) + sign(global.keyDown[playerID]);
+
 if (!global.frozen && !frozen)
 {
     playerStep(); // General step event code

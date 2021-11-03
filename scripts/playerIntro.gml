@@ -52,6 +52,8 @@ if (init)
             y = view_yview - 32;
             blockCollision = 0;
             teleportTimer = 0;
+            introFakeGrav = 0.25;
+            introFakeYspeed = 6;
             global.lockTransition = true;
             playSFX(sfxBolt);
             for (i = -2; i <= 2; i++)
