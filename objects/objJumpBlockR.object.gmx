@@ -35,6 +35,7 @@ respawnRange = -1;
 
 grav = 0;
 canIce = 0;
+justSwitched = true;
 </string>
           </argument>
         </arguments>
@@ -82,6 +83,16 @@ if (entityCanStep())
         }
         isSolid = doStuff;
         image_index = !doStuff;
+        with (objCoinSpread)
+        {
+            if (collision_rectangle(other.x - 1, other.y - 1, 
+            other.x + 17, other.y + 17, id, 0, 0) &amp;&amp; angle == 0 &amp;&amp; other.justSwitched)
+            {
+                event_user(EV_REFLECTED);
+                instance_destroy();
+            }
+        }
+        justSwitched = !isSolid;
     }
 }
 </string>
