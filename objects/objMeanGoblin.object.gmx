@@ -76,6 +76,11 @@ if (entityCanStep())
         xx = bboxGetXCenterObject(target);
         yy = bboxGetYCenterObject(target);
     }
+    else
+    {
+        goBonkers = false;
+        zoomTimer = 0;
+    }
     if (!goBonkers)
     {
         zoomTimer++;

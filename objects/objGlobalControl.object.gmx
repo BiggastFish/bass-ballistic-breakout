@@ -38,6 +38,9 @@ engineConfig();
 /// global variable setup
 globalInit();
 
+// always render at 1x
+surface_resize(application_surface, 256, 240);
+
 //// instance variables private to objGlobalControl ////
 
 // fade in/out

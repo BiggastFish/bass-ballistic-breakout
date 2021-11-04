@@ -27,14 +27,14 @@
             <kind>1</kind>
             <string>event_inherited();
 
+healthpointsStart = 64;
+healthpoints = healthpointsStart
 contactDamage = 3;
-canHit = false;
 despawnRange = -1;
 respawnRange = -1;
 affectHud = false;
 
 undamageable = true;
-oilOverride = true;
 grav = 0;
 </string>
           </argument>
@@ -79,7 +79,7 @@ if (entityCanStep())
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="19">
+    <event eventtype="7" enumb="21">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -101,6 +101,10 @@ if (entityCanStep())
     event_inherited();
     canDamage = false;
     image_index = 4;
+}
+else
+{
+    other.guardCancel = 4;
 }
 </string>
           </argument>

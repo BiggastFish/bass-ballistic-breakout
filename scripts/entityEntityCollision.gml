@@ -203,7 +203,7 @@ if (global.damage != 0)
                         floatPopup = instance_create(popupx, popupy, objDamagePopup);
                         floatPopup.manualLoc = true;
                     }
-                    floatPopup.damage = global.damage * dealDamage; // !undamageable
+                    floatPopup.damage = global.damage * dealDamage;
                     floatPopup.xspeed = 0;
                     floatPopup.yspeed = 0;
                     floatPopup.grav = 0;
@@ -218,7 +218,7 @@ if (global.damage != 0)
                     {
                         if (followParent)
                         {
-                            damage+= global.damage * dealDamage; // !other.undamageable
+                            damage+= global.damage * dealDamage;
                             timer = 0;
                         }
                     }

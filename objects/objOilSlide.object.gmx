@@ -121,7 +121,7 @@ if (entityCanStep()){
             //insideView()
             if (collision_rectangle(other.xs, view_yview, other.xs + 16*(other.size - 1), view_yview + view_hview,
             self, false, false) &amp;&amp; global.factionStance[other.faction, faction] &amp;&amp; 
-            (canHit || oilOverride) &amp;&amp; canIce &amp;&amp; !dead &amp;&amp; !iFrames &amp;&amp; insideView())
+            canHit &amp;&amp; canIce &amp;&amp; !dead &amp;&amp; !iFrames &amp;&amp; insideView())
             {
                 if (iceTimer &lt;= 175)
                 {

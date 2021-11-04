@@ -71,7 +71,11 @@ if (entityCanStep())
         if (zapTimer &gt;= 60)
         {
             if (image_index &lt;= 5)
-                image_index+= 0.6
+            {
+                ballTimer++;
+                if (ballTimer mod 3 == 0)
+                    image_index++;                
+            }
             else
             {
                 if (!hasPlayedSFX)
@@ -103,8 +107,19 @@ if (entityCanStep())
     }
     else
     {
-        if (floor(image_index) &gt; 0)
-            image_index-= 0.6;
+        if (zapTimer == 0 &amp;&amp; image_index &gt; 0)
+        {
+            ballTimer++;
+            if (ballTimer == 3)
+                image_index = 3;
+            if (ballTimer == 6)
+                image_index = 2;
+            if (ballTimer == 9)
+            {
+                extraTimer = 0;
+                image_index = 0;
+            }
+        }
         else
         {
             image_index = 0;

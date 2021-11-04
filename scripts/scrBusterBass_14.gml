@@ -125,7 +125,7 @@ if (!global.lockBuster)
             i.sprite_index = sprBassBullet;
             i.checkForTopSolid = false // boolean, actually destroyed on top-solids when moving downwards; handled in Step
             i.dir = 0;
-            i.contactDamage = 1 + (dashJumped * 0.5);
+            i.contactDamage = 1 + ((dashJumped && !ground) * 0.5);
 
             if (image_xscale < 0)
             {

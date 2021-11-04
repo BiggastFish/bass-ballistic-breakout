@@ -1453,6 +1453,7 @@
           <sprite>sprites\sprChuckPRock</sprite>
           <sprites name="Boss">
             <sprite>sprites\sprBuzzshock</sprite>
+            <sprite>sprites\sprBuzzshockEV73Shot</sprite>
             <sprite>sprites\sprBuzzshockEV73</sprite>
             <sprite>sprites\sprBuzzshockEV73Spark</sprite>
             <sprite>sprites\sprBuzzshockTiny</sprite>
@@ -1559,6 +1560,8 @@
           <sprite>sprites\sprOilManShot</sprite>
         </sprites>
         <sprites name="Jump King">
+          <sprite>sprites\sprCrustyLadderBlock</sprite>
+          <sprite>sprites\sprCrustyLadder</sprite>
           <sprite>sprites\sprTheWizard</sprite>
           <sprite>sprites\sprTheWizardFire</sprite>
           <sprite>sprites\sprTheWizardLaser</sprite>
@@ -2739,6 +2742,8 @@
         <object>objects\objTheWizardRing</object>
         <object>objects\objJumpBlockHandler</object>
         <object>objects\objJumpBlockR</object>
+        <object>objects\objCrustyLadderBlock</object>
+        <object>objects\objCrustyLadder</object>
         <object>objects\objJumpBlockB</object>
         <object>objects\objJumpSpikeR</object>
         <object>objects\objJumpSpikeB</object>
@@ -2772,9 +2777,9 @@
     <room>rooms\rmHighwayToHell</room>
     <room>rooms\lvlTowerStage2</room>
     <room>rooms\lvlLostLight</room>
-    <room>rooms\lvlJumpKing</room>
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
+    <room>rooms\lvlJumpKing</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

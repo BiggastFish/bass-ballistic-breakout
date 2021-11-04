@@ -30,8 +30,9 @@
 healthpointsStart = 64;
 healthpoints = healthpointsStart;
 contactDamage = 4;
+undamageable = true;
 
-blockCollision = 1;
+blockCollision = true;
 grav = 0;
 
 img = 0;
@@ -169,10 +170,7 @@ if (entityCanStep())
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>doTheZap = 0;
-if (img &gt; 2) img = 2;
-playSFX(sfxEnemyHit);
-healthpoints = 64;
+            <string>event_perform_object(objGabyoallightning, ev_other, ev_user11);
 </string>
           </argument>
         </arguments>
