@@ -87,7 +87,7 @@ with (objTopSolid) visible = true;</code>
     <instance objName="objJumpBlockR" x="368" y="272" name="inst_705FF8A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpBlockR" x="368" y="352" name="inst_621DA1CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHorizontalScrollingNES" x="256" y="240" name="inst_2408006E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objStopScrollingNES" x="512" y="0" name="inst_012BBA76" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objStopScrollingNES" x="512" y="240" name="inst_012BBA76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeB" x="320" y="320" name="inst_AC6A5B31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeB" x="336" y="320" name="inst_90CE5150" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeB" x="352" y="320" name="inst_A12DA69D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -95,18 +95,25 @@ with (objTopSolid) visible = true;</code>
     <instance objName="objJumpSpikeR" x="320" y="288" name="inst_CDC383C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpBlockB" x="288" y="288" name="inst_B3EB12E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpBlockB" x="416" y="288" name="inst_25893685" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="256" y="0" name="inst_30A7BF94" locked="0" code="" scaleX="6" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="368" y="0" name="inst_8BB0B8C5" locked="0" code="" scaleX="9" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="256" y="0" name="inst_30A7BF94" locked="0" code="" scaleX="5" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="352" y="0" name="inst_F397034D" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="256" y="48" name="inst_101BE4EA" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="288" y="48" name="inst_5D9EA41A" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="304" y="48" name="inst_B37D55AA" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="objCrustyLadderBlock" x="288" y="80" name="inst_6C79869E" locked="0" code="length = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCrustyLadderBlock" x="352" y="32" name="inst_F37E40B5" locked="0" code="length = 8;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCrustyLadderBlock" x="288" y="80" name="inst_6C79869E" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
+    <instance objName="objCrustyLadderBlock" x="352" y="32" name="inst_F37E40B5" locked="0" code="length = 8;" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="256" y="96" name="inst_6B858987" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="256" y="208" name="inst_405A6F69" locked="0" code="" scaleX="9" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="272" y="192" name="inst_6FD98771" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="256" y="0" name="inst_B0470FF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRightScrollingNES" x="512" y="0" name="inst_78E7B934" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="480" y="176" name="inst_C8D022BA" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="528" y="176" name="inst_948E2B8C" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="592" y="0" name="inst_457B0B65" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="640" y="0" name="inst_678BEE44" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="640" y="144" name="inst_D5D3C446" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objCoinBarrier" x="592" y="96" name="inst_1CE920CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCoinBarrier" x="640" y="64" name="inst_CE912956" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

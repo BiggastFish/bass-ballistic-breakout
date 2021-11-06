@@ -47,11 +47,6 @@ db = 0;
 _velX = 0;
 _velY = 0;
 _prevCollision = true;
-if (checkSolid(0, 0))
-{
-    instance_create(x, y, objExplosion);
-    instance_destroy();
-}
 </string>
           </argument>
         </arguments>
@@ -74,7 +69,13 @@ if (checkSolid(0, 0))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>if (checkSolid(0, 0))
+{
+    event_user(EV_REFLECTED);
+    exit;
+}
+
+event_inherited();
 
 if (!global.frozen)
 {
@@ -154,11 +155,6 @@ if (!global.frozen)
 &amp;&amp; global.ammo[playerID, global.weapon[playerID]] &gt; 0 &amp;&amp; 
 instance_number(objCoinSpread) &lt;= 6)
 {
-    /*with (objCoinSpread)
-    {
-        instance_create(x, y, objExplosion);
-        instance_destroy();
-    }*/
     playSFX(sfxBolt);
     for (z = -3; z &lt;= 3; z++)
     {

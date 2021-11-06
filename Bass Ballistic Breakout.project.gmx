@@ -1520,7 +1520,6 @@
           <sprite>sprites\sprFirefry</sprite>
           <sprite>sprites\sprFirefryTrail</sprite>
           <sprite>sprites\sprRevoltingSuzy</sprite>
-          <sprite>sprites\sprFlowerSpring</sprite>
           <sprite>sprites\sprMegamind</sprite>
           <sprite>sprites\sprTruckBossSpike</sprite>
           <sprite>sprites\sprTruckBossFront</sprite>
@@ -1532,36 +1531,12 @@
             <sprite>sprites\sprPerfumaSpike</sprite>
           </sprites>
         </sprites>
-        <sprites name="St. Hunger">
-          <sprite>sprites\sprHotDogMan</sprite>
-          <sprites name="Projectiles">
-            <sprite>sprites\sprHotDogManFirebar</sprite>
-            <sprite>sprites\sprHotDogManMissile</sprite>
-            <sprite>sprites\sprHotDogManBouncingBall</sprite>
-            <sprite>sprites\sprHotDogManSlash</sprite>
-          </sprites>
-        </sprites>
-        <sprites name="Demon Inside Me">
-          <sprite>sprites\sprHangedMan</sprite>
-          <sprites name="Projectiles">
-            <sprite>sprites\sprHangedManBatSon</sprite>
-            <sprite>sprites\sprHangedManBlock</sprite>
-            <sprite>sprites\sprHangedManPole</sprite>
-            <sprite>sprites\sprHangedManBlockDebris</sprite>
-          </sprites>
-        </sprites>
-        <sprites name="Highway to Hell">
-          <sprite>sprites\sprDiglett</sprite>
-          <sprite>sprites\sprOilManDOS</sprite>
-          <sprite>sprites\sprOilMan</sprite>
-          <sprite>sprites\sprOilManOilSlicer</sprite>
-          <sprite>sprites\sprOilManSplash</sprite>
-          <sprite>sprites\sprOilManParticle</sprite>
-          <sprite>sprites\sprOilManShot</sprite>
-        </sprites>
         <sprites name="Jump King">
           <sprite>sprites\sprCrustyLadderBlock</sprite>
+          <sprite>sprites\sprCrustyLadderMoney</sprite>
+          <sprite>sprites\sprCoinBarrier</sprite>
           <sprite>sprites\sprCrustyLadder</sprite>
+          <sprite>sprites\sprFlowerSpring</sprite>
           <sprite>sprites\sprTheWizard</sprite>
           <sprite>sprites\sprTheWizardFire</sprite>
           <sprite>sprites\sprTheWizardLaser</sprite>
@@ -1574,6 +1549,19 @@
           <sprite>sprites\sprJumpSpikeB</sprite>
           <sprite>sprites\sprJumpMan</sprite>
         </sprites>
+        <sprites name="St. Hunger">
+          <sprite>sprites\sprHotDogMan</sprite>
+          <sprites name="Projectiles">
+            <sprite>sprites\sprHotDogManFirebar</sprite>
+            <sprite>sprites\sprHotDogManMissile</sprite>
+            <sprite>sprites\sprHotDogManBouncingBall</sprite>
+            <sprite>sprites\sprHotDogManSlash</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Tower Stage 2">
+          <sprite>sprites\sprCirno</sprite>
+          <sprite>sprites\sprCirnoIceBall</sprite>
+        </sprites>
         <sprites name="Lost Light">
           <sprite>sprites\sprTakanuva</sprite>
           <sprite>sprites\sprTakanuvaSlash</sprite>
@@ -1583,9 +1571,23 @@
           <sprite>sprites\sprTakanuvaGlowingSpiral</sprite>
           <sprite>sprites\sprTakanuvaMaskShine</sprite>
         </sprites>
-        <sprites name="Tower Stage 2">
-          <sprite>sprites\sprCirno</sprite>
-          <sprite>sprites\sprCirnoIceBall</sprite>
+        <sprites name="Highway to Hell">
+          <sprite>sprites\sprDiglett</sprite>
+          <sprite>sprites\sprOilManDOS</sprite>
+          <sprite>sprites\sprOilMan</sprite>
+          <sprite>sprites\sprOilManOilSlicer</sprite>
+          <sprite>sprites\sprOilManSplash</sprite>
+          <sprite>sprites\sprOilManParticle</sprite>
+          <sprite>sprites\sprOilManShot</sprite>
+        </sprites>
+        <sprites name="Demon Inside Me">
+          <sprite>sprites\sprHangedMan</sprite>
+          <sprites name="Projectiles">
+            <sprite>sprites\sprHangedManBatSon</sprite>
+            <sprite>sprites\sprHangedManBlock</sprite>
+            <sprite>sprites\sprHangedManPole</sprite>
+            <sprite>sprites\sprHangedManBlockDebris</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Menus">
@@ -2700,6 +2702,23 @@
           </objects>
         </objects>
       </objects>
+      <objects name="Jump King">
+        <object>objects\objCoinBarrier</object>
+        <object>objects\objFlowerSpring</object>
+        <object>objects\objTheWizard</object>
+        <object>objects\objTheWizardFire</object>
+        <object>objects\objTheWizardLaser</object>
+        <object>objects\objTheWizardOrb</object>
+        <object>objects\objTheWizardRing</object>
+        <object>objects\objCrustyLadder</object>
+        <object>objects\objCrustyLadderBlock</object>
+        <object>objects\objJumpBlockHandler</object>
+        <object>objects\objJumpBlockR</object>
+        <object>objects\objJumpBlockB</object>
+        <object>objects\objJumpSpikeR</object>
+        <object>objects\objJumpSpikeB</object>
+        <object>objects\objJumpMan</object>
+      </objects>
       <objects name="St. Hunger">
         <objects name="Boss">
           <object>objects\objHotDogMan</object>
@@ -2732,22 +2751,6 @@
             <object>objects\objOilManOilSlicer</object>
           </objects>
         </objects>
-      </objects>
-      <objects name="Jump King">
-        <object>objects\objFlowerSpring</object>
-        <object>objects\objTheWizard</object>
-        <object>objects\objTheWizardFire</object>
-        <object>objects\objTheWizardLaser</object>
-        <object>objects\objTheWizardOrb</object>
-        <object>objects\objTheWizardRing</object>
-        <object>objects\objJumpBlockHandler</object>
-        <object>objects\objJumpBlockR</object>
-        <object>objects\objCrustyLadderBlock</object>
-        <object>objects\objCrustyLadder</object>
-        <object>objects\objJumpBlockB</object>
-        <object>objects\objJumpSpikeR</object>
-        <object>objects\objJumpSpikeB</object>
-        <object>objects\objJumpMan</object>
       </objects>
       <objects name="Lost Light">
         <object>objects\objSummonedSwordSpawner</object>

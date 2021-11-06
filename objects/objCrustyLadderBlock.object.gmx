@@ -34,12 +34,16 @@ respawnRange = -1;
 
 shiftVisible = 1;
 blockCollision = 0;
-isSolid = 1;
-length = 2;
-shakeTimer = 0;
+isSolid = true;
+isTargetable = false;
+
 grav = 0;
 canIce = 0;
+
+length = 2;
+shakeTimer = 0;
 buddy = noone;
+init = true;
 </string>
           </argument>
         </arguments>
@@ -62,7 +66,14 @@ buddy = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>if (init)
+{
+    init = false;
+    length = image_yscale - 1;
+    image_yscale = 1;
+}
+
+event_inherited();
 
 if (entityCanStep())
 {
@@ -96,23 +107,40 @@ if (entityCanStep())
     {
         with (objCoinSpread)
         {
-            if (collision_rectangle(other.x - 1, other.y - 1, 
-            other.x + 17, other.y + 17, id, 0, 0) &amp;&amp; angle == 0)
+            if ((collision_rectangle(other.x - 1, other.y - 1, 
+            other.x + 17, other.y + 17, id, 0, 0) &amp;&amp; angle == 0) ||
+            instance_place(x, y, other))
             {
                 with (other)
                 {
                     playSFX(sfxCrashBombArm);
                     image_index = 1;
                     shakeTimer = 0;
+                    for (d = -1; d &lt; 2; d+= 2)
+                    {
+                        for (r = 0; r &lt; floor(length / 2); r++)
+                        {
+                            l = instance_create(x + 8 + (14 * d), 
+                            y + 48 + (24 * r), objTrailEffect);
+                            l.image_alpha = 1;
+                            l.sprite_index = sprCrustyLadderMoney;
+                            l.hspeed = d * 0.5;
+                            l.vspeed = -0.5;
+                            l.image_speed = 0.2;
+                            l.deathTimerMax = 12;
+                        }
+                    }
                 }
                 instance_destroy();
             }
         }
     }
+    if (image_index &gt; 0 &amp;&amp; image_index &lt; 3)
+        image_index+= 0.25;
     if (shakeTimer)
     {
         shakeTimer++;
-        if (shakeTimer &gt;= 60)
+        if (shakeTimer &gt;= 48)
         {
             shakeTimer = 0;
             grav = 0.2;
@@ -190,7 +218,7 @@ if (!dead)
     {
         if (r == length - 1)
             imgIndex = 1;
-        draw_sprite(sprCrustyLadder, imgIndex + (2 * image_index), 
+        draw_sprite(sprCrustyLadder, imgIndex + (2 * floor(image_index)), 
         x + xOff, y + 16 + (16 * r))
     }
 }
