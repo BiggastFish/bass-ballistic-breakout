@@ -78,9 +78,10 @@ if (!global.frozen)
     {
         if (goToMercury)
         {
+            direction = 
             correctDirection(round(point_direction(spriteGetXCenterObject(id),
-                spriteGetYCenterObject(id), maskGetXCenterObject(parent),
-                maskGetYCenterObject(parent) - 4)), 24);
+            spriteGetYCenterObject(id), maskGetXCenterObject(parent),
+            maskGetYCenterObject(parent) - 4)), direction, 24);
             speed += 0.1;
         }
         else

@@ -1532,6 +1532,10 @@
           </sprites>
         </sprites>
         <sprites name="Jump King">
+          <sprite>sprites\sprBigTurnipSpawner</sprite>
+          <sprite>sprites\sprBigTurnipSpawnerSideways</sprite>
+          <sprite>sprites\sprBigTurnip</sprite>
+          <sprite>sprites\sprBabyTurnip</sprite>
           <sprite>sprites\sprCrustyLadderBlock</sprite>
           <sprite>sprites\sprCrustyLadderMoney</sprite>
           <sprite>sprites\sprCoinBarrier</sprite>
@@ -2703,6 +2707,10 @@
         </objects>
       </objects>
       <objects name="Jump King">
+        <object>objects\objBigTurnipSpawner</object>
+        <object>objects\objBigTurnip</object>
+        <object>objects\objBabyTurnip</object>
+        <object>objects\objBigTurnipSpawnerSideways</object>
         <object>objects\objCoinBarrier</object>
         <object>objects\objFlowerSpring</object>
         <object>objects\objTheWizard</object>

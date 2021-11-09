@@ -959,10 +959,15 @@ global.keyNumber = 0;
 
 global.nextRoom = 0;
 
-view_wview[0] = min(global.screenWidth, room_width);
+/*view_wview[0] = min(global.screenWidth, room_width);
 view_hview[0] = min(global.screenHeight, room_height);
 view_wport[0] = view_wview[0];
-view_hport[0] = view_hview[0];
+view_hport[0] = view_hview[0];*/
+
+view_wview[0] = global.screenWidth;
+view_hview[0] = global.screenHeight;
+view_wport[0] = global.screenWidth;
+view_hport[0] = global.screenHeight;
 
 room_speed = global.gameSpeed;
 

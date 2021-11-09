@@ -189,8 +189,7 @@ if (entityCanStep())
                 {
                     playSFX(sfxFireManFireStorm);
                     r = instance_create(x, y, objTheWizardFire);
-                    r.direction = 50 + (80 * (shots mod 2 == 0));
-                    r.speed = 3;
+                    r.ang = 50 + (80 * (shots mod 2 == 0));
                     r.depth = depth + 1;
                     shots++;
                 }
