@@ -183,17 +183,17 @@ if (entityCanStep())
                 {
                     playSFX(sfxHomingSniperLock);
                     p = instance_create(view_xview, ty, objTheWizardLaser);
-                    p.depth = depth + 2;
+                    p.depth = depth + 8;
                 }
-                if (wizTimer &gt;= 210 &amp;&amp; (wizTimer - 210) mod 16 == 0 &amp;&amp; shots &lt; 6)
+                if (wizTimer &gt;= 220 &amp;&amp; (wizTimer - 220) mod 16 == 0 &amp;&amp; shots &lt; 6)
                 {
                     playSFX(sfxFireManFireStorm);
                     r = instance_create(x, y, objTheWizardFire);
                     r.ang = 50 + (80 * (shots mod 2 == 0));
-                    r.depth = depth + 1;
+                    r.depth = depth + 1 + shots;
                     shots++;
                 }
-                if (wizTimer &gt;= 315)
+                if (wizTimer &gt;= 325)
                 {
                     wizTimer = 0;
                     shots = 0;
@@ -238,10 +238,10 @@ if (entityCanStep())
                 {
                     playSFX(sfxSharkLaser);
                     head = instance_create(x, y - 12, objTheWizardOrb);
-                    head.dir = dir + 28;
+                    head.dir = dir + 27;
                     head.depth = depth - 3;
                     tails = instance_create(x, y - 12, objTheWizardOrb);
-                    tails.dir = dir - 28;
+                    tails.dir = dir - 27;
                     tails.depth = depth - 2;
                     ring = instance_create(x, y - 12, objTheWizardRing);
                     ring.parent = head;

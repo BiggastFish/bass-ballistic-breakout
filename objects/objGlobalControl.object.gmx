@@ -1388,7 +1388,7 @@ depth = depthstart;
     }
 
     // hp alpha
-    if (helf != -1 &amp;&amp; instance_exists(helf))
+    if (helf != -1 &amp;&amp; instance_exists(helf) &amp;&amp; !instance_exists(objSectionSwitcher))
     {
         if (hpAlph &gt; 0.4)
         {
@@ -1404,7 +1404,7 @@ depth = depthstart;
     }
     
     // bolt alpha
-    if (bolt != -1 &amp;&amp; instance_exists(bolt))
+    if (bolt != -1 &amp;&amp; instance_exists(bolt) &amp;&amp; !instance_exists(objSectionSwitcher))
     {
         if (boltAlph &gt; 0.4)
         {

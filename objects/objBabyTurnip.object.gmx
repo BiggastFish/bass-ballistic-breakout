@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
+itemDrop = choose(-1, -1, 0);
 healthpointsStart = 1;
 healthpoints = healthpointsStart;
 contactDamage = 3;
@@ -89,10 +90,42 @@ if (entityCanStep())
             tx = target.x;
             ty = target.y;
         }
-        ang = point_direction(x, y, tx, ty);
+        var targAng = point_direction(x, y, tx, ty);
+        ang = correctAng(targAng, ang, 6);
     }
+    ang = wrapAngle(ang);
     xspeed = cos(degtorad(ang)) * spd;
     yspeed = -sin(degtorad(ang)) * spd;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="25">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+if (!spawned &amp;&amp; dead)
+{
+    if (parent != noone &amp;&amp; instance_exists(parent))
+    {
+        with (parent) turnipChildren--;
+    }
 }
 </string>
           </argument>

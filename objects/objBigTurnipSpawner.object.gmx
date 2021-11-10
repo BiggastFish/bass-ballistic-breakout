@@ -3,7 +3,7 @@
   <spriteName>sprBigTurnipSpawner</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>5</depth>
   <persistent>0</persistent>
   <parentName>prtEntity</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -35,10 +35,13 @@ canHit = false;
 canDamage = false;
 
 // Enemy specific code
-turnipTimer = 0;
-maxTimer = 36;
+turnipTimerStart = 24;
+turnipTimer = turnipTimerStart;
+maxTimer = 60;
 
 turnipChildren = 0;
+_im = 0;
+init = true;
 </string>
           </argument>
         </arguments>
@@ -61,11 +64,17 @@ turnipChildren = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>if (init)
+{
+    turnipTimer = turnipTimerStart;
+    init = false;
+}
+
+event_inherited();
 
 if (entityCanStep())
 {
-    if (turnipChildren &lt;= 0)
+    if (turnipChildren &lt;= 0 &amp;&amp; insideView() &amp;&amp; image_index == 0)
     {
         turnipTimer++;
         if (turnipTimer &gt;= maxTimer)
@@ -78,7 +87,7 @@ if (entityCanStep())
             }
             else if (sprite_index == sprBigTurnipSpawnerSideways)
             {
-                xx = 16 * image_xscale;
+                xx = 4 * image_xscale;
                 ang = (180 * (image_xscale &lt; 0))
             }
             playSFX(sfxBariIIIRegen);
@@ -93,10 +102,32 @@ if (entityCanStep())
             turnipChildren = 3;
         }
     }
+
+    if (image_index == 0)
+    {
+        with (objCoinSpread)
+        {
+            if (angle == 0 &amp;&amp; instance_place(x, y, other))
+            {
+                playSFX(sfxWanaan);
+                with (other)
+                {
+                    image_index = 1;
+                    turnipTimer = 0;
+                }
+                instance_destroy();
+            }
+        }
+    }
+    else
+    {
+        animationLoop(1, 2, 0.25);
+    }
 }
 else if (dead)
 {
-    turnipTimer = 0;
+    image_index = 0;
+    turnipTimer = turnipTimerStart;
     turnipChildren = 0;
 }
 </string>

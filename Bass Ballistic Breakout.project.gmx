@@ -1925,6 +1925,7 @@
         <script>scripts\aimAtPointXY.gml</script>
         <script>scripts\rotationMovement.gml</script>
         <script>scripts\correctDirection.gml</script>
+        <script>scripts\correctAng.gml</script>
         <script>scripts\roundTo.gml</script>
         <script>scripts\floorTo.gml</script>
         <script>scripts\roundOut.gml</script>
@@ -2708,9 +2709,9 @@
       </objects>
       <objects name="Jump King">
         <object>objects\objBigTurnipSpawner</object>
+        <object>objects\objBigTurnipSpawnerSideways</object>
         <object>objects\objBigTurnip</object>
         <object>objects\objBabyTurnip</object>
-        <object>objects\objBigTurnipSpawnerSideways</object>
         <object>objects\objCoinBarrier</object>
         <object>objects\objFlowerSpring</object>
         <object>objects\objTheWizard</object>

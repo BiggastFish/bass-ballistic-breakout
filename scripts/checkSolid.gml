@@ -41,7 +41,7 @@ with (objGenericStopper)
 
 if (dieToSpikes)
 {
-    if(!alwaysCheckSolids)
+    if (!alwaysCheckSolids)
     {
         var spSolid = (canHit && iFrames != 0);
         with (objSpike)

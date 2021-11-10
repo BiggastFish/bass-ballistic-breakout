@@ -78,8 +78,10 @@ killObj[2] = objYamato;
             <kind>1</kind>
             <string>if (init)
 {
+    startDir = image_xscale;
     dir = startDir;
-    init = 0;
+    image_xscale = 1;
+    init = false;
 }
 
 event_inherited();
@@ -102,6 +104,22 @@ if (entityCanStep())
     {
         if (collision_rectangle(other.x - 7, other.laserTop, other.x + 7, 
         other.laserBottom, id, false, false)) 
+        {
+            if (other.image_yscale &gt; 0 &amp;&amp; bbox_bottom &gt; other.laserTop)
+            {
+                other.laserTop = bbox_bottom + 1;
+            }
+            else if (other.image_yscale &lt; 0 &amp;&amp; bbox_top &lt; other.laserBottom)
+            {
+                other.laserBottom = bbox_top;
+            }
+        }
+    }
+    
+    with (objJumpBlockR)
+    {
+        if (collision_rectangle(other.x - 7, other.laserTop, other.x + 7, 
+        other.laserBottom, id, false, false) &amp;&amp; isSolid) 
         {
             if (other.image_yscale &gt; 0 &amp;&amp; bbox_bottom &gt; other.laserTop)
             {

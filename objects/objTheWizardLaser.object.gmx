@@ -68,7 +68,7 @@ if (entityCanStep())
     {
         xOff = 0;
     }
-    if (timer &lt; 90)
+    if (timer &lt; 100)
     {
         if (timer &lt; 64)
         {
@@ -149,7 +149,7 @@ if (entityCanStep())
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (timer &lt; 90)
+            <string>if (timer &lt; 100)
 {
     var huh = floor(height);
     draw_sprite_ext(sprDot, 0, view_xview, y - floor(huh/2) + 1, 

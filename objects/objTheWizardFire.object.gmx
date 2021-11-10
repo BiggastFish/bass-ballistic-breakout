@@ -79,9 +79,10 @@ if (entityCanStep())
         if (instance_exists(target))
         {
             var duh = point_direction(x, y, target.x, target.y);
-            ang = correctDirection(duh, ang, min(20, abs(ang - duh)));
+            ang = correctAng(duh, ang, 20);
         }
     }
+    ang = wrapAngle(ang);
     xspeed = cos(degtorad(ang)) * spd;
     yspeed = -sin(degtorad(ang)) * spd;
 }
