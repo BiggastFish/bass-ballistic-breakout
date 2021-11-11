@@ -104,7 +104,7 @@ if (entityCanStep())
 }
 else
 {
-    other.guardCancel = 4;
+    other.guardCancel = (2 + (canDamage * 2));
 }
 </string>
           </argument>

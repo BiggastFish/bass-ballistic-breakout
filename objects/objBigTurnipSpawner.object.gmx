@@ -37,7 +37,7 @@ canDamage = false;
 // Enemy specific code
 turnipTimerStart = 24;
 turnipTimer = turnipTimerStart;
-maxTimer = 60;
+maxTimer = 90;
 
 turnipChildren = 0;
 _im = 0;
