@@ -44,13 +44,15 @@ alarmStop = -1;
 init = true;
 playSound = true;
 moveSpd = 1;
-sparkXscale = choose(-1, 1);
+sparkXscale = 1;
+swapScale = true;
 startDir = choose(-1, 1);
 dir = startDir;
 img = 0;
 length = 0;
 laserTop = x;
 laserBottom = x;
+beamSpr = sprGabyoallightningLightning;
 
 killObj[1] = objKnuckleSandwich;
 killObj[2] = objYamato;
@@ -262,25 +264,22 @@ if (img &gt; 2) img = 2;
 
 if (!dead) 
 {
-    var useSpr = sprGabyoallightningLightning;
-    for (i = 1; i &lt; (abs(laserTop - laserBottom)/8); i++)
+    for (i = 1; i &lt; (abs(laserTop - laserBottom) / 8); i++)
     {
-        var imgIndex, xsc;
-        if (i % 2 = 0)
+        var imgIndex = 0, xsc = -1;
+        if (swapScale)
         {
-            xsc = 1;
-            imgIndex = 1;
+            if (i mod 2 == 0)
+            {
+                xsc = 1;
+                imgIndex = 1;
+            }
         }
-        else
-        {
-            xsc = -1;
-            imgIndex = 0;
-        }
-        draw_sprite_ext(useSpr, img + (imgIndex * 6), x, 
+        draw_sprite_ext(beamSpr, img + (imgIndex * 6), x, 
         laserTop - 8 + (i * 8), sparkXscale * xsc, 1, 0, c_white, 1);
     }
-    draw_sprite(useSpr, img + 12, x, laserTop - 8);
-    draw_sprite(useSpr, img + 12, x, laserBottom - 8)
+    draw_sprite(beamSpr, img + 12, x, laserTop - 8);
+    draw_sprite(beamSpr, img + 12, x, laserBottom - 8)
 }
 </string>
           </argument>

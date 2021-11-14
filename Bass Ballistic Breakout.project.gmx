@@ -1448,6 +1448,7 @@
           <sprite>sprites\sprGesunderSpark</sprite>
           <sprite>sprites\sprGabyoallightning</sprite>
           <sprite>sprites\sprGabyoallightningLightning</sprite>
+          <sprite>sprites\sprHydroallSpout</sprite>
           <sprite>sprites\sprMeanGoblin</sprite>
           <sprite>sprites\sprChuckP</sprite>
           <sprite>sprites\sprChuckPRock</sprite>
@@ -1541,6 +1542,7 @@
           <sprite>sprites\sprCoinBarrier</sprite>
           <sprite>sprites\sprCrustyLadder</sprite>
           <sprite>sprites\sprFlowerSpring</sprite>
+          <sprite>sprites\sprHydroall</sprite>
           <sprite>sprites\sprTheWizard</sprite>
           <sprite>sprites\sprTheWizardFire</sprite>
           <sprite>sprites\sprTheWizardLaser</sprite>
@@ -2719,6 +2721,7 @@
         <object>objects\objTheWizardLaser</object>
         <object>objects\objTheWizardOrb</object>
         <object>objects\objTheWizardRing</object>
+        <object>objects\objHydroall</object>
         <object>objects\objCrustyLadder</object>
         <object>objects\objCrustyLadderBlock</object>
         <object>objects\objJumpBlockHandler</object>

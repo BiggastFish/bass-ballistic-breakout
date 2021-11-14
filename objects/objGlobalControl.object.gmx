@@ -60,6 +60,7 @@ depthstart = depth;
 depthAlter = 0;
 hpAlph = 1;
 boltAlph = 1;
+ammoAlph = 1;
 
 // save icon
 saveTimer = -1;
@@ -1363,8 +1364,9 @@ depth = depthstart;
     draw_set_valign(fa_top);
     draw_set_halign(fa_left);
 
-    var helf, bolt;
+    var helf, amoe, bolt;
     helf = -1;
+    amoe = -1;
     bolt = -1; 
     with (prtEntity)
     {
@@ -1373,10 +1375,15 @@ depth = depthstart;
         {
             with (other)
             {
-                if collision_rectangle(dx - 1, dy, dx + 72, dy + 34, 
+                if collision_rectangle(dx - 1, dy, dx + 72, dy + 17, //dy + 34
                 other, false, true)
                 {
                     helf = other.id;
+                }
+                if collision_rectangle(dx - 1, dy + 18, dx + 72, dy + 34,
+                other, false, true)
+                {
+                    amoe = other.id;
                 }
                 if collision_rectangle(dx + 180, dy + 6, dx + 244, dy + 15, 
                 other, false, true)
@@ -1400,6 +1407,22 @@ depth = depthstart;
         if (hpAlph &lt; 1)
         {
             hpAlph += 0.6/20;
+        }
+    }
+    
+    // ammo alpha
+    if (amoe != -1 &amp;&amp; instance_exists(amoe) &amp;&amp; !instance_exists(objSectionSwitcher))
+    {
+        if (ammoAlph &gt; 0.4)
+        {
+            ammoAlph -= 0.6/20;
+        }
+    }
+    else
+    {
+        if (ammoAlph &lt; 1)
+        {
+            ammoAlph += 0.6/20;
         }
     }
     
@@ -1537,25 +1560,25 @@ depth = depthstart;
                     for (m = 0; m &lt;= 3; m += 1)
                     {
                         draw_sprite_ext(global.weaponIcon[global.weapon[z]],
-                            m, dx, dy + 18, 1, 1, 0, col[m], hpAlph);
+                            m, dx, dy + 18, 1, 1, 0, col[m], ammoAlph);
                     }
                 }
 
                 for (i = 1; i &lt;= c; i += 1)
                 {
                     draw_sprite_ext(sprHealthbarPrimary, 0, dx + 15 + (i * 2),
-                        dy + 27, 1, 1, 0, global.primaryCol[z], hpAlph);
+                        dy + 27, 1, 1, 0, global.primaryCol[z], ammoAlph);
                     draw_sprite_ext(sprHealthbarSecondary, 0, dx + 15 + (i * 2),
-                        dy + 27, 1, 1, 0, global.secondaryCol[z], hpAlph);
+                        dy + 27, 1, 1, 0, global.secondaryCol[z], ammoAlph);
                 }
                 if (global.infiniteEnergy[global.weapon[z]])
                 {
                     draw_sprite_ext(sprInfinityMarkVertical, 0, dx - 8, dy + 28, 1,
                         1, 0, c_white, hpAlph);
                     draw_sprite_ext(sprInfinityMarkVerticalPrimary, 0, dx - 8,
-                        dy + 28, 1, 1, 0, global.primaryCol[z], hpAlph);
+                        dy + 28, 1, 1, 0, global.primaryCol[z], ammoAlph);
                     draw_sprite_ext(sprInfinityMarkVerticalSecondary, 0, dx - 8,
-                        dy + 28, 1, 1, 0, global.secondaryCol[z], hpAlph);
+                        dy + 28, 1, 1, 0, global.secondaryCol[z], ammoAlph);
                 }
             }
         }
