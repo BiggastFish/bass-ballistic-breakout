@@ -37,13 +37,12 @@ respawnRange = -1;
 despawnRange = -1;
 
 // Enemy specific code
-imageSpd = image_speed;
 stopped = false;
-alarmStop = -1;
-
 init = true;
 playSound = true;
 moveSpd = 2;
+alarmStop = -1;
+alarmStopValue = 135;
 sparkYscale = 1;
 swapScale = true;
 startDir = choose(-1, 1);
@@ -224,7 +223,7 @@ else
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-alarmStop = 90;
+alarmStop = alarmStopValue;
 stopped = true;
 if (img &gt; 2) img = 2;
 </string>
@@ -267,8 +266,8 @@ if (!dead)
         draw_sprite_ext(beamSpr, img + (imgIndex * 6), laserLeft - 8 + (i * 8), 
         y, 1, sparkYscale * ysc, 0, c_white, 1);
     }
-    draw_sprite(beamSpr, img + 12, laserLeft /*- (8 * (image_xscale &gt; 0))*/, y);
-    draw_sprite(beamSpr, img + 12, laserRight /*+ (8 * (image_xscale &gt; 0))*/, y);
+    draw_sprite(beamSpr, img + 12, laserLeft + (4 * (image_xscale &gt; 0)), y);
+    draw_sprite(beamSpr, img + 12, laserRight - (4 * (image_xscale &gt; 0)), y);
 }
 </string>
           </argument>

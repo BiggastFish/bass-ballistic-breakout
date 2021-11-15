@@ -37,13 +37,12 @@ respawnRange = -1;
 despawnRange = -1;
 
 // Enemy specific code
-imageSpd = image_speed;
 stopped = false;
-alarmStop = -1;
-
 init = true;
 playSound = true;
 moveSpd = 1;
+alarmStop = -1;
+alarmStopValue = 90; 
 sparkXscale = 1;
 swapScale = true;
 startDir = choose(-1, 1);
@@ -235,7 +234,7 @@ else
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-alarmStop = 90;
+alarmStop = alarmStopValue;
 stopped = true;
 if (img &gt; 2) img = 2;
 </string>

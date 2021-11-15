@@ -70,17 +70,20 @@ if (entityCanStep())
         image_index = 0;
         image_xscale*= -1;
     }
-    if (timer &gt; 15 &amp;&amp; timer &lt;= 40)
+    if (timer &gt; 14 &amp;&amp; timer &lt;= 40)
     {
         if (timer == 40)
         {
             depth-= 2;
         }
+        var tx = x, ty = y;
         if (instance_exists(target))
         {
-            var duh = point_direction(x, y, target.x, target.y);
-            ang = correctAng(duh, ang, 20);
+            tx = target.x;
+            ty = target.y;
         }
+        var duh = point_direction(x, y, tx, ty);
+        ang = correctAng(duh, ang, 20); 
     }
     ang = wrapAngle(ang);
     xspeed = cos(degtorad(ang)) * spd;

@@ -140,7 +140,7 @@ if (entityCanStep())
     if (shakeTimer)
     {
         shakeTimer++;
-        if (shakeTimer &gt;= 60)
+        if (shakeTimer &gt;= 80)
         {
             shakeTimer = 0;
             grav = 0.2;

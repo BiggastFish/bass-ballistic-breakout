@@ -84,11 +84,13 @@ if (!global.frozen)
     
     with (objMegaman)
     {
-        if (blockCollision &amp;&amp; grav !=0 &amp;&amp; yspeed &gt;= 0)
+        if (blockCollision &amp;&amp; grav !=0 &amp;&amp; yspeed &gt;= 0 &amp;&amp; 
+        collision_rectangle(other.bbox_left - 4, other.bbox_top, 
+        other.bbox_right + 4, other.bbox_bottom, id, false, false))
         {
             with (other)
             {
-                if (image_index &gt; 4 &amp;&amp; image_index &lt; 7 &amp;&amp; place_meeting(x, y, other.id) &amp;&amp;
+                if (image_index &gt; 4 &amp;&amp; image_index &lt; 7 &amp;&amp; 
                 other.bbox_bottom &gt;= bbox_top - 1 &amp;&amp; other.bbox_bottom &lt;= bbox_top + 5)
                 {
                     image_index = 7;
