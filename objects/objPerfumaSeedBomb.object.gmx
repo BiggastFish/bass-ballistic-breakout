@@ -58,12 +58,13 @@ rotTimer = 0;
 if (entityCanStep())
 {
     rotTimer++;
-    if (rotTimer % 3 = 0)
+    if (rotTimer mod 3 == 0)
         image_angle+= 90 * image_xscale;
     if (ycoll != 0 || xcoll != 0)
     {
         playSFX(sfxBalladeCrackerExplosion);
-        instance_create(x, y, objHarmfulExplosion);
+        r = instance_create(x, y, objHarmfulExplosion);
+        r.sprite_index = sprPerfumaExplosion;
         instance_destroy();
     }
 }

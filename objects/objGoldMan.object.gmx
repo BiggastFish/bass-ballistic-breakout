@@ -231,16 +231,16 @@ if (entityCanStep())
                             dropTimer++;
                         }
                     }
-                    if (son.fightTimer &gt;= 100 &amp;&amp; son.fightTimer % 20 == 0 &amp;&amp; son.fightTimer &lt;= 160)
+                    if (son.fightTimer &gt;= 100 &amp;&amp; son.fightTimer mod 20 == 0 &amp;&amp; son.fightTimer &lt;= 160)
                     {
                         playSFX(sfxBolt);
                         b = instance_create(x, y - 32, objNewShotmanBullet);
                         b.contactDamage = 3;
                         b.stopAtSolid = 1;
-                        b.grav = .2;
+                        b.grav = 0.2;
                         b.yspeed = -3;
                         b.xspeed = xSpeedAim(x, y - 32, tx, view_yview + 192,
-                        -3, .2)
+                        -3, 0.2)
                         b.sprite_index = sprGoldManCoin;
                     }
                     if (son.fightTimer == 180)
@@ -301,7 +301,7 @@ if (entityCanStep())
                     x = midPointX + round(cos(degtorad(angVal)) * 96);
                     y = midPointY + round(sin(degtorad(angVal)) * 46);
                 }
-                if ((angVal - 315) % 45 == 0 &amp;&amp; angVal != 270 + (180 * dropsDone) 
+                if ((angVal - 315) mod 45 == 0 &amp;&amp; angVal != 270 + (180 * dropsDone) 
                 &amp;&amp; flyTimer &gt; 30 &amp;&amp; flyTimer &lt; 140)
                 {
                     playSFX(sfxEnemyShoot);

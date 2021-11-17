@@ -91,13 +91,12 @@ if (!global.frozen)
             with (other)
             {
                 if (image_index &gt; 4 &amp;&amp; image_index &lt; 7 &amp;&amp; 
-                other.bbox_bottom &gt;= bbox_top - 1 &amp;&amp; other.bbox_bottom &lt;= bbox_top + 5)
+                other.bbox_bottom &gt;= bbox_top + 4 &amp;&amp; other.bbox_bottom &lt;= bbox_top + 10)
                 {
                     image_index = 7;
                     playSFX(sfxSpring);
                     with (other)
                     {
-                        if (jumpCounter == 2) jumpCounter = 1;
                         canMinJump = false;
                         climbing = 0;
                         yspeed = -7.5 * image_yscale;

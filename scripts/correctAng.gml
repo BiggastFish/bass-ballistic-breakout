@@ -2,7 +2,7 @@
 var _dir, _speed, _cor;
 _dir = argument0;
 _curr = argument1;
-_speed = argument2;
+_speed = min(argument2, abs(argument1 - argument0));
 _cor = 0;
 
 if (_dir >= _curr)
@@ -40,4 +40,4 @@ repeat (_speed)
     }
 }
 
-return _curr;
+return wrapAngle(_curr);

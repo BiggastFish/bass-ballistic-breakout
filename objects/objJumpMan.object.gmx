@@ -104,11 +104,7 @@ if (!global.frozen)
     }
     else if (isIntro)
     {
-        visible = 1;
-        y-= 54;
-        vine = instance_create(x, bbox_bottom, objPerfumaVine);
-        vine.image_xscale = image_xscale;
-        vine.parent = id;
+        visible = true;
         isIntro = false;
     }
 }
@@ -116,296 +112,28 @@ if (entityCanStep())
 {
     if (isFight)
     {
-        if (phase &lt; 3)
-        {
-            if (abs(scrollSpeed) &lt; 1.6)
-                scrollSpeed+= (1.6/60) * -image_xscale;
-        }
         if (instance_exists(target))
         {
             tx = target.x;
             ty = target.y;
         }
-        with (objParallax)
-        {
-            if (myBG == bgPerfumaGround)
-                xspeed = other.scrollSpeed;
-            if (myBG == bgPerfumaFrontTrees)
-                xspeed = other.scrollSpeed/1.5;
-            if (myBG == bgPerfumaGrass)
-                xspeed = other.scrollSpeed/2;
-            if (myBG == bgPerfumaBackTrees)
-                xspeed = other.scrollSpeed/2.5;
-        }
-        with (objMegaman)
-        {
-            if (dashJumped || isSlide)
-                shiftObject(other.scrollSpeed/1.4, 0, 0);
-            else
-                shiftObject(other.scrollSpeed, 0, 0);
-        }
-        with (objHarmfulExplosion)
-            shiftObject(other.scrollSpeed, 0, 0);
+        gangsTimer++;
         switch (phase)
         {
-            case 0: // vine boom sound effect
-                vineTimer+= (abs(scrollSpeed) &gt;= 1.4);
-                if (vineTimer == 30 || vineTimer == 110 || vineTimer == 190)
-                    image_index = 9;
-                if (vineTimer == 70 || vineTimer == 150 || vineTimer == 230)
+            case 0: // grenade!! up
+                if (gangsTimer == 4)
                     image_index = 1;
-                if (vineTimer == 80 || vineTimer == 160 || vineTimer == 240)
+                if (gangsTimer == 8)
                 {
+                    playSFX(sfxEnemyDrop);
                     image_index = 2;
-                    playSFX(sfxTripleBlade);
-                    l = instance_create(x + (48 * image_xscale), view_yview + 192,
-                    objPerfumaThorn);
-                    l.image_xscale = image_xscale;
+                    m = instance_create(x, y - 8, objJumpManGrenade);
+                    m.form = 0;
+                    m.yspeed = -6;
                 }
-                if (vineTimer == 260)
-                    image_index = 0;
-                if (vineTimer &gt;= 260 &amp;&amp; !instance_exists(objPerfumaThorn))
-                {
-                    vineTimer = 0;
-                    phase = 5;
-                }
+                
                 break;
-            case 1: //quad bomb
-                vineTimer+= (abs(scrollSpeed) &gt;= 1.4);
-                if (vineTimer == 30 || vineTimer == 80 || vineTimer == 130 || vineTimer == 150)
-                    image_index = 1;
-                if (vineTimer == 40 || vineTimer == 90 || vineTimer == 140 || vineTimer == 160)
-                {
-                    if (vineTimer == 40 || vineTimer == 140)
-                        image_index = 3;
-                    else
-                        image_index = 4;
-                    playSFX(sfxCannonShoot);
-                    s = instance_create(x + (12 * image_xscale), y - 4, objPerfumaSeedBomb);
-                    s.grav = .2;
-                    s.yspeed = -4;
-                    s.xspeed = xSpeedAim(x + (12 * image_xscale), y - 4, tx, ty, -4, .2);
-                }
-                if (vineTimer == 180)
-                    image_index = 0;
-                if (vineTimer == 200)
-                {
-                    vineTimer = 0;
-                    phase = 5;
-                }
-                break;
-            case 2: //r/whoosh i did this joke like 3 times already
-                vineTimer+= (abs(scrollSpeed) &gt;= 1.4);
-                if (vineTimer == 15)
-                    image_index = 4;
-                if (vineTimer == 60)
-                {
-                    image_index = 7;
-                    playSFX(sfxWaterShield2);
-                    for (k = 0; k &lt;= 2; k++)
-                    {
-                        j = instance_create(x + (12 * image_xscale), y + 10, objEnemyBullet);
-                        j.grav = -.2;
-                        j.yspeed = 6;
-                        j.xspeed = xSpeedAim(x + (12 * image_xscale), y + 10, 
-                        x + ((16 + (64 * k)) * image_xscale), view_yview, 3, -.2);
-                        j.sprite_index = sprPerfumaSpike;
-                    }
-                }
-                if (vineTimer == 230)
-                    image_index = 0;
-                if (vineTimer &gt;= 60)
-                {
-                    with (objEnemyBullet)
-                    {
-                        if (y &lt;= view_yview + 48)
-                        {
-                            if (grav != 0)
-                            {
-                                grav = 0;
-                                xspeed = 0;
-                                yspeed = 0;
-                                other.image_index = 4; 
-                                other.vineTimer = 180;
-                            }
-                            if (other.vineTimer == 210)
-                            {
-                                other.image_index = 7;
-                                if (instance_exists(target))
-                                    aimAtTarget(3);
-                                else
-                                    yspeed = -3;
-                            }
-                        }
-                    }
-                    if (!instance_exists(objEnemyBullet))
-                    {
-                        vineTimer = 0;
-                        phase = 5;
-                    }
-                }
-                break;
-            case 3: // double whammy
-                vineTimer+= (scrollSpeed = 0);
-                if (vineTimer == 0)
-                {
-                    image_index = 5;
-                    if (abs(scrollSpeed) &gt; 0.1)
-                        scrollSpeed-= (1.6/60) * -image_xscale;
-                    else
-                        scrollSpeed = 0;
-                }
-                if (vineTimer == 15)
-                    image_index = 8;
-                if (vineTimer == 55 || vineTimer == 110)
-                    image_index = 1;
-                if (vineTimer == 65 || vineTimer == 120)
-                {
-                    playSFX(sfxCannonShoot);
-                    if (vineTimer == 65)
-                    {
-                        image_index = 3;
-                        for (p = 0; p &lt;= 2; p++)
-                        {
-                            s = instance_create(x + (12 * image_xscale), y - 4, objPerfumaSeedBomb);
-                            s.grav = .2;
-                            s.yspeed = -5;
-                            s.xspeed = xSpeedAim(x + (12 * image_xscale), y - 4, 
-                            x + ((32 + (64 * p)) * image_xscale), view_yview + 192, -4, .2);
-                        }
-                    }
-                    else
-                    {
-                        image_index = 4;
-                        for (p = 0; p &lt;= 3; p++)
-                        {
-                            s = instance_create(x + (12 * image_xscale), y - 4, objPerfumaSeedBomb);
-                            s.grav = .2;
-                            s.yspeed = -5;
-                            s.xspeed = xSpeedAim(x + (12 * image_xscale), y - 4, 
-                            x + ((8 + (64 * p)) * image_xscale), view_yview + 192, -4, .2);
-                        }
-                    }
-                    
-                }
-                if (vineTimer == 180)
-                    image_index = 0;
-                if (vineTimer == 205)
-                {
-                    vineTimer = 0;
-                    lastStationaryPhase = 3;
-                    phase = 6;
-                }
-                break;
-            case 4: // stream
-                vineTimer+= (scrollSpeed = 0);
-                if (vineTimer == 0)
-                {
-                    image_index = 5;
-                    if (abs(scrollSpeed) &gt; 0.1)
-                        scrollSpeed-= (1.6/60) * -image_xscale;
-                    else
-                        scrollSpeed = 0;
-                }
-                if (vineTimer == 15 || vineTimer == 95)
-                    image_index = 7;
-                if (vineTimer % 5 == 0 &amp;&amp; ((vineTimer &gt;= 45 &amp;&amp; vineTimer &lt;= 80) || 
-                vineTimer &gt;= 125 &amp;&amp; vineTimer &lt;= 160))
-                {
-                    image_index = 3;
-                    playSFX(sfxEnemyShoot);
-                    l = instance_create(x + (12 * image_xscale), y - 4, objEnemyBullet);
-                    l.grav = .25;
-                    l.yspeed = -4;
-                    l.xspeed = xSpeedAim(x + (12 * image_xscale), y - 4, tx, ty, -4, .25);
-                    l.sprite_index = sprPerfumaSpike;
-                    l.image_index = 1;
-                }
-                if (vineTimer == 180)
-                    image_index = 0;
-                if (vineTimer &gt;= 180 &amp;&amp; !instance_exists(objEnemyBullet))
-                {
-                    vineTimer = 0;
-                    lastStationaryPhase = 4;
-                    phase = 6;
-                }
-                break;
-            case 5: // phase 0, 1 and 2 decision
-                vineTimer = 0;
-                if (movingPhaseLeft &lt; 0) 
-                {
-                    movingPhaseLeft = 2;
-                    phaseArrayDir = irandom(1);
-                    phasePick = 2 + irandom(2);
-                    phase = choose(3, 4);
-                    exit;
-                }
-                else 
-                {
-                    if (phaseArrayDir &gt; 0)
-                        phase = phaseArray[phasePick - movingPhaseLeft];
-                    else
-                        phase = phaseArray[phasePick + movingPhaseLeft];
-                    movingPhaseLeft--;
-                }
-                break;
-            case 6: // phase 3 and 4 decision
-                if ((x &lt; view_xview + 48 &amp;&amp; image_xscale &gt; 0 ||
-                x &gt; view_xview + 208 &amp;&amp; image_xscale &lt; 0) &amp;&amp; vineTimer &lt; 15)
-                    x+= 2 * image_xscale;
-                else
-                    vineTimer++;
-                if (vineTimer &gt;= 15)
-                {
-                    if (stationaryPhaseLeft &lt; 0) 
-                    {
-                        stationaryPhaseLeft = 1;
-                        phase = 5;
-                        vineTimer = 0;
-                        exit;
-                    }
-                    else
-                    {
-                        if (stationaryPhaseLeft == 1)
-                        {
-                            if (vineTimer == 15)
-                            {
-                                image_index = 5;
-                                spd = -2;
-                            }
-                            if (y &lt; view_yview + 156)
-                                y++;
-                            if (spd &lt; 4)
-                                spd+= 8/60;
-                            if (xspeed &gt; 0 &amp;&amp; image_xscale &lt; 0 || xspeed &lt; 0 &amp;&amp; image_xscale &gt; 0)
-                                image_index = 5;
-                            else
-                                image_index = 6;
-                            xspeed = spd * image_xscale;
-                            if (bbox_right &lt;= view_xview - 32 &amp;&amp; image_xscale &lt; 0 
-                            || bbox_left &gt;= view_xview + view_wview + 32 &amp;&amp; image_xscale &gt; 0)
-                            {
-                                spd = 0;
-                                xspeed = 0;
-                                vineTimer = 0;
-                                x = view_xview + 128 + (176 * image_xscale);
-                                image_xscale *= -1;
-                                image_index = 0;
-                                y-= 32;
-                                stationaryPhaseLeft--;
-                            }
-                        }
-                        else if (stationaryPhaseLeft == 0)
-                        {
-                            if (lastStationaryPhase == 3)
-                                phase = 4;
-                            else
-                                phase = 3;
-                            stationaryPhaseLeft--;
-                            vineTimer = 0;
-                        }
-                    }
-                }
+            case 1: // grenade!! over
                 break;
         }
     }

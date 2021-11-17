@@ -64,10 +64,7 @@ if (entityCanStep())
     if (move == 120)
     {
         playSFX(sfxElecnShoot);
-        if (instance_exists(target))
-            aimAtTarget(2.5);
-        else
-            yspeed = -3;
+        aimAtTarget(2.5);
     }
 }
 </string>

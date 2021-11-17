@@ -31,7 +31,7 @@ itemDrop = -1;
 
 healthpointsStart = 2;
 healthpoints = healthpointsStart;
-contactDamage = 3;
+contactDamage = 4;
 
 category = "floating";
 
@@ -94,7 +94,6 @@ if (entityCanStep())
         var targAng = point_direction(x, y, tx, ty);
         ang = correctAng(targAng, ang, 6);
     }
-    ang = wrapAngle(ang);
     xspeed = cos(degtorad(ang)) * spd;
     yspeed = -sin(degtorad(ang)) * spd;
 }

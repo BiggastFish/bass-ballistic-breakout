@@ -240,7 +240,8 @@ playSFX(sfxReflect);
           <argument>
             <kind>1</kind>
             <string>playSFX(sfxBalladeCrackerExplosion);
-instance_create(x, y, objWeaponExplosion);
+r = instance_create(x, y, objWeaponExplosion);
+r.sprite_index = sprSeedBombExplosion;
 instance_destroy();
 </string>
           </argument>

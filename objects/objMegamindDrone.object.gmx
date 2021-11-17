@@ -79,16 +79,11 @@ if (entityCanStep())
         image_index = (timer / 2) mod 2;
     if (phase == 0) // waitin!
     {
-        if (timer &gt;= 40)
-        {
-            timer = 0;
-            phase = 1;
-        }
+        aimAtTarget(3);
+        phase = 1;
     }
-    else if (phase == 1) // snippin movin
-    {
-        mp_linear_step(tx, ty, 1, false);
-    }
+    else if (phase == 1)
+        timer++;
     else if (phase == 2) // OUGH
     {
         if (timer == 8)

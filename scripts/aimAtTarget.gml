@@ -13,6 +13,6 @@ if (instance_exists(target))
 }
 else
 {
-    xspeed = argument0;
-    yspeed = 0;
+    xspeed = 0;
+    yspeed = -argument0;
 }

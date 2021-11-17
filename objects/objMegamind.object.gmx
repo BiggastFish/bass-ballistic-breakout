@@ -149,13 +149,16 @@ if (entityCanStep())
                     droneTimer++;
                 if (droneTimer == 90)
                 {
-                    dravis = instance_create(yeah, view_yview + 32, 
-                    objMegamindDrone);
-                    with (dravis)
+                    for (n = -1; n &lt; 2; n+= 2)
                     {
-                        playSFX(sfxHeliButonReveal);
-                        for (i = 0; i &lt; 8; i++)
-                            instance_create(x, y, objHeliButonLeaf);
+                        dravis = instance_create(yeah - (64 * n),
+                        view_yview + 32, objMegamindDrone);
+                        with (dravis)
+                        {
+                            playSFX(sfxHeliButonReveal);
+                            for (i = 0; i &lt; 8; i++)
+                                instance_create(x, y, objHeliButonLeaf);
+                        }
                     }
                     droneTimer = 0;
                 }

@@ -41,9 +41,11 @@ grav = 0;
 canIce = 0;
 
 length = 2;
+maxFallSpeed = 2;
 shakeTimer = 0;
 buddy = noone;
 init = true;
+
 </string>
           </argument>
         </arguments>
@@ -146,8 +148,8 @@ if (entityCanStep())
             grav = 0.2;
         }
     }
-    if (yspeed &gt; 3)
-        yspeed = 3;
+    if (yspeed &gt; maxFallSpeed)
+        yspeed = maxFallSpeed;
 }
 else if (dead)
 {

@@ -33,7 +33,7 @@ respawn = false;
 
 healthpointsStart = 1;
 healthpoints = healthpointsStart;
-contactDamage = 4;
+contactDamage = 3;
 
 dead = false;
 

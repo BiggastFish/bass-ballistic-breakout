@@ -42,7 +42,10 @@ init = true;
 playSound = true;
 moveSpd = 1;
 alarmStop = -1;
-alarmStopValue = 90; 
+alarmStopValue = 90;
+stopTimer = 0;
+stopTimerMax = 16;
+stopAtEdge = false;
 sparkXscale = 1;
 swapScale = true;
 startDir = choose(-1, 1);
@@ -52,6 +55,7 @@ length = 0;
 laserTop = x;
 laserBottom = x;
 beamSpr = sprGabyoallightningLightning;
+beamSFX = sfxBlockDevilLaser;
 
 killObj[1] = objKnuckleSandwich;
 killObj[2] = objYamato;
@@ -154,15 +158,23 @@ if (entityCanStep())
     if (xcoll != 0) 
     {
         dir *= -1;
+        stopTimer = stopTimerMax * stopAtEdge;
     }
     else if (ground) 
     {
         if (checkFall(16 * dir))
         {
             dir *= -1;
+            stopTimer = stopTimerMax * stopAtEdge;
         }
     }
-    xspeed = moveSpd * dir;
+    if (stopTimer)
+    {
+        stopTimer--;
+        xspeed = 0;
+    }
+    else
+        xspeed = moveSpd * dir;
 
     if (!stopped) 
     {
@@ -192,7 +204,7 @@ if (entityCanStep())
     if (playSound)
     {
         playSound = false;
-        if (insideView()) playSFX(sfxBlockDevilLaser)
+        if (insideView()) playSFX(beamSFX);
     }
 
 } 
@@ -206,6 +218,7 @@ else
     {
         dir = startDir;
         alarmStop = 0;
+        stopTimer = 0;
         stopped = 0;
         img = 0;
         playSound = true;

@@ -34,7 +34,7 @@ respawnRange = -1;
 
 grav = 0;
 canIce = 0;
-becameUnsolid = true;
+solidTimer = 0;
 </string>
           </argument>
         </arguments>
@@ -68,7 +68,7 @@ if (entityCanStep())
         || (guy.active &amp;&amp; object_index == objJumpBlockB);
         with (prtEntity)
         {
-            if (!dead)
+            if (!dead &amp;&amp; !object_is_ancestor(object_index, prtPlayerProjectile))
             {
                 if (blockCollision)
                 {
@@ -86,12 +86,16 @@ if (entityCanStep())
         with (objCoinSpread)
         {
             if (collision_rectangle(other.x - 1, other.y - 1, 
-            other.x + 17, other.y + 17, id, 0, 0) &amp;&amp; angle == 0 &amp;&amp; other.becameUnsolid)
+            other.x + 17, other.y + 17, id, 0, 0) &amp;&amp; angle == 0 
+            &amp;&amp; other.solidTimer == 1)
             {
                 event_user(EV_REFLECTED);
             }
         }
-        becameUnsolid = !isSolid;
+        if (isSolid)
+            solidTimer = 2;
+        else if (solidTimer)
+            solidTimer--;
     }
 }
 </string>

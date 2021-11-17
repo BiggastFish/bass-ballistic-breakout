@@ -1528,6 +1528,7 @@
           <sprites name="Boss">
             <sprite>sprites\sprPerfuma</sprite>
             <sprite>sprites\sprPerfumaVine</sprite>
+            <sprite>sprites\sprPerfumaExplosion</sprite>
             <sprite>sprites\sprPerfumaThorn</sprite>
             <sprite>sprites\sprPerfumaSpike</sprite>
           </sprites>
@@ -1634,6 +1635,7 @@
       <sprites name="Misc">
         <sprite>sprites\sprBassHelmet</sprite>
         <sprite>sprites\sprExplosionNew</sprite>
+        <sprite>sprites\sprSeedBombExplosion</sprite>
         <sprite>sprites\sprDamagePopupFade</sprite>
         <sprite>sprites\sprReady</sprite>
         <sprite>sprites\sprBassJumpPoof</sprite>

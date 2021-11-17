@@ -40,9 +40,12 @@ despawnRange = -1;
 stopped = false;
 init = true;
 playSound = true;
-moveSpd = 2;
+moveSpd = 3;
 alarmStop = -1;
-alarmStopValue = 135;
+alarmStopValue = 140;
+stopTimer = 0;
+stopTimerMax = 16;
+stopAtEdge = true;
 sparkYscale = 1;
 swapScale = true;
 startDir = choose(-1, 1);
@@ -52,6 +55,7 @@ length = 0;
 laserLeft = y;
 laserRight = y;
 beamSpr = sprHydroallSpout;
+beamSFX = sfxBlockDevilLaser;
 
 killObj[1] = objKnuckleSandwich;
 killObj[2] = objYamato;
@@ -110,7 +114,7 @@ if (entityCanStep())
             {
                 other.laserRight = bbox_left;
             }
-            else if (other.image_yscale &lt; 0 &amp;&amp; bbox_right &gt; other.laserLeft)
+            else if (other.image_xscale &lt; 0 &amp;&amp; bbox_right &gt; other.laserLeft)
             {
                 other.laserLeft = bbox_right;
             }
@@ -126,7 +130,7 @@ if (entityCanStep())
             {
                 other.laserRight = bbox_left;
             }
-            else if (other.image_yscale &lt; 0 &amp;&amp; bbox_right &gt; other.laserLeft)
+            else if (other.image_xscale &lt; 0 &amp;&amp; bbox_right &gt; other.laserLeft)
             {
                 other.laserLeft = bbox_right;
             }
@@ -154,8 +158,12 @@ if (entityCanStep())
     if (ycoll != 0) 
     {
         dir *= -1;
+        stopTimer = stopTimerMax * stopAtEdge;
     }
-    yspeed = moveSpd * dir;
+    if (stopTimer)
+        stopTimer--;
+    else
+        yspeed = moveSpd * dir;
 
     if (!stopped) 
     {
@@ -181,7 +189,7 @@ if (entityCanStep())
     if (playSound)
     {
         playSound = false;
-        if (insideView()) playSFX(sfxBlockDevilLaser)
+        if (insideView()) playSFX(beamSFX)
     }
 
 } 
@@ -195,6 +203,7 @@ else
     {
         dir = startDir;
         alarmStop = 0;
+        stopTimer = 0;
         stopped = 0;
         img = 0;
         playSound = true;

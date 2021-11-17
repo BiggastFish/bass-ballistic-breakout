@@ -42,6 +42,8 @@ ang = 0;
 spd = 2.5;
 phase = 0;
 parent = noone;
+
+enemyDamageValue(objGlowingSpiral, 1);
 </string>
           </argument>
         </arguments>
