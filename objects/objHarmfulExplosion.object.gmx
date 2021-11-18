@@ -32,9 +32,12 @@ grav = 0;
 
 //@cc if true enemies will take damage
 damageEnemies = false;
-
 //@cc if false players won't take damage
 damagePlayer = true;
+//@cc use new explosion sprite, with different colours if set
+newExplosion = true;
+primCol[0] = make_color_rgb(255, 207, 173);
+secCol[0] = make_color_rgb(255, 255, 255);
 
 contactDamage = 4;
 attackDelay = 4;
@@ -138,6 +141,43 @@ if (image_index &gt; 6)
           <argument>
             <kind>1</kind>
             <string>instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (newExplosion)
+{
+    var usePrim = make_color_rgb(255, 207, 173),
+        useSec = make_color_rgb(255, 255, 255);
+    if (array_length_1d(primCol) &gt; 1)
+        usePrim = primCol[floor(image_index)];
+    if (array_length_1d(secCol) &gt; 1)
+        useSec = secCol[floor(image_index)];
+    draw_sprite_ext(sprNewBigExplosionPrim, image_index, x, y, 
+    image_xscale, image_yscale, image_angle, usePrim, image_alpha);
+    draw_sprite_ext(sprNewBigExplosionSec, image_index, x, y,
+    image_xscale, image_yscale, image_angle, useSec, image_alpha);
+}
+else
+    drawSelf();
 </string>
           </argument>
         </arguments>

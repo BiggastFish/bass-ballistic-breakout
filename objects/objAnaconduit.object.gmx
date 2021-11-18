@@ -100,8 +100,9 @@ if (entityCanStep())
         image_index = 2;
         f = instance_create(x + (12 * image_xscale), y + (8 * image_yscale),
         objEnemyBullet);
+        f.contactDamage = 3;
         f.sprite_index = sprAnaconduitShot;
-        f.image_speed = 0.25;
+        f.image_speed = 0.3;
         if (tx &gt; x &amp;&amp; image_xscale &lt; 0) || (tx &lt;= x &amp;&amp; image_xscale &gt; 0)
         {
             f.xspeed = 3 * image_xscale;

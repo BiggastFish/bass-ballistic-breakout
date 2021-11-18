@@ -29,7 +29,7 @@
 
 contactDamage = 3;
 blockCollision = 1;
-grav = .25;
+grav = 0.25;
 rotTimer = 0;
 </string>
           </argument>
@@ -64,7 +64,31 @@ if (entityCanStep())
     {
         playSFX(sfxBalladeCrackerExplosion);
         r = instance_create(x, y, objHarmfulExplosion);
-        r.sprite_index = sprPerfumaExplosion;
+        for (l = 0; l &lt;= 1; l++)
+        {
+            r.primCol[l] = make_color_rgb(248, 184, 0);
+            r.secCol[l] = make_color_rgb(252, 224, 168);
+        }
+        for (d = 2; d &lt;= 3; d++)
+        {
+            r.primCol[d] = make_color_rgb(252, 160, 68);
+            r.secCol[d] = make_color_rgb(240, 208, 176);
+        }
+        for (f = 4; f &lt;= 5; f++)
+        {
+            r.primCol[f] = make_color_rgb(248, 88, 152);
+            r.secCol[f] = make_color_rgb(216, 184, 248);
+        }
+        for (s = 6; s &lt;= 7; s++)
+        {
+            r.primCol[s] = make_color_rgb(216, 0, 204);
+            r.secCol[s] = make_color_rgb(248, 120, 248);
+        }
+        for (g = 8; g &lt;= 9; g++)
+        {
+            r.primCol[g] = make_color_rgb(152, 120, 248);
+            r.secCol[g] = make_color_rgb(184, 184, 248);
+        }
         instance_destroy();
     }
 }

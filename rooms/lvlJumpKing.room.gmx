@@ -15,7 +15,7 @@ with (objTopSolid) visible = true;
 with (objGabyoallightning)
 {
     alarmStopValue = 140;
-    if (moveSpd != 0) moveSpd = 3;
+    if (moveSpd != 0) moveSpd = 3; //playerIntro
     stopAtEdge = true;
 }
 with (objGenericStopper) 
@@ -224,7 +224,7 @@ with (objGenericStopper)
     <instance objName="objJumpSpikeR" x="1888" y="3280" name="inst_C0BFFAC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeB" x="1936" y="3280" name="inst_9B3E8CE5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2736" y="3024" name="inst_CB04766C" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="2576" y="3072" name="inst_1B7DC604" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="2576" y="3072" name="inst_1B7DC604" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2592" y="2864" name="inst_3604165E" locked="0" code="" scaleX="9" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2608" y="2624" name="inst_886EE97E" locked="0" code="" scaleX="2" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2656" y="2624" name="inst_823EBE7B" locked="0" code="" scaleX="14" scaleY="2" colour="4294967295" rotation="0"/>
@@ -315,17 +315,16 @@ with (objGenericStopper)
     <instance objName="objSolid" x="3344" y="2496" name="inst_A70DC012" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3568" y="2416" name="inst_D8D5E62F" locked="0" code="" scaleX="1" scaleY="14" colour="4294967295" rotation="0"/>
     <instance objName="objHydroall" x="3136" y="2608" name="inst_B99A638A" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="3408" y="2384" name="inst_ED59C6F5" locked="0" code="" scaleX="34" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="3408" y="2368" name="inst_ED59C6F5" locked="0" code="" scaleX="34" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="3328" y="2160" name="inst_7501ED73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="3584" y="2400" name="inst_B592527E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrustyLadderBlock" x="3552" y="2416" name="inst_55C88896" locked="0" code="" scaleX="1" scaleY="12" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3520" y="2416" name="inst_F0BB8068" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="3520" y="2368" name="inst_C530D788" locked="0" code="" scaleX="27" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3344" y="2160" name="inst_09FBD2AB" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3568" y="2160" name="inst_2A881627" locked="0" code="" scaleX="2" scaleY="9" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3824" y="2160" name="inst_E028E0EA" locked="0" code="" scaleX="2" scaleY="9" colour="4294967295" rotation="0"/>
-    <instance objName="objLadder" x="3392" y="2384" name="inst_0040E4F5" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
-    <instance objName="objCheckpointAntiEddie" x="3456" y="2368" name="inst_2D16707D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLadder" x="3392" y="2368" name="inst_0040E4F5" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
+    <instance objName="objCheckpointAntiEddie" x="3456" y="2352" name="inst_2D16707D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRightScrollingNES" x="3584" y="2160" name="inst_43F1D80E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRightScrollingNES" x="3840" y="2160" name="inst_4D0BD7E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBossDoor" x="3568" y="2304" name="inst_493E2555" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
@@ -369,7 +368,6 @@ with (objGenericStopper)
     <instance objName="objHorizontalScrollingNES" x="3328" y="2400" name="inst_05AF50A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1824" y="3344" name="inst_CF715869" locked="0" code="" scaleX="15" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objJumpBlockB" x="1712" y="3760" name="inst_7DACD447" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDefaultSpawn" x="304" y="4032" name="inst_7A2507EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1232" y="3600" name="inst_4421718F" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4368" y="2368" name="inst_7331ACC8" locked="0" code="" scaleX="9" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objJumpBlockR" x="4192" y="2224" name="inst_F68B0A55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -422,15 +420,15 @@ with (objGenericStopper)
     <instance objName="objJumpSpikeB" x="5344" y="2192" name="inst_A88B420D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeB" x="5328" y="2192" name="inst_7C6732C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3120" y="2528" name="inst_F4C76B96" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpSpikeB" x="4368" y="2288" name="inst_6DA627B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpSpikeB" x="4384" y="2288" name="inst_97DCCE66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpSpikeB" x="4416" y="2288" name="inst_4D92F5A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpSpikeB" x="4448" y="2288" name="inst_F8220AE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpSpikeB" x="4480" y="2288" name="inst_0878018C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpSpikeB" x="4496" y="2288" name="inst_A5CDFAF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpSpikeB" x="4464" y="2288" name="inst_925CBA30" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpSpikeB" x="4400" y="2288" name="inst_8E035ED8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpSpikeB" x="4432" y="2288" name="inst_FBA7CA91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpSpikeB" x="4368" y="2272" name="inst_6DA627B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpSpikeB" x="4384" y="2272" name="inst_97DCCE66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpSpikeB" x="4416" y="2272" name="inst_4D92F5A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpSpikeB" x="4448" y="2272" name="inst_F8220AE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpSpikeB" x="4480" y="2272" name="inst_0878018C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpSpikeB" x="4496" y="2272" name="inst_A5CDFAF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpSpikeB" x="4464" y="2272" name="inst_925CBA30" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpSpikeB" x="4400" y="2272" name="inst_8E035ED8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpSpikeB" x="4432" y="2272" name="inst_FBA7CA91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeR" x="4352" y="2288" name="inst_1A7A279A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeR" x="4352" y="2320" name="inst_E2AFE614" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeR" x="4352" y="2352" name="inst_81F6DBB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -480,9 +478,9 @@ with (objGenericStopper)
     <instance objName="objJumpBlockR" x="4224" y="2368" name="inst_2C31B008" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpBlockB" x="4208" y="2320" name="inst_CCCCE47B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpBlockB" x="4224" y="2320" name="inst_B0E442C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpBlockR" x="4272" y="2288" name="inst_4F91527D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpBlockR" x="4288" y="2288" name="inst_8B1A2742" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpBlockR" x="4304" y="2288" name="inst_4B858D21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpBlockR" x="4272" y="2272" name="inst_4F91527D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpBlockR" x="4288" y="2272" name="inst_8B1A2742" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpBlockR" x="4304" y="2272" name="inst_4B858D21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5232" y="2192" name="inst_5955EFCF" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="5152" y="1536" name="inst_2FFC2D41" locked="0" code="" scaleX="1" scaleY="14" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="5216" y="1536" name="inst_2362CCBB" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
@@ -523,7 +521,7 @@ with (objGenericStopper)
     <instance objName="objSolid" x="4944" y="928" name="inst_CEDA812C" locked="0" code="" scaleX="23" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5136" y="1312" name="inst_12E6CF16" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGenericStopper" x="5312" y="960" name="inst_7405C07C" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="5280" y="1168" name="inst_AEEFCE0D" locked="0" code="" scaleX="2" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="5264" y="1168" name="inst_AEEFCE0D" locked="0" code="" scaleX="3" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5136" y="1056" name="inst_000DCBF7" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeR" x="5312" y="1600" name="inst_269BC822" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeR" x="5344" y="1600" name="inst_533C7DB9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -560,18 +558,22 @@ with (objGenericStopper)
     <instance objName="objSolid" x="4960" y="864" name="inst_61FFF5CD" locked="0" code="" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4880" y="720" name="inst_2493D0EF" locked="0" code="" scaleX="4" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4944" y="720" name="inst_4B148AB2" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="5040" y="720" name="inst_4DA99B5C" locked="0" code="" scaleX="4" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="objJumpMan" x="4992" y="848" name="inst_74CC2321" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="5040" y="720" name="inst_4DA99B5C" locked="0" code="" scaleX="4" scaleY="3.20000004768372" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpMan" x="4992" y="864" name="inst_74CC2321" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCheckpointAntiEddie" x="4992" y="1136" name="inst_AF2FCED9" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objHydroall" x="5264" y="1248" name="inst_A07F1F73" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGenericStopper" x="5264" y="1152" name="inst_AA70E935" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="objGenericStopper" x="5264" y="1264" name="inst_453B8EED" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="objHydroall" x="5248" y="1248" name="inst_A07F1F73" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGenericStopper" x="5248" y="1152" name="inst_AA70E935" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="objGenericStopper" x="5248" y="1264" name="inst_453B8EED" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="objFlowerSpring" x="5168" y="1296" name="inst_E779E942" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeB" x="5312" y="1616" name="inst_E1BD5DBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeB" x="5344" y="1616" name="inst_D25F0865" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpSpikeB" x="5328" y="1616" name="inst_A7024C69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJumpBlockR" x="5024" y="2320" name="inst_5E2CFB1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5248" y="2368" name="inst_B188A8EB" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpSpikeR" x="4352" y="2272" name="inst_122AF161" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objJumpSpikeR" x="4512" y="2272" name="inst_A755D593" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDefaultSpawn" x="304" y="4032" name="inst_5D3BF7CE" locked="0" code="respawnAnimation = 15;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="4912" y="2256" name="inst_550746B4" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgBasic" x="5312" y="960" w="16" h="16" xo="64" yo="32" id="11323074" name="inst_4313C3D9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

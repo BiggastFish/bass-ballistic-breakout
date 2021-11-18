@@ -253,6 +253,10 @@ switch (AnimID)
     case "Guts":
         spriteY = 6;
         break;
+    case "Nothing":
+        spriteX = 8;
+        spriteY = 12;
+        break;
     
     // Other
     

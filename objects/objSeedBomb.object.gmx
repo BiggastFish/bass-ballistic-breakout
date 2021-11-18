@@ -241,7 +241,31 @@ playSFX(sfxReflect);
             <kind>1</kind>
             <string>playSFX(sfxBalladeCrackerExplosion);
 r = instance_create(x, y, objWeaponExplosion);
-r.sprite_index = sprSeedBombExplosion;
+for (l = 0; l &lt;= 1; l++)
+{
+    r.primCol[l] = make_color_rgb(0, 232, 216);
+    r.secCol[l] = make_color_rgb(184, 248, 216);
+}
+for (d = 2; d &lt;= 3; d++)
+{
+    r.primCol[d] = make_color_rgb(88, 248, 152);
+    r.secCol[d] = make_color_rgb(184, 248, 184);
+}
+for (f = 4; f &lt;= 5; f++)
+{
+    r.primCol[f] = make_color_rgb(21, 164, 39);
+    r.secCol[f] = make_color_rgb(88, 248, 152);
+}
+for (s = 6; s &lt;= 7; s++)
+{
+    r.primCol[s] = make_color_rgb(88, 216, 84);
+    r.secCol[s] = make_color_rgb(216, 248, 120);
+}
+for (g = 8; g &lt;= 9; g++)
+{
+    r.primCol[g] = make_color_rgb(21, 164, 39);
+    r.secCol[g] = make_color_rgb(184, 248, 24);
+}
 instance_destroy();
 </string>
           </argument>

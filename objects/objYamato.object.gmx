@@ -30,15 +30,16 @@
 bulletLimitCost = 0;
 
 contactDamage = 1.5;
-image_speed = .8;
+image_speed = 0.8;
 
 penetrate = 3;
 pierces = 2;
 slashNumber = 0;
 slashTimer = 0;
 judgmentCut = 0;
+killOverride = true;
 
-playSFX(sfxSlashClaw); // needs its own sfx later
+playSFX(sfxSlashClaw); // needs its own sfx later entityEntityCollision
 </string>
           </argument>
         </arguments>

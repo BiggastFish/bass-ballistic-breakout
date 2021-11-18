@@ -80,6 +80,19 @@ if (init)
             playSFX(sfxHeliButonReveal);
             for (i = 0; i < 8; i++) instance_create(x, y, objHeliButonLeaf);
             break;
+        case 15: // break bricks to come in
+            landy = y;
+            landx = x;
+            x-= 24;
+            y-= 80;
+            blockCollision = 0;
+            coolTimer = 0;
+            teleportTimer = 0;
+            introFakeGrav = 0.25;
+            introFakeYspeed = 0;
+            introFakeXspeed = 0;
+            global.lockTransition = true;
+            break;
         default:
             landy = y;
             y = view_yview - 32;
@@ -396,7 +409,7 @@ else
                 // apply simulated gravity + yspeed. regular gravity has to stay locked for some reason
                 y += introFakeYspeed;
                 introFakeYspeed += introFakeGrav;
-                if (teleportTimer = 1 && introFakeYspeed > 0)
+                if (teleportTimer == 1 && introFakeYspeed > 0)
                 {
                     playSFX(sfxCentaurFlash);
                     for (i = -3; i < 4; i++)
@@ -488,6 +501,71 @@ else
             {
                 y+= introFakeYspeed;
                 introFakeYspeed += introFakeGrav;
+            }
+            break;
+        case 15: // break BRICKS
+            if (coolTimer < 55)
+            {
+                playerHandleSprites("Nothing");
+                coolTimer++;
+            }
+            if (coolTimer == 4 || coolTimer == 16 || coolTimer == 28
+            || coolTimer == 54)
+            {
+                playSFX(sfxExplosion);
+                var xx = x + 8, yy = y;
+                switch (coolTimer)
+                {
+                    case 4: yy = view_yview + 80; break;
+                    case 16: yy = view_yview + 192; break;
+                    case 28: yy = view_yview + 144; break;
+                    case 54: xx = x; break;
+                }
+                instance_create(xx, yy, objWeaponExplosion);
+            }
+            if (coolTimer == 54)
+            {
+                introFakeYspeed = -3;
+                introFakeXspeed = arcCalcXspeed(-3, 0.25, x, y, landx, landy);
+            }
+            if (coolTimer == 55)
+            {
+                canSpriteChange = true;
+                ground = false;
+                playerHandleSprites("Normal");
+                canSpriteChange = 0;
+                if (round(y) >= landy)
+                {
+                    if (teleportTimer == 0)
+                    {
+                        playSFX(sfxLand);
+                        x = xstart;
+                        y = landy;
+                        introFakeGrav = 0;
+                        introFakeYspeed = 0;
+                        introFakeXspeed = 0;
+                    }
+                    else
+                    {
+                        teleporting = false;
+                        teleportTimer = 0;
+                        teleportLock = lockPoolRelease(teleportLock);
+                        
+                        canHit = true;
+                        blockCollision = true;
+                        iFrames = 0;
+                        ground = true;
+                        global.lockTransition = false;
+                        exit;
+                    }
+                    teleportTimer += 1;
+                }
+                else
+                {
+                    x+= introFakeXspeed;
+                    y+= introFakeYspeed;
+                    introFakeYspeed += introFakeGrav;
+                }
             }
             break;
     }

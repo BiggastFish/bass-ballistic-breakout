@@ -29,6 +29,7 @@
 
 canDamage = false;
 affectHud = false;
+isTargetable = false;
 despawnRange = -1;
 respawnRange = -1;
 
@@ -68,7 +69,8 @@ if (entityCanStep())
         || (guy.active &amp;&amp; object_index == objJumpBlockB);
         with (prtEntity)
         {
-            if (!dead &amp;&amp; !object_is_ancestor(object_index, prtPlayerProjectile))
+            if (!dead &amp;&amp; !object_is_ancestor(object_index, prtPlayerProjectile)
+            &amp;&amp; !object_is_ancestor(object_index, prtPickup))
             {
                 if (blockCollision)
                 {

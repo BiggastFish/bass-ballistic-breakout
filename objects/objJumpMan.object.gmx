@@ -28,31 +28,12 @@
             <string>event_inherited();
 healthpointsStart = 160;
 healthpoints = healthpointsStart;
-blockCollision = 0;
-grav = 0;
 contactDamage = 4;
-vine = noone;
-facePlayerOnSpawn = 1;
-vineTimer = 0;
-spd = 0;
-scrollSpeed = 0;
-phase = 5;
+phase = 0;
 introType = 0;
-dropsDone = 0;
-stationaryPhaseLeft = 1;
-movingPhaseLeft = 2;
-phaseArray[0] = 1;
-phaseArray[1] = 2;
-phaseArray[2] = 0;
-phaseArray[3] = 1;
-phaseArray[4] = 2;
-phaseArray[5] = 0;
-phaseArray[6] = 1;
-phaseArrayDir = 1;
-phasePick = 2 + irandom(2);
-lastStationaryPhase = choose(3, 4);
-tx = x;
-ty = y;
+shots = 0;
+gangsTimer = 0;
+_im = 0;
 
 // Music
 music = "HoTDBoss.ogg";
@@ -66,6 +47,7 @@ musicLoopSecondsEnd = 70.655;
 // Damage Tables
 enemyDamageValue(objBusterShotHalfCharged, 1);
 enemyDamageValue(objBusterShotCharged, 3);
+enemyDamageValue(objCoinSpread, 4);
 enemyDamageValue(objYamato, 2);
 enemyDamageValue(objKnuckleSandwich, 10);
 </string>
@@ -112,28 +94,125 @@ if (entityCanStep())
 {
     if (isFight)
     {
+        var tx = x + (16 * image_xscale), ty = y,
+        top = global.sectionTop, yeah = view_xview + 128;
         if (instance_exists(target))
         {
             tx = target.x;
             ty = target.y;
         }
-        gangsTimer++;
+        with (objSolid) 
+        {
+            if (collision_rectangle(other.x - 7, view_yview, other.x + 7, 
+            other.bbox_top, id, false, false)) 
+            {
+                top = bbox_bottom + 1;
+            }
+        }
+        if (!global.shakeTimer &amp;&amp; !instance_exists(objEnemyBullet))
+            gangsTimer++;
         switch (phase)
         {
-            case 0: // grenade!! up
-                if (gangsTimer == 4)
+            case 0: // grenade!!
+                if (gangsTimer == 16)
                     image_index = 1;
-                if (gangsTimer == 8)
+                if (gangsTimer == 20)
                 {
                     playSFX(sfxEnemyDrop);
                     image_index = 2;
                     m = instance_create(x, y - 8, objJumpManGrenade);
                     m.form = 0;
-                    m.yspeed = -6;
+                    m.yspeed = -abs(top - bbox_top) / 20;
+                    shots++;
                 }
-                
+                if (global.shakeTimer || instance_exists(objEnemyBullet))
+                    image_index = 1;
+                else if (gangsTimer &gt; 20)
+                    image_index = 0;
+                if (gangsTimer == 56)
+                {
+                    gangsTimer = 0;
+                    phase = 1;
+                }
                 break;
-            case 1: // grenade!! over
+            case 1: // WAHOOOOOO
+                var dx = x, dy = y;
+                if (abs(yeah - x) &lt; 4)
+                    dx = x + (64 * choose(-1, 1));
+                else
+                    dx = x + (64 * sign(yeah - x));
+                if (abs(ystart - y) &lt; 4)
+                    dy = y + 64;
+                else
+                    dy = y - 64;
+                if (gangsTimer == 8)
+                    image_index = 1;
+                if (gangsTimer == 12)
+                {
+                    yspeed = -(5 + (2 * (y &gt; ystart + 12)));
+                    xspeed = arcCalcXspeed(yspeed, grav, x, y, dx, dy);
+                }
+                if (gangsTimer &gt; 12)
+                {
+                    animationLoop(3, 4, 0.35);
+                    if (ycoll &gt; 0)
+                    {
+                        if (shots == 2)
+                        {
+                            yspeed = -(5 + (2 * (y &gt; ystart + 12)));
+                            xspeed = arcCalcXspeed(yspeed, grav, x, y, 
+                            dx, dy);
+                            shots = 3;
+                        }
+                        else
+                        {
+                            gangsTimer = 0;
+                            xspeed = 0;
+                            calibrateDirection();
+                            image_index = 0;
+                            if (shots == 3) 
+                            {
+                                shots = 0;
+                                phase = 2;
+                            }
+                            else
+                                phase = 0;
+                        }
+                    }
+                }
+                break;
+            case 2: // gungeunugun pewpewpw
+                if (gangsTimer == 12 || gangsTimer == 48)
+                {
+                    playSFX(sfxCrashBombArm);
+                    image_index = 5;
+                }
+                if (gangsTimer == 25)
+                {
+                    calibrateDirection();
+                    image_index = 6;
+                }
+                if (gangsTimer == 30)
+                {
+                    calibrateDirection();
+                    if (shots &lt; 10)
+                    {
+                        playSFX(sfxColtonShoot);
+                        image_index = 7;
+                        l = instance_create(tx, ty, objJumpManGunShot);
+                        l.image_xscale = choose(-1, 1);
+                        gangsTimer-= 7;
+                        shots++;
+                    }
+                }
+                if (gangsTimer &gt;= 108)
+                {
+                    calibrateDirection();
+                    image_index = 0;
+                    gangsTimer = 0;
+                    phase = 1;
+                    shots = 0;
+                }
                 break;
         }
     }
@@ -161,26 +240,12 @@ if (entityCanStep())
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-with (objPerfumaVine)
-{
-    instance_create(x, y, objExplosion);
-    instance_destroy();
-}
 with (prtEnemyProjectile)
 {
-    instance_create(x, y, objExplosion);
+    if (object_index != objJumpManGunShot || object_index != objHarmfulExplosion) 
+        instance_create(x, y, objExplosion);
     instance_destroy();
 }
-with (objParallax)
-    xspeed = 0;
-m = instance_create(x, y, objEnemyBullet);
-m.image_xscale = image_xscale;
-m.sprite_index = sprite_index;
-m.yspeed = -3;
-m.xspeed = 2 * image_xscale + ((-3 * (abs(scrollSpeed) &lt; 1.4)) * image_xscale);
-m.grav = .2;
-m.contactDamage = 0;
-m.reflectable = 0;
 </string>
           </argument>
         </arguments>

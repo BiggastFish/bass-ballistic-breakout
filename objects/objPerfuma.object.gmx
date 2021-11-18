@@ -34,25 +34,11 @@ grav = 0;
 contactDamage = 4;
 
 vine = noone;
-facePlayerOnSpawn = 1;
 vineTimer = 0;
 spd = 0;
 scrollSpeed = 0;
 phase = irandom(2);
 introType = 0;
-dropsDone = 0;
-stationaryPhaseLeft = 1;
-movingPhaseLeft = 2;
-phaseArray[0] = 1;
-phaseArray[1] = 2;
-phaseArray[2] = 0;
-phaseArray[3] = 1;
-phaseArray[4] = 2;
-phaseArray[5] = 0;
-phaseArray[6] = 1;
-phaseArrayDir = 1;
-phasePick = 2 + irandom(2);
-lastStationaryPhase = choose(3, 4);
 
 phasesDidMoving = 0;
 phaseEndMoving = false;
@@ -239,7 +225,7 @@ if (entityCanStep())
                     for (k = 0; k &lt;= 2; k++)
                     {
                         j = instance_create(x + (12 * image_xscale), y + 10, objEnemyBullet);
-                        j.grav = -.2;
+                        j.grav = -0.2;
                         j.yspeed = 6;
                         j.xspeed = xSpeedAim(x + (12 * image_xscale), y + 10, 
                         x + ((16 + (64 * k)) * image_xscale), view_yview, 3, -.2);

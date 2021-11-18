@@ -47,6 +47,7 @@ timerDelay = 7;
 xDir = 0;
 yDir = 0;
 treasureSpd = 3;
+_im = 0;
 
 init = true;
 shinies = 0;
@@ -84,7 +85,25 @@ event_inherited();
 
 if (entityCanStep())
 {
-    timer++;
+    with (objCoinSpread)
+    {
+        if (collision_rectangle(other.x - 1, other.y - 1, 
+        other.x + 17, other.y + 17, id, 0, 0) &amp;&amp; angle == 0 
+        &amp;&amp; other.image_index == 0)
+        {
+            playSFX(sfxWanaan);
+            with (other)
+            {
+                image_index = 1;
+                timer = 0;
+            }
+            instance_destroy();
+        }
+    }
+    if (image_index == 0)
+        timer++;
+    else
+        animationLoop(1, 2, 0.25);
     if (timer == (timerMax - 20) &amp;&amp; !spawnDust)
     {
         r = instance_create(x + 8 + (12 * xDir), y + 8 + (12 * yDir),
@@ -117,6 +136,7 @@ if (entityCanStep())
 }
 else if (dead)
 {
+    image_index = 0;
     spawnDust = false;
     timer = timerStart;
     shinies = 0;

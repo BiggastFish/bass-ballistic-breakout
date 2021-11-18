@@ -29,7 +29,7 @@
 
 healthpointsStart = 3;
 healthpoints = healthpointsStart;
-contactDamage = 5;
+contactDamage = 4;
 
 facePlayer = true;
 

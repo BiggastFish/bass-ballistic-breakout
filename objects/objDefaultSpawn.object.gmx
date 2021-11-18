@@ -36,6 +36,7 @@
 // 12 = glass smash (intro stage)
 // 13 = coin plow (gold man stage)
 // 14 = leaf pass (perfuma stage)
+// 15 = brick break (gangsta mario stage)
 respawnAnimation = 0;
 
 //@cc play the animation sequence while ready's being displayed

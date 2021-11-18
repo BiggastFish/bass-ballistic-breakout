@@ -29,7 +29,6 @@
 
 faction = 2;
 stopOnFlash = 0;
-killOverride = false;
 
 canHit = false;
 penetrate = 0;

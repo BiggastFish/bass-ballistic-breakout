@@ -40,6 +40,8 @@ grav = 0;
 
 phase = 0;
 timer = 0;
+
+enemyDamageValue(objKnuckleSandwich, 4);
 </string>
           </argument>
         </arguments>

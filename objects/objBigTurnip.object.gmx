@@ -85,7 +85,7 @@ if (entityCanStep())
             spd+= 0.025;
         else
             spd = 0.8;
-        var tx = x, ty = y;
+        var tx = x, ty = y - 4;
         if (instance_exists(target))
         {
             tx = target.x;
@@ -131,6 +131,32 @@ if (!spawned &amp;&amp; dead)
     {
         with (parent) turnipChildren-= 3;
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="21">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (other.killOverride)
+{
+    with (parent) turnipChildren-= 3;
 }
 </string>
           </argument>

@@ -1465,31 +1465,24 @@
           </sprites>
         </sprites>
         <sprites name="Money Machine">
-          <sprite>sprites\sprJumpShoot</sprite>
-          <sprite>sprites\sprJumpShootBlade</sprite>
           <sprite>sprites\sprLongLongGuy</sprite>
           <sprite>sprites\sprLongGuyHorizontal</sprite>
           <sprite>sprites\sprLongGuyVertical</sprite>
           <sprite>sprites\sprLongGuyIcon</sprite>
           <sprite>sprites\sprGoldonBatton</sprite>
-          <sprite>sprites\sprGoldragon</sprite>
+          <sprite>sprites\sprHellcart</sprite>
           <sprite>sprites\sprMoneyCatcher</sprite>
           <sprite>sprites\sprMoneyCatcherPole</sprite>
           <sprite>sprites\sprMoneyCatcherClaw</sprite>
-          <sprite>sprites\sprGoldragonOrb</sprite>
           <sprite>sprites\sprMoneyCatcherOrb</sprite>
           <sprite>sprites\sprMoneyCatcherWave</sprite>
-          <sprite>sprites\sprGoldragonOrbSplit</sprite>
-          <sprite>sprites\sprFloatingTreasure</sprite>
-          <sprite>sprites\sprTreasureSpawner</sprite>
           <sprite>sprites\sprGoldonBattonDebris</sprite>
-          <sprite>sprites\sprHellcart</sprite>
-          <sprite>sprites\sprHellcartSpawner</sprite>
           <sprite>sprites\sprGorudokuro</sprite>
           <sprite>sprites\sprGorudokuroGold</sprite>
-          <sprite>sprites\sprSlotCoinSwitch</sprite>
-          <sprite>sprites\sprSlotCoinSpawner</sprite>
-          <sprite>sprites\sprSlotCoin</sprite>
+          <sprites name="Gimmicks">
+            <sprite>sprites\sprFloatingTreasure</sprite>
+            <sprite>sprites\sprTreasureSpawner</sprite>
+          </sprites>
           <sprites name="Boss">
             <sprite>sprites\sprGoldMan</sprite>
             <sprite>sprites\sprGoldem</sprite>
@@ -1522,13 +1515,9 @@
           <sprite>sprites\sprFirefryTrail</sprite>
           <sprite>sprites\sprRevoltingSuzy</sprite>
           <sprite>sprites\sprMegamind</sprite>
-          <sprite>sprites\sprTruckBossSpike</sprite>
-          <sprite>sprites\sprTruckBossFront</sprite>
-          <sprite>sprites\mskTruckBoss</sprite>
           <sprites name="Boss">
             <sprite>sprites\sprPerfuma</sprite>
             <sprite>sprites\sprPerfumaVine</sprite>
-            <sprite>sprites\sprPerfumaExplosion</sprite>
             <sprite>sprites\sprPerfumaThorn</sprite>
             <sprite>sprites\sprPerfumaSpike</sprite>
           </sprites>
@@ -1540,7 +1529,6 @@
           <sprite>sprites\sprBabyTurnip</sprite>
           <sprite>sprites\sprCrustyLadderBlock</sprite>
           <sprite>sprites\sprCrustyLadderMoney</sprite>
-          <sprite>sprites\sprCoinBarrier</sprite>
           <sprite>sprites\sprCrustyLadder</sprite>
           <sprite>sprites\sprFlowerSpring</sprite>
           <sprite>sprites\sprHydroall</sprite>
@@ -1554,7 +1542,12 @@
           <sprite>sprites\sprJumpBlockB</sprite>
           <sprite>sprites\sprJumpSpikeR</sprite>
           <sprite>sprites\sprJumpSpikeB</sprite>
-          <sprite>sprites\sprJumpMan</sprite>
+          <sprites name="Boss">
+            <sprite>sprites\sprJumpMan</sprite>
+            <sprite>sprites\sprJumpManGrenade</sprite>
+            <sprite>sprites\sprJumpManGunShot</sprite>
+            <sprite>sprites\sprJumpManDebris</sprite>
+          </sprites>
         </sprites>
         <sprites name="St. Hunger">
           <sprite>sprites\sprHotDogMan</sprite>
@@ -1635,7 +1628,8 @@
       <sprites name="Misc">
         <sprite>sprites\sprBassHelmet</sprite>
         <sprite>sprites\sprExplosionNew</sprite>
-        <sprite>sprites\sprSeedBombExplosion</sprite>
+        <sprite>sprites\sprNewBigExplosionPrim</sprite>
+        <sprite>sprites\sprNewBigExplosionSec</sprite>
         <sprite>sprites\sprDamagePopupFade</sprite>
         <sprite>sprites\sprReady</sprite>
         <sprite>sprites\sprBassJumpPoof</sprite>
@@ -2657,10 +2651,6 @@
         <object>objects\objLongGuy</object>
         <object>objects\objGoldonBatton</object>
         <object>objects\objGorudokuro</object>
-        <object>objects\objGoldragon</object>
-        <object>objects\objGoldragonSegment</object>
-        <object>objects\objGoldragonOrb</object>
-        <object>objects\objHellcartSpawner</object>
         <object>objects\objHellcart</object>
         <object>objects\objMoneyCatcherClaw</object>
         <object>objects\objMoneyCatcher</object>
@@ -2674,9 +2664,6 @@
           <object>objects\objTreasureLeft</object>
           <object>objects\objTreasureDelete</object>
           <object>objects\objFloatingTreasure</object>
-          <object>objects\objSlotCoinSwitch</object>
-          <object>objects\objSlotCoinSpawner</object>
-          <object>objects\objSlotCoin</object>
         </objects>
         <objects name="Boss">
           <object>objects\objGoldMan</object>
@@ -2690,7 +2677,6 @@
         </objects>
       </objects>
       <objects name="Whispering Woods">
-        <object>objects\objHivebomb</object>
         <object>objects\objLaserbeak</object>
         <object>objects\objHariHari</object>
         <object>objects\objMonkiOoAa</object>
@@ -2700,8 +2686,9 @@
         <object>objects\objMegamind</object>
         <object>objects\objMegamindBlast</object>
         <object>objects\objMegamindDrone</object>
-        <object>objects\objTruckBossFront</object>
-        <object>objects\objTruckBossSpike</object>
+        <objects name="Gimmick">
+          <object>objects\objHivebomb</object>
+        </objects>
         <objects name="Boss">
           <object>objects\objPerfuma</object>
           <object>objects\objPerfumaVine</object>
@@ -2716,22 +2703,27 @@
         <object>objects\objBigTurnipSpawnerSideways</object>
         <object>objects\objBigTurnip</object>
         <object>objects\objBabyTurnip</object>
-        <object>objects\objCoinBarrier</object>
-        <object>objects\objFlowerSpring</object>
         <object>objects\objTheWizard</object>
         <object>objects\objTheWizardFire</object>
         <object>objects\objTheWizardLaser</object>
         <object>objects\objTheWizardOrb</object>
         <object>objects\objTheWizardRing</object>
         <object>objects\objHydroall</object>
-        <object>objects\objCrustyLadder</object>
-        <object>objects\objCrustyLadderBlock</object>
-        <object>objects\objJumpBlockHandler</object>
-        <object>objects\objJumpBlockR</object>
-        <object>objects\objJumpBlockB</object>
-        <object>objects\objJumpSpikeR</object>
-        <object>objects\objJumpSpikeB</object>
-        <object>objects\objJumpMan</object>
+        <objects name="Gimmick">
+          <object>objects\objCrustyLadder</object>
+          <object>objects\objCrustyLadderBlock</object>
+          <object>objects\objFlowerSpring</object>
+          <object>objects\objJumpBlockHandler</object>
+          <object>objects\objJumpBlockR</object>
+          <object>objects\objJumpBlockB</object>
+          <object>objects\objJumpSpikeR</object>
+          <object>objects\objJumpSpikeB</object>
+        </objects>
+        <objects name="Boss">
+          <object>objects\objJumpMan</object>
+          <object>objects\objJumpManGrenade</object>
+          <object>objects\objJumpManGunShot</object>
+        </objects>
       </objects>
       <objects name="St. Hunger">
         <objects name="Boss">

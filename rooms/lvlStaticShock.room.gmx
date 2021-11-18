@@ -123,7 +123,7 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objSolid" x="1888" y="944" name="inst_100A4471" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2000" y="704" name="inst_27C89536" locked="0" code="" scaleX="6" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1888" y="928" name="inst_295E3C91" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGabyoallightning" x="1968" y="768" name="inst_9968C7D5" locked="0" code="" scaleX="-1" scaleY="-1" colour="4294967295" rotation="0"/>
+    <instance objName="objGabyoallightning" x="1936" y="768" name="inst_9968C7D5" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2096" y="720" name="inst_5468F226" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2112" y="816" name="inst_EE05041C" locked="0" code="" scaleX="25" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objChuckP" x="2240" y="800" name="inst_8A6DAADC" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>

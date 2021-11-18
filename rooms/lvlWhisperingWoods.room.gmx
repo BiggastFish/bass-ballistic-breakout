@@ -273,12 +273,11 @@
     <instance objName="objSolid" x="5104" y="224" name="inst_F1F78282" locked="0" code="" scaleX="2" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="5376" y="240" name="inst_0A0C3C6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5360" y="240" name="inst_E01B38CD" locked="0" code="" scaleX="1" scaleY="17" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="5312" y="400" name="inst_CCB0E043" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBossDoor" x="5104" y="336" name="inst_EF270F9E" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="5376" y="720" name="inst_BBA05F11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="5632" y="720" name="inst_696F8968" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPerfuma" x="5584" y="912" name="inst_48A6DA78" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTeleporter" x="5248" y="432" name="inst_C11451EB" locked="0" code="X = 5424;&#xA;Y = 912;&#xA;isDoor = true;&#xA;pressUp = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTeleporter" x="5328" y="432" name="inst_C11451EB" locked="0" code="X = 5424;&#xA;Y = 912;&#xA;isDoor = true;&#xA;pressUp = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="4880" y="448" name="inst_2069DE98" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="objLaserbeak" x="4976" y="608" name="inst_359AEA64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objUmbrellone" x="5072" y="304" name="inst_1DF2CCA1" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -291,6 +290,7 @@
     <instance objName="objSolid" x="4624" y="1072" name="inst_BCD893C2" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4624" y="1120" name="inst_CA11A581" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objLife" x="4632" y="1104" name="inst_67A4BEA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCheckpointAntiEddie" x="5248" y="432" name="inst_CD10D2B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgBasic" x="592" y="544" w="16" h="16" xo="48" yo="32" id="11322903" name="inst_8D289752" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -317,7 +317,7 @@
     <tile bgName="bgBasic" x="4496" y="1024" w="16" h="16" xo="48" yo="32" id="11322927" name="inst_4D91A184" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="4208" y="1136" w="32" h="32" xo="64" yo="0" id="11322928" name="inst_7CDC016E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="4960" y="592" w="32" h="32" xo="64" yo="0" id="11322947" name="inst_9E05235E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgBasic" x="5232" y="416" w="32" h="32" xo="96" yo="16" id="11322948" name="inst_6FEBFA87" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgBasic" x="5312" y="416" w="32" h="32" xo="96" yo="16" id="11322948" name="inst_6FEBFA87" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="1504" y="464" w="16" h="16" xo="48" yo="0" id="11322949" name="inst_2575E112" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="1504" y="480" w="16" h="16" xo="48" yo="0" id="11322950" name="inst_8FD9B76E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgBasic" x="1504" y="496" w="16" h="16" xo="48" yo="0" id="11322951" name="inst_5CDE32AA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

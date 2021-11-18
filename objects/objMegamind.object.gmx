@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-healthpointsStart = 88;
+healthpointsStart = 96;
 healthpoints = healthpointsStart;
 blockCollision = 0;
 grav = 0;
@@ -132,7 +132,7 @@ if (entityCanStep())
                     }
                     brainBlast++;
                 }
-                if (smartTimer &gt;= 125)
+                if (smartTimer &gt;= 116)
                 {
                     if (brainBlast &lt; 2)
                         smartTimer = 0;
@@ -145,28 +145,24 @@ if (entityCanStep())
                 }
                 break;
             case 1: //drones? kill him
-                if (!instance_exists(objMegamindDrone))
-                    droneTimer++;
-                if (droneTimer == 90)
-                {
-                    for (n = -1; n &lt; 2; n+= 2)
-                    {
-                        dravis = instance_create(yeah - (64 * n),
-                        view_yview + 32, objMegamindDrone);
-                        with (dravis)
-                        {
-                            playSFX(sfxHeliButonReveal);
-                            for (i = 0; i &lt; 8; i++)
-                                instance_create(x, y, objHeliButonLeaf);
-                        }
-                    }
-                    droneTimer = 0;
-                }
-
                 smartTimer+= (smartTimer &lt;= 104 || smartTimer &gt;= 120)
                 if (smartTimer == 12 || smartTimer == 16 || 
                 smartTimer == 124 || smartTimer == 128)
                 {
+                    if (smartTimer == 124)
+                    {
+                        for (n = -1; n &lt; 2; n+= 2)
+                        {
+                            dravis = instance_create(yeah - (64 * n),
+                            view_yview + 32, objMegamindDrone);
+                            with (dravis)
+                            {
+                                playSFX(sfxHeliButonReveal);
+                                for (i = 0; i &lt; 8; i++)
+                                    instance_create(x, y, objHeliButonLeaf);
+                            }
+                        }
+                    }
                     canHit = false;
                     canDamage = false;
                     image_index++
@@ -189,7 +185,7 @@ if (entityCanStep())
                 if ((smartTimer &gt;= 48 &amp;&amp; smartTimer &lt; 88))
                 {
                     if (instance_exists(target))
-                        y = ty - 8;
+                        y = ty - 24;
                 }
                 if (smartTimer == 88)
                     image_index = 2;
@@ -224,21 +220,24 @@ if (entityCanStep())
                     }
                 }
                 break;
-            case 2: // teleport back to start level
+            case 2: // come from above and do it over again!!!
                 smartTimer++;
                 if (smartTimer == 24)
                 {
                     canHit = true;
                     canDamage = true;
                     x = yeah + (80 * image_xscale);
-                    y = ystart;
+                    y = view_yview - 24;
                     visible = true;
+                    image_index = 0;
                     image_xscale *= -1;
                 }
-                if (smartTimer == 24 || smartTimer == 28 || smartTimer == 32)
-                    image_index--;
-                if (smartTimer == 48)
+                if (smartTimer == 24)
+                    yspeed = 4;
+                if (yspeed &gt; 0 &amp;&amp; y &gt;= ystart)
                 {
+                    y = ystart;
+                    yspeed = 0;
                     smartTimer = 0;
                     bigBrain = 0;
                 }

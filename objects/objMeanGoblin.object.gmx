@@ -37,6 +37,7 @@ grav = 0;
 blockCollision = 0;
 
 // Enemy specific code
+ang = 0;
 zoomTimer = 0;
 goBonkers = false;
 slowSpd = 0.15;
@@ -70,11 +71,11 @@ enemyDamageValue(objGlowingSpiral, 1);
 
 if (entityCanStep())
 {
-    var xx = x, yy = y;
+    var tx = x, ty = y;
     if (instance_exists(target))
     {
-        xx = bboxGetXCenterObject(target);
-        yy = bboxGetYCenterObject(target);
+        tx = target.x;
+        ty = target.y;
     }
     else
     {
@@ -84,16 +85,22 @@ if (entityCanStep())
     if (!goBonkers)
     {
         zoomTimer++;
+        xspeed = 0;
+        yspeed = 0;
         if (zoomTimer == 45) playSFX(sfxSheepSpark);
         if (zoomTimer == 70)
         {
+            ang = point_direction(x, y, tx, ty);
             zoomTimer = 0;
             goBonkers = true;
         }
     }
     else
     {
-        mp_linear_step(xx, yy, 1.25, 0);
+        var gettem = point_direction(x, y, tx, ty);
+        ang = correctAng(gettem, ang, 3);
+        xspeed = cos(degtorad(ang)) * 1.25;
+        yspeed = -sin(degtorad(ang)) * 1.25;
     }
     if (goBonkers || zoomTimer &gt;= 45)
         animationLoop(3, 4, fastSpd)

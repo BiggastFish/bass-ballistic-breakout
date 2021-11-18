@@ -37,6 +37,8 @@ grav = 0;
 
 img = 0;
 sparkXscale = choose(1, -1);
+alarmStopValue = 90;
+alarmStop = alarmStopValue;
 zapSFX = 0;
 doTheZap = 0;
 laserTop = 0;
@@ -69,7 +71,7 @@ yMov = y;
 
 if (entityCanStep())
 {
-    image_index+= .25;
+    image_index+= 0.25;
     if (y &gt; yMov)
     {
         y-= 1.5;
@@ -81,13 +83,13 @@ if (entityCanStep())
             playSFX(sfxBlockZap);
             depth-= 5;
             zapSFX = 1;
-            doTheZap = 1;
+            doTheZap = true;
             xspeed = 1.25 * dir;
         }
     }
     if (xspeed != 0 &amp;&amp; doTheZap)
     {
-        img+= .25;
+        img+= 0.25;
         if (img &gt;= 6)
         {
             sparkXscale *= -1;
@@ -119,15 +121,24 @@ if (entityCanStep())
         if (img &gt; 1)
         {
             with (objMegaman)
+            {
                 if (collision_rectangle(other.x - 8, other.laserTop, other.x + 8,
                 other.laserBottom, id, 0, 0))
-                    if iFrames = 0 &amp;&amp; canHit
-                        playerGetHit(other.contactDamage);
+                {
+                    if (iFrames == 0 &amp;&amp; canHit)
+                    {
+                        with (other)
+                        {
+                            entityEntityCollision(); 
+                        }
+                    }
+                }
+            }
         }
     }
     if (!doTheZap)
     {
-        if (img &gt; 0) img-=.25;
+        if (img &gt; 0) img-= 0.25;
         else img = 0;
     }
     if (xcoll != 0)
@@ -137,13 +148,13 @@ if (entityCanStep())
         {
             e = instance_create(x, y, objTrailEffect);
             e.sprite_index = sprSparkShock;
-            e.image_xscale = .5;
-            e.image_yscale = .5;
+            e.image_xscale = 0.5;
+            e.image_yscale = 0.5;
             e.image_alpha = 1;
             e.image_index = irandom(3);
             e.speed = 3;
             e.direction = i + 25;  
-            e.image_speed = .25;
+            e.image_speed = 0.25;
         }
         instance_destroy();
     }
@@ -171,6 +182,7 @@ if (entityCanStep())
           <argument>
             <kind>1</kind>
             <string>event_perform_object(objGabyoallightning, ev_other, ev_user11);
+doTheZap = false;
 </string>
           </argument>
         </arguments>
