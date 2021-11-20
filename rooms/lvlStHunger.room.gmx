@@ -61,6 +61,12 @@
     <instance objName="objBossDoor" x="256" y="352" name="inst_48DA02E0" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objRightScrolling" x="256" y="224" name="inst_713EFA17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHotDogMan" x="464" y="400" name="inst_CE5EC40C" locked="0" code="elementName = &quot;sandwich&quot;&#xA;elementCode = &quot;weaponReward(objKnuckleSandwich)&quot;;&#xA;" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objOvenPlate" x="80" y="368" name="inst_1F138400" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objOvenPlate" x="32" y="304" name="inst_AA03B6C5" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objOvenPlate" x="144" y="256" name="inst_02E7DED2" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objOvenPlate" x="48" y="240" name="inst_9CFD4D60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objOvenPlateHandler" x="112" y="240" name="inst_E17E24A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objOvenPlateSwitch" x="176" y="304" name="inst_ED48E2D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -1321,7 +1321,7 @@
       <sprite>sprites\sprBoltBig</sprite>
       <sprite>sprites\sprEddieTeleport</sprite>
       <sprite>sprites\sprEddie</sprite>
-      <sprite>sprites\spr_yashichi</sprite>
+      <sprite>sprites\sprYashichi</sprite>
       <sprite>sprites\sprEnergyElement</sprite>
       <sprite>sprites\sprKey</sprite>
       <sprite>sprites\sprKeyHud</sprite>
@@ -1550,6 +1550,10 @@
           </sprites>
         </sprites>
         <sprites name="St. Hunger">
+          <sprite>sprites\sprOvenPlateHandler</sprite>
+          <sprite>sprites\sprOvenPlateSwitch</sprite>
+          <sprite>sprites\sprOvenPlate</sprite>
+          <sprite>sprites\sprOvenPlateBorder</sprite>
           <sprite>sprites\sprHotDogMan</sprite>
           <sprites name="Projectiles">
             <sprite>sprites\sprHotDogManFirebar</sprite>
@@ -2709,7 +2713,7 @@
         <object>objects\objTheWizardOrb</object>
         <object>objects\objTheWizardRing</object>
         <object>objects\objHydroall</object>
-        <objects name="Gimmick">
+        <objects name="Gimmicks">
           <object>objects\objCrustyLadder</object>
           <object>objects\objCrustyLadderBlock</object>
           <object>objects\objFlowerSpring</object>
@@ -2726,6 +2730,11 @@
         </objects>
       </objects>
       <objects name="St. Hunger">
+        <objects name="Gimmicks">
+          <object>objects\objOvenPlateHandler</object>
+          <object>objects\objOvenPlateSwitch</object>
+          <object>objects\objOvenPlate</object>
+        </objects>
         <objects name="Boss">
           <object>objects\objHotDogMan</object>
           <objects name="Projectiles">
@@ -2782,13 +2791,13 @@
     <room>rooms\lvlBGVisibilityTest</room>
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlLivingNightmare</room>
-    <room>rooms\lvlStHunger</room>
     <room>rooms\rmHighwayToHell</room>
     <room>rooms\lvlTowerStage2</room>
     <room>rooms\lvlLostLight</room>
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlJumpKing</room>
+    <room>rooms\lvlStHunger</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

@@ -513,15 +513,15 @@ else
             || coolTimer == 54)
             {
                 playSFX(sfxExplosion);
-                var xx = x + 8, yy = y;
+                var yy = y;
                 switch (coolTimer)
                 {
-                    case 4: yy = view_yview + 80; break;
+                    case 4: yy = view_yview + 144; break;
                     case 16: yy = view_yview + 192; break;
-                    case 28: yy = view_yview + 144; break;
-                    case 54: xx = x; break;
+                    case 28: yy = view_yview + 80; break;
                 }
-                instance_create(xx, yy, objWeaponExplosion);
+                d = instance_create(x + 8, yy, objWeaponExplosion);
+                d.depth = depth + 5;
             }
             if (coolTimer == 54)
             {
