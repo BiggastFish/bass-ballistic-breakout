@@ -42,5 +42,7 @@
     <frame index="19">images\sprMugshots_19.png</frame>
     <frame index="20">images\sprMugshots_20.png</frame>
     <frame index="21">images\sprMugshots_21.png</frame>
+    <frame index="22">images\sprMugshots_22.png</frame>
+    <frame index="23">images\sprMugshots_23.png</frame>
   </frames>
 </sprite>

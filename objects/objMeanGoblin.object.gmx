@@ -43,8 +43,6 @@ goBonkers = false;
 slowSpd = 0.15;
 fastSpd = 0.3;
 _im = 0;
-
-enemyDamageValue(objGlowingSpiral, 1);
 </string>
           </argument>
         </arguments>

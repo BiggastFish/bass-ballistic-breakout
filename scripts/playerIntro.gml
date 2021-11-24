@@ -51,34 +51,21 @@ if (init)
             landy = y;
             y = view_yview - 32;
             blockCollision = 0;
+            coolTimer = 0;
             teleportTimer = 0;
             introFakeGrav = 0.25;
             introFakeYspeed = 6;
             global.lockTransition = true;
-            playSFX(sfxBolt);
-            for (i = -2; i <= 2; i++)
-            {
-                if (i != 0)
-                {
-                    f = instance_create(view_xview + 128 + (24 * i), 
-                    view_yview, objGravEffect);
-                    f.sprite_index = sprGorudokuroGold;
-                    f.image_index = irandom(2);
-                    f.yspeed = 2;
-                    f.xspeed = i * 0.8;
-                }
-            }
             break;
         case 14: // come in from leaves
             landy = y;
             y-= 80;
             blockCollision = 0;
+            coolTimer = 0;
             teleportTimer = 0;
             introFakeGrav = 0.25;
             introFakeYspeed = -2;
             global.lockTransition = true;
-            playSFX(sfxHeliButonReveal);
-            for (i = 0; i < 8; i++) instance_create(x, y, objHeliButonLeaf);
             break;
         case 15: // break bricks to come in
             landy = y;
@@ -464,14 +451,22 @@ else
                 exit;
             }
             break;
-        case 13:
-        case 14: // fall in without teleporting animation
-        // don't use teleport sprites, instead do this! 
+        case 13: // pushing thru coins
             canSpriteChange = 1;
             ground = false;
             playerHandleSprites("Normal");
             canSpriteChange = 0;
             
+            coolTimer++;
+            if (coolTimer == 4 || coolTimer == 28)
+            {
+                playSFX(sfxBalladeShoot);
+                f = instance_create(view_xview + 116 + 
+                (32 * (coolTimer == 28)), view_yview, objGravEffect);
+                f.sprite_index = sprGorudokuroGold;
+                f.image_index = irandom(2);
+                f.yspeed = 2;
+            }
             // start animation if mm has reached the destination
             if (round(y) >= landy)
             {
@@ -497,38 +492,112 @@ else
                 }
                 teleportTimer += 1;
             }
+            else if (coolTimer >= 64)
+            {
+                if (coolTimer == 64)
+                {
+                    playSFX(sfxBolt);
+                    for (i = -2; i <= 2; i++)
+                    {
+                        if (i != 0)
+                        {
+                            f = instance_create(view_xview + 128 + (24 * i), 
+                            view_yview, objGravEffect);
+                            f.sprite_index = sprGorudokuroGold;
+                            f.image_index = irandom(2);
+                            f.yspeed = 2;
+                            f.xspeed = i * 0.8;
+                        }
+                    }
+                }
+                y+= introFakeYspeed;
+                introFakeYspeed += introFakeGrav;
+            }
+            break;
+        case 14: // goin thru the leaves
+            if (coolTimer < 65)
+            {
+                playerHandleSprites("Nothing");
+                coolTimer++;
+            }
             else
             {
+                canSpriteChange = 1;
+                ground = false;
+                playerHandleSprites("Normal");
+                canSpriteChange = 0;
+            }
+            
+            if (coolTimer == 8 || coolTimer == 32)
+            {
+                playSFX(sfxHeliButonReveal);
+                for (i = 0; i < 4; i++) 
+                instance_create(view_xview + 80 + (96 * (coolTimer == 32)), 
+                view_yview + 120 + (32 * (coolTimer == 8)), objHeliButonLeaf);
+            }
+
+            // start animation if mm has reached the destination
+            if (round(y) >= landy)
+            {
+                if (teleportTimer == 0)
+                {
+                    playSFX(sfxLand);
+                    y = landy;
+                    introFakeGrav = 0;
+                    introFakeYspeed = 0;
+                }
+                else
+                {
+                    teleporting = false;
+                    teleportTimer = 0;
+                    teleportLock = lockPoolRelease(teleportLock);
+                    
+                    canHit = true;
+                    blockCollision = true;
+                    iFrames = 0;
+                    ground = true;
+                    global.lockTransition = false;
+                    exit;
+                }
+                teleportTimer += 1;
+            }
+            else if (coolTimer >= 64)
+            {
+                if (coolTimer == 64)
+                {
+                    playSFX(sfxHeliButonReveal);
+                    for (i = 0; i < 8; i++) instance_create(x, y, objHeliButonLeaf);
+                }
                 y+= introFakeYspeed;
                 introFakeYspeed += introFakeGrav;
             }
             break;
         case 15: // break BRICKS
-            if (coolTimer < 55)
+            if (coolTimer < 65)
             {
                 playerHandleSprites("Nothing");
                 coolTimer++;
             }
             if (coolTimer == 4 || coolTimer == 16 || coolTimer == 28
-            || coolTimer == 54)
+            || coolTimer == 64)
             {
                 playSFX(sfxExplosion);
                 var yy = y;
                 switch (coolTimer)
                 {
                     case 4: yy = view_yview + 144; break;
-                    case 16: yy = view_yview + 192; break;
+                    case 16: yy = view_yview + 176; break;
                     case 28: yy = view_yview + 80; break;
                 }
                 d = instance_create(x + 8, yy, objWeaponExplosion);
                 d.depth = depth + 5;
             }
-            if (coolTimer == 54)
+            if (coolTimer == 64)
             {
                 introFakeYspeed = -3;
                 introFakeXspeed = arcCalcXspeed(-3, 0.25, x, y, landx, landy);
             }
-            if (coolTimer == 55)
+            if (coolTimer == 65)
             {
                 canSpriteChange = true;
                 ground = false;

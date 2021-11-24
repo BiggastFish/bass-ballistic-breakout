@@ -28,13 +28,14 @@
             <string>event_inherited();
 
 contactDamage = 4;
-canHit = false;
 affectHud = false;
 despawnRange = -1;
 respawnRange = -1;
+shiftVisible = 1;
 
 grav = 0;
 isSolid = 1;
+canIce = false; 
 
 extraImg = 0;
 hotTimer = 0;
@@ -63,10 +64,8 @@ init = true;
             <kind>1</kind>
             <string>if (init)
 {
-    d = instance_create(x, y, objSolid);
-    d.image_xscale = image_xscale;
-    image_index = 5;
-    hotTimer = 12;
+    image_index = image_number - 4;
+    hotTimer = 28;
     init = false;
 }
 
@@ -84,30 +83,24 @@ if (entityCanStep())
         }
         else
         {
-            if (hotTimer &lt; 30) hotTimer++;
+            if (hotTimer &lt; 28) hotTimer++;
             else
             {
-                extraImg+= 0.075;
-                if (extraImg &gt;= 2) extraImg = 0;
+                extraImg+= 0.05;
+                if (extraImg &gt;= 2) extraImg = 0;;
             }
         }
     }
     else
-    {
-        if (hotTimer &lt; 30) hotTimer++;
-        else
-        {
-            extraImg+= 0.075;
-            if (extraImg &gt;= 2) extraImg = 0;
-        }
-    }   
-    image_index = max((floor(hotTimer/10) - 1) + floor(extraImg), 0) * 2;
+        if (hotTimer &lt; 28) hotTimer++;
+    image_index = max(floor((hotTimer / 7) - 1) + floor(extraImg), 0) * 2;
     if (image_index != 0)
     {
         with (objMegaman)
         {
-            if (collision_rectangle(other.bbox_left - 1, other.bbox_top - 1, 
-            other.bbox_right + 1, other.bbox_bottom + 1, id, 0, 0))
+            if (collision_rectangle(other.bbox_left - (xcoll &gt; 0), 
+            other.bbox_top - 1, other.bbox_right + (xcoll &lt; 0), 
+            other.bbox_bottom + 1, id, 0, 0))
             {
                 if (iFrames == 0 &amp;&amp; canHit)
                 {
@@ -123,9 +116,32 @@ if (entityCanStep())
 else if (dead)
 {
     extraImg = 0;
-    hotTimer = 12;
-    image_index = 5;
+    hotTimer = 28;
+    image_index = image_number - 4;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="21">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>other.guardCancel = 4;
 </string>
           </argument>
         </arguments>
@@ -148,14 +164,11 @@ else if (dead)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!dead)
+            <string>for (l = 0; l &lt; image_xscale; l++)
 {
-    for (l = 0; l &lt; image_xscale; l++)
-    {
-        var img = l mod 2;
-        draw_sprite_ext(sprite_index, image_index + img, x + (16 * l), y, 
-        1, 1, 0, image_blend, image_alpha);
-    }
+    var img = l mod 2;
+    draw_sprite_ext(sprite_index, image_index + img, x + (16 * l), y, 
+    1, 1, 0, image_blend, image_alpha);
 }
 </string>
           </argument>

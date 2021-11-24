@@ -435,7 +435,7 @@ if (mode == 0)
     }
 draw_set_halign(fa_left);
 
-draw_text(view_xview[0] + 256 - 8, view_yview[0] + 224 - 8, string(global.aliveBosses));
+draw_text(view_xview + view_wview - 8, view_yview + view_hview - 8, string(global.aliveBosses));
 </string>
           </argument>
         </arguments>

@@ -1550,10 +1550,15 @@
           </sprites>
         </sprites>
         <sprites name="St. Hunger">
+          <sprite>sprites\sprMeatball</sprite>
           <sprite>sprites\sprOvenPlateHandler</sprite>
           <sprite>sprites\sprOvenPlateSwitch</sprite>
           <sprite>sprites\sprOvenPlate</sprite>
           <sprite>sprites\sprOvenPlateBorder</sprite>
+          <sprite>sprites\sprFireBarBlock</sprite>
+          <sprite>sprites\sprFireBarBlockSideways</sprite>
+          <sprite>sprites\sprFireBar</sprite>
+          <sprite>sprites\sprFireBarSideways</sprite>
           <sprite>sprites\sprHotDogMan</sprite>
           <sprites name="Projectiles">
             <sprite>sprites\sprHotDogManFirebar</sprite>
@@ -2730,11 +2735,13 @@
         </objects>
       </objects>
       <objects name="St. Hunger">
-        <objects name="Gimmicks">
-          <object>objects\objOvenPlateHandler</object>
-          <object>objects\objOvenPlateSwitch</object>
-          <object>objects\objOvenPlate</object>
-        </objects>
+        <object>objects\objMeatball</object>
+        <object>objects\objFireBarBlock</object>
+        <object>objects\objFireBarBlockSideways</object>
+        <object>objects\objFireBar</object>
+        <object>objects\objOvenPlateHandler</object>
+        <object>objects\objOvenPlateSwitch</object>
+        <object>objects\objOvenPlate</object>
         <objects name="Boss">
           <object>objects\objHotDogMan</object>
           <objects name="Projectiles">

@@ -80,6 +80,7 @@ event_inherited();
 if (!instance_exists(parent))
 {
     instance_destroy();
+    event_user(EV_ATTACK);
     exit;
 }
 

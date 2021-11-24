@@ -40,11 +40,8 @@ blockCollision = 0;
 affectHud = 0;
 despawnRange = -1;
 itemDrop = -1;
-xDir = 0;
-yDir = 0;
+angle = 0;
 spd = 0;
-
-enemyDamageValue(objGlowingSpiral, 1);
 </string>
           </argument>
         </arguments>
@@ -77,13 +74,12 @@ if (entityCanStep())
         {
             with (other)
             {
-                if ((xDir &gt; 0 &amp;&amp; x + 16 &gt;= other.bbox_right) || 
-                (xDir &lt; 0 &amp;&amp; x &lt;= other.bbox_left))
+                if ((angle == 0 &amp;&amp; x + 16 &gt;= other.bbox_right) || 
+                (angle == 180 &amp;&amp; x &lt;= other.bbox_left))
                 {
                     x = other.x;
                     y = other.y;
-                    xDir = 0;
-                    yDir = -1;
+                    angle = 90;
                 }
             }
         }
@@ -94,13 +90,12 @@ if (entityCanStep())
         {
             with (other)
             {
-                if ((yDir &gt; 0 &amp;&amp; y + 16 &gt;= other.bbox_bottom) || 
-                (yDir &lt; 0 &amp;&amp; y &lt;= other.bbox_top))
+                if ((angle == 270 &amp;&amp; y + 16 &gt;= other.bbox_bottom) || 
+                (angle == 90 &amp;&amp; y &lt;= other.bbox_top))
                 {
                     x = other.x;
                     y = other.y;
-                    xDir = 1;
-                    yDir = 0;
+                    angle = 0;
                 }
             }
         }
@@ -111,13 +106,12 @@ if (entityCanStep())
         {
             with (other)
             {
-                if ((xDir &gt; 0 &amp;&amp; x + 16 &gt;= other.bbox_right) || 
-                (xDir &lt; 0 &amp;&amp; x &lt;= other.bbox_left))
+                if ((angle == 0 &amp;&amp; x + 16 &gt;= other.bbox_right) || 
+                (angle == 180 &amp;&amp; x &lt;= other.bbox_left))
                 {
                     x = other.x;
                     y = other.y;
-                    xDir = 0;
-                    yDir = 1;
+                    angle = 270;
                 }
             }
         }
@@ -128,13 +122,12 @@ if (entityCanStep())
         {
             with (other)
             {
-                if ((yDir &gt; 0 &amp;&amp; y + 16 &gt;= other.bbox_bottom) ||
-                (yDir &lt; 0 &amp;&amp; y &lt;= other.bbox_top))
+                if ((angle == 270 &amp;&amp; y + 16 &gt;= other.bbox_bottom) ||
+                (angle == 90 &amp;&amp; y &lt;= other.bbox_top))
                 {
                     x = other.x;
                     y = other.y;
-                    xDir = -1;
-                    yDir = 0;
+                    angle = 180;
                 }
             }
         }
@@ -145,23 +138,20 @@ if (entityCanStep())
         {
             with (other)
             {
-                if (yDir &gt; 0 &amp;&amp; y + 16 &gt;= other.bbox_bottom ||
-                yDir &lt; 0 &amp;&amp; y &lt;= other.bbox_top || 
-                xDir &gt; 0 &amp;&amp; x + 16 &gt;= other.bbox_right || 
-                xDir &lt; 0 &amp;&amp; x &lt;= other.bbox_left)
+                if (angle == 270 &amp;&amp; y + 16 &gt;= other.bbox_bottom ||
+                angle == 90 &lt; 0 &amp;&amp; y &lt;= other.bbox_top || 
+                angle == 0 &amp;&amp; x + 16 &gt;= other.bbox_right ||
+                angle == 180 &amp;&amp; x &lt;= other.bbox_left)
                     instance_destroy();
             }
         }
     }
 
-    if ((yDir &gt; 0 &amp;&amp; y &gt;= global.sectionBottom) ||
-    (yDir &lt; 0 &amp;&amp; y + 16 &lt;= global.sectionTop) || 
-    (xDir &gt; 0 &amp;&amp; x &gt;= global.sectionRight) || 
-    (xDir &lt; 0 &amp;&amp; x + 16 &lt;= global.sectionLeft))
+    if (!insideSection(x, y))
         instance_destroy();
 
-    xspeed = xDir * spd;
-    yspeed = yDir * spd;
+    xspeed = cos(degtorad(angle)) * spd;
+    yspeed = -sin(degtorad(angle)) * spd;
 }
 </string>
           </argument>

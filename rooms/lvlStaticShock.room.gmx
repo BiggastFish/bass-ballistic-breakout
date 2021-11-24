@@ -184,7 +184,7 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objSolid" x="3696" y="1104" name="inst_B91F5FC9" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3680" y="960" name="inst_CAF0750B" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="objAnaconduit" x="3720" y="1088" name="inst_E658638A" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="3840" y="1072" name="inst_CA12FCA1" locked="0" code="" scaleX="4" scaleY="8" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="3808" y="1072" name="inst_CA12FCA1" locked="0" code="" scaleX="6" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objAnaconduit" x="4008" y="1168" name="inst_D026AC72" locked="0" code="" scaleX="-1" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3904" y="1072" name="inst_137C9B39" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4336" y="944" name="inst_4DEF4D42" locked="0" code="" scaleX="2" scaleY="23" colour="4294967295" rotation="0"/>
@@ -248,7 +248,7 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objLadder" x="5392" y="912" name="inst_CD9138A9" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="objGabyoallightning" x="5472" y="1056" name="inst_91D2669F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGabyoallightning" x="5584" y="1120" name="inst_C5F5455A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="3808" y="1056" name="inst_2D253427" locked="0" code="" scaleX="2" scaleY="9" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="3808" y="1056" name="inst_2D253427" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objAnaconduit" x="5224" y="1152" name="inst_C1173466" locked="0" code="" scaleX="-1" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="objGesunder" x="5088" y="1040" name="inst_9145B8F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVerticalScrolling" x="5376" y="960" name="inst_F11D56E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

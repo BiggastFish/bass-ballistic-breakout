@@ -93,8 +93,8 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objSolid" x="1168" y="672" name="inst_6EA694AA" locked="0" code="" scaleX="7" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1264" y="256" name="inst_3C067037" locked="0" code="" scaleX="1" scaleY="26" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1072" y="688" name="inst_A9C226AD" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="1056" y="656" name="inst_8CC7D9E2" locked="0" code="xDir = 1;&#xA;timerMax = 80;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="1264" y="544" name="inst_F8D5DF19" locked="0" code="xDir = -1;&#xA;timerMax = 80;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="1056" y="656" name="inst_8CC7D9E2" locked="0" code="timerMax = 80;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="1264" y="544" name="inst_F8D5DF19" locked="0" code="treasureAngle = 180;&#xA;timerMax = 80;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="1216" y="448" name="inst_7874D43A" locked="0" code="" scaleX="1" scaleY="12" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1200" y="384" name="inst_74793C89" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="1136" y="688" name="inst_A786C6B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -112,12 +112,12 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objSolid" x="1232" y="448" name="inst_A76B7AB2" locked="0" code="" scaleX="2" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objGorudokuro" x="1088" y="400" name="inst_6F904728" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1056" y="208" name="inst_7BBD288E" locked="0" code="" scaleX="17" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="1264" y="352" name="inst_6B96462E" locked="0" code="xDir = -1;&#xA;timerMax = 80;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="1264" y="352" name="inst_6B96462E" locked="0" code="treasureAngle = 180;&#xA;timerMax = 80;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="1072" y="272" name="inst_2F681424" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objVerticalScrolling" x="1024" y="240" name="inst_0C862B90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureUp" x="1072" y="352" name="inst_3F46977B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1056" y="256" name="inst_7D837CDF" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="1024" y="352" name="inst_EEC7BBD9" locked="0" code="xDir = 1;&#xA;timerMax = 80;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="1024" y="352" name="inst_EEC7BBD9" locked="0" code="timerMax = 80;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDown" x="1136" y="352" name="inst_640A7A01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="1216" y="672" name="inst_14E925C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1120" y="176" name="inst_2086539C" locked="0" code="" scaleX="8" scaleY="2" colour="4294967295" rotation="0"/>
@@ -146,8 +146,8 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objSolid" x="1792" y="16" name="inst_9380466B" locked="0" code="" scaleX="1" scaleY="1.06666672229767" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1888" y="16" name="inst_A9F96B51" locked="0" code="" scaleX="1" scaleY="1.06666672229767" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1776" y="0" name="inst_305ACD19" locked="0" code="" scaleX="17" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="1792" y="16" name="inst_1B9A1EF4" locked="0" code="yDir = 1;&#xA;timerMax = 80;&#xA;shiniesMax = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="1888" y="16" name="inst_83909F27" locked="0" code="yDir = 1;&#xA;timerMax = 80;&#xA;shiniesMax = 4;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="1792" y="16" name="inst_1B9A1EF4" locked="0" code="treasureAngle = 270;&#xA;timerMax = 80;&#xA;shiniesMax = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="1888" y="16" name="inst_83909F27" locked="0" code="treasureAngle = 270;&#xA;timerMax = 80;&#xA;shiniesMax = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="1792" y="160" name="inst_F00A4FE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="1984" y="192" name="inst_ACECBD7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGorudokuro" x="2000" y="112" name="inst_B13501B8" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -177,7 +177,7 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objGoldonBatton" x="2160" y="752" name="inst_C1214B04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGoldonBatton" x="2256" y="928" name="inst_B85B6427" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDownScrolling" x="2048" y="960" name="inst_3528D620" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="2288" y="160" name="inst_194E576A" locked="0" code="xDir = -1;&#xA;timerMax = 80;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="2288" y="160" name="inst_194E576A" locked="0" code="treasureAngle = 180;&#xA;timerMax = 80;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureSpawner" x="2160" y="176" name="inst_20D9D9C1" locked="0" code="xDir = 1;&#xA;timerMax = 80;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2080" y="176" name="inst_C66E9824" locked="0" code="" scaleX="2" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="2160" y="160" name="inst_ACAC797D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -248,8 +248,8 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objTreasureDelete" x="3552" y="544" name="inst_26CD9D34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3536" y="496" name="inst_8E312618" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3344" y="480" name="inst_F533B28E" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="3440" y="672" name="inst_B79726D8" locked="0" code="timerStart = 14;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;xDir = 1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="3536" y="544" name="inst_1F144F73" locked="0" code="timerStart = 50;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;yDir = 1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="3440" y="672" name="inst_B79726D8" locked="0" code="timerStart = 14;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;treasureSpd = 4;&#xA;shiniesMax = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="3536" y="544" name="inst_1F144F73" locked="0" code="timerStart = 50;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;treasureAngle = 270;&#xA;treasureSpd = 4;&#xA;shiniesMax = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureUp" x="3552" y="672" name="inst_69644CE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureLeft" x="3536" y="656" name="inst_B24DDA06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="3584" y="480" name="inst_E1F9CDE2" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
@@ -261,7 +261,7 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objSolid" x="3392" y="848" name="inst_B4B2F33C" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3392" y="944" name="inst_A62F9C04" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3488" y="880" name="inst_B3AE197B" locked="0" code="" scaleX="5" scaleY="6" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="3344" y="752" name="inst_08F33CB9" locked="0" code="timerStart = 29;&#xA;timerMax = 60;&#xA;timerDelay = 5;&#xA;yDir = 1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="3344" y="752" name="inst_08F33CB9" locked="0" code="timerStart = 29;&#xA;timerMax = 60;&#xA;timerDelay = 5;&#xA;treasureAngle = 270;&#xA;treasureSpd = 4;&#xA;shiniesMax = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="3456" y="880" name="inst_02088C28" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureRight" x="3376" y="880" name="inst_9DD9C0A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureRight" x="3360" y="880" name="inst_F2260EB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -270,18 +270,18 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objBoltBig" x="3424" y="928" name="inst_A649C7A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3408" y="1136" name="inst_DDA9B2DC" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3520" y="1136" name="inst_951EADB3" locked="0" code="" scaleX="2" scaleY="1.06666672229767" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="3408" y="1136" name="inst_234917CC" locked="0" code="timerStart = 59;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;yDir = -1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="3520" y="1136" name="inst_77816EA4" locked="0" code="timerStart = 14;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;yDir = -1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="3408" y="1136" name="inst_234917CC" locked="0" code="timerStart = 59;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;treasureAngle = 90;&#xA;treasureSpd = 4;&#xA;shiniesMax = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="3520" y="1136" name="inst_77816EA4" locked="0" code="timerStart = 14;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;treasureAngle = 90;&#xA;treasureSpd = 4;&#xA;shiniesMax = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="3408" y="960" name="inst_808768CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="3424" y="960" name="inst_50CC0ECB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="3520" y="960" name="inst_30106A8F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="3536" y="960" name="inst_24D80D3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3344" y="736" name="inst_A29E2043" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="3424" y="1136" name="inst_F4F9581C" locked="0" code="timerStart = 59;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;yDir = -1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="3536" y="1136" name="inst_BA7AE430" locked="0" code="timerStart = 14;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;yDir = -1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="3424" y="1136" name="inst_F4F9581C" locked="0" code="timerStart = 59;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;treasureAngle = 90;&#xA;treasureSpd = 4;&#xA;shiniesMax = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="3536" y="1136" name="inst_BA7AE430" locked="0" code="timerStart = 14;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;treasureAngle = 90;&#xA;treasureSpd = 4;&#xA;shiniesMax = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDownScrolling" x="3328" y="960" name="inst_6E8F8397" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="3360" y="752" name="inst_43D46B28" locked="0" code="timerStart = 29;&#xA;timerMax = 60;&#xA;timerDelay = 5;&#xA;yDir = 1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="3376" y="752" name="inst_0141E666" locked="0" code="timerStart = 29;&#xA;timerMax = 60;&#xA;timerDelay = 5;&#xA;yDir = 1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="3360" y="752" name="inst_43D46B28" locked="0" code="timerStart = 29;&#xA;timerMax = 60;&#xA;timerDelay = 5;&#xA;treasureAngle = 270;&#xA;treasureSpd = 4;&#xA;shiniesMax = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="3376" y="752" name="inst_0141E666" locked="0" code="timerStart = 29;&#xA;timerMax = 60;&#xA;timerDelay = 5;&#xA;treasureAngle = 270;&#xA;treasureSpd = 4;&#xA;shiniesMax = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3440" y="1184" name="inst_EB18DAD2" locked="0" code="" scaleX="17" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3616" y="1120" name="inst_7E66CC22" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3600" y="960" name="inst_86168C4E" locked="0" code="" scaleX="62" scaleY="1" colour="4294967295" rotation="0"/>
@@ -313,14 +313,14 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objStopScrollingNES" x="4608" y="960" name="inst_E1D3DECE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRightScrollingNES" x="4352" y="960" name="inst_22E7924B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHellcart" x="4432" y="1152" name="inst_AE735BDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="4128" y="976" name="inst_EF149D20" locked="0" code="timerStart = 59;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;yDir = 1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 3;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="4192" y="976" name="inst_8238AFA1" locked="0" code="timerStart = 14;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;yDir = 1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="4128" y="976" name="inst_EF149D20" locked="0" code="timerStart = 59;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;treasureAngle = 270;&#xA;treasureSpd = 4;&#xA;shiniesMax = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="4192" y="976" name="inst_8238AFA1" locked="0" code="timerStart = 14;&#xA;timerMax = 90;&#xA;timerDelay = 5;&#xA;treasureAngle = 270;&#xA;treasureSpd = 4;&#xA;shiniesMax = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureRight" x="4192" y="1136" name="inst_A3BB0E81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureRight" x="4128" y="1136" name="inst_9FFAE195" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGenericStopper" x="4400" y="1136" name="inst_F16F09D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGenericStopper" x="4528" y="1136" name="inst_436F29B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureRight" x="4560" y="1136" name="inst_E8D72FD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="4464" y="1040" name="inst_968A09D8" locked="0" code="timerStart = 49;&#xA;timerMax = 70;&#xA;timerDelay = 5;&#xA;xDir = 1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="4464" y="1040" name="inst_968A09D8" locked="0" code="timerStart = 49;&#xA;timerMax = 70;&#xA;timerDelay = 5;&#xA;treasureSpd = 4;&#xA;shiniesMax = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDown" x="4560" y="1040" name="inst_D7CF2094" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="4592" y="1136" name="inst_D73F6CB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDownScrolling" x="4352" y="1200" name="inst_9942F434" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -343,11 +343,11 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objSolid" x="5104" y="1376" name="inst_CD534D69" locked="0" code="" scaleX="5" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5360" y="1200" name="inst_C1C66C3C" locked="0" code="" scaleX="1" scaleY="45" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="4864" y="1392" name="inst_FD726FC2" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="3424" y="1168" name="inst_F3B8FE37" locked="0" code="timerStart = 5;&#xA;timerMax = 10;&#xA;timerDelay = 5;&#xA;xDir = 1;&#xA;treasureSpd = 4;&#xA;shiniesMax = -1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="1792" y="192" name="inst_25216964" locked="0" code="xDir = 1;&#xA;timerStart = 5;&#xA;timerMax = 10;&#xA;shiniesMax = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="3424" y="1168" name="inst_F3B8FE37" locked="0" code="timerStart = 5;&#xA;timerMax = 10;&#xA;timerDelay = 5;&#xA;treasureSpd = 4;&#xA;shiniesMax = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="1792" y="192" name="inst_25216964" locked="0" code="timerStart = 5;&#xA;timerMax = 10;&#xA;shiniesMax = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="1888" y="160" name="inst_2CBCB089" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="3712" y="1168" name="inst_78830A5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="2592" y="1184" name="inst_ABAEF948" locked="0" code="timerStart = 5;&#xA;timerMax = 10;&#xA;yDir = -1;&#xA;shiniesMax = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="2592" y="1184" name="inst_ABAEF948" locked="0" code="timerStart = 5;&#xA;timerMax = 10;&#xA;treasureAngle = 90;&#xA;shiniesMax = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureRight" x="2592" y="1168" name="inst_2B547B2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureDelete" x="3056" y="1168" name="inst_9E5E9E93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5168" y="1216" name="inst_B0138C1D" locked="0" code="" scaleX="12" scaleY="2" colour="4294967295" rotation="0"/>
@@ -365,13 +365,13 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objTreasureRight" x="5216" y="1264" name="inst_5D75EB9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureRight" x="5184" y="1264" name="inst_D420C39C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureRight" x="5200" y="1264" name="inst_8DDD4D25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="5184" y="1392" name="inst_1A89C508" locked="0" code="timerMax = 50;&#xA;timerDelay = 5;&#xA;yDir = -1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="5184" y="1392" name="inst_1A89C508" locked="0" code="timerMax = 50;&#xA;timerDelay = 5;&#xA;treasureAngle = 90;&#xA;treasureSpd = 4;&#xA;shiniesMax = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDefaultSpawn" x="128" y="656" name="inst_31A20963" locked="0" code="respawnAnimation = 13;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5232" y="1376" name="inst_D9361353" locked="0" code="" scaleX="4" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5184" y="1392" name="inst_1F5D4DA0" locked="0" code="" scaleX="3" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2848" y="1120" name="inst_B50576EE" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="5200" y="1392" name="inst_44B7BE0C" locked="0" code="timerMax = 50;&#xA;timerDelay = 5;&#xA;yDir = -1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTreasureSpawner" x="5216" y="1392" name="inst_DAEAEF7A" locked="0" code="timerMax = 50;&#xA;timerDelay = 5;&#xA;yDir = -1;&#xA;treasureSpd = 4;&#xA;shiniesMax = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="5200" y="1392" name="inst_44B7BE0C" locked="0" code="timerMax = 50;&#xA;timerDelay = 5;&#xA;treasureAngle = 90;&#xA;treasureSpd = 4;&#xA;shiniesMax = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTreasureSpawner" x="5216" y="1392" name="inst_DAEAEF7A" locked="0" code="timerMax = 50;&#xA;timerDelay = 5;&#xA;treasureAngle = 90;&#xA;treasureSpd = 4;&#xA;shiniesMax = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4752" y="1328" name="inst_E561087E" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4496" y="1216" name="inst_919C29C4" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objCheckpointAntiEddie" x="2944" y="672" name="inst_71BB0F3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
