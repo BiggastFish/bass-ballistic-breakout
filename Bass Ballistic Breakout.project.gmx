@@ -1479,6 +1479,7 @@
           <sprite>sprites\sprGoldonBattonDebris</sprite>
           <sprite>sprites\sprGorudokuro</sprite>
           <sprite>sprites\sprGorudokuroGold</sprite>
+          <sprite>sprites\sprMoneyMachineTiles</sprite>
           <sprites name="Gimmicks">
             <sprite>sprites\sprFloatingTreasure</sprite>
             <sprite>sprites\sprTreasureSpawner</sprite>
@@ -1690,17 +1691,6 @@
       <background>background\tstWindman</background>
     </backgrounds>
     <backgrounds name="Bass Ballistic Breakout">
-      <backgrounds name="Static Shock">
-        <background>background\tstStaticShock</background>
-        <background>background\tstStaticShockReal</background>
-        <background>background\bgStaticShockBG</background>
-      </backgrounds>
-      <backgrounds name="Whispering Woods">
-        <background>background\bgPerfumaFrontTrees</background>
-        <background>background\bgPerfumaGround</background>
-        <background>background\bgPerfumaGrass</background>
-        <background>background\bgPerfumaBackTrees</background>
-      </backgrounds>
       <backgrounds name="Menus">
         <backgrounds name="Stage Select">
           <background>background\bgStageSelectNew</background>
@@ -1711,6 +1701,18 @@
         <background>background\bgIntroStarsForeground</background>
         <background>background\bgAccessibilityBG</background>
         <background>background\bgTitleSequenceBG</background>
+      </backgrounds>
+      <backgrounds name="Static Shock">
+        <background>background\tstStaticShock</background>
+        <background>background\tstMoneyMachine</background>
+        <background>background\tstStaticShockReal</background>
+        <background>background\bgStaticShockBG</background>
+      </backgrounds>
+      <backgrounds name="Whispering Woods">
+        <background>background\bgPerfumaFrontTrees</background>
+        <background>background\bgPerfumaGround</background>
+        <background>background\bgPerfumaGrass</background>
+        <background>background\bgPerfumaBackTrees</background>
       </backgrounds>
     </backgrounds>
   </backgrounds>
