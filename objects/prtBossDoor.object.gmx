@@ -56,12 +56,29 @@ closing = false;
 canOpen = true;
 
 imgSpeed = 0.125;
+image_speed = 0.125;
 layer = 1000000;
 
 //@cc true / false (default)
 isTile = false;
 
 destroyDelay = 1;
+
+//@cc how the boss door looks
+spriteIndexHorizontal = sprBetterBossDoor;
+spriteIndexVertical = sprBetterBossDoorVertical;
+
+//@cc amount of frames in door animation
+doorAnimLength = 1;
+//@cc when 1, door will switch to image indexes higher than doorAnimLength to open itself
+useOpeningAnimation = 1;
+//@cc when 1, door will think every opening step uses doorAnimLength frames
+animateWhenOpening = 1;
+//@cc how many opening states the door has for each segment
+animStatesPerSegment = 3;
+
+trackAnimSegmentState = 0;
+imgInd = 0;
 </string>
           </argument>
         </arguments>
@@ -199,10 +216,11 @@ if (closing || opening)
     var lastHeightFrame = doorHeight;
     
     doorHeight = clamp(doorHeight + imgSpeed * (1 - (!closing) * 2), 0, height);
-    
+    if (doorHeight != lastHeightFrame)
+        playSFX(sfxDoor);
     if (floor(doorHeight) != floor(lastHeightFrame))
     {
-        playSFX(sfxDoor);
+        //playSFX(sfxDoor);
         if (isTile)
         {
             if (type == 'h')
@@ -271,6 +289,12 @@ else
             fnsolid = 0;
         }
     }
+}
+
+if(doorAnimLength &gt; 0)
+{
+    if(!global.frozen) imgInd += image_speed;
+    image_index = (floor(imgInd) mod clamp(doorAnimLength,1,image_number));
 }
 </string>
           </argument>
@@ -380,7 +404,7 @@ if ((type == 'v')) // If vertical
     height = image_xscale;
     doorHeight = height;
     
-    sprite_index = sprBossDoorVertical;
+    sprite_index = spriteIndexVertical;
     
     dir = place_meeting(x, y, objSectionArrowDown) - place_meeting(x, y, objSectionArrowUp);
 }
@@ -390,7 +414,7 @@ if ((type == 'h')) // If horizontal
     height = image_yscale;
     doorHeight = height;
     
-    sprite_index = sprBossDoor;
+    sprite_index = spriteIndexHorizontal;
     
     dir = place_meeting(x, y, objSectionArrowRight) - place_meeting(x, y, objSectionArrowLeft);
 }
@@ -456,11 +480,11 @@ destroyDelay = 0;
     
     if (type == 'h')
     {
-        ysc = doorHeight;
+        ysc = floor(doorHeight);
     }
     if (type == 'v')
     {
-        xsc = doorHeight;
+        xsc = floor(doorHeight);
     }
     
     // Draw sprite-based door
@@ -472,6 +496,40 @@ destroyDelay = 0;
                 x + i * sprite_get_width(sprite_index),
                 y + z * sprite_get_height(sprite_index),
                 1, 1, image_angle, image_blend, image_alpha);
+        }
+    }
+    
+    // draw door opening smoothly
+    if((opening || closing) &amp;&amp; useOpeningAnimation)
+    {
+        var doorOpeningID = 0;
+        doorOpeningID = ceil(((ceil(doorHeight) - doorHeight)) * animStatesPerSegment);
+        if((ceil(doorHeight) - doorHeight) &lt; 0 || (ceil(doorHeight) - doorHeight) &gt;= 1) doorOpeningID = 0;
+        if(animateWhenOpening) doorOpeningID = doorOpeningID*doorAnimLength;
+        if(doorOpeningID &gt;= image_number) doorOpeningID = 0;
+        
+        var additionalValue = doorAnimLength;
+        if(animateWhenOpening) additionalValue = image_index;
+        
+        if(type == 'v')
+        {
+            for (var z = 0; z &lt; ysc; z++)
+            {
+                if(doorOpeningID &gt; 0) draw_sprite_ext(sprite_index, doorOpeningID + additionalValue,
+                x + xsc * sprite_get_width(sprite_index),
+                y + z * sprite_get_height(sprite_index),
+                1, 1, image_angle, image_blend, image_alpha);
+            }
+        }
+        if(type == 'h')
+        {
+            for (var i = 0; i &lt; xsc; i++)
+            {
+                if(doorOpeningID &gt; 0) draw_sprite_ext(sprite_index, doorOpeningID + additionalValue,
+                x + i * sprite_get_width(sprite_index),
+                y + ysc * sprite_get_height(sprite_index),
+                1, 1, image_angle, image_blend, image_alpha);
+            }
         }
     }
 }

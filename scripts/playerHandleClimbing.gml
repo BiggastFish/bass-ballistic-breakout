@@ -107,7 +107,7 @@ if (!playerIsLocked(PL_LOCK_CLIMB))
     
             climbing = false;
             yspeed = 0;
-            ladderJumped = 1;
+            ladderJumped = true;
             if (jump && !global.keyDown[playerID])
             {
                 if (global.keySlide[playerID] || dashTimer > 20)

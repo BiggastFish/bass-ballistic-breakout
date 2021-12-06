@@ -1452,6 +1452,7 @@
           <sprite>sprites\sprMeanGoblin</sprite>
           <sprite>sprites\sprChuckP</sprite>
           <sprite>sprites\sprChuckPRock</sprite>
+          <sprite>sprites\sprBossDoorStaticShock</sprite>
           <sprites name="Boss">
             <sprite>sprites\sprBuzzshock</sprite>
             <sprite>sprites\sprBuzzshockEV73Shot</sprite>
@@ -1480,6 +1481,7 @@
           <sprite>sprites\sprGorudokuro</sprite>
           <sprite>sprites\sprGorudokuroGold</sprite>
           <sprite>sprites\sprMoneyMachineTiles</sprite>
+          <sprite>sprites\sprMoneyMachineParallax</sprite>
           <sprites name="Gimmicks">
             <sprite>sprites\sprFloatingTreasure</sprite>
             <sprite>sprites\sprTreasureSpawner</sprite>
@@ -1552,8 +1554,10 @@
         </sprites>
         <sprites name="St. Hunger">
           <sprite>sprites\sprMeatball</sprite>
-          <sprite>sprites\sprOvenPlateHandler</sprite>
+          <sprite>sprites\sprFriedRatton</sprite>
+          <sprite>sprites\sprFriedRattonSpawner</sprite>
           <sprite>sprites\sprOvenPlateSwitch</sprite>
+          <sprite>sprites\sprOvenPlateHandler</sprite>
           <sprite>sprites\sprOvenPlate</sprite>
           <sprite>sprites\sprOvenPlateBorder</sprite>
           <sprite>sprites\sprFireBarBlock</sprite>
@@ -1646,6 +1650,8 @@
         <sprite>sprites\sprAntiEddie</sprite>
         <sprite>sprites\sprLifeNew</sprite>
         <sprite>sprites\sprBossHealthHud</sprite>
+        <sprite>sprites\sprBetterBossDoor</sprite>
+        <sprite>sprites\sprBetterBossDoorVertical</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -1704,7 +1710,6 @@
       </backgrounds>
       <backgrounds name="Static Shock">
         <background>background\tstStaticShock</background>
-        <background>background\tstMoneyMachine</background>
         <background>background\tstStaticShockReal</background>
         <background>background\bgStaticShockBG</background>
       </backgrounds>
@@ -1713,6 +1718,9 @@
         <background>background\bgPerfumaGround</background>
         <background>background\bgPerfumaGrass</background>
         <background>background\bgPerfumaBackTrees</background>
+      </backgrounds>
+      <backgrounds name="Money Machine">
+        <background>background\tstMoneyMachine</background>
       </backgrounds>
     </backgrounds>
   </backgrounds>
@@ -2738,6 +2746,8 @@
       </objects>
       <objects name="St. Hunger">
         <object>objects\objMeatball</object>
+        <object>objects\objFriedRattonSpawner</object>
+        <object>objects\objFriedRatton</object>
         <object>objects\objFireBarBlock</object>
         <object>objects\objFireBarBlockSideways</object>
         <object>objects\objFireBar</object>

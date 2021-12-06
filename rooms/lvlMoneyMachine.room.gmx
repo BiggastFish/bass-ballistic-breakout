@@ -10,8 +10,8 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>with (objSolid) visible = true;
-with (objTopSolid) visible = true;
+  <code>/*with (objSolid) visible = true;
+with (objTopSolid) visible = true;*/
 with (objGenericStopper) objectToStop = objHellcart;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -377,60 +377,76 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objLifeEnergySmall" x="2848" y="784" name="inst_83E22F1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLifeEnergySmall" x="2832" y="784" name="inst_899246EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4368" y="1408" name="inst_8924DCAA" locked="0" code="" scaleX="46" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="80" y="480" name="inst_AC2933D1" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="0" y="448" name="inst_24448CA5" locked="0" code="myBG = sprMoneyMachineParallax;&#xA;areaLeft = 0;&#xA;areaRight = room_width;&#xA;areaTop = 0;&#xA;areaBottom = room_height - view_hview;&#xA;parallaxX = 0;&#xA;parallaxY = 0;&#xA;resourceType = 2;&#xA;imgInterval = 8;&#xA;depth = 1000060;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
+    <tile bgName="tstMoneyMachine" x="1152" y="608" w="16" h="16" xo="128" yo="0" id="11324364" name="inst_9BCCD977" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1168" y="608" w="16" h="16" xo="128" yo="0" id="11324365" name="inst_37B9F74E" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1184" y="608" w="16" h="16" xo="144" yo="0" id="11324366" name="inst_7265E7AE" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1136" y="608" w="16" h="16" xo="112" yo="0" id="11324367" name="inst_68B26B0C" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1120" y="640" w="16" h="16" xo="112" yo="32" id="11324370" name="inst_ACAA8F2D" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1104" y="640" w="16" h="16" xo="112" yo="32" id="11324371" name="inst_717D37BD" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1104" y="656" w="16" h="16" xo="112" yo="32" id="11324372" name="inst_EB80C4C5" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1120" y="656" w="16" h="16" xo="112" yo="32" id="11324373" name="inst_FC601F4B" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1152" y="672" w="16" h="16" xo="112" yo="32" id="11324376" name="inst_0D6B16B3" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="624" w="16" h="16" xo="96" yo="96" id="11324381" name="inst_CC022923" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="608" w="16" h="16" xo="96" yo="96" id="11324382" name="inst_74819D3A" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="592" w="16" h="16" xo="96" yo="96" id="11324383" name="inst_C4D5F3B9" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="576" w="16" h="16" xo="96" yo="96" id="11324384" name="inst_74FBA37F" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="560" w="16" h="16" xo="96" yo="96" id="11324385" name="inst_7C07DCE9" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="544" w="16" h="16" xo="96" yo="96" id="11324386" name="inst_055BF962" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="528" w="16" h="16" xo="96" yo="96" id="11324387" name="inst_90717551" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="512" w="16" h="16" xo="96" yo="96" id="11324388" name="inst_3CC9D2AC" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="496" w="16" h="16" xo="96" yo="96" id="11324389" name="inst_CDB7BE6D" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="480" w="16" h="16" xo="96" yo="96" id="11324390" name="inst_2C529008" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="464" w="16" h="16" xo="96" yo="96" id="11324391" name="inst_7B436BBE" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="448" w="16" h="16" xo="96" yo="96" id="11324392" name="inst_FA1ADFF0" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1152" y="624" w="16" h="16" xo="112" yo="32" id="11324393" name="inst_A1849009" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1168" y="624" w="16" h="16" xo="112" yo="32" id="11324394" name="inst_A4B842C8" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1184" y="624" w="16" h="16" xo="112" yo="32" id="11324395" name="inst_2DD1F49E" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1200" y="624" w="16" h="16" xo="112" yo="32" id="11324396" name="inst_2DED8543" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1200" y="640" w="16" h="16" xo="112" yo="32" id="11324397" name="inst_A5F9102F" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1200" y="656" w="16" h="16" xo="112" yo="32" id="11324402" name="inst_BA939D59" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="656" w="16" h="16" xo="112" yo="32" id="11324403" name="inst_06CCA03F" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1232" y="656" w="16" h="16" xo="112" yo="32" id="11324404" name="inst_4BB87351" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1248" y="656" w="16" h="16" xo="112" yo="32" id="11324405" name="inst_F9793883" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1248" y="640" w="16" h="16" xo="112" yo="32" id="11324406" name="inst_FFA81CE7" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1248" y="624" w="16" h="16" xo="112" yo="32" id="11324407" name="inst_0D7E3780" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1248" y="608" w="16" h="16" xo="112" yo="32" id="11324408" name="inst_AB580D02" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1248" y="560" w="16" h="16" xo="112" yo="32" id="11324411" name="inst_27247DCA" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1232" y="560" w="16" h="16" xo="112" yo="32" id="11324412" name="inst_B74C5127" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1232" y="608" w="16" h="16" xo="112" yo="32" id="11324415" name="inst_54231602" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1232" y="624" w="16" h="16" xo="112" yo="32" id="11324416" name="inst_CB993A46" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1232" y="640" w="16" h="16" xo="112" yo="32" id="11324417" name="inst_E1856E9D" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1216" y="640" w="16" h="16" xo="112" yo="32" id="11324419" name="inst_C4F5B7F7" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1152" y="592" w="16" h="16" xo="112" yo="32" id="11324420" name="inst_5E3393FA" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1168" y="592" w="16" h="16" xo="112" yo="32" id="11324421" name="inst_63BFBCCC" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1184" y="592" w="16" h="16" xo="112" yo="32" id="11324422" name="inst_817282B7" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1200" y="592" w="16" h="16" xo="112" yo="32" id="11324423" name="inst_C2D89F3B" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1200" y="608" w="16" h="16" xo="112" yo="32" id="11324424" name="inst_3C200A28" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1200" y="560" w="16" h="16" xo="112" yo="32" id="11324425" name="inst_3F10CA3B" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1184" y="560" w="16" h="16" xo="112" yo="32" id="11324426" name="inst_A4FCB693" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1184" y="576" w="16" h="16" xo="112" yo="32" id="11324427" name="inst_A07AC9A4" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1200" y="576" w="16" h="16" xo="112" yo="32" id="11324428" name="inst_8DF41E02" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1200" y="544" w="16" h="16" xo="112" yo="16" id="11324429" name="inst_BD80E243" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1232" y="544" w="16" h="16" xo="112" yo="16" id="11324430" name="inst_129F6EA9" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1248" y="544" w="16" h="16" xo="112" yo="16" id="11324431" name="inst_624898AB" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1232" y="576" w="32" h="32" xo="112" yo="32" id="11324436" name="inst_DA9F34D3" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1168" y="640" w="32" h="32" xo="112" yo="32" id="11324437" name="inst_8D1D39DF" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1120" y="672" w="16" h="16" xo="128" yo="0" id="11324438" name="inst_C7CA88EB" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1088" y="672" w="16" h="16" xo="112" yo="0" id="11324441" name="inst_8357A0D0" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1104" y="672" w="16" h="16" xo="128" yo="0" id="11324442" name="inst_EAE2B09D" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1136" y="672" w="16" h="16" xo="144" yo="0" id="11324443" name="inst_CB43EC76" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1136" y="656" w="16" h="16" xo="144" yo="16" id="11324444" name="inst_53CDC8AB" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1136" y="640" w="16" h="16" xo="144" yo="16" id="11324445" name="inst_C721701C" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1136" y="624" w="16" h="16" xo="144" yo="16" id="11324446" name="inst_401EA843" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1152" y="640" w="16" h="16" xo="112" yo="32" id="11324447" name="inst_EB83070B" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1152" y="656" w="16" h="16" xo="112" yo="32" id="11324448" name="inst_68234B3F" depth="1000020" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="96" y="672" w="32" h="32" xo="48" yo="16" id="11323204" name="inst_B5AE7ADB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="128" y="672" w="32" h="32" xo="48" yo="16" id="11323205" name="inst_F5150830" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="96" y="704" w="32" h="16" xo="48" yo="48" id="11323206" name="inst_44526FE5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="128" y="704" w="32" h="16" xo="48" yo="48" id="11323207" name="inst_5923F4A7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="400" y="656" w="16" h="16" xo="0" yo="0" id="11323227" name="inst_66CCDE09" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="320" y="656" w="16" h="16" xo="32" yo="0" id="11323228" name="inst_C64F79B4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="320" y="672" w="16" h="16" xo="32" yo="16" id="11323230" name="inst_FB84B420" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="320" y="688" w="16" h="16" xo="32" yo="32" id="11323231" name="inst_94BAF06D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="400" y="672" w="16" h="16" xo="0" yo="16" id="11323232" name="inst_60E96EA9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="352" y="672" w="16" h="16" xo="16" yo="16" id="11323235" name="inst_F863A1D4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="368" y="672" w="16" h="16" xo="16" yo="16" id="11323236" name="inst_F3E0B059" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="384" y="672" w="16" h="16" xo="16" yo="16" id="11323237" name="inst_11480531" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="368" y="688" w="16" h="16" xo="16" yo="16" id="11323239" name="inst_97F13946" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="352" y="688" w="16" h="16" xo="16" yo="16" id="11323240" name="inst_CF180134" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="336" y="688" w="16" h="16" xo="16" yo="16" id="11323241" name="inst_5339C102" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="336" y="656" w="16" h="16" xo="16" yo="32" id="11323242" name="inst_02965B9B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="384" y="656" w="16" h="16" xo="16" yo="32" id="11323243" name="inst_80C9F45B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="368" y="656" w="16" h="16" xo="16" yo="32" id="11323244" name="inst_7CDA9F27" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="352" y="656" w="16" h="16" xo="16" yo="32" id="11323245" name="inst_D23C3D10" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="160" y="688" w="16" h="16" xo="16" yo="32" id="11323246" name="inst_E46D4DF1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="176" y="688" w="16" h="16" xo="16" yo="32" id="11323247" name="inst_1AB889A3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="192" y="688" w="16" h="16" xo="16" yo="32" id="11323248" name="inst_1334548F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="208" y="688" w="16" h="16" xo="16" yo="32" id="11323249" name="inst_EA5113DD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="224" y="688" w="16" h="16" xo="16" yo="32" id="11323250" name="inst_B590F052" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="240" y="688" w="16" h="16" xo="16" yo="32" id="11323251" name="inst_656BEFF1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="256" y="688" w="16" h="16" xo="16" yo="32" id="11323252" name="inst_05C0B7CD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="272" y="688" w="16" h="16" xo="16" yo="32" id="11323253" name="inst_410425A9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="288" y="688" w="16" h="16" xo="16" yo="32" id="11323254" name="inst_E811BD43" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="304" y="688" w="16" h="16" xo="16" yo="32" id="11323255" name="inst_0ACBB561" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="400" y="688" w="16" h="16" xo="0" yo="16" id="11323256" name="inst_00AF4143" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="400" y="704" w="16" h="16" xo="0" yo="16" id="11323257" name="inst_95C5B7F3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="352" y="704" w="16" h="16" xo="16" yo="48" id="11323258" name="inst_10EED5CB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="384" y="688" w="16" h="16" xo="32" yo="48" id="11323259" name="inst_9FECDD42" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="336" y="672" w="16" h="16" xo="0" yo="48" id="11323260" name="inst_7DBBCB30" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="48" y="704" w="16" h="16" xo="16" yo="48" id="11323261" name="inst_3B03E7F0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="272" y="704" w="16" h="16" xo="0" yo="48" id="11323262" name="inst_2F78A623" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="192" y="704" w="16" h="16" xo="32" yo="48" id="11323263" name="inst_AD3819B2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="208" y="704" w="16" h="16" xo="16" yo="16" id="11323264" name="inst_1E99E8EE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="224" y="704" w="16" h="16" xo="16" yo="16" id="11323265" name="inst_DF853519" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="240" y="704" w="16" h="16" xo="16" yo="16" id="11323266" name="inst_49DBC572" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="256" y="704" w="16" h="16" xo="16" yo="16" id="11323267" name="inst_3D44E72C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="176" y="704" w="16" h="16" xo="16" yo="16" id="11323268" name="inst_63A5CE1B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="160" y="704" w="16" h="16" xo="16" yo="16" id="11323269" name="inst_AE0E42FF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="64" y="704" w="16" h="16" xo="16" yo="16" id="11323271" name="inst_83CB7D4E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="16" y="704" w="16" h="16" xo="16" yo="16" id="11323272" name="inst_3C7A450A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="32" y="704" w="16" h="16" xo="16" yo="16" id="11323273" name="inst_68E9DBE0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="304" y="704" w="16" h="16" xo="16" yo="16" id="11323274" name="inst_9F92274F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="320" y="704" w="16" h="16" xo="16" yo="16" id="11323275" name="inst_39F484C6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="336" y="704" w="16" h="16" xo="16" yo="16" id="11323276" name="inst_B22A4617" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="288" y="704" w="16" h="16" xo="16" yo="16" id="11323277" name="inst_E90965E9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="368" y="704" w="16" h="16" xo="16" yo="16" id="11323278" name="inst_EFBCDF44" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="384" y="704" w="16" h="16" xo="16" yo="16" id="11323279" name="inst_BA71EDD9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="432" y="688" w="16" h="16" xo="64" yo="0" id="11323280" name="inst_BD4A3B72" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="448" y="688" w="16" h="16" xo="64" yo="0" id="11323281" name="inst_CD51721A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="416" y="688" w="16" h="16" xo="48" yo="0" id="11323282" name="inst_23BF30A1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -507,12 +523,6 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <tile bgName="tstMoneyMachine" x="976" y="704" w="16" h="16" xo="16" yo="16" id="11323359" name="inst_93CE7040" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="976" y="688" w="16" h="16" xo="16" yo="16" id="11323360" name="inst_3FA682FF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="896" y="688" w="16" h="16" xo="16" yo="16" id="11323361" name="inst_807F2823" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="16" y="688" w="16" h="16" xo="16" yo="32" id="11323362" name="inst_C11949AE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="32" y="688" w="16" h="16" xo="16" yo="32" id="11323363" name="inst_2597722C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="48" y="688" w="16" h="16" xo="16" yo="32" id="11323364" name="inst_F9A879E7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="64" y="688" w="16" h="16" xo="16" yo="32" id="11323365" name="inst_144E1A35" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="80" y="688" w="16" h="16" xo="16" yo="32" id="11323369" name="inst_D1639A1B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="80" y="704" w="16" h="16" xo="16" yo="16" id="11323370" name="inst_505CB9C3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="960" y="608" w="32" h="16" xo="48" yo="80" id="11323379" name="inst_72FF34DA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="928" y="608" w="16" h="16" xo="80" yo="80" id="11323380" name="inst_476EBF07" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="944" y="608" w="16" h="16" xo="64" yo="80" id="11323381" name="inst_943EE242" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -547,12 +557,6 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <tile bgName="tstMoneyMachine" x="1232" y="704" w="32" h="16" xo="48" yo="48" id="11323468" name="inst_72F3D2C8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="1200" y="704" w="16" h="16" xo="48" yo="48" id="11323469" name="inst_ACA71745" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="1152" y="688" w="16" h="32" xo="96" yo="16" id="11323473" name="inst_C8E2A3A2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="80" y="480" w="16" h="16" xo="16" yo="0" id="11323488" name="inst_D5C60B81" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="96" y="480" w="16" h="16" xo="16" yo="0" id="11323489" name="inst_5AB65332" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="112" y="480" w="16" h="16" xo="16" yo="0" id="11323490" name="inst_11B34197" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="128" y="480" w="16" h="16" xo="16" yo="0" id="11323491" name="inst_A2C3D99E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="144" y="480" w="16" h="16" xo="16" yo="0" id="11323492" name="inst_0C6D4FB5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="160" y="480" w="16" h="16" xo="16" yo="0" id="11323493" name="inst_AD9257F2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="256" y="480" w="16" h="16" xo="16" yo="0" id="11323494" name="inst_C7FC96AB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="272" y="480" w="16" h="16" xo="16" yo="0" id="11323495" name="inst_C06E139B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="288" y="480" w="16" h="16" xo="16" yo="0" id="11323496" name="inst_72AB4F64" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -619,10 +623,6 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <tile bgName="tstMoneyMachine" x="1040" y="480" w="32" h="16" xo="48" yo="64" id="11323625" name="inst_62771206" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="1072" y="480" w="32" h="16" xo="48" yo="64" id="11323626" name="inst_50B9B03E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="1104" y="480" w="32" h="16" xo="48" yo="64" id="11323627" name="inst_FE2BCDEF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="1120" y="416" w="16" h="16" xo="0" yo="0" id="11323629" name="inst_7D5339DE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="1120" y="432" w="16" h="16" xo="0" yo="16" id="11323630" name="inst_C975D861" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="1040" y="432" w="16" h="16" xo="32" yo="16" id="11323633" name="inst_F1CB7F28" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="1040" y="416" w="16" h="16" xo="32" yo="0" id="11323635" name="inst_409BDE46" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="1104" y="432" w="16" h="16" xo="16" yo="16" id="11323639" name="inst_92CAE767" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="1104" y="448" w="16" h="16" xo="16" yo="16" id="11323640" name="inst_3606AF00" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="1104" y="416" w="16" h="16" xo="16" yo="32" id="11323641" name="inst_88CB3FC9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -696,8 +696,6 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <tile bgName="tstMoneyMachine" x="240" y="640" w="16" h="16" xo="80" yo="112" id="11323832" name="inst_0ED300A4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="192" y="640" w="16" h="16" xo="64" yo="112" id="11323833" name="inst_04FEDD4C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="224" y="640" w="16" h="16" xo="64" yo="112" id="11323834" name="inst_54A25D68" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="1120" y="448" w="16" h="16" xo="0" yo="16" id="11323837" name="inst_8C914221" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="1040" y="448" w="16" h="16" xo="32" yo="16" id="11323838" name="inst_0DCA5F3C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="192" y="512" w="16" h="16" xo="48" yo="96" id="11323842" name="inst_A64E485F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="224" y="512" w="16" h="16" xo="80" yo="96" id="11323843" name="inst_471614B6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="336" y="608" w="16" h="16" xo="48" yo="96" id="11323845" name="inst_629A947B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -848,10 +846,6 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <tile bgName="tstMoneyMachine" x="1136" y="432" w="16" h="16" xo="0" yo="80" id="11324028" name="inst_42F26902" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="1136" y="448" w="16" h="16" xo="0" yo="112" id="11324029" name="inst_EAE57EC3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="1024" y="464" w="16" h="16" xo="64" yo="32" id="11324030" name="inst_CB3E9C63" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="1024" y="432" w="16" h="32" xo="64" yo="32" id="11324031" name="inst_AF6109E9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="1024" y="400" w="16" h="32" xo="64" yo="32" id="11324032" name="inst_BE4D9E45" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="1024" y="384" w="16" h="16" xo="64" yo="48" id="11324033" name="inst_B12B86FE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tstMoneyMachine" x="1024" y="368" w="16" h="16" xo="64" yo="16" id="11324034" name="inst_CBA6E7E2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="1024" y="336" w="16" h="16" xo="0" yo="112" id="11324035" name="inst_3BE17EB6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="1024" y="320" w="16" h="16" xo="0" yo="96" id="11324036" name="inst_BFB49523" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="1024" y="304" w="16" h="16" xo="0" yo="96" id="11324037" name="inst_9EABAFBA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -915,6 +909,78 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <tile bgName="tstMoneyMachine" x="992" y="592" w="16" h="16" xo="64" yo="112" id="11324129" name="inst_76273D12" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="992" y="576" w="16" h="16" xo="64" yo="112" id="11324130" name="inst_8913C1EE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tstMoneyMachine" x="992" y="560" w="16" h="16" xo="64" yo="112" id="11324131" name="inst_4AB4F85F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="80" y="480" w="16" h="16" xo="16" yo="0" id="11324173" name="inst_99733EF7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="96" y="480" w="16" h="16" xo="16" yo="0" id="11324174" name="inst_22AD3605" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="112" y="480" w="16" h="16" xo="16" yo="0" id="11324175" name="inst_A4169384" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="128" y="480" w="16" h="16" xo="16" yo="0" id="11324176" name="inst_8B9053B7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="144" y="480" w="16" h="16" xo="16" yo="0" id="11324177" name="inst_3CC786E3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="160" y="480" w="16" h="16" xo="16" yo="0" id="11324178" name="inst_71CCA832" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="384" y="656" w="16" h="16" xo="16" yo="32" id="11324179" name="inst_680A5441" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="368" y="656" w="16" h="16" xo="16" yo="32" id="11324180" name="inst_05F1C919" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="352" y="656" w="16" h="16" xo="16" yo="32" id="11324181" name="inst_DAB7A946" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="336" y="656" w="16" h="16" xo="16" yo="32" id="11324182" name="inst_8D2329C7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="320" y="656" w="16" h="16" xo="32" yo="0" id="11324183" name="inst_EF676F0C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="400" y="672" w="16" h="16" xo="0" yo="16" id="11324184" name="inst_ED0B79B1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="400" y="656" w="16" h="16" xo="0" yo="0" id="11324185" name="inst_22FE448A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="320" y="672" w="16" h="16" xo="32" yo="16" id="11324186" name="inst_69E9F8E3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="336" y="688" w="16" h="16" xo="16" yo="48" id="11324187" name="inst_44BDAA5A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="384" y="672" w="16" h="16" xo="0" yo="48" id="11324188" name="inst_7CDC72F1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="368" y="704" w="16" h="16" xo="32" yo="48" id="11324189" name="inst_A46C4D1B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="16" y="688" w="16" h="16" xo="16" yo="32" id="11324190" name="inst_07FEA391" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="32" y="688" w="16" h="16" xo="16" yo="32" id="11324191" name="inst_666D4930" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="48" y="688" w="16" h="16" xo="16" yo="32" id="11324192" name="inst_65419DC1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="64" y="688" w="16" h="16" xo="16" yo="32" id="11324193" name="inst_B3912868" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="80" y="688" w="16" h="16" xo="16" yo="32" id="11324194" name="inst_011465A7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="64" y="704" w="16" h="16" xo="32" yo="48" id="11324199" name="inst_D8A231CB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="80" y="704" w="16" h="16" xo="16" yo="16" id="11324200" name="inst_8671DED9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="160" y="688" w="16" h="16" xo="16" yo="32" id="11324202" name="inst_00B24185" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="176" y="688" w="16" h="16" xo="16" yo="32" id="11324203" name="inst_71FAC2A0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="192" y="688" w="16" h="16" xo="16" yo="32" id="11324204" name="inst_8C0CA80E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="208" y="688" w="16" h="16" xo="16" yo="32" id="11324205" name="inst_EE5FD080" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="224" y="688" w="16" h="16" xo="16" yo="32" id="11324206" name="inst_D4AC1C96" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="240" y="688" w="16" h="16" xo="16" yo="32" id="11324207" name="inst_F12E1CCC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="256" y="688" w="16" h="16" xo="16" yo="32" id="11324208" name="inst_3AD30C3A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="272" y="688" w="16" h="16" xo="16" yo="32" id="11324209" name="inst_C344763F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="288" y="688" w="16" h="16" xo="16" yo="32" id="11324210" name="inst_ACD1254B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="304" y="688" w="16" h="16" xo="16" yo="32" id="11324211" name="inst_F2E219EC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="320" y="688" w="16" h="16" xo="32" yo="32" id="11324212" name="inst_2D14A537" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="400" y="688" w="16" h="16" xo="0" yo="16" id="11324213" name="inst_897B26C7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="400" y="704" w="16" h="16" xo="0" yo="16" id="11324214" name="inst_4A77B02F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="272" y="704" w="16" h="16" xo="16" yo="48" id="11324215" name="inst_2D2E5C61" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="208" y="704" w="16" h="16" xo="0" yo="48" id="11324216" name="inst_4720F612" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="16" y="704" w="16" h="16" xo="16" yo="48" id="11324217" name="inst_4AC7E15E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="48" y="704" w="16" h="16" xo="16" yo="16" id="11324218" name="inst_02DDD5D7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="32" y="704" w="16" h="16" xo="16" yo="16" id="11324219" name="inst_34895253" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="160" y="704" w="16" h="16" xo="16" yo="16" id="11324220" name="inst_B592D23A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="176" y="704" w="16" h="16" xo="16" yo="16" id="11324221" name="inst_E2CF4B3C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="192" y="704" w="16" h="16" xo="16" yo="16" id="11324222" name="inst_81E67FBA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="224" y="704" w="16" h="16" xo="16" yo="16" id="11324223" name="inst_BA85B3A6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="240" y="704" w="16" h="16" xo="16" yo="16" id="11324224" name="inst_FB32F8B4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="256" y="704" w="16" h="16" xo="16" yo="16" id="11324225" name="inst_C18B86BE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="288" y="704" w="16" h="16" xo="16" yo="16" id="11324226" name="inst_76A8A347" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="304" y="704" w="16" h="16" xo="16" yo="16" id="11324227" name="inst_9E5CF667" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="320" y="704" w="16" h="16" xo="16" yo="16" id="11324228" name="inst_109CB072" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="336" y="704" w="16" h="16" xo="16" yo="16" id="11324229" name="inst_68CF55E8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="352" y="704" w="16" h="16" xo="16" yo="16" id="11324230" name="inst_4EE7021E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="352" y="688" w="16" h="16" xo="16" yo="16" id="11324231" name="inst_50B05001" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="352" y="672" w="16" h="16" xo="16" yo="16" id="11324232" name="inst_2E46AC2F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="336" y="672" w="16" h="16" xo="16" yo="16" id="11324233" name="inst_E2873829" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="368" y="672" w="16" h="16" xo="16" yo="16" id="11324234" name="inst_AA2E681D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="368" y="688" w="16" h="16" xo="16" yo="16" id="11324235" name="inst_5D6F2F5C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="384" y="688" w="16" h="16" xo="16" yo="16" id="11324236" name="inst_38F08272" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="384" y="704" w="16" h="16" xo="16" yo="16" id="11324237" name="inst_C0916188" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1040" y="432" w="16" h="16" xo="16" yo="16" id="11324241" name="inst_8F438638" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1040" y="448" w="16" h="16" xo="16" yo="16" id="11324242" name="inst_940B688B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1040" y="416" w="16" h="16" xo="16" yo="32" id="11324243" name="inst_27067937" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1024" y="416" w="16" h="16" xo="0" yo="32" id="11324244" name="inst_6762A7B0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1024" y="400" w="16" h="16" xo="0" yo="16" id="11324245" name="inst_B4FE3E73" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1024" y="384" w="16" h="16" xo="0" yo="16" id="11324246" name="inst_E3CE932F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1024" y="368" w="16" h="16" xo="0" yo="0" id="11324247" name="inst_90BAA51A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1120" y="416" w="16" h="16" xo="0" yo="0" id="11324248" name="inst_23D3A62E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1120" y="432" w="16" h="16" xo="0" yo="16" id="11324249" name="inst_5503AAE4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1120" y="448" w="16" h="16" xo="0" yo="16" id="11324250" name="inst_2B402553" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1024" y="432" w="16" h="16" xo="16" yo="16" id="11324251" name="inst_812367ED" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tstMoneyMachine" x="1024" y="448" w="16" h="16" xo="16" yo="16" id="11324252" name="inst_0484A84A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

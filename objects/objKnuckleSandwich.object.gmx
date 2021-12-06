@@ -132,6 +132,11 @@ if (!instance_exists(parent))
 }
 else
 {
+    if (parent.climbing)
+    {
+        instance_destroy();
+        exit;
+    }
     image_xscale = parent.image_xscale * 1.2;
     
     x = parent.x //+ (4 * image_xscale); // stay attached to MM
@@ -243,14 +248,24 @@ with (parent)
           <argument>
             <kind>1</kind>
             <string>if (global.keyShootPressed[playerID] &amp;&amp; !playerIsLocked(PL_LOCK_SHOOT) 
-&amp;&amp; !instance_exists(objKnuckleSandwich) &amp;&amp; !climbing 
+&amp;&amp; !instance_exists(objKnuckleSandwich)
 &amp;&amp; global.ammo[playerID, global.weapon[playerID]] &gt; 0 &amp;&amp; 
 !instance_exists(objKnuckleSandwichDelay))
 {
+    if (climbing)
+    {
+        climbing = false;
+        yspeed = 0;
+        isSlide = false;
+        climbLock = lockPoolRelease(climbLock);
+        shootStandStillLock = lockPoolRelease(shootStandStillLock);
+        if (xDir != 0) image_xscale = xDir;
+    }
     a = instance_create(x, y, objKnuckleSandwich);
     a.image_xscale = image_xscale;
     global.ammo[playerID, global.weapon[playerID]] = max(0,
         global.ammo[playerID, global.weapon[playerID]] - 2);
+    
 }
 </string>
           </argument>

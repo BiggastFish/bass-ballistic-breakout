@@ -47,11 +47,13 @@ timerDelay = 7;
 treasureAngle = 0;
 treasureSpd = 3;
 _im = 0;
+off = 0;
 
 init = true;
 shinies = 0;
 shiniesMax = 6;
 spawnDust = false;
+canDust = true;
 </string>
           </argument>
         </arguments>
@@ -78,6 +80,7 @@ spawnDust = false;
 {
     init = false;
     timer = timerStart;
+    image_index = (treasureAngle / 90) + 1;
 }
 
 event_inherited();
@@ -88,21 +91,26 @@ if (entityCanStep())
     {
         if (collision_rectangle(other.x - 1, other.y - 1, 
         other.x + 17, other.y + 17, id, 0, 0) &amp;&amp; angle == 0 
-        &amp;&amp; other.image_index == 0)
+        &amp;&amp; other.canDust)
         {
             playSFX(sfxWanaan);
             with (other)
             {
-                image_index = 1;
+                canDust = false;
                 timer = 0;
             }
             instance_destroy();
         }
     }
-    if (image_index == 0)
+    if (canDust)
         timer++;
     else
-        animationLoop(1, 2, 0.25);
+    {
+        timer = 0;
+        off+= 0.25;
+        if (off &gt;= 2)
+            off = 0;
+    }
     if (timer == (timerMax - 20) &amp;&amp; !spawnDust)
     {
         var xDir = 0, yDir = 0;
@@ -139,10 +147,54 @@ if (entityCanStep())
 }
 else if (dead)
 {
-    image_index = 0;
+    canDust = true;
     spawnDust = false;
     timer = timerStart;
     shinies = 0;
+    off = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!dead)
+{
+    if (!canDust)
+    {
+        var xx, yy, xOff, yOff;
+        switch (image_index)
+        {
+            case 1: xx = 16; yy = 8; break;
+            case 2: xx = 8; yy = 0; break;
+            case 3: xx = 0; yy = 8; break;
+            case 4: xx = 8; yy = 16; break;
+        }
+        xOff = image_index &gt; 2;
+        yOff = image_index &lt; 3;
+        draw_sprite(sprCoinSpread, 0, x + xx + (xOff * off), y + yy + (yOff * off));
+    }
+    var col = make_color_rgb(0, 0, 0);
+    if (timer &gt;= (timerMax - 20)) col = make_color_rgb(219, 247, 119);
+    draw_sprite_ext(sprDot, 0, x, y, 16, 16, 0, col, image_alpha);
+    event_inherited();
 }
 </string>
           </argument>
