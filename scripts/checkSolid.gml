@@ -77,7 +77,7 @@ with (prtEntity)
         {
             if (alwaysCheckSolids || object_index == objBossDoor || object_index == objBossDoorVertical || !place_meeting(x, y + cgrav, myid))
             {
-                if (isSolid != 2 || place_meeting(x, y - cgrav*slp, myid))
+                if (isSolid != 2 || (place_meeting(x, y - cgrav*slp, myid) && other.checkForTopSolid))
                 {
                     if (!fnsolid)
                     {

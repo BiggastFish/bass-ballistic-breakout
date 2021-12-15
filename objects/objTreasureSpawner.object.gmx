@@ -187,8 +187,8 @@ else if (dead)
             case 3: xx = 0; yy = 8; break;
             case 4: xx = 8; yy = 16; break;
         }
-        xOff = image_index &gt; 2;
-        yOff = image_index &lt; 3;
+        xOff = image_index mod 2 == 1;
+        yOff = image_index mod 2 == 0;
         draw_sprite(sprCoinSpread, 0, x + xx + (xOff * off), y + yy + (yOff * off));
     }
     var col = make_color_rgb(0, 0, 0);

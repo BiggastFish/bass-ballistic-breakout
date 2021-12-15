@@ -109,9 +109,9 @@ if (global.damage != 0)
     {
         if (contactDamage != 0)
         {
-            if (hitTimer >= other.attackDelay)
+            if (hitTimer >= other.attackDelay || other.noiFrames)
             {
-                if (other.iFrames == 0)
+                if (other.iFrames == 0 || other.noiFrames)
                 {
                     if (global.factionStance[faction, other.faction])
                     {

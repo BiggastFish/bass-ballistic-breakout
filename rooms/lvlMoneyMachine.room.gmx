@@ -64,8 +64,8 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objSolid" x="480" y="672" name="inst_218E367F" locked="0" code="" scaleX="4" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="416" y="704" name="inst_2BB4D131" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="416" y="688" name="inst_BE723263" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="560" y="528" name="inst_93F4514F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="672" y="544" name="inst_D73696FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="560" y="528" name="inst_93F4514F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="672" y="544" name="inst_D73696FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="576" y="624" name="inst_ED6103C5" locked="0" code="" scaleX="4" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="544" y="656" name="inst_CB9EEDB9" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="256" y="480" name="inst_585F0D92" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
@@ -82,7 +82,7 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objSolid" x="864" y="672" name="inst_354FF8D9" locked="0" code="" scaleX="8" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="928" y="608" name="inst_5C1AF7C4" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="992" y="608" name="inst_FB8997F8" locked="0" code="" scaleX="5" scaleY="7" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="976" y="560" name="inst_A3CEB37C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="976" y="560" name="inst_A3CEB37C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="960" y="480" name="inst_76BB0392" locked="0" code="" scaleX="5" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="688" y="480" name="inst_C8A3B447" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="816" y="480" name="inst_3BCBC02E" locked="0" code="" scaleX="9" scaleY="2" colour="4294967295" rotation="0"/>
@@ -131,8 +131,8 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objSpike" x="1328" y="208" name="inst_D0F5744A" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1328" y="224" name="inst_FB028FE6" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHellcart" x="1616" y="144" name="inst_20AF5A02" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="1552" y="80" name="inst_06F18BB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="1696" y="112" name="inst_FD39C181" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="1552" y="80" name="inst_06F18BB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="1696" y="112" name="inst_FD39C181" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGenericStopper" x="1376" y="160" name="inst_D87E5B23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGenericStopper" x="1520" y="128" name="inst_0091AEF9" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objGenericStopper" x="1632" y="128" name="inst_D6EFA46B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -173,8 +173,8 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objSolid" x="2224" y="896" name="inst_1057D7A3" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2128" y="832" name="inst_0EBD86EB" locked="0" code="" scaleX="3.20000004768372" scaleY="9" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2064" y="736" name="inst_19B49687" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="2160" y="752" name="inst_C1214B04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="2256" y="928" name="inst_B85B6427" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="2160" y="752" name="inst_C1214B04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="2256" y="928" name="inst_B85B6427" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDownScrolling" x="2048" y="960" name="inst_3528D620" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureSpawner" x="2288" y="160" name="inst_194E576A" locked="0" code="treasureAngle = 180;&#xA;timerMax = 80;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTreasureSpawner" x="2160" y="176" name="inst_20D9D9C1" locked="0" code="xDir = 1;&#xA;timerMax = 80;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -199,7 +199,7 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objHellcart" x="2512" y="1056" name="inst_64C21BBE" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGenericStopper" x="2528" y="1040" name="inst_2552824E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGenericStopper" x="2416" y="1040" name="inst_606D5E86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="2672" y="1152" name="inst_854F8557" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="2672" y="1152" name="inst_854F8557" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2752" y="1136" name="inst_10F4022F" locked="0" code="" scaleX="8" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objGorudokuro" x="2800" y="1120" name="inst_EFC47AB1" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2912" y="1152" name="inst_C438427D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -228,7 +228,7 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objSolid" x="2832" y="480" name="inst_CB3A5F8C" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3056" y="480" name="inst_5F36A858" locked="0" code="" scaleX="2" scaleY="9" colour="4294967295" rotation="0"/>
     <instance objName="objBossDoor" x="3056" y="624" name="inst_C315BF5D" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="2976" y="656" name="inst_E909AE6B" locked="0" code="if (global.checkpointX == 2944 &amp;&amp; global.checkpointY == 672)&#xA;{&#xA;    instance_destroy();&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="2976" y="656" name="inst_E909AE6B" locked="0" code="if (global.checkpointX == 2944 &amp;&amp; global.checkpointY == 672)&#xA;{&#xA;    instance_destroy();&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRightScrollingNES" x="3072" y="480" name="inst_8A7F2387" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRightScrollingNES" x="3328" y="480" name="inst_6FE7BF2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3312" y="480" name="inst_57C8DD31" locked="0" code="" scaleX="2" scaleY="6" colour="4294967295" rotation="0"/>
@@ -238,7 +238,7 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objCheckpointAntiEddie" x="3424" y="624" name="inst_9EA0B25A" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3024" y="496" name="inst_F355BB1E" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="2976" y="496" name="inst_1261BFD9" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="3024" y="1056" name="inst_FBD5A5D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="3024" y="1056" name="inst_FBD5A5D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3008" y="1008" name="inst_7FB45D81" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3568" y="480" name="inst_DD9B4193" locked="0" code="" scaleX="2" scaleY="31" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3312" y="640" name="inst_7398E161" locked="0" code="" scaleX="9" scaleY="3" colour="4294967295" rotation="0"/>
@@ -285,9 +285,9 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objSolid" x="3616" y="1120" name="inst_7E66CC22" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3600" y="960" name="inst_86168C4E" locked="0" code="" scaleX="62" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3712" y="1152" name="inst_74A28820" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="3648" y="1040" name="inst_259A034D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="3648" y="1040" name="inst_259A034D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3632" y="976" name="inst_9C0AD154" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="3728" y="1072" name="inst_CA1ECA6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="3728" y="1072" name="inst_CA1ECA6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3744" y="1168" name="inst_2CCB94EB" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="3744" y="976" name="inst_7C1E677F" locked="0" code="" scaleX="11" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="3888" y="1024" name="inst_BA159BAC" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
@@ -334,8 +334,8 @@ with (objGenericStopper) objectToStop = objHellcart;</code>
     <instance objName="objSolid" x="4656" y="1328" name="inst_FB4933C5" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="4624" y="1392" name="inst_FA99ED96" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="4816" y="1376" name="inst_4FB00A2E" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="4720" y="1264" name="inst_CFB97403" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objGoldonBatton" x="5024" y="1296" name="inst_7F001C15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="4720" y="1264" name="inst_CFB97403" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDiamatton" x="5024" y="1296" name="inst_7F001C15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="4928" y="1216" name="inst_CF8318CF" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="5040" y="1216" name="inst_D83CEFA4" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="5104" y="1376" name="inst_CD534D69" locked="0" code="" scaleX="5" scaleY="5" colour="4294967295" rotation="0"/>

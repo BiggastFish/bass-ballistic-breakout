@@ -154,8 +154,9 @@ if (entityCanStep())
                         playSFX(sfxEnemyBoost);
                         contactDamage = 4;
                         grav = 0.2;
-                        xspeed = -sign(xcoll);
                         yspeed = -2;
+                        xspeed = arcCalcXspeed(yspeed, grav, x, y, 
+                        yeah + (sign(xcoll) * 80), view_yview + view_hview - 32);;
                         image_index = 0;
                     }
                     if (fried == 1 &amp;&amp; ycoll &gt; 0)
@@ -230,9 +231,11 @@ if (entityCanStep())
                             playSFX(sfxEnemyBoost);
                             contactDamage = 4;
                             grav = 0.2;
-                            xspeed = -sign(xcoll);
                             yspeed = -2;
+                            xspeed = arcCalcXspeed(yspeed, grav, x, y, 
+                            yeah + (sign(xcoll) * 80), view_yview + view_hview - 32);;
                             image_index = 0;
+                            
                         }
                         if (sign(xspeed) = -image_xscale &amp;&amp; ycoll &gt; 0)
                         {

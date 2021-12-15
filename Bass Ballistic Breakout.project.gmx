@@ -1470,7 +1470,8 @@
           <sprite>sprites\sprLongGuyHorizontal</sprite>
           <sprite>sprites\sprLongGuyVertical</sprite>
           <sprite>sprites\sprLongGuyIcon</sprite>
-          <sprite>sprites\sprGoldonBatton</sprite>
+          <sprite>sprites\sprDiamatton</sprite>
+          <sprite>sprites\sprDiamattonDebris</sprite>
           <sprite>sprites\sprHellcart</sprite>
           <sprite>sprites\sprMoneyCatcher</sprite>
           <sprite>sprites\sprMoneyCatcherPole</sprite>
@@ -1593,6 +1594,8 @@
           <sprite>sprites\sprOilManSplash</sprite>
           <sprite>sprites\sprOilManParticle</sprite>
           <sprite>sprites\sprOilManShot</sprite>
+          <sprite>sprites\sprOilPlatform</sprite>
+          <sprite>sprites\mskOilPlatform</sprite>
         </sprites>
         <sprites name="Demon Inside Me">
           <sprite>sprites\sprHangedMan</sprite>
@@ -2668,7 +2671,7 @@
       </objects>
       <objects name="Money Machine">
         <object>objects\objLongGuy</object>
-        <object>objects\objGoldonBatton</object>
+        <object>objects\objDiamatton</object>
         <object>objects\objGorudokuro</object>
         <object>objects\objHellcart</object>
         <object>objects\objMoneyCatcherClaw</object>
@@ -2776,6 +2779,7 @@
         </objects>
       </objects>
       <objects name="Highway to Hell">
+        <object>objects\objOilPlatform</object>
         <objects name="Boss">
           <object>objects\objOilMan</object>
           <objects name="Projectiles">
@@ -2810,13 +2814,13 @@
     <room>rooms\lvlBGVisibilityTest</room>
     <room>rooms\lvlStaticShock</room>
     <room>rooms\lvlLivingNightmare</room>
-    <room>rooms\rmHighwayToHell</room>
     <room>rooms\lvlTowerStage2</room>
     <room>rooms\lvlLostLight</room>
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlJumpKing</room>
     <room>rooms\lvlStHunger</room>
+    <room>rooms\lvlHighwayToHell</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

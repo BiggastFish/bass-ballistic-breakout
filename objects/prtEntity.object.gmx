@@ -53,6 +53,7 @@ category = "";
 
 hitTimer = 0; // counts how long it has been since the last time it took damage
 iFrames = 0;
+noiFrames = false; // if true, always get hit by opposing entities regardless of iFrames, hitTimer or attackDelay values
 
 ignoreBullet = 0; // special case for ignoring a bullet when reflecting it (thunder beam)
 killOverride = true; // special case for special kill effects ala BHB or Tornado Blow
@@ -213,13 +214,13 @@ else if (!global.frozen)
         {
             with (prtEntity)
             {
-                if (!dead &amp;&amp; iFrames == 0)
+                if (!dead &amp;&amp; (iFrames == 0 || noiFrames))
                 {
                     if (canHit)
                     {
                         if (global.factionStance[other.faction, faction])
                         {
-                            if (hitTimer &gt;= other.attackDelay)
+                            if (hitTimer &gt;= other.attackDelay || noiFrames)
                             {
                                 if (place_meeting(x, y, other))
                                 {

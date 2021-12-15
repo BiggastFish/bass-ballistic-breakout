@@ -4,6 +4,20 @@ if (canDamage)
     yspeed = -sin(degtorad(dir)) * 5 * sign(image_yscale); // The vertical speed was, for some reason, inverted, which is why I used a minus. Don't ask me what actually caused this behaviour
 }
 
+if (contactDamage == 1.5 && sprite_index == sprBassBullet)
+{
+    imageTimer++;
+    if (imageTimer mod 2 == 0)
+    {
+        l = instance_create(xprevious + irandom_range(-2, 2), 
+        yprevious + irandom_range(-2, 2), objSingleLoopEffect);
+        l.sprite_index = sprDot;
+        l.image_xscale = 2;
+        l.image_yscale = 2;
+        l.image_speed = 1/5;
+        l.image_blend = make_color_rgb(152, 120, 248);
+    }
+}
 // delete if shot upwards and 2 solids (or solid entities) sandwich it horizontally,
 // and have close horizontal edges
 var contactingSolid = ds_list_create(),

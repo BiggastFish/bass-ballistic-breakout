@@ -139,21 +139,16 @@ if (!global.frozen)
 {
     if (!instance_exists(objSpringBlast))
     {
-        i = fireWeapon(16, 0, objSpringBlast, 12, 4, 2, 1);
+        i = fireWeapon(16, 0, objSpringBlast, 12, 3, 2, 1);
         if (i)
         {
             i.xspeed = (2 - (yDir &lt; 0) + (2 * (yDir &gt; 0))) * image_xscale;
             i.yspeed = -3 + (3 * yDir);
         }
     }
-    else
+    else with (objSpringBlast)
     {
-        with (fireWeapon(22, 0, objNormalBusterShot, 4, 0, 1, 0))
-        {
-            xspeed = other.image_xscale * 5;
-            sprite_index = sprBassBullet;
-            image_index = 5;
-        }
+        event_user(0);
     }
 }
 </string>
