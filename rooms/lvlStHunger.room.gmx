@@ -51,7 +51,6 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objDefaultSpawn" x="1312" y="432" name="inst_D3E2D883" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingHorizontal" x="1536" y="256" name="inst_E65D4160" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="256" y="448" name="inst_BB4814FF" locked="0" code="" scaleX="81" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1264" y="208" name="inst_5FF176E1" locked="0" code="" scaleX="2" scaleY="11" colour="4294967295" rotation="0"/>
@@ -96,6 +95,8 @@
     <instance objName="objWater" x="176" y="432" name="inst_71677543" locked="0" code="" scaleX="5" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objFriedRattonSpawner" x="112" y="464" name="inst_F758EE59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFriedRattonSpawner" x="224" y="432" name="inst_A2883269" locked="0" code="yHeight = 112;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objAnaconduit" x="160" y="400" name="inst_7A448BA2" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDefaultSpawn" x="48" y="432" name="inst_773DCD92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgBasic" x="80" y="464" w="16" h="16" xo="80" yo="32" id="11324449" name="inst_6DA2CD44" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -134,8 +134,17 @@ else if (dead)
             <kind>1</kind>
             <string>with (object_index)
 {
-    image_index = 0;
-    goBonkers = false;
+    if (!dead)
+    {
+        image_index = 0;
+        goBonkers = false;
+        for (d = -1; d &lt; 2; d+= 2)
+        {
+            m = instance_create(x + (11 * d), y + 3, objSingleLoopEffect)
+            m.image_speed = 0.3;
+            m.image_xscale = d;
+        }
+    }
 }
 </string>
           </argument>

@@ -98,11 +98,18 @@ if (entityCanStep())
     {
         playSFX(sfxElectricShot);
         image_index = 2;
+        r = instance_create(x + (12 * image_xscale), y + (8 * image_yscale),
+        objSingleLoopEffect);
+        r.sprite_index = sprAnaconduitEffect;
+        r.image_speed = 0.35;
+        r.image_xscale = image_xscale;
+        r.depth = depth - 1;
         f = instance_create(x + (12 * image_xscale), y + (8 * image_yscale),
         objEnemyBullet);
         f.contactDamage = 3;
         f.sprite_index = sprAnaconduitShot;
         f.image_speed = 0.3;
+        f.depth = depth - 1;
         if (tx &gt; x &amp;&amp; image_xscale &lt; 0) || (tx &lt;= x &amp;&amp; image_xscale &gt; 0)
         {
             f.xspeed = 3 * image_xscale;

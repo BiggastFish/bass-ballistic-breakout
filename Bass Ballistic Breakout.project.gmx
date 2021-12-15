@@ -1443,6 +1443,7 @@
       <sprites name="Levels">
         <sprites name="Static Shock">
           <sprite>sprites\sprAnaconduit</sprite>
+          <sprite>sprites\sprAnaconduitEffect</sprite>
           <sprite>sprites\sprAnaconduitShot</sprite>
           <sprite>sprites\sprGesunder</sprite>
           <sprite>sprites\sprGesunderSpark</sprite>
@@ -2819,8 +2820,8 @@
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlJumpKing</room>
-    <room>rooms\lvlStHunger</room>
     <room>rooms\lvlHighwayToHell</room>
+    <room>rooms\lvlStHunger</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>
