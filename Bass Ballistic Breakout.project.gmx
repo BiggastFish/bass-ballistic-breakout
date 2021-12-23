@@ -1507,10 +1507,15 @@
           <sprite>sprites\sprHeliBatonLeaf</sprite>
           <sprite>sprites\sprHivebomb</sprite>
           <sprite>sprites\sprHivebombDebris</sprite>
+          <sprite>sprites\sprHivebombExplosion</sprite>
           <sprite>sprites\sprLumberjane</sprite>
           <sprite>sprites\sprMonkiOoAa</sprite>
           <sprite>sprites\sprMonkiOoAaPreview</sprite>
           <sprite>sprites\sprBanana</sprite>
+          <sprite>sprites\sprJuttingSpearSpawner</sprite>
+          <sprite>sprites\sprJuttingSpearSpawnerSide</sprite>
+          <sprite>sprites\sprJuttingSpear</sprite>
+          <sprite>sprites\sprJuttingSpearSide</sprite>
           <sprite>sprites\sprUmbrellone</sprite>
           <sprite>sprites\mskUmbrellone</sprite>
           <sprite>sprites\mskUmbrelloneSmall</sprite>
@@ -1556,6 +1561,7 @@
         </sprites>
         <sprites name="St. Hunger">
           <sprite>sprites\sprMeatball</sprite>
+          <sprite>sprites\sprBreadBite</sprite>
           <sprite>sprites\sprFriedRatton</sprite>
           <sprite>sprites\sprFriedRattonSpawner</sprite>
           <sprite>sprites\sprOvenPlateSwitch</sprite>
@@ -1588,7 +1594,8 @@
           <sprite>sprites\sprTakanuvaMaskShine</sprite>
         </sprites>
         <sprites name="Highway to Hell">
-          <sprite>sprites\sprDiglett</sprite>
+          <sprite>sprites\sprGasCanFire</sprite>
+          <sprite>sprites\sprGasCan</sprite>
           <sprite>sprites\sprOilManDOS</sprite>
           <sprite>sprites\sprOilMan</sprite>
           <sprite>sprites\sprOilManOilSlicer</sprite>
@@ -2709,8 +2716,11 @@
         <object>objects\objMegamind</object>
         <object>objects\objMegamindBlast</object>
         <object>objects\objMegamindDrone</object>
-        <objects name="Gimmick">
+        <objects name="Gimmicks">
           <object>objects\objHivebomb</object>
+          <object>objects\objJuttingSpearSpawner</object>
+          <object>objects\objJuttingSpearSpawnerSide</object>
+          <object>objects\objJuttingSpear</object>
         </objects>
         <objects name="Boss">
           <object>objects\objPerfuma</object>
@@ -2750,6 +2760,7 @@
       </objects>
       <objects name="St. Hunger">
         <object>objects\objMeatball</object>
+        <object>objects\objBreadBite</object>
         <object>objects\objFriedRattonSpawner</object>
         <object>objects\objFriedRatton</object>
         <object>objects\objFireBarBlock</object>
@@ -2781,6 +2792,8 @@
       </objects>
       <objects name="Highway to Hell">
         <object>objects\objOilPlatform</object>
+        <object>objects\objGasCan</object>
+        <object>objects\objGasCanFire</object>
         <objects name="Boss">
           <object>objects\objOilMan</object>
           <objects name="Projectiles">
@@ -2814,14 +2827,15 @@
     <room>rooms\lvlCollectiblesRoom</room>
     <room>rooms\lvlBGVisibilityTest</room>
     <room>rooms\lvlStaticShock</room>
-    <room>rooms\lvlLivingNightmare</room>
-    <room>rooms\lvlTowerStage2</room>
-    <room>rooms\lvlLostLight</room>
+    <room>rooms\rmLivingNightmare</room>
+    <room>rooms\rmTowerStage2</room>
+    <room>rooms\rmLostLight</room>
+    <room>rooms\rmMoneyMachineTile</room>
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlJumpKing</room>
+    <room>rooms\rmStHunger</room>
     <room>rooms\lvlHighwayToHell</room>
-    <room>rooms\lvlStHunger</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

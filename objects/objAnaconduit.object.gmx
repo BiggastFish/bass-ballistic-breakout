@@ -101,7 +101,7 @@ if (entityCanStep())
         r = instance_create(x + (12 * image_xscale), y + (8 * image_yscale),
         objSingleLoopEffect);
         r.sprite_index = sprAnaconduitEffect;
-        r.image_speed = 0.35;
+        r.image_speed = 0.3;
         r.image_xscale = image_xscale;
         r.depth = depth - 1;
         f = instance_create(x + (12 * image_xscale), y + (8 * image_yscale),

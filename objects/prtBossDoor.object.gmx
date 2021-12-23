@@ -61,12 +61,13 @@ layer = 1000000;
 
 //@cc true / false (default)
 isTile = false;
+depth = 1000000;
 
 destroyDelay = 1;
 
 //@cc how the boss door looks
-spriteIndexHorizontal = sprBetterBossDoor;
-spriteIndexVertical = sprBetterBossDoorVertical;
+spriteIndexHorizontal = sprBossDoor;
+spriteIndexVertical = sprBossDoorVertical;
 
 //@cc amount of frames in door animation
 doorAnimLength = 1;

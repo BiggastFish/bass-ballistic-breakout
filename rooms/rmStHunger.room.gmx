@@ -10,7 +10,9 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>with (objSolid) visible = 1;//playerIntro</code>
+  <code>with (objSolid) visible = true;//playerIntro
+with (objGenericStopper) objectToStop = objBreadBite;
+with (objTopSolid) visible = true;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -97,6 +99,15 @@
     <instance objName="objFriedRattonSpawner" x="224" y="432" name="inst_A2883269" locked="0" code="yHeight = 112;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objAnaconduit" x="160" y="400" name="inst_7A448BA2" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDefaultSpawn" x="48" y="432" name="inst_773DCD92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLadder" x="352" y="256" name="inst_0513B7BA" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
+    <instance objName="objLadder" x="352" y="416" name="inst_57021E57" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="336" y="240" name="inst_B42AF7A1" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLadder" x="400" y="288" name="inst_595AA448" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="objBreadBite" x="352" y="272" name="inst_9421FD5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBreadBite" x="400" y="304" name="inst_32DDD810" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGenericStopper" x="352" y="368" name="inst_B23D72B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGenericStopper" x="400" y="384" name="inst_F84DEA78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGenericStopper" x="400" y="256" name="inst_8A71E333" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgBasic" x="80" y="464" w="16" h="16" xo="80" yo="32" id="11324449" name="inst_6DA2CD44" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

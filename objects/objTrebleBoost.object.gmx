@@ -453,6 +453,7 @@ else if (global.switchingSections)
             if (i)
             {
                 i.xspeed = image_xscale * 5; // zoom
+                i.sprite_index = sprBassBullet;
             }
         }
         else if (!trebleBoostCoolDown)

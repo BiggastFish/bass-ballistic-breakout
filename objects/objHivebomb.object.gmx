@@ -104,7 +104,9 @@ playSFX(sfxExplosion)
 var xx = x, yy = y, a = -60;
 do 
 {   
-    instance_create(xx,yy,objHarmfulExplosion)
+    r = instance_create(xx, yy, objHarmfulExplosion);
+    r.sprite_index = sprHivebombExplosion;
+    r.newExplosion = false;
     a += 60
     xx = cos(degtorad(a))*26+x
     yy = -sin(degtorad(a))*26+y

@@ -163,32 +163,6 @@ if (entityCanStep())
             {
                 image_index = 2;
                 moving = true;
-                /*if (firsttime)
-                {
-                    if (dir == "h")
-                    {
-                        if (checkSolid(-4, 0, 1, 1))
-                        {
-                            startDir = 1;
-                        }
-                        else if (checkSolid(4, 0, 1, 1))
-                        {
-                            startDir = -1;
-                        }
-                    }
-                    else
-                    {
-                        if (checkSolid(0, -4, 1, 1))
-                        {
-                            startDir = 1;
-                        }
-                        else if (checkSolid(0, 4, 1, 1))
-                        {
-                            startDir = -1;
-                        }
-                    }
-                }
-                firsttime = false;*/
             }
         }
     }

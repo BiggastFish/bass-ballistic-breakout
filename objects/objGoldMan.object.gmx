@@ -159,7 +159,12 @@ if (entityCanStep())
                 {
                     phase = 1;
                     angVal = 270;
-                    targetSpot = tx;
+                    var targX = tx;
+                    if (tx &lt; view_xview + 32)
+                        targX = view_xview + 32;
+                    if (tx &gt; view_xview + view_wview - 32)
+                        targX = view_xview + view_wview - 32;
+                    targetSpot = targX;
                     flyTimer = 0;
                     dropTimer = 0;
                 }

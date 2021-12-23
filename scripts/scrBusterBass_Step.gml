@@ -46,7 +46,7 @@ if (solidTracker >= 2)
 
 with (prtEntity)
 {
-    if (place_meeting(x, y, other) && isSolid == 1)
+    if (place_meeting(x, y, other) && isSolid == 1 && !canHit && !dead)
     {
         contactingEntity[entityTracker] = self;
         entityTracker++;
@@ -77,15 +77,16 @@ var inTop = instance_place(x, y, objTopSolid);
 // delete if entirely inside solid if shot upwards
 var sol = instance_place(x, y, objSolid);
 
-// delete if inside solid entity
+// above but with entirely solid entities
 var solEnt = instance_place(x, y, prtEntity)
 
 // BIG BOY IF STATEMENT
-if (((checkSolid(0, 0) || (solEnt != noone && solEnt.isSolid == 1))
+if (((checkSolid(0, 0) || (solEnt != noone && solEnt.isSolid == 1
+&& !solEnt.dead && !solEnt.canHit))
 && xspeed != 0) || (xspeed == 0 && (sandwiched || (sol != noone 
 && rectangle_in_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom,
 sol.bbox_left, sol.bbox_top, sol.bbox_right, sol.bbox_bottom) == 1) ||
-(solEnt != noone && solEnt.isSolid == 1 && 
+(solEnt != noone && solEnt.isSolid == 1 && !solEnt.dead && !solEnt.canHit &&
 rectangle_in_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom,
 solEnt.bbox_left, solEnt.bbox_top, solEnt.bbox_right, solEnt.bbox_bottom) == 1)))
 || (yspeed > 0 && inTop != noone && bbox_top < inTop.y + 8))

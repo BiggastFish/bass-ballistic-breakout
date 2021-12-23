@@ -156,6 +156,11 @@ else if (dead)
             <kind>1</kind>
             <string>if (phase &lt; 3)
 {
+    if (iceTimer &gt; 0)
+    {
+        iceTimer = 1;
+        entityHandleIced();
+    }
     playSFX(sfxEnemyDrop2);
     phase = 3;
     yspeed = -2;
@@ -163,6 +168,7 @@ else if (dead)
     timer = 0;
     image_index = 4;
     canHit = false;
+    
 }
 else
 {
