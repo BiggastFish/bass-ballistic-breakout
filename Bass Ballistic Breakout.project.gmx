@@ -870,6 +870,7 @@
         <sprite>sprites\sprBlockySpray</sprite>
         <sprite>sprites\sprBlockySprayGray</sprite>
         <sprite>sprites\sprCarrot</sprite>
+        <sprite>sprites\sprCroaker</sprite>
         <sprite>sprites\sprFanFiend</sprite>
         <sprite>sprites\sprHotDogFire</sprite>
         <sprite>sprites\sprMM2SniperJoe</sprite>
@@ -1594,6 +1595,7 @@
           <sprite>sprites\sprTakanuvaMaskShine</sprite>
         </sprites>
         <sprites name="Highway to Hell">
+          <sprite>sprites\sprTerrordactyl</sprite>
           <sprite>sprites\sprGasCanFire</sprite>
           <sprite>sprites\sprGasCan</sprite>
           <sprite>sprites\sprOilManDOS</sprite>
@@ -1792,6 +1794,7 @@
       <script>scripts\distanceToSolid.gml</script>
       <script>scripts\collisionRectangleList.gml</script>
       <script>scripts\collisionLineList.gml</script>
+      <script>scripts\collisionLinePoint.gml</script>
       <script>scripts\checkFall.gml</script>
       <script>scripts\collisionRectangleFirst.gml</script>
       <script>scripts\collisionLineFirst.gml</script>
@@ -2759,6 +2762,7 @@
         </objects>
       </objects>
       <objects name="St. Hunger">
+        <object>objects\objJumpJoe</object>
         <object>objects\objMeatball</object>
         <object>objects\objBreadBite</object>
         <object>objects\objFriedRattonSpawner</object>
@@ -2791,6 +2795,8 @@
         </objects>
       </objects>
       <objects name="Highway to Hell">
+        <object>objects\objTerrordactyl</object>
+        <object>objects\objFuseFrog</object>
         <object>objects\objOilPlatform</object>
         <object>objects\objGasCan</object>
         <object>objects\objGasCanFire</object>
@@ -2834,8 +2840,8 @@
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlJumpKing</room>
-    <room>rooms\rmStHunger</room>
     <room>rooms\lvlHighwayToHell</room>
+    <room>rooms\lvlStHunger</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

@@ -88,6 +88,7 @@ floatPopup = noone;
 // if true, non-specific attacks won't hurt it, only causing 0 for damage popups
 undamageable = false;
 killObj[0] = objExplosion;
+actuallyKill = true; // set to false if the kill objects do something else other than trigger default death event
 
 respawnRange = 4; //@cc distance beyond edge of view at which entity spawns if dead. Set to -1 to make infinite
 despawnRange = 4; //@cc distance beyond edge of view at which entity despawns if alive. set to -1 to make infinite
@@ -572,7 +573,7 @@ if (undamageable)
     {
         if (other.object_index == killObj[l])
         {
-            if (object_index != objHivebomb) event_user(EV_DEATH);
+            if (actuallyKill) event_user(EV_DEATH);
             exit;
         }
     }
