@@ -929,7 +929,6 @@
         <sprite>sprites\sprTwinRoaderBlue</sprite>
         <sprite>sprites\sprTwinRoaderGreen</sprite>
         <sprite>sprites\sprTwinRoaderOrange</sprite>
-        <sprite>sprites\sprFireTellyShot</sprite>
       </sprites>
       <sprites name="Misc.">
         <sprite>sprites\sprBirdy</sprite>
@@ -1586,6 +1585,9 @@
           <sprite>sprites\sprCirnoIceBall</sprite>
         </sprites>
         <sprites name="Lost Light">
+          <sprite>sprites\sprMantis</sprite>
+          <sprite>sprites\sprMantisBlade</sprite>
+          <sprite>sprites\sprMantisBladeHurt</sprite>
           <sprite>sprites\sprTakanuva</sprite>
           <sprite>sprites\sprTakanuvaSlash</sprite>
           <sprite>sprites\sprTakanuvaKolhii</sprite>
@@ -1596,6 +1598,8 @@
         </sprites>
         <sprites name="Highway to Hell">
           <sprite>sprites\sprTerrordactyl</sprite>
+          <sprite>sprites\sprOilFrogBubble</sprite>
+          <sprite>sprites\mskOilFrogBubble</sprite>
           <sprite>sprites\sprGasCanFire</sprite>
           <sprite>sprites\sprGasCan</sprite>
           <sprite>sprites\sprOilManDOS</sprite>
@@ -1607,7 +1611,7 @@
           <sprite>sprites\sprOilPlatform</sprite>
           <sprite>sprites\mskOilPlatform</sprite>
         </sprites>
-        <sprites name="Demon Inside Me">
+        <sprites name="Darkness Rising">
           <sprite>sprites\sprHangedMan</sprite>
           <sprites name="Projectiles">
             <sprite>sprites\sprHangedManBatSon</sprite>
@@ -2628,6 +2632,8 @@
       <object>objects\objTrailEffect</object>
       <object>objects\objBackgroundFilter</object>
       <object>objects\objStopScrollingMaker</object>
+      <object>objects\objRotatingPlatform</object>
+      <object>objects\objBigFish_Flopper</object>
       <objects name="Weapons">
         <object>objects\objBusterShot</object>
         <object>objects\objBusterShotHalfCharged</object>
@@ -2783,7 +2789,7 @@
           </objects>
         </objects>
       </objects>
-      <objects name="Demon Inside Me">
+      <objects name="Darkness Rising">
         <objects name="Boss">
           <object>objects\objHangedManIntro</object>
           <object>objects\objHangedMan</object>
@@ -2796,7 +2802,8 @@
       </objects>
       <objects name="Highway to Hell">
         <object>objects\objTerrordactyl</object>
-        <object>objects\objFuseFrog</object>
+        <object>objects\objOilFrogBubble</object>
+        <object>objects\objOilFrog</object>
         <object>objects\objOilPlatform</object>
         <object>objects\objGasCan</object>
         <object>objects\objGasCanFire</object>
@@ -2811,6 +2818,9 @@
         </objects>
       </objects>
       <objects name="Lost Light">
+        <object>objects\objMantis</object>
+        <object>objects\objMantisBlade</object>
+        <object>objects\objMantisBladeHurt</object>
         <object>objects\objSummonedSwordSpawner</object>
         <object>objects\objSummonedSword</object>
         <object>objects\objTakanuva</object>
@@ -2835,13 +2845,13 @@
     <room>rooms\lvlStaticShock</room>
     <room>rooms\rmLivingNightmare</room>
     <room>rooms\rmTowerStage2</room>
-    <room>rooms\rmLostLight</room>
     <room>rooms\rmMoneyMachineTile</room>
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlJumpKing</room>
     <room>rooms\lvlHighwayToHell</room>
     <room>rooms\lvlStHunger</room>
+    <room>rooms\lvlLostLight</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>
