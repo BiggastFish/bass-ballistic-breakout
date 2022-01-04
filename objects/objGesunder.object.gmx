@@ -89,7 +89,7 @@ if (entityCanStep())
                     balls++;
                     for (i = -1; i &lt;= 2; i+= 2)
                     {
-                        e = instance_create(x, y + 11 * image_yscale, 
+                        e = instance_create(x, y + (11 * image_yscale), 
                         objGesunderSpark);
                         e.dir = i;
                     }

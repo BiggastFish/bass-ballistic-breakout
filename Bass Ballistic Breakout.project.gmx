@@ -1454,6 +1454,10 @@
           <sprite>sprites\sprChuckP</sprite>
           <sprite>sprites\sprChuckPRock</sprite>
           <sprite>sprites\sprBossDoorStaticShock</sprite>
+          <sprite>sprites\sprArachnaroid</sprite>
+          <sprite>sprites\sprArachnaroidWeb</sprite>
+          <sprite>sprites\sprArachnaroidFuse</sprite>
+          <sprite>sprites\sprArachnaroidFuseSide</sprite>
           <sprites name="Boss">
             <sprite>sprites\sprBuzzshock</sprite>
             <sprite>sprites\sprBuzzshockEV73Shot</sprite>
@@ -1561,6 +1565,7 @@
         </sprites>
         <sprites name="St. Hunger">
           <sprite>sprites\sprMeatball</sprite>
+          <sprite>sprites\sprMeatballTrail</sprite>
           <sprite>sprites\sprBreadBite</sprite>
           <sprite>sprites\sprFriedRatton</sprite>
           <sprite>sprites\sprFriedRattonSpawner</sprite>
@@ -2679,6 +2684,9 @@
         <object>objects\objChuckP</object>
         <object>objects\objChuckPRock</object>
         <object>objects\objMeanGoblin</object>
+        <object>objects\objArachnaroid</object>
+        <object>objects\objArachnaroidWeb</object>
+        <object>objects\objArachnaroidFuse</object>
         <objects name="Boss">
           <object>objects\objBuzzshock</object>
           <object>objects\objBuzzshockEV73</object>
@@ -2770,6 +2778,7 @@
       <objects name="St. Hunger">
         <object>objects\objJumpJoe</object>
         <object>objects\objMeatball</object>
+        <object>objects\objMeatballTrail</object>
         <object>objects\objBreadBite</object>
         <object>objects\objFriedRattonSpawner</object>
         <object>objects\objFriedRatton</object>

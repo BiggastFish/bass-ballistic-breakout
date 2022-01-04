@@ -29,7 +29,6 @@
 
 contactDamage = 3;
 grav = 0;
-affectHud = false;
 blockCollision = false;
 parent = noone;
 
