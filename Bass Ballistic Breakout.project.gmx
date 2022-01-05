@@ -1456,6 +1456,7 @@
           <sprite>sprites\sprBossDoorStaticShock</sprite>
           <sprite>sprites\sprArachnaroid</sprite>
           <sprite>sprites\sprArachnaroidWeb</sprite>
+          <sprite>sprites\sprArachnaroidFloor</sprite>
           <sprite>sprites\sprArachnaroidFuse</sprite>
           <sprite>sprites\sprArachnaroidFuseSide</sprite>
           <sprites name="Boss">
@@ -2687,6 +2688,7 @@
         <object>objects\objArachnaroid</object>
         <object>objects\objArachnaroidWeb</object>
         <object>objects\objArachnaroidFuse</object>
+        <object>objects\objArachnaroidFloor</object>
         <objects name="Boss">
           <object>objects\objBuzzshock</object>
           <object>objects\objBuzzshockEV73</object>
@@ -2858,9 +2860,9 @@
     <room>rooms\lvlMoneyMachine</room>
     <room>rooms\lvlWhisperingWoods</room>
     <room>rooms\lvlJumpKing</room>
-    <room>rooms\lvlHighwayToHell</room>
     <room>rooms\lvlStHunger</room>
-    <room>rooms\lvlLostLight</room>
+    <room>rooms\rmHighwayToHell</room>
+    <room>rooms\rmLostLight</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

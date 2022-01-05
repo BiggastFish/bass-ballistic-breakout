@@ -647,7 +647,7 @@ if (entityCanStep())
                     if (instance_exists(batSon[0]))
                     {
                         if (batTimer &gt;= 60 &amp;&amp; batTimer &lt;= 80 &amp;&amp;
-                        batTimer % 10 == 0)
+                        batTimer mod 10 == 0)
                         {
                             playSFX(sfxBalladeShoot);
                             for (i = -1; i &lt; 2; i+= 2)
@@ -672,7 +672,7 @@ if (entityCanStep())
                     {
                         if (batTimer &gt;= 50)
                             if (yspeed &gt; -4)
-                                yspeed-= .5;
+                                yspeed-= 0.5;
                         if (bbox_bottom &lt;= view_yview)
                         {
                             image_index = 4;

@@ -29,7 +29,7 @@
 
 healthpointsStart = 64;
 healthpoints = healthpointsStart;
-canDamage = false;
+contactDamage = 3;
 despawnRange = -1;
 respawnRange = -1;
 affectHud = false;
@@ -84,28 +84,26 @@ if (entityCanStep())
         case 1: image_blend = make_color_rgb(240, 184, 56) break;
         case 2: image_blend = make_color_rgb(88, 248, 152) break;
     }
-    if (whipped &amp;&amp; image_index &lt; 2)
+    
+    if (!whipped)
     {
         canHit = true;
-        image_index+= 0.25;
-    }
-    else if (image_index &gt; 0)
-    {
-        image_index+= 0.25;
-        canHit = false;
+        visible = true;
+        if (image_index &lt; 2) image_index+= 0.25;
     }
     if (instance_exists(parent))
     {
         x = parent.x;
         if (parent.bbox_top &gt; y)
-        {
-            visible = true;
             image_yscale = parent.bbox_top - y;
-        }
-        else
+        if (!whipped &amp;&amp; image_index == 2 &amp;&amp; parent.helloPeter == 3)
         {
-            visible = false;
-            canHit = false;
+            with (parent)
+            {
+                image_index = 0;
+                grav = 0;
+                yspeed = -3;
+            }
         }
     }
     else
@@ -140,15 +138,44 @@ if (entityCanStep())
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (other.object_index == objYamato)
+            <string>if (other.object_index == objYamato &amp;&amp; !whipped)
 {
     event_inherited();
-    canDamage = false;
+    visible = false;
+    image_index = 0;
+    canHit = false;
     whipped = true;
+    with (parent)
+    {
+        var actuallySave = true;
+        if (helloPeter != 3)
+            savePeter = helloPeter;
+        if (helloPeter &gt; 1)
+            actuallySave = false;
+        if (savePeter == 2)
+            savePeter = 1;
+        helloPeter = 3;
+        imSpiderman = 0;
+        if (!ground)
+        {
+            playSFX(sfxEnemyDrop);
+            image_index = 1;
+            if (savePeter == 0) 
+                lastY = ystart;
+            else if (savePeter == 1 &amp;&amp; actuallySave)
+                lastY = y;
+            if (xspeed != 0) saveXSpd = xspeed;
+            if (yspeed != 0) saveYSpd = yspeed;
+            xspeed = 0;
+            yspeed = -3;
+            imStuff = 2;
+            grav = 0.25;
+        }
+    }
 }
 else
 {
-    other.guardCancel = 4;
+    other.guardCancel = 2;
 }
 </string>
           </argument>

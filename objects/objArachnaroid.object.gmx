@@ -40,9 +40,11 @@ useEndStageBehavior = false;
 imStuff = 0;
 imSpiderman = 0;
 helloPeter = 0;
-lastY = y;
+lastY = ystart;
 saveXSpd = 0;
 saveYSpd = 0;
+savePeter = 0;
+web = noone;
 
 // Music
 music = "MM8MiniBoss.ogg";
@@ -56,7 +58,6 @@ musicLoopSecondsEnd = 44.978;
 // Damage Tables
 enemyDamageValue(objBusterShotHalfCharged, 1);
 enemyDamageValue(objBusterShotCharged, 3);
-enemyDamageValue(objYamato, 3);
 enemyDamageValue(objKnuckleSandwich, 10);
 </string>
           </argument>
@@ -143,7 +144,7 @@ if (entityCanStep())
         {
             case 0: // fuse shots
                 if (!mp_linear_step(x, ystart, 2, 0))
-                    imSpiderman = 0;
+                    imSpiderman = -16;
                 else
                 {
                     y = ystart;
@@ -160,7 +161,7 @@ if (entityCanStep())
                     r.firstPart = true;
                     imStuff++;
                 }
-                if (imSpiderman == 112)
+                if (imSpiderman == 96)
                 {
                     if (imStuff &lt; 2)
                         imStuff++;
@@ -191,12 +192,17 @@ if (entityCanStep())
                         saveXSpd = xspeed;
                         xspeed = 0;
                         saveYSpd = yspeed;
-                        yspeed = 4;
+                        yspeed = 0;
                         lastY = y;
                         imStuff = 1;
-                        helloPeter = 2;
+                        imSpiderman = 24;
                         image_index = 2;
                     }
+                }
+                if (imStuff == 1 &amp;&amp; imSpiderman == 36)
+                {
+                    yspeed = 4;
+                    helloPeter = 2;
                 }
                 if (imSpiderman &gt; 16 &amp;&amp; 
                 (xspeed &gt; 0 &amp;&amp; x &gt;= lastX 
@@ -214,34 +220,21 @@ if (entityCanStep())
                 {
                     playSFX(sfxSola0Shoot);
                     image_index = 1;
+                    m = instance_create(view_xview + 16, bbox_bottom - 8,
+                    objArachnaroidFloor);
+                    m.image_xscale = 14;
+                    m.depth = depth + 1;
+                    imStuff = 2;
                 }
                 if (ground)
                 {
-                    if (imStuff &lt; 4)
+                    if (imSpiderman &gt;= 80 &amp;&amp; imSpiderman &lt; 144
+                    &amp;&amp; imSpiderman mod 4 == 0)
+                        image_index = !image_index;
+                    if (imSpiderman &gt;= 144)
                     {
-                        if (imSpiderman &gt;= 5)
-                        {
-                            imStuff++;
-                            for (i = -1; i &lt;= 2; i+= 2)
-                            {
-                                e = instance_create(x, y + 20,
-                                objGesunderSpark);
-                                e.dir = i;
-                            }
-                            if (imStuff == 4) image_index = 1;
-                            imSpiderman = 0;
-                        }
-                    }
-                    else
-                    {
-                        if (imSpiderman &gt;= 64 &amp;&amp; imSpiderman &lt; 96 
-                        &amp;&amp; imSpiderman mod 4 == 0)
-                            image_index = !image_index;
-                        if (imSpiderman == 96)
-                        {
-                            image_index = 0;
-                            yspeed = -3;
-                        }
+                        image_index = 0;
+                        yspeed = -3;
                     }
                 }
                 if (yspeed &lt; 0 &amp;&amp; y &lt;= lastY)
@@ -251,6 +244,50 @@ if (entityCanStep())
                     y = lastY;
                     helloPeter = 1;
                     imSpiderman = 24;
+                }
+                break;
+            case 3: // whoopsie
+                if (ycoll &gt; 0)
+                {
+                    if (imStuff &lt; 3)
+                    {
+                        playSFX(sfxEnemyHit);
+                        event_user(EV_HURT);
+                        healthpoints-= 12;
+                        if (healthpoints &lt;= 12)
+                            event_user(EV_DEATH);
+                        imStuff = 3;
+                        yspeed = -2;
+                    }
+                    playSFX(sfxBikkyLand);
+                    imSpiderman = 0;
+                }
+                if (ground)
+                {
+                    if (imSpiderman == 48)
+                    {
+                        with (web)
+                        {
+                            whipped = false;
+                        }
+                    }
+                }
+                if (yspeed &lt; 0 &amp;&amp; grav == 0 &amp;&amp; y &lt;= lastY)
+                {
+                    helloPeter = savePeter;
+                    y = lastY;
+                    if (savePeter == 1)
+                    {
+                        xspeed = saveXSpd;
+                        yspeed = saveYSpd;
+                        imSpiderman = 24;
+                    }
+                    else
+                    {
+                        yspeed = 0;
+                        imSpiderman = -16;
+                        imStuff = 0;
+                    }
                 }
                 break;
         }
