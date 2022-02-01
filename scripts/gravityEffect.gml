@@ -15,14 +15,19 @@ if (!ground)
     if (inWater)
     {
         yspeed += waterGrav;
+        if (yspeed * sign(grav) > maxWaterGrav)
+        {
+            yspeed = maxWaterGrav * sign(grav);
+        }
     }
     else
     {
         yspeed += grav;
+        if (yspeed * sign(grav) > maxGrav)
+        {
+            yspeed = maxGrav * sign(grav);
+        }
     }
     
-    if (yspeed * sign(grav) > 7)
-    {
-        yspeed = 7 * sign(grav);
-    }
+    
 }

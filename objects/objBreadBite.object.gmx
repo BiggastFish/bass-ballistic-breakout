@@ -60,9 +60,9 @@ eat = 0;
 
 if (entityCanStep())
 {
+    var climbie = instance_place(x, y, objLadder);
     if (!munchin)
     {
-        var climbie = instance_place(x, y, objLadder)
         if (climbie != noone)
         {
             with (target)
@@ -89,8 +89,15 @@ if (entityCanStep())
                 playSFX(sfxRushCycle2);
                 yspeed = 3;
             }
-            if (ycoll &gt; 0)
+            if (climbie != noone &amp;&amp; rectangle_in_rectangle(bbox_left, 
+            bbox_top, bbox_right, bbox_bottom, climbie.bbox_left, 
+            climbie.bbox_top, climbie.bbox_right, climbie.bbox_bottom) != 1)
             {
+                do { y--; }
+                until (rectangle_in_rectangle(bbox_left, 
+                bbox_top, bbox_right, bbox_bottom, climbie.bbox_left, 
+                climbie.bbox_top, climbie.bbox_right, climbie.bbox_bottom) == 1);
+                yspeed = 0;
                 munchin = 2;
                 eat = 0;
             }

@@ -2,7 +2,7 @@
 <room>
   <caption></caption>
   <width>2560</width>
-  <height>672</height>
+  <height>2240</height>
   <vsnap>16</vsnap>
   <hsnap>16</hsnap>
   <isometric>0</isometric>
@@ -11,7 +11,6 @@
   <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>with (objSolid) visible = true;//playerIntro
-with (objGenericStopper) objectToStop = objBreadBite;
 with (objTopSolid) visible = true;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -62,7 +61,7 @@ with (objTopSolid) visible = true;</code>
     <instance objName="objBossDoor" x="1536" y="384" name="inst_48DA02E0" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objRightScrolling" x="1536" y="256" name="inst_713EFA17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHotDogMan" x="1744" y="432" name="inst_CE5EC40C" locked="0" code="elementName = &quot;sandwich&quot;&#xA;elementCode = &quot;weaponReward(objKnuckleSandwich)&quot;;&#xA;" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objOvenPlate" x="1360" y="400" name="inst_1F138400" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objOvenPlate" x="16" y="1312" name="inst_1F138400" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objOvenPlate" x="1312" y="336" name="inst_AA03B6C5" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objOvenPlateHandler" x="1392" y="272" name="inst_E17E24A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objOvenPlateSwitch" x="1456" y="336" name="inst_ED48E2D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -98,7 +97,6 @@ with (objTopSolid) visible = true;</code>
     <instance objName="objFriedRattonSpawner" x="368" y="464" name="inst_F758EE59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFriedRattonSpawner" x="480" y="432" name="inst_A2883269" locked="0" code="yHeight = 112;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objAnaconduit" x="416" y="400" name="inst_7A448BA2" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDefaultSpawn" x="16" y="336" name="inst_773DCD92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="608" y="256" name="inst_0513B7BA" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="608" y="416" name="inst_57021E57" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="592" y="240" name="inst_B42AF7A1" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
@@ -111,6 +109,29 @@ with (objTopSolid) visible = true;</code>
     <instance objName="objJumpJoe" x="176" y="352" name="inst_2A1497B8" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="96" y="352" name="inst_74C2C1DC" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="0" y="352" name="inst_9599C457" locked="0" code="" scaleX="2" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="0" y="1200" name="inst_F5372921" locked="0" code="" scaleX="1" scaleY="29" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="240" y="1456" name="inst_A317531A" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="0" y="1664" name="inst_9CB3B58F" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="32" y="1424" name="inst_DDD4ED9A" locked="0" code="" scaleX="20" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objLadder" x="96" y="1456" name="inst_48A14583" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
+    <instance objName="objStopScrollingNES" x="256" y="1440" name="inst_0E0CED57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLadder" x="16" y="1424" name="inst_1009C4CD" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
+    <instance objName="objDefaultSpawn" x="192" y="1648" name="inst_3A72C955" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="16" y="1536" name="inst_0DF0ADE9" locked="0" code="" scaleX="3" scaleY="8" colour="4294967295" rotation="0"/>
+    <instance objName="objOvenPlateSwitch" x="64" y="1376" name="inst_BF966943" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objOvenPlate" x="96" y="1408" name="inst_D801FA6E" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBoltSmall" x="32" y="1296" name="inst_C4C8B697" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBoltSmall" x="16" y="1296" name="inst_30D82A46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="416" y="1296" name="inst_E618C6E8" locked="0" code="" scaleX="4" scaleY="9" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="512" y="1360" name="inst_2C7ECF44" locked="0" code="" scaleX="2" scaleY="5" colour="4294967295" rotation="0"/>
+    <instance objName="objOvenPlateHandler" x="176" y="1312" name="inst_2C8F4911" locked="0" code="turnItMax = 360;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="16" y="1200" name="inst_D9BD4781" locked="0" code="" scaleX="20" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="288" y="1216" name="inst_7756CAF4" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLadder" x="304" y="1232" name="inst_A8214972" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
+    <instance objName="objBreadBite" x="304" y="1248" name="inst_B10C98E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBreadBite" x="96" y="1472" name="inst_1A88EA88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objVerticalScrolling" x="0" y="1440" name="inst_B4578BDE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="352" y="1424" name="inst_37567851" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgBasic" x="336" y="464" w="16" h="16" xo="80" yo="32" id="11324449" name="inst_6DA2CD44" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

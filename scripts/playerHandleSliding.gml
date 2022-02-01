@@ -16,9 +16,10 @@ if (dashTimer > 0)
 if ((global.keyLeftPressed[playerID] || global.keyRightPressed[playerID]) 
 && xDir != 0 && global.dashBehavior && !isSlide && (ground || climbing))
 {
-    dashTimer+= 10;
-    if (dashTimer > 10 && dashTimer < 20)
+    if ((climbing && dashTimer < 20) || ground) dashTimer+= 10;
+    if (dashTimer > 10 && dashTimer < 20 || dashTimer > 30)
     {
+        if (climbing) playSFX(sfxHomingSniperLock);
         dashTimer = 30;
     }
 }
@@ -34,7 +35,7 @@ if (global.enableSlide && !playerIsLocked(PL_LOCK_SLIDE))
     var keyPressed = (global.keySlidePressed[playerID] && global.dashBehavior != 1) 
     || (global.dashBehavior && (global.keyLeftPressed[playerID] || global.keyRightPressed[playerID]) 
     && xDir != 0 && dashTimer > 20);
-    
+
     // begin new slide
     if (ground && !isSlide && statusSliding && keyPressed)
     {
@@ -63,7 +64,8 @@ if (global.enableSlide && !playerIsLocked(PL_LOCK_SLIDE))
                 localPlayerLock[PL_LOCK_SHOOT]);
             
             // create slide dust particles
-            with (instance_create(x + (abs(x - bbox_right) - 2) * sign(image_xscale), y + (abs(y - bbox_bottom) - 2) * sign(image_yscale), objSlideDust))
+            with (instance_create(x + (abs(x - bbox_right) - 14) * sign(image_xscale), 
+            y + (abs(y - bbox_bottom) - 2) * sign(image_yscale), objSlideDust))
             {
                 image_xscale = other.image_xscale;
             }
@@ -198,10 +200,11 @@ if (!isSlide)
     slideChargeLock = lockPoolRelease(slideChargeLock);
 }
 
-if ((isSlide || dashJumped) && !climbing && !isHit)
+if (((isSlide || dashJumped) && !isHit) || dashTimer == 30)
 {
     trailTimer++;
-    if (trailTimer >= 3 && (trailTimer - 3) mod 5 == 0)
+    if ((trailTimer >= 3 && (trailTimer - 3) mod 5 == 0)
+    || dashTimer == 30)
     {
         var col = global.secondaryCol[playerID];
         switch (global.weaponName[global.weapon[playerID]])
@@ -228,6 +231,7 @@ if ((isSlide || dashJumped) && !climbing && !isHit)
         a.image_xscale = image_xscale;
         a.image_yscale = image_yscale;
         a.image_alpha = 0.4;
+        if (climbing) a.depth = depth - 5;
     }
 }
 else

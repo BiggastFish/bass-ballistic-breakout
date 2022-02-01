@@ -1675,6 +1675,8 @@
         <sprite>sprites\sprBossHealthHud</sprite>
         <sprite>sprites\sprBetterBossDoor</sprite>
         <sprite>sprites\sprBetterBossDoorVertical</sprite>
+        <sprite>sprites\sprInUniverse_SMB3Acid</sprite>
+        <sprite>sprites\sprInUniverse_SMB3AcidReverse</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -2846,6 +2848,7 @@
         <object>objects\objCirno</object>
         <object>objects\objCirnoCircleSpike</object>
       </objects>
+      <object>objects\objInUniverse_AcidWaves</object>
     </objects>
   </objects>
   <rooms name="rooms">

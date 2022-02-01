@@ -100,8 +100,6 @@ if (!global.frozen)
     
     if (ground)
     {
-        canDamage = 0;
-        canHit = 0;
         xspeed = 0;
     }
     

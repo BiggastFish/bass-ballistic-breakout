@@ -11,8 +11,8 @@
   <colour>32896</colour>
   <showcolour>-1</showcolour>
   <code>with (objBossDoor) spriteIndexHorizontal = sprBossDoorStaticShock;
-tile_layer_hide(1000020);
-tile_layer_hide(1000035);
+tile_layer_hide(1000020); // playerHandleJumping
+tile_layer_hide(1000035); // playerHandleSliding
 if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
 {
     with (objBackgroundFilter)
@@ -324,6 +324,7 @@ if (global.checkpointX == -1 &amp;&amp; global.checkpointY == -1)
     <instance objName="objSolid" x="6192" y="864" name="inst_D1B02B25" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="6080" y="896" name="inst_397043C7" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBuzzshockEV73" x="7600" y="864" name="inst_2A6936BD" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTracker" x="304" y="528" name="inst_46ACA866" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tstStaticShockReal" x="656" y="672" w="16" h="16" xo="176" yo="96" id="11313369" name="inst_2091433E" depth="1000040" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

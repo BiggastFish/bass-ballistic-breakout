@@ -123,9 +123,10 @@ if (place_free(x, y))
         if (place_free(x, y + cgrav * _i)) // There is nothing solid below us?
         {
             ground = false;
-            if object_index == (objMegaman)
+            if (object_index == objMegaman)
             {
-                if jumpCounter = 0
+                
+                if jumpCounter == 0
                 {
                     jumpCounter += 1;
                     if isSlide
@@ -137,6 +138,7 @@ if (place_free(x, y))
         }
         else if (yspeed * cgrav >= 0) // There is something solid below us! Lower position to stay grounded if necessary
         {
+            if (object_index == objMegaman) coyoteTime = 0;
             ground = true;
             y += cgrav * (_i - 1);
             break;

@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>useManOp = 1;
+            <string>useManOp = true;
 opac = 0.3;
 </string>
           </argument>

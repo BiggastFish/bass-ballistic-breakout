@@ -27,10 +27,11 @@
             <kind>1</kind>
             <string>if instance_exists(objMegaman)
 {
-    draw_text(view_xview + 48, view_yview + 16, objMegaman.jumpCounter);
-    draw_text(view_xview + 48, view_yview + 32, objMegaman.jumpCounterMax);
-    draw_text(view_xview + 48, view_yview + 48, objMegaman.dashJumped);
-}
+    draw_text(view_xview + 48, view_yview + 32, objMegaman.jumpCounter);
+    draw_text(view_xview + 48, view_yview + 48, objMegaman.trailTimer);
+    draw_text(view_xview + 48, view_yview + 64, objMegaman.dashJumped);
+    draw_text(view_xview + 48, view_yview + 80, objMegaman.coyoteTime);
+} // playerHandleJumping
 </string>
           </argument>
         </arguments>

@@ -297,7 +297,6 @@
     <instance objName="objSolid" x="3696" y="736" name="inst_E0A4747C" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJuttingSpearSpawner" x="4992" y="1152" name="inst_C35CBF3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objJuttingSpearSpawner" x="5008" y="1152" name="inst_2F09D7DE" locked="0" code="shootStart = 40;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="1600" y="688" name="inst_7F69B7C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1488" y="560" name="inst_2BF220A7" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="1424" y="640" name="inst_2E28170A" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBoltSmall" x="1504" y="544" name="inst_915FF853" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

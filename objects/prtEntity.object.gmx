@@ -102,6 +102,8 @@ bubbleTimer = 0;
 xspeed = 0;
 yspeed = 0;
 grav = 0.25;
+maxGrav = 7;
+maxWaterGrav = 4;
 ground = true;
 
 // should the movement scripts block this object's movement at walls? If false, this object will be able to phase through walls.
