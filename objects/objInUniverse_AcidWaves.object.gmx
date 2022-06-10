@@ -38,6 +38,8 @@ flatMod = 0;
 waveAmp = 80;
 //how many columns of waves in one object
 multip = 1;
+//what sprite to use for the waves
+sprIndex = sprite_index;
 
 //array code, act and waveTimer isn't cc-able;
 for (m = 0; m &lt;= multip; m++)
@@ -144,9 +146,11 @@ for (var b = 0/*max(0, round(view_xview - x))*/; b &lt; vatLength; b++;)
         //bubbly surface
         /*for (var i = 0; i &lt; multip; i++)
         {*/
-            var left = modf((b mod 16) - act[d], 15);
-            draw_sprite_part(sprite_index, imgIndex[d], left, 0,
-                1, 32, view_xview + b, round(y + (yOffset[d] * d) + u[d]));
+            var left = modf((b mod sprite_get_width(sprIndex)) - act[d], 
+            sprite_get_width(sprIndex) - 1);
+            draw_sprite_part(sprIndex, imgIndex[d], left, 0,
+                1, sprite_get_height(sprIndex), view_xview + b, 
+                round(y + (yOffset[d] * d) + u[d]));
         //}
     }
     /*else    

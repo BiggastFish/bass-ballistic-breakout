@@ -1283,6 +1283,7 @@
       <sprite>sprites\sprScrollingDown</sprite>
       <sprite>sprites\sprScrollingUp</sprite>
       <sprite>sprites\sprScrollingVertical</sprite>
+      <sprite>sprites\sprVerticalScrolling288</sprite>
       <sprite>sprites\sprSoftSectionHor</sprite>
       <sprite>sprites\sprSoftSectionVer</sprite>
       <sprite>sprites\sprSectionArrowUpBig</sprite>
@@ -1452,6 +1453,7 @@
           <sprite>sprites\sprHydroallSpout</sprite>
           <sprite>sprites\sprMeanGoblin</sprite>
           <sprite>sprites\sprChuckP</sprite>
+          <sprite>sprites\sprBatteryAssaulter</sprite>
           <sprite>sprites\sprChuckPRock</sprite>
           <sprite>sprites\sprBossDoorStaticShock</sprite>
           <sprite>sprites\sprArachnaroid</sprite>
@@ -1565,8 +1567,9 @@
           </sprites>
         </sprites>
         <sprites name="St. Hunger">
-          <sprite>sprites\sprMeatball</sprite>
-          <sprite>sprites\sprMeatballTrail</sprite>
+          <sprite>sprites\sprKetchup</sprite>
+          <sprite>sprites\mskKetchup</sprite>
+          <sprite>sprites\sprKetchupShot</sprite>
           <sprite>sprites\sprBreadBite</sprite>
           <sprite>sprites\sprFriedRatton</sprite>
           <sprite>sprites\sprFriedRattonSpawner</sprite>
@@ -1685,6 +1688,7 @@
     <backgrounds name="QuadrantSize">
       <background>background\bgQuadMM1_6</background>
       <background>background\bgQuadMM9_10</background>
+      <background>background\bgQuad288x240</background>
       <background>background\bgQuad400x240</background>
       <background>background\bgQuad400x224</background>
     </backgrounds>
@@ -2037,6 +2041,8 @@
       <script>scripts\drawSpriteCropped.gml</script>
       <script>scripts\makeStruct.gml</script>
       <script>scripts\placeHolderAccessibility.gml</script>
+      <script>scripts\queuePause.gml</script>
+      <script>scripts\queueUnpause.gml</script>
     </scripts>
     <scripts name="Misc.">
       <scripts name="Saving">
@@ -2518,6 +2524,7 @@
       <object>objects\objLeftScrollingNES</object>
       <object>objects\objHorizontalScrollingNES</object>
       <object>objects\objVerticalScrolling</object>
+      <object>objects\objVerticalScrolling288</object>
       <object>objects\objSectionFreeVerticalScrolling</object>
       <object>objects\objSoftBorderHor</object>
       <object>objects\objSoftBorderVer</object>
@@ -2781,7 +2788,7 @@
       </objects>
       <objects name="St. Hunger">
         <object>objects\objJumpJoe</object>
-        <object>objects\objMeatball</object>
+        <object>objects\objKetchup</object>
         <object>objects\objMeatballTrail</object>
         <object>objects\objBreadBite</object>
         <object>objects\objFriedRattonSpawner</object>

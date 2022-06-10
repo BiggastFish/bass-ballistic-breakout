@@ -69,7 +69,7 @@ if (entityCanStep())
     if (!waitTimer)
         image_index+= 0.3;
     
-    if (floor(image_index) = 4 &amp;&amp; !hasFired)
+    if (floor(image_index) == 4 &amp;&amp; !hasFired)
     {
         hasFired = 1;
         f = instance_create(x - (image_xscale * 10), y - 5, objChuckPRock);

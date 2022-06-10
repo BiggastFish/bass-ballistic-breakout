@@ -29,13 +29,7 @@
 
 blockCollision = 0;
 
-respawn = false;
-
-healthpointsStart = 1;
-healthpoints = healthpointsStart;
 contactDamage = 3;
-
-dead = false;
 
 yspeed = -5;
 
@@ -43,8 +37,6 @@ if (instance_exists(target))
 {
     xspeed = xSpeedAim(x, y, target.x, target.y, yspeed, grav);
 }
-
-explod = false;
 </string>
           </argument>
         </arguments>

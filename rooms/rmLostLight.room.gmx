@@ -88,7 +88,7 @@ with (objTopSolid) visible = true; //checkGround</code>
     <instance objName="objSolid" x="976" y="848" name="inst_D3FC0A87" locked="0" code="" scaleX="3" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="528" y="608" name="inst_6508F2FF" locked="0" code="" scaleX="2" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="256" y="1040" name="inst_9C911EEA" locked="0" code="" scaleX="58" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objInUniverse_AcidWaves" x="256" y="1120" name="inst_E797002A" locked="0" code="waveAmp = 4;&#xA;multip = 8;&#xA;for (p = 0; p &lt; 8; p++)&#xA;{&#xA;    act[p] = 0;&#xA;    waveTimer[p] = 0;&#xA;    distMod[p] = 0.8;&#xA;    timeMod[p] = 0.02 + (0.01 * p);&#xA;    addAct[p] = 1 + (0.01 * p);&#xA;    yOffset[p] = 8;&#xA;    imgIndex[p] = floor(p/2);&#xA;}&#xA;" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objInUniverse_AcidWaves" x="256" y="1136" name="inst_E797002A" locked="0" code="waveAmp = 2;&#xA;multip = 3;&#xA;for (p = 0; p &lt; 3; p++)&#xA;{&#xA;    act[p] = 0;&#xA;    waveTimer[p] = 0;&#xA;    distMod[p] = 0.8;&#xA;    timeMod[p] = 0.02;&#xA;    addAct[p] = 0.5 + (0.08 * p);&#xA;    yOffset[p] = 4 + (12 * (p == 2));&#xA;    imgIndex[p] = p;&#xA;}&#xA;" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHorizontalScrollingNES" x="768" y="960" name="inst_4BBCE3F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objHorizontalScrollingNES" x="1024" y="960" name="inst_E012DA3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>

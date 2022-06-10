@@ -51,31 +51,27 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objDefaultSpawn" x="464" y="192" name="inst_D3E2D883" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="0" y="176" name="inst_5A9CB10F" locked="0" code="visible = true;&#xA;" scaleX="16" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="objDefaultSpawn" x="432" y="192" name="inst_D3E2D883" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="0" y="176" name="inst_5A9CB10F" locked="0" code="visible = true;&#xA;" scaleX="18" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objETank" x="16" y="160" name="inst_01B36E46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objETank" x="0" y="160" name="inst_82A88F80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objETank" x="64" y="160" name="inst_6B603A08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objETank" x="32" y="160" name="inst_D088F4D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objETank" x="96" y="160" name="inst_6013D712" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objETank" x="80" y="160" name="inst_B408AB14" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objETank" x="48" y="160" name="inst_BAF845A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWTank" x="144" y="160" name="inst_023EF9DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWTank" x="160" y="160" name="inst_2DF0039D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWTank" x="176" y="160" name="inst_D90BE95C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWTank" x="192" y="160" name="inst_4DCF979F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWTank" x="208" y="160" name="inst_19530C23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWTank" x="224" y="160" name="inst_C029D472" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMTank" x="48" y="112" name="inst_3C160BE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="32" y="128" name="inst_9C0A32F6" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLife" x="64" y="112" name="inst_64C4211B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="160" y="128" name="inst_1F731C6F" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLifeEnergyBig" x="192" y="112" name="inst_DC4410CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLifeEnergySmall" x="208" y="112" name="inst_15FAAEC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWeaponEnergyBig" x="160" y="112" name="inst_93D1D4F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWTank" x="240" y="160" name="inst_A4632D22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWeaponEnergySmall" x="176" y="112" name="inst_689375D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSolid" x="256" y="208" name="inst_AD5EBD0D" locked="0" code="" scaleX="32" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="16" y="128" name="inst_9C0A32F6" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLife" x="32" y="112" name="inst_64C4211B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="176" y="128" name="inst_1F731C6F" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLifeEnergyBig" x="208" y="112" name="inst_DC4410CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLifeEnergySmall" x="224" y="112" name="inst_15FAAEC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWeaponEnergyBig" x="176" y="112" name="inst_93D1D4F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWTank" x="160" y="160" name="inst_A4632D22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWeaponEnergySmall" x="192" y="112" name="inst_689375D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSolid" x="288" y="208" name="inst_AD5EBD0D" locked="0" code="" scaleX="30" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="496" y="0" name="inst_374E0FE9" locked="0" code="" scaleX="2" scaleY="9" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="752" y="0" name="inst_E355550B" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
     <instance objName="objStopScrollingNES" x="768" y="0" name="inst_D75E81D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
