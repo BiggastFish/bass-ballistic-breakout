@@ -35,8 +35,7 @@ facePlayer = true;
 
 // Enemy specific code
 hasFired = 0;
-waitTimer = 60;
-rocksThrown = 0;
+attackTimer = 45;
 </string>
           </argument>
         </arguments>
@@ -63,37 +62,36 @@ rocksThrown = 0;
 
 if (entityCanStep())
 {
-    waitTimer+= waitTimer &gt; 0;
-    if (waitTimer &gt;= 90) 
-        waitTimer = 0
-    if (!waitTimer)
-        image_index+= 0.3;
-    
-    if (floor(image_index) == 4 &amp;&amp; !hasFired)
-    {
-        hasFired = 1;
-        f = instance_create(x - (image_xscale * 10), y - 5, objChuckPRock);
-        f.xscale = image_xscale;
-        rocksThrown++;
-    }
-    if (image_index &gt;= 7)
-    {
+    attackTimer++;
+    if (attackTimer == 90 || attackTimer == 84 || attackTimer == 132)
         image_index = 0;
-        hasFired = 0;
-        if (rocksThrown &gt;= 2)
-        {
-            waitTimer = 1;
-            rocksThrown = 0;
-        }
+    if (attackTimer == 72 || attackTimer == 80 ||
+    attackTimer == 92 || attackTimer == 124)
+        image_index = 1;
+    if (attackTimer == 76 || attackTimer == 96)
+    {
+        image_index = 2;
+        var xSpd = 3 * image_xscale, 
+            ySpd = -6.525, 
+            xx = x + 6 * image_xscale,
+            yy = y - 12;
+        if (instance_exists(target))
+            xSpd = xSpeedAim(xx, yy, target.x, target.y, ySpd, 0.28);
+        f = instance_create(x + 6 * image_xscale, y - 12, objEnemyBullet);
+        f.sprite_index = sprChuckPRock;
+        f.blockCollision = false;
+        f.grav = 0.28;
+        f.xspeed = xSpd;
+        f.yspeed = ySpd;
+        playSFX(sfxEnemyShoot);
     }
+    if (attackTimer == 136)
+        attackTimer = 0;
 }
 else if (dead)
 {
     image_index = 0;
-    waitTimer = 60;
-    throwTimer = 0;
-    rocksThrown = 0;
-    hasFired = 0;
+    attackTimer = 45;
 }
 </string>
           </argument>
