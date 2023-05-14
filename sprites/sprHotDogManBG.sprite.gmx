@@ -20,7 +20,7 @@
   <width>256</width>
   <height>96</height>
   <frames>
-    <frame index="0">images\sprHighwayToHellBG_0.png</frame>
-    <frame index="1">images\sprHighwayToHellBG_1.png</frame>
+    <frame index="0">images\sprHotDogManBG_0.png</frame>
+    <frame index="1">images\sprHotDogManBG_1.png</frame>
   </frames>
 </sprite>

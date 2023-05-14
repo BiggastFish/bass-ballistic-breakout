@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>80</width>
-  <height>112</height>
-  <data>images\tstStaticShock.png</data>
+  <width>176</width>
+  <height>128</height>
+  <data>images\tstGoldMan.png</data>
 </background>

@@ -73,10 +73,21 @@ freshSaveFile();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.keyPausePressed[0])
+            <string>if (global.keyPausePressed[0] &amp;&amp; phase &lt; 11)
 {
-    event_user(0);
-    event_user(1);
+    boxAlph = 0;
+    timer = 0;
+    phase = 11;
+    silh = 144;
+    logo = 1;
+    offset2 = 1;
+    screenFlash(4);
+    with (objParallax)
+        instance_destroy();
+    with (objWeaponGetEffect)
+        instance_destroy();
+    with (objTrailEffect)
+        instance_destroy();
 }
 
 timer++;
@@ -617,7 +628,8 @@ if (canProceed)
             case 0: // Start 
                 canProceed = false;
                 playSFX(sfxMenuSelect);
-                global.nextRoom = rmRoomSelect;
+                goToLevel(lvlIntroStage);
+                //global.nextRoom = rmRoomSelect;
                 break;
             case 1: // Options 
                 canProceed = false;
@@ -746,12 +758,12 @@ draw_set_halign(fa_left);
 
 if (drawtext)
 {
-    draw_text(64, 184, "WHIP##NAE NAE##BRUH");
+    draw_text(64, 184, "START##OPTIONS");
 }
 
-/*if (canProceed)
+if (canProceed)
 {
-    draw_sprite(sprOptionsCursor, 0, 96 - 12, 160 + option * 16);
+    draw_sprite(sprOptionsCursor, 0, 96 - 44, 184 + option * 16);
 }
 
 draw_set_color(oldCol);

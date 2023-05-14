@@ -71,7 +71,7 @@ timer += 1;
 if (global.keyPausePressed[0] || global.keyJumpPressed[0]
     || global.keyShootPressed[0] || timer &gt;= timerMax)
 {
-    global.nextRoom = rmTitleScreen;
+    global.nextRoom = rmTitleScreenNew;
 }
 </string>
           </argument>

@@ -20,7 +20,8 @@
   <width>256</width>
   <height>96</height>
   <frames>
-    <frame index="0">images\sprStHungerBG_0.png</frame>
-    <frame index="1">images\sprStHungerBG_1.png</frame>
+    <frame index="0">images\sprTakanuvaBG_0.png</frame>
+    <frame index="1">images\sprTakanuvaBG_1.png</frame>
+    <frame index="2">images\sprTakanuvaBG_2.png</frame>
   </frames>
 </sprite>

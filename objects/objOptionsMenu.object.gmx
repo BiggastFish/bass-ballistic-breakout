@@ -156,11 +156,11 @@ switch (phase)
         if (room == rmOptions)
         {
             var ID;
-            if (global.nextRoom != rmTitleScreen)
+            if (global.nextRoom != rmTitleScreenNew)
             {
                 saveLoadOptions(true);
             }
-            global.nextRoom = rmTitleScreen;
+            global.nextRoom = rmTitleScreenNew;
         }
         else
         {

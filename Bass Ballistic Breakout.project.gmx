@@ -1442,7 +1442,7 @@
         </sprites>
       </sprites>
       <sprites name="Levels">
-        <sprites name="Static Shock">
+        <sprites name="Intro Stage">
           <sprite>sprites\sprAnaconduit</sprite>
           <sprite>sprites\sprAnaconduitEffect</sprite>
           <sprite>sprites\sprAnaconduitShot</sprite>
@@ -1473,7 +1473,7 @@
             <sprite>sprites\sprBuzzshockDrone</sprite>
           </sprites>
         </sprites>
-        <sprites name="Money Machine">
+        <sprites name="Gold Man">
           <sprite>sprites\sprLongLongGuy</sprite>
           <sprite>sprites\sprLongGuyHorizontal</sprite>
           <sprite>sprites\sprLongGuyVertical</sprite>
@@ -1506,7 +1506,7 @@
             </sprites>
           </sprites>
         </sprites>
-        <sprites name="Whispering Woods">
+        <sprites name="Perfuma">
           <sprite>sprites\sprWhippersnapper</sprite>
           <sprite>sprites\sprPengSpawner</sprite>
           <sprite>sprites\sprLaserBeak</sprite>
@@ -1539,7 +1539,7 @@
             <sprite>sprites\sprPerfumaSpike</sprite>
           </sprites>
         </sprites>
-        <sprites name="Jump King">
+        <sprites name="Gangsta Mario">
           <sprite>sprites\sprBigTurnipSpawner</sprite>
           <sprite>sprites\sprBigTurnipSpawnerSideways</sprite>
           <sprite>sprites\sprBigTurnip</sprite>
@@ -1593,7 +1593,7 @@
           <sprite>sprites\sprCirno</sprite>
           <sprite>sprites\sprCirnoIceBall</sprite>
         </sprites>
-        <sprites name="Lost Light">
+        <sprites name="Takanuva">
           <sprite>sprites\sprMantis</sprite>
           <sprite>sprites\sprMantisBlade</sprite>
           <sprite>sprites\sprMantisBladeHurt</sprite>
@@ -1605,7 +1605,7 @@
           <sprite>sprites\sprTakanuvaGlowingSpiral</sprite>
           <sprite>sprites\sprTakanuvaMaskShine</sprite>
         </sprites>
-        <sprites name="Highway to Hell">
+        <sprites name="Oil Man">
           <sprite>sprites\sprTerrordactyl</sprite>
           <sprite>sprites\sprOilFrogBubble</sprite>
           <sprite>sprites\mskOilFrogBubble</sprite>
@@ -1620,7 +1620,7 @@
           <sprite>sprites\sprOilPlatform</sprite>
           <sprite>sprites\mskOilPlatform</sprite>
         </sprites>
-        <sprites name="Darkness Rising">
+        <sprites name="Hanged Man">
           <sprite>sprites\sprHangedMan</sprite>
           <sprites name="Projectiles">
             <sprite>sprites\sprHangedManBatSon</sprite>
@@ -1632,14 +1632,14 @@
       </sprites>
       <sprites name="Menus">
         <sprites name="Stage Select">
-          <sprite>sprites\sprMoneyMachineBG</sprite>
+          <sprite>sprites\sprGoldManBG</sprite>
           <sprite>sprites\sprBassStageSelectBust</sprite>
-          <sprite>sprites\sprWhisperingWoodsBG</sprite>
-          <sprite>sprites\sprJumpKingBG</sprite>
-          <sprite>sprites\sprStHungerBG</sprite>
-          <sprite>sprites\sprDemonInsideMeBG</sprite>
-          <sprite>sprites\sprBuryTheLight</sprite>
-          <sprite>sprites\sprHighwayToHellBG</sprite>
+          <sprite>sprites\sprPerfumaBG</sprite>
+          <sprite>sprites\sprGangstaMarioBG</sprite>
+          <sprite>sprites\sprHotDogManBG</sprite>
+          <sprite>sprites\sprHangedManBG</sprite>
+          <sprite>sprites\sprTakanuvaBG</sprite>
+          <sprite>sprites\sprOilManBG</sprite>
         </sprites>
         <sprites name="Pause">
           <sprite>sprites\sprPauseMenu</sprite>
@@ -1678,8 +1678,6 @@
         <sprite>sprites\sprBossHealthHud</sprite>
         <sprite>sprites\sprBetterBossDoor</sprite>
         <sprite>sprites\sprBetterBossDoorVertical</sprite>
-        <sprite>sprites\sprInUniverse_SMB3Acid</sprite>
-        <sprite>sprites\sprInUniverse_SMB3AcidReverse</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -1737,19 +1735,19 @@
         <background>background\bgAccessibilityBG</background>
         <background>background\bgTitleSequenceBG</background>
       </backgrounds>
-      <backgrounds name="Static Shock">
-        <background>background\tstStaticShock</background>
-        <background>background\tstStaticShockReal</background>
-        <background>background\bgStaticShockBG</background>
+      <backgrounds name="Intro Stage">
+        <background>background\tstIntroStage</background>
+        <background>background\tstIntroStageReal</background>
+        <background>background\bgIntroStageBG</background>
       </backgrounds>
-      <backgrounds name="Whispering Woods">
+      <backgrounds name="Perfuma">
         <background>background\bgPerfumaFrontTrees</background>
         <background>background\bgPerfumaGround</background>
         <background>background\bgPerfumaGrass</background>
         <background>background\bgPerfumaBackTrees</background>
       </backgrounds>
-      <backgrounds name="Money Machine">
-        <background>background\tstMoneyMachine</background>
+      <backgrounds name="Gold Man">
+        <background>background\tstGoldMan</background>
       </backgrounds>
     </backgrounds>
   </backgrounds>
@@ -2685,7 +2683,7 @@
           <object>objects\objSlashEffect</object>
         </objects>
       </objects>
-      <objects name="Static Shock">
+      <objects name="Intro Stage">
         <object>objects\objBuzzshockDistance</object>
         <object>objects\objAnaconduit</object>
         <object>objects\objGesunder</object>
@@ -2704,7 +2702,7 @@
           <object>objects\objBuzzshockSpark</object>
         </objects>
       </objects>
-      <objects name="Money Machine">
+      <objects name="Gold Man">
         <object>objects\objLongGuy</object>
         <object>objects\objDiamatton</object>
         <object>objects\objGorudokuro</object>
@@ -2733,7 +2731,7 @@
           </objects>
         </objects>
       </objects>
-      <objects name="Whispering Woods">
+      <objects name="Perfuma">
         <object>objects\objLaserbeak</object>
         <object>objects\objHariHari</object>
         <object>objects\objMonkiOoAa</object>
@@ -2758,7 +2756,7 @@
           </objects>
         </objects>
       </objects>
-      <objects name="Jump King">
+      <objects name="Gangsta Mario">
         <object>objects\objBigTurnipSpawner</object>
         <object>objects\objBigTurnipSpawnerSideways</object>
         <object>objects\objBigTurnip</object>
@@ -2785,7 +2783,7 @@
           <object>objects\objJumpManGunShot</object>
         </objects>
       </objects>
-      <objects name="St. Hunger">
+      <objects name="Hot Dog Man">
         <object>objects\objJumpJoe</object>
         <object>objects\objKetchup</object>
         <object>objects\objMeatballTrail</object>
@@ -2808,7 +2806,7 @@
           </objects>
         </objects>
       </objects>
-      <objects name="Darkness Rising">
+      <objects name="Hanged Man">
         <objects name="Boss">
           <object>objects\objHangedManIntro</object>
           <object>objects\objHangedMan</object>
@@ -2819,7 +2817,7 @@
           </objects>
         </objects>
       </objects>
-      <objects name="Highway to Hell">
+      <objects name="Oil Man">
         <object>objects\objTerrordactyl</object>
         <object>objects\objOilFrogBubble</object>
         <object>objects\objOilFrog</object>
@@ -2836,7 +2834,7 @@
           </objects>
         </objects>
       </objects>
-      <objects name="Lost Light">
+      <objects name="Takanuva">
         <object>objects\objMantis</object>
         <object>objects\objMantisBlade</object>
         <object>objects\objMantisBladeHurt</object>
@@ -2854,7 +2852,6 @@
         <object>objects\objCirno</object>
         <object>objects\objCirnoCircleSpike</object>
       </objects>
-      <object>objects\objInUniverse_AcidWaves</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -2862,16 +2859,16 @@
     <room>rooms\lvlCopyThisRoom</room>
     <room>rooms\lvlCollectiblesRoom</room>
     <room>rooms\lvlBGVisibilityTest</room>
-    <room>rooms\lvlStaticShock</room>
-    <room>rooms\rmLivingNightmare</room>
+    <room>rooms\lvlIntroStage</room>
+    <room>rooms\lvlHangedMan</room>
     <room>rooms\rmTowerStage2</room>
-    <room>rooms\rmMoneyMachineTile</room>
-    <room>rooms\lvlMoneyMachine</room>
-    <room>rooms\lvlWhisperingWoods</room>
-    <room>rooms\lvlJumpKing</room>
-    <room>rooms\lvlStHunger</room>
-    <room>rooms\rmHighwayToHell</room>
-    <room>rooms\rmLostLight</room>
+    <room>rooms\rmGoldManTile</room>
+    <room>rooms\lvlGoldMan</room>
+    <room>rooms\lvlPerfuma</room>
+    <room>rooms\lvlGangstaMario</room>
+    <room>rooms\lvlHotDogMan</room>
+    <room>rooms\lvlOilMan</room>
+    <room>rooms\lvlTakanuva</room>
     <rooms name="Menus">
       <room>rooms\rmTitleScreen</room>
       <room>rooms\rmTitleScreenNew</room>

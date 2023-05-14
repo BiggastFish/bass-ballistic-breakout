@@ -20,7 +20,9 @@
   <width>256</width>
   <height>96</height>
   <frames>
-    <frame index="0">images\sprDemonInsideMeBG_0.png</frame>
-    <frame index="1">images\sprDemonInsideMeBG_1.png</frame>
+    <frame index="0">images\sprGoldManBG_0.png</frame>
+    <frame index="1">images\sprGoldManBG_1.png</frame>
+    <frame index="2">images\sprGoldManBG_2.png</frame>
+    <frame index="3">images\sprGoldManBG_3.png</frame>
   </frames>
 </sprite>

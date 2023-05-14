@@ -20,9 +20,7 @@
   <width>256</width>
   <height>96</height>
   <frames>
-    <frame index="0">images\sprMoneyMachineBG_0.png</frame>
-    <frame index="1">images\sprMoneyMachineBG_1.png</frame>
-    <frame index="2">images\sprMoneyMachineBG_2.png</frame>
-    <frame index="3">images\sprMoneyMachineBG_3.png</frame>
+    <frame index="0">images\sprOilManBG_0.png</frame>
+    <frame index="1">images\sprOilManBG_1.png</frame>
   </frames>
 </sprite>

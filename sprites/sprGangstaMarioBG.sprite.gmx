@@ -20,8 +20,8 @@
   <width>256</width>
   <height>96</height>
   <frames>
-    <frame index="0">images\sprBuryTheLight_0.png</frame>
-    <frame index="1">images\sprBuryTheLight_1.png</frame>
-    <frame index="2">images\sprBuryTheLight_2.png</frame>
+    <frame index="0">images\sprGangstaMarioBG_0.png</frame>
+    <frame index="1">images\sprGangstaMarioBG_1.png</frame>
+    <frame index="2">images\sprGangstaMarioBG_2.png</frame>
   </frames>
 </sprite>

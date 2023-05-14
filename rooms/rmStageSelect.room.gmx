@@ -63,29 +63,29 @@ with (objParallax)
   <instances>
     <instance objName="objStageSelect" x="0" y="0" name="inst_9EB33EBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objParallax" x="32" y="0" name="inst_83001A72" locked="0" code="myBG = bgStageSelectNew;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="48" y="0" name="inst_50E0C71B" locked="0" code="myBG = bgStageSelectBackground;&#xA;xspeed = -.5;&#xA;yspeed = -.5;&#xA;depth+= 100;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="48" y="0" name="inst_50E0C71B" locked="0" code="myBG = bgStageSelectBackground;&#xA;xspeed = -.5;&#xA;yspeed = -.5;&#xA;depth+= 100;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBackgroundFilter" x="16" y="0" name="inst_1B468ACB" locked="0" code="useManOp = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="16" y="32" name="inst_0CCDF945" locked="0" code="myBG = sprWhisperingWoodsBG;&#xA;xspeed = -(2/2.5);&#xA;img = 3;&#xA;depth+= 79;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="64" y="32" name="inst_4993DE3B" locked="0" code="myBG = sprWhisperingWoodsBG;&#xA;xspeed = -2;&#xA;depth+= 76;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="48" y="32" name="inst_42412D84" locked="0" code="myBG = sprWhisperingWoodsBG;&#xA;xspeed = -2/1.5;&#xA;img = 1;&#xA;depth+= 77;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="32" y="32" name="inst_7068BE2E" locked="0" code="myBG = sprWhisperingWoodsBG;&#xA;xspeed = -1;&#xA;img = 2;&#xA;depth+= 78;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="0" y="32" name="inst_3C15DE63" locked="0" code="myBG = sprWhisperingWoodsBG;&#xA;xspeed = -.5;&#xA;img = 4;&#xA;depth+= 80;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="16" y="96" name="inst_B222CE4E" locked="0" code="myBG = sprJumpKingBG;&#xA;xspeed = -2;&#xA;depth+= 39;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="0" y="96" name="inst_5B7AEC83" locked="0" code="myBG = sprJumpKingBG;&#xA;xspeed = -1;&#xA;img = 1;&#xA;depth+= 40;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="32" y="96" name="inst_963FD451" locked="0" code="myBG = sprJumpKingBG;&#xA;xspeed = -.75;&#xA;img = 2;&#xA;depth+= 38;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="0" y="16" name="inst_F670FA62" locked="0" code="myBG = sprMoneyMachineBG;&#xA;img = 3;&#xA;depth+= 90;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="16" y="16" name="inst_0B1B4E5D" locked="0" code="myBG = sprMoneyMachineBG;&#xA;xspeed = -.6;&#xA;img = 1;&#xA;depth+= 89;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="32" y="16" name="inst_8D278DBB" locked="0" code="myBG = sprMoneyMachineBG;&#xA;xspeed = -1.675;&#xA;depth+= 88;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="48" y="16" name="inst_7ABB3521" locked="0" code="myBG = sprMoneyMachineBG;&#xA;xspeed = -2.25;&#xA;img = 2;&#xA;depth+= 87;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="0" y="48" name="inst_D7BA503C" locked="0" code="myBG = sprStHungerBG;&#xA;xspeed = -1;&#xA;img = 1;&#xA;depth+= 70;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="16" y="48" name="inst_08AC7B3F" locked="0" code="myBG = sprStHungerBG;&#xA;xspeed = -1;&#xA;depth+= 69; //lole&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="0" y="80" name="inst_82B07C6C" locked="0" code="myBG = sprHighwayToHellBG;&#xA;xspeed = -1;&#xA;img = 1;&#xA;depth+= 50;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="16" y="80" name="inst_D8D5111B" locked="0" code="myBG = sprHighwayToHellBG;&#xA;xspeed = -1;&#xA;depth+= 49;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="0" y="64" name="inst_17424566" locked="0" code="myBG = sprDemonInsideMeBG;&#xA;depth+= 60;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="16" y="64" name="inst_37ABB614" locked="0" code="myBG = sprDemonInsideMeBG;&#xA;xspeed = -1;&#xA;img = 1;&#xA;depth+= 59;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="0" y="112" name="inst_7BF9D9E0" locked="0" code="myBG = sprBuryTheLight;&#xA;depth+= 30;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="16" y="112" name="inst_39357CE0" locked="0" code="myBG = sprBuryTheLight;&#xA;xspeed = -.85;&#xA;img = 1;&#xA;depth+= 29;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objParallax" x="32" y="112" name="inst_DA4D9764" locked="0" code="myBG = sprBuryTheLight;&#xA;xspeed = -1.85;&#xA;img = 2;&#xA;depth+= 28;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="16" y="32" name="inst_0CCDF945" locked="0" code="myBG = sprPerfumaBG;&#xA;xspeed = -(2/2.5);&#xA;img = 3;&#xA;depth+= 79;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="64" y="32" name="inst_4993DE3B" locked="0" code="myBG = sprPerfumaBG;&#xA;xspeed = -2;&#xA;depth+= 76;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="48" y="32" name="inst_42412D84" locked="0" code="myBG = sprPerfumaBG;&#xA;xspeed = -2/1.5;&#xA;img = 1;&#xA;depth+= 77;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="32" y="32" name="inst_7068BE2E" locked="0" code="myBG = sprPerfumaBG;&#xA;xspeed = -1;&#xA;img = 2;&#xA;depth+= 78;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="0" y="32" name="inst_3C15DE63" locked="0" code="myBG = sprPerfumaBG;&#xA;xspeed = -.5;&#xA;img = 4;&#xA;depth+= 80;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="16" y="96" name="inst_B222CE4E" locked="0" code="myBG = sprGangstaMarioBG;&#xA;xspeed = -2;&#xA;depth+= 39;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="0" y="96" name="inst_5B7AEC83" locked="0" code="myBG = sprGangstaMarioBG;&#xA;xspeed = -1;&#xA;img = 1;&#xA;depth+= 40;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="32" y="96" name="inst_963FD451" locked="0" code="myBG = sprGangstaMarioBG;&#xA;xspeed = -.75;&#xA;img = 2;&#xA;depth+= 38;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="0" y="16" name="inst_F670FA62" locked="0" code="myBG = sprGoldManBG;&#xA;img = 3;&#xA;depth+= 90;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="16" y="16" name="inst_0B1B4E5D" locked="0" code="myBG = sprGoldManBG;&#xA;xspeed = -.6;&#xA;img = 1;&#xA;depth+= 89;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="32" y="16" name="inst_8D278DBB" locked="0" code="myBG = sprGoldManBG;&#xA;xspeed = -1.675;&#xA;depth+= 88;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="48" y="16" name="inst_7ABB3521" locked="0" code="myBG = sprGoldManBG;&#xA;xspeed = -2.25;&#xA;img = 2;&#xA;depth+= 87;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="0" y="48" name="inst_D7BA503C" locked="0" code="myBG = sprHotDogManBG;&#xA;xspeed = -1;&#xA;img = 1;&#xA;depth+= 70;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="16" y="48" name="inst_08AC7B3F" locked="0" code="myBG = sprHotDogManBG;&#xA;xspeed = -1;&#xA;depth+= 69; //lole&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="0" y="80" name="inst_82B07C6C" locked="0" code="myBG = sprOilManBG;&#xA;xspeed = -1;&#xA;img = 1;&#xA;depth+= 50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="16" y="80" name="inst_D8D5111B" locked="0" code="myBG = sprOilManBG;&#xA;xspeed = -1;&#xA;depth+= 49;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="0" y="64" name="inst_17424566" locked="0" code="myBG = sprHangedManBG;&#xA;depth+= 60;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="16" y="64" name="inst_37ABB614" locked="0" code="myBG = sprHangedManBG;&#xA;xspeed = -1;&#xA;img = 1;&#xA;depth+= 59;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="0" y="112" name="inst_7BF9D9E0" locked="0" code="myBG = sprTakanuvaBG;&#xA;depth+= 30;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="16" y="112" name="inst_39357CE0" locked="0" code="myBG = sprTakanuvaBG;&#xA;xspeed = -.85;&#xA;img = 1;&#xA;depth+= 29;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objParallax" x="32" y="112" name="inst_DA4D9764" locked="0" code="myBG = sprTakanuvaBG;&#xA;xspeed = -1.85;&#xA;img = 2;&#xA;depth+= 28;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

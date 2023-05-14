@@ -20,8 +20,7 @@
   <width>256</width>
   <height>96</height>
   <frames>
-    <frame index="0">images\sprJumpKingBG_0.png</frame>
-    <frame index="1">images\sprJumpKingBG_1.png</frame>
-    <frame index="2">images\sprJumpKingBG_2.png</frame>
+    <frame index="0">images\sprHangedManBG_0.png</frame>
+    <frame index="1">images\sprHangedManBG_1.png</frame>
   </frames>
 </sprite>
