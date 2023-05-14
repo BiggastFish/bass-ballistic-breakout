@@ -103,7 +103,7 @@ for (var i = 0; i &lt; 3; i++)
 // define stages
 stageRoom[0, 0] = "lvlGoldMan"
 stageIcon[0, 0] = 1;
-stageName[0, 0] = "GOLD MAN#WEAPON: COIN SPREAD";
+stageName[0, 0] = "GOLD MAN##WEAPON:#COIN SPREAD";
 stageBeaten[0, 0] = indexOf(global.elementsCollected, "gold") &gt;= 0;
 stageBossJumpSprite[0, 0] = sprGoldMan;
 stageBossJumpIndex[0, 0] = 4;
@@ -113,7 +113,7 @@ parY[0, 0] = 1;
 
 stageRoom[1, 0] = "lvlPerfuma"
 stageIcon[1, 0] = 2;
-stageName[1, 0] = "PERFUMA#WEAPON: SEED BOMB";
+stageName[1, 0] = "PERFUMA##WEAPON:#SEED BOMB";
 stageBeaten[1, 0] = indexOf(global.elementsCollected, "seed") &gt;= 0;
 stageBossJumpSprite[1, 0] = sprPerfuma;
 stageBossJumpIndex[1, 0] = 0;
@@ -123,7 +123,7 @@ parY[1, 0] = 2;
 
 stageRoom[2, 0] = "lvlHotDogMan";
 stageIcon[2, 0] = 3;
-stageName[2, 0] = "HOT DOG MAN#WEAPON: KNUCKLE SANDWICH";
+stageName[2, 0] = "HOT DOG MAN##WEAPON:#KNUCKLE SANDWICH";
 stageBeaten[2, 0] = indexOf(global.elementsCollected, "sandwich") &gt;= 0;
 stageBossJumpSprite[2, 0] = sprHotDogMan;
 stageBossJumpIndex[2, 0] = 0;
@@ -133,7 +133,7 @@ parY[2, 0] = 3;
 
 stageRoom[3, 0] = "lvlHangedMan";
 stageIcon[3, 0] = 4;
-stageName[3, 0] = "HANGED MAN#WEAPON: HUNGRY BAT";
+stageName[3, 0] = "HANGED MAN##WEAPON:#HUNGRY BAT";
 stageBeaten[3, 0] = indexOf(global.elementsCollected, "hanged") &gt;= 0;
 stageBossJumpSprite[3, 0] = sprHangedMan;
 stageBossJumpIndex[3, 0] = 0;
@@ -143,7 +143,7 @@ parY[3, 0] = 4;
 
 stageRoom[1, 1] = "lvlOilMan";
 stageIcon[1, 1] = 5;
-stageName[1, 1] = "OIL MAN#WEAPON: OIL SLIDE";
+stageName[1, 1] = "OIL MAN##WEAPON:#OIL SLIDE";
 stageBeaten[1, 1] = indexOf(global.elementsCollected, "oil") &gt;= 0;
 stageBossJumpSprite[1, 1] = sprOilMan;
 stageBossJumpIndex[1, 1] = 0;
@@ -153,7 +153,7 @@ parY[1, 1] = 5;
 
 stageRoom[2, 1] = "lvlGangstaMario";
 stageIcon[2, 1] = 6;
-stageName[2, 1] = "JUMP MAN#WEAPON: SPRING BLAST";
+stageName[2, 1] = "JUMP MAN##WEAPON:#SPRING BLAST";
 stageBeaten[2, 1] = indexOf(global.elementsCollected, "jump") &gt;= 0;
 stageBossJumpSprite[2, 1] = sprJumpMan;
 stageBossJumpIndex[2, 1] = 0;
@@ -163,7 +163,7 @@ parY[2, 1] = 6;
 
 stageRoom[3, 1] = "lvlTakanuva";
 stageIcon[3, 1] = 7;
-stageName[3, 1] = "TAKANUVA#WEAPON: SPIRALING LIGHT";
+stageName[3, 1] = "TAKANUVA##WEAPON:#SPIRALING LIGHT";
 stageBeaten[3, 1] = indexOf(global.elementsCollected, "light") &gt;= 0;
 stageBossJumpSprite[3, 1] = sprTakanuva;
 stageBossJumpIndex[3, 1] = 11;

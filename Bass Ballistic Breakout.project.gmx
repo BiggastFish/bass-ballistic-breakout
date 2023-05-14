@@ -2646,7 +2646,6 @@
       <object>objects\objBackgroundFilter</object>
       <object>objects\objStopScrollingMaker</object>
       <object>objects\objRotatingPlatform</object>
-      <object>objects\objBigFish_Flopper</object>
       <objects name="Weapons">
         <object>objects\objBusterShot</object>
         <object>objects\objBusterShotHalfCharged</object>
